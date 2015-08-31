@@ -1,23 +1,22 @@
 A Coruña
 Álava
+Ávila
 Albacete
 Alicante
 Almería
 Asturias
-Ávila
 Badajoz
 Barcelona
 Burgos
 Cáceres
 Cádiz
+Córdoba
 Cantabria
 Castellón
 Ceuta
 Ciudad Real
-Córdoba
 Cuenca
 Girona
-Las Palmas
 Granada
 Guadalajara
 Guipúzcoa
@@ -26,11 +25,12 @@ Huesca
 Illes Balears
 Jaén
 La Rioja
+Las Palmas
 León
 Lleida
 Lugo
-Madrid
 Málaga
+Madrid
 Melilla
 Murcia
 Navarra
@@ -38,11 +38,11 @@ Ourense
 Palencia
 Pontevedra
 Salamanca
+Santa Cruz de Tenerife
 Segovia
 Sevilla
 Soria
 Tarragona
-Santa Cruz de Tenerife
 Teruel
 Toledo
 Valencia

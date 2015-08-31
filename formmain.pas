@@ -7,8 +7,11 @@ interface
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
   Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids, Buttons,
-  DataModule, types, FormPicEmployee, FormPreferences, INIfiles;
+  DataModule, types, FormPicEmployee, FormPreferences, INIfiles, Translations,
+  gettext;
 
+type
+	TCboListType= (cblStates);
 type
   { TFrmMain }
   TFrmMain = class(TForm)
@@ -63,6 +66,7 @@ type
     TabEmployees: TTabSheet;
     TabPersonalData: TTabSheet;
     procedure BtnDeleteClick(Sender: TObject);
+    procedure BtnEditStateListClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
@@ -81,12 +85,15 @@ type
 
 var
   FrmMain: TFrmMain;
-  PathApp: String;
+  PathApp, 	DatabasePath: String;
   SentenceSQL: TStringList;
   IniFile: TINIFile;
+  Lang, FallBacklang: String;
+  StatesFilename: String;
 
 resourcestring
 	LblNavRecOf= 'of';
+  FrmStatesTitle= 'States';
 
 implementation
 
@@ -95,7 +102,7 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData;
+    FuncData, FormListEditor;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -107,10 +114,11 @@ end;
 //------------------------------------------------------------------------------
 procedure TFrmMain.FormCreate(Sender: TObject);
 var
-	DatabasePath: String;
+  tfOut: TextFile;
 begin
   PathApp:= ExtractFilePath(Paramstr(0));
   SQLiteLibraryName:= PathApp+'sqlite3.dll';
+  GetLanguageIDs(Lang, FallbackLang);
   SentenceSQL:= TStringList.Create;
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
@@ -133,6 +141,15 @@ begin
 	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
 	TotalRecs:= DataMod.QueEmployees.RecordCount;
 	UpdateNavRec;
+	//Load the combos:
+  StatesFilename:= DatabasePath+'states_'+Lang+'.txt';
+  if not FileExists(StatesFilename) then
+      begin
+	    AssignFile(tfOut, StatesFilename);
+      ReWrite(tfOut);
+      CloseFile(tfOut);
+      end;
+  DBCboState.Items.LoadFromFile(StatesFilename);
 end;
 
 procedure TFrmMain.ImGPreferencesClick(Sender: TObject);
@@ -185,6 +202,14 @@ begin
       end;
     end;
 end;
+
+procedure TFrmMain.BtnEditStateListClick(Sender: TObject);
+begin
+	FrmListEditor.EditList(FrmStatesTitle, StatesFilename, cblStates);
+  FrmListEditor.Free;
+  FrmListEditor:= nil;
+end;
+
 procedure TFrmMain.ImgExitClick(Sender: TObject);
 begin
   Close;

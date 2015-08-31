@@ -12,6 +12,10 @@ msgstr ""
 "Language: en\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#: formmain.frmstatestitle
+msgid "States"
+msgstr ""
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr ""
@@ -91,6 +95,23 @@ msgstr ""
 #: tfrasavecancel.btnsave.caption
 msgctxt "TFRASAVECANCEL.BTNSAVE.CAPTION"
 msgid "Save"
+msgstr ""
+
+#: tfrmlisteditor.btnclose.caption
+msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr ""
+
+#: tfrmlisteditor.btnsavelist.caption
+msgid "Save and Close"
+msgstr ""
+
+#: tfrmlisteditor.btnsortlist.caption
+msgid "Sort"
+msgstr ""
+
+#: tfrmlisteditor.caption
+msgid "FrmListEditor"
 msgstr ""
 
 #: tfrmmain.btndelete.caption
@@ -242,11 +263,6 @@ msgstr ""
 #: tfrmpreferences.caption
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
-msgstr ""
-
-#: tfrmpreferences.fraclose1.panclose.btnclose.caption
-msgctxt "TFRMPREFERENCES.FRACLOSE1.PANCLOSE.BTNCLOSE.CAPTION"
-msgid "Close"
 msgstr ""
 
 #: tfrmpreferences.lbldatabasepath.caption

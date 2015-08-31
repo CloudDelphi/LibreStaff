@@ -50,7 +50,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="9">
+    <Units Count="10">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -101,6 +101,7 @@
         <Filename Value="formpreferences.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FrmPreferences"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
       </Unit7>
@@ -111,6 +112,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
       </Unit8>
+      <Unit9>
+        <Filename Value="formlisteditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmListEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormListEditor"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

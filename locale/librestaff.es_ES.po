@@ -11,6 +11,10 @@ msgstr ""
 "Language: es\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#: formmain.frmstatestitle
+msgid "States"
+msgstr "Provincias"
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr "de"
@@ -92,6 +96,23 @@ msgstr "Cancelar"
 msgctxt "tfrasavecancel.btnsave.caption"
 msgid "Save"
 msgstr "Guardar"
+
+#: tfrmlisteditor.btnclose.caption
+msgctxt "tfrmlisteditor.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrmlisteditor.btnsavelist.caption
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
+#: tfrmlisteditor.btnsortlist.caption
+msgid "Sort"
+msgstr "Ordenar"
+
+#: tfrmlisteditor.caption
+msgid "FrmListEditor"
+msgstr "FrmListEditor"
 
 #: tfrmmain.btndelete.caption
 msgid "Delete"
@@ -243,11 +264,6 @@ msgstr "Cambiar..."
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr "Preferencias"
-
-#: tfrmpreferences.fraclose1.panclose.btnclose.caption
-msgctxt "tfrmpreferences.fraclose1.panclose.btnclose.caption"
-msgid "Close"
-msgstr "Cerrar"
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
