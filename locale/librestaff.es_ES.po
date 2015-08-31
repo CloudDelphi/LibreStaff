@@ -86,10 +86,9 @@ msgstr "Cerrar"
 
 #: tfrasavecancel.btncancel.caption
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: tfrasavecancel.btnsave.caption
-#, fuzzy
 msgctxt "tfrasavecancel.btnsave.caption"
 msgid "Save"
 msgstr "Guardar"
@@ -246,7 +245,6 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: tfrmpreferences.fraclose1.panclose.btnclose.caption
-#, fuzzy
 msgctxt "tfrmpreferences.fraclose1.panclose.btnclose.caption"
 msgid "Close"
 msgstr "Cerrar"
@@ -260,4 +258,3 @@ msgstr "Ruta base de datos:"
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
 msgstr "Base de datos"
-
