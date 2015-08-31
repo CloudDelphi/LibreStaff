@@ -9,6 +9,8 @@ uses
 
 function OpenDlg(Title:string; Filter:string; InitPath: String; Filename:string):
          Boolean;
+function SelectDirDlg(Title:string; InitPath: String):
+        Boolean;
 function SaveDlg(Title:string; Filter:string; InitPath: String; Filename:string):
          Boolean;
 
@@ -18,10 +20,17 @@ function OpenDlg(Title:string; Filter:string; InitPath: String; Filename:string)
          Boolean;
 begin
   FrmMain.OpenDlg.Title:= Title;
-  FrmMain.OpenDlg.Filter := Filter;
+  FrmMain.OpenDlg.Filter:= Filter;
   FrmMain.OpenDlg.FileName:= Filename;
   FrmMain.OpenDlg.InitialDir:= InitPath;
   Result:= FrmMain.OpenDlg.Execute;
+end;
+function SelectDirDlg(Title:string; InitPath: String):
+        Boolean;
+begin
+ FrmMain.SelectDirDlg.Title:= Title;
+ FrmMain.SelectDirDlg.InitialDir:= InitPath;
+ Result:= FrmMain.SelectDirDlg.Execute;
 end;
  function SaveDlg(Title:string; Filter:string; InitPath: String; Filename:string):
          Boolean;

@@ -8,7 +8,7 @@ uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
   db, sqldb, LCLType;
 
-procedure ConnectDatabase;
+procedure ConnectDatabase(DatabasePath: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String);
@@ -22,11 +22,11 @@ resourcestring
 
 implementation
 
-procedure ConnectDatabase;
+procedure ConnectDatabase(DatabasePath: String);
 var
   newDatabase: Boolean;
 begin
-  DataMod.Connection.Databasename:= PathApp + 'data/data.db';
+  DataMod.Connection.Databasename:= DatabasePath;
   // check whether the database already exists
   newDatabase:= not FileExists(DataMod.Connection.Databasename);
 	if newDatabase then begin //Create the database and the tables

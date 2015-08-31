@@ -20,7 +20,7 @@ type
   public
     { public declarations }
   protected
-           procedure Loaded; override;
+  	procedure Loaded; override;
   end;
 
 implementation
@@ -34,6 +34,7 @@ procedure TFraSaveCancel.Loaded;
 begin
   inherited;
   FrmMain.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  FrmMain.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
 end;
 
 end.

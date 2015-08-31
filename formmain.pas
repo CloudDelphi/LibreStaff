@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
   Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids, Buttons,
-  DataModule, types, FormPicEmployee;
+  DataModule, types, FormPicEmployee, FormPreferences, INIfiles;
 
 type
   { TFrmMain }
@@ -27,6 +27,7 @@ type
     DBEPhone: TDBEdit;
     DBECell: TDBEdit;
     DBEEmail: TDBEdit;
+    ImGPreferences: TImage;
     MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
     GrpAddressEmployee: TGroupBox;
@@ -51,11 +52,13 @@ type
     PagEmployees: TPageControl;
     Panel1: TPanel;
     Pan: TPanel;
+    PanSep: TPanel;
     PanPicEmployee: TPanel;
     PanNavRec: TPanel;
     PanMain: TPanel;
     PicEmployee: TDBImage;
     SaveDlg: TSaveDialog;
+    SelectDirDlg: TSelectDirectoryDialog;
     StatusBar1: TStatusBar;
     TabEmployees: TTabSheet;
     TabPersonalData: TTabSheet;
@@ -65,8 +68,8 @@ type
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure ImGPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
-    procedure PanClick(Sender: TObject);
     procedure PicEmployeeClick(Sender: TObject);
   private
     { private declarations }
@@ -80,6 +83,7 @@ var
   FrmMain: TFrmMain;
   PathApp: String;
   SentenceSQL: TStringList;
+  IniFile: TINIFile;
 
 resourcestring
 	LblNavRecOf= 'of';
@@ -100,29 +104,43 @@ begin
   CurrentRec:= DataMod.DsoEmployees.DataSet.RecNo;
   LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+LblNavRecOf +' '+ IntToStr(TotalRecs);
 end;
-
-//------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 procedure TFrmMain.FormCreate(Sender: TObject);
+var
+	DatabasePath: String;
 begin
-     PathApp:= ExtractFilePath(Paramstr(0));
-     SQLiteLibraryName:= PathApp+'sqlite3.dll';
-     FuncData.ConnectDatabase;
-     SentenceSQL:= TStringList.Create;
-     DataMod.Connection.Databasename:= PathApp + 'data/data.db';
-     FuncData.ExecSQL(DataMod.QueEmployees, 'SELECT * from Employees;');
-     if (DataMod.QueEmployees.IsEmpty= True) then
-        begin
-        BtnSave.Enabled:= False;
-        BtnDelete.Enabled:= False;
-        end;
-     FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
-     ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
-     ImgLstBtn.GetBitmap(2, BtnDelete.Glyph);
-     ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
-     TotalRecs:= DataMod.QueEmployees.RecordCount;
-		 UpdateNavRec;
+  PathApp:= ExtractFilePath(Paramstr(0));
+  SQLiteLibraryName:= PathApp+'sqlite3.dll';
+  SentenceSQL:= TStringList.Create;
+  //INI File Section:
+  INIFile:= TINIFile.Create(PathApp+'config.ini', True);
+	if not FileExists(PathApp+'config.ini') then
+  	begin
+    INIFile.WriteString('Database', 'Path', PathApp+'data\');
+    end;
+	//Connect & Load to database
+  DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
+  FuncData.ConnectDatabase(DatabasePath+'data.db');
+  FuncData.ExecSQL(DataMod.QueEmployees, 'SELECT * from Employees;');
+  if (DataMod.QueEmployees.IsEmpty= True) then
+  	begin
+    BtnSave.Enabled:= False;
+    BtnDelete.Enabled:= False;
+		end;
+	FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
+	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
+	ImgLstBtn.GetBitmap(2, BtnDelete.Glyph);
+	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+	TotalRecs:= DataMod.QueEmployees.RecordCount;
+	UpdateNavRec;
 end;
+
+procedure TFrmMain.ImGPreferencesClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmPreferences, FrmPreferences);
+	FrmPreferences.ShowModal;
+end;
+
 procedure TFrmMain.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueEmployees);
@@ -171,19 +189,13 @@ procedure TFrmMain.ImgExitClick(Sender: TObject);
 begin
   Close;
 end;
-
-procedure TFrmMain.PanClick(Sender: TObject);
-begin
-
-end;
-
 procedure TFrmMain.PicEmployeeClick(Sender: TObject);
 begin
-     if (DataMod.QueEmployees.IsEmpty= False) then
-          begin
-          Application.CreateForm(TFrmPicEmployee, FrmPicEmployee);
-          FrmPicEmployee.ShowModal;
-          end;
+	if (DataMod.QueEmployees.IsEmpty= False) then
+  	begin
+    Application.CreateForm(TFrmPicEmployee, FrmPicEmployee);
+    FrmPicEmployee.ShowModal;
+    end;
 end;
 
 end.

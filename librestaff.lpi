@@ -50,7 +50,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="9">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -97,6 +97,20 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncDlgs"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="formpreferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPreferences"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormPreferences"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="frameclose.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraClose"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

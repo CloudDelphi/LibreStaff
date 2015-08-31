@@ -50,6 +50,23 @@ msgstr ""
 msgid "Save the photo"
 msgstr ""
 
+#: formpreferences.lstview_caption_item_0
+msgctxt "formpreferences.lstview_caption_item_0"
+msgid "Database"
+msgstr ""
+
+#: formpreferences.selectdirdlg_error_msg
+msgid "The file \"data.db\" does not exist in this path."
+msgstr ""
+
+#: formpreferences.selectdirdlg_error_title
+msgid "ERROR!"
+msgstr ""
+
+#: formpreferences.selectdirdlg_title
+msgid "Select the path for the database (data.db)"
+msgstr ""
+
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"
 msgstr ""
@@ -60,6 +77,20 @@ msgstr ""
 
 #: funcdata.delrec_title
 msgid "Deletion"
+msgstr ""
+
+#: tfraclose.btnclose.caption
+msgctxt "tfraclose.btnclose.caption"
+msgid "Close"
+msgstr ""
+
+#: tfrasavecancel.btncancel.caption
+msgid "Cancel"
+msgstr ""
+
+#: tfrasavecancel.btnsave.caption
+msgctxt "tfrasavecancel.btnsave.caption"
+msgid "Save"
 msgstr ""
 
 #: tfrmmain.btndelete.caption
@@ -76,6 +107,7 @@ msgid "New"
 msgstr ""
 
 #: tfrmmain.btnsave.caption
+msgctxt "tfrmmain.btnsave.caption"
 msgid "Save"
 msgstr ""
 
@@ -95,6 +127,11 @@ msgstr ""
 
 #: tfrmmain.imgexit.hint
 msgid "Close app"
+msgstr ""
+
+#: tfrmmain.imgpreferences.hint
+msgctxt "tfrmmain.imgpreferences.hint"
+msgid "Preferences"
 msgstr ""
 
 #: tfrmmain.lbladdress.caption
@@ -197,3 +234,27 @@ msgstr ""
 msgctxt "TFRMPICEMPLOYEE.PANPICEMPLOYEE.CAPTION"
 msgid "[Photo]"
 msgstr ""
+
+#: tfrmpreferences.btnchangedtbpath.caption
+msgid "Change..."
+msgstr ""
+
+#: tfrmpreferences.caption
+msgctxt "tfrmpreferences.caption"
+msgid "Preferences"
+msgstr ""
+
+#: tfrmpreferences.fraclose1.panclose.btnclose.caption
+msgctxt "tfrmpreferences.fraclose1.panclose.btnclose.caption"
+msgid "Close"
+msgstr ""
+
+#: tfrmpreferences.lbldatabasepath.caption
+msgid "Database Path:"
+msgstr ""
+
+#: tfrmpreferences.tabdatabase.caption
+msgctxt "tfrmpreferences.tabdatabase.caption"
+msgid "Database"
+msgstr ""
+
