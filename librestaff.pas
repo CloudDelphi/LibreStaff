@@ -13,7 +13,7 @@ uses
 {$R *.res}
 
 begin
-  Application.Title:='proyecto';
+  Application.Title:='LibreStaff';
   RequireDerivedFormResource:= True;
   Application.Initialize;
   Application.CreateForm(TDataMod, DataMod);

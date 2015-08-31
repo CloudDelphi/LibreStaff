@@ -133,7 +133,9 @@ msgid "Save"
 msgstr "Guardar"
 
 #: tfrmmain.caption
-msgid "FrmMain"
+#, fuzzy
+#| msgid "FrmMain"
+msgid "LibreStaff"
 msgstr "LibreStaff"
 
 #: tfrmmain.grpaddressemployee.caption
@@ -274,3 +276,4 @@ msgstr "Ruta base de datos:"
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
 msgstr "Base de datos"
+

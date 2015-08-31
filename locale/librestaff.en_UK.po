@@ -133,7 +133,7 @@ msgid "Save"
 msgstr ""
 
 #: tfrmmain.caption
-msgid "FrmMain"
+msgid "LibreStaff"
 msgstr ""
 
 #: tfrmmain.grpaddressemployee.caption

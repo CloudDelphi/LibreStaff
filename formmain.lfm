@@ -3,7 +3,7 @@ object FrmMain: TFrmMain
   Height = 853
   Top = 103
   Width = 1104
-  Caption = 'FrmMain'
+  Caption = 'LibreStaff'
   ClientHeight = 853
   ClientWidth = 1104
   OnClose = FormClose
