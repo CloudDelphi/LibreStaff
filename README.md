@@ -2,7 +2,8 @@
 Management of personnel
 -----------------------
 Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
-Compiler: Lazarus (http://www.lazarus-ide.org/)<br />
+Compiler: <a href="http://www.lazarus-ide.org/">Lazarus</a><br />
+Database engine: <a href="https://www.sqlite.org/">SQLite</a><br />
 
 HOW TO COMPILE
 --------------
