@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: formmain.lblnavrecof
+msgid "of"
+msgstr ""
+
+#: formpicemployee.opendlg_error_msg_01
+msgctxt "formpicemployee.opendlg_error_msg_01"
+msgid "Photo not loaded."
+msgstr ""
+
+#: formpicemployee.opendlg_error_msg_02
+msgctxt "formpicemployee.opendlg_error_msg_02"
+msgid "Possible cause: Photo format not valid"
+msgstr ""
+
+#: formpicemployee.opendlg_error_msg_03
+msgctxt "formpicemployee.opendlg_error_msg_03"
+msgid "Please, check if photo format is jpg."
+msgstr ""
+
+#: formpicemployee.opendlg_filter
+msgctxt "formpicemployee.opendlg_filter"
+msgid "All image files"
+msgstr ""
+
+#: formpicemployee.opendlg_title
+msgctxt "formpicemployee.opendlg_title"
+msgid "Select a photo"
+msgstr ""
+
+#: formpicemployee.savedlg_filter
+msgctxt "formpicemployee.savedlg_filter"
+msgid "All image files"
+msgstr ""
+
+#: formpicemployee.savedlg_title
+msgid "Save the photo"
+msgstr ""
+
+#: funcdata.delrec_msg_01
+msgid "Are you sure you want to DELETE"
+msgstr ""
+
+#: funcdata.delrec_msg_02
+msgid "It cannot revert!"
+msgstr ""
+
+#: funcdata.delrec_title
+msgid "Deletion"
+msgstr ""
+
+#: tfrmmain.btndelete.caption
+msgid "Delete"
+msgstr ""
+
+#: tfrmmain.btneditstatelist.caption
+msgctxt "tfrmmain.btneditstatelist.caption"
+msgid "..."
+msgstr ""
+
+#: tfrmmain.btnnew.caption
+msgid "New"
+msgstr ""
+
+#: tfrmmain.btnsave.caption
+msgid "Save"
+msgstr ""
+
+#: tfrmmain.caption
+msgid "FrmMain"
+msgstr ""
+
+#: tfrmmain.grpaddressemployee.caption
+msgctxt "tfrmmain.grpaddressemployee.caption"
+msgid "Address"
+msgstr ""
+
+#: tfrmmain.grprcontactemployee.caption
+msgctxt "tfrmmain.grprcontactemployee.caption"
+msgid "Contact"
+msgstr ""
+
+#: tfrmmain.imgexit.hint
+msgid "Close app"
+msgstr ""
+
+#: tfrmmain.lbladdress.caption
+msgctxt "tfrmmain.lbladdress.caption"
+msgid "Address:"
+msgstr ""
+
+#: tfrmmain.lblcell.caption
+msgctxt "tfrmmain.lblcell.caption"
+msgid "Cell Phone:"
+msgstr "Mobile:"
+
+#: tfrmmain.lblcity.caption
+msgctxt "tfrmmain.lblcity.caption"
+msgid "City:"
+msgstr ""
+
+#: tfrmmain.lblemail.caption
+msgctxt "tfrmmain.lblemail.caption"
+msgid "E-Mail:"
+msgstr ""
+
+#: tfrmmain.lblidcard.caption
+msgctxt "tfrmmain.lblidcard.caption"
+msgid "ID Card:"
+msgstr ""
+
+#: tfrmmain.lblnameemployee.caption
+msgid "Name:"
+msgstr ""
+
+#: tfrmmain.lblnameemployee1.caption
+msgid "Surname 1:"
+msgstr ""
+
+#: tfrmmain.lblphone.caption
+msgctxt "tfrmmain.lblphone.caption"
+msgid "Phone:"
+msgstr ""
+
+#: tfrmmain.lblsse.caption
+msgctxt "tfrmmain.lblsse.caption"
+msgid "SSN Number:"
+msgstr ""
+
+#: tfrmmain.lblstate.caption
+msgctxt "tfrmmain.lblstate.caption"
+msgid "State:"
+msgstr ""
+
+#: tfrmmain.lblsurname2.caption
+msgctxt "tfrmmain.lblsurname2.caption"
+msgid "Surname 2:"
+msgstr ""
+
+#: tfrmmain.lblzipcode.caption
+msgctxt "tfrmmain.lblzipcode.caption"
+msgid "ZIP Code:"
+msgstr ""
+
+#: tfrmmain.panpicemployee.caption
+msgctxt "tfrmmain.panpicemployee.caption"
+msgid "[Photo]"
+msgstr ""
+
+#: tfrmmain.tabemployees.caption
+msgid "TabEmployees"
+msgstr ""
+
+#: tfrmmain.tabpersonaldata.caption
+msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
+msgid "Personal Data"
+msgstr ""
+
+#: tfrmpicemployee.btnclearpic.caption
+msgid "Clear"
+msgstr ""
+
+#: tfrmpicemployee.btncopytoclipboard.caption
+msgid "Copy to Clipboad"
+msgstr ""
+
+#: tfrmpicemployee.btnexportpic.caption
+msgid "Export..."
+msgstr ""
+
+#: tfrmpicemployee.btnloadpic.caption
+msgid "Load..."
+msgstr ""
+
+#: tfrmpicemployee.btnpastefromclipboard.caption
+msgid "Paste from Clipboad"
+msgstr ""
+
+#: tfrmpicemployee.caption
+msgid "Picture"
+msgstr ""
+
+#: tfrmpicemployee.panpicemployee.caption
+msgctxt "TFRMPICEMPLOYEE.PANPICEMPLOYEE.CAPTION"
+msgid "[Photo]"
+msgstr ""

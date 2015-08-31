@@ -1,11 +1,11 @@
 object FrmMain: TFrmMain
-  Left = 727
-  Height = 575
-  Top = 208
-  Width = 884
+  Left = 638
+  Height = 853
+  Top = 103
+  Width = 1104
   Caption = 'FrmMain'
-  ClientHeight = 575
-  ClientWidth = 884
+  ClientHeight = 853
+  ClientWidth = 1104
   OnClose = FormClose
   OnCreate = FormCreate
   LCLVersion = '1.4.2.0'
@@ -14,18 +14,20 @@ object FrmMain: TFrmMain
     Left = 0
     Height = 50
     Top = 0
-    Width = 884
+    Width = 1104
     Align = alTop
     ClientHeight = 50
-    ClientWidth = 884
+    ClientWidth = 1104
     TabOrder = 0
     object ImgExit: TImage
-      Left = 835
+      Left = 1055
       Height = 48
+      Hint = 'Close app'
       Top = 1
       Width = 48
       Align = alRight
       OnClick = ImgExitClick
+      ParentShowHint = False
       Picture.Data = {
         1754506F727461626C654E6574776F726B477261706869630A03000089504E47
         0D0A1A0A0000000D49484452000000300000003008060000005702F987000000
@@ -54,20 +56,21 @@ object FrmMain: TFrmMain
         DEC35EDBC1038018A5168356AD069730FE027A9472F353653CAB000000004945
         4E44AE426082
       }
+      ShowHint = True
     end
   end
   object StatusBar1: TStatusBar
     Left = 0
     Height = 28
-    Top = 547
-    Width = 884
+    Top = 825
+    Width = 1104
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 497
+    Height = 775
     Top = 50
-    Width = 884
+    Width = 1104
     ActivePage = TabEmployees
     Align = alClient
     ShowTabs = False
@@ -75,35 +78,217 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 489
-      ClientWidth = 876
+      ClientHeight = 767
+      ClientWidth = 1096
       object PagEmployees: TPageControl
         Left = 0
-        Height = 254
-        Top = 106
-        Width = 876
-        ActivePage = TabSheet1
+        Height = 500
+        Top = 122
+        Width = 1096
+        ActivePage = TabPersonalData
         Align = alClient
         TabIndex = 0
         TabOrder = 0
-        object TabSheet1: TTabSheet
+        object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
+          ClientHeight = 459
+          ClientWidth = 1088
+          object GrpAddressEmployee: TGroupBox
+            Left = 16
+            Height = 252
+            Top = 16
+            Width = 808
+            Caption = 'Address'
+            ClientHeight = 219
+            ClientWidth = 804
+            TabOrder = 0
+            object MmoAddress: TDBMemo
+              Left = 120
+              Height = 120
+              Top = 24
+              Width = 304
+              DataField = 'Address_Employee'
+              DataSource = DataMod.DsoEmployees
+              MaxLength = 512
+              TabOrder = 0
+            end
+            object LblAddress: TLabel
+              Left = 8
+              Height = 28
+              Top = 24
+              Width = 104
+              AutoSize = False
+              Caption = 'Address:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBENameEmployee5: TDBEdit
+              Left = 120
+              Height = 36
+              Top = 160
+              Width = 154
+              DataField = 'ZIPCode_Employee'
+              DataSource = DataMod.DsoEmployees
+              CharCase = ecNormal
+              MaxLength = 5
+              TabOrder = 1
+            end
+            object LblZipCode: TLabel
+              Left = 8
+              Height = 28
+              Top = 163
+              Width = 104
+              AutoSize = False
+              Caption = 'ZIP Code:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBECity: TDBEdit
+              Left = 544
+              Height = 36
+              Top = 24
+              Width = 176
+              DataField = 'City_Employee'
+              DataSource = DataMod.DsoEmployees
+              CharCase = ecNormal
+              MaxLength = 256
+              TabOrder = 2
+            end
+            object LblCity: TLabel
+              Left = 448
+              Height = 28
+              Top = 27
+              Width = 88
+              AutoSize = False
+              Caption = 'City:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object LblState: TLabel
+              Left = 448
+              Height = 28
+              Top = 83
+              Width = 88
+              AutoSize = False
+              Caption = 'State:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBCboState: TDBComboBox
+              Left = 544
+              Height = 36
+              Top = 83
+              Width = 176
+              DataField = 'State_Employee'
+              ItemHeight = 28
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object BtnEditStateList: TBitBtn
+              Left = 728
+              Height = 38
+              Top = 80
+              Width = 42
+              Caption = '...'
+              TabOrder = 4
+            end
+          end
+          object GrprContactEmployee: TGroupBox
+            Left = 16
+            Height = 164
+            Top = 280
+            Width = 760
+            Caption = 'Contact'
+            ClientHeight = 131
+            ClientWidth = 756
+            TabOrder = 1
+            object DBEPhone: TDBEdit
+              Left = 112
+              Height = 36
+              Top = 16
+              Width = 154
+              DataField = 'Phone_Employee'
+              DataSource = DataMod.DsoEmployees
+              CharCase = ecNormal
+              MaxLength = 256
+              TabOrder = 0
+            end
+            object LblPhone: TLabel
+              Left = 8
+              Height = 28
+              Top = 24
+              Width = 88
+              AutoSize = False
+              Caption = 'Phone:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBECell: TDBEdit
+              Left = 424
+              Height = 36
+              Top = 16
+              Width = 168
+              DataField = 'Cell_Employee'
+              DataSource = DataMod.DsoEmployees
+              CharCase = ecNormal
+              MaxLength = 256
+              TabOrder = 1
+            end
+            object LblCell: TLabel
+              Left = 320
+              Height = 28
+              Top = 24
+              Width = 96
+              AutoSize = False
+              Caption = 'Cell Phone:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object LblEMail: TLabel
+              Left = 8
+              Height = 28
+              Top = 88
+              Width = 88
+              AutoSize = False
+              Caption = 'E-Mail:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBEEmail: TDBEdit
+              Left = 112
+              Height = 36
+              Top = 80
+              Width = 298
+              DataField = 'EMail_Employee'
+              DataSource = DataMod.DsoEmployees
+              CharCase = ecNormal
+              MaxLength = 256
+              TabOrder = 2
+            end
+          end
         end
       end
       object Panel1: TPanel
         Left = 0
-        Height = 129
-        Top = 360
-        Width = 876
+        Height = 145
+        Top = 622
+        Width = 1096
         Align = alBottom
         BevelOuter = bvNone
-        ClientHeight = 129
-        ClientWidth = 876
+        ClientHeight = 145
+        ClientWidth = 1096
         TabOrder = 1
         object BtnDelete: TBitBtn
-          Left = 328
+          Left = 336
           Height = 40
-          Top = 78
+          Top = 96
           Width = 120
           Caption = 'Delete'
           OnClick = BtnDeleteClick
@@ -112,7 +297,7 @@ object FrmMain: TFrmMain
         object BtnSave: TBitBtn
           Left = 176
           Height = 40
-          Top = 78
+          Top = 96
           Width = 112
           Caption = 'Save'
           OnClick = BtnSaveClick
@@ -121,7 +306,7 @@ object FrmMain: TFrmMain
         object BtnNew: TBitBtn
           Left = 16
           Height = 40
-          Top = 78
+          Top = 96
           Width = 110
           Caption = 'New'
           OnClick = BtnNewClick
@@ -175,12 +360,12 @@ object FrmMain: TFrmMain
       end
       object Pan: TPanel
         Left = 0
-        Height = 106
+        Height = 122
         Top = 0
-        Width = 876
+        Width = 1096
         Align = alTop
-        ClientHeight = 106
-        ClientWidth = 876
+        ClientHeight = 122
+        ClientWidth = 1096
         TabOrder = 2
         OnClick = PanClick
         object DBENameEmployee: TDBEdit
@@ -188,7 +373,7 @@ object FrmMain: TFrmMain
           Height = 36
           Top = 24
           Width = 154
-          DataField = 'Name_employee'
+          DataField = 'Name_Employee'
           DataSource = DataMod.DsoEmployees
           CharCase = ecNormal
           MaxLength = 256
@@ -198,13 +383,12 @@ object FrmMain: TFrmMain
           Left = 136
           Height = 28
           Top = 27
-          Width = 77
+          Width = 72
           AutoSize = False
           Caption = 'Name:'
           Font.Height = 29
           ParentColor = False
           ParentFont = False
-          OptimalFill = True
         end
         object PanPicEmployee: TPanel
           Left = 22
@@ -232,14 +416,101 @@ object FrmMain: TFrmMain
             Stretch = True
           end
         end
+        object DBESurname1: TDBEdit
+          Left = 528
+          Height = 36
+          Top = 24
+          Width = 194
+          DataField = 'Surname1_Employee'
+          DataSource = DataMod.DsoEmployees
+          CharCase = ecNormal
+          MaxLength = 256
+          TabOrder = 2
+        end
+        object LblNameEmployee1: TLabel
+          Left = 403
+          Height = 28
+          Top = 27
+          Width = 109
+          AutoSize = False
+          Caption = 'Surname 1:'
+          Font.Height = 29
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBENameEmployee2: TDBEdit
+          Left = 877
+          Height = 36
+          Top = 24
+          Width = 194
+          DataField = 'Surname2_Employee'
+          DataSource = DataMod.DsoEmployees
+          CharCase = ecNormal
+          MaxLength = 256
+          TabOrder = 3
+        end
+        object LblSurname2: TLabel
+          Left = 752
+          Height = 28
+          Top = 27
+          Width = 109
+          AutoSize = False
+          Caption = 'Surname 2:'
+          Font.Height = 29
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBENameEmployee3: TDBEdit
+          Left = 216
+          Height = 36
+          Top = 72
+          Width = 154
+          DataField = 'IDCard_Employee'
+          DataSource = DataMod.DsoEmployees
+          CharCase = ecNormal
+          MaxLength = 256
+          TabOrder = 4
+        end
+        object LblIDCard: TLabel
+          Left = 136
+          Height = 28
+          Top = 75
+          Width = 69
+          AutoSize = False
+          Caption = 'ID Card:'
+          Font.Height = 29
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBESSN: TDBEdit
+          Left = 528
+          Height = 36
+          Top = 75
+          Width = 194
+          DataField = 'SSN_Employee'
+          DataSource = DataMod.DsoEmployees
+          CharCase = ecNormal
+          MaxLength = 256
+          TabOrder = 5
+        end
+        object LblSSE: TLabel
+          Left = 403
+          Height = 28
+          Top = 78
+          Width = 125
+          AutoSize = False
+          Caption = 'SSN Number:'
+          Font.Height = 29
+          ParentColor = False
+          ParentFont = False
+        end
       end
     end
   end
   object ImgLstBtn: TImageList
     Height = 22
     Width = 22
-    left = 600
-    top = 8
+    left = 872
     Bitmap = {
       4C690700000016000000160000000000000000000000FFFFFF1AFFFFFF90FFFF
       FFD5FEFEFEE2FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEDFFFFF
@@ -668,11 +939,9 @@ object FrmMain: TFrmMain
     }
   end
   object OpenDlg: TOpenDialog
-    left = 712
-    top = 8
+    left = 944
   end
   object SaveDlg: TSaveDialog
-    left = 792
-    top = 8
+    left = 1016
   end
 end

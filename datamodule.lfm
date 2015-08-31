@@ -13,6 +13,9 @@ object DataMod: TDataMod
     Connected = False
     LoginPrompt = False
     KeepConnection = False
+    Params.Strings = (
+      'foreign_keys=on'
+    )
     Transaction = Transaction
     LogEvents = []
     Options = []

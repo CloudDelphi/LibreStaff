@@ -9,7 +9,8 @@ uses
   db, sqldb, LCLType;
 
 procedure ConnectDatabase;
-function  DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean; Target: String): Boolean;
+function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
+         Target: String=''): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String);
 function AppendTableRecord(Query: TSQLQuery): Boolean;
 procedure SaveTable(Query: TSQLQuery);
@@ -34,16 +35,25 @@ begin
     DataMod.Transaction.Active:= TRUE;
     // Here we're setting up a table named "DATA" in the new database
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
-           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
-           ' Employee_ID INTEGER NOT NULL,'+
-           ' Pic_Employee BLOB,'+
-    	     ' FOREIGN KEY(Employee_ID) REFERENCES Employees(ID_Employee));');
+          ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
+          ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
+          ' Pic_Employee BLOB);');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
-           ' ID_Employee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
-           ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
-           ' Surname_Employee CHAR(256) NOT NULL DEFAULT "",'+
-           ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "");');
+          ' ID_Employee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
+          ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
+          ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
+          ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
+          ' IDCard_Employee CHAR(256) NOT NULL DEFAULT "",'+
+          ' SSN_Employee CHAR(256) NOT NULL DEFAULT "",'+
+    			' Address_Employee MEMO(512) NOT NULL DEFAULT "",'+
+       		' City_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       		' State_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       		' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       		' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       		' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
+			    ' EMail_Employee CHAR(256) NOT NULL DEFAULT "");');
+
     //Creating an index based upon id in the DATA Table
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
     DataMod.Transaction.Commit;
@@ -52,7 +62,7 @@ begin
     end;
   end;
 end;
-function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean; Target: String): Boolean;
+function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False; Target: String=''): Boolean;
 var
   ConfirmDel, Style: Integer;
   Msg: PChar;
@@ -75,7 +85,10 @@ begin
 					Result:= False;
           end;
           end;
-    IDCANCEL: Exit;
+    IDCANCEL: begin
+     					Result:= False;
+          		Exit;
+              end;
   end; //case
 end;
 

@@ -94,7 +94,7 @@ begin
   else
   	begin
   	if EmployeeHasPic= True then
-      FuncData.DeleteTableRecord(DataMod.QuePicsEmployees, FALSE, '');
+      FuncData.DeleteTableRecord(DataMod.QuePicsEmployees);
     end;
 	Close;
 

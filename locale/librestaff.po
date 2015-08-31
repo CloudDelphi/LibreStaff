@@ -66,6 +66,11 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
+#: tfrmmain.btneditstatelist.caption
+msgctxt "TFRMMAIN.BTNEDITSTATELIST.CAPTION"
+msgid "..."
+msgstr ""
+
 #: tfrmmain.btnnew.caption
 msgid "New"
 msgstr ""
@@ -78,8 +83,76 @@ msgstr ""
 msgid "FrmMain"
 msgstr ""
 
+#: tfrmmain.grpaddressemployee.caption
+msgctxt "TFRMMAIN.GRPADDRESSEMPLOYEE.CAPTION"
+msgid "Address"
+msgstr ""
+
+#: tfrmmain.grprcontactemployee.caption
+msgctxt "TFRMMAIN.GRPRCONTACTEMPLOYEE.CAPTION"
+msgid "Contact"
+msgstr ""
+
+#: tfrmmain.imgexit.hint
+msgid "Close app"
+msgstr ""
+
+#: tfrmmain.lbladdress.caption
+msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
+msgid "Address:"
+msgstr ""
+
+#: tfrmmain.lblcell.caption
+msgctxt "TFRMMAIN.LBLCELL.CAPTION"
+msgid "Cell Phone:"
+msgstr ""
+
+#: tfrmmain.lblcity.caption
+msgctxt "TFRMMAIN.LBLCITY.CAPTION"
+msgid "City:"
+msgstr ""
+
+#: tfrmmain.lblemail.caption
+msgctxt "TFRMMAIN.LBLEMAIL.CAPTION"
+msgid "E-Mail:"
+msgstr ""
+
+#: tfrmmain.lblidcard.caption
+msgctxt "TFRMMAIN.LBLIDCARD.CAPTION"
+msgid "ID Card:"
+msgstr ""
+
 #: tfrmmain.lblnameemployee.caption
 msgid "Name:"
+msgstr ""
+
+#: tfrmmain.lblnameemployee1.caption
+msgid "Surname 1:"
+msgstr ""
+
+#: tfrmmain.lblphone.caption
+msgctxt "TFRMMAIN.LBLPHONE.CAPTION"
+msgid "Phone:"
+msgstr ""
+
+#: tfrmmain.lblsse.caption
+msgctxt "TFRMMAIN.LBLSSE.CAPTION"
+msgid "SSN Number:"
+msgstr ""
+
+#: tfrmmain.lblstate.caption
+msgctxt "TFRMMAIN.LBLSTATE.CAPTION"
+msgid "State:"
+msgstr ""
+
+#: tfrmmain.lblsurname2.caption
+msgctxt "TFRMMAIN.LBLSURNAME2.CAPTION"
+msgid "Surname 2:"
+msgstr ""
+
+#: tfrmmain.lblzipcode.caption
+msgctxt "TFRMMAIN.LBLZIPCODE.CAPTION"
+msgid "ZIP Code:"
 msgstr ""
 
 #: tfrmmain.panpicemployee.caption
@@ -91,7 +164,8 @@ msgstr ""
 msgid "TabEmployees"
 msgstr ""
 
-#: tfrmmain.tabsheet1.caption
+#: tfrmmain.tabpersonaldata.caption
+msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
 msgid "Personal Data"
 msgstr ""
 
@@ -123,3 +197,4 @@ msgstr ""
 msgctxt "TFRMPICEMPLOYEE.PANPICEMPLOYEE.CAPTION"
 msgid "[Photo]"
 msgstr ""
+

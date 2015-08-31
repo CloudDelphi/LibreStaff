@@ -12,14 +12,39 @@ uses
 type
   { TFrmMain }
   TFrmMain = class(TForm)
+    BtnEditStateList: TBitBtn;
     BtnSave: TBitBtn;
     BtnDelete: TBitBtn;
     BtnNew: TBitBtn;
+    DBCboState: TDBComboBox;
     DBENameEmployee: TDBEdit;
+    DBESurname1: TDBEdit;
+    DBENameEmployee2: TDBEdit;
+    DBENameEmployee3: TDBEdit;
+    DBESSN: TDBEdit;
+    DBENameEmployee5: TDBEdit;
+    DBECity: TDBEdit;
+    DBEPhone: TDBEdit;
+    DBECell: TDBEdit;
+    DBEEmail: TDBEdit;
+    MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
+    GrpAddressEmployee: TGroupBox;
+    GrprContactEmployee: TGroupBox;
     ImgLstBtn: TImageList;
     ImgExit: TImage;
     LblNameEmployee: TLabel;
+    LblNameEmployee1: TLabel;
+    LblPhone: TLabel;
+    LblCell: TLabel;
+    LblEMail: TLabel;
+    LblSurname2: TLabel;
+    LblIDCard: TLabel;
+    LblSSE: TLabel;
+    LblAddress: TLabel;
+    LblZipCode: TLabel;
+    LblCity: TLabel;
+    LblState: TLabel;
     LblNavRec: TLabel;
     OpenDlg: TOpenDialog;
     PagMain: TPageControl;
@@ -33,7 +58,7 @@ type
     SaveDlg: TSaveDialog;
     StatusBar1: TStatusBar;
     TabEmployees: TTabSheet;
-    TabSheet1: TTabSheet;
+    TabPersonalData: TTabSheet;
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
