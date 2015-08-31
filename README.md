@@ -10,4 +10,5 @@ How to Compile
 --------------
 1) Download Lazarus.<br />
 2) Open the project (librestaff.lpi).<br />
-3) Goto to "Menu" -> Compile.<br />
+3) Delete data.db file if exists.<br />
+4) Goto to "Menu" -> Compile.<br />
