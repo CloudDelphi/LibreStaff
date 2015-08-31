@@ -1,0 +1,39 @@
+object DataMod: TDataMod
+  OldCreateOrder = False
+  Height = 405
+  HorizontalOffset = 1285
+  VerticalOffset = 458
+  Width = 431
+  object DsoEmployees: TDataSource
+    DataSet = QueEmployees
+    left = 192
+    top = 152
+  end
+  object Connection: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = Transaction
+    LogEvents = []
+    Options = []
+    left = 56
+    top = 32
+  end
+  object QueEmployees: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    SQL.Strings = (
+      ''
+    )
+    Params = <>
+    left = 32
+    top = 152
+  end
+  object Transaction: TSQLTransaction
+    Active = False
+    Database = Connection
+    left = 184
+    top = 32
+  end
+end

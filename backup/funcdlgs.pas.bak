@@ -1,0 +1,26 @@
+unit FuncDlgs;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FormMain;
+
+function OpenDlg(Title:string; Filter:string; InitPath: String; Filename:string):
+         Boolean;
+
+implementation
+
+function OpenDlg(Title:string; Filter:string; InitPath: String; Filename:string):
+         Boolean;
+begin
+  FrmMain.OpenDlg.Title:= Title;
+  FrmMain.OpenDlg.Filter := Filter;
+  FrmMain.OpenDlg.FileName:= Filename;
+  FrmMain.OpenDlg.InitialDir:= InitPath;
+  Result:= FrmMain.OpenDlg.Execute;
+end;
+
+end.
+
