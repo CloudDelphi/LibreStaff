@@ -1,5 +1,6 @@
 # LibreStaff
 Management of personnel
+Characteristics
 -----------------------
 Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
 Compiler: <a href="http://www.lazarus-ide.org/">Lazarus</a><br />
