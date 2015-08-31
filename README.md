@@ -1,8 +1,8 @@
 # LibreStaff
 Management of personnel
 -----------------------
-Language: FreePascal
-Compiler: Lazarus (http://www.lazarus-ide.org/)
+Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
+Compiler: Lazarus (http://www.lazarus-ide.org/)<br />
 
 HOW TO COMPILE
 --------------
