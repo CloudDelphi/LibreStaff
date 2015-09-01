@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, formmain, funcdata, Classes, DataModule, DefaultTranslator,
-  FormPreferences, frameclose;
+  FormPreferences, frameclose, FormSearch;
 
 {$R *.res}
 
@@ -18,6 +18,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TDataMod, DataMod);
   Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TFrmSearch, FrmSearch);
   Application.Run;
 end.
 

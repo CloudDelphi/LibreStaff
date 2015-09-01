@@ -15,6 +15,7 @@ type
 type
   { TFrmMain }
   TFrmMain = class(TForm)
+    BtnSearch: TBitBtn;
     BtnEditStateList: TBitBtn;
     BtnSave: TBitBtn;
     BtnDelete: TBitBtn;
@@ -69,6 +70,7 @@ type
     procedure BtnEditStateListClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
+    procedure BtnSearchClick(Sender: TObject);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -102,7 +104,7 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData, FormListEditor;
+    FuncData, FormListEditor, FormSearch;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -139,6 +141,7 @@ begin
 	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
 	ImgLstBtn.GetBitmap(2, BtnDelete.Glyph);
 	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
 	TotalRecs:= DataMod.QueEmployees.RecordCount;
 	UpdateNavRec;
 	//Load the combos:
@@ -161,6 +164,13 @@ end;
 procedure TFrmMain.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueEmployees);
+end;
+
+procedure TFrmMain.BtnSearchClick(Sender: TObject);
+begin
+	FrmSearch.Search;
+  FrmSearch.Free;
+  FrmSearch:= nil;
 end;
 
 procedure TFrmMain.DBNavClick(Sender: TObject; Button: TDBNavButtonType);

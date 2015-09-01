@@ -132,6 +132,11 @@ msgctxt "tfrmmain.btnsave.caption"
 msgid "Save"
 msgstr "Guardar"
 
+#: tfrmmain.btnsearch.caption
+msgctxt "tfrmmain.btnsearch.caption"
+msgid "Search"
+msgstr ""
+
 #: tfrmmain.caption
 #, fuzzy
 #| msgid "FrmMain"
@@ -276,4 +281,28 @@ msgstr "Ruta base de datos:"
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
 msgstr "Base de datos"
+
+#: tfrmsearch.btnclose.caption
+#, fuzzy
+msgctxt "tfrmsearch.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrmsearch.btnsearch.caption
+msgctxt "tfrmsearch.btnsearch.caption"
+msgid "Search"
+msgstr ""
+
+#: tfrmsearch.btnviewall.caption
+msgid "View All"
+msgstr ""
+
+#: tfrmsearch.caption
+msgctxt "tfrmsearch.caption"
+msgid "Search"
+msgstr ""
+
+#: tfrmsearch.label1.caption
+msgid "Query Result"
+msgstr ""
 

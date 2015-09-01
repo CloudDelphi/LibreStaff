@@ -58,7 +58,6 @@ end;
 //------------------------------------------------------------------------------
 procedure TFrmListEditor.FormCreate(Sender: TObject);
 begin
-  {Poner los iconos en los botones}
   FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveList.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);

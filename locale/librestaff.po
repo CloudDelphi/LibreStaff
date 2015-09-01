@@ -132,6 +132,11 @@ msgctxt "tfrmmain.btnsave.caption"
 msgid "Save"
 msgstr ""
 
+#: tfrmmain.btnsearch.caption
+msgctxt "tfrmmain.btnsearch.caption"
+msgid "Search"
+msgstr ""
+
 #: tfrmmain.caption
 msgid "LibreStaff"
 msgstr ""
@@ -272,5 +277,28 @@ msgstr ""
 #: tfrmpreferences.tabdatabase.caption
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
+msgstr ""
+
+#: tfrmsearch.btnclose.caption
+msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr ""
+
+#: tfrmsearch.btnsearch.caption
+msgctxt "TFRMSEARCH.BTNSEARCH.CAPTION"
+msgid "Search"
+msgstr ""
+
+#: tfrmsearch.btnviewall.caption
+msgid "View All"
+msgstr ""
+
+#: tfrmsearch.caption
+msgctxt "tfrmsearch.caption"
+msgid "Search"
+msgstr ""
+
+#: tfrmsearch.label1.caption
+msgid "Query Result"
 msgstr ""
 
