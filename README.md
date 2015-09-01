@@ -1,6 +1,6 @@
 # LibreStaff
-Management of personnel
-<a href="http://runsy.github.io/LibreStaff/">Website</a><br />
+Software for the management of personnel.
+<br /><a href="http://runsy.github.io/LibreStaff/">Website</a><br />
 Characteristics
 -----------------------
 Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
