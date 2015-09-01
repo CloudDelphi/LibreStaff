@@ -2,10 +2,10 @@
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.1-alpha
+AppVerName=v0.0.2-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.1-alpha
+OutputBaseFilename=LibreStaff_v0.0.2-alpha
 Uninstallable=yes
 ;WizardImageFile=
 WizardImageStretch=no
