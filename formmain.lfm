@@ -1,11 +1,11 @@
 object FrmMain: TFrmMain
   Left = 628
-  Height = 853
-  Top = 51
-  Width = 1104
+  Height = 709
+  Top = 195
+  Width = 1142
   Caption = 'LibreStaff'
-  ClientHeight = 853
-  ClientWidth = 1104
+  ClientHeight = 709
+  ClientWidth = 1142
   OnClose = FormClose
   OnCreate = FormCreate
   LCLVersion = '1.4.2.0'
@@ -14,13 +14,13 @@ object FrmMain: TFrmMain
     Left = 0
     Height = 50
     Top = 0
-    Width = 1104
+    Width = 1142
     Align = alTop
     ClientHeight = 50
-    ClientWidth = 1104
+    ClientWidth = 1142
     TabOrder = 0
     object ImgExit: TImage
-      Left = 1055
+      Left = 1093
       Height = 48
       Hint = 'Close app'
       Top = 1
@@ -59,7 +59,7 @@ object FrmMain: TFrmMain
       ShowHint = True
     end
     object ImGPreferences: TImage
-      Left = 983
+      Left = 1021
       Height = 48
       Hint = 'Preferences'
       Top = 1
@@ -116,7 +116,7 @@ object FrmMain: TFrmMain
       ShowHint = True
     end
     object PanSep: TPanel
-      Left = 1031
+      Left = 1069
       Height = 48
       Top = 1
       Width = 24
@@ -128,15 +128,15 @@ object FrmMain: TFrmMain
   object StatusBar1: TStatusBar
     Left = 0
     Height = 28
-    Top = 825
-    Width = 1104
+    Top = 681
+    Width = 1142
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 775
+    Height = 631
     Top = 50
-    Width = 1104
+    Width = 1142
     ActivePage = TabEmployees
     Align = alClient
     ShowTabs = False
@@ -144,21 +144,21 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 767
-      ClientWidth = 1096
+      ClientHeight = 623
+      ClientWidth = 1134
       object PagEmployees: TPageControl
         Left = 0
-        Height = 500
+        Height = 356
         Top = 122
-        Width = 1096
+        Width = 1134
         ActivePage = TabPersonalData
         Align = alClient
         TabIndex = 0
         TabOrder = 0
         object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
-          ClientHeight = 459
-          ClientWidth = 1088
+          ClientHeight = 315
+          ClientWidth = 1126
           object GrpAddressEmployee: TGroupBox
             Left = 16
             Height = 252
@@ -346,12 +346,12 @@ object FrmMain: TFrmMain
       object Panel1: TPanel
         Left = 0
         Height = 145
-        Top = 622
-        Width = 1096
+        Top = 478
+        Width = 1134
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 145
-        ClientWidth = 1096
+        ClientWidth = 1134
         TabOrder = 1
         object BtnDelete: TBitBtn
           Left = 512
@@ -439,10 +439,10 @@ object FrmMain: TFrmMain
         Left = 0
         Height = 122
         Top = 0
-        Width = 1096
+        Width = 1134
         Align = alTop
         ClientHeight = 122
-        ClientWidth = 1096
+        ClientWidth = 1134
         TabOrder = 2
         object DBENameEmployee: TDBEdit
           Left = 216
@@ -1208,5 +1208,16 @@ object FrmMain: TFrmMain
   object SelectDirDlg: TSelectDirectoryDialog
     left = 992
     top = 336
+  end
+  object PopNot: TPopupNotifier
+    Color = 14483455
+    Icon.Data = {
+      07544269746D617000000000
+    }
+    Text = 'Text'
+    Title = 'Caption'
+    Visible = False
+    left = 864
+    top = 440
   end
 end

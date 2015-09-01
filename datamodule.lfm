@@ -1,6 +1,6 @@
 object DataMod: TDataMod
   OldCreateOrder = False
-  Height = 405
+  Height = 468
   HorizontalOffset = 1285
   VerticalOffset = 458
   Width = 431
@@ -14,6 +14,7 @@ object DataMod: TDataMod
     LoginPrompt = False
     KeepConnection = False
     Params.Strings = (
+      'case_sensitive_like=ON'
       'foreign_keys=on'
     )
     Transaction = Transaction
@@ -52,5 +53,18 @@ object DataMod: TDataMod
     DataSource = DsoEmployees
     left = 72
     top = 264
+  end
+  object DsoSearch: TDataSource
+    DataSet = QueSearch
+    left = 248
+    top = 360
+  end
+  object QueSearch: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    left = 72
+    top = 360
   end
 end

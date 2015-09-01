@@ -1,4 +1,4 @@
-unit frameclose;
+unit FrameClose;
 
 {$mode objfpc}{$H+}
 

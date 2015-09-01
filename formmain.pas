@@ -8,10 +8,14 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
   Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids, Buttons,
   DataModule, types, FormPicEmployee, FormPreferences, INIfiles, Translations,
-  gettext;
+  PopupNotifier, gettext;
 
 type
+	TDataFormat= (dtString, dtInteger, dtDate);
+type
 	TCboListType= (cblStates);
+type
+	TWhatSearch= (wsEmployees);
 type
   { TFrmMain }
   TFrmMain = class(TForm)
@@ -61,6 +65,7 @@ type
     PanNavRec: TPanel;
     PanMain: TPanel;
     PicEmployee: TDBImage;
+    PopNot: TPopupNotifier;
     SaveDlg: TSaveDialog;
     SelectDirDlg: TSelectDirectoryDialog;
     StatusBar1: TStatusBar;
@@ -80,9 +85,9 @@ type
   private
     { private declarations }
     CurrentRec, TotalRecs: Integer;
-    procedure UpdateNavRec;
   public
     { public declarations }
+    procedure UpdateNavRec;
   end;
 
 var
@@ -168,7 +173,7 @@ end;
 
 procedure TFrmMain.BtnSearchClick(Sender: TObject);
 begin
-	FrmSearch.Search;
+	FrmSearch.Search(wsEmployees);
   FrmSearch.Free;
   FrmSearch:= nil;
 end;

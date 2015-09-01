@@ -298,7 +298,20 @@ msgctxt "tfrmsearch.caption"
 msgid "Search"
 msgstr ""
 
+#: tfrmsearch.chkcasesensitive.caption
+msgctxt "TFRMSEARCH.CHKCASESENSITIVE.CAPTION"
+msgid "Case sensitive"
+msgstr ""
+
+#: tfrmsearch.chkclose.caption
+msgid "Close on select"
+msgstr ""
+
 #: tfrmsearch.label1.caption
 msgid "Query Result"
+msgstr ""
+
+#: tfrmsearch.lblsearchcriteria.caption
+msgid "Search Criteria"
 msgstr ""
 

@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, formmain, funcdata, Classes, DataModule, DefaultTranslator,
-  FormPreferences, frameclose, FormSearch;
+  FormPreferences, FrameClose, FormSearch;
 
 {$R *.res}
 

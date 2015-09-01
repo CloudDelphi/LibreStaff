@@ -11,7 +11,8 @@ uses
 procedure ConnectDatabase(DatabasePath: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
-procedure ExecSQL(Query: TSQLQuery; SQL: String);
+procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
+//procedure ExecSQLStrLst(Query: TSQLQuery; SQLStrLst: TStringList);
 function AppendTableRecord(Query: TSQLQuery): Boolean;
 procedure SaveTable(Query: TSQLQuery);
 
@@ -92,14 +93,19 @@ begin
   end; //case
 end;
 
-procedure ExecSQL(Query: TSQLQuery; SQL: String);
+procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 begin
   Query.Close;
   Query.SQL.Clear;
-  Query.SQL.Add(SQL);
+  if IsStrLst= False then
+	  Query.SQL.Add(SQL)
+	else
+    begin
+    Query.SQL.Assign(StrLst);
+    StrLst.Free;
+    end;
 	Query.Open;
 end;
-
 function AppendTableRecord(Query: TSQLQuery): Boolean;
 begin
   try

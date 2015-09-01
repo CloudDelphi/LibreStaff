@@ -12,11 +12,13 @@ type
   { TDataModule1 }
 
   TDataMod = class(TDataModule)
+    DsoSearch: TDataSource;
     DsoPicsEmployees: TDataSource;
     DsoEmployees: TDataSource;
     Connection: TSQLite3Connection;
     QueEmployees: TSQLQuery;
     QuePicsEmployees: TSQLQuery;
+    QueSearch: TSQLQuery;
     Transaction: TSQLTransaction;
   private
     { private declarations }

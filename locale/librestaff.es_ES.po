@@ -135,7 +135,7 @@ msgstr "Guardar"
 #: tfrmmain.btnsearch.caption
 msgctxt "tfrmmain.btnsearch.caption"
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: tfrmmain.caption
 #, fuzzy
@@ -283,7 +283,6 @@ msgid "Database"
 msgstr "Base de datos"
 
 #: tfrmsearch.btnclose.caption
-#, fuzzy
 msgctxt "tfrmsearch.btnclose.caption"
 msgid "Close"
 msgstr "Cerrar"
@@ -291,18 +290,31 @@ msgstr "Cerrar"
 #: tfrmsearch.btnsearch.caption
 msgctxt "tfrmsearch.btnsearch.caption"
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: tfrmsearch.btnviewall.caption
 msgid "View All"
-msgstr ""
+msgstr "Ver todo"
 
 #: tfrmsearch.caption
 msgctxt "tfrmsearch.caption"
 msgid "Search"
+msgstr "Buscar"
+
+#: tfrmsearch.chkcasesensitive.caption
+msgctxt "tfrmsearch.chkcasesensitive.caption"
+msgid "Case sensitive"
+msgstr ""
+
+#: tfrmsearch.chkclose.caption
+msgid "Close on select"
 msgstr ""
 
 #: tfrmsearch.label1.caption
 msgid "Query Result"
+msgstr "Resultado de la busqueda"
+
+#: tfrmsearch.lblsearchcriteria.caption
+msgid "Search Criteria"
 msgstr ""
 

@@ -1,29 +1,31 @@
 object FrmSearch: TFrmSearch
   Left = 552
-  Height = 521
+  Height = 519
   Top = 275
   Width = 801
   BorderIcons = [biSystemMenu]
   Caption = 'Search'
-  ClientHeight = 521
+  ClientHeight = 519
   ClientWidth = 801
+  OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.4.2.0'
   object PanLeft: TPanel
     Left = 0
-    Height = 521
+    Height = 519
     Top = 0
     Width = 224
     Align = alLeft
-    ClientHeight = 521
+    ClientHeight = 519
     ClientWidth = 224
     TabOrder = 0
-    object EditSearch: TEdit
+    object EdiSearch: TEdit
       Left = 8
       Height = 36
       Top = 29
       Width = 201
+      OnKeyPress = EdiSearchKeyPress
       TabOrder = 0
     end
     object BtnSearch: TBitBtn
@@ -32,6 +34,7 @@ object FrmSearch: TFrmSearch
       Top = 72
       Width = 201
       Caption = 'Search'
+      OnClick = BtnSearchClick
       TabOrder = 1
     end
     object BtnClose: TBitBtn
@@ -45,38 +48,71 @@ object FrmSearch: TFrmSearch
       TabOrder = 2
     end
     object BtnViewAll: TBitBtn
-      Left = 40
+      Left = 48
       Height = 43
-      Top = 128
-      Width = 128
+      Top = 408
+      Width = 112
       Caption = 'View All'
+      OnClick = BtnViewAllClick
       TabOrder = 3
+    end
+    object ChkLstBoxSearch: TCheckListBox
+      Left = 9
+      Height = 192
+      Top = 168
+      Width = 203
+      ItemHeight = 0
+      TabOrder = 4
+    end
+    object LblSearchCriteria: TLabel
+      Left = 9
+      Height = 28
+      Top = 136
+      Width = 202
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Search Criteria'
+      ParentColor = False
+    end
+    object ChkCaseSensitive: TCheckBox
+      Left = 11
+      Height = 33
+      Top = 360
+      Width = 153
+      Caption = 'Case sensitive'
+      TabOrder = 5
     end
   end
   object Splitter: TSplitter
     Left = 224
-    Height = 521
+    Height = 519
     Top = 0
     Width = 4
   end
   object PanRight: TPanel
     Left = 228
-    Height = 521
+    Height = 519
     Top = 0
     Width = 573
-    Align = alClient
-    ClientHeight = 521
+    Align = alRight
+    ClientHeight = 519
     ClientWidth = 573
     TabOrder = 2
     object DBGridSearchResult: TDBGrid
       Left = 1
-      Height = 491
+      Height = 457
       Top = 29
       Width = 571
       Align = alClient
+      AutoEdit = False
+      AutoFillColumns = True
       Color = clWindow
       Columns = <>
+      DataSource = DataMod.DsoSearch
+      Flat = True
+      ReadOnly = True
       TabOrder = 0
+      OnCellClick = DBGridSearchResultCellClick
     end
     object Label1: TLabel
       Left = 1
@@ -87,6 +123,35 @@ object FrmSearch: TFrmSearch
       Alignment = taCenter
       Caption = 'Query Result'
       ParentColor = False
+    end
+    object PanOptions: TPanel
+      Left = 1
+      Height = 32
+      Top = 486
+      Width = 571
+      Align = alBottom
+      BevelOuter = bvNone
+      ClientHeight = 32
+      ClientWidth = 571
+      TabOrder = 1
+      object ChkClose: TCheckBox
+        Left = 264
+        Height = 33
+        Top = 0
+        Width = 163
+        Caption = 'Close on select'
+        Checked = True
+        State = cbChecked
+        TabOrder = 0
+      end
+      object LblResult: TLabel
+        Left = 9
+        Height = 28
+        Top = 3
+        Width = 167
+        AutoSize = False
+        ParentColor = False
+      end
     end
   end
 end
