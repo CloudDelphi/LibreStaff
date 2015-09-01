@@ -35,9 +35,9 @@
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="18" Y="12"/>
         <UsageCount Value="90"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -47,9 +47,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="178"/>
-        <CursorPos X="3" Y="180"/>
+        <TopLine Value="210"/>
+        <CursorPos X="25" Y="212"/>
         <UsageCount Value="90"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -58,11 +57,10 @@
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="38"/>
         <CursorPos X="12" Y="52"/>
         <UsageCount Value="88"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -71,11 +69,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="14" Y="10"/>
         <UsageCount Value="87"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -96,21 +92,18 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameSaveCancel"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="33" Y="19"/>
         <UsageCount Value="61"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="funcdlgs.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncDlgs"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="17" Y="13"/>
         <UsageCount Value="59"/>
-        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="formpreferences.pas"/>
@@ -119,12 +112,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="34"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="64"/>
         <CursorPos Y="49"/>
         <UsageCount Value="45"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="frameclose.pas"/>
@@ -133,11 +124,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameClose"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="14" Y="3"/>
         <UsageCount Value="43"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="formlisteditor.pas"/>
@@ -146,12 +135,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormListEditor"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="36"/>
         <CursorPos X="20" Y="49"/>
         <UsageCount Value="39"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -160,12 +147,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="75"/>
-        <CursorPos X="60" Y="92"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="113"/>
+        <CursorPos X="39" Y="99"/>
         <UsageCount Value="34"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="C:\sprite.pas"/>
@@ -241,11 +226,10 @@
       </Unit20>
       <Unit21>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="1461"/>
         <CursorPos Y="1474"/>
         <UsageCount Value="21"/>
-        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-db\src\base\db.pas"/>
@@ -329,7 +313,7 @@
         <UsageCount Value="9"/>
       </Unit32>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="168" Column="33" TopLine="155"/>
@@ -379,77 +363,41 @@
         <Caret Line="176" TopLine="160"/>
       </Position12>
       <Position13>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="117" Column="28" TopLine="96"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="132" TopLine="126"/>
       </Position13>
       <Position14>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="112" TopLine="96"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="136" Column="17" TopLine="123"/>
       </Position14>
       <Position15>
         <Filename Value="formmain.pas"/>
-        <Caret Line="132" TopLine="126"/>
+        <Caret Line="134" TopLine="123"/>
       </Position15>
       <Position16>
         <Filename Value="formmain.pas"/>
-        <Caret Line="136" Column="17" TopLine="123"/>
+        <Caret Line="150" Column="20" TopLine="138"/>
       </Position16>
       <Position17>
         <Filename Value="formmain.pas"/>
-        <Caret Line="134" TopLine="123"/>
+        <Caret Line="11" Column="3"/>
       </Position17>
       <Position18>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="117" TopLine="96"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="161" Column="29" TopLine="156"/>
       </Position18>
       <Position19>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="118" TopLine="97"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="215" Column="27" TopLine="194"/>
       </Position19>
       <Position20>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="119" TopLine="98"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="232" Column="32" TopLine="215"/>
       </Position20>
       <Position21>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="76" Column="2" TopLine="74"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="159" Column="30" TopLine="145"/>
       </Position21>
-      <Position22>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="150" Column="20" TopLine="138"/>
-      </Position22>
-      <Position23>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="11" Column="3"/>
-      </Position23>
-      <Position24>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="126" TopLine="84"/>
-      </Position24>
-      <Position25>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="127" TopLine="102"/>
-      </Position25>
-      <Position26>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="126" TopLine="101"/>
-      </Position26>
-      <Position27>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="125" TopLine="100"/>
-      </Position27>
-      <Position28>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="124" TopLine="99"/>
-      </Position28>
-      <Position29>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="123" TopLine="98"/>
-      </Position29>
-      <Position30>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="127" TopLine="102"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

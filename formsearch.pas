@@ -99,13 +99,13 @@ begin
                     ChkLstBoxSearch.Checked[i]:= SearchCriteria[i].Fixed;
                     end;
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[0].Title.Caption:= 'Name';
+                 	DBGridSearchResult.Columns[0].Title.Caption:= CriteriaEmployeeName;
                   DBGridSearchResult.Columns[0].FieldName:= 'Name_Employee';
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[1].Title.Caption:= 'Surname 1';
+                 	DBGridSearchResult.Columns[1].Title.Caption:= CriteriaSurname1Name;
                   DBGridSearchResult.Columns[1].FieldName:= 'Surname1_Employee';
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[2].Title.Caption:= 'Surname 2';
+                 	DBGridSearchResult.Columns[2].Title.Caption:= CriteriaSurname2Name;
                   DBGridSearchResult.Columns[2].FieldName:= 'Surname2_Employee';
 						     	end;
   end; //case

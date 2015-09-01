@@ -156,6 +156,7 @@ begin
   	begin
     BtnSave.Enabled:= False;
     BtnDelete.Enabled:= False;
+    BtnSearch.Enabled:= False;
 		end;
 	FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
 	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
@@ -212,6 +213,7 @@ begin
          begin
          BtnSave.Enabled:= True;
          BtnDelete.Enabled:= True;
+         BtnSearch.Enabled:= True;
          end;
 	   end;
 end;
@@ -228,6 +230,7 @@ begin
     	begin
       BtnSave.Enabled:= False;
       BtnDelete.Enabled:= False;
+      BtnSearch.Enabled:= False;
       end;
     end;
 end;
