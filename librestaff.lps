@@ -306,7 +306,7 @@
         <UsageCount Value="10"/>
       </Unit30>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="formlisteditor.pas"/>
         <Caret Line="50" Column="13" TopLine="45"/>
@@ -368,65 +368,57 @@
         <Caret Line="60" Column="18" TopLine="14"/>
       </Position15>
       <Position16>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="14" Column="41" TopLine="100"/>
+        <Filename Value="formlisteditor.pas"/>
+        <Caret Line="41" Column="65" TopLine="32"/>
       </Position16>
       <Position17>
         <Filename Value="formlisteditor.pas"/>
-        <Caret Line="41" Column="65" TopLine="32"/>
+        <Caret Line="61" Column="18" TopLine="46"/>
       </Position17>
       <Position18>
         <Filename Value="formlisteditor.pas"/>
-        <Caret Line="61" Column="18" TopLine="46"/>
+        <Caret Line="28" Column="85" TopLine="20"/>
       </Position18>
       <Position19>
         <Filename Value="formlisteditor.pas"/>
-        <Caret Line="28" Column="85" TopLine="20"/>
+        <Caret Line="38" TopLine="15"/>
       </Position19>
       <Position20>
         <Filename Value="formlisteditor.pas"/>
-        <Caret Line="38" TopLine="15"/>
+        <Caret Line="9" Column="39"/>
       </Position20>
       <Position21>
-        <Filename Value="formlisteditor.pas"/>
-        <Caret Line="9" Column="39"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="103" Column="15" TopLine="79"/>
       </Position21>
       <Position22>
         <Filename Value="formmain.pas"/>
-        <Caret Line="103" Column="15" TopLine="79"/>
+        <Caret Line="14" Column="17"/>
       </Position22>
       <Position23>
         <Filename Value="formmain.pas"/>
-        <Caret Line="14" Column="17"/>
+        <Caret Line="146" Column="27" TopLine="141"/>
       </Position23>
       <Position24>
         <Filename Value="formmain.pas"/>
-        <Caret Line="146" Column="27" TopLine="141"/>
+        <Caret Line="142" Column="55" TopLine="130"/>
       </Position24>
       <Position25>
         <Filename Value="formmain.pas"/>
-        <Caret Line="142" Column="55" TopLine="130"/>
+        <Caret Line="116" Column="19" TopLine="111"/>
       </Position25>
       <Position26>
         <Filename Value="formmain.pas"/>
-        <Caret Line="116" Column="19" TopLine="111"/>
+        <Caret Line="14" Column="18"/>
       </Position26>
       <Position27>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="14" Column="18"/>
+        <Filename Value="formlisteditor.pas"/>
+        <Caret Line="20" Column="16" TopLine="20"/>
       </Position27>
       <Position28>
         <Filename Value="formlisteditor.pas"/>
-        <Caret Line="20" Column="16" TopLine="20"/>
-      </Position28>
-      <Position29>
-        <Filename Value="formlisteditor.pas"/>
         <Caret Line="64" Column="41" TopLine="48"/>
-      </Position29>
-      <Position30>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="96" Column="26" TopLine="142"/>
-      </Position30>
+      </Position28>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
