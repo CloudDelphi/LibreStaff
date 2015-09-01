@@ -54,8 +54,13 @@ msgid "Save the photo"
 msgstr "Guardar la foto"
 
 #: formpreferences.lstview_caption_item_0
-#| msgid "TabDatabase"
+#| msgid "Database"
 msgctxt "formpreferences.lstview_caption_item_0"
+msgid "Language"
+msgstr "Idioma"
+
+#: formpreferences.lstview_caption_item_1
+msgctxt "formpreferences.lstview_caption_item_1"
 msgid "Database"
 msgstr "Base de datos"
 
@@ -70,6 +75,18 @@ msgstr "¡ERROR!"
 #: formpreferences.selectdirdlg_title
 msgid "Select the path for the database (data.db)"
 msgstr "Selecciona la ruta para la base de datos (data.db)"
+
+#: formsearch.criteriaemployeename
+msgid "Name"
+msgstr "Nombre"
+
+#: formsearch.criteriasurname1name
+msgid "Surname 1"
+msgstr "1º Apellido"
+
+#: formsearch.criteriasurname2name
+msgid "Surname 2"
+msgstr "2º Apellido"
 
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"
@@ -138,7 +155,6 @@ msgid "Search"
 msgstr "Buscar"
 
 #: tfrmmain.caption
-#, fuzzy
 #| msgid "FrmMain"
 msgid "LibreStaff"
 msgstr "LibreStaff"
@@ -147,6 +163,10 @@ msgstr "LibreStaff"
 msgctxt "tfrmmain.grpaddressemployee.caption"
 msgid "Address"
 msgstr "Dirección"
+
+#: tfrmmain.grpmisc.caption
+msgid "Misc"
+msgstr "Misc."
 
 #: tfrmmain.grprcontactemployee.caption
 msgctxt "tfrmmain.grprcontactemployee.caption"
@@ -166,6 +186,10 @@ msgstr "Preferencias"
 msgctxt "tfrmmain.lbladdress.caption"
 msgid "Address:"
 msgstr "Dirección:"
+
+#: tfrmmain.lblbirthday.caption
+msgid "Birthday:"
+msgstr "Cumpleaños:"
 
 #: tfrmmain.lblcell.caption
 msgctxt "tfrmmain.lblcell.caption"
@@ -225,6 +249,10 @@ msgctxt "tfrmmain.panpicemployee.caption"
 msgid "[Photo]"
 msgstr "[Foto]"
 
+#: tfrmmain.tabaddress.caption
+msgid "Address/Contact"
+msgstr "Dirección/Contacto"
+
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
 msgstr "Empleados"
@@ -272,15 +300,43 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr "Preferencias"
 
+#: tfrmpreferences.cbodateformat.text
+msgctxt "tfrmpreferences.cbodateformat.text"
+msgid "dd.mm.yyyy"
+msgstr ""
+
+#: tfrmpreferences.cbodateseparator.text
+msgid "/"
+msgstr ""
+
+#: tfrmpreferences.dates.caption
+msgid "Dates"
+msgstr "Fechas"
+
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
 msgstr "Ruta base de datos:"
+
+#: tfrmpreferences.lbldateformat.caption
+msgctxt "tfrmpreferences.lbldateformat.caption"
+msgid "Date Display Format:"
+msgstr "Formato de fecha:"
+
+#: tfrmpreferences.lbldateseparator.caption
+msgid "Date Separator:"
+msgstr "Separador de fecha:"
 
 #: tfrmpreferences.tabdatabase.caption
 #| msgid "TabDatabase"
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
 msgstr "Base de datos"
+
+#: tfrmpreferences.tablanguage.caption
+#| msgid "Database"
+msgctxt "tfrmpreferences.tablanguage.caption"
+msgid "Language"
+msgstr "Idioma"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -304,11 +360,11 @@ msgstr "Buscar"
 #: tfrmsearch.chkcasesensitive.caption
 msgctxt "tfrmsearch.chkcasesensitive.caption"
 msgid "Case sensitive"
-msgstr ""
+msgstr "Coinc. may/min"
 
 #: tfrmsearch.chkclose.caption
 msgid "Close on select"
-msgstr ""
+msgstr "Cerrar al seleccionar"
 
 #: tfrmsearch.label1.caption
 msgid "Query Result"
@@ -316,5 +372,4 @@ msgstr "Resultado de la busqueda"
 
 #: tfrmsearch.lblsearchcriteria.caption
 msgid "Search Criteria"
-msgstr ""
-
+msgstr "Criterios de busqueda"

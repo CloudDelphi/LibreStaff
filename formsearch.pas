@@ -55,9 +55,15 @@ var
   WhatSearch: TWhatSearch;
   SearchCriteria: array of TSearchCriteria;
 
+resourcestring
+	CriteriaEmployeeName= 'Name';
+  CriteriaSurname1Name= 'Surname 1';
+  CriteriaSurname2Name= 'Surname 2';
+
 implementation
 
 {$R *.lfm}
+
 
 uses
   FuncData, DataModule;
@@ -75,15 +81,15 @@ begin
  		wsEmployees: 	begin
     							CriteriaCount:= 3;
     							SetLength(SearchCriteria, CriteriaCount);
-                  SearchCriteria[0].Name:= 'Name';
+                  SearchCriteria[0].Name:= CriteriaEmployeeName;
                   SearchCriteria[0].FieldName:= 'Name_Employee';
                   SearchCriteria[0].DataFormat:= dtString;
                   SearchCriteria[0].Fixed:= True;
-                  SearchCriteria[1].Name:= 'Surname 1';
+                  SearchCriteria[1].Name:= CriteriaSurname1Name;
                   SearchCriteria[1].FieldName:= 'Surname1_Employee';
                   SearchCriteria[1].DataFormat:= dtString;
                   SearchCriteria[1].Fixed:= True;
-                  SearchCriteria[2].Name:= 'Surname 2';
+                  SearchCriteria[2].Name:= CriteriaSurname2Name;
                   SearchCriteria[2].FieldName:= 'Surname2_Employee';
                   SearchCriteria[2].DataFormat:= dtString;
                   SearchCriteria[2].Fixed:= False;

@@ -56,6 +56,11 @@ msgstr ""
 
 #: formpreferences.lstview_caption_item_0
 msgctxt "formpreferences.lstview_caption_item_0"
+msgid "Language"
+msgstr ""
+
+#: formpreferences.lstview_caption_item_1
+msgctxt "formpreferences.lstview_caption_item_1"
 msgid "Database"
 msgstr ""
 
@@ -69,6 +74,18 @@ msgstr ""
 
 #: formpreferences.selectdirdlg_title
 msgid "Select the path for the database (data.db)"
+msgstr ""
+
+#: formsearch.criteriaemployeename
+msgid "Name"
+msgstr ""
+
+#: formsearch.criteriasurname1name
+msgid "Surname 1"
+msgstr ""
+
+#: formsearch.criteriasurname2name
+msgid "Surname 2"
 msgstr ""
 
 #: funcdata.delrec_msg_01
@@ -146,6 +163,10 @@ msgctxt "TFRMMAIN.GRPADDRESSEMPLOYEE.CAPTION"
 msgid "Address"
 msgstr ""
 
+#: tfrmmain.grpmisc.caption
+msgid "Misc"
+msgstr ""
+
 #: tfrmmain.grprcontactemployee.caption
 msgctxt "TFRMMAIN.GRPRCONTACTEMPLOYEE.CAPTION"
 msgid "Contact"
@@ -163,6 +184,10 @@ msgstr ""
 #: tfrmmain.lbladdress.caption
 msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
 msgid "Address:"
+msgstr ""
+
+#: tfrmmain.lblbirthday.caption
+msgid "Birthday:"
 msgstr ""
 
 #: tfrmmain.lblcell.caption
@@ -223,6 +248,10 @@ msgctxt "tfrmmain.panpicemployee.caption"
 msgid "[Photo]"
 msgstr ""
 
+#: tfrmmain.tabaddress.caption
+msgid "Address/Contact"
+msgstr ""
+
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
 msgstr ""
@@ -270,13 +299,40 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmpreferences.cbodateformat.text
+msgctxt "TFRMPREFERENCES.CBODATEFORMAT.TEXT"
+msgid "dd.mm.yyyy"
+msgstr ""
+
+#: tfrmpreferences.cbodateseparator.text
+msgid "/"
+msgstr ""
+
+#: tfrmpreferences.dates.caption
+msgid "Dates"
+msgstr ""
+
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
+msgstr ""
+
+#: tfrmpreferences.lbldateformat.caption
+msgctxt "TFRMPREFERENCES.LBLDATEFORMAT.CAPTION"
+msgid "Date Display Format:"
+msgstr ""
+
+#: tfrmpreferences.lbldateseparator.caption
+msgid "Date Separator:"
 msgstr ""
 
 #: tfrmpreferences.tabdatabase.caption
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
+msgstr ""
+
+#: tfrmpreferences.tablanguage.caption
+msgctxt "tfrmpreferences.tablanguage.caption"
+msgid "Language"
 msgstr ""
 
 #: tfrmsearch.btnclose.caption

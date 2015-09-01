@@ -14,20 +14,29 @@ type
 
   TFrmPreferences = class(TForm)
     BtnChangeDtbPath: TBitBtn;
+    CboDateFormat: TComboBox;
+    CboDateSeparator: TComboBox;
     EdiDtbPath: TEdit;
     FraClose1: TFraClose;
+    Dates: TGroupBox;
     ImgLstPreferences: TImageList;
     LblDatabasePath: TLabel;
+    LblDateFormat: TLabel;
+    LblDateSeparator: TLabel;
     LstViewPreferences: TListView;
     PagPreferences: TPageControl;
     Splitter1: TSplitter;
     TabDatabase: TTabSheet;
+    TabLanguage: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
+    procedure CboDateFormatChange(Sender: TObject);
+    procedure CboDateSeparatorChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure TabDatabaseShow(Sender: TObject);
+    procedure TabLanguageShow(Sender: TObject);
   private
     { private declarations }
   public
@@ -38,7 +47,8 @@ var
   FrmPreferences: TFrmPreferences;
 
 resourcestring
-  LstView_Caption_Item_0= 'Database';
+  LstView_Caption_Item_0= 'Language';
+  LstView_Caption_Item_1= 'Database';
 	SelectDirDlg_Title= 'Select the path for the database (data.db)';
   SelectDirDlg_Error_Title= 'ERROR!';
   SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
@@ -54,9 +64,7 @@ uses
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
 begin
-	Case Item.Index of
-  	0: 	PagPreferences.ActivePageIndex:= Item.Index;
-  end;
+	PagPreferences.ActivePageIndex:= Item.Index;
 end;
 
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
@@ -64,9 +72,29 @@ begin
   Close;
 end;
 
-procedure TFrmPreferences.FormCreate(Sender: TObject);
+procedure TFrmPreferences.CboDateFormatChange(Sender: TObject);
 begin
-  LstViewPreferences.Items[0].Caption:= LstView_Caption_Item_0;
+	INIFile.WriteString('Lang', 'ShortDateFormat', CboDateFormat.Text);
+end;
+
+procedure TFrmPreferences.CboDateSeparatorChange(Sender: TObject);
+begin
+	INIFile.WriteString('Lang', 'DateSeparator', CboDateSeparator.Text);
+end;
+
+procedure TFrmPreferences.FormCreate(Sender: TObject);
+var
+  i: Integer;
+  Str: String;
+begin
+  for i:= 0 to LstViewPreferences.Items.Count-1 do
+  	begin
+    case i of
+    	0: Str:= LstView_Caption_Item_0;
+      1: Str:= LstView_Caption_Item_1;
+    end; //case
+  	LstViewPreferences.Items[i].Caption:= Str;
+    end;
 end;
 
 procedure TFrmPreferences.BtnChangeDtbPathClick(Sender: TObject);
@@ -90,7 +118,13 @@ end;
 
 procedure TFrmPreferences.TabDatabaseShow(Sender: TObject);
 begin
-   EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data\');
+	EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data\');
+end;
+
+procedure TFrmPreferences.TabLanguageShow(Sender: TObject);
+begin
+  CboDateFormat.ItemIndex:= CboDateFormat.Items.IndexOf(INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy'));
+  CboDateSeparator.ItemIndex:= CboDateSeparator.Items.IndexOf(INIFile.ReadString('Lang', 'DateSeparator', '/'));
 end;
 
 end.

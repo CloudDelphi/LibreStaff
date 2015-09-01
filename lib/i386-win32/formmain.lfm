@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 628
+  Left = 612
   Height = 709
-  Top = 195
+  Top = 275
   Width = 1142
   Caption = 'LibreStaff'
   ClientHeight = 709
@@ -151,16 +151,16 @@ object FrmMain: TFrmMain
         Height = 356
         Top = 122
         Width = 1134
-        ActivePage = TabPersonalData
+        ActivePage = TabAddress
         Align = alClient
         TabIndex = 0
         TabOrder = 0
-        object TabPersonalData: TTabSheet
-          Caption = 'Personal Data'
+        object TabAddress: TTabSheet
+          Caption = 'Address/Contact'
           ClientHeight = 315
           ClientWidth = 1126
           object GrpAddressEmployee: TGroupBox
-            Left = 16
+            Left = 20
             Height = 252
             Top = 16
             Width = 808
@@ -266,9 +266,9 @@ object FrmMain: TFrmMain
             end
           end
           object GrprContactEmployee: TGroupBox
-            Left = 16
+            Left = 20
             Height = 164
-            Top = 280
+            Top = 272
             Width = 808
             Caption = 'Contact'
             ClientHeight = 131
@@ -339,6 +339,57 @@ object FrmMain: TFrmMain
               CharCase = ecNormal
               MaxLength = 256
               TabOrder = 2
+            end
+          end
+        end
+        object TabPersonalData: TTabSheet
+          Caption = 'Personal Data'
+          ClientHeight = 315
+          ClientWidth = 1126
+          object GrpMisc: TGroupBox
+            Left = 20
+            Height = 104
+            Top = 24
+            Width = 320
+            Caption = 'Misc'
+            ClientHeight = 71
+            ClientWidth = 316
+            TabOrder = 0
+            object DBDatBirthday: TDBDateTimePicker
+              Left = 128
+              Height = 36
+              Top = 8
+              Width = 161
+              DataField = 'Birthday_Employee'
+              DataSource = DataMod.DsoEmployees
+              ReadOnly = False
+              CenturyFrom = 1900
+              MaxDate = 2958465
+              MinDate = 2
+              AutoSize = False
+              TabOrder = 0
+              TrailingSeparator = False
+              TextForNullDate = 'NULL'
+              LeadingZeros = True
+              NullInputAllowed = False
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              UseDefaultSeparators = True
+              HideDateTimeParts = []
+              MonthNames = 'Long'
+            end
+            object LblBirthday: TLabel
+              Left = 8
+              Height = 28
+              Top = 8
+              Width = 120
+              AutoSize = False
+              Caption = 'Birthday:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
             end
           end
         end

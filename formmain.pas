@@ -5,9 +5,9 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, Forms, Controls,
-  Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids, Buttons,
-  DataModule, types, FormPicEmployee, FormPreferences, INIfiles, Translations,
+  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, DBDateTimePicker, Forms,
+  Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids,
+  Buttons, DataModule, types, FormPicEmployee, FormPreferences, INIfiles,
   PopupNotifier, gettext;
 
 type
@@ -25,6 +25,7 @@ type
     BtnDelete: TBitBtn;
     BtnNew: TBitBtn;
     DBCboState: TDBComboBox;
+    DBDatBirthday: TDBDateTimePicker;
     DBENameEmployee: TDBEdit;
     DBESurname1: TDBEdit;
     DBENameEmployee2: TDBEdit;
@@ -35,7 +36,9 @@ type
     DBEPhone: TDBEdit;
     DBECell: TDBEdit;
     DBEEmail: TDBEdit;
+    GrpMisc: TGroupBox;
     ImGPreferences: TImage;
+    LblBirthday: TLabel;
     MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
     GrpAddressEmployee: TGroupBox;
@@ -70,6 +73,7 @@ type
     SelectDirDlg: TSelectDirectoryDialog;
     StatusBar1: TStatusBar;
     TabEmployees: TTabSheet;
+    TabAddress: TTabSheet;
     TabPersonalData: TTabSheet;
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnEditStateListClick(Sender: TObject);
@@ -109,7 +113,7 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData, FormListEditor, FormSearch;
+    FuncData, FormListEditor, FormSearch, DateTimePicker;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -122,6 +126,8 @@ end;
 procedure TFrmMain.FormCreate(Sender: TObject);
 var
   tfOut: TextFile;
+  CboDatItemIdx: Integer;
+  DateFormat: TDateDisplayOrder;
 begin
   PathApp:= ExtractFilePath(Paramstr(0));
   SQLiteLibraryName:= PathApp+'sqlite3.dll';
@@ -133,6 +139,15 @@ begin
   	begin
     INIFile.WriteString('Database', 'Path', PathApp+'data\');
     end;
+  //Format the CboDat's
+	ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
+	Case ShortDateFormat of
+  	'dd.mm.yyyy': DateFormat:= ddoDMY;
+   	'mm.dd.yyyy': DateFormat:= ddoMDY;
+   	'yyyy.mm.dd': DateFormat:= ddoYMD;
+  end; //case
+  DBDatBirthday.DateDisplayOrder:= DateFormat;
+  DBDatBirthday.DateSeparator:= INIFile.ReadString('Lang', 'DateSeparator', '/');;
 	//Connect & Load to database
   DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
   FuncData.ConnectDatabase(DatabasePath+'data.db');
@@ -170,7 +185,6 @@ procedure TFrmMain.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueEmployees);
 end;
-
 procedure TFrmMain.BtnSearchClick(Sender: TObject);
 begin
 	FrmSearch.Search(wsEmployees);

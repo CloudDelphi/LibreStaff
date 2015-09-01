@@ -15,10 +15,11 @@ object FrmSearch: TFrmSearch
     Left = 0
     Height = 519
     Top = 0
-    Width = 224
+    Width = 216
     Align = alLeft
+    BevelOuter = bvNone
     ClientHeight = 519
-    ClientWidth = 224
+    ClientWidth = 216
     TabOrder = 0
     object EdiSearch: TEdit
       Left = 8
@@ -83,26 +84,20 @@ object FrmSearch: TFrmSearch
       TabOrder = 5
     end
   end
-  object Splitter: TSplitter
-    Left = 224
-    Height = 519
-    Top = 0
-    Width = 4
-  end
   object PanRight: TPanel
-    Left = 228
+    Left = 220
     Height = 519
     Top = 0
-    Width = 573
-    Align = alRight
+    Width = 581
+    Align = alClient
     ClientHeight = 519
-    ClientWidth = 573
-    TabOrder = 2
+    ClientWidth = 581
+    TabOrder = 1
     object DBGridSearchResult: TDBGrid
       Left = 1
       Height = 457
       Top = 29
-      Width = 571
+      Width = 579
       Align = alClient
       AutoEdit = False
       AutoFillColumns = True
@@ -118,9 +113,10 @@ object FrmSearch: TFrmSearch
       Left = 1
       Height = 28
       Top = 1
-      Width = 571
+      Width = 579
       Align = alTop
       Alignment = taCenter
+      AutoSize = False
       Caption = 'Query Result'
       ParentColor = False
     end
@@ -128,11 +124,11 @@ object FrmSearch: TFrmSearch
       Left = 1
       Height = 32
       Top = 486
-      Width = 571
+      Width = 579
       Align = alBottom
       BevelOuter = bvNone
       ClientHeight = 32
-      ClientWidth = 571
+      ClientWidth = 579
       TabOrder = 1
       object ChkClose: TCheckBox
         Left = 264
@@ -153,5 +149,11 @@ object FrmSearch: TFrmSearch
         ParentColor = False
       end
     end
+  end
+  object Splitter: TSplitter
+    Left = 216
+    Height = 519
+    Top = 0
+    Width = 4
   end
 end

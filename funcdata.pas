@@ -53,7 +53,8 @@ begin
        		' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
-			    ' EMail_Employee CHAR(256) NOT NULL DEFAULT "");');
+          ' EMail_Employee CHAR(256) NOT NULL DEFAULT "",'+
+			    ' Birthday_Employee DATE);');
 
     //Creating an index based upon id in the DATA Table
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');

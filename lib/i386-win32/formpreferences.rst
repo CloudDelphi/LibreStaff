@@ -1,6 +1,10 @@
 
+# hash value = 139375349
+formpreferences.lstview_caption_item_0='Language'
+
+
 # hash value = 145198133
-formpreferences.lstview_caption_item_0='Database'
+formpreferences.lstview_caption_item_1='Database'
 
 
 # hash value = 95946553
