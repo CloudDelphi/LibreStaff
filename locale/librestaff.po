@@ -112,12 +112,38 @@ msgstr ""
 msgid "Deletion"
 msgstr ""
 
+#: tfraadddeledisavcan.btnadd.caption
+msgctxt "TFRAADDDELEDISAVCAN.BTNADD.CAPTION"
+msgid "Add"
+msgstr ""
+
+#: tfraadddeledisavcan.btncancel.caption
+msgctxt "TFRAADDDELEDISAVCAN.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr ""
+
+#: tfraadddeledisavcan.btndelete.caption
+msgctxt "TFRAADDDELEDISAVCAN.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr ""
+
+#: tfraadddeledisavcan.btnedit.caption
+msgctxt "TFRAADDDELEDISAVCAN.BTNEDIT.CAPTION"
+msgid "Edit"
+msgstr ""
+
+#: tfraadddeledisavcan.btnsave.caption
+msgctxt "TFRAADDDELEDISAVCAN.BTNSAVE.CAPTION"
+msgid "Save and Close"
+msgstr ""
+
 #: tfraclose.btnclose.caption
 msgctxt "tfraclose.btnclose.caption"
 msgid "Close"
 msgstr ""
 
 #: tfrasavecancel.btncancel.caption
+msgctxt "tfrasavecancel.btncancel.caption"
 msgid "Cancel"
 msgstr ""
 
@@ -126,12 +152,38 @@ msgctxt "TFRASAVECANCEL.BTNSAVE.CAPTION"
 msgid "Save"
 msgstr ""
 
+#: tfrasavecanceladddelete.btnadd.caption
+msgctxt "tfrasavecanceladddelete.btnadd.caption"
+msgid "Add"
+msgstr ""
+
+#: tfrasavecanceladddelete.btncancel.caption
+msgctxt "TFRASAVECANCELADDDELETE.BTNCANCEL.CAPTION"
+msgid "Cancel"
+msgstr ""
+
+#: tfrasavecanceladddelete.btndelete.caption
+msgctxt "TFRASAVECANCELADDDELETE.BTNDELETE.CAPTION"
+msgid "Delete"
+msgstr ""
+
+#: tfrasavecanceladddelete.btnedit.caption
+msgctxt "tfrasavecanceladddelete.btnedit.caption"
+msgid "Edit"
+msgstr ""
+
+#: tfrasavecanceladddelete.btnsave.caption
+msgctxt "TFRASAVECANCELADDDELETE.BTNSAVE.CAPTION"
+msgid "Save and Close"
+msgstr ""
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
 msgid "Close"
 msgstr ""
 
 #: tfrmlisteditor.btnsavelist.caption
+msgctxt "tfrmlisteditor.btnsavelist.caption"
 msgid "Save and Close"
 msgstr ""
 
@@ -144,16 +196,17 @@ msgid "FrmListEditor"
 msgstr ""
 
 #: tfrmmain.btndelete.caption
+msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
-msgstr ""
-
-#: tfrmmain.btneditcontracts.caption
-msgctxt "TFRMMAIN.BTNEDITCONTRACTS.CAPTION"
-msgid "..."
 msgstr ""
 
 #: tfrmmain.btneditstatelist.caption
 msgctxt "TFRMMAIN.BTNEDITSTATELIST.CAPTION"
+msgid "..."
+msgstr ""
+
+#: tfrmmain.btnedittypecontracts.caption
+msgctxt "TFRMMAIN.BTNEDITTYPECONTRACTS.CAPTION"
 msgid "..."
 msgstr ""
 
@@ -423,5 +476,17 @@ msgstr ""
 
 #: tfrmsearch.lblsearchcriteria.caption
 msgid "Search Criteria"
+msgstr ""
+
+#: tfrmtypecontract.caption
+msgid "FrmTypeContract"
+msgstr ""
+
+#: tfrmtypecontracts.caption
+msgid "Type of Contracts"
+msgstr ""
+
+#: tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption
+msgid "Name of Type of Contract"
 msgstr ""
 

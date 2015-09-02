@@ -12,6 +12,7 @@ type
   { TDataModule1 }
 
   TDataMod = class(TDataModule)
+    DsoTypeContracts: TDataSource;
     DsoSearch: TDataSource;
     DsoPicsEmployees: TDataSource;
     DsoEmployees: TDataSource;
@@ -19,6 +20,7 @@ type
     QueEmployees: TSQLQuery;
     QuePicsEmployees: TSQLQuery;
     QueSearch: TSQLQuery;
+    QueTypeContracts: TSQLQuery;
     Transaction: TSQLTransaction;
   private
     { private declarations }

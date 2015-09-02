@@ -1,0 +1,40 @@
+unit FormContractType;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
+  FrameSaveCancel, FraAddDelSaveCancel;
+
+type
+
+  { TFrmContractType }
+
+  TFrmContractType = class(TForm)
+    DBGrdTypeContracts: TDBGrid;
+    FraSaveCancelAddDelete1: TFraSaveCancelAddDelete;
+    procedure PanSaveCancelClick(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  FrmContractType: TFrmContractType;
+
+implementation
+
+{$R *.lfm}
+
+{ TFrmContractType }
+
+procedure TFrmContractType.PanSaveCancelClick(Sender: TObject);
+begin
+
+end;
+
+end.
+

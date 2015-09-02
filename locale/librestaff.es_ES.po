@@ -112,12 +112,39 @@ msgstr "¡No se podrá revertir!"
 msgid "Deletion"
 msgstr "Eliminar"
 
+#: tfraadddeledisavcan.btnadd.caption
+msgctxt "tfraadddeledisavcan.btnadd.caption"
+msgid "Add"
+msgstr "Añadir"
+
+#: tfraadddeledisavcan.btncancel.caption
+msgctxt "tfraadddeledisavcan.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfraadddeledisavcan.btndelete.caption
+msgctxt "tfraadddeledisavcan.btndelete.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfraadddeledisavcan.btnedit.caption
+msgctxt "tfraadddeledisavcan.btnedit.caption"
+msgid "Edit"
+msgstr "Editar"
+
+#: tfraadddeledisavcan.btnsave.caption
+#| msgid "Save & Close"
+msgctxt "tfraadddeledisavcan.btnsave.caption"
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
 #: tfraclose.btnclose.caption
 msgctxt "tfraclose.btnclose.caption"
 msgid "Close"
 msgstr "Cerrar"
 
 #: tfrasavecancel.btncancel.caption
+msgctxt "tfrasavecancel.btncancel.caption"
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -126,12 +153,38 @@ msgctxt "tfrasavecancel.btnsave.caption"
 msgid "Save"
 msgstr "Guardar"
 
+#: tfrasavecanceladddelete.btnadd.caption
+msgctxt "tfrasavecanceladddelete.btnadd.caption"
+msgid "Add"
+msgstr "Añadir"
+
+#: tfrasavecanceladddelete.btncancel.caption
+msgctxt "tfrasavecanceladddelete.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfrasavecanceladddelete.btndelete.caption
+msgctxt "tfrasavecanceladddelete.btndelete.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfrasavecanceladddelete.btnedit.caption
+msgctxt "tfrasavecanceladddelete.btnedit.caption"
+msgid "Edit"
+msgstr "Editar"
+
+#: tfrasavecanceladddelete.btnsave.caption
+msgctxt "tfrasavecanceladddelete.btnsave.caption"
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "tfrmlisteditor.btnclose.caption"
 msgid "Close"
 msgstr "Cerrar"
 
 #: tfrmlisteditor.btnsavelist.caption
+msgctxt "tfrmlisteditor.btnsavelist.caption"
 msgid "Save and Close"
 msgstr "Guardar y cerrar"
 
@@ -144,24 +197,24 @@ msgid "FrmListEditor"
 msgstr "FrmListEditor"
 
 #: tfrmmain.btndelete.caption
+msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
 msgstr "Eliminar"
-
-#: tfrmmain.btneditcontracts.caption
-#, fuzzy
-msgctxt "tfrmmain.btneditcontracts.caption"
-msgid "..."
-msgstr "..."
 
 #: tfrmmain.btneditstatelist.caption
 msgctxt "tfrmmain.btneditstatelist.caption"
 msgid "..."
 msgstr "..."
 
+#: tfrmmain.btnedittypecontracts.caption
+msgctxt "tfrmmain.btnedittypecontracts.caption"
+msgid "..."
+msgstr "..."
+
 #: tfrmmain.btninactive.caption
 msgctxt "tfrmmain.btninactive.caption"
 msgid "Inactivate"
-msgstr ""
+msgstr "Dar de baja"
 
 #: tfrmmain.btnnew.caption
 msgid "New"
@@ -184,11 +237,11 @@ msgstr "LibreStaff"
 
 #: tfrmmain.cbofilter.text
 msgid "Active"
-msgstr ""
+msgstr "Activo"
 
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
-msgstr ""
+msgstr "Contrato de trabajo"
 
 #: tfrmmain.grpaddressemployee.caption
 msgctxt "tfrmmain.grpaddressemployee.caption"
@@ -215,7 +268,7 @@ msgstr "Preferencias"
 
 #: tfrmmain.label1.caption
 msgid "Filter:"
-msgstr ""
+msgstr "Filtro:"
 
 #: tfrmmain.lbladdress.caption
 msgctxt "tfrmmain.lbladdress.caption"
@@ -228,15 +281,15 @@ msgstr "Cumpleaños:"
 
 #: tfrmmain.lblbirthday1.caption
 msgid "Date Init:"
-msgstr ""
+msgstr "Fecha inicio:"
 
 #: tfrmmain.lblbirthday2.caption
 msgid "Date End:"
-msgstr ""
+msgstr "Fecha fin:"
 
 #: tfrmmain.lblbirthday3.caption
 msgid "Type of contract:"
-msgstr ""
+msgstr "Tipo de contrato:"
 
 #: tfrmmain.lblcell.caption
 msgctxt "tfrmmain.lblcell.caption"
@@ -302,7 +355,7 @@ msgstr "Dirección/Contacto"
 
 #: tfrmmain.tabcontract.caption
 msgid "Contract"
-msgstr ""
+msgstr "Contrato"
 
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
@@ -310,7 +363,7 @@ msgstr "Empleados"
 
 #: tfrmmain.tabhistoriccontracts.caption
 msgid "Historic Contracts"
-msgstr ""
+msgstr "Histórico contratos"
 
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "tfrmmain.tabpersonaldata.caption"
@@ -358,11 +411,11 @@ msgstr "Preferencias"
 #: tfrmpreferences.cbodateformat.text
 msgctxt "tfrmpreferences.cbodateformat.text"
 msgid "dd.mm.yyyy"
-msgstr ""
+msgstr "dd.mm.yyyy"
 
 #: tfrmpreferences.cbodateseparator.text
 msgid "/"
-msgstr ""
+msgstr "/"
 
 #: tfrmpreferences.dates.caption
 msgid "Dates"
@@ -429,3 +482,14 @@ msgstr "Resultado de la busqueda"
 msgid "Search Criteria"
 msgstr "Criterios de busqueda"
 
+#: tfrmtypecontract.caption
+msgid "FrmTypeContract"
+msgstr ""
+
+#: tfrmtypecontracts.caption
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption
+msgid "Name of Type of Contract"
+msgstr "Nombre del tipo de contrato"

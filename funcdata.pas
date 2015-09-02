@@ -8,12 +8,21 @@ uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
   db, sqldb, LCLType;
 
-procedure ConnectDatabase(DatabasePath: String);
+type TWriteField = record
+    FieldName: String;
+    Value: Variant;
+    DataFormat: TDataFormat;
+end;
+var
+  WriteFields: array of TWriteField;
+
+procedure ConnectDatabase(Databasename: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 //procedure ExecSQLStrLst(Query: TSQLQuery; SQLStrLst: TStringList);
-function AppendTableRecord(Query: TSQLQuery): Boolean;
+function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
 
 resourcestring
@@ -23,25 +32,29 @@ resourcestring
 
 implementation
 
-procedure ConnectDatabase(DatabasePath: String);
+procedure ConnectDatabase(Databasename: String);
 var
   newDatabase: Boolean;
 begin
-  DataMod.Connection.Databasename:= DatabasePath;
+  DataMod.Connection.Databasename:= Databasename;
   // check whether the database already exists
-  newDatabase:= not FileExists(DataMod.Connection.Databasename);
+  newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
     // Here we're setting up a table named "DATA" in the new database
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
-          ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
+          ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
           ' Pic_Employee BLOB);');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
+ 		DataMod.Connection.ExecuteDirect('CREATE TABLE TypeContracts('+
+          ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Name_TypeContract CHAR(256) NOT NULL DEFAULT "");');
+    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
-          ' ID_Employee INTEGER NOT NULL PRIMARY KEY DEFAULT "",'+
+          ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -57,7 +70,7 @@ begin
           ' Birthday_Employee DATE,'+
           ' DateInit_Contract DATE,'+
           ' DateEnd_Contract DATE,'+
-          ' TypeContract_ID INTEGER);');
+          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE);');
 
     //Creating an index based upon id in the DATA Table
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
@@ -96,6 +109,24 @@ begin
               end;
   end; //case
 end;
+function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+var
+  i: Integer;
+begin
+  Query.Edit;
+  for i:= Low(WriteFields) to High(WriteFields) do
+  	begin
+    case WriteFields[i].DataFormat of
+			dtString: Query.FieldByName(WriteFields[i].FieldName).AsString:= WriteFields[i].Value;
+ 			dtInteger: Query.FieldByName(WriteFields[i].FieldName).AsInteger:= WriteFields[i].Value;
+      dtDate: Query.FieldByName(WriteFields[i].FieldName).AsDateTime:= WriteFields[i].Value;
+    end; //case
+    end;
+  Query.Post;
+  Query.ApplyUpdates;
+  DataMod.Transaction.CommitRetaining;
+  Result:= True;
+end;
 
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 begin
@@ -110,11 +141,20 @@ begin
     end;
 	Query.Open;
 end;
-function AppendTableRecord(Query: TSQLQuery): Boolean;
+function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+var
+  i: Integer;
 begin
   try
   Query.Append;
-  Query.FieldByName('Name_employee').AsString:= '';
+  for i:= Low(WriteFields) to High(WriteFields) do
+  	begin
+    case WriteFields[i].DataFormat of
+			dtString: Query.FieldByName(WriteFields[i].FieldName).AsString:= WriteFields[i].Value;
+ 			dtInteger: Query.FieldByName(WriteFields[i].FieldName).AsInteger:= WriteFields[i].Value;
+      dtDate: Query.FieldByName(WriteFields[i].FieldName).AsDateTime:= WriteFields[i].Value;
+    end; //case
+    end;
   Query.Post;
   Query.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;

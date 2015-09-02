@@ -67,7 +67,6 @@ implementation
 
 {$R *.lfm}
 
-
 uses
   FuncData, DataModule;
 

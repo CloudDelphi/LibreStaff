@@ -1,0 +1,53 @@
+object FraSaveCancelAddDelete: TFraSaveCancelAddDelete
+  Left = 0
+  Height = 77
+  Top = 0
+  Width = 562
+  ClientHeight = 77
+  ClientWidth = 562
+  TabOrder = 0
+  DesignLeft = 613
+  DesignTop = 475
+  object PanBottom: TPanel
+    Left = 0
+    Height = 82
+    Top = -5
+    Width = 562
+    Align = alBottom
+    ClientHeight = 82
+    ClientWidth = 562
+    TabOrder = 0
+    object BtnSave: TBitBtn
+      Left = 232
+      Height = 41
+      Top = 24
+      Width = 176
+      Caption = 'Save and Close'
+      TabOrder = 0
+    end
+    object BtnCancel: TBitBtn
+      Left = 424
+      Height = 41
+      Top = 24
+      Width = 120
+      Caption = 'Cancel'
+      TabOrder = 1
+    end
+    object BtnAdd: TBitBtn
+      Left = 8
+      Height = 41
+      Top = 24
+      Width = 99
+      Caption = 'Add'
+      TabOrder = 2
+    end
+    object BtnDelete: TBitBtn
+      Left = 120
+      Height = 41
+      Top = 24
+      Width = 95
+      Caption = 'Delete'
+      TabOrder = 3
+    end
+  end
+end

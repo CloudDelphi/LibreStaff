@@ -17,7 +17,7 @@ ShowLanguageDialog=yes
 Source: "librestaff.exe"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "sqlite3.dll"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "data\*.*"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
-Source: "locale\*.*"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "locale\*.mo"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
 
 [Dirs]
 Name: "{app}";

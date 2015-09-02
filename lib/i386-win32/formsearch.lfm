@@ -131,7 +131,7 @@ object FrmSearch: TFrmSearch
       ClientWidth = 579
       TabOrder = 1
       object ChkClose: TCheckBox
-        Left = 264
+        Left = 272
         Height = 33
         Top = 0
         Width = 163
