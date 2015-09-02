@@ -56,6 +56,9 @@ var
   SearchCriteria: array of TSearchCriteria;
 
 resourcestring
+  BlankSearchTitle= 'Error!';
+  BlankSearchText= 'Search string must be not blank.';
+  ResultCountText= 'result/s';
 	CriteriaEmployeeName= 'Name';
   CriteriaSurname1Name= 'Surname 1';
   CriteriaSurname2Name= 'Surname 2';
@@ -123,12 +126,13 @@ var
   SearchStr, SearchField: String;
   p: TPoint;
   CompareOperator, Wildcard: String;
+  ResultCount: Integer;
 begin
   If (EdiSearch.Text='') and (ViewAll= False) then
     begin
    	p:= FrmMain.ScreenToClient(Mouse.CursorPos);
-    FrmMain.PopNot.Title:= 'Error.';
-    FrmMain.PopNot.Text:= 'Search string must be not blank.';
+    FrmMain.PopNot.Title:=  BlankSearchTitle;
+    FrmMain.PopNot.Text:=  BlankSearchText;
     FrmMain.PopNot.ShowAtPos(p.x, p.y);
     Exit;
     end;
@@ -176,7 +180,12 @@ begin
   SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
   //Memo1.Lines.Assign(SQLSearch);
 	FuncData.ExecSQL(DataMod.QueSearch, '', True, SQLSearch);
-  LblResult.Caption:= IntToStr(DataMod.QueSearch.RecordCount)+ ' result/s';
+  ResultCount:= DataMod.QueSearch.RecordCount;
+  LblResult.Caption:= ' ' + IntToStr(ResultCount)+ ' ' + ResultCountText + ' ';
+  if ResultCount>0 then
+    LblResult.Color:= clMoneyGreen
+    else
+    LblResult.Color:= StringToColor('$AEAEE9');
 end;
 
 procedure TFrmSearch.BtnCloseClick(Sender: TObject);

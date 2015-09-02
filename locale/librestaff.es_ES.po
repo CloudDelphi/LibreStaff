@@ -76,6 +76,14 @@ msgstr "¡ERROR!"
 msgid "Select the path for the database (data.db)"
 msgstr "Selecciona la ruta para la base de datos (data.db)"
 
+#: formsearch.blanksearchtext
+msgid "Search string must be not blank."
+msgstr "La cadena de texto de búsqueda no debe estar en blanco."
+
+#: formsearch.blanksearchtitle
+msgid "Error!"
+msgstr "¡Error!"
+
 #: formsearch.criteriaemployeename
 msgid "Name"
 msgstr "Nombre"
@@ -87,6 +95,10 @@ msgstr "1º Apellido"
 #: formsearch.criteriasurname2name
 msgid "Surname 2"
 msgstr "2º Apellido"
+
+#: formsearch.resultcounttext
+msgid "result/s"
+msgstr "resultado/s"
 
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"

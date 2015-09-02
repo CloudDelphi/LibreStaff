@@ -76,6 +76,14 @@ msgstr ""
 msgid "Select the path for the database (data.db)"
 msgstr ""
 
+#: formsearch.blanksearchtext
+msgid "Search string must be not blank."
+msgstr ""
+
+#: formsearch.blanksearchtitle
+msgid "Error!"
+msgstr ""
+
 #: formsearch.criteriaemployeename
 msgid "Name"
 msgstr ""
@@ -86,6 +94,10 @@ msgstr ""
 
 #: formsearch.criteriasurname2name
 msgid "Surname 2"
+msgstr ""
+
+#: formsearch.resultcounttext
+msgid "result/s"
 msgstr ""
 
 #: funcdata.delrec_msg_01

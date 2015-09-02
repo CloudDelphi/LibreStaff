@@ -142,10 +142,9 @@ object FrmSearch: TFrmSearch
       end
       object LblResult: TLabel
         Left = 9
-        Height = 28
+        Height = 1
         Top = 3
-        Width = 167
-        AutoSize = False
+        Width = 1
         ParentColor = False
       end
     end

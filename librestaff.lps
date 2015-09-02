@@ -147,10 +147,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="113"/>
-        <CursorPos X="39" Y="99"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="22" Y="59"/>
         <UsageCount Value="34"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="C:\sprite.pas"/>
@@ -313,7 +314,7 @@
         <UsageCount Value="9"/>
       </Unit32>
     </Units>
-    <JumpHistory Count="21" HistoryIndex="20">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="168" Column="33" TopLine="155"/>
@@ -398,6 +399,22 @@
         <Filename Value="formmain.pas"/>
         <Caret Line="159" Column="30" TopLine="145"/>
       </Position21>
+      <Position22>
+        <Filename Value="formsearch.pas"/>
+        <Caret Line="185" Column="28" TopLine="167"/>
+      </Position22>
+      <Position23>
+        <Filename Value="formsearch.pas"/>
+        <Caret Line="183" Column="22" TopLine="171"/>
+      </Position23>
+      <Position24>
+        <Filename Value="formsearch.pas"/>
+        <Caret Line="185" Column="25" TopLine="172"/>
+      </Position24>
+      <Position25>
+        <Filename Value="formsearch.pas"/>
+        <Caret Line="184" Column="27"/>
+      </Position25>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
