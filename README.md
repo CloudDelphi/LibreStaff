@@ -3,9 +3,10 @@ Software for the management of personnel.
 <br /><a href="http://runsy.github.io/LibreStaff/">Website</a><br />
 Characteristics
 -----------------------
-Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
+Programming Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
 Compiler: <a href="http://www.lazarus-ide.org/">Lazarus</a><br />
 Database engine: <a href="https://www.sqlite.org/">SQLite</a><br />
+Languages: English, Spanish & Portuguese.
 
 How to Compile
 --------------
