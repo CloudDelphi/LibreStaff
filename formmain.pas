@@ -5,9 +5,9 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, DBDateTimePicker, Forms,
-  Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids,
-  Buttons, DataModule, Types, FormPicEmployee, FormPreferences, INIfiles,
+  Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, Forms,
+  Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
+  Buttons, DataModule, FormPicEmployee, FormPreferences, INIfiles,
   PopupNotifier, gettext;
 
 type
@@ -112,7 +112,6 @@ type
 var
   FrmMain: TFrmMain;
   PathApp, DatabasePath, Databasename: String;
-  SentenceSQL: TStringList;
   IniFile: TINIFile;
   Lang, FallBacklang: String;
   StatesFilename: String;
@@ -141,14 +140,12 @@ end;
 procedure TFrmMain.FormCreate(Sender: TObject);
 var
   tfOut: TextFile;
-  CboDatItemIdx: Integer;
   DateFormat: TDateDisplayOrder;
   DateSeparator: String;
 begin
   PathApp:= ExtractFilePath(Paramstr(0));
   SQLiteLibraryName:= PathApp+'sqlite3.dll';
   GetLanguageIDs(Lang, FallbackLang);
-  SentenceSQL:= TStringList.Create;
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
 	if not FileExists(PathApp+'config.ini') then
@@ -174,7 +171,7 @@ begin
   Databasename:= DatabasePath + 'data.db';
   FuncData.ConnectDatabase(Databasename);
   //Open Tables
-  //Note: The order is important! First the detailled tables.
+  //Note: The order is important! First the detailed tables.
   FuncData.ExecSQL(DataMod.QueTypeContracts, 'SELECT * from TypeContracts;');
   FuncData.ExecSQL(DataMod.QueEmployees, 'SELECT * from Employees;');
   if (DataMod.QueEmployees.IsEmpty= True) then
@@ -234,7 +231,7 @@ begin
 
      end;
   end;
-  {Cambio el num de registros-->}
+  {Changing the recordcount-->}
   TotalRecs:= DataMod.QueEmployees.RecordCount;
   UpdateNavRec;
 end;
@@ -246,8 +243,10 @@ begin
 end;
 procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  DataMod.Transaction.Active:= False;
+  DataMod.Connection.CloseTransactions;
+  DataMod.Connection.CloseDataSets;
   DataMod.Connection.Connected:= False;
+  INIFile.Free;
 end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
 const
@@ -268,6 +267,7 @@ begin
          BtnSearch.Enabled:= True;
          end;
 	   end;
+   WriteFields:= nil;
 end;
 procedure TFrmMain.BtnDeleteClick(Sender: TObject);
 var

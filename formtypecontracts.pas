@@ -57,6 +57,7 @@ begin
    	WriteFields[0].Value:= NameTypeContract;
   	WriteFields[0].DataFormat:= dtString;
 	  FuncData.AppendTableRecord(DataMod.QueTypeContracts, WriteFields);
+    WriteFields:= nil;
     end;
 end;
 

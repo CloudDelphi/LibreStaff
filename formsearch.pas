@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, ComCtrls, FormMain, db,
+  StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
   sqldb;
 
 type TSearchCriteria = record
@@ -127,7 +127,7 @@ var
   CompareOperator, Wildcard: String;
   ResultCount: Integer;
 begin
-  If (EdiSearch.Text='') and (ViewAll= False) then
+  if (EdiSearch.Text='') AND (ViewAll= False) then
     begin
    	p:= FrmMain.ScreenToClient(Mouse.CursorPos);
     FrmMain.PopNot.Title:=  BlankSearchTitle;
@@ -177,7 +177,6 @@ begin
 		  end; //for
   end;
   SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
-  //Memo1.Lines.Assign(SQLSearch);
 	FuncData.ExecSQL(DataMod.QueSearch, '', True, SQLSearch);
   ResultCount:= DataMod.QueSearch.RecordCount;
   LblResult.Caption:= ' ' + IntToStr(ResultCount)+ ' ' + ResultCountText + ' ';
@@ -257,4 +256,3 @@ begin
 end;
 
 end.
-

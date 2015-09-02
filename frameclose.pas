@@ -5,7 +5,7 @@ unit FrameClose;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, StdCtrls, ExtCtrls, Buttons;
+  Classes, SysUtils, FileUtil, Forms, Controls, ExtCtrls, Buttons;
 
 type
 

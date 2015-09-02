@@ -6,7 +6,7 @@ interface
 
 uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
-  db, sqldb, LCLType;
+  sqldb, LCLType;
 
 type TWriteField = record
     FieldName: String;
@@ -20,7 +20,6 @@ procedure ConnectDatabase(Databasename: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
-//procedure ExecSQLStrLst(Query: TSQLQuery; SQLStrLst: TStringList);
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
@@ -49,7 +48,7 @@ begin
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
           ' Pic_Employee BLOB);');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
- 		DataMod.Connection.ExecuteDirect('CREATE TABLE TypeContracts('+
+		DataMod.Connection.ExecuteDirect('CREATE TABLE TypeContracts('+
           ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_TypeContract CHAR(256) NOT NULL DEFAULT "");');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
@@ -73,8 +72,8 @@ begin
           ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE);');
 
     //Creating an index based upon id in the DATA Table
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
-    DataMod.Transaction.Commit;
+		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
+	  DataMod.Transaction.Commit;
     except
     ShowMessage('Unable to create new database');
     end;

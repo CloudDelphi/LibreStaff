@@ -396,7 +396,7 @@ object FrmMain: TFrmMain
         end
         object TabContract: TTabSheet
           Caption = 'Contract'
-          ClientHeight = 315
+          ClientHeight = 317
           ClientWidth = 1126
           object GroupBox1: TGroupBox
             Left = 8
