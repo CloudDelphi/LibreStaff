@@ -1,0 +1,384 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: formmain.frmstatestitle
+msgid "States"
+msgstr "Estados"
+
+#: formmain.lblnavrecof
+msgid "of"
+msgstr "de"
+
+#: formpicemployee.opendlg_error_msg_01
+msgctxt "formpicemployee.opendlg_error_msg_01"
+msgid "Photo not loaded."
+msgstr "Foto não carregado."
+
+#: formpicemployee.opendlg_error_msg_02
+msgctxt "formpicemployee.opendlg_error_msg_02"
+msgid "Possible cause: Photo format not valid"
+msgstr "Causa provável: formato de imagem não é válido"
+
+#: formpicemployee.opendlg_error_msg_03
+msgctxt "formpicemployee.opendlg_error_msg_03"
+msgid "Please, check if photo format is jpg."
+msgstr "Por favor, verifique se o formato da foto é jpg."
+
+#: formpicemployee.opendlg_filter
+msgctxt "formpicemployee.opendlg_filter"
+msgid "All image files"
+msgstr "Todos os arquivos de imagem"
+
+#: formpicemployee.opendlg_title
+msgctxt "formpicemployee.opendlg_title"
+msgid "Select a photo"
+msgstr "Selecione uma foto"
+
+#: formpicemployee.savedlg_filter
+msgctxt "formpicemployee.savedlg_filter"
+msgid "All image files"
+msgstr "Todos os arquivos de imagem"
+
+#: formpicemployee.savedlg_title
+msgid "Save the photo"
+msgstr "Salvar a foto"
+
+#: formpreferences.lstview_caption_item_0
+msgctxt "formpreferences.lstview_caption_item_0"
+msgid "Language"
+msgstr "Idioma"
+
+#: formpreferences.lstview_caption_item_1
+msgctxt "formpreferences.lstview_caption_item_1"
+msgid "Database"
+msgstr "Banco de dados"
+
+#: formpreferences.selectdirdlg_error_msg
+msgid "The file \"data.db\" does not exist in this path."
+msgstr "O arquivo \\ \"data.db \" não existe neste caminho."
+
+#: formpreferences.selectdirdlg_error_title
+msgid "ERROR!"
+msgstr "ERRO!"
+
+#: formpreferences.selectdirdlg_title
+msgid "Select the path for the database (data.db)"
+msgstr "Selecione o caminho para o banco de dados (data.db)"
+
+#: formsearch.blanksearchtext
+msgid "Search string must be not blank."
+msgstr "Pesquisa corda não deve ser em branco."
+
+#: formsearch.blanksearchtitle
+msgid "Error!"
+msgstr "Erro!"
+
+#: formsearch.criteriaemployeename
+msgid "Name"
+msgstr "Nome"
+
+#: formsearch.criteriasurname1name
+msgid "Surname 1"
+msgstr "Apelido 1"
+
+#: formsearch.criteriasurname2name
+msgid "Surname 2"
+msgstr "Sobrenome 2"
+
+#: formsearch.resultcounttext
+msgid "result/s"
+msgstr "resultado / s"
+
+#: funcdata.delrec_msg_01
+msgid "Are you sure you want to DELETE"
+msgstr "Tem certeza de que deseja excluir"
+
+#: funcdata.delrec_msg_02
+msgid "It cannot revert!"
+msgstr "Não pode reverter!"
+
+#: funcdata.delrec_title
+msgid "Deletion"
+msgstr "Eliminação"
+
+#: tfraclose.btnclose.caption
+msgctxt "tfraclose.btnclose.caption"
+msgid "Close"
+msgstr "Fechar"
+
+#: tfrasavecancel.btncancel.caption
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfrasavecancel.btnsave.caption
+msgctxt "TFRASAVECANCEL.BTNSAVE.CAPTION"
+msgid "Save"
+msgstr "Salvar"
+
+#: tfrmlisteditor.btnclose.caption
+msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Fechar"
+
+#: tfrmlisteditor.btnsavelist.caption
+msgid "Save and Close"
+msgstr "Salvar e fechar"
+
+#: tfrmlisteditor.btnsortlist.caption
+msgid "Sort"
+msgstr "Tipo"
+
+#: tfrmlisteditor.caption
+msgid "FrmListEditor"
+msgstr "FrmListEditor"
+
+#: tfrmmain.btndelete.caption
+msgid "Delete"
+msgstr "Excluir"
+
+#: tfrmmain.btneditstatelist.caption
+msgctxt "TFRMMAIN.BTNEDITSTATELIST.CAPTION"
+msgid "..."
+msgstr "..."
+
+#: tfrmmain.btnnew.caption
+msgid "New"
+msgstr "Novo"
+
+#: tfrmmain.btnsave.caption
+msgctxt "tfrmmain.btnsave.caption"
+msgid "Save"
+msgstr "Salvar"
+
+#: tfrmmain.btnsearch.caption
+msgctxt "tfrmmain.btnsearch.caption"
+msgid "Search"
+msgstr "Busca"
+
+#: tfrmmain.caption
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmmain.grpaddressemployee.caption
+msgctxt "TFRMMAIN.GRPADDRESSEMPLOYEE.CAPTION"
+msgid "Address"
+msgstr "Endereço"
+
+#: tfrmmain.grpmisc.caption
+msgid "Misc"
+msgstr "Misc"
+
+#: tfrmmain.grprcontactemployee.caption
+msgctxt "TFRMMAIN.GRPRCONTACTEMPLOYEE.CAPTION"
+msgid "Contact"
+msgstr "Contato"
+
+#: tfrmmain.imgexit.hint
+msgid "Close app"
+msgstr "Fechar app"
+
+#: tfrmmain.imgpreferences.hint
+msgctxt "TFRMMAIN.IMGPREFERENCES.HINT"
+msgid "Preferences"
+msgstr "Preferências"
+
+#: tfrmmain.lbladdress.caption
+msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
+msgid "Address:"
+msgstr "Endereço:"
+
+#: tfrmmain.lblbirthday.caption
+msgid "Birthday:"
+msgstr "Aniversário:"
+
+#: tfrmmain.lblcell.caption
+msgctxt "TFRMMAIN.LBLCELL.CAPTION"
+msgid "Cell Phone:"
+msgstr "Celular:"
+
+#: tfrmmain.lblcity.caption
+msgctxt "TFRMMAIN.LBLCITY.CAPTION"
+msgid "City:"
+msgstr "Cidade:"
+
+#: tfrmmain.lblemail.caption
+msgctxt "TFRMMAIN.LBLEMAIL.CAPTION"
+msgid "E-Mail:"
+msgstr "O email:"
+
+#: tfrmmain.lblidcard.caption
+msgctxt "TFRMMAIN.LBLIDCARD.CAPTION"
+msgid "ID Card:"
+msgstr "Carteira de identidade:"
+
+#: tfrmmain.lblnameemployee.caption
+msgid "Name:"
+msgstr "Nome:"
+
+#: tfrmmain.lblnameemployee1.caption
+msgid "Surname 1:"
+msgstr "Apelido 1:"
+
+#: tfrmmain.lblphone.caption
+msgctxt "TFRMMAIN.LBLPHONE.CAPTION"
+msgid "Phone:"
+msgstr "Telefone:"
+
+#: tfrmmain.lblsse.caption
+msgctxt "TFRMMAIN.LBLSSE.CAPTION"
+msgid "SSN Number:"
+msgstr "Número SSN:"
+
+#: tfrmmain.lblstate.caption
+msgctxt "TFRMMAIN.LBLSTATE.CAPTION"
+msgid "State:"
+msgstr "Estado:"
+
+#: tfrmmain.lblsurname2.caption
+msgctxt "TFRMMAIN.LBLSURNAME2.CAPTION"
+msgid "Surname 2:"
+msgstr "Sobrenome 2:"
+
+#: tfrmmain.lblzipcode.caption
+msgctxt "TFRMMAIN.LBLZIPCODE.CAPTION"
+msgid "ZIP Code:"
+msgstr "CEP:"
+
+#: tfrmmain.panpicemployee.caption
+msgctxt "tfrmmain.panpicemployee.caption"
+msgid "[Photo]"
+msgstr "[Foto]"
+
+#: tfrmmain.tabaddress.caption
+msgid "Address/Contact"
+msgstr "Endereço / Contato"
+
+#: tfrmmain.tabemployees.caption
+msgid "TabEmployees"
+msgstr "TabEmployees"
+
+#: tfrmmain.tabpersonaldata.caption
+msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
+msgid "Personal Data"
+msgstr "Dados pessoais"
+
+#: tfrmpicemployee.btnclearpic.caption
+msgid "Clear"
+msgstr "Claro"
+
+#: tfrmpicemployee.btncopytoclipboard.caption
+msgid "Copy to Clipboad"
+msgstr "Copiar para Clipboad"
+
+#: tfrmpicemployee.btnexportpic.caption
+msgid "Export..."
+msgstr "Export ..."
+
+#: tfrmpicemployee.btnloadpic.caption
+msgid "Load..."
+msgstr "Carga ..."
+
+#: tfrmpicemployee.btnpastefromclipboard.caption
+msgid "Paste from Clipboad"
+msgstr "Colar Clipboad"
+
+#: tfrmpicemployee.caption
+msgid "Picture"
+msgstr "Foto"
+
+#: tfrmpicemployee.panpicemployee.caption
+msgctxt "TFRMPICEMPLOYEE.PANPICEMPLOYEE.CAPTION"
+msgid "[Photo]"
+msgstr "[Foto]"
+
+#: tfrmpreferences.btnchangedtbpath.caption
+msgid "Change..."
+msgstr "Mudar ..."
+
+#: tfrmpreferences.caption
+msgctxt "tfrmpreferences.caption"
+msgid "Preferences"
+msgstr "Preferências"
+
+#: tfrmpreferences.cbodateformat.text
+msgctxt "TFRMPREFERENCES.CBODATEFORMAT.TEXT"
+msgid "dd.mm.yyyy"
+msgstr "dd.mm.yyyy"
+
+#: tfrmpreferences.cbodateseparator.text
+msgid "/"
+msgstr "/"
+
+#: tfrmpreferences.dates.caption
+msgid "Dates"
+msgstr "Datas"
+
+#: tfrmpreferences.lbldatabasepath.caption
+msgid "Database Path:"
+msgstr "Caminho Base de dados:"
+
+#: tfrmpreferences.lbldateformat.caption
+msgctxt "TFRMPREFERENCES.LBLDATEFORMAT.CAPTION"
+msgid "Date Display Format:"
+msgstr "Formato de data:"
+
+#: tfrmpreferences.lbldateseparator.caption
+msgid "Date Separator:"
+msgstr "Separador de data:"
+
+#: tfrmpreferences.tabdatabase.caption
+msgctxt "tfrmpreferences.tabdatabase.caption"
+msgid "Database"
+msgstr "Banco de dados"
+
+#: tfrmpreferences.tablanguage.caption
+msgctxt "tfrmpreferences.tablanguage.caption"
+msgid "Language"
+msgstr "Idioma"
+
+#: tfrmsearch.btnclose.caption
+msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"
+msgid "Close"
+msgstr "Fechar"
+
+#: tfrmsearch.btnsearch.caption
+msgctxt "TFRMSEARCH.BTNSEARCH.CAPTION"
+msgid "Search"
+msgstr "Busca"
+
+#: tfrmsearch.btnviewall.caption
+msgid "View All"
+msgstr "Ver tudo"
+
+#: tfrmsearch.caption
+msgctxt "tfrmsearch.caption"
+msgid "Search"
+msgstr "Busca"
+
+#: tfrmsearch.chkcasesensitive.caption
+msgctxt "TFRMSEARCH.CHKCASESENSITIVE.CAPTION"
+msgid "Case sensitive"
+msgstr "Maiús. e minús."
+
+#: tfrmsearch.chkclose.caption
+msgid "Close on select"
+msgstr "Fechar no select"
+
+#: tfrmsearch.label1.caption
+msgid "Query Result"
+msgstr "Resultado da consulta"
+
+#: tfrmsearch.lblsearchcriteria.caption
+msgid "Search Criteria"
+msgstr "Critérios de pesquisa"

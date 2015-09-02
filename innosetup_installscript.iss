@@ -37,6 +37,7 @@ Type: filesandordirs; Name: "{app}";
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "es"; MessagesFile: "compiler:Languages\Spanish.isl"
+Name: "pt_BR"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Messages]
 es.BeveledLabel=Spanish
