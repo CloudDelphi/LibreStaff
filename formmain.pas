@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqlite3conn, sqldb, db, FileUtil, DBDateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls, DBGrids,
-  Buttons, DataModule, types, FormPicEmployee, FormPreferences, INIfiles,
+  Buttons, DataModule, Types, FormPicEmployee, FormPreferences, INIfiles,
   PopupNotifier, gettext;
 
 type
@@ -19,13 +19,18 @@ type
 type
   { TFrmMain }
   TFrmMain = class(TForm)
+    BtnEditContracts: TBitBtn;
+    BtnInactive: TBitBtn;
     BtnSearch: TBitBtn;
     BtnEditStateList: TBitBtn;
     BtnSave: TBitBtn;
     BtnDelete: TBitBtn;
     BtnNew: TBitBtn;
+    CboFilter: TComboBox;
     DBCboState: TDBComboBox;
     DBDatBirthday: TDBDateTimePicker;
+    DBDatInitContract: TDBDateTimePicker;
+    DBDatEndContract: TDBDateTimePicker;
     DBENameEmployee: TDBEdit;
     DBESurname1: TDBEdit;
     DBENameEmployee2: TDBEdit;
@@ -36,9 +41,15 @@ type
     DBEPhone: TDBEdit;
     DBECell: TDBEdit;
     DBEEmail: TDBEdit;
+    DBLkCboTypeContract: TDBLookupComboBox;
+    GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
     ImGPreferences: TImage;
+    Label1: TLabel;
     LblBirthday: TLabel;
+    LblBirthday1: TLabel;
+    LblBirthday2: TLabel;
+    LblBirthday3: TLabel;
     MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
     GrpAddressEmployee: TGroupBox;
@@ -75,11 +86,14 @@ type
     TabEmployees: TTabSheet;
     TabAddress: TTabSheet;
     TabPersonalData: TTabSheet;
+    TabContract: TTabSheet;
+    TabHistoricContracts: TTabSheet;
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnEditStateListClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
+    procedure CboFilterChange(Sender: TObject);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -128,6 +142,7 @@ var
   tfOut: TextFile;
   CboDatItemIdx: Integer;
   DateFormat: TDateDisplayOrder;
+  DateSeparator: String;
 begin
   PathApp:= ExtractFilePath(Paramstr(0));
   SQLiteLibraryName:= PathApp+'sqlite3.dll';
@@ -146,8 +161,13 @@ begin
    	'mm.dd.yyyy': DateFormat:= ddoMDY;
    	'yyyy.mm.dd': DateFormat:= ddoYMD;
   end; //case
+  DateSeparator:= INIFile.ReadString('Lang', 'DateSeparator', '/');
   DBDatBirthday.DateDisplayOrder:= DateFormat;
-  DBDatBirthday.DateSeparator:= INIFile.ReadString('Lang', 'DateSeparator', '/');;
+  DBDatBirthday.DateSeparator:= DateSeparator;
+  DBDatInitContract.DateDisplayOrder:= DateFormat;
+  DBDatInitContract.DateSeparator:= DateSeparator;
+  DBDatEndContract.DateDisplayOrder:= DateFormat;
+  DBDatEndContract.DateSeparator:= DateSeparator;
 	//Connect & Load to database
   DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
   FuncData.ConnectDatabase(DatabasePath+'data.db');
@@ -191,6 +211,27 @@ begin
 	FrmSearch.Search(wsEmployees);
   FrmSearch.Free;
   FrmSearch:= nil;
+end;
+
+procedure TFrmMain.CboFilterChange(Sender: TObject);
+begin
+  Case CboFilter.ItemIndex of
+  0: begin
+
+     end;
+  1: begin
+
+     end;
+  2: begin
+
+     end;
+  3: begin
+
+     end;
+  end;
+  {Cambio el num de registros-->}
+  TotalRecs:= DataMod.QueEmployees.RecordCount;
+  UpdateNavRec;
 end;
 
 procedure TFrmMain.DBNavClick(Sender: TObject; Button: TDBNavButtonType);

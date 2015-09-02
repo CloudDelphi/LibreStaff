@@ -147,9 +147,19 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
+#: tfrmmain.btneditcontracts.caption
+msgctxt "TFRMMAIN.BTNEDITCONTRACTS.CAPTION"
+msgid "..."
+msgstr ""
+
 #: tfrmmain.btneditstatelist.caption
 msgctxt "TFRMMAIN.BTNEDITSTATELIST.CAPTION"
 msgid "..."
+msgstr ""
+
+#: tfrmmain.btninactive.caption
+msgctxt "TFRMMAIN.BTNINACTIVE.CAPTION"
+msgid "Inactivate"
 msgstr ""
 
 #: tfrmmain.btnnew.caption
@@ -168,6 +178,14 @@ msgstr ""
 
 #: tfrmmain.caption
 msgid "LibreStaff"
+msgstr ""
+
+#: tfrmmain.cbofilter.text
+msgid "Active"
+msgstr ""
+
+#: tfrmmain.groupbox1.caption
+msgid "Employment Contract"
 msgstr ""
 
 #: tfrmmain.grpaddressemployee.caption
@@ -193,6 +211,10 @@ msgctxt "TFRMMAIN.IMGPREFERENCES.HINT"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmmain.label1.caption
+msgid "Filter:"
+msgstr ""
+
 #: tfrmmain.lbladdress.caption
 msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
 msgid "Address:"
@@ -200,6 +222,18 @@ msgstr ""
 
 #: tfrmmain.lblbirthday.caption
 msgid "Birthday:"
+msgstr ""
+
+#: tfrmmain.lblbirthday1.caption
+msgid "Date Init:"
+msgstr ""
+
+#: tfrmmain.lblbirthday2.caption
+msgid "Date End:"
+msgstr ""
+
+#: tfrmmain.lblbirthday3.caption
+msgid "Type of contract:"
 msgstr ""
 
 #: tfrmmain.lblcell.caption
@@ -264,8 +298,16 @@ msgstr ""
 msgid "Address/Contact"
 msgstr ""
 
+#: tfrmmain.tabcontract.caption
+msgid "Contract"
+msgstr ""
+
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
+msgstr ""
+
+#: tfrmmain.tabhistoriccontracts.caption
+msgid "Historic Contracts"
 msgstr ""
 
 #: tfrmmain.tabpersonaldata.caption

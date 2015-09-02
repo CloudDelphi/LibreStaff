@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 612
+  Left = 568
   Height = 709
-  Top = 275
+  Top = 329
   Width = 1142
   Caption = 'LibreStaff'
   ClientHeight = 709
@@ -249,6 +249,7 @@ object FrmMain: TFrmMain
               Height = 36
               Top = 83
               Width = 176
+              AutoComplete = True
               DataField = 'State_Employee'
               DataSource = DataMod.DsoEmployees
               ItemHeight = 28
@@ -393,6 +394,128 @@ object FrmMain: TFrmMain
             end
           end
         end
+        object TabContract: TTabSheet
+          Caption = 'Contract'
+          ClientHeight = 315
+          ClientWidth = 1126
+          object GroupBox1: TGroupBox
+            Left = 8
+            Height = 176
+            Top = 16
+            Width = 624
+            Caption = 'Employment Contract'
+            ClientHeight = 143
+            ClientWidth = 620
+            TabOrder = 0
+            object DBDatInitContract: TDBDateTimePicker
+              Left = 127
+              Height = 36
+              Top = 16
+              Width = 161
+              DataField = 'DateInit_Contract'
+              DataSource = DataMod.DsoEmployees
+              ReadOnly = False
+              CenturyFrom = 1900
+              MaxDate = 2958465
+              MinDate = 2
+              AutoSize = False
+              TabOrder = 0
+              TrailingSeparator = False
+              TextForNullDate = 'NULL'
+              LeadingZeros = True
+              NullInputAllowed = False
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              UseDefaultSeparators = True
+              HideDateTimeParts = []
+              MonthNames = 'Long'
+            end
+            object LblBirthday1: TLabel
+              Left = 7
+              Height = 28
+              Top = 16
+              Width = 120
+              AutoSize = False
+              Caption = 'Date Init:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBDatEndContract: TDBDateTimePicker
+              Left = 439
+              Height = 36
+              Top = 16
+              Width = 161
+              DataField = 'DateEnd_Contract'
+              DataSource = DataMod.DsoEmployees
+              ReadOnly = False
+              CenturyFrom = 1900
+              MaxDate = 2958465
+              MinDate = 2
+              AutoSize = False
+              TabOrder = 1
+              TrailingSeparator = False
+              TextForNullDate = 'NULL'
+              LeadingZeros = True
+              NullInputAllowed = False
+              Kind = dtkDate
+              TimeFormat = tf24
+              TimeDisplay = tdHMS
+              DateMode = dmComboBox
+              UseDefaultSeparators = True
+              HideDateTimeParts = []
+              MonthNames = 'Long'
+            end
+            object LblBirthday2: TLabel
+              Left = 319
+              Height = 28
+              Top = 16
+              Width = 120
+              AutoSize = False
+              Caption = 'Date End:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object LblBirthday3: TLabel
+              Left = 8
+              Height = 28
+              Top = 80
+              Width = 160
+              AutoSize = False
+              Caption = 'Type of contract:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object BtnEditContracts: TBitBtn
+              Left = 400
+              Height = 38
+              Top = 81
+              Width = 42
+              Caption = '...'
+              Enabled = False
+              TabOrder = 2
+            end
+          end
+          object DBLkCboTypeContract: TDBLookupComboBox
+            Left = 176
+            Height = 36
+            Top = 128
+            Width = 225
+            DataField = 'TypeContract_ID'
+            DataSource = DataMod.DsoEmployees
+            Enabled = False
+            ListFieldIndex = 0
+            LookupCache = False
+            TabOrder = 1
+          end
+        end
+        object TabHistoricContracts: TTabSheet
+          Caption = 'Historic Contracts'
+        end
       end
       object Panel1: TPanel
         Left = 0
@@ -405,7 +528,7 @@ object FrmMain: TFrmMain
         ClientWidth = 1134
         TabOrder = 1
         object BtnDelete: TBitBtn
-          Left = 512
+          Left = 560
           Height = 40
           Top = 96
           Width = 120
@@ -414,7 +537,7 @@ object FrmMain: TFrmMain
           TabOrder = 0
         end
         object BtnSave: TBitBtn
-          Left = 176
+          Left = 144
           Height = 40
           Top = 96
           Width = 112
@@ -477,13 +600,50 @@ object FrmMain: TFrmMain
           end
         end
         object BtnSearch: TBitBtn
-          Left = 336
+          Left = 412
           Height = 40
           Top = 96
           Width = 128
           Caption = 'Search'
           OnClick = BtnSearchClick
           TabOrder = 5
+        end
+        object CboFilter: TComboBox
+          Left = 160
+          Height = 36
+          Top = 38
+          Width = 120
+          Enabled = False
+          ItemHeight = 28
+          ItemIndex = 0
+          Items.Strings = (
+            'Active'
+            'Inactive'
+            'All'
+          )
+          OnChange = CboFilterChange
+          Style = csDropDownList
+          TabOrder = 6
+          Text = 'Active'
+        end
+        object BtnInactive: TBitBtn
+          Left = 280
+          Height = 40
+          Top = 96
+          Width = 112
+          Caption = 'Inactivate'
+          Enabled = False
+          TabOrder = 7
+        end
+        object Label1: TLabel
+          Left = 104
+          Height = 28
+          Top = 42
+          Width = 48
+          Caption = 'Filter:'
+          Color = 14483385
+          ParentColor = False
+          Transparent = False
         end
       end
       object Pan: TPanel

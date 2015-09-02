@@ -54,7 +54,10 @@ begin
        		' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' EMail_Employee CHAR(256) NOT NULL DEFAULT "",'+
-			    ' Birthday_Employee DATE);');
+          ' Birthday_Employee DATE,'+
+          ' DateInit_Contract DATE,'+
+          ' DateEnd_Contract DATE,'+
+          ' TypeContract_ID INTEGER);');
 
     //Creating an index based upon id in the DATA Table
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
