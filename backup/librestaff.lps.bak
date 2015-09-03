@@ -47,8 +47,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="323"/>
+        <TopLine Value="275"/>
         <CursorPos X="12" Y="284"/>
         <UsageCount Value="110"/>
         <Loaded Value="True"/>
@@ -113,10 +112,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="62"/>
-        <CursorPos X="24" Y="121"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="107"/>
+        <CursorPos X="38" Y="126"/>
         <UsageCount Value="65"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="frameclose.pas"/>
@@ -337,7 +339,7 @@
         <UsageCount Value="8"/>
       </Unit34>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="12" HistoryIndex="11">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="250" Column="3" TopLine="179"/>
@@ -374,6 +376,18 @@
         <Filename Value="formmain.pas"/>
         <Caret Line="289" Column="54" TopLine="275"/>
       </Position9>
+      <Position10>
+        <Filename Value="formpreferences.pas"/>
+        <Caret Line="61" Column="23" TopLine="53"/>
+      </Position10>
+      <Position11>
+        <Filename Value="formpreferences.pas"/>
+        <Caret Line="74" Column="34" TopLine="53"/>
+      </Position11>
+      <Position12>
+        <Filename Value="formpreferences.pas"/>
+        <Caret Line="121" Column="23" TopLine="98"/>
+      </Position12>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

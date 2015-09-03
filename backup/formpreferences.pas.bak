@@ -123,7 +123,6 @@ begin
     case i of
     	0: Str:= LstView_Caption_Item_0;
       1: Str:= LstView_Caption_Item_1;
-      2: Str:= LstView_Caption_Item_2;
     end; //case
   	LstViewPreferences.Items[i].Caption:= Str;
     end;

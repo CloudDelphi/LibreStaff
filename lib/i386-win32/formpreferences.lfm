@@ -38,8 +38,54 @@ object FrmPreferences: TFrmPreferences
     ActivePage = TabGeneral
     Align = alClient
     ShowTabs = False
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
+    object TabGeneral: TTabSheet
+      Caption = 'General'
+      ClientHeight = 400
+      ClientWidth = 682
+      OnShow = TabGeneralShow
+      object GrpIDEmployee: TGroupBox
+        Left = 40
+        Height = 177
+        Top = 32
+        Width = 280
+        Caption = 'ID Employee'
+        ClientHeight = 144
+        ClientWidth = 276
+        TabOrder = 0
+        object ChkIDUnique: TCheckBox
+          Left = 16
+          Height = 33
+          Top = 8
+          Width = 97
+          Caption = 'Unique'
+          OnChange = ChkIDUniqueChange
+          TabOrder = 0
+        end
+        object ChkIDAutoRandom: TCheckBox
+          Left = 66
+          Height = 33
+          Top = 52
+          Width = 154
+          AutoSize = False
+          Caption = 'Auto-random'
+          Enabled = False
+          OnChange = ChkIDAutoRandomChange
+          TabOrder = 1
+        end
+        object ChkIDAllowBlank: TCheckBox
+          Left = 66
+          Height = 33
+          Top = 96
+          Width = 136
+          Caption = 'Allow blank'
+          Enabled = False
+          OnChange = ChkIDAllowBlankChange
+          TabOrder = 2
+        end
+      end
+    end
     object TabLanguage: TTabSheet
       Caption = 'Language'
       ClientHeight = 400
@@ -139,52 +185,6 @@ object FrmPreferences: TFrmPreferences
         Caption = 'Change...'
         OnClick = BtnChangeDtbPathClick
         TabOrder = 1
-      end
-    end
-    object TabGeneral: TTabSheet
-      Caption = 'General'
-      ClientHeight = 400
-      ClientWidth = 682
-      OnShow = TabGeneralShow
-      object GrpIDEmployee: TGroupBox
-        Left = 40
-        Height = 177
-        Top = 32
-        Width = 280
-        Caption = 'ID Employee'
-        ClientHeight = 144
-        ClientWidth = 276
-        TabOrder = 0
-        object ChkIDUnique: TCheckBox
-          Left = 16
-          Height = 33
-          Top = 8
-          Width = 97
-          Caption = 'Unique'
-          OnChange = ChkIDUniqueChange
-          TabOrder = 0
-        end
-        object ChkIDAutoRandom: TCheckBox
-          Left = 66
-          Height = 33
-          Top = 52
-          Width = 154
-          AutoSize = False
-          Caption = 'Auto-random'
-          Enabled = False
-          OnChange = ChkIDAutoRandomChange
-          TabOrder = 1
-        end
-        object ChkIDAllowBlank: TCheckBox
-          Left = 66
-          Height = 33
-          Top = 96
-          Width = 136
-          Caption = 'Allow blank'
-          Enabled = False
-          OnChange = ChkIDAllowBlankChange
-          TabOrder = 2
-        end
       end
     end
   end
