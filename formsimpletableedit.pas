@@ -1,4 +1,4 @@
-unit FormTypeContracts;
+unit FormSimpleTableEdit;
 
 {$mode objfpc}{$H+}
 
@@ -10,9 +10,9 @@ uses
 
 type
 
-  { TFrmTypeContracts }
+  { TFrmSimpleTableEdit }
 
-  TFrmTypeContracts = class(TForm)
+  TFrmSimpleTableEdit = class(TForm)
     DBGrdTypeContracts: TDBGrid;
     FraAddDelEdiSavCan1: TFraAddDelEdiSavCan;
     procedure BtnAddClick(Sender: TObject);
@@ -27,7 +27,7 @@ type
   end;
 
 var
-  FrmTypeContracts: TFrmTypeContracts;
+  FrmSimpleTableEdit: TFrmSimpleTableEdit;
 
 implementation
 
@@ -36,14 +36,14 @@ implementation
 uses
   FuncData, DataModule, FormMain;
 
-{ TFrmTypeContracts }
+{ TFrmSimpleTableEdit }
 
-procedure TFrmTypeContracts.BtnCancelClick(Sender: TObject);
+procedure TFrmSimpleTableEdit.BtnCancelClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFrmTypeContracts.BtnAddClick(Sender: TObject);
+procedure TFrmSimpleTableEdit.BtnAddClick(Sender: TObject);
 var
   NameTypeContract: String;
 const
@@ -61,7 +61,7 @@ begin
     end;
 end;
 
-procedure TFrmTypeContracts.BtnDeleteClick(Sender: TObject);
+procedure TFrmSimpleTableEdit.BtnDeleteClick(Sender: TObject);
 var
   NameTypeContract: String;
 begin
@@ -69,7 +69,7 @@ begin
 	FuncData.DeleteTableRecord(DataMod.QueTypeContracts, True, NameTypeContract);
 end;
 
-procedure TFrmTypeContracts.BtnEditClick(Sender: TObject);
+procedure TFrmSimpleTableEdit.BtnEditClick(Sender: TObject);
 var
   NameTypeContract: String;
 const
@@ -86,7 +86,7 @@ begin
     end;
 end;
 
-procedure TFrmTypeContracts.BtnSaveClick(Sender: TObject);
+procedure TFrmSimpleTableEdit.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueTypeContracts);
   Close;

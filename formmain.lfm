@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 495
+  Left = 541
   Height = 709
-  Top = 151
+  Top = 227
   Width = 1142
   Caption = 'LibreStaff'
   ClientHeight = 709
@@ -562,6 +562,7 @@ object FrmMain: TFrmMain
           Top = 38
           Width = 244
           Align = alCustom
+          BeforeAction = DBNavBeforeAction
           BevelOuter = bvNone
           ChildSizing.EnlargeHorizontal = crsScaleChilds
           ChildSizing.EnlargeVertical = crsScaleChilds
@@ -661,18 +662,20 @@ object FrmMain: TFrmMain
           Left = 216
           Height = 36
           Top = 24
-          Width = 154
+          Width = 162
           DataField = 'Name_Employee'
           DataSource = DataMod.DsoEmployees
           CharCase = ecNormal
           MaxLength = 256
+          ParentBiDiMode = False
           TabOrder = 0
         end
         object LblNameEmployee: TLabel
-          Left = 136
+          Left = 128
           Height = 28
           Top = 27
-          Width = 72
+          Width = 80
+          Alignment = taRightJustify
           AutoSize = False
           Caption = 'Name:'
           Font.Height = 29
@@ -706,7 +709,7 @@ object FrmMain: TFrmMain
           end
         end
         object DBESurname1: TDBEdit
-          Left = 528
+          Left = 520
           Height = 36
           Top = 24
           Width = 194
@@ -717,10 +720,11 @@ object FrmMain: TFrmMain
           TabOrder = 2
         end
         object LblNameEmployee1: TLabel
-          Left = 403
+          Left = 408
           Height = 28
           Top = 27
           Width = 109
+          Alignment = taRightJustify
           AutoSize = False
           Caption = 'Surname 1:'
           Font.Height = 29
@@ -728,7 +732,7 @@ object FrmMain: TFrmMain
           ParentFont = False
         end
         object DBENameEmployee2: TDBEdit
-          Left = 877
+          Left = 869
           Height = 36
           Top = 24
           Width = 194
@@ -739,10 +743,11 @@ object FrmMain: TFrmMain
           TabOrder = 3
         end
         object LblSurname2: TLabel
-          Left = 752
+          Left = 758
           Height = 28
           Top = 27
           Width = 109
+          Alignment = taRightJustify
           AutoSize = False
           Caption = 'Surname 2:'
           Font.Height = 29
@@ -750,10 +755,10 @@ object FrmMain: TFrmMain
           ParentFont = False
         end
         object DBENameEmployee3: TDBEdit
-          Left = 216
+          Left = 520
           Height = 36
-          Top = 72
-          Width = 154
+          Top = 70
+          Width = 194
           DataField = 'IDCard_Employee'
           DataSource = DataMod.DsoEmployees
           CharCase = ecNormal
@@ -761,10 +766,11 @@ object FrmMain: TFrmMain
           TabOrder = 4
         end
         object LblIDCard: TLabel
-          Left = 136
+          Left = 448
           Height = 28
-          Top = 75
+          Top = 72
           Width = 69
+          Alignment = taRightJustify
           AutoSize = False
           Caption = 'ID Card:'
           Font.Height = 29
@@ -772,9 +778,9 @@ object FrmMain: TFrmMain
           ParentFont = False
         end
         object DBESSN: TDBEdit
-          Left = 528
+          Left = 869
           Height = 36
-          Top = 75
+          Top = 67
           Width = 194
           DataField = 'SSN_Employee'
           DataSource = DataMod.DsoEmployees
@@ -783,12 +789,37 @@ object FrmMain: TFrmMain
           TabOrder = 5
         end
         object LblSSE: TLabel
-          Left = 403
+          Left = 742
           Height = 28
-          Top = 78
+          Top = 70
           Width = 125
+          Alignment = taRightJustify
           AutoSize = False
           Caption = 'SSN Number:'
+          Font.Height = 29
+          ParentColor = False
+          ParentFont = False
+        end
+        object DBEIDEmployee: TDBEdit
+          Left = 216
+          Height = 36
+          Top = 70
+          Width = 162
+          DataField = 'IDN_Employee'
+          DataSource = DataMod.DsoEmployees
+          CharCase = ecNormal
+          MaxLength = 256
+          TabOrder = 6
+          OnExit = DBEIDEmployeeExit
+        end
+        object LblIDEmployee: TLabel
+          Left = 128
+          Height = 28
+          Top = 73
+          Width = 80
+          Alignment = taRightJustify
+          AutoSize = False
+          Caption = 'ID:'
           Font.Height = 29
           ParentColor = False
           ParentFont = False

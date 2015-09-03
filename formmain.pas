@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
   Buttons, DataModule, FormPicEmployee, FormPreferences, INIfiles,
-  PopupNotifier, gettext;
+  PopupNotifier, gettext, LCLType;
 
 type
 	TDataFormat= (dtString, dtInteger, dtDate);
@@ -32,6 +32,7 @@ type
     DBDatInitContract: TDBDateTimePicker;
     DBDatEndContract: TDBDateTimePicker;
     DBENameEmployee: TDBEdit;
+    DBEIDEmployee: TDBEdit;
     DBESurname1: TDBEdit;
     DBENameEmployee2: TDBEdit;
     DBENameEmployee3: TDBEdit;
@@ -50,6 +51,7 @@ type
     LblBirthday1: TLabel;
     LblBirthday2: TLabel;
     LblBirthday3: TLabel;
+    LblIDEmployee: TLabel;
     MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
     GrpAddressEmployee: TGroupBox;
@@ -95,6 +97,8 @@ type
     procedure BtnSaveClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
     procedure CboFilterChange(Sender: TObject);
+    procedure DBEIDEmployeeExit(Sender: TObject);
+    procedure DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -104,6 +108,8 @@ type
   private
     { private declarations }
     CurrentRec, TotalRecs: Integer;
+    function IDIsUnique: Boolean;
+    function RandomID(PLen: Integer): String;
   public
     { public declarations }
     procedure UpdateNavRec;
@@ -115,6 +121,7 @@ var
   IniFile: TINIFile;
   Lang, FallBacklang: String;
   StatesFilename: String;
+  IDUnique, IDAutoRandom, IDAllowBlank: Boolean;
 
 resourcestring
 	LblNavRecOf= 'of';
@@ -127,7 +134,8 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData, FormListEditor, FormSearch, DateTimePicker, FormTypeContracts;
+    FuncData, FormListEditor, FormSearch, DateTimePicker, FormSimpleTableEdit,
+    Math;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -135,6 +143,20 @@ procedure TFrmMain.UpdateNavRec;
 begin
   CurrentRec:= DataMod.DsoEmployees.DataSet.RecNo;
   LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+LblNavRecOf +' '+ IntToStr(TotalRecs);
+  DataMod.QueEmployees.Edit;
+end;
+function TFrmMain.RandomID(PLen: Integer): string;
+var
+  str: string;
+begin
+  Randomize;
+  //string with all possible chars
+  str:= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-?%$_:!'+
+  			'/&()';
+  Result:= '';
+  repeat
+    Result:= Result + str[Random(Length(str)) + 1];
+  until (Length(Result) = PLen)
 end;
 //------------------------------------------------------------------------------
 procedure TFrmMain.FormCreate(Sender: TObject);
@@ -149,9 +171,7 @@ begin
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
 	if not FileExists(PathApp+'config.ini') then
-  	begin
     INIFile.WriteString('Database', 'Path', PathApp+'data\');
-    end;
   //Format the CboDat's
 	ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case ShortDateFormat of
@@ -180,6 +200,7 @@ begin
     BtnDelete.Enabled:= False;
     BtnSearch.Enabled:= False;
 		end;
+  DataMod.QueEmployees.Edit;
 	FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
 	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
 	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
@@ -196,8 +217,11 @@ begin
       CloseFile(tfOut);
       end;
   DBCboState.Items.LoadFromFile(StatesFilename);
+  //Read the ID Employee field
+  IDUnique:= StrToBool(INIFile.ReadString('General','IDUnique','False'));
+  IDAutoRandom:= StrToBool(INIFile.ReadString('General','IDAutoRandom','False'));
+  IDAllowBlank:= StrToBool(INIFile.ReadString('General','IDAllowBlank','False'));
 end;
-
 procedure TFrmMain.ImGPreferencesClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmPreferences, FrmPreferences);
@@ -207,6 +231,7 @@ end;
 procedure TFrmMain.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueEmployees);
+  DataMod.QueEmployees.Edit;
 end;
 procedure TFrmMain.BtnSearchClick(Sender: TObject);
 begin
@@ -236,9 +261,54 @@ begin
   UpdateNavRec;
 end;
 
+procedure TFrmMain.DBEIDEmployeeExit(Sender: TObject);
+begin
+	if IDUnique= True then IDIsUnique;
+end;
+
+procedure TFrmMain.DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
+begin
+  if (IDUnique= True) AND (DBEIDEmployee.Focused= True) then
+  		if IDIsUnique= False then Abort;
+end;
+
+function TFrmMain.IDIsUnique: Boolean;
+var
+  Unique: Boolean;
+  Msg: String;
+begin
+  //Check if is unique
+  Unique:= True;
+  if (IDAllowBlank= False) AND (DBEIDEmployee.Text='') then
+  	begin
+    Unique:= False;
+	  Msg:= 'This ID# cannot be in blank'#13'It should be UNIQUE!'
+  	end;
+  if (Unique= True) AND (IDAllowBlank= False) then
+    begin
+	  FuncData.ExecSQL(DataMod.QueSearch, 'SELECT Employees.IDN_Employee from Employees WHERE Employees.IDN_Employee="'+
+  			DBEIDEmployee.Text+'" AND Employees.ID_Employee!='+DataMod.QueEmployees.FieldByName('ID_Employee').AsString+';');
+	  if DataMod.QueSearch.RecordCount>0 then
+      begin
+      Unique:= False;
+      Msg:= 'This ID# is in use by another Employee'#13'It should be UNIQUE!'
+      end;
+    end;
+  if Unique= False then
+    begin
+    DBEIDEmployee.Color:= clRed;
+    Application.MessageBox(PChar(Msg), 'Error!', MB_OK);
+    DBEIDEmployee.SetFocus;
+    DBEIDEmployee.Color:= clDefault;
+    Result:= False;
+    end
+  else
+  	Result:= True;
+end;
+
 procedure TFrmMain.DBNavClick(Sender: TObject; Button: TDBNavButtonType);
 begin
-  inherited; //<-- to execute the default onclick event
+	inherited; //<-- to execute the default onclick event
 	UpdateNavRec;
 end;
 procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -251,23 +321,27 @@ end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
 const
   WriteFieldsCount= 1;
+var
+  RandomInt: Integer;
 begin
-	 SetLength(WriteFields, WriteFieldsCount);
-   WriteFields[0].FieldName:= 'Name_Employee';
-   WriteFields[0].Value:= '';
-   WriteFields[0].DataFormat:= dtString;
-   if FuncData.AppendTableRecord(DataMod.QueEmployees, WriteFields)= True then
-	   begin
-		 Inc(TotalRecs, 1);
-     UpdateNavRec;
-  	 if (BtnSave.Enabled= False) then
-         begin
-         BtnSave.Enabled:= True;
-         BtnDelete.Enabled:= True;
-         BtnSearch.Enabled:= True;
-         end;
-	   end;
-   WriteFields:= nil;
+	SetLength(WriteFields, WriteFieldsCount);
+  WriteFields[0].FieldName:= 'IDN_Employee';
+  if (IDUnique= True) AND (IDAutoRandom= True) then
+		WriteFields[0].Value:= RandomID(12)
+    else WriteFields[0].Value:= '';
+  WriteFields[0].DataFormat:= dtString;
+  if FuncData.AppendTableRecord(DataMod.QueEmployees, WriteFields)= True then
+	  begin
+	 	Inc(TotalRecs, 1);
+    UpdateNavRec;
+  	if (BtnSave.Enabled= False) then
+  		begin
+	    BtnSave.Enabled:= True;
+  	  BtnDelete.Enabled:= True;
+    	BtnSearch.Enabled:= True;
+    	end;
+		end;
+  WriteFields:= nil;
 end;
 procedure TFrmMain.BtnDeleteClick(Sender: TObject);
 var
@@ -296,8 +370,8 @@ end;
 
 procedure TFrmMain.BtnEditTypeContractsClick(Sender: TObject);
 begin
-  Application.CreateForm(TFrmTypeContracts, FrmTypeContracts);
-  FrmTypeContracts.ShowModal;
+  Application.CreateForm(TFrmSimpleTableEdit, FrmSimpleTableEdit);
+  FrmSimpleTableEdit.ShowModal;
 end;
 
 procedure TFrmMain.ImgExitClick(Sender: TObject);

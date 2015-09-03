@@ -6,7 +6,7 @@ interface
 
 uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
-  sqldb, LCLType;
+  sqldb, LCLType, db;
 
 type TWriteField = record
     FieldName: String;
@@ -54,6 +54,7 @@ begin
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -144,7 +145,6 @@ function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField):
 var
   i: Integer;
 begin
-  try
   Query.Append;
   for i:= Low(WriteFields) to High(WriteFields) do
   	begin
@@ -160,14 +160,28 @@ begin
   Query.Refresh;
   Query.Last;
   Result:= True;
-	except
-  Result:= False;
-  end;
+//	except
+ // Result:= False;
+ // end;
 end;
 procedure SaveTable(Query: TSQLQuery);
+var
+	SubstringPos: Integer;
 begin
   Screen.Cursor:= crHourGlass;
+  try
   Query.ApplyUpdates;
+  except
+  on E: EUpdateError do
+  	begin
+    SubstringPos:= Pos('UNIQUE constraint failed', E.Message);
+    if SubstringPos>0 then
+      ShowMessage('The ID# of an employee is not unique.')
+    else
+	  	ShowMessage('Exception class name = '+E.ClassName);
+  	  ShowMessage('Exception message = '+E.Message);
+    end;
+  end;
   DataMod.Transaction.CommitRetaining;
   Screen.Cursor:= crDefault;
 end;

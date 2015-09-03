@@ -1,4 +1,4 @@
-object FrmTypeContracts: TFrmTypeContracts
+object FrmSimpleTableEdit: TFrmSimpleTableEdit
   Left = 795
   Height = 430
   Top = 363

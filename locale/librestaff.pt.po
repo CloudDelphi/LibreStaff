@@ -55,12 +55,23 @@ msgid "Save the photo"
 msgstr "Salvar a foto"
 
 #: formpreferences.lstview_caption_item_0
+#, fuzzy
+#| msgid "Language"
 msgctxt "formpreferences.lstview_caption_item_0"
-msgid "Language"
+msgid "General"
 msgstr "Idioma"
 
 #: formpreferences.lstview_caption_item_1
+#, fuzzy
+#| msgid "Database"
 msgctxt "formpreferences.lstview_caption_item_1"
+msgid "Language"
+msgstr "Banco de dados"
+
+#: formpreferences.lstview_caption_item_2
+#, fuzzy
+#| msgid "Database"
+msgctxt "formpreferences.lstview_caption_item_2"
 msgid "Database"
 msgstr "Banco de dados"
 
@@ -318,6 +329,10 @@ msgctxt "TFRMMAIN.LBLIDCARD.CAPTION"
 msgid "ID Card:"
 msgstr "Carteira de identidade:"
 
+#: tfrmmain.lblidemployee.caption
+msgid "ID:"
+msgstr ""
+
 #: tfrmmain.lblnameemployee.caption
 msgid "Name:"
 msgstr "Nome:"
@@ -424,9 +439,27 @@ msgstr "dd.mm.yyyy"
 msgid "/"
 msgstr "/"
 
+#: tfrmpreferences.chkidallowblank.caption
+msgctxt "tfrmpreferences.chkidallowblank.caption"
+msgid "Allow blank"
+msgstr ""
+
+#: tfrmpreferences.chkidautorandom.caption
+msgid "Auto-random"
+msgstr ""
+
+#: tfrmpreferences.chkidunique.caption
+msgctxt "tfrmpreferences.chkidunique.caption"
+msgid "Unique"
+msgstr ""
+
 #: tfrmpreferences.dates.caption
 msgid "Dates"
 msgstr "Datas"
+
+#: tfrmpreferences.grpidemployee.caption
+msgid "ID Employee"
+msgstr ""
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -445,6 +478,13 @@ msgstr "Separador de data:"
 msgctxt "tfrmpreferences.tabdatabase.caption"
 msgid "Database"
 msgstr "Banco de dados"
+
+#: tfrmpreferences.tabgeneral.caption
+#, fuzzy
+#| msgid "Language"
+msgctxt "tfrmpreferences.tabgeneral.caption"
+msgid "General"
+msgstr "Idioma"
 
 #: tfrmpreferences.tablanguage.caption
 msgctxt "tfrmpreferences.tablanguage.caption"
@@ -487,15 +527,27 @@ msgstr "Resultado da consulta"
 msgid "Search Criteria"
 msgstr "Critérios de pesquisa"
 
+#: tfrmsimpletableedit.caption
+msgctxt "tfrmsimpletableedit.caption"
+msgid "Type of Contracts"
+msgstr ""
+
+#: tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr ""
+
 #: tfrmtypecontract.caption
 msgid "FrmTypeContract"
 msgstr ""
 
 #: tfrmtypecontracts.caption
+msgctxt "tfrmtypecontracts.caption"
 msgid "Type of Contracts"
 msgstr ""
 
 #: tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr ""
 

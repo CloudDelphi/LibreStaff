@@ -137,12 +137,12 @@
         <UnitName Value="FormSearch"/>
       </Unit10>
       <Unit11>
-        <Filename Value="formtypecontracts.pas"/>
+        <Filename Value="formsimpletableedit.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="FrmTypeContracts"/>
+        <ComponentName Value="FrmSimpleTableEdit"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FormTypeContracts"/>
+        <UnitName Value="FormSimpleTableEdit"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -176,7 +176,7 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="5">
+    <Exceptions Count="7">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -192,6 +192,12 @@
       <Item5>
         <Name Value="EZDatabaseError"/>
       </Item5>
+      <Item6>
+        <Name Value="EDatabaseError"/>
+      </Item6>
+      <Item7>
+        <Name Value="EUpdateError"/>
+      </Item7>
     </Exceptions>
   </Debugging>
 </CONFIG>
