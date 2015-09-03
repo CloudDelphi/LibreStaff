@@ -171,7 +171,7 @@ begin
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
 	if not FileExists(PathApp+'config.ini') then
-    INIFile.WriteString('Database', 'Path', PathApp+'data\');
+    INIFile.WriteString('Database', 'Path', '"'+PathApp+'data\"');
   //Format the CboDat's
 	ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case ShortDateFormat of

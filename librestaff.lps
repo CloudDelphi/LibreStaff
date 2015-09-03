@@ -38,7 +38,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="57" Y="11"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="111"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -47,9 +47,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <TopLine Value="320"/>
-        <CursorPos X="10" Y="326"/>
-        <UsageCount Value="110"/>
+        <TopLine Value="165"/>
+        <CursorPos X="15" Y="172"/>
+        <UsageCount Value="111"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -57,10 +57,11 @@
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="19"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="31"/>
         <CursorPos Y="38"/>
-        <UsageCount Value="108"/>
+        <UsageCount Value="109"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -69,9 +70,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="2"/>
         <CursorPos X="17" Y="21"/>
-        <UsageCount Value="107"/>
+        <UsageCount Value="108"/>
+        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -82,7 +84,7 @@
         <UnitName Value="FormPicEmployee"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="12" Y="20"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
       </Unit4>
       <Unit5>
         <Filename Value="framesavecancel.pas"/>
@@ -94,7 +96,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos Y="30"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="82"/>
       </Unit5>
       <Unit6>
         <Filename Value="funcdlgs.pas"/>
@@ -103,7 +105,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="17" Y="13"/>
-        <UsageCount Value="79"/>
+        <UsageCount Value="80"/>
       </Unit6>
       <Unit7>
         <Filename Value="formpreferences.pas"/>
@@ -114,9 +116,9 @@
         <UnitName Value="FormPreferences"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="131"/>
-        <CursorPos Y="143"/>
-        <UsageCount Value="65"/>
+        <TopLine Value="123"/>
+        <CursorPos X="60" Y="143"/>
+        <UsageCount Value="66"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
@@ -129,7 +131,7 @@
         <UnitName Value="FrameClose"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="49" Y="8"/>
-        <UsageCount Value="63"/>
+        <UsageCount Value="64"/>
       </Unit8>
       <Unit9>
         <Filename Value="formlisteditor.pas"/>
@@ -141,7 +143,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="36"/>
         <CursorPos X="20" Y="49"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="60"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -153,7 +155,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="98"/>
         <CursorPos X="34" Y="102"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="55"/>
       </Unit10>
       <Unit11>
         <Filename Value="formsimpletableedit.pas"/>
@@ -164,7 +166,7 @@
         <UnitName Value="FormSimpleTableEdit"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="30" Y="89"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -176,7 +178,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="33" Y="43"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
       </Unit12>
       <Unit13>
         <Filename Value="C:\sprite.pas"/>
@@ -339,7 +341,7 @@
         <UsageCount Value="8"/>
       </Unit34>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="10" HistoryIndex="9">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="250" Column="3" TopLine="179"/>
@@ -376,6 +378,10 @@
         <Filename Value="formmain.pas"/>
         <Caret Line="289" Column="54" TopLine="275"/>
       </Position9>
+      <Position10>
+        <Filename Value="formpreferences.pas"/>
+        <Caret Line="141" Column="36" TopLine="114"/>
+      </Position10>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

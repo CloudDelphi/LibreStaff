@@ -140,7 +140,7 @@ begin
     NewPath:= FrmMain.SelectDirDlg.FileName+'\';
     if FileExists(NewPath+'data.db') then
     	begin
-	    INIFile.WriteString('Database','Path',NewPath);
+	    INIFile.WriteString('Database','Path','"'+NewPath+'"');
   	  EdiDtbPath.Text:= NewPath;
       end
     	else Application.MessageBox(PChar(SelectDirDlg_Error_Msg), PChar(SelectDirDlg_Error_Title), MB_OK + MB_ICONERROR);
