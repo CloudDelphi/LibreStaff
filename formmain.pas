@@ -284,19 +284,22 @@ begin
     Unique:= False;
 	  Msg:= 'This ID# cannot be in blank'#13'It should be UNIQUE!'
   	end;
-  if (Unique= True) AND (IDAllowBlank= False) then
+  if (Unique= True)then
     begin
-	  FuncData.ExecSQL(DataMod.QueSearch, 'SELECT Employees.IDN_Employee from Employees WHERE Employees.IDN_Employee="'+
-  			DBEIDEmployee.Text+'" AND Employees.ID_Employee!='+DataMod.QueEmployees.FieldByName('ID_Employee').AsString+';');
-	  if DataMod.QueSearch.RecordCount>0 then
-      begin
-      Unique:= False;
-      Msg:= 'This ID# is in use by another Employee'#13'It should be UNIQUE!'
-      end;
+    if (IDAllowBlank= False) OR ((IDAllowBlank= True) AND (DBEIDEmployee.Text<>'')) then
+	    begin
+		  FuncData.ExecSQL(DataMod.QueSearch, 'SELECT Employees.IDN_Employee from Employees WHERE Employees.IDN_Employee="'+
+  				DBEIDEmployee.Text+'" AND Employees.ID_Employee!='+DataMod.QueEmployees.FieldByName('ID_Employee').AsString+';');
+		  if DataMod.QueSearch.RecordCount>0 then
+  	    begin
+    	  Unique:= False;
+      	Msg:= 'This ID# is in use by another Employee'#13'It should be UNIQUE!'
+	      end;
+  	  end;
     end;
   if Unique= False then
-    begin
-    DBEIDEmployee.Color:= clRed;
+  	begin
+   	DBEIDEmployee.Color:= clRed;
     Application.MessageBox(PChar(Msg), 'Error!', MB_OK);
     DBEIDEmployee.SetFocus;
     DBEIDEmployee.Color:= clDefault;
