@@ -108,6 +108,8 @@ type
   private
     { private declarations }
     CurrentRec, TotalRecs: Integer;
+    procedure DisableEmployees;
+    procedure EnableEmployees;
     function IDIsUnique: Boolean;
     function RandomID(PLen: Integer): String;
   public
@@ -139,6 +141,23 @@ uses
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
+procedure TFrmMain.DisableEmployees;
+begin
+  BtnSave.Enabled:= False;
+  BtnDelete.Enabled:= False;
+  BtnSearch.Enabled:= False;
+  BtnEditStateList.Enabled:= False;
+  BtnEditTypeContracts.Enabled:= False;
+end;
+procedure TFrmMain.EnableEmployees;
+begin
+  BtnSave.Enabled:= True;
+  BtnDelete.Enabled:= True;
+	BtnSearch.Enabled:= True;
+  BtnEditStateList.Enabled:= True;
+  BtnEditTypeContracts.Enabled:= True;
+end;
+
 procedure TFrmMain.UpdateNavRec;
 begin
   CurrentRec:= DataMod.DsoEmployees.DataSet.RecNo;
@@ -194,20 +213,16 @@ begin
   //Note: The order is important! First the detailed tables.
   FuncData.ExecSQL(DataMod.QueTypeContracts, 'SELECT * from TypeContracts;');
   FuncData.ExecSQL(DataMod.QueEmployees, 'SELECT * from Employees;');
-  if (DataMod.QueEmployees.IsEmpty= True) then
-  	begin
-    BtnSave.Enabled:= False;
-    BtnDelete.Enabled:= False;
-    BtnSearch.Enabled:= False;
-		end;
-  DataMod.QueEmployees.Edit;
 	FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
+  DataMod.QueEmployees.Edit;
 	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
 	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
 	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
   ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
 	TotalRecs:= DataMod.QueEmployees.RecordCount;
 	UpdateNavRec;
+  if TotalRecs=0 then
+    DisableEmployees;
 	//Load the combos:
   StatesFilename:= DatabasePath+'states_'+Lang+'.txt';
   if not FileExists(StatesFilename) then
@@ -263,7 +278,7 @@ end;
 
 procedure TFrmMain.DBEIDEmployeeExit(Sender: TObject);
 begin
-	if IDUnique= True then IDIsUnique;
+	if (IDUnique= True) AND (TotalRecs>0) then IDIsUnique;
 end;
 
 procedure TFrmMain.DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
@@ -338,11 +353,7 @@ begin
 	 	Inc(TotalRecs, 1);
     UpdateNavRec;
   	if (BtnSave.Enabled= False) then
-  		begin
-	    BtnSave.Enabled:= True;
-  	  BtnDelete.Enabled:= True;
-    	BtnSearch.Enabled:= True;
-    	end;
+			EnableEmployees;
 		end;
   WriteFields:= nil;
 end;
@@ -355,12 +366,8 @@ begin
   	begin
     Dec(TotalRecs, 1);
     UpdateNavRec;
-    if (DataMod.QueEmployees.IsEmpty= True) then
-    	begin
-      BtnSave.Enabled:= False;
-      BtnDelete.Enabled:= False;
-      BtnSearch.Enabled:= False;
-      end;
+    if TotalRecs=0 then
+			DisableEmployees;
     end;
 end;
 
@@ -368,7 +375,7 @@ procedure TFrmMain.BtnEditStateListClick(Sender: TObject);
 begin
 	FrmListEditor.EditList(FrmStatesTitle, StatesFilename, cblStates);
   FrmListEditor.Free;
-  FrmListEditor:= nil;
+	FrmListEditor:= nil;
 end;
 
 procedure TFrmMain.BtnEditTypeContractsClick(Sender: TObject);
@@ -383,7 +390,7 @@ begin
 end;
 procedure TFrmMain.PicEmployeeClick(Sender: TObject);
 begin
-	if (DataMod.QueEmployees.IsEmpty= False) then
+	if TotalRecs>0 then
   	begin
     Application.CreateForm(TFrmPicEmployee, FrmPicEmployee);
     FrmPicEmployee.ShowModal;

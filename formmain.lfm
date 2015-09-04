@@ -345,7 +345,7 @@ object FrmMain: TFrmMain
         end
         object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
-          ClientHeight = 315
+          ClientHeight = 317
           ClientWidth = 1126
           object GrpMisc: TGroupBox
             Left = 20
