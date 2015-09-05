@@ -1,11 +1,11 @@
 object FrmPicEmployee: TFrmPicEmployee
   Left = 667
-  Height = 399
+  Height = 363
   Top = 362
   Width = 406
   BorderIcons = [biSystemMenu]
   Caption = 'Picture'
-  ClientHeight = 399
+  ClientHeight = 363
   ClientWidth = 406
   OnCreate = FormCreate
   Position = poScreenCenter
@@ -56,7 +56,7 @@ object FrmPicEmployee: TFrmPicEmployee
     TabOrder = 4
   end
   inline FraSaveCancel01: TFraSaveCancel
-    Top = 328
+    Top = 292
     Width = 406
     Align = alBottom
     ClientWidth = 406

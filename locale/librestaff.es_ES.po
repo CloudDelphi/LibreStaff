@@ -477,6 +477,10 @@ msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr "Idioma"
 
+#: tfrmprgbar.caption
+msgid "FrmPrgBar"
+msgstr ""
+
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
 msgid "Close"

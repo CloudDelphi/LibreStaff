@@ -8,6 +8,7 @@ object FrmMain: TFrmMain
   ClientWidth = 1142
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   LCLVersion = '1.4.2.0'
   WindowState = wsMaximized
   object PanMain: TPanel
@@ -685,7 +686,7 @@ object FrmMain: TFrmMain
         object PanPicEmployee: TPanel
           Left = 22
           Height = 89
-          Top = 8
+          Top = 16
           Width = 88
           BevelOuter = bvNone
           BorderStyle = bsSingle

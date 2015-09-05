@@ -16,10 +16,6 @@
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Linking>
-            <Debugging>
-              <GenerateDebugInfo Value="False"/>
-              <StripSymbols Value="True"/>
-            </Debugging>
             <Options>
               <Win32>
                 <GraphicApplication Value="True"/>
@@ -179,6 +175,7 @@
         <Filename Value="formprgbar.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FrmPrgBar"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>

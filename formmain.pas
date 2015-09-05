@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
   Buttons, DataModule, FormPicEmployee, FormPreferences, INIfiles,
-  PopupNotifier, gettext, LCLType;
+  PopupNotifier, gettext, LCLType, FormPrgBar;
 
 type
 	TDataFormat= (dtString, dtInteger, dtDate);
@@ -100,8 +100,10 @@ type
     procedure DBEIDEmployeeExit(Sender: TObject);
     procedure DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
+    procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure ImGPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
     procedure PicEmployeeClick(Sender: TObject);
@@ -137,7 +139,7 @@ implementation
 
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormSimpleTableEdit,
-    Math;
+    Math, db;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -205,24 +207,6 @@ begin
   DBDatInitContract.DateSeparator:= DateSeparator;
   DBDatEndContract.DateDisplayOrder:= DateFormat;
   DBDatEndContract.DateSeparator:= DateSeparator;
-	//Connect & Load to database
-  DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
-  Databasename:= DatabasePath + 'data.db';
-  FuncData.ConnectDatabase(Databasename);
-  //Open Tables
-  //Note: The order is important! First the detailed tables.
-  FuncData.ExecSQL(DataMod.QueTypeContracts, 'SELECT * from TypeContracts;');
-  FuncData.ExecSQL(DataMod.QueEmployees, 'SELECT * from Employees;');
-	FuncData.ExecSQL(DataMod.QuePicsEmployees, 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;');
-  DataMod.QueEmployees.Edit;
-	ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
-	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
-	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
-  ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
-	TotalRecs:= DataMod.QueEmployees.RecordCount;
-	UpdateNavRec;
-  if TotalRecs=0 then
-    DisableEmployees;
 	//Load the combos:
   StatesFilename:= DatabasePath+'states_'+Lang+'.txt';
   if not FileExists(StatesFilename) then
@@ -236,7 +220,62 @@ begin
   IDUnique:= StrToBool(INIFile.ReadString('General','IDUnique','False'));
   IDAutoRandom:= StrToBool(INIFile.ReadString('General','IDAutoRandom','False'));
   IDAllowBlank:= StrToBool(INIFile.ReadString('General','IDAllowBlank','False'));
+  //get bitmaps for the buttons
+  ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
+	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
+	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
 end;
+
+procedure TFrmMain.FormShow(Sender: TObject);
+type TLoadQueries = record
+	Query: TSQLQuery;
+  SQL: String;
+end;
+var
+  LoadQueries: array of TLoadQueries;
+  i: Integer;
+  Bookmark: String;
+  BookmarkInt: Integer;
+const
+  LoadQueriesCount= 3;
+begin
+  //Connect & Load to database
+  DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
+  Databasename:= DatabasePath + 'data.db';
+  FuncData.ConnectDatabase(Databasename);
+  //Open Tables
+  //Note: The order is important! First the detailed tables.
+  SetLength(LoadQueries, 3);
+  LoadQueries[0].Query:= DataMod.QueTypeContracts;
+  LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
+  LoadQueries[1].Query:= DataMod.QueEmployees;
+  LoadQueries[1].SQL:= 'SELECT * from Employees;';
+  LoadQueries[2].Query:= DataMod.QuePicsEmployees;
+  LoadQueries[2].SQL:= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+	for i:= Low(LoadQueries) to High(LoadQueries) do
+  	begin
+		FuncData.ExecSQL(LoadQueries[i].Query, LoadQueries[i].SQL);
+	  FrmPrgBar.PrgBar.Position:= Round(100/(LoadQueriesCount-i));
+    end;
+  //Mark the table for edition:
+  DataMod.QueEmployees.Edit;
+  //Grab the total amount of records:
+	TotalRecs:= DataMod.QueEmployees.RecordCount;
+  //Get the bookmark and then apply it:
+  Bookmark:= INIFile.ReadString('TableEmployees', 'Bookmark', '0');
+  BookmarkInt:= StrToInt(Bookmark);
+  if (BookmarkInt>0) AND (BookmarkInt<=TotalRecs) then
+		DataMod.QueEmployees.RecNo:= BookmarkInt;
+	//Update the Navigator lavel of current record & total records
+	UpdateNavRec;
+  if TotalRecs=0 then
+    DisableEmployees;
+  //Close the Progress Bar
+	FrmPrgBar.Close;
+ 	Screen.Cursor:=crDefault;
+end;
+
 procedure TFrmMain.ImGPreferencesClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmPreferences, FrmPreferences);
@@ -329,8 +368,18 @@ begin
 	inherited; //<-- to execute the default onclick event
 	UpdateNavRec;
 end;
-procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+
+procedure TFrmMain.FormActivate(Sender: TObject);
 begin
+
+end;
+
+procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+var
+  RecNo: Integer;
+begin
+  RecNo:= DataMod.QueEmployees.RecNo;
+  INIFile.WriteString('TableEmployees', 'Bookmark', IntToStr(RecNo));
   DataMod.Connection.CloseTransactions;
   DataMod.Connection.CloseDataSets;
   DataMod.Connection.Connected:= False;

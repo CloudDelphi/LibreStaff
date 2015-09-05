@@ -12,7 +12,7 @@ object FrmPreferences: TFrmPreferences
   LCLVersion = '1.4.2.0'
   object LstViewPreferences: TListView
     Left = 0
-    Height = 408
+    Height = 424
     Top = 0
     Width = 152
     Align = alLeft
@@ -32,7 +32,7 @@ object FrmPreferences: TFrmPreferences
   end
   object PagPreferences: TPageControl
     Left = 156
-    Height = 408
+    Height = 424
     Top = 0
     Width = 690
     ActivePage = TabGeneral
@@ -42,7 +42,7 @@ object FrmPreferences: TFrmPreferences
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
-      ClientHeight = 400
+      ClientHeight = 416
       ClientWidth = 682
       OnShow = TabGeneralShow
       object GrpIDEmployee: TGroupBox
@@ -190,24 +190,29 @@ object FrmPreferences: TFrmPreferences
   end
   object Splitter1: TSplitter
     Left = 152
-    Height = 408
+    Height = 424
     Top = 0
     Width = 4
   end
   inline FraClose1: TFraClose
-    Top = 408
+    Height = 66
+    Top = 424
     Width = 846
     Align = alBottom
+    ClientHeight = 66
     ClientWidth = 846
     TabOrder = 3
     inherited PanClose: TPanel
+      Height = 66
       Width = 846
+      Align = alClient
       BevelOuter = bvNone
       BorderStyle = bsSingle
-      ClientHeight = 78
+      ClientHeight = 62
       ClientWidth = 842
       inherited BtnClose: TBitBtn
         Left = 360
+        Top = 8
         OnClick = BtnCloseClick
       end
     end
