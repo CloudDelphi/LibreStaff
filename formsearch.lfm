@@ -137,6 +137,7 @@ object FrmSearch: TFrmSearch
         Width = 163
         Caption = 'Close on select'
         Checked = True
+        OnChange = ChkCloseChange
         State = cbChecked
         TabOrder = 0
       end

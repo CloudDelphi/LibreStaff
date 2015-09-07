@@ -37,6 +37,7 @@ type
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
     procedure BtnViewAllClick(Sender: TObject);
+    procedure ChkCloseChange(Sender: TObject);
     procedure DBGridSearchResultCellClick(Column: TColumn);
     procedure EdiSearchKeyPress(Sender: TObject; var Key: char);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -208,6 +209,11 @@ begin
 	Search(True);
 end;
 
+procedure TFrmSearch.ChkCloseChange(Sender: TObject);
+begin
+	INIFile.WriteString('Search', 'CloseOnSelect', BoolToStr(ChkClose.Checked));
+end;
+
 procedure TFrmSearch.DBGridSearchResultCellClick(Column: TColumn);
 var
   Query: TSQLQuery;
@@ -253,6 +259,7 @@ begin
   FrmMain.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
 	FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(9, BtnViewAll.Glyph);
+  ChkClose.Checked:= StrToBool(INIFile.ReadString('Search', 'CloseOnSelect', 'True'));
 end;
 
 end.
