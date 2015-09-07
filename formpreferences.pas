@@ -16,9 +16,10 @@ type
     BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
     CboDateSeparator: TComboBox;
-    ChkIDAutoRandom: TCheckBox;
+    ChkIDAuto: TCheckBox;
     ChkIDAllowBlank: TCheckBox;
     ChkIDUnique: TCheckBox;
+    CboAutoType: TComboBox;
     EdiDtbPath: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
@@ -35,10 +36,11 @@ type
     TabGeneral: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
+    procedure CboAutoTypeChange(Sender: TObject);
     procedure CboDateFormatChange(Sender: TObject);
     procedure CboDateSeparatorChange(Sender: TObject);
     procedure ChkIDAllowBlankChange(Sender: TObject);
-    procedure ChkIDAutoRandomChange(Sender: TObject);
+    procedure ChkIDAutoChange(Sender: TObject);
     procedure ChkIDUniqueChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
@@ -83,6 +85,12 @@ begin
   Close;
 end;
 
+procedure TFrmPreferences.CboAutoTypeChange(Sender: TObject);
+begin
+  IDAutoType:= CboAutoType.ItemIndex;
+  INIFile.WriteString('General', 'IDAutoType', IntToStr(IDAutoType));
+end;
+
 procedure TFrmPreferences.CboDateFormatChange(Sender: TObject);
 begin
 	INIFile.WriteString('Lang', 'ShortDateFormat', CboDateFormat.Text);
@@ -99,17 +107,18 @@ begin
   INIFile.WriteString('General', 'IDAllowBlank', BoolToStr(IDAllowBlank));
 end;
 
-procedure TFrmPreferences.ChkIDAutoRandomChange(Sender: TObject);
+procedure TFrmPreferences.ChkIDAutoChange(Sender: TObject);
 begin
-  IDAutoRandom:= not IDAutoRandom;
-  INIFile.WriteString('General', 'IDAutoRandom', BoolToStr(IDAutoRandom));
+  IDAuto:= not IDAuto;
+  CboAutoType.Enabled:= not CboAutoType.Enabled;
+  INIFile.WriteString('General', 'IDAuto', BoolToStr(IDAuto));
 end;
 
 procedure TFrmPreferences.ChkIDUniqueChange(Sender: TObject);
 begin
   IDUnique:= not IDUnique;
   INIFile.WriteString('General', 'IDUnique', BoolToStr(IDUnique));
-  ChkIDAutoRandom.Enabled:= ChkIDUnique.Checked;
+  ChkIDAuto.Enabled:= ChkIDUnique.Checked;
   ChkIDAllowBlank.Enabled:= ChkIDUnique.Checked;
 end;
 
@@ -159,13 +168,19 @@ begin
     False: ChkIDUnique.State:= cbUnchecked;
     True: begin
     			ChkIDUnique.State:= cbChecked;
-          ChkIDAutoRandom.Enabled:= True;
+          ChkIDAuto.Enabled:= True;
           ChkIDAllowBlank.Enabled:= True;
 			    end;
   end; //case
-  case IDAutoRandom of
-    False: ChkIDAutoRandom.State:= cbUnchecked;
-    True: ChkIDAutoRandom.State:= cbChecked;
+  case IDAuto of
+    False: 	begin
+    				ChkIDAuto.State:= cbUnchecked;
+            CboAutoType.Enabled:= False;
+					  end;
+    True: 	begin
+    				ChkIDAuto.State:= cbChecked;
+            CboAutoType.Enabled:= True;
+				    end;
   end; //case
   case IDAllowBlank of
     False: ChkIDAllowBlank.State:= cbUnchecked;

@@ -47,12 +47,12 @@ type
     procedure Search(ViewAll: Boolean);
   public
     { public declarations }
-    function Search(What: TWhatSearch): Boolean;
+    function Search(What: TWhatTable): Boolean;
   end;
 
 var
   FrmSearch: TFrmSearch;
-  WhatSearch: TWhatSearch;
+  WhatSearch: TWhatTable;
   SearchCriteria: array of TSearchCriteria;
 
 resourcestring
@@ -72,7 +72,7 @@ uses
 
 { TFrmSearch }
 
-function TFrmSearch.Search(What: TWhatSearch): Boolean;
+function TFrmSearch.Search(What: TWhatTable): Boolean;
 var
   i, CriteriaCount: Integer;
 begin
@@ -80,7 +80,7 @@ begin
   try
   WhatSearch:= What;
   case What of
- 		wsEmployees: 	begin
+ 		wtEmployees: 	begin
     							CriteriaCount:= 3;
     							SetLength(SearchCriteria, CriteriaCount);
                   SearchCriteria[0].Name:= CriteriaEmployeeName;
@@ -194,7 +194,7 @@ end;
 procedure TFrmSearch.Search(ViewAll: Boolean);
 begin
   case WhatSearch of
-    wsEmployees: ExecSearch('Employees', 'ID_Employee, Name_Employee, Surname1_Employee, Surname2_Employee', ViewAll);
+    wtEmployees: ExecSearch('Employees', 'ID_Employee, Name_Employee, Surname1_Employee, Surname2_Employee', ViewAll);
   end;
 end;
 
@@ -215,7 +215,7 @@ var
   RecordIDSelec: variant;
 begin
   case WhatSearch of
-    wsEmployees:	begin
+    wtEmployees:	begin
     							Query:= DataMod.QueEmployees;
                   IDField:= 'ID_Employee';
     							end;

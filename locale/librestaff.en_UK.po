@@ -16,6 +16,18 @@ msgstr ""
 msgid "States"
 msgstr ""
 
+#: formmain.idisblank
+msgid ""
+"This ID# cannot be in blank\n"
+"It should be UNIQUE!\n"
+msgstr ""
+
+#: formmain.idisnotunique
+msgid ""
+"This ID# is in use by another Employee\n"
+"It should be UNIQUE!\n"
+msgstr ""
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr ""
@@ -182,6 +194,25 @@ msgctxt "tfrasavecanceladddelete.btnsave.caption"
 msgid "Save and Close"
 msgstr ""
 
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr ""
+
+#: tfrmabout.tababout.caption
+msgctxt "tfrmabout.tababout.caption"
+msgid "About"
+msgstr ""
+
+#: tfrmabout.tablicense.caption
+msgid "License"
+msgstr "Licence"
+
+#: tfrmabout.titlelibrestaff.caption
+msgctxt "tfrmabout.titlelibrestaff.caption"
+msgid "LibreStaff"
+msgstr ""
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "tfrmlisteditor.btnclose.caption"
 msgid "Close"
@@ -235,6 +266,7 @@ msgid "Search"
 msgstr ""
 
 #: tfrmmain.caption
+msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr ""
 
@@ -258,6 +290,11 @@ msgstr ""
 #: tfrmmain.grprcontactemployee.caption
 msgctxt "tfrmmain.grprcontactemployee.caption"
 msgid "Contact"
+msgstr ""
+
+#: tfrmmain.imgabout.hint
+msgctxt "tfrmmain.imgabout.hint"
+msgid "Info"
 msgstr ""
 
 #: tfrmmain.imgexit.hint
@@ -415,6 +452,11 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmpreferences.cboautotype.text
+msgctxt "tfrmpreferences.cboautotype.text"
+msgid "INC"
+msgstr ""
+
 #: tfrmpreferences.cbodateformat.text
 msgctxt "tfrmpreferences.cbodateformat.text"
 msgid "dd.mm.yyyy"
@@ -429,8 +471,8 @@ msgctxt "tfrmpreferences.chkidallowblank.caption"
 msgid "Allow blank"
 msgstr ""
 
-#: tfrmpreferences.chkidautorandom.caption
-msgid "Auto-random"
+#: tfrmpreferences.chkidauto.caption
+msgid "Auto"
 msgstr ""
 
 #: tfrmpreferences.chkidunique.caption
@@ -524,6 +566,16 @@ msgctxt "tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr ""
 
+#: tfrmtableedit.caption
+msgctxt "tfrmtableedit.caption"
+msgid "Type of Contracts"
+msgstr ""
+
+#: tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr ""
+
 #: tfrmtypecontract.caption
 msgid "FrmTypeContract"
 msgstr ""
@@ -537,4 +589,3 @@ msgstr ""
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr ""
-

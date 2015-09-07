@@ -16,6 +16,22 @@ msgstr ""
 msgid "States"
 msgstr "Estados"
 
+#: formmain.idisblank
+msgid ""
+"This ID# cannot be in blank\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"Isto ID# não pode ser em branco\n"
+"Tenha que ser UNIQUE!\n"
+
+#: formmain.idisnotunique
+msgid ""
+"This ID# is in use by another Employee\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"Isto ID# é em uso por outro Empregado\n"
+"Tenha que ser ÚNICO!\n"
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr "de"
@@ -55,29 +71,23 @@ msgid "Save the photo"
 msgstr "Salvar a foto"
 
 #: formpreferences.lstview_caption_item_0
-#, fuzzy
-#| msgid "Language"
 msgctxt "formpreferences.lstview_caption_item_0"
 msgid "General"
-msgstr "Idioma"
+msgstr "General"
 
 #: formpreferences.lstview_caption_item_1
-#, fuzzy
-#| msgid "Database"
 msgctxt "formpreferences.lstview_caption_item_1"
 msgid "Language"
-msgstr "Banco de dados"
+msgstr "Idioma"
 
 #: formpreferences.lstview_caption_item_2
-#, fuzzy
-#| msgid "Database"
 msgctxt "formpreferences.lstview_caption_item_2"
 msgid "Database"
 msgstr "Banco de dados"
 
 #: formpreferences.selectdirdlg_error_msg
 msgid "The file \"data.db\" does not exist in this path."
-msgstr "O arquivo \\ \"data.db \" não existe neste caminho."
+msgstr "O arquivo \"data.db \" não existe neste caminho."
 
 #: formpreferences.selectdirdlg_error_title
 msgid "ERROR!"
@@ -89,7 +99,7 @@ msgstr "Selecione o caminho para o banco de dados (data.db)"
 
 #: formsearch.blanksearchtext
 msgid "Search string must be not blank."
-msgstr "Pesquisa corda não deve ser em branco."
+msgstr "A pesquisa não deve ser em branco."
 
 #: formsearch.blanksearchtitle
 msgid "Error!"
@@ -109,11 +119,11 @@ msgstr "Sobrenome 2"
 
 #: formsearch.resultcounttext
 msgid "result/s"
-msgstr "resultado / s"
+msgstr "resultado/s"
 
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"
-msgstr "Tem certeza de que deseja excluir"
+msgstr "Tem certeza de que deseja ELIMINAR?"
 
 #: funcdata.delrec_msg_02
 msgid "It cannot revert!"
@@ -126,31 +136,27 @@ msgstr "Eliminação"
 #: tfraadddeledisavcan.btnadd.caption
 msgctxt "tfraadddeledisavcan.btnadd.caption"
 msgid "Add"
-msgstr ""
+msgstr "Acresc."
 
 #: tfraadddeledisavcan.btncancel.caption
-#, fuzzy
 msgctxt "tfraadddeledisavcan.btncancel.caption"
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: tfraadddeledisavcan.btndelete.caption
-#, fuzzy
 msgctxt "tfraadddeledisavcan.btndelete.caption"
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eliminar"
 
 #: tfraadddeledisavcan.btnedit.caption
 msgctxt "tfraadddeledisavcan.btnedit.caption"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: tfraadddeledisavcan.btnsave.caption
-#, fuzzy
-#| msgid "Save & Close"
 msgctxt "tfraadddeledisavcan.btnsave.caption"
 msgid "Save and Close"
-msgstr "Salvar"
+msgstr "Salvar e fechar"
 
 #: tfraclose.btnclose.caption
 msgctxt "tfraclose.btnclose.caption"
@@ -170,31 +176,46 @@ msgstr "Salvar"
 #: tfrasavecanceladddelete.btnadd.caption
 msgctxt "tfrasavecanceladddelete.btnadd.caption"
 msgid "Add"
-msgstr ""
+msgstr "Acresc."
 
 #: tfrasavecanceladddelete.btncancel.caption
-#, fuzzy
 msgctxt "tfrasavecanceladddelete.btncancel.caption"
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: tfrasavecanceladddelete.btndelete.caption
-#, fuzzy
 msgctxt "tfrasavecanceladddelete.btndelete.caption"
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eliminar"
 
 #: tfrasavecanceladddelete.btnedit.caption
 msgctxt "tfrasavecanceladddelete.btnedit.caption"
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: tfrasavecanceladddelete.btnsave.caption
-#, fuzzy
-#| msgid "Save & Close"
 msgctxt "tfrasavecanceladddelete.btnsave.caption"
 msgid "Save and Close"
-msgstr "Salvar"
+msgstr "Salvar e fechar"
+
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr "Sobre..."
+
+#: tfrmabout.tababout.caption
+msgctxt "tfrmabout.tababout.caption"
+msgid "About"
+msgstr "Sobre..."
+
+#: tfrmabout.tablicense.caption
+msgid "License"
+msgstr "Licença"
+
+#: tfrmabout.titlelibrestaff.caption
+msgctxt "tfrmabout.titlelibrestaff.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
 
 #: tfrmlisteditor.btnclose.caption
 msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
@@ -217,7 +238,7 @@ msgstr "FrmListEditor"
 #: tfrmmain.btndelete.caption
 msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
-msgstr "Excluir"
+msgstr "Eliminar"
 
 #: tfrmmain.btneditstatelist.caption
 msgctxt "TFRMMAIN.BTNEDITSTATELIST.CAPTION"
@@ -225,7 +246,6 @@ msgid "..."
 msgstr "..."
 
 #: tfrmmain.btnedittypecontracts.caption
-#, fuzzy
 msgctxt "tfrmmain.btnedittypecontracts.caption"
 msgid "..."
 msgstr "..."
@@ -233,7 +253,7 @@ msgstr "..."
 #: tfrmmain.btninactive.caption
 msgctxt "tfrmmain.btninactive.caption"
 msgid "Inactivate"
-msgstr ""
+msgstr "Inactivar"
 
 #: tfrmmain.btnnew.caption
 msgid "New"
@@ -247,19 +267,20 @@ msgstr "Salvar"
 #: tfrmmain.btnsearch.caption
 msgctxt "tfrmmain.btnsearch.caption"
 msgid "Search"
-msgstr "Busca"
+msgstr "Buscar"
 
 #: tfrmmain.caption
+msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
 #: tfrmmain.cbofilter.text
 msgid "Active"
-msgstr ""
+msgstr "Activar"
 
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
-msgstr ""
+msgstr "Contrato do empregado"
 
 #: tfrmmain.grpaddressemployee.caption
 msgctxt "TFRMMAIN.GRPADDRESSEMPLOYEE.CAPTION"
@@ -275,6 +296,11 @@ msgctxt "TFRMMAIN.GRPRCONTACTEMPLOYEE.CAPTION"
 msgid "Contact"
 msgstr "Contato"
 
+#: tfrmmain.imgabout.hint
+msgctxt "tfrmmain.imgabout.hint"
+msgid "Info"
+msgstr "Info"
+
 #: tfrmmain.imgexit.hint
 msgid "Close app"
 msgstr "Fechar app"
@@ -286,7 +312,7 @@ msgstr "Preferências"
 
 #: tfrmmain.label1.caption
 msgid "Filter:"
-msgstr ""
+msgstr "Filtro:"
 
 #: tfrmmain.lbladdress.caption
 msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
@@ -299,15 +325,15 @@ msgstr "Aniversário:"
 
 #: tfrmmain.lblbirthday1.caption
 msgid "Date Init:"
-msgstr ""
+msgstr "Data de início:"
 
 #: tfrmmain.lblbirthday2.caption
 msgid "Date End:"
-msgstr ""
+msgstr "Data de fim:"
 
 #: tfrmmain.lblbirthday3.caption
 msgid "Type of contract:"
-msgstr ""
+msgstr "Tipo de contrato:"
 
 #: tfrmmain.lblcell.caption
 msgctxt "TFRMMAIN.LBLCELL.CAPTION"
@@ -327,11 +353,11 @@ msgstr "O email:"
 #: tfrmmain.lblidcard.caption
 msgctxt "TFRMMAIN.LBLIDCARD.CAPTION"
 msgid "ID Card:"
-msgstr "Carteira de identidade:"
+msgstr "Carteira de ID:"
 
 #: tfrmmain.lblidemployee.caption
 msgid "ID:"
-msgstr ""
+msgstr "ID:"
 
 #: tfrmmain.lblnameemployee.caption
 msgid "Name:"
@@ -377,7 +403,7 @@ msgstr "Endereço / Contato"
 
 #: tfrmmain.tabcontract.caption
 msgid "Contract"
-msgstr ""
+msgstr "Contrato"
 
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
@@ -385,7 +411,7 @@ msgstr "TabEmployees"
 
 #: tfrmmain.tabhistoriccontracts.caption
 msgid "Historic Contracts"
-msgstr ""
+msgstr "Histórico de contratos"
 
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
@@ -394,7 +420,7 @@ msgstr "Dados pessoais"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
-msgstr "Claro"
+msgstr "Apagar"
 
 #: tfrmpicemployee.btncopytoclipboard.caption
 msgid "Copy to Clipboad"
@@ -402,15 +428,15 @@ msgstr "Copiar para Clipboad"
 
 #: tfrmpicemployee.btnexportpic.caption
 msgid "Export..."
-msgstr "Export ..."
+msgstr "Exportar..."
 
 #: tfrmpicemployee.btnloadpic.caption
 msgid "Load..."
-msgstr "Carga ..."
+msgstr "Carregar..."
 
 #: tfrmpicemployee.btnpastefromclipboard.caption
 msgid "Paste from Clipboad"
-msgstr "Colar Clipboad"
+msgstr "Colar desde Clipboad"
 
 #: tfrmpicemployee.caption
 msgid "Picture"
@@ -423,12 +449,17 @@ msgstr "[Foto]"
 
 #: tfrmpreferences.btnchangedtbpath.caption
 msgid "Change..."
-msgstr "Mudar ..."
+msgstr "Mudar..."
 
 #: tfrmpreferences.caption
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr "Preferências"
+
+#: tfrmpreferences.cboautotype.text
+msgctxt "tfrmpreferences.cboautotype.text"
+msgid "INC"
+msgstr "INC"
 
 #: tfrmpreferences.cbodateformat.text
 msgctxt "TFRMPREFERENCES.CBODATEFORMAT.TEXT"
@@ -442,16 +473,16 @@ msgstr "/"
 #: tfrmpreferences.chkidallowblank.caption
 msgctxt "tfrmpreferences.chkidallowblank.caption"
 msgid "Allow blank"
-msgstr ""
+msgstr "Permitir branco"
 
-#: tfrmpreferences.chkidautorandom.caption
-msgid "Auto-random"
-msgstr ""
+#: tfrmpreferences.chkidauto.caption
+msgid "Auto"
+msgstr "Auto"
 
 #: tfrmpreferences.chkidunique.caption
 msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
-msgstr ""
+msgstr "Único"
 
 #: tfrmpreferences.dates.caption
 msgid "Dates"
@@ -459,7 +490,7 @@ msgstr "Datas"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
-msgstr ""
+msgstr "ID Empregado"
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -480,11 +511,9 @@ msgid "Database"
 msgstr "Banco de dados"
 
 #: tfrmpreferences.tabgeneral.caption
-#, fuzzy
-#| msgid "Language"
 msgctxt "tfrmpreferences.tabgeneral.caption"
 msgid "General"
-msgstr "Idioma"
+msgstr "General"
 
 #: tfrmpreferences.tablanguage.caption
 msgctxt "tfrmpreferences.tablanguage.caption"
@@ -493,7 +522,7 @@ msgstr "Idioma"
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
-msgstr ""
+msgstr "FrmPrgBar"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"
@@ -503,7 +532,7 @@ msgstr "Fechar"
 #: tfrmsearch.btnsearch.caption
 msgctxt "TFRMSEARCH.BTNSEARCH.CAPTION"
 msgid "Search"
-msgstr "Busca"
+msgstr "Buscar"
 
 #: tfrmsearch.btnviewall.caption
 msgid "View All"
@@ -512,7 +541,7 @@ msgstr "Ver tudo"
 #: tfrmsearch.caption
 msgctxt "tfrmsearch.caption"
 msgid "Search"
-msgstr "Busca"
+msgstr "Buscar"
 
 #: tfrmsearch.chkcasesensitive.caption
 msgctxt "TFRMSEARCH.CHKCASESENSITIVE.CAPTION"
@@ -521,7 +550,7 @@ msgstr "Maiús. e minús."
 
 #: tfrmsearch.chkclose.caption
 msgid "Close on select"
-msgstr "Fechar no select"
+msgstr "Fechar na selecção"
 
 #: tfrmsearch.label1.caption
 msgid "Query Result"
@@ -534,24 +563,33 @@ msgstr "Critérios de pesquisa"
 #: tfrmsimpletableedit.caption
 msgctxt "tfrmsimpletableedit.caption"
 msgid "Type of Contracts"
-msgstr ""
+msgstr "Tipo de contratos"
 
 #: tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption
 msgctxt "tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
-msgstr ""
+msgstr "Nome de tipo de contrato"
+
+#: tfrmtableedit.caption
+msgctxt "tfrmtableedit.caption"
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr "Nome"
 
 #: tfrmtypecontract.caption
 msgid "FrmTypeContract"
-msgstr ""
+msgstr "FrmTypeContract"
 
 #: tfrmtypecontracts.caption
 msgctxt "tfrmtypecontracts.caption"
 msgid "Type of Contracts"
-msgstr ""
+msgstr "Tipo de contratos"
 
 #: tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
-msgstr ""
-
+msgstr "Nome de tipo de contrato"

@@ -1,4 +1,4 @@
-object FrmSimpleTableEdit: TFrmSimpleTableEdit
+object FrmTableEdit: TFrmTableEdit
   Left = 795
   Height = 430
   Top = 363
@@ -23,7 +23,6 @@ object FrmSimpleTableEdit: TFrmSimpleTableEdit
         Width = 582
         FieldName = 'Name_TypeContract'
       end>
-    DataSource = DataMod.DsoTypeContracts
     TabOrder = 0
   end
   inline FraAddDelEdiSavCan1: TFraAddDelEdiSavCan

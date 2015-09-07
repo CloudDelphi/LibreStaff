@@ -49,10 +49,10 @@ object FrmPreferences: TFrmPreferences
         Left = 40
         Height = 177
         Top = 32
-        Width = 280
+        Width = 384
         Caption = 'ID Employee'
         ClientHeight = 144
-        ClientWidth = 276
+        ClientWidth = 380
         TabOrder = 0
         object ChkIDUnique: TCheckBox
           Left = 16
@@ -63,15 +63,15 @@ object FrmPreferences: TFrmPreferences
           OnChange = ChkIDUniqueChange
           TabOrder = 0
         end
-        object ChkIDAutoRandom: TCheckBox
+        object ChkIDAuto: TCheckBox
           Left = 66
           Height = 33
           Top = 52
-          Width = 154
+          Width = 98
           AutoSize = False
-          Caption = 'Auto-random'
+          Caption = 'Auto'
           Enabled = False
-          OnChange = ChkIDAutoRandomChange
+          OnChange = ChkIDAutoChange
           TabOrder = 1
         end
         object ChkIDAllowBlank: TCheckBox
@@ -83,6 +83,23 @@ object FrmPreferences: TFrmPreferences
           Enabled = False
           OnChange = ChkIDAllowBlankChange
           TabOrder = 2
+        end
+        object CboAutoType: TComboBox
+          Left = 176
+          Height = 36
+          Top = 52
+          Width = 144
+          Enabled = False
+          ItemHeight = 28
+          ItemIndex = 0
+          Items.Strings = (
+            'INC'
+            'Random'
+          )
+          OnChange = CboAutoTypeChange
+          Style = csDropDownList
+          TabOrder = 3
+          Text = 'INC'
         end
       end
     end

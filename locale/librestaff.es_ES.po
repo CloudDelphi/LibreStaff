@@ -15,6 +15,22 @@ msgstr ""
 msgid "States"
 msgstr "Provincias"
 
+#: formmain.idisblank
+msgid ""
+"This ID# cannot be in blank\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"El IDno puede star en blanco\n"
+"¡Tiene que ser Único!\n"
+
+#: formmain.idisnotunique
+msgid ""
+"This ID# is in use by another Employee\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"Este ID está en uso por otro empleado\n"
+"¡Debería ser único!\n"
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr "de"
@@ -182,6 +198,25 @@ msgctxt "tfrasavecanceladddelete.btnsave.caption"
 msgid "Save and Close"
 msgstr "Guardar y cerrar"
 
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr "Acerca de..."
+
+#: tfrmabout.tababout.caption
+msgctxt "tfrmabout.tababout.caption"
+msgid "About"
+msgstr "Acerca de..."
+
+#: tfrmabout.tablicense.caption
+msgid "License"
+msgstr "Licencia"
+
+#: tfrmabout.titlelibrestaff.caption
+msgctxt "tfrmabout.titlelibrestaff.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "tfrmlisteditor.btnclose.caption"
 msgid "Close"
@@ -236,6 +271,7 @@ msgstr "Buscar"
 
 #: tfrmmain.caption
 #| msgid "FrmMain"
+msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
@@ -260,6 +296,11 @@ msgstr "Misc."
 msgctxt "tfrmmain.grprcontactemployee.caption"
 msgid "Contact"
 msgstr "Contacto"
+
+#: tfrmmain.imgabout.hint
+msgctxt "tfrmmain.imgabout.hint"
+msgid "Info"
+msgstr "Info"
 
 #: tfrmmain.imgexit.hint
 msgid "Close app"
@@ -416,6 +457,11 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr "Preferencias"
 
+#: tfrmpreferences.cboautotype.text
+msgctxt "tfrmpreferences.cboautotype.text"
+msgid "INC"
+msgstr "Incremental"
+
 #: tfrmpreferences.cbodateformat.text
 msgctxt "tfrmpreferences.cbodateformat.text"
 msgid "dd.mm.yyyy"
@@ -430,9 +476,9 @@ msgctxt "tfrmpreferences.chkidallowblank.caption"
 msgid "Allow blank"
 msgstr "Permitir en blanco"
 
-#: tfrmpreferences.chkidautorandom.caption
-msgid "Auto-random"
-msgstr "Auto-aleatorio"
+#: tfrmpreferences.chkidauto.caption
+msgid "Auto"
+msgstr "Auto"
 
 #: tfrmpreferences.chkidunique.caption
 msgctxt "tfrmpreferences.chkidunique.caption"
@@ -479,7 +525,7 @@ msgstr "Idioma"
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
-msgstr ""
+msgstr "FrmPrgBar"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -527,9 +573,19 @@ msgctxt "tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
 
+#: tfrmtableedit.caption
+msgctxt "tfrmtableedit.caption"
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr "Nombre de tipo de contrato"
+
 #: tfrmtypecontract.caption
 msgid "FrmTypeContract"
-msgstr ""
+msgstr "FrmTypeContract"
 
 #: tfrmtypecontracts.caption
 msgctxt "tfrmtypecontracts.caption"
@@ -540,4 +596,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

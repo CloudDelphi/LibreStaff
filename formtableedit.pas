@@ -1,4 +1,4 @@
-unit FormSimpleTableEdit;
+unit FormTableEdit;
 
 {$mode objfpc}{$H+}
 
@@ -6,13 +6,13 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  Buttons, FrameAddDelEdiSavCan;
+  Buttons, FrameAddDelEdiSavCan, db;
 
 type
 
-  { TFrmSimpleTableEdit }
+  { TFrmTableEdit }
 
-  TFrmSimpleTableEdit = class(TForm)
+  TFrmTableEdit = class(TForm)
     DBGrdTypeContracts: TDBGrid;
     FraAddDelEdiSavCan1: TFraAddDelEdiSavCan;
     procedure BtnAddClick(Sender: TObject);
@@ -24,10 +24,11 @@ type
     { private declarations }
   public
     { public declarations }
+    function EditTable(FormTitle, Title, FieldName: String; Datasource: TDatasource): Boolean;
   end;
 
 var
-  FrmSimpleTableEdit: TFrmSimpleTableEdit;
+  FrmTableEdit: TFrmTableEdit;
 
 implementation
 
@@ -36,14 +37,29 @@ implementation
 uses
   FuncData, DataModule, FormMain;
 
-{ TFrmSimpleTableEdit }
+{ TFrmTableEdit }
 
-procedure TFrmSimpleTableEdit.BtnCancelClick(Sender: TObject);
+function TFrmTableEdit.EditTable(FormTitle, Title, FieldName: String; Datasource: TDatasource): Boolean;
+begin
+  with TFrmTableEdit.Create(Application) do
+  try
+    Caption:= FormTitle;
+    DBGrdTypeContracts.Datasource:= Datasource;
+    DBGrdTypeContracts.Columns[0].Title.Caption:= Title;
+    DBGrdTypeContracts.Columns[0].FieldName:= FieldName;
+    Result:= ShowModal = mrOK;
+  finally
+    FrmTableEdit.Free;
+    FrmTableEdit:= nil;
+  end;
+end;
+
+procedure TFrmTableEdit.BtnCancelClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFrmSimpleTableEdit.BtnAddClick(Sender: TObject);
+procedure TFrmTableEdit.BtnAddClick(Sender: TObject);
 var
   NameTypeContract: String;
 const
@@ -61,7 +77,7 @@ begin
     end;
 end;
 
-procedure TFrmSimpleTableEdit.BtnDeleteClick(Sender: TObject);
+procedure TFrmTableEdit.BtnDeleteClick(Sender: TObject);
 var
   NameTypeContract: String;
 begin
@@ -69,7 +85,7 @@ begin
 	FuncData.DeleteTableRecord(DataMod.QueTypeContracts, True, NameTypeContract);
 end;
 
-procedure TFrmSimpleTableEdit.BtnEditClick(Sender: TObject);
+procedure TFrmTableEdit.BtnEditClick(Sender: TObject);
 var
   NameTypeContract: String;
 const
@@ -86,7 +102,7 @@ begin
     end;
 end;
 
-procedure TFrmSimpleTableEdit.BtnSaveClick(Sender: TObject);
+procedure TFrmTableEdit.BtnSaveClick(Sender: TObject);
 begin
   FuncData.SaveTable(DataMod.QueTypeContracts);
   Close;

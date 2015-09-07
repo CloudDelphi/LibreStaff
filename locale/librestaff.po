@@ -16,6 +16,18 @@ msgstr ""
 msgid "States"
 msgstr ""
 
+#: formmain.idisblank
+msgid ""
+"This ID# cannot be in blank\n"
+"It should be UNIQUE!\n"
+msgstr ""
+
+#: formmain.idisnotunique
+msgid ""
+"This ID# is in use by another Employee\n"
+"It should be UNIQUE!\n"
+msgstr ""
+
 #: formmain.lblnavrecof
 msgid "of"
 msgstr ""
@@ -182,6 +194,25 @@ msgctxt "TFRASAVECANCELADDDELETE.BTNSAVE.CAPTION"
 msgid "Save and Close"
 msgstr ""
 
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr ""
+
+#: tfrmabout.tababout.caption
+msgctxt "tfrmabout.tababout.caption"
+msgid "About"
+msgstr ""
+
+#: tfrmabout.tablicense.caption
+msgid "License"
+msgstr ""
+
+#: tfrmabout.titlelibrestaff.caption
+msgctxt "TFRMABOUT.TITLELIBRESTAFF.CAPTION"
+msgid "LibreStaff"
+msgstr ""
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
 msgid "Close"
@@ -235,6 +266,7 @@ msgid "Search"
 msgstr ""
 
 #: tfrmmain.caption
+msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr ""
 
@@ -258,6 +290,11 @@ msgstr ""
 #: tfrmmain.grprcontactemployee.caption
 msgctxt "TFRMMAIN.GRPRCONTACTEMPLOYEE.CAPTION"
 msgid "Contact"
+msgstr ""
+
+#: tfrmmain.imgabout.hint
+msgctxt "TFRMMAIN.IMGABOUT.HINT"
+msgid "Info"
 msgstr ""
 
 #: tfrmmain.imgexit.hint
@@ -415,6 +452,11 @@ msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmpreferences.cboautotype.text
+msgctxt "TFRMPREFERENCES.CBOAUTOTYPE.TEXT"
+msgid "INC"
+msgstr ""
+
 #: tfrmpreferences.cbodateformat.text
 msgctxt "TFRMPREFERENCES.CBODATEFORMAT.TEXT"
 msgid "dd.mm.yyyy"
@@ -429,8 +471,8 @@ msgctxt "TFRMPREFERENCES.CHKIDALLOWBLANK.CAPTION"
 msgid "Allow blank"
 msgstr ""
 
-#: tfrmpreferences.chkidautorandom.caption
-msgid "Auto-random"
+#: tfrmpreferences.chkidauto.caption
+msgid "Auto"
 msgstr ""
 
 #: tfrmpreferences.chkidunique.caption
@@ -521,6 +563,16 @@ msgstr ""
 
 #: tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption
 msgctxt "TFRMSIMPLETABLEEDIT.DBGRDTYPECONTRACTS.COLUMNS[0].TITLE.CAPTION"
+msgid "Name of Type of Contract"
+msgstr ""
+
+#: tfrmtableedit.caption
+msgctxt "TFRMTABLEEDIT.CAPTION"
+msgid "Type of Contracts"
+msgstr ""
+
+#: tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "TFRMTABLEEDIT.DBGRDTYPECONTRACTS.COLUMNS[0].TITLE.CAPTION"
 msgid "Name of Type of Contract"
 msgstr ""
 
