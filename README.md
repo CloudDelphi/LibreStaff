@@ -6,7 +6,8 @@ Characteristics
 Programming Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
 Compiler: <a href="http://www.lazarus-ide.org/">Lazarus</a><br />
 Database engine: <a href="https://www.sqlite.org/">SQLite</a><br />
-Languages: English, Spanish & Portuguese.
+Languages: English, Spanish & Portuguese.  
+License: GPLv3
 
 How to Compile
 --------------
