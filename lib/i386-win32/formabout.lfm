@@ -2147,7 +2147,6 @@ object FrmAbout: TFrmAbout
       Caption = 'License'
       ClientHeight = 336
       ClientWidth = 449
-      OnContextPopup = TabLicenseContextPopup
       OnShow = TabLicenseShow
       object RchMmoLicense: TRichMemo
         Left = 0

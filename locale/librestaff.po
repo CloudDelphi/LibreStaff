@@ -12,6 +12,62 @@ msgstr ""
 "Language: en\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#: formdsoeditor.add_iptbox_caption_typecontracts
+msgid "Add type of contract"
+msgstr ""
+
+#: formdsoeditor.add_iptbox_caption_workplaces
+msgid "Add workplace"
+msgstr ""
+
+#: formdsoeditor.add_iptbox_prompt_typecontracts
+msgctxt "formdsoeditor.add_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr ""
+
+#: formdsoeditor.add_iptbox_prompt_workplaces
+msgctxt "formdsoeditor.add_iptbox_prompt_workplaces"
+msgid "Name:"
+msgstr ""
+
+#: formdsoeditor.col_title_typecontracts
+msgctxt "formdsoeditor.col_title_typecontracts"
+msgid "Name"
+msgstr ""
+
+#: formdsoeditor.col_title_workplaces
+msgctxt "formdsoeditor.col_title_workplaces"
+msgid "Name"
+msgstr ""
+
+#: formdsoeditor.edit_iptbox_caption_typecontracts
+msgid "Change the name of contract"
+msgstr ""
+
+#: formdsoeditor.edit_iptbox_caption_workplaces
+msgid "Change the name of workplace"
+msgstr ""
+
+#: formdsoeditor.edit_iptbox_prompt_typecontracts
+msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr ""
+
+#: formdsoeditor.edit_iptbox_prompt_workplaces
+msgctxt "formdsoeditor.edit_iptbox_prompt_workplaces"
+msgid "Name:"
+msgstr ""
+
+#: formdsoeditor.form_caption_typecontracts
+msgctxt "formdsoeditor.form_caption_typecontracts"
+msgid "Type of Contract"
+msgstr ""
+
+#: formdsoeditor.form_caption_workplaces
+msgctxt "formdsoeditor.form_caption_workplaces"
+msgid "Workplace"
+msgstr ""
+
 #: formmain.frmstatestitle
 msgid "States"
 msgstr ""
@@ -102,6 +158,7 @@ msgid "Error!"
 msgstr ""
 
 #: formsearch.criteriaemployeename
+msgctxt "formsearch.criteriaemployeename"
 msgid "Name"
 msgstr ""
 
@@ -213,6 +270,16 @@ msgctxt "TFRMABOUT.TITLELIBRESTAFF.CAPTION"
 msgid "LibreStaff"
 msgstr ""
 
+#: tfrmdsoeditor.caption
+msgctxt "TFRMDSOEDITOR.CAPTION"
+msgid "Editor"
+msgstr ""
+
+#: tfrmdsoeditor.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "TFRMDSOEDITOR.DBGRDTYPECONTRACTS.COLUMNS[0].TITLE.CAPTION"
+msgid "Name"
+msgstr ""
+
 #: tfrmlisteditor.btnclose.caption
 msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"
 msgid "Close"
@@ -246,6 +313,11 @@ msgctxt "TFRMMAIN.BTNEDITTYPECONTRACTS.CAPTION"
 msgid "..."
 msgstr ""
 
+#: tfrmmain.btneditworkplaces.caption
+msgctxt "TFRMMAIN.BTNEDITWORKPLACES.CAPTION"
+msgid "..."
+msgstr ""
+
 #: tfrmmain.btninactive.caption
 msgctxt "TFRMMAIN.BTNINACTIVE.CAPTION"
 msgid "Inactivate"
@@ -272,6 +344,23 @@ msgstr ""
 
 #: tfrmmain.cbofilter.text
 msgid "Active"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "DateEnd"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "TFRMMAIN.DBGRDLOGCONTRACTS.COLUMNS[3].TITLE.CAPTION"
+msgid "Workplace"
 msgstr ""
 
 #: tfrmmain.groupbox1.caption
@@ -331,6 +420,10 @@ msgstr ""
 msgid "Type of contract:"
 msgstr ""
 
+#: tfrmmain.lblbirthday4.caption
+msgid "Workplace:"
+msgstr ""
+
 #: tfrmmain.lblcell.caption
 msgctxt "TFRMMAIN.LBLCELL.CAPTION"
 msgid "Cell Phone:"
@@ -356,6 +449,7 @@ msgid "ID:"
 msgstr ""
 
 #: tfrmmain.lblnameemployee.caption
+msgctxt "tfrmmain.lblnameemployee.caption"
 msgid "Name:"
 msgstr ""
 
@@ -401,12 +495,12 @@ msgstr ""
 msgid "Contract"
 msgstr ""
 
-#: tfrmmain.tabemployees.caption
-msgid "TabEmployees"
+#: tfrmmain.tabcontractslog.caption
+msgid "Contracts Log"
 msgstr ""
 
-#: tfrmmain.tabhistoriccontracts.caption
-msgid "Historic Contracts"
+#: tfrmmain.tabemployees.caption
+msgid "TabEmployees"
 msgstr ""
 
 #: tfrmmain.tabpersonaldata.caption

@@ -1,7 +1,7 @@
 object FrmListEditor: TFrmListEditor
-  Left = 789
+  Left = 720
   Height = 425
-  Top = 358
+  Top = 278
   Width = 494
   BorderIcons = [biSystemMenu]
   Caption = 'FrmListEditor'

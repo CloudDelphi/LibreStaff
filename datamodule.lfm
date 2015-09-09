@@ -79,4 +79,31 @@ object DataMod: TDataMod
     left = 584
     top = 152
   end
+  object QueWorkplaces: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    left = 416
+    top = 280
+  end
+  object DsoWorkplaces: TDataSource
+    DataSet = QueWorkplaces
+    left = 584
+    top = 280
+  end
+  object QueContractsLog: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    DataSource = DsoEmployees
+    left = 416
+    top = 368
+  end
+  object DsoContractsLog: TDataSource
+    DataSet = QueContractsLog
+    left = 584
+    top = 368
+  end
 end

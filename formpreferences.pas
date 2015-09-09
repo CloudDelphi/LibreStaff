@@ -79,7 +79,6 @@ begin
 	PagPreferences.ActivePageIndex:= Item.Index;
 end;
 
-
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
 begin
   Close;

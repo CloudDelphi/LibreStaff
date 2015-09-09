@@ -5,7 +5,7 @@ unit FrameAddDelEdiSavCan;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, ExtCtrls, Buttons;
+  Classes, SysUtils, FileUtil, Forms, Controls, ExtCtrls, Buttons, StdCtrls;
 
 type
 
@@ -17,6 +17,7 @@ type
     BtnAdd: TBitBtn;
     BtnCancel: TBitBtn;
     BtnSave: TBitBtn;
+    LblNavRec: TLabel;
     PanBottom: TPanel;
   private
     { private declarations }

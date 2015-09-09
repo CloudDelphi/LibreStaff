@@ -17,10 +17,14 @@ type
     DsoPicsEmployees: TDataSource;
     DsoEmployees: TDataSource;
     Connection: TSQLite3Connection;
+    DsoWorkplaces: TDataSource;
+    DsoContractsLog: TDataSource;
     QueEmployees: TSQLQuery;
     QuePicsEmployees: TSQLQuery;
     QueSearch: TSQLQuery;
     QueTypeContracts: TSQLQuery;
+    QueWorkplaces: TSQLQuery;
+    QueContractsLog: TSQLQuery;
     Transaction: TSQLTransaction;
   private
     { private declarations }

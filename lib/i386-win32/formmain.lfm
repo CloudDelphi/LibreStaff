@@ -1,10 +1,10 @@
 object FrmMain: TFrmMain
-  Left = 541
-  Height = 709
-  Top = 227
+  Left = 502
+  Height = 653
+  Top = 309
   Width = 1142
   Caption = 'LibreStaff'
-  ClientHeight = 709
+  ClientHeight = 653
   ClientWidth = 1142
   OnClose = FormClose
   OnCreate = FormCreate
@@ -228,13 +228,13 @@ object FrmMain: TFrmMain
   object StatusBar1: TStatusBar
     Left = 0
     Height = 28
-    Top = 681
+    Top = 625
     Width = 1142
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 633
+    Height = 577
     Top = 48
     Width = 1142
     ActivePage = TabEmployees
@@ -244,11 +244,11 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 625
+      ClientHeight = 569
       ClientWidth = 1134
       object PagEmployees: TPageControl
         Left = 0
-        Height = 358
+        Height = 302
         Top = 122
         Width = 1134
         ActivePage = TabAddress
@@ -257,7 +257,7 @@ object FrmMain: TFrmMain
         TabOrder = 0
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 317
+          ClientHeight = 261
           ClientWidth = 1126
           object GrpAddressEmployee: TGroupBox
             Left = 20
@@ -500,11 +500,11 @@ object FrmMain: TFrmMain
           ClientWidth = 1126
           object GroupBox1: TGroupBox
             Left = 8
-            Height = 176
-            Top = 16
+            Height = 224
+            Top = 24
             Width = 624
             Caption = 'Employment Contract'
-            ClientHeight = 143
+            ClientHeight = 191
             ClientWidth = 620
             TabOrder = 0
             object DBDatInitContract: TDBDateTimePicker
@@ -591,7 +591,7 @@ object FrmMain: TFrmMain
               ParentFont = False
             end
             object BtnEditTypeContracts: TBitBtn
-              Left = 400
+              Left = 440
               Height = 38
               Top = 80
               Width = 42
@@ -599,12 +599,46 @@ object FrmMain: TFrmMain
               OnClick = BtnEditTypeContractsClick
               TabOrder = 2
             end
+            object LblBirthday4: TLabel
+              Left = 7
+              Height = 28
+              Top = 136
+              Width = 160
+              AutoSize = False
+              Caption = 'Workplace:'
+              Font.Height = 29
+              ParentColor = False
+              ParentFont = False
+            end
+            object BtnEditWorkplaces: TBitBtn
+              Left = 440
+              Height = 38
+              Top = 136
+              Width = 42
+              Caption = '...'
+              OnClick = BtnEditWorkplacesClick
+              TabOrder = 3
+            end
+            object DBLkCboWorkplace: TDBLookupComboBox
+              Left = 168
+              Height = 36
+              Top = 136
+              Width = 264
+              DataField = 'Workplace_ID'
+              DataSource = DataMod.DsoEmployees
+              KeyField = 'ID_Workplace'
+              ListField = 'Name_Workplace'
+              ListFieldIndex = 1
+              ListSource = DataMod.DsoWorkplaces
+              LookupCache = False
+              TabOrder = 4
+            end
           end
           object DBLkCboTypeContract: TDBLookupComboBox
             Left = 176
             Height = 36
-            Top = 128
-            Width = 225
+            Top = 136
+            Width = 264
             DataField = 'TypeContract_ID'
             DataSource = DataMod.DsoEmployees
             KeyField = 'ID_TypeContract'
@@ -615,14 +649,49 @@ object FrmMain: TFrmMain
             TabOrder = 1
           end
         end
-        object TabHistoricContracts: TTabSheet
-          Caption = 'Historic Contracts'
+        object TabContractsLog: TTabSheet
+          Caption = 'Contracts Log'
+          ClientHeight = 261
+          ClientWidth = 1126
+          object DBGrdLogContracts: TDBGrid
+            Left = 0
+            Height = 261
+            Top = 0
+            Width = 1126
+            Align = alClient
+            AutoFillColumns = True
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Caption = 'Date Init'
+                Width = 271
+                FieldName = 'DateInit_Contract'
+              end            
+              item
+                Title.Caption = 'DateEnd'
+                Width = 271
+                FieldName = 'DateEnd_Contract'
+              end            
+              item
+                Title.Caption = 'Type of contract'
+                Width = 271
+                FieldName = 'Name_TypeContract'
+              end            
+              item
+                Title.Caption = 'Workplace'
+                Width = 271
+                FieldName = 'Name_Workplace'
+              end>
+            DataSource = DataMod.DsoContractsLog
+            ReadOnly = True
+            TabOrder = 0
+          end
         end
       end
       object Panel1: TPanel
         Left = 0
         Height = 145
-        Top = 480
+        Top = 424
         Width = 1134
         Align = alBottom
         BevelOuter = bvNone

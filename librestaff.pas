@@ -18,8 +18,9 @@ begin
   Application.Initialize;
   Screen.Cursor:= crHourglass;
   //The progress bar to show the database load:
-  FrmPrgBar:= TFrmPrgBar.Create(nil);
+  FrmPrgBar:= TFrmPrgBar.Create(Application);
   FrmPrgBar.ShowOnTop;
+  //DataMod must be created first than the Main Form!
   Application.CreateForm(TDataMod, DataMod);
   Application.CreateForm(TFrmMain, FrmMain);
   Application.Run;

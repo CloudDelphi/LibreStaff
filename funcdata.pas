@@ -52,8 +52,22 @@ begin
           ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_TypeContract CHAR(256) NOT NULL DEFAULT "");');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
+   	DataMod.Connection.ExecuteDirect('CREATE TABLE Workplaces('+
+          ' ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Name_Workplace CHAR(256) NOT NULL DEFAULT "");');
+    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
+    	DataMod.Connection.ExecuteDirect('CREATE TABLE ContractsLog('+
+          ' ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
+          ' DateInit_Contract DATE,'+
+          ' DateEnd_Contract DATE,'+
+          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE,'+
+          ' Workplace_ID INTEGER DEFAULT NULL REFERENCES Workplaces(ID_Workplace) ON DELETE CASCADE'+
+          ' );');
+    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "ContractsLog_id_idx" ON "ContractsLog"("ID_Contract");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Active_Employee CHAR(256) NOT NULL DEFAULT TRUE,'+
           ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -70,7 +84,9 @@ begin
           ' Birthday_Employee DATE,'+
           ' DateInit_Contract DATE,'+
           ' DateEnd_Contract DATE,'+
-          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE);');
+          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE,'+
+          ' Workplace_ID INTEGER DEFAULT NULL REFERENCES Workplaces(ID_Workplace) ON DELETE CASCADE'+
+          ' );');
 
     //Creating an index based upon id in the DATA Table
 		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
@@ -151,6 +167,7 @@ begin
     case WriteFields[i].DataFormat of
 			dtString: Query.FieldByName(WriteFields[i].FieldName).AsString:= WriteFields[i].Value;
  			dtInteger: Query.FieldByName(WriteFields[i].FieldName).AsInteger:= WriteFields[i].Value;
+ 			dtBoolean: Query.FieldByName(WriteFields[i].FieldName).AsBoolean:= WriteFields[i].Value;
       dtDate: Query.FieldByName(WriteFields[i].FieldName).AsDateTime:= WriteFields[i].Value;
     end; //case
     end;

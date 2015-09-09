@@ -8,18 +8,19 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
   Buttons, DataModule, FormPicEmployee, FormPreferences, INIfiles,
-  PopupNotifier, gettext, LCLType, FormPrgBar;
+  PopupNotifier, gettext, LCLType, DBGrids, FormPrgBar;
 
 type
-	TDataFormat= (dtString, dtInteger, dtDate);
+	TDataFormat= (dtString, dtInteger, dtBoolean, dtDate);
 type
 	TCboListType= (cblStates);
 type
-	TWhatTable= (wtEmployees);
+	TWhatTable= (wtEmployees, wtTypeContracts, wtWorkplaces);
 type
   { TFrmMain }
   TFrmMain = class(TForm)
     BtnEditTypeContracts: TBitBtn;
+    BtnEditWorkplaces: TBitBtn;
     BtnInactive: TBitBtn;
     BtnSearch: TBitBtn;
     BtnEditStateList: TBitBtn;
@@ -42,7 +43,9 @@ type
     DBEPhone: TDBEdit;
     DBECell: TDBEdit;
     DBEEmail: TDBEdit;
+    DBGrdLogContracts: TDBGrid;
     DBLkCboTypeContract: TDBLookupComboBox;
+    DBLkCboWorkplace: TDBLookupComboBox;
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
     ImgPreferences: TImage;
@@ -52,6 +55,7 @@ type
     LblBirthday1: TLabel;
     LblBirthday2: TLabel;
     LblBirthday3: TLabel;
+    LblBirthday4: TLabel;
     LblIDEmployee: TLabel;
     MmoAddress: TDBMemo;
     DBNav: TDBNavigator;
@@ -91,10 +95,11 @@ type
     TabAddress: TTabSheet;
     TabPersonalData: TTabSheet;
     TabContract: TTabSheet;
-    TabHistoricContracts: TTabSheet;
+    TabContractsLog: TTabSheet;
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnEditStateListClick(Sender: TObject);
     procedure BtnEditTypeContractsClick(Sender: TObject);
+    procedure BtnEditWorkplacesClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
@@ -102,7 +107,6 @@ type
     procedure DBEIDEmployeeExit(Sender: TObject);
     procedure DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
     procedure DBNavClick(Sender: TObject; Button: TDBNavButtonType);
-    procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -145,8 +149,8 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData, FormListEditor, FormSearch, DateTimePicker, FormTableEdit,
-    Math, db, FormAbout;
+    FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
+    FormAbout;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -252,7 +256,7 @@ begin
   IDAuto:= StrToBool(INIFile.ReadString('General','IDAuto','False'));
   IDAutoType:= StrToInt(INIFile.ReadString('General','IDAutoType','0'));
   IDAllowBlank:= StrToBool(INIFile.ReadString('General','IDAllowBlank','False'));
-  //get bitmaps for the buttons
+  //Get bitmaps for the buttons
   ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
 	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
 	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
@@ -270,19 +274,25 @@ var
   Bookmark: String;
   BookmarkInt: Integer;
 const
-  LoadQueriesCount= 3;
+  LoadQueriesCount= 5;
 begin
   //Connect & Load to database
   FuncData.ConnectDatabase(Databasename);
   //Open Tables
   //Note: The order is important! First the detailed tables.
-  SetLength(LoadQueries, 3);
+  SetLength(LoadQueries, LoadQueriesCount);
   LoadQueries[0].Query:= DataMod.QueTypeContracts;
   LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
-  LoadQueries[1].Query:= DataMod.QueEmployees;
-  LoadQueries[1].SQL:= 'SELECT * from Employees;';
-  LoadQueries[2].Query:= DataMod.QuePicsEmployees;
-  LoadQueries[2].SQL:= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+	LoadQueries[1].Query:= DataMod.QueWorkplaces;
+  LoadQueries[1].SQL:= 'SELECT * from Workplaces;';
+  LoadQueries[2].Query:= DataMod.QueEmployees;
+  LoadQueries[2].SQL:= 'SELECT * from Employees;';
+  LoadQueries[3].Query:= DataMod.QuePicsEmployees;
+  LoadQueries[3].SQL:= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+	LoadQueries[4].Query:= DataMod.QueContractsLog;
+  LoadQueries[4].SQL:= 'SELECT ContractsLog.*, TypeContracts.Name_TypeContract, Workplaces.Name_Workplace from ContractsLog'+
+  	' LEFT JOIN TypeContracts ON ID_TypeContract=TypeContract_ID LEFT JOIN Workplaces ON ID_Workplace=Workplace_ID WHERE ContractsLog.Employee_ID=:ID_Employee;';
+
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin
 		FuncData.ExecSQL(LoadQueries[i].Query, LoadQueries[i].SQL);
@@ -326,8 +336,7 @@ end;
 procedure TFrmMain.BtnSearchClick(Sender: TObject);
 begin
 	FrmSearch.Search(wtEmployees);
-  FrmSearch.Free;
-  FrmSearch:= nil;
+  FreeAndNil(FrmSearch);
 end;
 
 procedure TFrmMain.CboFilterChange(Sender: TObject);
@@ -404,30 +413,24 @@ begin
 	inherited; //<-- to execute the default onclick event
 	UpdateNavRec;
 end;
-
-procedure TFrmMain.FormActivate(Sender: TObject);
-begin
-
-end;
-
 procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   RecNo: Integer;
 begin
+  //Save the position in the table Employees:
   RecNo:= DataMod.QueEmployees.RecNo;
   INIFile.WriteString('TableEmployees', 'Bookmark', IntToStr(RecNo));
+  //Close database
   DataMod.Connection.CloseTransactions;
   DataMod.Connection.CloseDataSets;
   DataMod.Connection.Connected:= False;
-  INIFile.Free;
+  //Free memory
+  FreeAndNil(INIFile);
 end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
 const
-  WriteFieldsCount= 1;
+  WriteFieldsCount= 2;
   RandomIDLenght= 12;
-var
-  RandomInt: Integer;
-  test:string;
 begin
 	SetLength(WriteFields, WriteFieldsCount);
   WriteFields[0].FieldName:= 'IDN_Employee';
@@ -440,6 +443,9 @@ begin
     end
     else WriteFields[0].Value:= '';
   WriteFields[0].DataFormat:= dtString;
+  WriteFields[1].FieldName:= 'Active_Employee';
+  WriteFields[1].Value:= TRUE;
+  WriteFields[1].DataFormat:= dtBoolean;
   if FuncData.AppendTableRecord(DataMod.QueEmployees, WriteFields)= True then
 	  begin
 	 	Inc(TotalRecs, 1);
@@ -466,15 +472,19 @@ end;
 procedure TFrmMain.BtnEditStateListClick(Sender: TObject);
 begin
 	FrmListEditor.EditList(FrmStatesTitle, StatesFilename, cblStates);
-  FrmListEditor.Free;
-	FrmListEditor:= nil;
+  FreeAndNil(FrmListEditor);
 end;
 
 procedure TFrmMain.BtnEditTypeContractsClick(Sender: TObject);
 begin
-	FrmTableEdit.EditTable('Type of Contract', 'Name', 'Name_TypeContract', DataMod.DsoTypeContracts);
-  FrmTableEdit.Free;
-	FrmTableEdit:= nil;
+	FrmDsoEditor.EditTable(wtTypeContracts);
+  FreeAndNil(FrmDsoEditor);
+end;
+
+procedure TFrmMain.BtnEditWorkplacesClick(Sender: TObject);
+begin
+	FrmDsoEditor.EditTable(wtWorkplaces);
+  FreeAndNil(FrmDsoEditor);
 end;
 
 procedure TFrmMain.ImgExitClick(Sender: TObject);

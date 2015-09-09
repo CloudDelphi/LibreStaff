@@ -27,8 +27,6 @@ type
     TabAbout: TTabSheet;
     TabLicense: TTabSheet;
     procedure BtnCloseClick(Sender: TObject);
-    procedure TabLicenseContextPopup(Sender: TObject; MousePos: TPoint;
-      var Handled: Boolean);
     procedure TabLicenseShow(Sender: TObject);
   private
     { private declarations }
@@ -53,15 +51,9 @@ var
   LicenseFile: TMemoryStream;
 begin
  LicenseFile:= TMemoryStream.Create;
- LicenseFile.LoadFromFile(PathApp+'License-GPL-3.rtf');
+ LicenseFile.LoadFromFile(PathApp+'lic\License-GPL-3.rtf');
  RchMmoLicense.LoadRichText(LicenseFile);
- LicenseFile.Free;
-end;
-
-procedure TFrmAbout.TabLicenseContextPopup(Sender: TObject; MousePos: TPoint;
-  var Handled: Boolean);
-begin
-
+ FreeAndNil(LicenseFile);
 end;
 
 procedure TFrmAbout.BtnCloseClick(Sender: TObject);
