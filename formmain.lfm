@@ -2034,11 +2034,18 @@ object FrmMain: TFrmMain
     top = 456
   end
   object frReport: TfrReport
+    Dataset = frDBDataSet
     InitialZoom = pzDefault
     Options = []
     PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
-    DataType = dtDataSet
+    DataType = dtDataSource
     left = 1000
-    top = 448
+    top = 456
+  end
+  object frDBDataSet: TfrDBDataSet
+    DataSet = DataMod.QueEmployees
+    DataSource = DataMod.DsoEmployees
+    left = 1088
+    top = 456
   end
 end

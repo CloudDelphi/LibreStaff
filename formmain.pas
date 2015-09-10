@@ -6,9 +6,9 @@ interface
 
 uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
-  Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
-  Buttons, DataModule, FormPicEmployee, INIfiles,
-  PopupNotifier, gettext, LCLType, DBGrids, FormPrgBar;
+  LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
+  StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
+  gettext, LCLType, DBGrids, FormPrgBar;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
@@ -49,6 +49,7 @@ type
     DBGrdLogContracts: TDBGrid;
     DBLkCboTypeContract: TDBLookupComboBox;
     DBLkCboWorkplace: TDBLookupComboBox;
+    frDBDataSet: TfrDBDataSet;
     frReport: TfrReport;
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
@@ -203,6 +204,7 @@ begin
   BtnEditStateList.Enabled:= False;
   BtnEditTypeContracts.Enabled:= False;
   BtnEditWorkplaces.Enabled:= False;
+  BtnPrint.Enabled:= False;
   LblInactive.Visible:= False;
 end;
 procedure TFrmMain.EnableEmployees;
@@ -213,6 +215,7 @@ begin
   BtnActivate.Enabled:= True;
   BtnEditStateList.Enabled:= True;
   BtnEditTypeContracts.Enabled:= True;
+  BtnPrint.Enabled:= True;
   BtnEditWorkplaces.Enabled:= True;
 end;
 
@@ -331,6 +334,9 @@ begin
   CboFilter.Items.Add(lg_Filter_Active);
   CboFilter.Items.Add(lg_Filter_Inactive);
   CboFilter.Items.Add(lg_Filter_All);
+  //Load Printing preferences
+  ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
+  CompanyName:= INIFile.ReadString('Printing', 'CompanyName', 'My Company');
 end;
 
 procedure TFrmMain.FormShow(Sender: TObject);
@@ -387,9 +393,6 @@ begin
 	UpdateNavRec;
   if TotalRecs=0 then
     DisableEmployees;
-  //Load Printing preferences
-  ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
-  CompanyName:= INIFile.ReadString('Printing', 'CompanyName', 'My Company');
   //Close the Progress Bar
 	FrmPrgBar.Close;
  	Screen.Cursor:=crDefault;
