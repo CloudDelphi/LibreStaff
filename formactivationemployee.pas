@@ -44,7 +44,7 @@ implementation
 {$R *.lfm}
 
 uses
-  DataModule, FuncData, FormMain;
+  DataModule, FuncData, FormMain, db;
 
 procedure TFrmActivationEmployee.BtnCancelClick(Sender: TObject);
 begin
@@ -54,6 +54,7 @@ end;
 procedure TFrmActivationEmployee.BtnAcceptClick(Sender: TObject);
 var
   IDEmployee: String;
+  FilterIndex: Integer;
 begin
   IDEmployee:= DataMod.QueEmployees.FieldByName('ID_Employee').AsString;
   case Inactivate of
@@ -114,6 +115,17 @@ begin
           end;
   end; //case
   DataMod.QueEmployees.Refresh;
+  //Change the filter and go to the record:
+  FilterIndex:= FrmMain.CboFilter.ItemIndex;
+  if (FilterIndex=0) OR (FilterIndex=1) then
+  	begin
+    case Inactivate of
+	    False:	FrmMain.CboFilter.ItemIndex:= 0;
+  	  True:	FrmMain.CboFilter.ItemIndex:= 1;
+    end; //case
+    FrmMain.CboFilterChange(nil);
+    DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]);
+  	end;
   FrmMain.UpdateRecordCount;
   Close;
 end;
