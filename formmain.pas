@@ -150,6 +150,7 @@ const
   SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* from ContractsLog'+
   	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID) LEFT JOIN Workplaces ON ID_Workplace=Workplace_ID WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
+  SELECT_PICSEMPLOYEES= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
 resourcestring
   lg_CaptionBtn_Activate= 'Activate';
   lg_CaptionBtn_Inactivate= 'Inactivate';
@@ -197,6 +198,7 @@ begin
   BtnEditStateList.Enabled:= False;
   BtnEditTypeContracts.Enabled:= False;
   BtnEditWorkplaces.Enabled:= False;
+  LblInactive.Visible:= False;
 end;
 procedure TFrmMain.EnableEmployees;
 begin
@@ -207,6 +209,7 @@ begin
   BtnEditStateList.Enabled:= True;
   BtnEditTypeContracts.Enabled:= True;
   BtnEditWorkplaces.Enabled:= True;
+  LblInactive.Visible:= True;
 end;
 
 procedure TFrmMain.UpdateNavRec;
@@ -358,7 +361,7 @@ begin
   end; //case
   LoadQueries[2].SQL:= SQL;
   LoadQueries[3].Query:= DataMod.QuePicsEmployees;
-  LoadQueries[3].SQL:= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+  LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES;
 	LoadQueries[4].Query:= DataMod.QueContractsLog;
   LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
 	for i:= Low(LoadQueries) to High(LoadQueries) do
@@ -418,6 +421,7 @@ begin
   end;
   FuncData.ExecSQL(DataMod.QueEmployees, SQL);
   FuncData.ExecSQL(DataMod.QueContractsLog,SELECT_CONTRACTSLOG_SQL);
+  FuncData.ExecSQL(DataMod.QuePicsEmployees,SELECT_PICSEMPLOYEES);
   if DataMod.QueEmployees.IsEmpty= FALSE then
   	EnableEmployees
     else DisableEmployees;
