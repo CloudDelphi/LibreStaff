@@ -5,9 +5,9 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, Forms,
-  Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
-  Buttons, DataModule, FormPicEmployee, FormPreferences, INIfiles,
+  Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
+  Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls, StdCtrls,
+  Buttons, DataModule, FormPicEmployee, INIfiles,
   PopupNotifier, gettext, LCLType, DBGrids, FormPrgBar;
 
 type
@@ -19,6 +19,7 @@ type
 type
   { TFrmMain }
   TFrmMain = class(TForm)
+    BtnPrint: TBitBtn;
     BtnDelTypeContract: TBitBtn;
     BtnDelWorkplace: TBitBtn;
     BtnEditTypeContracts: TBitBtn;
@@ -48,6 +49,7 @@ type
     DBGrdLogContracts: TDBGrid;
     DBLkCboTypeContract: TDBLookupComboBox;
     DBLkCboWorkplace: TDBLookupComboBox;
+    frReport: TfrReport;
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
     ImgPreferences: TImage;
@@ -107,6 +109,7 @@ type
     procedure BtnEditWorkplacesClick(Sender: TObject);
     procedure BtnActivateClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
+    procedure BtnPrintClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
     procedure CboFilterChange(Sender: TObject);
@@ -143,6 +146,8 @@ var
   IDUnique, IDAuto, IDAllowBlank: Boolean;
   IDAutoType: Integer;
   FilterIndex: Integer;
+  ReportPreview: Boolean;
+  CompanyName: String;
 const
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
   SELECT_ACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE Active_Employee;';
@@ -172,7 +177,7 @@ implementation
 
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
-    FormAbout, FormActivationEmployee;
+    FormAbout, FormActivationEmployee, FuncPrint, FormPreferences;
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
@@ -315,6 +320,7 @@ begin
 	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
 	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
   ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
+  ImgLstBtn.GetBitmap(15, BtnPrint.Glyph);
   ImgLstBtn.GetBitmap(10, BtnDelTypeContract.Glyph);
   ImgLstBtn.GetBitmap(10, BtnDelWorkplace.Glyph);
   //Load the Hints:
@@ -381,6 +387,9 @@ begin
 	UpdateNavRec;
   if TotalRecs=0 then
     DisableEmployees;
+  //Load Printing preferences
+  ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
+  CompanyName:= INIFile.ReadString('Printing', 'CompanyName', 'My Company');
   //Close the Progress Bar
 	FrmPrgBar.Close;
  	Screen.Cursor:=crDefault;
@@ -530,6 +539,12 @@ begin
 		end;
   WriteFields:= nil;
 end;
+
+procedure TFrmMain.BtnPrintClick(Sender: TObject);
+begin
+  FuncPrint.Print('employee_card_en.lrf', FrmMain.frReport, True);
+end;
+
 procedure TFrmMain.BtnDeleteClick(Sender: TObject);
 var
   NameEmployee: String;

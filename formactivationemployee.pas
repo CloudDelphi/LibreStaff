@@ -117,14 +117,14 @@ begin
   DataMod.QueEmployees.Refresh;
   //Change the filter and go to the record:
   FilterIndex:= FrmMain.CboFilter.ItemIndex;
-  if (FilterIndex=0) OR (FilterIndex=1) then
+  if (FilterIndex=0) OR (FilterIndex=1) then //if Filter in Actives or Inactives
   	begin
     case Inactivate of
-	    False:	FrmMain.CboFilter.ItemIndex:= 0;
-  	  True:	FrmMain.CboFilter.ItemIndex:= 1;
+	    False:	FrmMain.CboFilter.ItemIndex:= 0; //Change filter to Actives
+  	  True:	FrmMain.CboFilter.ItemIndex:= 1; //Change filter to Inactives
     end; //case
-    FrmMain.CboFilterChange(nil);
-    DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]);
+    FrmMain.CboFilterChange(nil); //Apply the filter
+    DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   	end;
   FrmMain.UpdateRecordCount;
   Close;

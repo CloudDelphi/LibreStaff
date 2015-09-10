@@ -13,18 +13,23 @@ type
   { TFrmPreferences }
 
   TFrmPreferences = class(TForm)
+    BtnSaveCompanyName: TBitBtn;
     BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
     CboDateSeparator: TComboBox;
+    ChkReportPreview: TCheckBox;
     ChkIDAuto: TCheckBox;
     ChkIDAllowBlank: TCheckBox;
     ChkIDUnique: TCheckBox;
     CboAutoType: TComboBox;
     EdiDtbPath: TEdit;
+    EdiCompanyName: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
+    GroupBox1: TGroupBox;
     GrpIDEmployee: TGroupBox;
     ImgLstPreferences: TImageList;
+    LblCompanyName: TLabel;
     LblDatabasePath: TLabel;
     LblDateFormat: TLabel;
     LblDateSeparator: TLabel;
@@ -34,20 +39,24 @@ type
     TabDatabase: TTabSheet;
     TabLanguage: TTabSheet;
     TabGeneral: TTabSheet;
+    TabPrinting: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
+    procedure BtnSaveCompanyNameClick(Sender: TObject);
     procedure CboAutoTypeChange(Sender: TObject);
     procedure CboDateFormatChange(Sender: TObject);
     procedure CboDateSeparatorChange(Sender: TObject);
     procedure ChkIDAllowBlankChange(Sender: TObject);
     procedure ChkIDAutoChange(Sender: TObject);
     procedure ChkIDUniqueChange(Sender: TObject);
+    procedure ChkReportPreviewChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure TabDatabaseShow(Sender: TObject);
     procedure TabGeneralShow(Sender: TObject);
     procedure TabLanguageShow(Sender: TObject);
+    procedure TabPrintingShow(Sender: TObject);
   private
     { private declarations }
   public
@@ -61,6 +70,7 @@ resourcestring
   lg_LstView_Caption_Item_0= 'General';
   lg_LstView_Caption_Item_1= 'Language';
   lg_LstView_Caption_Item_2= 'Database';
+  lg_LstView_Caption_Item_3= 'Printing';
 	lg_SelectDirDlg_Title= 'Select the path for the database (data.db)';
   lg_SelectDirDlg_Error_Title= 'ERROR!';
   lg_SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
@@ -71,7 +81,7 @@ implementation
 
 { TFrmPreferences }
 uses
-    FormMain, FuncDlgs;
+	FuncDlgs, FormMain;
 
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
@@ -82,6 +92,12 @@ end;
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFrmPreferences.BtnSaveCompanyNameClick(Sender: TObject);
+begin
+  CompanyName:= EdiCompanyName.Text;
+	INIFile.WriteString('Printing', 'CompanyName', CompanyName);
 end;
 
 procedure TFrmPreferences.CboAutoTypeChange(Sender: TObject);
@@ -121,6 +137,12 @@ begin
   ChkIDAllowBlank.Enabled:= ChkIDUnique.Checked;
 end;
 
+procedure TFrmPreferences.ChkReportPreviewChange(Sender: TObject);
+begin
+  ReportPreview:= not ReportPreview;
+  INIFile.WriteString('Printing', 'ReportPreview', BoolToStr(ReportPreview));
+end;
+
 procedure TFrmPreferences.FormCreate(Sender: TObject);
 var
   i: Integer;
@@ -132,9 +154,14 @@ begin
     	0: Str:= lg_LstView_Caption_Item_0;
       1: Str:= lg_LstView_Caption_Item_1;
       2: Str:= lg_LstView_Caption_Item_2;
+      3: Str:= lg_LstView_Caption_Item_3;
     end; //case
   	LstViewPreferences.Items[i].Caption:= Str;
     end;
+  //Load the Glyphs:
+  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveCompanyName.Glyph);
+  //Goto the first Tab
+  PagPreferences.TabIndex:= 0;
 end;
 
 procedure TFrmPreferences.BtnChangeDtbPathClick(Sender: TObject);
@@ -191,6 +218,15 @@ procedure TFrmPreferences.TabLanguageShow(Sender: TObject);
 begin
   CboDateFormat.ItemIndex:= CboDateFormat.Items.IndexOf(INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy'));
   CboDateSeparator.ItemIndex:= CboDateSeparator.Items.IndexOf(INIFile.ReadString('Lang', 'DateSeparator', '/'));
+end;
+
+procedure TFrmPreferences.TabPrintingShow(Sender: TObject);
+begin
+  case ReportPreview of
+    False:	ChkReportPreview.State:= cbUnchecked;
+    True:		ChkReportPreview.State:= cbChecked;
+  end; //case
+  EdiCompanyName.Text:= CompanyName;
 end;
 
 end.

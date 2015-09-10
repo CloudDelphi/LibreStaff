@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, FormMain, Classes, DataModule, DefaultTranslator,
-  datetimectrls, FormPrgBar, Controls, FormAbout, FraAcceptCancel;
+  Forms, Classes, DataModule, DefaultTranslator,
+  Controls, FormMain, FormPrgBar;
 
 {$R *.res}
 

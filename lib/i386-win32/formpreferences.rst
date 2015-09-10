@@ -11,6 +11,10 @@ formpreferences.lg_lstview_caption_item_1='Language'
 formpreferences.lg_lstview_caption_item_2='Database'
 
 
+# hash value = 151366455
+formpreferences.lg_lstview_caption_item_3='Printing'
+
+
 # hash value = 95946553
 formpreferences.lg_selectdirdlg_title='Select the path for the database ('+
 'data.db)'

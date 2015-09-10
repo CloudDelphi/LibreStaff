@@ -18,7 +18,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <RevisionNr Value="3"/>
+      <RevisionNr Value="4"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
@@ -112,16 +112,16 @@
     </RunParams>
     <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="lazreport"/>
       </Item1>
       <Item2>
-        <PackageName Value="TurboPowerIPro"/>
+        <PackageName Value="richmemopackage"/>
       </Item2>
       <Item3>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="TurboPowerIPro"/>
       </Item3>
       <Item4>
-        <PackageName Value="zcomponent"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item4>
       <Item5>
         <PackageName Value="FCL"/>
@@ -133,7 +133,7 @@
         <PackageName Value="LCL"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="17">
+    <Units Count="18">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -260,6 +260,11 @@
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FraAcceptCancel"/>
       </Unit16>
+      <Unit17>
+        <Filename Value="funcprint.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncPrint"/>
+      </Unit17>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -198,6 +198,11 @@ msgctxt "formpreferences.lg_lstview_caption_item_2"
 msgid "Database"
 msgstr "Base de datos"
 
+#: formpreferences.lg_lstview_caption_item_3
+msgctxt "formpreferences.lg_lstview_caption_item_3"
+msgid "Printing"
+msgstr ""
+
 #: formpreferences.lg_selectdirdlg_error_msg
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
 msgid "The file \"data.db\" does not exist in this path."
@@ -432,6 +437,10 @@ msgstr "..."
 msgid "New"
 msgstr "Nuevo"
 
+#: tfrmmain.btnprint.caption
+msgid "Print"
+msgstr ""
+
 #: tfrmmain.btnsave.caption
 msgctxt "tfrmmain.btnsave.caption"
 msgid "Save"
@@ -649,6 +658,12 @@ msgstr "[Foto]"
 msgid "Change..."
 msgstr "Cambiar..."
 
+#: tfrmpreferences.btnsavecompanyname.caption
+#, fuzzy
+msgctxt "tfrmpreferences.btnsavecompanyname.caption"
+msgid "Save"
+msgstr "Guardar"
+
 #: tfrmpreferences.caption
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
@@ -682,13 +697,30 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr "Único"
 
+#: tfrmpreferences.chkreportpreview.caption
+msgctxt "tfrmpreferences.chkreportpreview.caption"
+msgid "Show preview"
+msgstr ""
+
 #: tfrmpreferences.dates.caption
 msgid "Dates"
 msgstr "Fechas"
 
+#: tfrmpreferences.edicompanyname.text
+msgid "My Company"
+msgstr ""
+
+#: tfrmpreferences.groupbox1.caption
+msgid "Report"
+msgstr ""
+
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
 msgstr "ID Empleado"
+
+#: tfrmpreferences.lblcompanyname.caption
+msgid "Company Name:"
+msgstr ""
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -717,6 +749,11 @@ msgstr "General"
 msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr "Idioma"
+
+#: tfrmpreferences.tabprinting.caption
+msgctxt "tfrmpreferences.tabprinting.caption"
+msgid "Printing"
+msgstr ""
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
