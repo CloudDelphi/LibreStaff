@@ -1,11 +1,11 @@
 object FrmSearch: TFrmSearch
   Left = 552
-  Height = 519
+  Height = 557
   Top = 275
   Width = 801
   BorderIcons = [biSystemMenu]
   Caption = 'Search'
-  ClientHeight = 519
+  ClientHeight = 557
   ClientWidth = 801
   OnClose = FormClose
   OnCreate = FormCreate
@@ -13,12 +13,12 @@ object FrmSearch: TFrmSearch
   LCLVersion = '1.4.2.0'
   object PanLeft: TPanel
     Left = 0
-    Height = 519
+    Height = 557
     Top = 0
     Width = 216
     Align = alLeft
     BevelOuter = bvNone
-    ClientHeight = 519
+    ClientHeight = 557
     ClientWidth = 216
     TabOrder = 0
     object EdiSearch: TEdit
@@ -41,7 +41,7 @@ object FrmSearch: TFrmSearch
     object BtnClose: TBitBtn
       Left = 48
       Height = 43
-      Top = 464
+      Top = 504
       Width = 112
       Caption = 'Close'
       ModalResult = 11
@@ -51,7 +51,7 @@ object FrmSearch: TFrmSearch
     object BtnViewAll: TBitBtn
       Left = 48
       Height = 43
-      Top = 408
+      Top = 448
       Width = 112
       Caption = 'View All'
       OnClick = BtnViewAllClick
@@ -83,19 +83,47 @@ object FrmSearch: TFrmSearch
       Caption = 'Case sensitive'
       TabOrder = 5
     end
+    object CboFilter: TComboBox
+      Left = 64
+      Height = 36
+      Top = 400
+      Width = 120
+      ItemHeight = 28
+      ItemIndex = 0
+      Items.Strings = (
+        'Active'
+        'Inactive'
+        'All'
+      )
+      Style = csDropDownList
+      TabOrder = 6
+      Text = 'Active'
+      Visible = False
+    end
+    object LblFilter: TLabel
+      Left = 11
+      Height = 28
+      Top = 402
+      Width = 48
+      Caption = 'Filter:'
+      Color = 14483385
+      ParentColor = False
+      Transparent = False
+      Visible = False
+    end
   end
   object PanRight: TPanel
     Left = 220
-    Height = 519
+    Height = 557
     Top = 0
     Width = 581
     Align = alClient
-    ClientHeight = 519
+    ClientHeight = 557
     ClientWidth = 581
     TabOrder = 1
     object DBGridSearchResult: TDBGrid
       Left = 1
-      Height = 457
+      Height = 495
       Top = 29
       Width = 579
       Align = alClient
@@ -123,7 +151,7 @@ object FrmSearch: TFrmSearch
     object PanOptions: TPanel
       Left = 1
       Height = 32
-      Top = 486
+      Top = 524
       Width = 579
       Align = alBottom
       BevelOuter = bvNone
@@ -152,7 +180,7 @@ object FrmSearch: TFrmSearch
   end
   object Splitter: TSplitter
     Left = 216
-    Height = 519
+    Height = 557
     Top = 0
     Width = 4
   end

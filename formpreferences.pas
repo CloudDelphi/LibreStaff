@@ -58,12 +58,12 @@ var
   FrmPreferences: TFrmPreferences;
 
 resourcestring
-  LstView_Caption_Item_0= 'General';
-  LstView_Caption_Item_1= 'Language';
-  LstView_Caption_Item_2= 'Database';
-	SelectDirDlg_Title= 'Select the path for the database (data.db)';
-  SelectDirDlg_Error_Title= 'ERROR!';
-  SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
+  lg_LstView_Caption_Item_0= 'General';
+  lg_LstView_Caption_Item_1= 'Language';
+  lg_LstView_Caption_Item_2= 'Database';
+	lg_SelectDirDlg_Title= 'Select the path for the database (data.db)';
+  lg_SelectDirDlg_Error_Title= 'ERROR!';
+  lg_SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
 
 implementation
 
@@ -129,9 +129,9 @@ begin
   for i:= 0 to LstViewPreferences.Items.Count-1 do
   	begin
     case i of
-    	0: Str:= LstView_Caption_Item_0;
-      1: Str:= LstView_Caption_Item_1;
-      2: Str:= LstView_Caption_Item_2;
+    	0: Str:= lg_LstView_Caption_Item_0;
+      1: Str:= lg_LstView_Caption_Item_1;
+      2: Str:= lg_LstView_Caption_Item_2;
     end; //case
   	LstViewPreferences.Items[i].Caption:= Str;
     end;
@@ -142,7 +142,7 @@ var
   ChangePath: Boolean;
   NewPath: String;
 begin
-  ChangePath:= FuncDlgs.SelectDirDlg(SelectDirDlg_Title, EdiDtbPath.Text);
+  ChangePath:= FuncDlgs.SelectDirDlg(lg_SelectDirDlg_Title, EdiDtbPath.Text);
   if ChangePath=True then
     begin
     NewPath:= FrmMain.SelectDirDlg.FileName+'\';
@@ -151,7 +151,7 @@ begin
 	    INIFile.WriteString('Database','Path','"'+NewPath+'"');
   	  EdiDtbPath.Text:= NewPath;
       end
-    	else Application.MessageBox(PChar(SelectDirDlg_Error_Msg), PChar(SelectDirDlg_Error_Title), MB_OK + MB_ICONERROR);
+    	else Application.MessageBox(PChar(lg_SelectDirDlg_Error_Msg), PChar(lg_SelectDirDlg_Error_Title), MB_OK + MB_ICONERROR);
     end;
   FrmPreferences.Show;
 end;

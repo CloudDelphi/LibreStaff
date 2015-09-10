@@ -12,54 +12,68 @@ msgstr ""
 "Language: en\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#: formactivationemployee.lg_captiongrpcontract_activate
+msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
+msgid "New contract of the employee:"
+msgstr "Novo contrato do empregado:"
+
+#: formactivationemployee.lg_captiongrpcontract_inactivate
+msgctxt "formactivationemployee.lg_captiongrpcontract_inactivate"
+msgid "Contract to log:"
+msgstr "Contrato a registrar:"
+
+#: formactivationemployee.lg_title_activate
+msgctxt "formactivationemployee.lg_title_activate"
+msgid "Do you want to activate"
+msgstr "Você quer activar"
+
+#: formactivationemployee.lg_title_inactivate
+msgctxt "formactivationemployee.lg_title_inactivate"
+msgid "Do you want to inactivate"
+msgstr "Você quer inactivar"
+
 #: formdsoeditor.add_iptbox_caption_typecontracts
 msgid "Add type of contract"
-msgstr ""
+msgstr "Adicionar tipo de contrato"
 
 #: formdsoeditor.add_iptbox_caption_workplaces
 msgid "Add workplace"
-msgstr ""
+msgstr "Adicionar local de trabalho"
 
 #: formdsoeditor.add_iptbox_prompt_typecontracts
-#, fuzzy
 msgctxt "formdsoeditor.add_iptbox_prompt_typecontracts"
 msgid "Name:"
 msgstr "Nome:"
 
 #: formdsoeditor.add_iptbox_prompt_workplaces
-#, fuzzy
 msgctxt "formdsoeditor.add_iptbox_prompt_workplaces"
 msgid "Name:"
 msgstr "Nome:"
 
 #: formdsoeditor.col_title_typecontracts
-#, fuzzy
 msgctxt "formdsoeditor.col_title_typecontracts"
 msgid "Name"
 msgstr "Nome"
 
 #: formdsoeditor.col_title_workplaces
-#, fuzzy
 msgctxt "formdsoeditor.col_title_workplaces"
 msgid "Name"
 msgstr "Nome"
 
 #: formdsoeditor.edit_iptbox_caption_typecontracts
 msgid "Change the name of contract"
-msgstr ""
+msgstr "Cambiar o nome do contrato"
 
 #: formdsoeditor.edit_iptbox_caption_workplaces
 msgid "Change the name of workplace"
-msgstr ""
+msgstr "Cambiar o nome do lugar de trabalho"
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
-#, fuzzy
 msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
 msgid "Name:"
 msgstr "Nome:"
 
 #: formdsoeditor.edit_iptbox_prompt_workplaces
-#, fuzzy
 msgctxt "formdsoeditor.edit_iptbox_prompt_workplaces"
 msgid "Name:"
 msgstr "Nome:"
@@ -67,18 +81,54 @@ msgstr "Nome:"
 #: formdsoeditor.form_caption_typecontracts
 msgctxt "formdsoeditor.form_caption_typecontracts"
 msgid "Type of Contract"
-msgstr ""
+msgstr "Tipo de contrato"
 
 #: formdsoeditor.form_caption_workplaces
 msgctxt "formdsoeditor.form_caption_workplaces"
 msgid "Workplace"
-msgstr ""
+msgstr "Lugar de trabalho"
 
-#: formmain.frmstatestitle
+#: formmain.lg_btndeltypecontract_hint
+msgctxt "formmain.lg_btndeltypecontract_hint"
+msgid "Delete the type of contract of this employee"
+msgstr "Borra o tipo de contrato deste empregado."
+
+#: formmain.lg_btndelworkplace_hint
+msgctxt "formmain.lg_btndelworkplace_hint"
+msgid "Delete the workplace of this employee"
+msgstr "Borra o lugar de trabalho deste empregado."
+
+#: formmain.lg_captionbtn_activate
+msgctxt "formmain.lg_captionbtn_activate"
+msgid "Activate"
+msgstr "Activar"
+
+#: formmain.lg_captionbtn_inactivate
+msgctxt "formmain.lg_captionbtn_inactivate"
+msgid "Inactivate"
+msgstr "Inactivar"
+
+#: formmain.lg_filter_active
+msgctxt "formmain.lg_filter_active"
+msgid "Actives"
+msgstr "Activos"
+
+#: formmain.lg_filter_all
+msgid "All"
+msgstr "Todos"
+
+#: formmain.lg_filter_inactive
+msgctxt "formmain.lg_filter_inactive"
+msgid "Inactives"
+msgstr "Inactivos"
+
+#: formmain.lg_frmstatestitle
+msgctxt "formmain.lg_frmstatestitle"
 msgid "States"
 msgstr "Estados"
 
-#: formmain.idisblank
+#: formmain.lg_idisblank
+msgctxt "formmain.lg_idisblank"
 msgid ""
 "This ID# cannot be in blank\n"
 "It should be UNIQUE!\n"
@@ -86,7 +136,8 @@ msgstr ""
 "Isto ID# não pode ser em branco\n"
 "Tenha que ser UNIQUE!\n"
 
-#: formmain.idisnotunique
+#: formmain.lg_idisnotunique
+msgctxt "formmain.lg_idisnotunique"
 msgid ""
 "This ID# is in use by another Employee\n"
 "It should be UNIQUE!\n"
@@ -94,7 +145,8 @@ msgstr ""
 "Isto ID# é em uso por outro Empregado\n"
 "Tenha que ser ÚNICO!\n"
 
-#: formmain.lblnavrecof
+#: formmain.lg_lblnavrecof
+msgctxt "formmain.lg_lblnavrecof"
 msgid "of"
 msgstr "de"
 
@@ -132,55 +184,73 @@ msgstr "Todos os arquivos de imagem"
 msgid "Save the photo"
 msgstr "Salvar a foto"
 
-#: formpreferences.lstview_caption_item_0
-msgctxt "formpreferences.lstview_caption_item_0"
+#: formpreferences.lg_lstview_caption_item_0
+msgctxt "formpreferences.lg_lstview_caption_item_0"
 msgid "General"
 msgstr "General"
 
-#: formpreferences.lstview_caption_item_1
-msgctxt "formpreferences.lstview_caption_item_1"
+#: formpreferences.lg_lstview_caption_item_1
+msgctxt "formpreferences.lg_lstview_caption_item_1"
 msgid "Language"
 msgstr "Idioma"
 
-#: formpreferences.lstview_caption_item_2
-msgctxt "formpreferences.lstview_caption_item_2"
+#: formpreferences.lg_lstview_caption_item_2
+msgctxt "formpreferences.lg_lstview_caption_item_2"
 msgid "Database"
 msgstr "Banco de dados"
 
-#: formpreferences.selectdirdlg_error_msg
+#: formpreferences.lg_selectdirdlg_error_msg
+msgctxt "formpreferences.lg_selectdirdlg_error_msg"
 msgid "The file \"data.db\" does not exist in this path."
 msgstr "O arquivo \"data.db \" não existe neste caminho."
 
-#: formpreferences.selectdirdlg_error_title
+#: formpreferences.lg_selectdirdlg_error_title
+msgctxt "formpreferences.lg_selectdirdlg_error_title"
 msgid "ERROR!"
 msgstr "ERRO!"
 
-#: formpreferences.selectdirdlg_title
+#: formpreferences.lg_selectdirdlg_title
+msgctxt "formpreferences.lg_selectdirdlg_title"
 msgid "Select the path for the database (data.db)"
 msgstr "Selecione o caminho para o banco de dados (data.db)"
 
-#: formsearch.blanksearchtext
+#: formsearch.lg_blanksearchtext
+msgctxt "formsearch.lg_blanksearchtext"
 msgid "Search string must be not blank."
 msgstr "A pesquisa não deve ser em branco."
 
-#: formsearch.blanksearchtitle
+#: formsearch.lg_blanksearchtitle
+msgctxt "formsearch.lg_blanksearchtitle"
 msgid "Error!"
 msgstr "Erro!"
 
-#: formsearch.criteriaemployeename
-msgctxt "formsearch.criteriaemployeename"
+#: formsearch.lg_criteriaemployeename
+msgctxt "formsearch.lg_criteriaemployeename"
 msgid "Name"
 msgstr "Nome"
 
-#: formsearch.criteriasurname1name
+#: formsearch.lg_criteriasurname1name
+msgctxt "formsearch.lg_criteriasurname1name"
 msgid "Surname 1"
 msgstr "Apelido 1"
 
-#: formsearch.criteriasurname2name
+#: formsearch.lg_criteriasurname2name
+msgctxt "formsearch.lg_criteriasurname2name"
 msgid "Surname 2"
 msgstr "Sobrenome 2"
 
-#: formsearch.resultcounttext
+#: formsearch.lg_nocriteriatext
+msgctxt "formsearch.lg_nocriteriatext"
+msgid "One criteria must be selected at least."
+msgstr "Um dos critérios devem ser seleccionados, pelo menos."
+
+#: formsearch.lg_nocriteriatitle
+msgctxt "formsearch.lg_nocriteriatitle"
+msgid "Error!"
+msgstr "Erro!"
+
+#: formsearch.lg_resultcounttext
+msgctxt "formsearch.lg_resultcounttext"
 msgid "result/s"
 msgstr "resultado/s"
 
@@ -195,6 +265,15 @@ msgstr "Não pode reverter!"
 #: funcdata.delrec_title
 msgid "Deletion"
 msgstr "Eliminação"
+
+#: tfraacceptcancel.btnaccept.caption
+msgid "BtnAccept"
+msgstr "Aceptar"
+
+#: tfraacceptcancel.btncancel.caption
+msgctxt "tfraacceptcancel.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
 
 #: tfraadddeledisavcan.btnadd.caption
 msgctxt "tfraadddeledisavcan.btnadd.caption"
@@ -280,16 +359,29 @@ msgctxt "tfrmabout.titlelibrestaff.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
+#: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
+msgid "Accept"
+msgstr "Aceptar"
+
+#: tfrmactivationemployee.grpcontract.caption
+msgctxt "tfrmactivationemployee.grpcontract.caption"
+msgid "Contract"
+msgstr "Contrato"
+
+#: tfrmactivationemployee.lbldateend.caption
+msgid "Date end:"
+msgstr "Data fim:"
+
+#: tfrmactivationemployee.lbldateinit.caption
+msgid "Date init:"
+msgstr "Data inicio:"
+
 #: tfrmdsoeditor.caption
-#, fuzzy
-#| msgid "Type of Contracts"
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
 msgstr "Tipo de contratos"
 
 #: tfrmdsoeditor.dbgrdtypecontracts.columns[0].title.caption
-#, fuzzy
-#| msgid "Name of Type of Contract"
 msgctxt "tfrmdsoeditor.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name"
 msgstr "Nome"
@@ -312,6 +404,11 @@ msgstr "Tipo"
 msgid "FrmListEditor"
 msgstr "FrmListEditor"
 
+#: tfrmmain.btnactivate.caption
+msgctxt "tfrmmain.btnactivate.caption"
+msgid "Inactivate"
+msgstr "Inactivar"
+
 #: tfrmmain.btndelete.caption
 msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
@@ -328,15 +425,9 @@ msgid "..."
 msgstr "..."
 
 #: tfrmmain.btneditworkplaces.caption
-#, fuzzy
 msgctxt "tfrmmain.btneditworkplaces.caption"
 msgid "..."
 msgstr "..."
-
-#: tfrmmain.btninactive.caption
-msgctxt "tfrmmain.btninactive.caption"
-msgid "Inactivate"
-msgstr "Inactivar"
 
 #: tfrmmain.btnnew.caption
 msgid "New"
@@ -357,26 +448,22 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
-#: tfrmmain.cbofilter.text
-msgid "Active"
-msgstr "Activar"
-
 #: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
 msgid "Date Init"
-msgstr ""
+msgstr "Data inicio"
 
 #: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
 msgid "DateEnd"
-msgstr ""
+msgstr "Data fim"
 
 #: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
 msgid "Type of contract"
-msgstr ""
+msgstr "Tipo de contrato"
 
 #: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
 msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
 msgid "Workplace"
-msgstr ""
+msgstr "Lugar de trabalho"
 
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
@@ -411,6 +498,7 @@ msgid "Preferences"
 msgstr "Preferências"
 
 #: tfrmmain.label1.caption
+msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
 msgstr "Filtro:"
 
@@ -437,7 +525,7 @@ msgstr "Tipo de contrato:"
 
 #: tfrmmain.lblbirthday4.caption
 msgid "Workplace:"
-msgstr ""
+msgstr "Lugar de trabalho:"
 
 #: tfrmmain.lblcell.caption
 msgctxt "TFRMMAIN.LBLCELL.CAPTION"
@@ -462,6 +550,11 @@ msgstr "Carteira de ID:"
 #: tfrmmain.lblidemployee.caption
 msgid "ID:"
 msgstr "ID:"
+
+#: tfrmmain.lblinactive.caption
+msgctxt "tfrmmain.lblinactive.caption"
+msgid "Inactive"
+msgstr "Inactivo"
 
 #: tfrmmain.lblnameemployee.caption
 msgctxt "tfrmmain.lblnameemployee.caption"
@@ -507,12 +600,13 @@ msgid "Address/Contact"
 msgstr "Endereço / Contato"
 
 #: tfrmmain.tabcontract.caption
+msgctxt "tfrmmain.tabcontract.caption"
 msgid "Contract"
 msgstr "Contrato"
 
 #: tfrmmain.tabcontractslog.caption
 msgid "Contracts Log"
-msgstr ""
+msgstr "Registro de contratos"
 
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
@@ -648,6 +742,11 @@ msgctxt "tfrmsearch.caption"
 msgid "Search"
 msgstr "Buscar"
 
+#: tfrmsearch.cbofilter.text
+msgctxt "tfrmsearch.cbofilter.text"
+msgid "Active"
+msgstr "Activar"
+
 #: tfrmsearch.chkcasesensitive.caption
 msgctxt "TFRMSEARCH.CHKCASESENSITIVE.CAPTION"
 msgid "Case sensitive"
@@ -660,6 +759,11 @@ msgstr "Fechar na selecção"
 #: tfrmsearch.label1.caption
 msgid "Query Result"
 msgstr "Resultado da consulta"
+
+#: tfrmsearch.lblfilter.caption
+msgctxt "tfrmsearch.lblfilter.caption"
+msgid "Filter:"
+msgstr "Filtro:"
 
 #: tfrmsearch.lblsearchcriteria.caption
 msgid "Search Criteria"

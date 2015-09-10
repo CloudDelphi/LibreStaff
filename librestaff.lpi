@@ -87,6 +87,7 @@
           <Linking>
             <Debugging>
               <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
             </Debugging>
             <LinkSmart Value="True"/>
             <Options>
@@ -133,7 +134,7 @@
         <PackageName Value="LCL"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="15">
+    <Units Count="17">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -244,6 +245,22 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormAbout"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="formactivationemployee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmActivationEmployee"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormActivationEmployee"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="fraacceptcancel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraAcceptCancel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="FraAcceptCancel"/>
+      </Unit16>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

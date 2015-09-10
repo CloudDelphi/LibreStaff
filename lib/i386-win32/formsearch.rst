@@ -1,24 +1,32 @@
 
 # hash value = 80320065
-formsearch.blanksearchtitle='Error!'
+formsearch.lg_blanksearchtitle='Error!'
 
 
 # hash value = 110751662
-formsearch.blanksearchtext='Search string must be not blank.'
+formsearch.lg_blanksearchtext='Search string must be not blank.'
+
+
+# hash value = 80320065
+formsearch.lg_nocriteriatitle='Error!'
+
+
+# hash value = 222589054
+formsearch.lg_nocriteriatext='One criteria must be selected at least.'
 
 
 # hash value = 212611811
-formsearch.resultcounttext='result/s'
+formsearch.lg_resultcounttext='result/s'
 
 
 # hash value = 346165
-formsearch.criteriaemployeename='Name'
+formsearch.lg_criteriaemployeename='Name'
 
 
 # hash value = 155741681
-formsearch.criteriasurname1name='Surname 1'
+formsearch.lg_criteriasurname1name='Surname 1'
 
 
 # hash value = 155741682
-formsearch.criteriasurname2name='Surname 2'
+formsearch.lg_criteriasurname2name='Surname 2'
 

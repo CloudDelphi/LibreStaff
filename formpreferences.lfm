@@ -16,6 +16,8 @@ object FrmPreferences: TFrmPreferences
     Top = 0
     Width = 152
     Align = alLeft
+    BorderSpacing.CellAlignHorizontal = ccaCenter
+    BorderSpacing.CellAlignVertical = ccaCenter
     BorderStyle = bsNone
     Columns = <>
     Items.LazData = {

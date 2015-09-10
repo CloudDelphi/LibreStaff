@@ -21,12 +21,14 @@ type
     BtnClose: TBitBtn;
     BtnViewAll: TBitBtn;
     BtnSearch: TBitBtn;
+    CboFilter: TComboBox;
     ChkCaseSensitive: TCheckBox;
     ChkClose: TCheckBox;
     ChkLstBoxSearch: TCheckListBox;
     DBGridSearchResult: TDBGrid;
     EdiSearch: TEdit;
     Label1: TLabel;
+    LblFilter: TLabel;
     LblResult: TLabel;
     LblSearchCriteria: TLabel;
     PanOptions: TPanel;
@@ -57,12 +59,14 @@ var
   SearchCriteria: array of TSearchCriteria;
 
 resourcestring
-  BlankSearchTitle= 'Error!';
-  BlankSearchText= 'Search string must be not blank.';
-  ResultCountText= 'result/s';
-	CriteriaEmployeeName= 'Name';
-  CriteriaSurname1Name= 'Surname 1';
-  CriteriaSurname2Name= 'Surname 2';
+  lg_BlankSearchTitle= 'Error!';
+  lg_BlankSearchText= 'Search string must be not blank.';
+  lg_NoCriteriaTitle= 'Error!';
+  lg_NoCriteriaText= 'One criteria must be selected at least.';
+  lg_ResultCountText= 'result/s';
+	lg_CriteriaEmployeeName= 'Name';
+  lg_CriteriaSurname1Name= 'Surname 1';
+  lg_CriteriaSurname2Name= 'Surname 2';
 
 implementation
 
@@ -80,19 +84,26 @@ begin
   with TFrmSearch.Create(Application) do
   try
   WhatSearch:= What;
+   case What of
+ 	 	wtEmployees:	begin
+    							LblFilter.Visible:= True;
+     							CboFilter.Visible:= True;
+    							CboFilter.ItemIndex:= FrmMain.CboFilter.ItemIndex;
+							    end;
+   end; //case
   case What of
  		wtEmployees: 	begin
     							CriteriaCount:= 3;
     							SetLength(SearchCriteria, CriteriaCount);
-                  SearchCriteria[0].Name:= CriteriaEmployeeName;
+                  SearchCriteria[0].Name:= lg_CriteriaEmployeeName;
                   SearchCriteria[0].FieldName:= 'Name_Employee';
                   SearchCriteria[0].DataFormat:= dtString;
                   SearchCriteria[0].Fixed:= True;
-                  SearchCriteria[1].Name:= CriteriaSurname1Name;
+                  SearchCriteria[1].Name:= lg_CriteriaSurname1Name;
                   SearchCriteria[1].FieldName:= 'Surname1_Employee';
                   SearchCriteria[1].DataFormat:= dtString;
                   SearchCriteria[1].Fixed:= True;
-                  SearchCriteria[2].Name:= CriteriaSurname2Name;
+                  SearchCriteria[2].Name:= lg_CriteriaSurname2Name;
                   SearchCriteria[2].FieldName:= 'Surname2_Employee';
                   SearchCriteria[2].DataFormat:= dtString;
                   SearchCriteria[2].Fixed:= False;
@@ -102,13 +113,13 @@ begin
                     ChkLstBoxSearch.Checked[i]:= SearchCriteria[i].Fixed;
                     end;
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[0].Title.Caption:= CriteriaEmployeeName;
+                 	DBGridSearchResult.Columns[0].Title.Caption:= lg_CriteriaEmployeeName;
                   DBGridSearchResult.Columns[0].FieldName:= 'Name_Employee';
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[1].Title.Caption:= CriteriaSurname1Name;
+                 	DBGridSearchResult.Columns[1].Title.Caption:= lg_CriteriaSurname1Name;
                   DBGridSearchResult.Columns[1].FieldName:= 'Surname1_Employee';
                  	DBGridSearchResult.Columns.Add;
-                 	DBGridSearchResult.Columns[2].Title.Caption:= CriteriaSurname2Name;
+                 	DBGridSearchResult.Columns[2].Title.Caption:= lg_CriteriaSurname2Name;
                   DBGridSearchResult.Columns[2].FieldName:= 'Surname2_Employee';
 						     	end;
   end; //case
@@ -127,14 +138,32 @@ var
   p: TPoint;
   CompareOperator, Wildcard: String;
   ResultCount: Integer;
+  CriteriaSelectedCount: Integer;
 begin
   if (EdiSearch.Text='') AND (ViewAll= False) then
     begin
    	p:= FrmMain.ScreenToClient(Mouse.CursorPos);
-    FrmMain.PopNot.Title:=  BlankSearchTitle;
-    FrmMain.PopNot.Text:=  BlankSearchText;
+    FrmMain.PopNot.Title:= lg_BlankSearchTitle;
+    FrmMain.PopNot.Text:= lg_BlankSearchText;
     FrmMain.PopNot.ShowAtPos(p.x, p.y);
     Exit;
+    end
+  else
+  	begin
+    CriteriaSelectedCount:= 0;
+	  for i:=0 to ChkLstBoxSearch.Items.Count-1 do
+	    begin
+      if ChkLstBoxSearch.Checked[i]= True then
+        Inc(CriteriaSelectedCount);
+  	  end;
+    if CriteriaSelectedCount=0 then
+      begin
+	    p:= FrmMain.ScreenToClient(Mouse.CursorPos);
+  	  FrmMain.PopNot.Title:= lg_NoCriteriaTitle;
+    	FrmMain.PopNot.Text:= lg_NoCriteriaText;
+	    FrmMain.PopNot.ShowAtPos(p.x, p.y);
+	    Exit;
+      end;
     end;
 	SQLSearch:= TStringList.Create;
   SQLSearch.Add('SELECT '+ SelectFields + ' FROM ' + Table);
@@ -153,7 +182,9 @@ begin
 	        WhereInserted:= True;
   	      end;
 				if ConcatenateWhere= True then
-	    	  SQLSearch.Add('OR ');
+	    	  SQLSearch.Add('OR ')
+        	else
+	    	  SQLSearch.Add('(');
 	      SearchField:= SearchCriteria[i].FieldName;
   	    case SearchCriteria[i].DataFormat of
     			dtString:	begin
@@ -176,11 +207,28 @@ begin
     	  ConcatenateWhere:= True;
       	end;
 		  end; //for
+    if WhereInserted= True then
+      SQLSearch.Add(')');
+    case WhatSearch of
+		wtEmployees:	begin
+        	  			if WhereInserted= False then
+      							begin
+				        		SQLSearch.Add('WHERE ');
+	      				  	WhereInserted:= True;
+				  	      	end;
+    							if (ConcatenateWhere= True) AND (CboFilter.ItemIndex<2) then
+					    		  SQLSearch.Add('AND ');
+    							case CboFilter.ItemIndex of
+                    0: SQLSearch.Add('(Active_Employee)');
+                    1: SQLSearch.Add('NOT(Active_Employee)');
+    							end; //case
+                  end;
+  	end; //case
   end;
-  SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
+  //SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
 	FuncData.ExecSQL(DataMod.QueSearch, '', True, SQLSearch);
   ResultCount:= DataMod.QueSearch.RecordCount;
-  LblResult.Caption:= ' ' + IntToStr(ResultCount)+ ' ' + ResultCountText + ' ';
+  LblResult.Caption:= ' ' + IntToStr(ResultCount)+ ' ' + lg_ResultCountText + ' ';
   if ResultCount>0 then
     LblResult.Color:= clMoneyGreen
     else
@@ -256,6 +304,11 @@ end;
 
 procedure TFrmSearch.FormCreate(Sender: TObject);
 begin
+  //Load the Filter Items
+  CboFilter.Items.Clear;
+  CboFilter.Items.Add(lg_Filter_Active);
+  CboFilter.Items.Add(lg_Filter_Inactive);
+  CboFilter.Items.Add(lg_Filter_All);
   FrmMain.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
 	FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(9, BtnViewAll.Glyph);

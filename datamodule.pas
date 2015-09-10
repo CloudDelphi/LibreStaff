@@ -19,6 +19,7 @@ type
     Connection: TSQLite3Connection;
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
+    QueVirtual: TSQLQuery;
     QueEmployees: TSQLQuery;
     QuePicsEmployees: TSQLQuery;
     QueSearch: TSQLQuery;

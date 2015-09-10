@@ -22,7 +22,10 @@ function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: String; DataFormat: TDataFormat);
+function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
 
 resourcestring
   DelRec_Title= 'Deletion';
@@ -56,18 +59,18 @@ begin
           ' ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_Workplace CHAR(256) NOT NULL DEFAULT "");');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
-    	DataMod.Connection.ExecuteDirect('CREATE TABLE ContractsLog('+
+   	DataMod.Connection.ExecuteDirect('CREATE TABLE ContractsLog('+
           ' ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
           ' DateInit_Contract DATE,'+
           ' DateEnd_Contract DATE,'+
-          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE,'+
-          ' Workplace_ID INTEGER DEFAULT NULL REFERENCES Workplaces(ID_Workplace) ON DELETE CASCADE'+
+          ' TypeContract_ID INTEGER DEFAULT NULL,'+
+          ' Workplace_ID INTEGER DEFAULT NULL'+
           ' );');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "ContractsLog_id_idx" ON "ContractsLog"("ID_Contract");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Active_Employee CHAR(256) NOT NULL DEFAULT TRUE,'+
+          ' Active_Employee BOOLEAN NOT NULL DEFAULT TRUE,'+
           ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -81,13 +84,12 @@ begin
        		' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' EMail_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Birthday_Employee DATE,'+
-          ' DateInit_Contract DATE,'+
-          ' DateEnd_Contract DATE,'+
-          ' TypeContract_ID INTEGER DEFAULT NULL REFERENCES TypeContracts(ID_TypeContract) ON DELETE CASCADE,'+
-          ' Workplace_ID INTEGER DEFAULT NULL REFERENCES Workplaces(ID_Workplace) ON DELETE CASCADE'+
+          ' Birthday_Employee DATE DEFAULT NULL,'+
+          ' DateInit_Contract DATE DEFAULT NULL,'+
+          ' DateEnd_Contract DATE DEFAULT NULL,'+
+          ' TypeContract_ID INTEGER DEFAULT NULL,'+
+          ' Workplace_ID INTEGER DEFAULT NULL'+
           ' );');
-
     //Creating an index based upon id in the DATA Table
 		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
 	  DataMod.Transaction.Commit;
@@ -136,6 +138,7 @@ begin
 			dtString: Query.FieldByName(WriteFields[i].FieldName).AsString:= WriteFields[i].Value;
  			dtInteger: Query.FieldByName(WriteFields[i].FieldName).AsInteger:= WriteFields[i].Value;
       dtDate: Query.FieldByName(WriteFields[i].FieldName).AsDateTime:= WriteFields[i].Value;
+      dtBoolean: Query.FieldByName(WriteFields[i].FieldName).AsBoolean:= WriteFields[i].Value;
     end; //case
     end;
   Query.Post;
@@ -157,6 +160,7 @@ begin
     end;
 	Query.Open;
 end;
+
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 var
   i: Integer;
@@ -177,10 +181,49 @@ begin
   Query.Refresh;
   Query.Last;
   Result:= True;
-//	except
- // Result:= False;
- // end;
 end;
+
+function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolean;
+var
+  i: Integer;
+	SQLSentence: TStringList;
+  ValueStr: String;
+begin
+  DataMod.QueVirtual.Close;
+  DataMod.QueVirtual.SQL.Clear;
+ 	SQLSentence:= TStringList.Create;
+  SQLSentence.Add('INSERT INTO '+ TableName);
+  SQLSentence.Add('(');
+  for i:= Low(WriteFields) to High(WriteFields) do
+   	begin
+    SQLSentence.Strings[1]:= SQLSentence.Strings[1]+WriteFields[i].FieldName;
+    if i<High(WriteFields) then
+    	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+','
+    else
+      SQLSentence.Strings[1]:= SQLSentence.Strings[1]+')';
+    end; //for
+  SQLSentence.Add('VALUES(');
+  for i:= Low(WriteFields) to High(WriteFields) do
+   	begin
+    case WriteFields[i].DataFormat of
+      dtString: ValueStr:= WriteFields[i].Value;
+      dtInteger: ValueStr:= IntToStr(WriteFields[i].Value);
+      dtDate: ValueStr:= FormatDateTime('yyyy"-"mm"-"dd"',WriteFields[i].Value);
+      dtBoolean: ValueStr:= BoolToStr(WriteFields[i].Value);
+      dtNull: ValueStr:= 'NULL';
+    end; //case
+    SQLSentence.Strings[2]:= SQLSentence.Strings[2]+'"'+ValueStr+'"';
+    if i<High(WriteFields) then
+    	SQLSentence.Strings[2]:= SQLSentence.Strings[2]+','
+    else
+      SQLSentence.Strings[2]:= SQLSentence.Strings[2]+')';
+    end; //for
+  DataMod.QueVirtual.SQL.Assign(SQLSentence);
+  DataMod.QueVirtual.ExecSQL;
+  DataMod.Transaction.CommitRetaining;
+  SQLSentence.Free;
+end;
+
 procedure SaveTable(Query: TSQLQuery);
 var
 	SubstringPos: Integer;
@@ -201,6 +244,55 @@ begin
   end;
   DataMod.Transaction.CommitRetaining;
   Screen.Cursor:= crDefault;
+end;
+
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: String; DataFormat: TDataFormat);
+begin
+  Query.Edit;
+  case DataFormat of
+		dtString: Query.FieldByName(FieldName).AsString:= Value;
+ 		dtInteger: Query.FieldByName(FieldName).AsInteger:= StrToInt(Value);
+ 		dtBoolean: Query.FieldByName(FieldName).AsBoolean:= StrToBool(Value);
+		dtDate: Query.FieldByName(FieldName).AsDateTime:= StrToDate(Value);
+  end;
+  Query.Post;
+  Query.ApplyUpdates;
+  DataMod.Transaction.CommitRetaining;
+  Query.Refresh;
+end;
+
+function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+var
+  i: Integer;
+	SQLSentence: TStringList;
+  ValueStr: String;
+begin
+  DataMod.QueVirtual.Close;
+  DataMod.QueVirtual.SQL.Clear;
+ 	SQLSentence:= TStringList.Create;
+  SQLSentence.Add('UPDATE '+ TableName);
+  SQLSentence.Add('SET ');
+  for i:= Low(WriteFields) to High(WriteFields) do
+   	begin
+    case WriteFields[i].DataFormat of
+      dtString: ValueStr:= WriteFields[i].Value;
+      dtInteger: ValueStr:= IntToStr(WriteFields[i].Value);
+      dtDate: ValueStr:= FormatDateTime('yyyy"-"mm"-"dd"',WriteFields[i].Value);
+      dtBoolean: ValueStr:= BoolToStr(WriteFields[i].Value);
+      dtNull: ValueStr:= 'NULL';
+    end; //case
+    SQLSentence.Strings[1]:= SQLSentence.Strings[1]+WriteFields[i].FieldName+'='+
+    	'"'+ValueStr+'"';
+    if i<High(WriteFields) then
+    	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+','
+    else
+      //SQLSentence.Strings[1]:= SQLSentence.Strings[1]+')';
+  	end; //for
+  SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
+  DataMod.QueVirtual.SQL.Assign(SQLSentence);
+  DataMod.QueVirtual.ExecSQL;
+  DataMod.Transaction.CommitRetaining;
+  SQLSentence.Free;
 end;
 
 end.

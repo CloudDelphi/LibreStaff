@@ -1,9 +1,9 @@
 object DataMod: TDataMod
   OldCreateOrder = False
-  Height = 468
+  Height = 480
   HorizontalOffset = 996
-  VerticalOffset = 458
-  Width = 720
+  VerticalOffset = 246
+  Width = 683
   object DsoEmployees: TDataSource
     DataSet = QueEmployees
     left = 224
@@ -56,7 +56,7 @@ object DataMod: TDataMod
   object DsoSearch: TDataSource
     DataSet = QueSearch
     left = 248
-    top = 360
+    top = 368
   end
   object QueSearch: TSQLQuery
     FieldDefs = <>
@@ -64,7 +64,7 @@ object DataMod: TDataMod
     Transaction = Transaction
     Params = <>
     left = 72
-    top = 360
+    top = 368
   end
   object QueTypeContracts: TSQLQuery
     FieldDefs = <>
@@ -84,13 +84,13 @@ object DataMod: TDataMod
     Database = Connection
     Transaction = Transaction
     Params = <>
-    left = 416
-    top = 280
+    left = 424
+    top = 264
   end
   object DsoWorkplaces: TDataSource
     DataSet = QueWorkplaces
     left = 584
-    top = 280
+    top = 264
   end
   object QueContractsLog: TSQLQuery
     FieldDefs = <>
@@ -98,12 +98,20 @@ object DataMod: TDataMod
     Transaction = Transaction
     Params = <>
     DataSource = DsoEmployees
-    left = 416
+    left = 424
     top = 368
   end
   object DsoContractsLog: TDataSource
     DataSet = QueContractsLog
     left = 584
     top = 368
+  end
+  object QueVirtual: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    left = 360
+    top = 32
   end
 end

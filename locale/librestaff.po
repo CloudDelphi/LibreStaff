@@ -12,6 +12,26 @@ msgstr ""
 "Language: en\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#: formactivationemployee.lg_captiongrpcontract_activate
+msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
+msgid "New contract of the employee:"
+msgstr ""
+
+#: formactivationemployee.lg_captiongrpcontract_inactivate
+msgctxt "formactivationemployee.lg_captiongrpcontract_inactivate"
+msgid "Contract to log:"
+msgstr ""
+
+#: formactivationemployee.lg_title_activate
+msgctxt "formactivationemployee.lg_title_activate"
+msgid "Do you want to activate"
+msgstr ""
+
+#: formactivationemployee.lg_title_inactivate
+msgctxt "formactivationemployee.lg_title_inactivate"
+msgid "Do you want to inactivate"
+msgstr ""
+
 #: formdsoeditor.add_iptbox_caption_typecontracts
 msgid "Add type of contract"
 msgstr ""
@@ -68,23 +88,61 @@ msgctxt "formdsoeditor.form_caption_workplaces"
 msgid "Workplace"
 msgstr ""
 
-#: formmain.frmstatestitle
+#: formmain.lg_btndeltypecontract_hint
+msgctxt "formmain.lg_btndeltypecontract_hint"
+msgid "Delete the type of contract of this employee"
+msgstr ""
+
+#: formmain.lg_btndelworkplace_hint
+msgctxt "formmain.lg_btndelworkplace_hint"
+msgid "Delete the workplace of this employee"
+msgstr ""
+
+#: formmain.lg_captionbtn_activate
+msgctxt "formmain.lg_captionbtn_activate"
+msgid "Activate"
+msgstr ""
+
+#: formmain.lg_captionbtn_inactivate
+msgctxt "formmain.lg_captionbtn_inactivate"
+msgid "Inactivate"
+msgstr ""
+
+#: formmain.lg_filter_active
+msgctxt "formmain.lg_filter_active"
+msgid "Actives"
+msgstr ""
+
+#: formmain.lg_filter_all
+msgid "All"
+msgstr ""
+
+#: formmain.lg_filter_inactive
+msgctxt "formmain.lg_filter_inactive"
+msgid "Inactives"
+msgstr ""
+
+#: formmain.lg_frmstatestitle
+msgctxt "formmain.lg_frmstatestitle"
 msgid "States"
 msgstr ""
 
-#: formmain.idisblank
+#: formmain.lg_idisblank
+msgctxt "formmain.lg_idisblank"
 msgid ""
 "This ID# cannot be in blank\n"
 "It should be UNIQUE!\n"
 msgstr ""
 
-#: formmain.idisnotunique
+#: formmain.lg_idisnotunique
+msgctxt "formmain.lg_idisnotunique"
 msgid ""
 "This ID# is in use by another Employee\n"
 "It should be UNIQUE!\n"
 msgstr ""
 
-#: formmain.lblnavrecof
+#: formmain.lg_lblnavrecof
+msgctxt "formmain.lg_lblnavrecof"
 msgid "of"
 msgstr ""
 
@@ -122,55 +180,73 @@ msgstr ""
 msgid "Save the photo"
 msgstr ""
 
-#: formpreferences.lstview_caption_item_0
-msgctxt "formpreferences.lstview_caption_item_0"
+#: formpreferences.lg_lstview_caption_item_0
+msgctxt "formpreferences.lg_lstview_caption_item_0"
 msgid "General"
 msgstr ""
 
-#: formpreferences.lstview_caption_item_1
-msgctxt "formpreferences.lstview_caption_item_1"
+#: formpreferences.lg_lstview_caption_item_1
+msgctxt "formpreferences.lg_lstview_caption_item_1"
 msgid "Language"
 msgstr ""
 
-#: formpreferences.lstview_caption_item_2
-msgctxt "formpreferences.lstview_caption_item_2"
+#: formpreferences.lg_lstview_caption_item_2
+msgctxt "formpreferences.lg_lstview_caption_item_2"
 msgid "Database"
 msgstr ""
 
-#: formpreferences.selectdirdlg_error_msg
+#: formpreferences.lg_selectdirdlg_error_msg
+msgctxt "formpreferences.lg_selectdirdlg_error_msg"
 msgid "The file \"data.db\" does not exist in this path."
 msgstr ""
 
-#: formpreferences.selectdirdlg_error_title
+#: formpreferences.lg_selectdirdlg_error_title
+msgctxt "formpreferences.lg_selectdirdlg_error_title"
 msgid "ERROR!"
 msgstr ""
 
-#: formpreferences.selectdirdlg_title
+#: formpreferences.lg_selectdirdlg_title
+msgctxt "formpreferences.lg_selectdirdlg_title"
 msgid "Select the path for the database (data.db)"
 msgstr ""
 
-#: formsearch.blanksearchtext
+#: formsearch.lg_blanksearchtext
+msgctxt "formsearch.lg_blanksearchtext"
 msgid "Search string must be not blank."
 msgstr ""
 
-#: formsearch.blanksearchtitle
+#: formsearch.lg_blanksearchtitle
+msgctxt "formsearch.lg_blanksearchtitle"
 msgid "Error!"
 msgstr ""
 
-#: formsearch.criteriaemployeename
-msgctxt "formsearch.criteriaemployeename"
+#: formsearch.lg_criteriaemployeename
+msgctxt "formsearch.lg_criteriaemployeename"
 msgid "Name"
 msgstr ""
 
-#: formsearch.criteriasurname1name
+#: formsearch.lg_criteriasurname1name
+msgctxt "formsearch.lg_criteriasurname1name"
 msgid "Surname 1"
 msgstr ""
 
-#: formsearch.criteriasurname2name
+#: formsearch.lg_criteriasurname2name
+msgctxt "formsearch.lg_criteriasurname2name"
 msgid "Surname 2"
 msgstr ""
 
-#: formsearch.resultcounttext
+#: formsearch.lg_nocriteriatext
+msgctxt "formsearch.lg_nocriteriatext"
+msgid "One criteria must be selected at least."
+msgstr ""
+
+#: formsearch.lg_nocriteriatitle
+msgctxt "formsearch.lg_nocriteriatitle"
+msgid "Error!"
+msgstr ""
+
+#: formsearch.lg_resultcounttext
+msgctxt "formsearch.lg_resultcounttext"
 msgid "result/s"
 msgstr ""
 
@@ -184,6 +260,15 @@ msgstr ""
 
 #: funcdata.delrec_title
 msgid "Deletion"
+msgstr ""
+
+#: tfraacceptcancel.btnaccept.caption
+msgid "BtnAccept"
+msgstr ""
+
+#: tfraacceptcancel.btncancel.caption
+msgctxt "TFRAACCEPTCANCEL.BTNCANCEL.CAPTION"
+msgid "Cancel"
 msgstr ""
 
 #: tfraadddeledisavcan.btnadd.caption
@@ -270,6 +355,23 @@ msgctxt "TFRMABOUT.TITLELIBRESTAFF.CAPTION"
 msgid "LibreStaff"
 msgstr ""
 
+#: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
+msgid "Accept"
+msgstr ""
+
+#: tfrmactivationemployee.grpcontract.caption
+msgctxt "TFRMACTIVATIONEMPLOYEE.GRPCONTRACT.CAPTION"
+msgid "Contract"
+msgstr ""
+
+#: tfrmactivationemployee.lbldateend.caption
+msgid "Date end:"
+msgstr ""
+
+#: tfrmactivationemployee.lbldateinit.caption
+msgid "Date init:"
+msgstr ""
+
 #: tfrmdsoeditor.caption
 msgctxt "TFRMDSOEDITOR.CAPTION"
 msgid "Editor"
@@ -298,6 +400,11 @@ msgstr ""
 msgid "FrmListEditor"
 msgstr ""
 
+#: tfrmmain.btnactivate.caption
+msgctxt "TFRMMAIN.BTNACTIVATE.CAPTION"
+msgid "Inactivate"
+msgstr ""
+
 #: tfrmmain.btndelete.caption
 msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
@@ -318,11 +425,6 @@ msgctxt "TFRMMAIN.BTNEDITWORKPLACES.CAPTION"
 msgid "..."
 msgstr ""
 
-#: tfrmmain.btninactive.caption
-msgctxt "TFRMMAIN.BTNINACTIVE.CAPTION"
-msgid "Inactivate"
-msgstr ""
-
 #: tfrmmain.btnnew.caption
 msgid "New"
 msgstr ""
@@ -340,10 +442,6 @@ msgstr ""
 #: tfrmmain.caption
 msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
-msgstr ""
-
-#: tfrmmain.cbofilter.text
-msgid "Active"
 msgstr ""
 
 #: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
@@ -396,6 +494,7 @@ msgid "Preferences"
 msgstr ""
 
 #: tfrmmain.label1.caption
+msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
 msgstr ""
 
@@ -448,6 +547,11 @@ msgstr ""
 msgid "ID:"
 msgstr ""
 
+#: tfrmmain.lblinactive.caption
+msgctxt "tfrmmain.lblinactive.caption"
+msgid "Inactive"
+msgstr ""
+
 #: tfrmmain.lblnameemployee.caption
 msgctxt "tfrmmain.lblnameemployee.caption"
 msgid "Name:"
@@ -492,6 +596,7 @@ msgid "Address/Contact"
 msgstr ""
 
 #: tfrmmain.tabcontract.caption
+msgctxt "tfrmmain.tabcontract.caption"
 msgid "Contract"
 msgstr ""
 
@@ -633,6 +738,11 @@ msgctxt "tfrmsearch.caption"
 msgid "Search"
 msgstr ""
 
+#: tfrmsearch.cbofilter.text
+msgctxt "TFRMSEARCH.CBOFILTER.TEXT"
+msgid "Active"
+msgstr ""
+
 #: tfrmsearch.chkcasesensitive.caption
 msgctxt "TFRMSEARCH.CHKCASESENSITIVE.CAPTION"
 msgid "Case sensitive"
@@ -644,6 +754,11 @@ msgstr ""
 
 #: tfrmsearch.label1.caption
 msgid "Query Result"
+msgstr ""
+
+#: tfrmsearch.lblfilter.caption
+msgctxt "TFRMSEARCH.LBLFILTER.CAPTION"
+msgid "Filter:"
 msgstr ""
 
 #: tfrmsearch.lblsearchcriteria.caption

@@ -1,26 +1,26 @@
 
 # hash value = 231000124
-formpreferences.lstview_caption_item_0='General'
+formpreferences.lg_lstview_caption_item_0='General'
 
 
 # hash value = 139375349
-formpreferences.lstview_caption_item_1='Language'
+formpreferences.lg_lstview_caption_item_1='Language'
 
 
 # hash value = 145198133
-formpreferences.lstview_caption_item_2='Database'
+formpreferences.lg_lstview_caption_item_2='Database'
 
 
 # hash value = 95946553
-formpreferences.selectdirdlg_title='Select the path for the database (dat'+
-'a.db)'
+formpreferences.lg_selectdirdlg_title='Select the path for the database ('+
+'data.db)'
 
 
 # hash value = 78083137
-formpreferences.selectdirdlg_error_title='ERROR!'
+formpreferences.lg_selectdirdlg_error_title='ERROR!'
 
 
 # hash value = 10535214
-formpreferences.selectdirdlg_error_msg='The file "data.db" does not exist'+
-' in this path.'
+formpreferences.lg_selectdirdlg_error_msg='The file "data.db" does not ex'+
+'ist in this path.'
 

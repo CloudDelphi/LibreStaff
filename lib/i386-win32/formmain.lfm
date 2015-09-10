@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 502
+  Left = 535
   Height = 653
-  Top = 309
+  Top = 200
   Width = 1142
   Caption = 'LibreStaff'
   ClientHeight = 653
@@ -248,8 +248,8 @@ object FrmMain: TFrmMain
       ClientWidth = 1134
       object PagEmployees: TPageControl
         Left = 0
-        Height = 302
-        Top = 122
+        Height = 296
+        Top = 128
         Width = 1134
         ActivePage = TabAddress
         Align = alClient
@@ -257,7 +257,7 @@ object FrmMain: TFrmMain
         TabOrder = 0
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 261
+          ClientHeight = 255
           ClientWidth = 1126
           object GrpAddressEmployee: TGroupBox
             Left = 20
@@ -445,7 +445,7 @@ object FrmMain: TFrmMain
         end
         object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
-          ClientHeight = 317
+          ClientHeight = 261
           ClientWidth = 1126
           object GrpMisc: TGroupBox
             Left = 20
@@ -472,7 +472,6 @@ object FrmMain: TFrmMain
               TrailingSeparator = False
               TextForNullDate = 'NULL'
               LeadingZeros = True
-              NullInputAllowed = False
               Kind = dtkDate
               TimeFormat = tf24
               TimeDisplay = tdHMS
@@ -496,10 +495,10 @@ object FrmMain: TFrmMain
         end
         object TabContract: TTabSheet
           Caption = 'Contract'
-          ClientHeight = 317
+          ClientHeight = 255
           ClientWidth = 1126
           object GroupBox1: TGroupBox
-            Left = 8
+            Left = 20
             Height = 224
             Top = 24
             Width = 624
@@ -523,7 +522,6 @@ object FrmMain: TFrmMain
               TrailingSeparator = False
               TextForNullDate = 'NULL'
               LeadingZeros = True
-              NullInputAllowed = False
               Kind = dtkDate
               TimeFormat = tf24
               TimeDisplay = tdHMS
@@ -544,7 +542,7 @@ object FrmMain: TFrmMain
               ParentFont = False
             end
             object DBDatEndContract: TDBDateTimePicker
-              Left = 439
+              Left = 440
               Height = 36
               Top = 16
               Width = 161
@@ -559,7 +557,6 @@ object FrmMain: TFrmMain
               TrailingSeparator = False
               TextForNullDate = 'NULL'
               LeadingZeros = True
-              NullInputAllowed = False
               Kind = dtkDate
               TimeFormat = tf24
               TimeDisplay = tdHMS
@@ -591,7 +588,7 @@ object FrmMain: TFrmMain
               ParentFont = False
             end
             object BtnEditTypeContracts: TBitBtn
-              Left = 440
+              Left = 488
               Height = 38
               Top = 80
               Width = 42
@@ -611,8 +608,8 @@ object FrmMain: TFrmMain
               ParentFont = False
             end
             object BtnEditWorkplaces: TBitBtn
-              Left = 440
-              Height = 38
+              Left = 488
+              Height = 36
               Top = 136
               Width = 42
               Caption = '...'
@@ -633,32 +630,53 @@ object FrmMain: TFrmMain
               LookupCache = False
               TabOrder = 4
             end
-          end
-          object DBLkCboTypeContract: TDBLookupComboBox
-            Left = 176
-            Height = 36
-            Top = 136
-            Width = 264
-            DataField = 'TypeContract_ID'
-            DataSource = DataMod.DsoEmployees
-            KeyField = 'ID_TypeContract'
-            ListField = 'Name_TypeContract'
-            ListFieldIndex = 1
-            ListSource = DataMod.DsoTypeContracts
-            LookupCache = False
-            TabOrder = 1
+            object DBLkCboTypeContract: TDBLookupComboBox
+              Left = 168
+              Height = 36
+              Top = 80
+              Width = 264
+              DataField = 'TypeContract_ID'
+              DataSource = DataMod.DsoEmployees
+              KeyField = 'ID_TypeContract'
+              ListField = 'Name_TypeContract'
+              ListFieldIndex = 1
+              ListSource = DataMod.DsoTypeContracts
+              LookupCache = False
+              TabOrder = 5
+            end
+            object BtnDelTypeContract: TBitBtn
+              Left = 440
+              Height = 38
+              Top = 80
+              Width = 41
+              OnClick = BtnDelTypeContractClick
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 6
+            end
+            object BtnDelWorkplace: TBitBtn
+              Left = 440
+              Height = 36
+              Top = 136
+              Width = 41
+              OnClick = BtnDelWorkplaceClick
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 7
+            end
           end
         end
         object TabContractsLog: TTabSheet
           Caption = 'Contracts Log'
-          ClientHeight = 261
+          ClientHeight = 255
           ClientWidth = 1126
           object DBGrdLogContracts: TDBGrid
             Left = 0
-            Height = 261
+            Height = 255
             Top = 0
             Width = 1126
             Align = alClient
+            AutoEdit = False
             AutoFillColumns = True
             Color = clWindow
             Columns = <            
@@ -699,7 +717,7 @@ object FrmMain: TFrmMain
         ClientWidth = 1134
         TabOrder = 1
         object BtnDelete: TBitBtn
-          Left = 560
+          Left = 594
           Height = 40
           Top = 96
           Width = 120
@@ -772,7 +790,7 @@ object FrmMain: TFrmMain
           end
         end
         object BtnSearch: TBitBtn
-          Left = 412
+          Left = 446
           Height = 40
           Top = 96
           Width = 128
@@ -783,28 +801,23 @@ object FrmMain: TFrmMain
         object CboFilter: TComboBox
           Left = 160
           Height = 36
-          Top = 38
+          Top = 40
           Width = 120
-          Enabled = False
           ItemHeight = 28
-          ItemIndex = 0
           Items.Strings = (
-            'Active'
-            'Inactive'
-            'All'
+            ''
           )
           OnChange = CboFilterChange
           Style = csDropDownList
           TabOrder = 6
-          Text = 'Active'
         end
-        object BtnInactive: TBitBtn
+        object BtnActivate: TBitBtn
           Left = 280
           Height = 40
           Top = 96
-          Width = 112
+          Width = 144
           Caption = 'Inactivate'
-          Enabled = False
+          OnClick = BtnActivateClick
           TabOrder = 7
         end
         object Label1: TLabel
@@ -820,17 +833,17 @@ object FrmMain: TFrmMain
       end
       object Pan: TPanel
         Left = 0
-        Height = 122
+        Height = 128
         Top = 0
         Width = 1134
         Align = alTop
-        ClientHeight = 122
+        ClientHeight = 128
         ClientWidth = 1134
         TabOrder = 2
         object DBENameEmployee: TDBEdit
           Left = 216
           Height = 36
-          Top = 24
+          Top = 32
           Width = 162
           DataField = 'Name_Employee'
           DataSource = DataMod.DsoEmployees
@@ -842,7 +855,7 @@ object FrmMain: TFrmMain
         object LblNameEmployee: TLabel
           Left = 120
           Height = 28
-          Top = 27
+          Top = 35
           Width = 88
           Alignment = taRightJustify
           AutoSize = False
@@ -852,9 +865,9 @@ object FrmMain: TFrmMain
           ParentFont = False
         end
         object PanPicEmployee: TPanel
-          Left = 22
+          Left = 24
           Height = 89
-          Top = 16
+          Top = 32
           Width = 88
           BevelOuter = bvNone
           BorderStyle = bsSingle
@@ -880,7 +893,7 @@ object FrmMain: TFrmMain
         object DBESurname1: TDBEdit
           Left = 520
           Height = 36
-          Top = 24
+          Top = 32
           Width = 194
           DataField = 'Surname1_Employee'
           DataSource = DataMod.DsoEmployees
@@ -891,7 +904,7 @@ object FrmMain: TFrmMain
         object LblNameEmployee1: TLabel
           Left = 392
           Height = 28
-          Top = 27
+          Top = 35
           Width = 125
           Alignment = taRightJustify
           AutoSize = False
@@ -903,7 +916,7 @@ object FrmMain: TFrmMain
         object DBENameEmployee2: TDBEdit
           Left = 869
           Height = 36
-          Top = 24
+          Top = 32
           Width = 194
           DataField = 'Surname2_Employee'
           DataSource = DataMod.DsoEmployees
@@ -914,7 +927,7 @@ object FrmMain: TFrmMain
         object LblSurname2: TLabel
           Left = 728
           Height = 28
-          Top = 27
+          Top = 35
           Width = 139
           Alignment = taRightJustify
           AutoSize = False
@@ -926,7 +939,7 @@ object FrmMain: TFrmMain
         object DBENameEmployee3: TDBEdit
           Left = 520
           Height = 36
-          Top = 70
+          Top = 78
           Width = 194
           DataField = 'IDCard_Employee'
           DataSource = DataMod.DsoEmployees
@@ -937,7 +950,7 @@ object FrmMain: TFrmMain
         object LblIDCard: TLabel
           Left = 392
           Height = 28
-          Top = 73
+          Top = 81
           Width = 125
           Alignment = taRightJustify
           AutoSize = False
@@ -949,7 +962,7 @@ object FrmMain: TFrmMain
         object DBESSN: TDBEdit
           Left = 869
           Height = 36
-          Top = 67
+          Top = 75
           Width = 194
           DataField = 'SSN_Employee'
           DataSource = DataMod.DsoEmployees
@@ -960,7 +973,7 @@ object FrmMain: TFrmMain
         object LblSSE: TLabel
           Left = 718
           Height = 28
-          Top = 70
+          Top = 78
           Width = 149
           Alignment = taRightJustify
           AutoSize = False
@@ -972,7 +985,7 @@ object FrmMain: TFrmMain
         object DBEIDEmployee: TDBEdit
           Left = 216
           Height = 36
-          Top = 70
+          Top = 78
           Width = 162
           DataField = 'IDN_Employee'
           DataSource = DataMod.DsoEmployees
@@ -984,7 +997,7 @@ object FrmMain: TFrmMain
         object LblIDEmployee: TLabel
           Left = 120
           Height = 28
-          Top = 73
+          Top = 81
           Width = 88
           Alignment = taRightJustify
           AutoSize = False
@@ -992,6 +1005,21 @@ object FrmMain: TFrmMain
           Font.Height = 29
           ParentColor = False
           ParentFont = False
+        end
+        object LblInactive: TLabel
+          Left = 24
+          Height = 28
+          Top = 0
+          Width = 88
+          Alignment = taCenter
+          AutoSize = False
+          Caption = 'Inactive'
+          Color = 5460991
+          Font.Color = clWhite
+          ParentColor = False
+          ParentFont = False
+          Transparent = False
+          Visible = False
         end
       end
     end
@@ -1002,7 +1030,7 @@ object FrmMain: TFrmMain
     left = 992
     top = 240
     Bitmap = {
-      4C690D00000016000000160000000000000000000000FFFFFF1AFFFFFF90FFFF
+      4C690F00000016000000160000000000000000000000FFFFFF1AFFFFFF90FFFF
       FFD5FEFEFEE2FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEE0FEFEFEDFFFFF
       FFBCFFFFFF520000000000000000FFFFFF000000000000000000000000000000
       00000000000000000000FFFFFF12FFFFFFC8F1F1F1FFD0D0D0FFC8C8C8FFC9C9
@@ -1788,7 +1816,128 @@ object FrmMain: TFrmMain
       00FC020203540000000002020201000000010000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000020000000000000046000000DC000000DF00000050000000000000
-      000200000000000000000000000000000000000000000000000000000000
+      0002000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000202020000000000000000002222
+      22007F7F7F00707070004C4C4C00535353001F1F1F0000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000001000000000303030F0000004B0000005B000000580000
+      0058000000580000005800000059000000510202021E00000000000000000000
+      0000000000000000000000000000000000000000000000000000000000010000
+      000004050408000000BA030303FF090A09FF0A0B0AFF090A09FF020302FF0204
+      03FF020403FF020202FF000000E20001002D0000000000000001000000000000
+      0000000000000000000000000000000000000000000200000000080808470000
+      00E83A3739FE918A8FF8989196F9948D92F97B7379F97C747AF9827A80F95954
+      57F8000000FF0706077000000000000000030000000000000000000000000000
+      0000000000000000000000000002000000000F0D0E44000000E8665E64FFF3D9
+      EDFEFDE1F7FFFBDFF5FFFFE4F9FFFFE3F8FFFFF0FFFFB7A3B2FF000000FF0F0D
+      0F6A000000000000000300000000000000000000000000000000000000000000
+      000000000002000000000E0C0D45000000E95F575DFFE2CBDDFEECD3E6FFE9D1
+      E4FFE9D0E3FFE8D0E2FFF6DCF0FFA795A2FF000000FF0D0C0D6C000000000000
+      0003000000000000000000000000000000000000000200000006000000080000
+      00000D0C0D4A000000EA60585EFFE6CEE0FEEFD6E9FFEDD4E7FFEDD4E7FFECD4
+      E6FFFAE0F4FFAA98A5FF000000FF0D0C0D6F0000000000000008000000060000
+      0003000000000000000000000000000000000000000000000000121112330000
+      00E760585EFFE6CEE0FEEFD6E9FFEDD4E7FFEDD4E7FFECD4E6FFFAE0F4FFAA98
+      A5FF000000FF0F0E0F6100000000000000000000000000000000000000010000
+      00000000002D020202AF090909B1090809AD0D0C0CC7000000F8655D63FFE6CE
+      E0FFEFD6E9FFEDD4E7FFEDD4E7FFECD4E7FFFADFF3FFAB99A7FF000000FF100E
+      0FC20B0A0B8C0C0B0C930404049A0000003D000000000000000B000000EF0000
+      00FE000000FF000000FF000000FF000000FF5A5258FFE5CDDFFFF0D6E9FFEDD4
+      E7FFEDD4E7FFECD4E6FFFBE0F4FFA694A1FF000000FF000000FF000000FE0000
+      00FE000000FA000000FC0000001C00000023000000FF2F2F2FF8D9D0D7FFCBBF
+      C8FFD0C4CDFFCEC2CBFFDDCDD9FFECD4E6FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4
+      E7FFEFD5E8FFE5CFE0FFCDC2CAFFD1C4CEFFC9BDC6FFE3D5E0FF514F51FA0000
+      00FF0000004601010104000000CC000000FF565155FDF1DAEBFFEBD1E5FFEBD2
+      E5FFECD3E6FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4
+      E7FFEBD2E5FFE9D0E3FFFADFF4FF81757EFE040404FD000000F3010101100000
+      00000101010F000000CD000000FF5B575AFEEFD9EAFFEFD5E9FFECD3E6FFEDD4
+      E7FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4E7FFEDD4E7FFECD3E6FFEDD4E7FFF9DF
+      F3FF857982FD030404FF000000EE0202022A0000000000000000000000000405
+      0511030203CA000000FF605B5EFEEED7E8FFF1D7EBFFECD3E6FFEDD4E7FFEDD4
+      E7FFEDD4E7FFEDD4E7FFECD3E6FFEFD6E9FFF8DEF2FF887C86FD020303FF0000
+      00EA0606062E0000000000000000000000000000000200000000060706150403
+      04C7000000FF625D61FEEDD6E7FEF1D7EBFFECD3E6FFEDD4E7FFEDD4E7FFECD3
+      E6FFEFD6E9FFF7DDF1FF8A7E87FC010202FF000000E709090932000000000101
+      0102000000000000000000000000010101030000000006070718050405C50000
+      00FF625D61FEEED7E8FFEFD6E9FFECD4E6FFEDD4E7FFEDD4E7FFF8DEF2FF8A7E
+      87FC010201FF000000E50B0B0B35000000000202020200000000000000000000
+      00000000000000000000010101040000000006080719050405C5000000FF605B
+      5EFEF0D9EAFFECD3E6FFEAD2E4FFFADFF3FF887C86FD010202FF000000E50C0C
+      0C36000000000202020300000000000000000000000000000000000000000000
+      000000000000010101040000000006070718040304C7000000FF5C575BFDF4DD
+      EEFFFCE1F5FF857A83FD020303FF000000E70B0B0B3500000000030203030000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000010101040000000005060616020202C1000000FF4D494CFA7E727BFA0102
+      01FF000000EA0909093200000000020202030000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000101
+      0102000000000405050B000000B6000000FF040404FF000000EF0605062E0000
+      0000020202020000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000010101010000
+      00000202020A0000006400000071030203200000000002010201000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000202
+      0201040404010000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000003040401020202010000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000001020201000000000203032000000071000000640202020A000000000101
+      0101000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000002020202000000000506
+      062E000000EF040404FF000000FF000000B60605040B00000000010101020000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000020202030000000009090A32000000EA020101FF6B78
+      85FA464B50FA000000FF010203C1070605160000000001010104000000000000
+      0000000000000000000000000000000000000000000000000000000000000202
+      0303000000000B0B0C35000000E7030302FF73808CFDD2EFFFFFD0E9FFFF555A
+      5FFD000000FF030405C708070618000000000101010400000000000000000000
+      00000000000000000000000000000000000002020203000000000B0C0D360000
+      00E5030201FF75828FFDD0EDFFFFC4DFF7FFC4E0F9FFCDE5FCFF585D63FE0000
+      00FF040506C50807061900000000010101040000000000000000000000000000
+      00000000000002020202000000000B0B0C35000000E5020101FF778491FCCFEB
+      FFFFC6E1FAFFC6E1FAFFC6E1F9FFC7E3FDFFCBE3FAFF5A6065FE000000FF0405
+      06C5080706180000000001010103000000000000000000000000010101020000
+      000009090A32000000E7030201FF778491FCCFEBFFFFC8E3FCFFC5E0F9FFC6E1
+      FAFFC6E1FAFFC5E0F9FFC9E5FFFFCAE2F9FE5A6065FE000000FF030405C70706
+      051500000000000000020000000000000100000000000606072E000000EA0303
+      02FF75828FFDCFEBFFFFC8E3FCFFC5E0F9FFC6E1FAFFC6E1FAFFC6E1FAFFC6E1
+      FAFFC5E0F9FFC9E5FFFFCBE3FAFF585D63FE000000FF020203CA050504110000
+      000000000000000000000202022A000000EE040403FF737F8BFDD0EDFFFFC6E1
+      FAFFC5E0F9FFC6E1FAFFC6E1FAFFC6E1FAFFC6E1FAFFC6E1FAFFC6E1FAFFC5E0
+      F9FFC7E3FCFFCDE5FBFF54595EFE000000FF000000CD0101010F000000000001
+      0110000000F3040404FD6F7B87FED0EDFFFFC2DDF6FFC4DFF8FFC6E1FAFFC6E1
+      FAFFC6E1FAFFC6E1FAFFC6E1FAFFC6E1FAFFC6E1FAFFC5E0F9FFC4DFF8FFC3DF
+      F8FFCEE6FEFF4F5458FD000000FF000000CC0101010400000046000000FF4E50
+      52FACEDDE9FFB7C4CFFFBDCBD6FFBCC8D1FFC3DBF0FFC6E2FCFFC6E1FAFFC6E1
+      FAFFC6E1FAFFC6E1FAFFC7E1F9FFC4D5E5FFBCC9D3FFBDCAD6FFB8C5D1FFCCD5
+      DEFF2E2F30F8000000FF000000230000001C000000FC000000FA000000FE0000
+      00FE000000FF000000FF8A9DAFFFD2EEFFFFC6E0F9FFC6E1FAFFC6E1FAFFC8E3
+      FDFFC0D9F1FF4E565DFF000000FF000000FF000000FF000000FF000000FE0000
+      00EF0000000B000000000000003D0404049A0B0B0C930A0B0B8C0E0F10C20000
+      00FF8FA3B5FFD1EDFFFFC6E1F9FFC6E1FAFFC6E1FAFFC8E3FDFFC1DAF2FF5962
+      69FF000000F80B0C0DC7080909AD09090AB1020202AF0000002D000000000000
+      0001000000000000000000000000000000000D0F1061000000FF8EA1B3FFD1EE
+      FFFFC6E1F9FFC6E1FAFFC6E1FAFFC8E3FDFFC1DBF2FE545C63FF000000E71012
+      1333000000000000000000000000000000000000000000000000000000030000
+      000600000008000000000B0D0E6F000000FF8EA1B3FFD1EEFFFFC6E1F9FFC6E1
+      FAFFC6E1FAFFC8E3FDFFC1DAF2FE545D64FF000000EA0B0C0D4A000000000000
+      0008000000060000000200000000000000000000000000000000000000030000
+      00000B0D0E6C000000FF8B9EB0FFCEE9FFFFC2DDF5FFC3DDF5FFC3DEF6FFC5E0
+      F9FFBFD7EEFE535B62FF000000E90C0D0E450000000000000002000000000000
+      00000000000000000000000000000000000000000003000000000C0E106A0000
+      00FF98ADC1FFE0FFFFFFD3F1FFFFD4F2FFFFD0EEFFFFD1F0FFFFCAE7FFFE5962
+      6AFF000000E80D0E0F4400000000000000020000000000000000000000000000
+      00000000000000000000000000030000000006070770000000FF51565BF8767E
+      86F970787FF96F777FF9899098F98C949CF9868E94F836393BFE000000E80708
+      0847000000000000000200000000000000000000000000000000000000000000
+      000000000001000000000100002D000000E2030201FF050302FF040302FF0403
+      02FF0B0908FF0C0A09FF0B0A08FF030303FF000000BA05050408000000000000
+      0001000000000000000000000000000000000000000000000000000000000000
+      0000000000000202021E00000051000000590000005800000058000000580000
+      00580000005B0000004B0303030F000000000000000100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000001F1F1F00535353004C4C4C00707070007F7F7F00222222000000
+      000000000000020202000000000000000000000000000000000000000000
     }
   end
   object OpenDlg: TOpenDialog
