@@ -209,6 +209,7 @@ begin
   BtnEditStateList.Enabled:= True;
   BtnEditTypeContracts.Enabled:= True;
   BtnEditWorkplaces.Enabled:= True;
+  LblInactive.Visible:= True;
 end;
 
 procedure TFrmMain.UpdateNavRec;
