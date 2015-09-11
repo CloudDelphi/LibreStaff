@@ -216,10 +216,10 @@ object FrmPreferences: TFrmPreferences
         Left = 24
         Height = 195
         Top = 24
-        Width = 592
+        Width = 624
         Caption = 'Report'
         ClientHeight = 162
-        ClientWidth = 588
+        ClientWidth = 620
         TabOrder = 0
         object ChkReportPreview: TCheckBox
           Left = 40
@@ -231,7 +231,7 @@ object FrmPreferences: TFrmPreferences
           TabOrder = 0
         end
         object EdiCompanyName: TEdit
-          Left = 200
+          Left = 224
           Height = 36
           Top = 88
           Width = 264
@@ -243,16 +243,16 @@ object FrmPreferences: TFrmPreferences
           Left = 40
           Height = 28
           Top = 88
-          Width = 145
+          Width = 177
           AutoSize = False
           Caption = 'Company Name:'
           ParentColor = False
         end
         object BtnSaveCompanyName: TBitBtn
-          Left = 472
+          Left = 496
           Height = 36
           Top = 88
-          Width = 97
+          Width = 112
           Caption = 'Save'
           OnClick = BtnSaveCompanyNameClick
           TabOrder = 2

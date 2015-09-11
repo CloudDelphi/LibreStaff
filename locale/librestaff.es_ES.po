@@ -201,7 +201,7 @@ msgstr "Base de datos"
 #: formpreferences.lg_lstview_caption_item_3
 msgctxt "formpreferences.lg_lstview_caption_item_3"
 msgid "Printing"
-msgstr ""
+msgstr "Impresión"
 
 #: formpreferences.lg_selectdirdlg_error_msg
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
@@ -439,7 +439,7 @@ msgstr "Nuevo"
 
 #: tfrmmain.btnprint.caption
 msgid "Print"
-msgstr ""
+msgstr "Imprimir"
 
 #: tfrmmain.btnsave.caption
 msgctxt "tfrmmain.btnsave.caption"
@@ -659,7 +659,6 @@ msgid "Change..."
 msgstr "Cambiar..."
 
 #: tfrmpreferences.btnsavecompanyname.caption
-#, fuzzy
 msgctxt "tfrmpreferences.btnsavecompanyname.caption"
 msgid "Save"
 msgstr "Guardar"
@@ -700,7 +699,7 @@ msgstr "Único"
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
-msgstr ""
+msgstr "Mostrar previsualiz."
 
 #: tfrmpreferences.dates.caption
 msgid "Dates"
@@ -708,11 +707,11 @@ msgstr "Fechas"
 
 #: tfrmpreferences.edicompanyname.text
 msgid "My Company"
-msgstr ""
+msgstr "Mi Compañía"
 
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
-msgstr ""
+msgstr "Informe"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
@@ -720,7 +719,7 @@ msgstr "ID Empleado"
 
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
-msgstr ""
+msgstr "Nombre Compañía:"
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -753,7 +752,7 @@ msgstr "Idioma"
 #: tfrmpreferences.tabprinting.caption
 msgctxt "tfrmpreferences.tabprinting.caption"
 msgid "Printing"
-msgstr ""
+msgstr "Impresión"
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
@@ -838,4 +837,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-
