@@ -1,10 +1,10 @@
 object FrmMain: TFrmMain
   Left = 535
-  Height = 653
-  Top = 200
+  Height = 816
+  Top = 128
   Width = 1142
   Caption = 'LibreStaff'
-  ClientHeight = 653
+  ClientHeight = 816
   ClientWidth = 1142
   OnClose = FormClose
   OnCreate = FormCreate
@@ -228,13 +228,13 @@ object FrmMain: TFrmMain
   object StatusBar1: TStatusBar
     Left = 0
     Height = 28
-    Top = 625
+    Top = 788
     Width = 1142
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 577
+    Height = 740
     Top = 48
     Width = 1142
     ActivePage = TabEmployees
@@ -244,11 +244,11 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 569
+      ClientHeight = 732
       ClientWidth = 1134
       object PagEmployees: TPageControl
         Left = 0
-        Height = 296
+        Height = 459
         Top = 128
         Width = 1134
         ActivePage = TabAddress
@@ -257,7 +257,7 @@ object FrmMain: TFrmMain
         TabOrder = 0
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 255
+          ClientHeight = 418
           ClientWidth = 1126
           object GrpAddressEmployee: TGroupBox
             Left = 20
@@ -709,7 +709,7 @@ object FrmMain: TFrmMain
       object Panel1: TPanel
         Left = 0
         Height = 145
-        Top = 424
+        Top = 587
         Width = 1134
         Align = alBottom
         BevelOuter = bvNone
@@ -2039,12 +2039,13 @@ object FrmMain: TFrmMain
     Options = []
     PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
     DataType = dtDataSource
-    left = 1000
+    left = 1008
     top = 456
   end
   object frDBDataSet: TfrDBDataSet
     DataSet = DataMod.QueEmployees
     DataSource = DataMod.DsoEmployees
+    OnCheckEOF = frDBDataSetCheckEOF
     left = 1088
     top = 456
   end

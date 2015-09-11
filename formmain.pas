@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
-  gettext, LCLType, DBGrids, FormPrgBar;
+  gettext, LCLType, DBGrids, FormPrgBar, LR_DSet;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
@@ -120,6 +120,7 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure frDBDataSetCheckEOF(Sender: TObject; var Eof: Boolean);
     procedure ImgAboutClick(Sender: TObject);
     procedure ImgPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
@@ -396,6 +397,11 @@ begin
   //Close the Progress Bar
 	FrmPrgBar.Close;
  	Screen.Cursor:=crDefault;
+end;
+
+procedure TFrmMain.frDBDataSetCheckEOF(Sender: TObject; var Eof: Boolean);
+begin
+
 end;
 
 procedure TFrmMain.ImgAboutClick(Sender: TObject);
