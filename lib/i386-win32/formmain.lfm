@@ -1,11 +1,11 @@
 object FrmMain: TFrmMain
-  Left = 429
+  Left = 431
   Height = 648
-  Top = 188
-  Width = 1142
+  Top = 202
+  Width = 1237
   Caption = 'LibreStaff'
   ClientHeight = 648
-  ClientWidth = 1142
+  ClientWidth = 1237
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -15,13 +15,13 @@ object FrmMain: TFrmMain
     Left = 0
     Height = 48
     Top = 0
-    Width = 1142
+    Width = 1237
     Align = alTop
     ClientHeight = 48
-    ClientWidth = 1142
+    ClientWidth = 1237
     TabOrder = 0
     object ImgExit: TImage
-      Left = 1093
+      Left = 1188
       Height = 46
       Hint = 'Close app'
       Top = 1
@@ -60,7 +60,7 @@ object FrmMain: TFrmMain
       ShowHint = True
     end
     object ImgPreferences: TImage
-      Left = 1021
+      Left = 1116
       Height = 46
       Hint = 'Preferences'
       Top = 1
@@ -117,7 +117,7 @@ object FrmMain: TFrmMain
       ShowHint = True
     end
     object PanSep: TPanel
-      Left = 1069
+      Left = 1164
       Height = 46
       Top = 1
       Width = 24
@@ -126,7 +126,7 @@ object FrmMain: TFrmMain
       TabOrder = 0
     end
     object ImgAbout: TImage
-      Left = 961
+      Left = 1056
       Height = 46
       Hint = 'Info'
       Top = 1
@@ -216,7 +216,7 @@ object FrmMain: TFrmMain
       ShowHint = True
     end
     object PanSep1: TPanel
-      Left = 1009
+      Left = 1104
       Height = 46
       Top = 1
       Width = 12
@@ -229,14 +229,14 @@ object FrmMain: TFrmMain
     Left = 0
     Height = 28
     Top = 620
-    Width = 1142
+    Width = 1237
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
     Height = 572
     Top = 48
-    Width = 1142
+    Width = 1237
     ActivePage = TabEmployees
     Align = alClient
     ShowTabs = False
@@ -245,12 +245,12 @@ object FrmMain: TFrmMain
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
       ClientHeight = 564
-      ClientWidth = 1134
+      ClientWidth = 1229
       object PagEmployees: TPageControl
         Left = 0
         Height = 291
         Top = 128
-        Width = 1134
+        Width = 1068
         ActivePage = TabAddress
         Align = alClient
         TabIndex = 0
@@ -258,7 +258,7 @@ object FrmMain: TFrmMain
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
           ClientHeight = 250
-          ClientWidth = 1126
+          ClientWidth = 1060
           object GrpAddressEmployee: TGroupBox
             Left = 20
             Height = 252
@@ -495,8 +495,8 @@ object FrmMain: TFrmMain
         end
         object TabContract: TTabSheet
           Caption = 'Contract'
-          ClientHeight = 418
-          ClientWidth = 1126
+          ClientHeight = 250
+          ClientWidth = 1088
           object GroupBox1: TGroupBox
             Left = 20
             Height = 224
@@ -668,13 +668,15 @@ object FrmMain: TFrmMain
         end
         object TabContractsLog: TTabSheet
           Caption = 'Contracts Log'
-          ClientHeight = 255
-          ClientWidth = 1126
+          ClientHeight = 250
+          ClientWidth = 1060
+          OnHide = TabContractsLogHide
+          OnShow = TabContractsLogShow
           object DBGrdLogContracts: TDBGrid
             Left = 0
-            Height = 255
+            Height = 250
             Top = 0
-            Width = 1126
+            Width = 1060
             Align = alClient
             AutoEdit = False
             AutoFillColumns = True
@@ -682,22 +684,22 @@ object FrmMain: TFrmMain
             Columns = <            
               item
                 Title.Caption = 'Date Init'
-                Width = 271
+                Width = 254
                 FieldName = 'DateInit_Contract'
               end            
               item
                 Title.Caption = 'DateEnd'
-                Width = 271
+                Width = 254
                 FieldName = 'DateEnd_Contract'
               end            
               item
                 Title.Caption = 'Type of contract'
-                Width = 271
+                Width = 254
                 FieldName = 'Name_TypeContract'
               end            
               item
                 Title.Caption = 'Workplace'
-                Width = 271
+                Width = 256
                 FieldName = 'Name_Workplace'
               end>
             DataSource = DataMod.DsoContractsLog
@@ -706,15 +708,15 @@ object FrmMain: TFrmMain
           end
         end
       end
-      object Panel1: TPanel
+      object PanBottom: TPanel
         Left = 0
         Height = 145
         Top = 419
-        Width = 1134
+        Width = 1229
         Align = alBottom
         BevelOuter = bvNone
         ClientHeight = 145
-        ClientWidth = 1134
+        ClientWidth = 1229
         TabOrder = 1
         object BtnDelete: TBitBtn
           Left = 728
@@ -840,14 +842,14 @@ object FrmMain: TFrmMain
           TabOrder = 8
         end
       end
-      object Pan: TPanel
+      object PanTop: TPanel
         Left = 0
         Height = 128
         Top = 0
-        Width = 1134
+        Width = 1229
         Align = alTop
         ClientHeight = 128
-        ClientWidth = 1134
+        ClientWidth = 1229
         TabOrder = 2
         object DBENameEmployee: TDBEdit
           Left = 216
@@ -1030,6 +1032,64 @@ object FrmMain: TFrmMain
           Transparent = False
           Visible = False
         end
+      end
+      object PanRight: TPanel
+        Left = 1072
+        Height = 291
+        Top = 128
+        Width = 157
+        Align = alRight
+        BevelOuter = bvNone
+        ClientHeight = 291
+        ClientWidth = 157
+        TabOrder = 3
+        Visible = False
+        object Sidebar: TPageControl
+          Left = 0
+          Height = 263
+          Top = 28
+          Width = 157
+          ActivePage = TabMnuContractsLog
+          Align = alClient
+          ShowTabs = False
+          TabIndex = 0
+          TabOrder = 0
+          object TabMnuContractsLog: TTabSheet
+            Caption = 'TabMnuContractsLog'
+            ClientHeight = 255
+            ClientWidth = 149
+            object BtnDelContractLog: TBitBtn
+              Left = 16
+              Height = 40
+              Top = 16
+              Width = 120
+              Caption = 'Delete'
+              OnClick = BtnDelContractLogClick
+              TabOrder = 0
+            end
+          end
+        end
+        object LblSidebar: TLabel
+          Left = 0
+          Height = 28
+          Top = 0
+          Width = 157
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'Menu'
+          Color = 14737632
+          Layout = tlCenter
+          ParentColor = False
+          Transparent = False
+        end
+      end
+      object SplMain: TSplitter
+        Left = 1068
+        Height = 291
+        Top = 128
+        Width = 4
+        Align = alRight
+        ResizeAnchor = akRight
       end
     end
   end
@@ -2226,7 +2286,6 @@ object FrmMain: TFrmMain
   object frDBDataSet: TfrDBDataSet
     DataSet = DataMod.QuePrint
     DataSource = DataMod.DsoPrint
-    OnCheckEOF = frDBDataSetCheckEOF
     left = 960
     top = 544
   end

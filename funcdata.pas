@@ -19,6 +19,7 @@ var
 procedure ConnectDatabase(Databasename: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
+function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
@@ -134,6 +135,43 @@ begin
               end;
   end; //case
 end;
+function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
+var
+	SQLSentence: TStringList;
+  ConfirmDel, Style: Integer;
+  Msg: PChar;
+begin
+  if Confirm= True then
+    begin
+    Style:= MB_OKCANCEL + MB_ICONEXCLAMATION;
+    Msg:= PChar(DelRec_Msg_01+' '+Target+'?'#13+DelRec_Msg_02);
+    ConfirmDel:= Application.MessageBox(Msg, PChar(DelRec_Title), Style);
+    end
+  	else ConfirmDel:= IDOK;
+  case ConfirmDel of
+   	IDOK: begin
+      			try
+            DataMod.QueVirtual.Close;
+            DataMod.QueVirtual.SQL.Clear;
+            SQLSentence:= TStringList.Create;
+            SQLSentence.Add('DELETE FROM '+ TableName);
+            SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
+            DataMod.QueVirtual.SQL.Assign(SQLSentence);
+            DataMod.QueVirtual.ExecSQL;
+            DataMod.Transaction.CommitRetaining;
+          	SQLSentence.Free;
+  					Result:= True;
+            except
+  					Result:= False;
+            end;
+            end;
+      IDCANCEL: begin
+       					Result:= False;
+            		Exit;
+                end;
+    end; //case
+end;
+
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 var
   i: Integer;

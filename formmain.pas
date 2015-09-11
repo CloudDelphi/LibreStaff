@@ -19,6 +19,7 @@ type
 type
   { TFrmMain }
   TFrmMain = class(TForm)
+    BtnDelContractLog: TBitBtn;
     BtnPrint: TBitBtn;
     BtnDelTypeContract: TBitBtn;
     BtnDelWorkplace: TBitBtn;
@@ -56,6 +57,7 @@ type
     ImgPreferences: TImage;
     ImgAbout: TImage;
     Label1: TLabel;
+    LblSidebar: TLabel;
     LblInactive: TLabel;
     LblBirthday: TLabel;
     LblBirthday1: TLabel;
@@ -83,10 +85,12 @@ type
     LblState: TLabel;
     LblNavRec: TLabel;
     OpenDlg: TOpenDialog;
+    Sidebar: TPageControl;
     PagMain: TPageControl;
     PagEmployees: TPageControl;
-    Panel1: TPanel;
-    Pan: TPanel;
+    PanBottom: TPanel;
+    PanRight: TPanel;
+    PanTop: TPanel;
     PanSep: TPanel;
     PanPicEmployee: TPanel;
     PanNavRec: TPanel;
@@ -96,12 +100,15 @@ type
     PopNot: TPopupNotifier;
     SaveDlg: TSaveDialog;
     SelectDirDlg: TSelectDirectoryDialog;
+    SplMain: TSplitter;
     StatusBar1: TStatusBar;
     TabEmployees: TTabSheet;
     TabAddress: TTabSheet;
     TabPersonalData: TTabSheet;
     TabContract: TTabSheet;
     TabContractsLog: TTabSheet;
+    TabMnuContractsLog: TTabSheet;
+    procedure BtnDelContractLogClick(Sender: TObject);
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnDelTypeContractClick(Sender: TObject);
     procedure BtnDelWorkplaceClick(Sender: TObject);
@@ -120,17 +127,20 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure frDBDataSetCheckEOF(Sender: TObject; var Eof: Boolean);
     procedure ImgAboutClick(Sender: TObject);
     procedure ImgPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
     procedure PicEmployeeClick(Sender: TObject);
+    procedure TabContractsLogHide(Sender: TObject);
+    procedure TabContractsLogShow(Sender: TObject);
   private
     { private declarations }
     CurrentRec, TotalRecs: Integer;
     function AutoIncID: String;
     procedure DisableEmployees;
     procedure EnableEmployees;
+    procedure ShowSidebar;
+    procedure HideSidebar;
     function IDIsUnique: Boolean;
     function RandomID(IDLen: Integer): String;
   public
@@ -168,6 +178,7 @@ resourcestring
   lg_IDIsNotUnique= 'This ID# is in use by another Employee'#13'It should be UNIQUE!';
   lg_BtnDelTypeContract_Hint= 'Delete the type of contract of this employee';
   lg_BtnDelWorkplace_Hint= 'Delete the workplace of this employee';
+  lg_DelContractLogTarget= 'the selected contract in the log';
 	lg_LblNavRecOf= 'of';
   lg_FrmStatesTitle= 'States';
   lg_Filter_Active= 'Actives';
@@ -211,6 +222,7 @@ begin
   BtnPrint.Enabled:= False;
   LblInactive.Visible:= False;
 end;
+
 procedure TFrmMain.EnableEmployees;
 begin
   BtnSave.Enabled:= True;
@@ -330,6 +342,7 @@ begin
   ImgLstBtn.GetBitmap(15, BtnPrint.Glyph);
   ImgLstBtn.GetBitmap(10, BtnDelTypeContract.Glyph);
   ImgLstBtn.GetBitmap(10, BtnDelWorkplace.Glyph);
+	ImgLstBtn.GetBitmap(10, BtnDelContractLog.Glyph);
   //Load the Hints:
   BtnDelTypeContract.Hint:= lg_BtnDelTypeContract_Hint;
   BtnDelWorkplace.Hint:= lg_BtnDelWorkplace_Hint;
@@ -403,11 +416,6 @@ begin
   //Close the Progress Bar
 	FrmPrgBar.Close;
  	Screen.Cursor:=crDefault;
-end;
-
-procedure TFrmMain.frDBDataSetCheckEOF(Sender: TObject; var Eof: Boolean);
-begin
-
 end;
 
 procedure TFrmMain.ImgAboutClick(Sender: TObject);
@@ -581,6 +589,15 @@ begin
     end;
 end;
 
+procedure TFrmMain.BtnDelContractLogClick(Sender: TObject);
+var
+  ID_Contract: String;
+begin
+  ID_Contract:= DataMod.DsoContractsLog.DataSet.FieldByName('ID_Contract').AsString;
+  FuncData.DeleteRecordSQL('ContractsLog','ID_Contract',ID_Contract, lg_DelContractLogTarget,True);
+  DataMod.DsoContractsLog.DataSet.Refresh;
+end;
+
 procedure TFrmMain.BtnDelTypeContractClick(Sender: TObject);
 begin
   DataMod.QueEmployees.Edit;
@@ -624,6 +641,29 @@ begin
     Application.CreateForm(TFrmPicEmployee, FrmPicEmployee);
     FrmPicEmployee.ShowModal;
     end;
+end;
+
+procedure TFrmMain.ShowSidebar;
+begin
+  SplMain.Visible:= True;
+  PanRight.Visible:= True;
+end;
+
+procedure TFrmMain.HideSidebar;
+begin
+  SplMain.Visible:= False;
+	PanRight.Visible:= False;
+end;
+
+procedure TFrmMain.TabContractsLogHide(Sender: TObject);
+begin
+	HideSidebar;
+end;
+
+procedure TFrmMain.TabContractsLogShow(Sender: TObject);
+begin
+  ShowSidebar;
+  Sidebar.TabIndex:= 0;
 end;
 
 end.

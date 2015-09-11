@@ -107,6 +107,10 @@ msgctxt "formmain.lg_captionbtn_inactivate"
 msgid "Inactivate"
 msgstr "Dar de baja"
 
+#: formmain.lg_delcontractlogtarget
+msgid "the selected contract in the log"
+msgstr ""
+
 #: formmain.lg_filter_active
 msgctxt "formmain.lg_filter_active"
 msgid "Actives"
@@ -505,6 +509,12 @@ msgctxt "tfrmmain.btnactivate.caption"
 msgid "Inactivate"
 msgstr "Dar de baja"
 
+#: tfrmmain.btndelcontractlog.caption
+#, fuzzy
+msgctxt "tfrmmain.btndelcontractlog.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
 #: tfrmmain.btndelete.caption
 msgctxt "tfrmmain.btndelete.caption"
 msgid "Delete"
@@ -674,6 +684,10 @@ msgctxt "tfrmmain.lblphone.caption"
 msgid "Phone:"
 msgstr "Tel.:"
 
+#: tfrmmain.lblsidebar.caption
+msgid "Menu"
+msgstr ""
+
 #: tfrmmain.lblsse.caption
 msgctxt "tfrmmain.lblsse.caption"
 msgid "SSN Number:"
@@ -715,6 +729,10 @@ msgstr "Histórico de contratos"
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
 msgstr "Empleados"
+
+#: tfrmmain.tabmnucontractslog.caption
+msgid "TabMnuContractsLog"
+msgstr ""
 
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "tfrmmain.tabpersonaldata.caption"

@@ -26,6 +26,10 @@ formmain.lg_btndeltypecontract_hint='Delete the type of contract of this '+
 formmain.lg_btndelworkplace_hint='Delete the workplace of this employee'
 
 
+# hash value = 219751095
+formmain.lg_delcontractlogtarget='the selected contract in the log'
+
+
 # hash value = 1878
 formmain.lg_lblnavrecof='of'
 
