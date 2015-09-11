@@ -1,5 +1,6 @@
 # LibreStaff
-Software for the management of personnel.
+LibreStaff is a open source software for the management of the personnel of an enterprise.
+<img src="http://www.runs.es/pics/articles/1/librestaff.png" class="alignleft" alt="LibreStaff" />
 <br /><a href="http://www.runs.es/1/librestaff/">Website</a><br />
 Characteristics
 -----------------------
