@@ -1,6 +1,6 @@
 object DataMod: TDataMod
   OldCreateOrder = False
-  Height = 480
+  Height = 597
   HorizontalOffset = 996
   VerticalOffset = 246
   Width = 683
@@ -113,5 +113,18 @@ object DataMod: TDataMod
     Params = <>
     left = 360
     top = 32
+  end
+  object QuePrint: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    left = 424
+    top = 480
+  end
+  object DsoPrint: TDataSource
+    DataSet = QuePrint
+    left = 592
+    top = 480
   end
 end

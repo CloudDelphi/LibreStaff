@@ -270,6 +270,92 @@ msgstr "¡No se podrá revertir!"
 msgid "Deletion"
 msgstr "Eliminar"
 
+#: funcprint.lg_mmocellemployee
+msgctxt "funcprint.lg_mmocellemployee"
+msgid "Cell Phone:"
+msgstr "Móvil:"
+
+#: funcprint.lg_mmocityemployee
+msgctxt "funcprint.lg_mmocityemployee"
+msgid "City:"
+msgstr "Ciudad:"
+
+#: funcprint.lg_mmodateendcontract
+msgctxt "funcprint.lg_mmodateendcontract"
+msgid "Date End:"
+msgstr "Fecha fin:"
+
+#: funcprint.lg_mmodateinitcontract
+msgctxt "funcprint.lg_mmodateinitcontract"
+msgid "Date Init:"
+msgstr "Fecha inicio:"
+
+#: funcprint.lg_mmoemailemployee
+msgctxt "funcprint.lg_mmoemailemployee"
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: funcprint.lg_mmoidcardemployee
+msgctxt "funcprint.lg_mmoidcardemployee"
+msgid "ID Card:"
+msgstr "NIF:"
+
+#: funcprint.lg_mmoidnemployee
+msgctxt "funcprint.lg_mmoidnemployee"
+msgid "ID:"
+msgstr "ID:"
+
+#: funcprint.lg_mmonameemployee
+msgctxt "funcprint.lg_mmonameemployee"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: funcprint.lg_mmophoneemployee
+msgctxt "funcprint.lg_mmophoneemployee"
+msgid "Phone:"
+msgstr "Tel.:"
+
+#: funcprint.lg_mmossnemployee
+msgid "SSN:"
+msgstr "Nº Seg. Soc.:"
+
+#: funcprint.lg_mmostateemployee
+msgctxt "funcprint.lg_mmostateemployee"
+msgid "State:"
+msgstr "Provincia:"
+
+#: funcprint.lg_mmotitleaddress
+msgctxt "funcprint.lg_mmotitleaddress"
+msgid "Address"
+msgstr "Dirección"
+
+#: funcprint.lg_mmotitlecontact
+msgctxt "funcprint.lg_mmotitlecontact"
+msgid "Contact"
+msgstr "Contacto"
+
+#: funcprint.lg_mmotitlecurrentcontract
+msgid "Current Contract"
+msgstr "Contrato actual"
+
+#: funcprint.lg_mmotitledataofemployee
+msgid "Data of the employee"
+msgstr "Datos del empleado"
+
+#: funcprint.lg_mmotypecontract
+msgid "Type of Contract:"
+msgstr "Tipo de contrato:"
+
+#: funcprint.lg_mmoworkplace
+msgctxt "funcprint.lg_mmoworkplace"
+msgid "Workplace:"
+msgstr "Lugar de trabajo:"
+
+#: funcprint.lg_mmozipcodeemployee
+msgctxt "funcprint.lg_mmozipcodeemployee"
+msgid "ZIP Code:"
+msgstr "Cóg. Postal:"
+
 #: tfraacceptcancel.btnaccept.caption
 msgid "BtnAccept"
 msgstr "Aceptar"
@@ -520,10 +606,12 @@ msgid "Birthday:"
 msgstr "Cumpleaños:"
 
 #: tfrmmain.lblbirthday1.caption
+msgctxt "tfrmmain.lblbirthday1.caption"
 msgid "Date Init:"
 msgstr "Fecha inicio:"
 
 #: tfrmmain.lblbirthday2.caption
+msgctxt "tfrmmain.lblbirthday2.caption"
 msgid "Date End:"
 msgstr "Fecha fin:"
 
@@ -532,6 +620,7 @@ msgid "Type of contract:"
 msgstr "Tipo de contrato:"
 
 #: tfrmmain.lblbirthday4.caption
+msgctxt "tfrmmain.lblbirthday4.caption"
 msgid "Workplace:"
 msgstr "Lugar de trabajo:"
 
@@ -556,6 +645,7 @@ msgid "ID Card:"
 msgstr "NIF:"
 
 #: tfrmmain.lblidemployee.caption
+msgctxt "tfrmmain.lblidemployee.caption"
 msgid "ID:"
 msgstr "ID:"
 

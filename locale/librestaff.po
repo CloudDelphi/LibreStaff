@@ -267,6 +267,92 @@ msgstr ""
 msgid "Deletion"
 msgstr ""
 
+#: funcprint.lg_mmocellemployee
+msgctxt "funcprint.lg_mmocellemployee"
+msgid "Cell Phone:"
+msgstr ""
+
+#: funcprint.lg_mmocityemployee
+msgctxt "funcprint.lg_mmocityemployee"
+msgid "City:"
+msgstr ""
+
+#: funcprint.lg_mmodateendcontract
+msgctxt "funcprint.lg_mmodateendcontract"
+msgid "Date End:"
+msgstr ""
+
+#: funcprint.lg_mmodateinitcontract
+msgctxt "funcprint.lg_mmodateinitcontract"
+msgid "Date Init:"
+msgstr ""
+
+#: funcprint.lg_mmoemailemployee
+msgctxt "funcprint.lg_mmoemailemployee"
+msgid "E-Mail:"
+msgstr ""
+
+#: funcprint.lg_mmoidcardemployee
+msgctxt "funcprint.lg_mmoidcardemployee"
+msgid "ID Card:"
+msgstr ""
+
+#: funcprint.lg_mmoidnemployee
+msgctxt "funcprint.lg_mmoidnemployee"
+msgid "ID:"
+msgstr ""
+
+#: funcprint.lg_mmonameemployee
+msgctxt "funcprint.lg_mmonameemployee"
+msgid "Name:"
+msgstr ""
+
+#: funcprint.lg_mmophoneemployee
+msgctxt "funcprint.lg_mmophoneemployee"
+msgid "Phone:"
+msgstr ""
+
+#: funcprint.lg_mmossnemployee
+msgid "SSN:"
+msgstr ""
+
+#: funcprint.lg_mmostateemployee
+msgctxt "funcprint.lg_mmostateemployee"
+msgid "State:"
+msgstr ""
+
+#: funcprint.lg_mmotitleaddress
+msgctxt "funcprint.lg_mmotitleaddress"
+msgid "Address"
+msgstr ""
+
+#: funcprint.lg_mmotitlecontact
+msgctxt "funcprint.lg_mmotitlecontact"
+msgid "Contact"
+msgstr ""
+
+#: funcprint.lg_mmotitlecurrentcontract
+msgid "Current Contract"
+msgstr ""
+
+#: funcprint.lg_mmotitledataofemployee
+msgid "Data of the employee"
+msgstr ""
+
+#: funcprint.lg_mmotypecontract
+msgid "Type of Contract:"
+msgstr ""
+
+#: funcprint.lg_mmoworkplace
+msgctxt "funcprint.lg_mmoworkplace"
+msgid "Workplace:"
+msgstr ""
+
+#: funcprint.lg_mmozipcodeemployee
+msgctxt "funcprint.lg_mmozipcodeemployee"
+msgid "ZIP Code:"
+msgstr ""
+
 #: tfraacceptcancel.btnaccept.caption
 msgid "BtnAccept"
 msgstr ""
@@ -517,10 +603,12 @@ msgid "Birthday:"
 msgstr ""
 
 #: tfrmmain.lblbirthday1.caption
+msgctxt "tfrmmain.lblbirthday1.caption"
 msgid "Date Init:"
 msgstr ""
 
 #: tfrmmain.lblbirthday2.caption
+msgctxt "tfrmmain.lblbirthday2.caption"
 msgid "Date End:"
 msgstr ""
 
@@ -529,6 +617,7 @@ msgid "Type of contract:"
 msgstr ""
 
 #: tfrmmain.lblbirthday4.caption
+msgctxt "tfrmmain.lblbirthday4.caption"
 msgid "Workplace:"
 msgstr ""
 
@@ -553,6 +642,7 @@ msgid "ID Card:"
 msgstr ""
 
 #: tfrmmain.lblidemployee.caption
+msgctxt "tfrmmain.lblidemployee.caption"
 msgid "ID:"
 msgstr ""
 

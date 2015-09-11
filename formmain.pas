@@ -154,8 +154,10 @@ const
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
   SELECT_ACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE Active_Employee;';
   SELECT_INACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE NOT(Active_Employee);';
-  SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* from ContractsLog'+
-  	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID) LEFT JOIN Workplaces ON ID_Workplace=Workplace_ID WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
+  SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* FROM ContractsLog'+
+  	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID)'+
+    ' LEFT JOIN Workplaces ON (ID_Workplace=Workplace_ID)'+
+    ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
   SELECT_PICSEMPLOYEES= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
 resourcestring
@@ -550,8 +552,15 @@ begin
 end;
 
 procedure TFrmMain.BtnPrintClick(Sender: TObject);
+var
+  Employee_ID, SQL: String;
 begin
-  FuncPrint.Print('employee_card_en.lrf', FrmMain.frReport, True);
+  Employee_ID:= DataMod.QueEmployees.FieldByName('ID_Employee').AsString;
+  SQL:= 'SELECT Employees.*, TypeContracts.Name_TypeContract, Workplaces.Name_Workplace FROM Employees'+
+  	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID) LEFT JOIN Workplaces'+
+    ' ON (ID_Workplace=Workplace_ID) WHERE (ID_Employee="'+Employee_ID+'");';
+  FuncData.ExecSQL(DataMod.QuePrint, SQL);
+  FuncPrint.Print('employee_card.lrf', FrmMain.frReport, True);
 end;
 
 procedure TFrmMain.BtnDeleteClick(Sender: TObject);

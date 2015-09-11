@@ -17,8 +17,10 @@ type
     DsoPicsEmployees: TDataSource;
     DsoEmployees: TDataSource;
     Connection: TSQLite3Connection;
+    DsoPrint: TDataSource;
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
+    QuePrint: TSQLQuery;
     QueVirtual: TSQLQuery;
     QueEmployees: TSQLQuery;
     QuePicsEmployees: TSQLQuery;
