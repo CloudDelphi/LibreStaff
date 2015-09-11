@@ -10,6 +10,17 @@ Database engine: <a href="https://www.sqlite.org/">SQLite</a><br />
 Languages: English, Spanish & Portuguese.  
 License: GPLv3
 
+Goals
+----------
+<ul>
+	<li>Create a database of employees: personal data, professional data, holidays, time of sicks...</li>
+	<li>Searchs & queries.</li>
+	<li>Generate reports.</li>
+	<li>User system access by password and permissions.</li>
+	<li>Update engine via the Web or local.</li>
+ </ul>
+<br/>
+
 How to Compile
 --------------
 1) Download & install Lazarus.<br />
