@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
-    <BuildModes Count="1" Active="Release">
+    <BuildModes Count="1" Active="Final">
       <Item1 Name="Final">
         <CompilerOptions>
           <Version Value="11"/>

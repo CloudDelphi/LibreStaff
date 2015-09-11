@@ -18,7 +18,7 @@ Source: "librestaff.exe"; DestDir: "{app}"; Components: "base"; Flags: ignorever
 Source: "sqlite3.dll"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "lic\*.rtf"; DestDir: "{app}\lic"; Components: "base"; Flags: ignoreversion
 Source: "data\*.*"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
-Source: "locale\*.mo"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "locale\*.*"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "templates\*.lrf"; DestDir: "{app}\templates"; Components: "base"; Flags: ignoreversion recursesubdirs
 
 [Dirs]
