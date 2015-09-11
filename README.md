@@ -1,13 +1,26 @@
 # LibreStaff
-Software for the management of personnel.
-<br /><a href="http://www.runs.es/1/librestaff/">Website</a><br />
-Characteristics
+LibreStaff is a open source software for the management of the personnel of an enterprise.<br />
+<br /><a href="http://www.runs.es/1/librestaff/">Website</a><br /><br />
+<img src="http://www.runs.es/pics/articles/1/librestaff.png" class="alignleft" alt="LibreStaff" />
+Features
 -----------------------
 Programming Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
 Compiler: <a href="http://www.lazarus-ide.org/">Lazarus</a><br />
 Database engine: <a href="https://www.sqlite.org/">SQLite</a><br />
 Languages: English, Spanish & Portuguese.  
 License: GPLv3
+
+Goals
+----------
+<ul>
+	<li>Create a database of employees: personal data, professional data, holidays, time of sicks...</li>
+	<li>Searchs & queries.</li>
+	<li>Generate reports.</li>
+	<li>User system access by password and permissions.</li>
+	<li>Update engine via the Web or local.</li>
+	<li>Website engine.</li>
+ </ul>
+<br/>
 
 How to Compile
 --------------
