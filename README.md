@@ -12,7 +12,8 @@ License: GPLv3
 How to Compile
 --------------
 1) Download & install Lazarus.<br />
-2) Install the <a href="http://wiki.freepascal.org/RichMemo">RichMemo</a> component into Lazarus. (it's in the "richmemo" folder).
-2) Open the project (librestaff.lpi).<br />
-3) Delete data.db file if exists.<br />
-4) Goto to "Menu" -> Compile.<br />
+2) Install the <a href="http://wiki.freepascal.org/RichMemo">RichMemo</a> component into Lazarus. (it's in the "richmemo" folder).<br />
+3) Install the LazReport component into Lazarus included with the source code. (it's in the "lazreport" folder).<br />
+4) Delete data.db file if exists.<br />
+5) Open the project (librestaff.lpi).<br />
+6) Goto to "Menu" -> Compile.<br />
