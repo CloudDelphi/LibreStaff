@@ -1055,7 +1055,6 @@ object FrmMain: TFrmMain
           TabIndex = 0
           TabOrder = 0
           object TabMnuContractsLog: TTabSheet
-            Caption = 'TabMnuContractsLog'
             ClientHeight = 255
             ClientWidth = 149
             object BtnDelContractLog: TBitBtn

@@ -9,7 +9,7 @@ msgstr ""
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Language: pt\n"
 "X-Generator: Poedit 1.8.4\n"
 
 #: formactivationemployee.lg_captiongrpcontract_activate
@@ -110,7 +110,7 @@ msgstr "Inactivar"
 
 #: formmain.lg_delcontractlogtarget
 msgid "the selected contract in the log"
-msgstr ""
+msgstr "o contrato seleccionado no registro"
 
 #: formmain.lg_filter_active
 msgctxt "formmain.lg_filter_active"
@@ -189,11 +189,9 @@ msgid "Save the photo"
 msgstr "Salvar a foto"
 
 #: formpreferences.lg_lstview_caption_item_0
-#, fuzzy
-#| msgid "General"
 msgctxt "formpreferences.lg_lstview_caption_item_0"
 msgid "Employees"
-msgstr "General"
+msgstr "Empregados"
 
 #: formpreferences.lg_lstview_caption_item_1
 msgctxt "formpreferences.lg_lstview_caption_item_1"
@@ -444,7 +442,7 @@ msgstr "Sobre..."
 
 #: tfrmabout.lblversion.caption
 msgid "Version:"
-msgstr ""
+msgstr "Versão"
 
 #: tfrmabout.tababout.caption
 msgctxt "tfrmabout.tababout.caption"
@@ -511,7 +509,6 @@ msgid "Inactivate"
 msgstr "Inactivar"
 
 #: tfrmmain.btndelcontractlog.caption
-#, fuzzy
 msgctxt "tfrmmain.btndelcontractlog.caption"
 msgid "Delete"
 msgstr "Eliminar"
@@ -687,7 +684,7 @@ msgstr "Telefone:"
 
 #: tfrmmain.lblsidebar.caption
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: tfrmmain.lblsse.caption
 msgctxt "TFRMMAIN.LBLSSE.CAPTION"
@@ -730,10 +727,6 @@ msgstr "Registro de contratos"
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
 msgstr "TabEmployees"
-
-#: tfrmmain.tabmnucontractslog.caption
-msgid "TabMnuContractsLog"
-msgstr ""
 
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
@@ -952,4 +945,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
-

@@ -109,7 +109,7 @@ msgstr "Dar de baja"
 
 #: formmain.lg_delcontractlogtarget
 msgid "the selected contract in the log"
-msgstr ""
+msgstr "el contrato seleccionado del histórico"
 
 #: formmain.lg_filter_active
 msgctxt "formmain.lg_filter_active"
@@ -188,11 +188,9 @@ msgid "Save the photo"
 msgstr "Guardar la foto"
 
 #: formpreferences.lg_lstview_caption_item_0
-#, fuzzy
-#| msgid "General"
 msgctxt "formpreferences.lg_lstview_caption_item_0"
 msgid "Employees"
-msgstr "General"
+msgstr "Empleados"
 
 #: formpreferences.lg_lstview_caption_item_1
 msgctxt "formpreferences.lg_lstview_caption_item_1"
@@ -443,7 +441,7 @@ msgstr "Acerca de..."
 
 #: tfrmabout.lblversion.caption
 msgid "Version:"
-msgstr ""
+msgstr "Versión:"
 
 #: tfrmabout.tababout.caption
 msgctxt "tfrmabout.tababout.caption"
@@ -510,7 +508,6 @@ msgid "Inactivate"
 msgstr "Dar de baja"
 
 #: tfrmmain.btndelcontractlog.caption
-#, fuzzy
 msgctxt "tfrmmain.btndelcontractlog.caption"
 msgid "Delete"
 msgstr "Eliminar"
@@ -686,7 +683,7 @@ msgstr "Tel.:"
 
 #: tfrmmain.lblsidebar.caption
 msgid "Menu"
-msgstr ""
+msgstr "Menú"
 
 #: tfrmmain.lblsse.caption
 msgctxt "tfrmmain.lblsse.caption"
@@ -729,10 +726,6 @@ msgstr "Histórico de contratos"
 #: tfrmmain.tabemployees.caption
 msgid "TabEmployees"
 msgstr "Empleados"
-
-#: tfrmmain.tabmnucontractslog.caption
-msgid "TabMnuContractsLog"
-msgstr ""
 
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "tfrmmain.tabpersonaldata.caption"
@@ -951,4 +944,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

@@ -139,10 +139,10 @@ type
     function AutoIncID: String;
     procedure DisableEmployees;
     procedure EnableEmployees;
-    procedure ShowSidebar;
     procedure HideSidebar;
     function IDIsUnique: Boolean;
     function RandomID(IDLen: Integer): String;
+    procedure ShowSidebar;
   public
     { public declarations }
     procedure UpdateNavRec;
@@ -235,6 +235,49 @@ begin
   BtnEditWorkplaces.Enabled:= True;
 end;
 
+procedure TFrmMain.HideSidebar;
+begin
+  SplMain.Visible:= False;
+	PanRight.Visible:= False;
+end;
+
+function TFrmMain.IDIsUnique: Boolean;
+var
+  Unique: Boolean;
+  Msg: String;
+begin
+  //Check if is unique
+  Unique:= True;
+  if (IDAllowBlank= False) AND (DBEIDEmployee.Text='') then
+  	begin
+    Unique:= False;
+	  Msg:= lg_IDIsBlank;
+  	end;
+  if (Unique= True)then
+    begin
+    if (IDAllowBlank= False) OR ((IDAllowBlank= True) AND (DBEIDEmployee.Text<>'')) then
+	    begin
+		  FuncData.ExecSQL(DataMod.QueSearch, 'SELECT Employees.IDN_Employee from Employees WHERE Employees.IDN_Employee="'+
+  				DBEIDEmployee.Text+'" AND Employees.ID_Employee!='+DataMod.QueEmployees.FieldByName('ID_Employee').AsString+';');
+		  if DataMod.QueSearch.RecordCount>0 then
+  	    begin
+    	  Unique:= False;
+      	Msg:= lg_IDIsNotUnique;
+	      end;
+  	  end;
+    end;
+  if Unique= False then
+  	begin
+   	DBEIDEmployee.Color:= clRed;
+    Application.MessageBox(PChar(Msg), 'Error!', MB_OK);
+    DBEIDEmployee.SetFocus;
+    DBEIDEmployee.Color:= clDefault;
+    Result:= False;
+    end
+  else
+  	Result:= True;
+end;
+
 procedure TFrmMain.UpdateNavRec;
 begin
   if DataMod.QueEmployees.FieldByName('Active_Employee').AsBoolean= True then
@@ -282,8 +325,14 @@ begin
 		DisableEmployees;
   UpdateNavRec;
 end;
+procedure TFrmMain.ShowSidebar;
+begin
+  SplMain.Visible:= True;
+  PanRight.Visible:= True;
+end;
 
 //------------------------------------------------------------------------------
+
 procedure TFrmMain.FormCreate(Sender: TObject);
 var
   tfOut: TextFile;
@@ -472,43 +521,6 @@ begin
   		if IDIsUnique= False then Abort;
 end;
 
-function TFrmMain.IDIsUnique: Boolean;
-var
-  Unique: Boolean;
-  Msg: String;
-begin
-  //Check if is unique
-  Unique:= True;
-  if (IDAllowBlank= False) AND (DBEIDEmployee.Text='') then
-  	begin
-    Unique:= False;
-	  Msg:= lg_IDIsBlank;
-  	end;
-  if (Unique= True)then
-    begin
-    if (IDAllowBlank= False) OR ((IDAllowBlank= True) AND (DBEIDEmployee.Text<>'')) then
-	    begin
-		  FuncData.ExecSQL(DataMod.QueSearch, 'SELECT Employees.IDN_Employee from Employees WHERE Employees.IDN_Employee="'+
-  				DBEIDEmployee.Text+'" AND Employees.ID_Employee!='+DataMod.QueEmployees.FieldByName('ID_Employee').AsString+';');
-		  if DataMod.QueSearch.RecordCount>0 then
-  	    begin
-    	  Unique:= False;
-      	Msg:= lg_IDIsNotUnique;
-	      end;
-  	  end;
-    end;
-  if Unique= False then
-  	begin
-   	DBEIDEmployee.Color:= clRed;
-    Application.MessageBox(PChar(Msg), 'Error!', MB_OK);
-    DBEIDEmployee.SetFocus;
-    DBEIDEmployee.Color:= clDefault;
-    Result:= False;
-    end
-  else
-  	Result:= True;
-end;
-
 procedure TFrmMain.DBNavClick(Sender: TObject; Button: TDBNavButtonType);
 begin
 	inherited; //<-- to execute the default onclick event
@@ -641,18 +653,6 @@ begin
     Application.CreateForm(TFrmPicEmployee, FrmPicEmployee);
     FrmPicEmployee.ShowModal;
     end;
-end;
-
-procedure TFrmMain.ShowSidebar;
-begin
-  SplMain.Visible:= True;
-  PanRight.Visible:= True;
-end;
-
-procedure TFrmMain.HideSidebar;
-begin
-  SplMain.Visible:= False;
-	PanRight.Visible:= False;
 end;
 
 procedure TFrmMain.TabContractsLogHide(Sender: TObject);

@@ -724,10 +724,6 @@ msgstr ""
 msgid "TabEmployees"
 msgstr ""
 
-#: tfrmmain.tabmnucontractslog.caption
-msgid "TabMnuContractsLog"
-msgstr ""
-
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
 msgid "Personal Data"
