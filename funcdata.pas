@@ -24,7 +24,7 @@ function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField):
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
-procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: String; DataFormat: TDataFormat);
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
 function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
 
 resourcestring
@@ -46,6 +46,13 @@ begin
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
     // Here we're setting up a table named "DATA" in the new database
+    DataMod.Connection.ExecuteDirect('CREATE TABLE Config('+
+          ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' DatabaseVersion CHAR(20) DEFAULT "",'+
+          ' CompanyName CHAR(256) DEFAULT "");');
+    DataMod.Connection.ExecuteDirect('INSERT INTO Config'+
+          ' (DatabaseVersion, CompanyName)'+
+      	  ' VALUES("'+DATABASEVERSION+'","My Company");');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
@@ -246,7 +253,7 @@ begin
   Screen.Cursor:= crDefault;
 end;
 
-procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: String; DataFormat: TDataFormat);
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
 begin
   Query.Edit;
   case DataFormat of

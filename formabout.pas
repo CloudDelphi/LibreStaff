@@ -20,13 +20,16 @@ type
 
   TFrmAbout = class(TForm)
     FraClose1: TFraClose;
+    GrpVersion: TGroupBox;
     ImgLibreStaff: TImage;
+    LblVersion: TLabel;
     TitleLibreStaff: TLabel;
     PagAbout: TPageControl;
     RchMmoLicense: TRichMemo;
     TabAbout: TTabSheet;
     TabLicense: TTabSheet;
     procedure BtnCloseClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure TabLicenseShow(Sender: TObject);
   private
     { private declarations }
@@ -42,7 +45,7 @@ implementation
 {$R *.lfm}
 
 uses
-  FormMain;
+  FormMain, FuncApp;
 
 { TFrmAbout }
 
@@ -59,6 +62,11 @@ end;
 procedure TFrmAbout.BtnCloseClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFrmAbout.FormCreate(Sender: TObject);
+begin
+	LblVersion.Caption:= LblVersion.Caption+' '+FuncApp.GetAppVersion;
 end;
 
 { TFrmAbout }

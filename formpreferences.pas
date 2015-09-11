@@ -67,7 +67,7 @@ var
   FrmPreferences: TFrmPreferences;
 
 resourcestring
-  lg_LstView_Caption_Item_0= 'General';
+  lg_LstView_Caption_Item_0= 'Employees';
   lg_LstView_Caption_Item_1= 'Language';
   lg_LstView_Caption_Item_2= 'Database';
   lg_LstView_Caption_Item_3= 'Printing';
@@ -81,7 +81,7 @@ implementation
 
 { TFrmPreferences }
 uses
-	FuncDlgs, FormMain;
+	FuncDlgs, FormMain, FuncData, DataModule;
 
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
@@ -97,7 +97,7 @@ end;
 procedure TFrmPreferences.BtnSaveCompanyNameClick(Sender: TObject);
 begin
   CompanyName:= EdiCompanyName.Text;
-	INIFile.WriteString('Printing', 'CompanyName', CompanyName);
+  UpdateRecord(DataMod.QueConfig, 'CompanyName', CompanyName, dtString);
 end;
 
 procedure TFrmPreferences.CboAutoTypeChange(Sender: TObject);

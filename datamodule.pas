@@ -12,6 +12,7 @@ type
   { TDataModule1 }
 
   TDataMod = class(TDataModule)
+    DsoConfig: TDataSource;
     DsoTypeContracts: TDataSource;
     DsoSearch: TDataSource;
     DsoPicsEmployees: TDataSource;
@@ -20,6 +21,7 @@ type
     DsoPrint: TDataSource;
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
+    QueConfig: TSQLQuery;
     QuePrint: TSQLQuery;
     QueVirtual: TSQLQuery;
     QueEmployees: TSQLQuery;

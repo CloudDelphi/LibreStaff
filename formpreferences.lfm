@@ -2,11 +2,11 @@ object FrmPreferences: TFrmPreferences
   Left = 567
   Height = 490
   Top = 268
-  Width = 846
+  Width = 865
   BorderIcons = [biSystemMenu]
   Caption = 'Preferences'
   ClientHeight = 490
-  ClientWidth = 846
+  ClientWidth = 865
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.4.2.0'
@@ -21,10 +21,10 @@ object FrmPreferences: TFrmPreferences
     BorderStyle = bsNone
     Columns = <>
     Items.LazData = {
-      770000000400000000000000FFFFFFFFFFFFFFFF000000000700000047656E65
-      72616C01000000FFFFFFFFFFFFFFFF00000000080000004C616E677561676502
-      000000FFFFFFFFFFFFFFFF0000000008000000446174616261736503000000FF
-      FFFFFFFFFFFFFF00000000080000005072696E74696E67
+      790000000400000000000000FFFFFFFFFFFFFFFF0000000009000000456D706C
+      6F7965657301000000FFFFFFFFFFFFFFFF00000000080000004C616E67756167
+      6502000000FFFFFFFFFFFFFFFF00000000080000004461746162617365030000
+      00FFFFFFFFFFFFFFFF00000000080000005072696E74696E67
     }
     LargeImages = ImgLstPreferences
     ReadOnly = True
@@ -37,7 +37,7 @@ object FrmPreferences: TFrmPreferences
     Left = 176
     Height = 424
     Top = 0
-    Width = 670
+    Width = 689
     ActivePage = TabGeneral
     Align = alClient
     ShowTabs = False
@@ -46,7 +46,7 @@ object FrmPreferences: TFrmPreferences
     object TabGeneral: TTabSheet
       Caption = 'General'
       ClientHeight = 416
-      ClientWidth = 662
+      ClientWidth = 681
       OnShow = TabGeneralShow
       object GrpIDEmployee: TGroupBox
         Left = 40
@@ -269,19 +269,19 @@ object FrmPreferences: TFrmPreferences
   inline FraClose1: TFraClose
     Height = 66
     Top = 424
-    Width = 846
+    Width = 865
     Align = alBottom
     ClientHeight = 66
-    ClientWidth = 846
+    ClientWidth = 865
     TabOrder = 3
     inherited PanClose: TPanel
       Height = 66
-      Width = 846
+      Width = 865
       Align = alClient
       BevelOuter = bvNone
       BorderStyle = bsSingle
       ClientHeight = 62
-      ClientWidth = 842
+      ClientWidth = 861
       inherited BtnClose: TBitBtn
         Left = 360
         Top = 8

@@ -185,8 +185,10 @@ msgid "Save the photo"
 msgstr "Salvar a foto"
 
 #: formpreferences.lg_lstview_caption_item_0
+#, fuzzy
+#| msgid "General"
 msgctxt "formpreferences.lg_lstview_caption_item_0"
-msgid "General"
+msgid "Employees"
 msgstr "General"
 
 #: formpreferences.lg_lstview_caption_item_1
@@ -435,6 +437,10 @@ msgstr "Salvar e fechar"
 msgctxt "tfrmabout.caption"
 msgid "About"
 msgstr "Sobre..."
+
+#: tfrmabout.lblversion.caption
+msgid "Version:"
+msgstr ""
 
 #: tfrmabout.tababout.caption
 msgctxt "tfrmabout.tababout.caption"
@@ -928,3 +934,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
+

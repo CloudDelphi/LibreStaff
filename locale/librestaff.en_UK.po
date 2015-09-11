@@ -182,7 +182,7 @@ msgstr ""
 
 #: formpreferences.lg_lstview_caption_item_0
 msgctxt "formpreferences.lg_lstview_caption_item_0"
-msgid "General"
+msgid "Employees"
 msgstr ""
 
 #: formpreferences.lg_lstview_caption_item_1
@@ -431,6 +431,10 @@ msgstr ""
 #: tfrmabout.caption
 msgctxt "tfrmabout.caption"
 msgid "About"
+msgstr ""
+
+#: tfrmabout.lblversion.caption
+msgid "Version:"
 msgstr ""
 
 #: tfrmabout.tababout.caption

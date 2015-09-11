@@ -111,7 +111,7 @@ object DataMod: TDataMod
     Database = Connection
     Transaction = Transaction
     Params = <>
-    left = 360
+    left = 304
     top = 32
   end
   object QuePrint: TSQLQuery
@@ -126,5 +126,18 @@ object DataMod: TDataMod
     DataSet = QuePrint
     left = 592
     top = 480
+  end
+  object QueConfig: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Params = <>
+    left = 416
+    top = 32
+  end
+  object DsoConfig: TDataSource
+    DataSet = QueConfig
+    left = 592
+    top = 32
   end
 end

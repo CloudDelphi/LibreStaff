@@ -18,9 +18,9 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <RevisionNr Value="4"/>
+      <RevisionNr Value="6"/>
       <Attributes pvaPreRelease="True"/>
-      <StringTable ProductVersion=""/>
+      <StringTable ProductName="LibreStaff" ProductVersion=""/>
     </VersionInfo>
     <MacroValues Count="1">
       <Macro2 Name="LCLWidgetType" Value="win32"/>
@@ -108,6 +108,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+        <CommandLineParams Value="--lang en"/>
       </local>
     </RunParams>
     <RequiredPackages Count="7">
@@ -133,7 +134,7 @@
         <PackageName Value="LCL"/>
       </Item7>
     </RequiredPackages>
-    <Units Count="18">
+    <Units Count="19">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -265,6 +266,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncPrint"/>
       </Unit17>
+      <Unit18>
+        <Filename Value="funcapp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncApp"/>
+      </Unit18>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

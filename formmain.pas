@@ -151,6 +151,7 @@ var
   ReportPreview: Boolean;
   CompanyName: String;
 const
+  DATABASEVERSION='0.0.0';
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
   SELECT_ACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE Active_Employee;';
   SELECT_INACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE NOT(Active_Employee);';
@@ -339,7 +340,6 @@ begin
   CboFilter.Items.Add(lg_Filter_All);
   //Load Printing preferences
   ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
-  CompanyName:= INIFile.ReadString('Printing', 'CompanyName', 'My Company');
 end;
 
 procedure TFrmMain.FormShow(Sender: TObject);
@@ -354,18 +354,20 @@ var
   BookmarkInt: Integer;
   SQL: String;
 const
-  LoadQueriesCount= 5;
+  LoadQueriesCount= 6;
 begin
   //Connect & Load to database
   FuncData.ConnectDatabase(Databasename);
   //Open Tables
   //Note: The order is important! First the detailed tables.
   SetLength(LoadQueries, LoadQueriesCount);
-  LoadQueries[0].Query:= DataMod.QueTypeContracts;
-  LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
-	LoadQueries[1].Query:= DataMod.QueWorkplaces;
-  LoadQueries[1].SQL:= 'SELECT * from Workplaces;';
-  LoadQueries[2].Query:= DataMod.QueEmployees;
+  LoadQueries[0].Query:= DataMod.QueConfig;
+  LoadQueries[0].SQL:= 'SELECT * from Config LIMIT 1;';
+  LoadQueries[1].Query:= DataMod.QueTypeContracts;
+  LoadQueries[1].SQL:= 'SELECT * from TypeContracts;';
+	LoadQueries[2].Query:= DataMod.QueWorkplaces;
+  LoadQueries[2].SQL:= 'SELECT * from Workplaces;';
+  LoadQueries[3].Query:= DataMod.QueEmployees;
   FilterIndex:= StrToInt(INIFile.ReadString('TableEmployees','Filter','0'));
   CboFilter.ItemIndex:= FilterIndex;
   case FilterIndex of
@@ -373,16 +375,18 @@ begin
   	1: 	SQL:= SELECT_INACTIVE_EMPLOYEES_SQL;
 	  2: 	SQL:= SELECT_ALL_EMPLOYEES_SQL;
   end; //case
-  LoadQueries[2].SQL:= SQL;
-  LoadQueries[3].Query:= DataMod.QuePicsEmployees;
-  LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES;
-	LoadQueries[4].Query:= DataMod.QueContractsLog;
-  LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
+  LoadQueries[3].SQL:= SQL;
+  LoadQueries[4].Query:= DataMod.QuePicsEmployees;
+  LoadQueries[4].SQL:= SELECT_PICSEMPLOYEES;
+	LoadQueries[5].Query:= DataMod.QueContractsLog;
+  LoadQueries[5].SQL:= SELECT_CONTRACTSLOG_SQL;
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin
 		FuncData.ExecSQL(LoadQueries[i].Query, LoadQueries[i].SQL);
 	  FrmPrgBar.PrgBar.Position:= Round(100/(LoadQueriesCount-i));
     end;
+  //Load the Configuration from the database
+  CompanyName:= DataMod.QueConfig.FieldByName('CompanyName').AsString;
   //Mark the table for edition:
   DataMod.QueEmployees.Edit;
   //Grab the total amount of records:
