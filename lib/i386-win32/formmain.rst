@@ -49,3 +49,19 @@ formmain.lg_filter_inactive='Inactives'
 # hash value = 18476
 formmain.lg_filter_all='All'
 
+
+# hash value = 342053
+formmain.lg_male='Male'
+
+
+# hash value = 80492581
+formmain.lg_female='Female'
+
+
+# hash value = 94391845
+formmain.lg_single='Single'
+
+
+# hash value = 59346916
+formmain.lg_married='Married'
+

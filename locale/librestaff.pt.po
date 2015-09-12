@@ -112,6 +112,10 @@ msgstr "Inactivar"
 msgid "the selected contract in the log"
 msgstr "o contrato seleccionado no registro"
 
+#: formmain.lg_female
+msgid "Female"
+msgstr ""
+
 #: formmain.lg_filter_active
 msgctxt "formmain.lg_filter_active"
 msgid "Actives"
@@ -153,6 +157,18 @@ msgstr ""
 msgctxt "formmain.lg_lblnavrecof"
 msgid "of"
 msgstr "de"
+
+#: formmain.lg_male
+msgid "Male"
+msgstr ""
+
+#: formmain.lg_married
+msgid "Married"
+msgstr ""
+
+#: formmain.lg_single
+msgid "Single"
+msgstr ""
 
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
@@ -275,6 +291,18 @@ msgstr "Não pode reverter!"
 msgid "Deletion"
 msgstr "Eliminação"
 
+#: funcprint.lg_genre
+msgid "Genre:"
+msgstr ""
+
+#: funcprint.lg_maritalstatus
+msgid "Marital Status:"
+msgstr ""
+
+#: funcprint.lg_mmobirthdate
+msgid "Birth Date:"
+msgstr ""
+
 #: funcprint.lg_mmocellemployee
 msgctxt "funcprint.lg_mmocellemployee"
 msgid "Cell Phone:"
@@ -346,6 +374,10 @@ msgstr "Contrato atual"
 #: funcprint.lg_mmotitledataofemployee
 msgid "Data of the employee"
 msgstr "Dados do empregado:"
+
+#: funcprint.lg_mmotitlepersonaldata
+msgid "Personal Data:"
+msgstr ""
 
 #: funcprint.lg_mmotypecontract
 msgid "Type of Contract:"
@@ -577,7 +609,8 @@ msgstr "Lugar de trabalho"
 msgid "Genre"
 msgstr ""
 
-#: tfrmmain.dbradgenre1.caption
+#: tfrmmain.dbradmaritalstatus.caption
+msgctxt "tfrmmain.dbradmaritalstatus.caption"
 msgid "Marital Status"
 msgstr ""
 

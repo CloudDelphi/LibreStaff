@@ -111,6 +111,10 @@ msgstr "Dar de baja"
 msgid "the selected contract in the log"
 msgstr "el contrato seleccionado del histórico"
 
+#: formmain.lg_female
+msgid "Female"
+msgstr "Mujer"
+
 #: formmain.lg_filter_active
 msgctxt "formmain.lg_filter_active"
 msgid "Actives"
@@ -152,6 +156,18 @@ msgstr ""
 msgctxt "formmain.lg_lblnavrecof"
 msgid "of"
 msgstr "de"
+
+#: formmain.lg_male
+msgid "Male"
+msgstr "Hombre"
+
+#: formmain.lg_married
+msgid "Married"
+msgstr "Casado/a"
+
+#: formmain.lg_single
+msgid "Single"
+msgstr "Soltero/a"
 
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
@@ -274,6 +290,18 @@ msgstr "¡No se podrá revertir!"
 msgid "Deletion"
 msgstr "Eliminar"
 
+#: funcprint.lg_genre
+msgid "Genre:"
+msgstr "Género:"
+
+#: funcprint.lg_maritalstatus
+msgid "Marital Status:"
+msgstr "Estado civil:"
+
+#: funcprint.lg_mmobirthdate
+msgid "Birth Date:"
+msgstr "Fecha nacimie.:"
+
 #: funcprint.lg_mmocellemployee
 msgctxt "funcprint.lg_mmocellemployee"
 msgid "Cell Phone:"
@@ -345,6 +373,10 @@ msgstr "Contrato actual"
 #: funcprint.lg_mmotitledataofemployee
 msgid "Data of the employee"
 msgstr "Datos del empleado"
+
+#: funcprint.lg_mmotitlepersonaldata
+msgid "Personal Data:"
+msgstr "Datos personales"
 
 #: funcprint.lg_mmotypecontract
 msgid "Type of Contract:"
@@ -574,11 +606,12 @@ msgstr "Lugar de trabajo"
 
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
-msgstr ""
+msgstr "Género"
 
-#: tfrmmain.dbradgenre1.caption
+#: tfrmmain.dbradmaritalstatus.caption
+msgctxt "tfrmmain.dbradmaritalstatus.caption"
 msgid "Marital Status"
-msgstr ""
+msgstr "Estado civil"
 
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
@@ -653,7 +686,7 @@ msgstr "Ciudad:"
 
 #: tfrmmain.lbldatebirth.caption
 msgid "Date of Birth:"
-msgstr ""
+msgstr "Fecha nacimie.:"
 
 #: tfrmmain.lblemail.caption
 msgctxt "tfrmmain.lblemail.caption"
@@ -742,7 +775,7 @@ msgstr "Datos personales"
 
 #: tfrmmain.tabremark.caption
 msgid "Remark"
-msgstr ""
+msgstr "Observación"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
@@ -956,4 +989,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

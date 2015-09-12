@@ -70,3 +70,19 @@ funcprint.lg_mmotypecontract='Type of Contract:'
 # hash value = 41393946
 funcprint.lg_mmoworkplace='Workplace:'
 
+
+# hash value = 47246170
+funcprint.lg_mmotitlepersonaldata='Personal Data:'
+
+
+# hash value = 168002346
+funcprint.lg_mmobirthdate='Birth Date:'
+
+
+# hash value = 81549450
+funcprint.lg_genre='Genre:'
+
+
+# hash value = 60985786
+funcprint.lg_maritalstatus='Marital Status:'
+

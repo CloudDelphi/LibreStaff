@@ -51,7 +51,7 @@ type
     DBLkCboTypeContract: TDBLookupComboBox;
     DBLkCboWorkplace: TDBLookupComboBox;
     DBRadGenre: TDBRadioGroup;
-    DBRadGenre1: TDBRadioGroup;
+    DBRadMaritalStatus: TDBRadioGroup;
     frDBDataSet: TfrDBDataSet;
     frReport: TfrReport;
     GroupBox1: TGroupBox;
@@ -188,6 +188,10 @@ resourcestring
   lg_Filter_Active= 'Actives';
   lg_Filter_Inactive= 'Inactives';
   lg_Filter_All= 'All';
+  lg_Male= 'Male';
+  lg_Female= 'Female';
+  lg_Single= 'Single';
+  lg_Married= 'Married';
 
 implementation
 
@@ -404,6 +408,12 @@ begin
   CboFilter.Items.Add(lg_Filter_Active);
   CboFilter.Items.Add(lg_Filter_Inactive);
   CboFilter.Items.Add(lg_Filter_All);
+  DBRadGenre.Items.Clear;
+  DBRadGenre.Items.Add(lg_Male);
+  DBRadGenre.Items.Add(lg_Female);
+  DBRadMaritalStatus.Items.Clear;
+  DBRadMaritalStatus.Items.Add(lg_Single);
+  DBRadMaritalStatus.Items.Add(lg_Married);
   //Load Printing preferences
   ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
 end;

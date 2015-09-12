@@ -28,6 +28,10 @@ resourcestring
   lg_MmoDateEndContract= 'Date End:';
   lg_MmoTypeContract= 'Type of Contract:';
   lg_MmoWorkplace= 'Workplace:';
+  lg_MmoTitlePersonalData= 'Personal Data:';
+  lg_MmoBirthDate= 'Birth Date:';
+	lg_Genre= 'Genre:';
+  lg_MaritalStatus= 'Marital Status:';
 
 implementation
 
@@ -55,6 +59,14 @@ begin
   TfrMemoView(Report.FindObject('MmoDateEndContract')).Memo.Strings[0]:= lg_MmoDateEndContract;
   TfrMemoView(Report.FindObject('MmoTypeContract')).Memo.Strings[0]:= lg_MmoTypeContract;
   TfrMemoView(Report.FindObject('MmoWorkplace')).Memo.Strings[0]:= lg_MmoWorkplace;
+  TfrMemoView(Report.FindObject('MmoTitlePersonalData')).Memo.Strings[0]:= lg_MmoTitlePersonalData;
+  TfrMemoView(Report.FindObject('MmoBirthDate')).Memo.Strings[0]:= lg_MmoBirthDate;
+  TfrMemoView(Report.FindObject('MmoGenre')).Memo.Strings[0]:= lg_Genre;
+  TfrMemoView(Report.FindObject('MmoMale')).Memo.Strings[0]:= lg_Male;
+  TfrMemoView(Report.FindObject('MmoFemale')).Memo.Strings[0]:= lg_Female;
+  TfrMemoView(Report.FindObject('MmoMaritalStatus')).Memo.Strings[0]:= lg_MaritalStatus;
+  TfrMemoView(Report.FindObject('MmoSingle')).Memo.Strings[0]:= lg_Single;
+  TfrMemoView(Report.FindObject('MmoMarried')).Memo.Strings[0]:= lg_Married;
   if Var_1= True then Report.Variables[Var1]:= ''''+ValueVar1+'''';
   if Var_2= True then Report.Variables[Var2]:= ''''+ValueVar2+'''';
   if ReportPreview= True then

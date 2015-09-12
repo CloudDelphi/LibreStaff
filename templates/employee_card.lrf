@@ -7,7 +7,7 @@
     <KeyWords Value=""/>
     <Comments Value=""/>
     <ReportCreateDate Value="1899-12-30 00:00:00"/>
-    <ReportLastChange Value="2015-09-13 00:05:23"/>
+    <ReportLastChange Value="2015-09-13 00:40:16"/>
     <ReportVersionBuild Value=""/>
     <ReportVersionMajor Value=""/>
     <ReportVersionMinor Value=""/>
@@ -1908,7 +1908,7 @@
           <Cursor Value="0"/>
         </Object37>
         <Object38>
-          <Name Value="Memo2"/>
+          <Name Value="MmoTitlePersonalData"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -1916,7 +1916,7 @@
           <Size>
             <Left Value="32"/>
             <Top Value="480"/>
-            <Width Value="560"/>
+            <Width Value="576"/>
             <Height Value="24"/>
           </Size>
           <Flags Value="3"/>
@@ -1960,7 +1960,7 @@
           <Cursor Value="0"/>
         </Object38>
         <Object39>
-          <Name Value="Memo3"/>
+          <Name Value="MmoBirthDate"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -1968,7 +1968,7 @@
           <Size>
             <Left Value="32"/>
             <Top Value="504"/>
-            <Width Value="76"/>
+            <Width Value="108"/>
             <Height Value="32"/>
           </Size>
           <Flags Value="3"/>
@@ -2018,12 +2018,12 @@
           <Typ Value="gtMemo"/>
           <StreamMode Value="0"/>
           <Size>
-            <Left Value="108"/>
+            <Left Value="140"/>
             <Top Value="504"/>
-            <Width Value="140"/>
+            <Width Value="108"/>
             <Height Value="32"/>
           </Size>
-          <Flags Value="3"/>
+          <Flags Value="131"/>
           <FillColor Value="clWhite"/>
           <Frames>
             <FrameColor Value="clBlack"/>
@@ -2064,7 +2064,7 @@
           <Cursor Value="0"/>
         </Object40>
         <Object41>
-          <Name Value="Memo8"/>
+          <Name Value="MmoGenre"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2220,7 +2220,7 @@
           <Cursor Value="0"/>
         </Object43>
         <Object44>
-          <Name Value="Memo14"/>
+          <Name Value="MmoMale"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2272,7 +2272,7 @@
           <Cursor Value="0"/>
         </Object44>
         <Object45>
-          <Name Value="Memo16"/>
+          <Name Value="MmoFemale"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2324,7 +2324,7 @@
           <Cursor Value="0"/>
         </Object45>
         <Object46>
-          <Name Value="Memo18"/>
+          <Name Value="MmoMaritalStatus"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2480,7 +2480,7 @@
           <Cursor Value="0"/>
         </Object48>
         <Object49>
-          <Name Value="Memo23"/>
+          <Name Value="MmoSingle"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2488,7 +2488,7 @@
           <Size>
             <Left Value="528"/>
             <Top Value="504"/>
-            <Width Value="64"/>
+            <Width Value="80"/>
             <Height Value="16"/>
           </Size>
           <Flags Value="3"/>
@@ -2532,7 +2532,7 @@
           <Cursor Value="0"/>
         </Object49>
         <Object50>
-          <Name Value="Memo25"/>
+          <Name Value="MmoMarried"/>
           <ClassName Value="TfrMemoView"/>
           <Visible Value="True"/>
           <Typ Value="gtMemo"/>
@@ -2540,7 +2540,7 @@
           <Size>
             <Left Value="528"/>
             <Top Value="520"/>
-            <Width Value="64"/>
+            <Width Value="80"/>
             <Height Value="16"/>
           </Size>
           <Flags Value="3"/>

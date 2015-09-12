@@ -511,7 +511,7 @@ object FrmMain: TFrmMain
               'False'
             )
           end
-          object DBRadGenre1: TDBRadioGroup
+          object DBRadMaritalStatus: TDBRadioGroup
             Left = 232
             Height = 122
             Top = 144
