@@ -114,7 +114,6 @@ begin
           FuncData.UpdateSQL('Employees', 'ID_Employee', IDEmployee,  WriteFields);
           end;
   end; //case
-  DataMod.QueEmployees.Refresh;
   //Change the filter and go to the record:
   FilterIndex:= FrmMain.CboFilter.ItemIndex;
   if (FilterIndex=0) OR (FilterIndex=1) then //if Filter in Actives or Inactives
@@ -126,6 +125,11 @@ begin
     FrmMain.CboFilterChange(nil); //Apply the filter
     DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   	end;
+  //Show the proper tab
+  case Inactivate of
+  	False: if Not(FrmMain.PagEmployees.TabIndex= 2) then FrmMain.PagEmployees.TabIndex:= 2;
+    True: if Not(FrmMain.PagEmployees.TabIndex= 3) then FrmMain.PagEmployees.TabIndex:= 3;
+  end; //case
   FrmMain.UpdateRecordCount;
   Close;
 end;

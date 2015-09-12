@@ -573,6 +573,14 @@ msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
 msgid "Workplace"
 msgstr "Lugar de trabalho"
 
+#: tfrmmain.dbradgenre.caption
+msgid "Genre"
+msgstr ""
+
+#: tfrmmain.dbradgenre1.caption
+msgid "Marital Status"
+msgstr ""
+
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
 msgstr "Contrato do empregado"
@@ -615,10 +623,6 @@ msgctxt "TFRMMAIN.LBLADDRESS.CAPTION"
 msgid "Address:"
 msgstr "Endereço:"
 
-#: tfrmmain.lblbirthday.caption
-msgid "Birthday:"
-msgstr "Aniversário:"
-
 #: tfrmmain.lblbirthday1.caption
 msgctxt "tfrmmain.lblbirthday1.caption"
 msgid "Date Init:"
@@ -647,6 +651,10 @@ msgstr "Celular:"
 msgctxt "TFRMMAIN.LBLCITY.CAPTION"
 msgid "City:"
 msgstr "Cidade:"
+
+#: tfrmmain.lbldatebirth.caption
+msgid "Date of Birth:"
+msgstr ""
 
 #: tfrmmain.lblemail.caption
 msgctxt "TFRMMAIN.LBLEMAIL.CAPTION"
@@ -732,6 +740,10 @@ msgstr "TabEmployees"
 msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
 msgid "Personal Data"
 msgstr "Dados pessoais"
+
+#: tfrmmain.tabremark.caption
+msgid "Remark"
+msgstr ""
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
@@ -945,3 +957,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
+

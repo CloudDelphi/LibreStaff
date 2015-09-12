@@ -570,6 +570,14 @@ msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
 msgid "Workplace"
 msgstr ""
 
+#: tfrmmain.dbradgenre.caption
+msgid "Genre"
+msgstr ""
+
+#: tfrmmain.dbradgenre1.caption
+msgid "Marital Status"
+msgstr ""
+
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
 msgstr ""
@@ -612,10 +620,6 @@ msgctxt "tfrmmain.lbladdress.caption"
 msgid "Address:"
 msgstr ""
 
-#: tfrmmain.lblbirthday.caption
-msgid "Birthday:"
-msgstr ""
-
 #: tfrmmain.lblbirthday1.caption
 msgctxt "tfrmmain.lblbirthday1.caption"
 msgid "Date Init:"
@@ -643,6 +647,10 @@ msgstr "Mobile:"
 #: tfrmmain.lblcity.caption
 msgctxt "tfrmmain.lblcity.caption"
 msgid "City:"
+msgstr ""
+
+#: tfrmmain.lbldatebirth.caption
+msgid "Date of Birth:"
 msgstr ""
 
 #: tfrmmain.lblemail.caption
@@ -728,6 +736,10 @@ msgstr ""
 #: tfrmmain.tabpersonaldata.caption
 msgctxt "TFRMMAIN.TABPERSONALDATA.CAPTION"
 msgid "Personal Data"
+msgstr ""
+
+#: tfrmmain.tabremark.caption
+msgid "Remark"
 msgstr ""
 
 #: tfrmpicemployee.btnclearpic.caption

@@ -1,10 +1,10 @@
 object FrmMain: TFrmMain
-  Left = 431
-  Height = 648
-  Top = 202
+  Left = 435
+  Height = 788
+  Top = 221
   Width = 1237
   Caption = 'LibreStaff'
-  ClientHeight = 648
+  ClientHeight = 788
   ClientWidth = 1237
   OnClose = FormClose
   OnCreate = FormCreate
@@ -228,13 +228,13 @@ object FrmMain: TFrmMain
   object StatusBar1: TStatusBar
     Left = 0
     Height = 28
-    Top = 620
+    Top = 760
     Width = 1237
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 572
+    Height = 712
     Top = 48
     Width = 1237
     ActivePage = TabEmployees
@@ -244,11 +244,11 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 564
+      ClientHeight = 704
       ClientWidth = 1229
       object PagEmployees: TPageControl
         Left = 0
-        Height = 291
+        Height = 431
         Top = 128
         Width = 1068
         ActivePage = TabAddress
@@ -257,7 +257,7 @@ object FrmMain: TFrmMain
         TabOrder = 0
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 250
+          ClientHeight = 390
           ClientWidth = 1060
           object GrpAddressEmployee: TGroupBox
             Left = 20
@@ -276,6 +276,7 @@ object FrmMain: TFrmMain
               DataField = 'Address_Employee'
               DataSource = DataMod.DsoEmployees
               MaxLength = 512
+              ScrollBars = ssAutoBoth
               TabOrder = 0
             end
             object LblAddress: TLabel
@@ -445,23 +446,23 @@ object FrmMain: TFrmMain
         end
         object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
-          ClientHeight = 261
-          ClientWidth = 1126
+          ClientHeight = 390
+          ClientWidth = 1060
           object GrpMisc: TGroupBox
-            Left = 20
+            Left = 22
             Height = 104
             Top = 24
-            Width = 320
+            Width = 370
             Caption = 'Misc'
             ClientHeight = 71
-            ClientWidth = 316
+            ClientWidth = 366
             TabOrder = 0
-            object DBDatBirthday: TDBDateTimePicker
-              Left = 128
+            object DBDatDateBirth: TDBDateTimePicker
+              Left = 168
               Height = 36
               Top = 8
               Width = 161
-              DataField = 'Birthday_Employee'
+              DataField = 'DateBirth_Employee'
               DataSource = DataMod.DsoEmployees
               ReadOnly = False
               CenturyFrom = 1900
@@ -480,17 +481,53 @@ object FrmMain: TFrmMain
               HideDateTimeParts = []
               MonthNames = 'Long'
             end
-            object LblBirthday: TLabel
+            object LblDateBirth: TLabel
               Left = 8
               Height = 28
               Top = 8
-              Width = 120
+              Width = 160
               AutoSize = False
-              Caption = 'Birthday:'
+              Caption = 'Date of Birth:'
               Font.Height = 29
               ParentColor = False
               ParentFont = False
             end
+          end
+          object DBRadGenre: TDBRadioGroup
+            Left = 22
+            Height = 122
+            Top = 144
+            Width = 154
+            Caption = 'Genre'
+            DataField = 'Genre_Employee'
+            DataSource = DataMod.DsoEmployees
+            Items.Strings = (
+              'Male'
+              'Female'
+            )
+            TabOrder = 1
+            Values.Strings = (
+              'True'
+              'False'
+            )
+          end
+          object DBRadGenre1: TDBRadioGroup
+            Left = 232
+            Height = 122
+            Top = 144
+            Width = 160
+            Caption = 'Marital Status'
+            DataField = 'MaritalStatus_Employee'
+            DataSource = DataMod.DsoEmployees
+            Items.Strings = (
+              'Single'
+              'Married'
+            )
+            TabOrder = 2
+            Values.Strings = (
+              'True'
+              'False'
+            )
           end
         end
         object TabContract: TTabSheet
@@ -707,11 +744,28 @@ object FrmMain: TFrmMain
             TabOrder = 0
           end
         end
+        object TabRemark: TTabSheet
+          Caption = 'Remark'
+          ClientHeight = 390
+          ClientWidth = 1060
+          object DbMmoRemarkEmployee: TDBMemo
+            Left = 0
+            Height = 390
+            Top = 0
+            Width = 1060
+            Align = alClient
+            DataField = 'Remark_Employee'
+            DataSource = DataMod.DsoEmployees
+            MaxLength = 4096
+            ScrollBars = ssAutoBoth
+            TabOrder = 0
+          end
+        end
       end
       object PanBottom: TPanel
         Left = 0
         Height = 145
-        Top = 419
+        Top = 559
         Width = 1229
         Align = alBottom
         BevelOuter = bvNone
@@ -1035,18 +1089,18 @@ object FrmMain: TFrmMain
       end
       object PanRight: TPanel
         Left = 1072
-        Height = 291
+        Height = 431
         Top = 128
         Width = 157
         Align = alRight
         BevelOuter = bvNone
-        ClientHeight = 291
+        ClientHeight = 431
         ClientWidth = 157
         TabOrder = 3
         Visible = False
         object Sidebar: TPageControl
           Left = 0
-          Height = 263
+          Height = 403
           Top = 28
           Width = 157
           ActivePage = TabMnuContractsLog
@@ -1055,7 +1109,7 @@ object FrmMain: TFrmMain
           TabIndex = 0
           TabOrder = 0
           object TabMnuContractsLog: TTabSheet
-            ClientHeight = 255
+            ClientHeight = 395
             ClientWidth = 149
             object BtnDelContractLog: TBitBtn
               Left = 16
@@ -1084,7 +1138,7 @@ object FrmMain: TFrmMain
       end
       object SplMain: TSplitter
         Left = 1068
-        Height = 291
+        Height = 431
         Top = 128
         Width = 4
         Align = alRight

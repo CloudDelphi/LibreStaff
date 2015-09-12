@@ -33,7 +33,7 @@ type
     BtnNew: TBitBtn;
     CboFilter: TComboBox;
     DBCboState: TDBComboBox;
-    DBDatBirthday: TDBDateTimePicker;
+    DBDatDateBirth: TDBDateTimePicker;
     DBDatInitContract: TDBDateTimePicker;
     DBDatEndContract: TDBDateTimePicker;
     DBENameEmployee: TDBEdit;
@@ -50,6 +50,8 @@ type
     DBGrdLogContracts: TDBGrid;
     DBLkCboTypeContract: TDBLookupComboBox;
     DBLkCboWorkplace: TDBLookupComboBox;
+    DBRadGenre: TDBRadioGroup;
+    DBRadGenre1: TDBRadioGroup;
     frDBDataSet: TfrDBDataSet;
     frReport: TfrReport;
     GroupBox1: TGroupBox;
@@ -59,7 +61,7 @@ type
     Label1: TLabel;
     LblSidebar: TLabel;
     LblInactive: TLabel;
-    LblBirthday: TLabel;
+    LblDateBirth: TLabel;
     LblBirthday1: TLabel;
     LblBirthday2: TLabel;
     LblBirthday3: TLabel;
@@ -84,6 +86,7 @@ type
     LblCity: TLabel;
     LblState: TLabel;
     LblNavRec: TLabel;
+    DbMmoRemarkEmployee: TDBMemo;
     OpenDlg: TOpenDialog;
     Sidebar: TPageControl;
     PagMain: TPageControl;
@@ -108,6 +111,7 @@ type
     TabContract: TTabSheet;
     TabContractsLog: TTabSheet;
     TabMnuContractsLog: TTabSheet;
+    TabRemark: TTabSheet;
     procedure BtnDelContractLogClick(Sender: TObject);
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnDelTypeContractClick(Sender: TObject);
@@ -363,8 +367,8 @@ begin
    	ddoYMD: DefaultFormatSettings.ShortDateFormat:= 'yyyy'+DateSeparator+'mm'+DateSeparator+'dd';
   end; //case
   DefaultFormatSettings.DateSeparator:= DateSeparator;
-  DBDatBirthday.DateDisplayOrder:= DateFormat;
-  DBDatBirthday.DateSeparator:= DateSeparator;
+  DBDatDateBirth.DateDisplayOrder:= DateFormat;
+  DBDatDateBirth.DateSeparator:= DateSeparator;
   DBDatInitContract.DateDisplayOrder:= DateFormat;
   DBDatInitContract.DateSeparator:= DateSeparator;
   DBDatEndContract.DateDisplayOrder:= DateFormat;
