@@ -1079,7 +1079,7 @@ object FrmMain: TFrmMain
           Alignment = taCenter
           AutoSize = False
           Caption = 'Inactive'
-          Color = 5460991
+          Color = 5395183
           Font.Color = clWhite
           ParentColor = False
           ParentFont = False
