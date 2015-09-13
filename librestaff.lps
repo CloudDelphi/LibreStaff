@@ -42,7 +42,7 @@
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="14" Y="4"/>
+        <CursorPos X="27" Y="2"/>
         <UsageCount Value="176"/>
       </Unit0>
       <Unit1>
@@ -53,11 +53,10 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="446"/>
-        <CursorPos X="48" Y="458"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="431"/>
+        <CursorPos X="19" Y="453"/>
         <UsageCount Value="176"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -523,60 +522,10 @@
         <UsageCount Value="10"/>
       </Unit57>
     </Units>
-    <JumpHistory Count="13" HistoryIndex="12">
-      <Position1>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="456" Column="16" TopLine="444"/>
-      </Position1>
-      <Position2>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="461" TopLine="444"/>
-      </Position2>
-      <Position3>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="462" TopLine="444"/>
-      </Position3>
-      <Position4>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="461" TopLine="444"/>
-      </Position4>
-      <Position5>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="462" TopLine="444"/>
-      </Position5>
-      <Position6>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="461" TopLine="444"/>
-      </Position6>
-      <Position7>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="462" Column="10" TopLine="449"/>
-      </Position7>
-      <Position8>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="463" Column="29" TopLine="451"/>
-      </Position8>
-      <Position9>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="465" TopLine="450"/>
-      </Position9>
-      <Position10>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="466" TopLine="450"/>
-      </Position10>
-      <Position11>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="459" Column="43" TopLine="450"/>
-      </Position11>
-      <Position12>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="683" Column="5" TopLine="64"/>
-      </Position12>
-      <Position13>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="11" Column="37"/>
-      </Position13>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
   <Debugging>
     <Watches Count="3">
