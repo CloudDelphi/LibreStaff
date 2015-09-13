@@ -111,7 +111,7 @@ type
     TabContract: TTabSheet;
     TabContractsLog: TTabSheet;
     TabMnuContractsLog: TTabSheet;
-    TabRemark: TTabSheet;
+    TabRemarks: TTabSheet;
     procedure BtnDelContractLogClick(Sender: TObject);
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnDelTypeContractClick(Sender: TObject);
@@ -618,10 +618,10 @@ end;
 procedure TFrmMain.BtnDelContractLogClick(Sender: TObject);
 var
   ID_Contract: String;
+  id: boolean;
 begin
   ID_Contract:= DataMod.DsoContractsLog.DataSet.FieldByName('ID_Contract').AsString;
-  FuncData.DeleteRecordSQL('ContractsLog','ID_Contract',ID_Contract, lg_DelContractLogTarget,True);
-  DataMod.DsoContractsLog.DataSet.Refresh;
+  FuncData.DeleteRecordSQL('ContractsLog','ID_Contract',ID_Contract, DataMod.DsoContractsLog.DataSet, lg_DelContractLogTarget, True);
 end;
 
 procedure TFrmMain.BtnDelTypeContractClick(Sender: TObject);

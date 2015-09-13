@@ -16,10 +16,11 @@ end;
 var
   WriteFields: array of TWriteField;
 
+function CheckDatasetEmpty(Dataset: TDataset): Boolean;
 procedure ConnectDatabase(Databasename: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
-function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
+function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Dataset: TDataset; Target: String='';Confirm: Boolean=False): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
@@ -32,8 +33,15 @@ resourcestring
   DelRec_Title= 'Deletion';
 	DelRec_Msg_01= 'Are you sure you want to DELETE';
   DelRec_Msg_02= 'It cannot revert!';
+  DelRec_Msg_03= 'There is not anything to eliminate.';
 
 implementation
+
+function CheckDatasetEmpty(Dataset: TDataset): Boolean;
+begin
+	if Dataset.IsEmpty= True then Result:=True
+  	else Result:= False;
+end;
 
 procedure ConnectDatabase(Databasename: String);
 var
@@ -85,7 +93,7 @@ begin
           ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' IDCard_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' SSN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-    			' Address_Employee MEMO NOT NULL DEFAULT "",'+
+    			' Address_Employee MEMO(4096) NOT NULL DEFAULT "",'+
        		' City_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' State_Employee CHAR(256) NOT NULL DEFAULT "",'+
        		' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -95,7 +103,7 @@ begin
           ' DateBirth_Employee DATE DEFAULT NULL,'+
           ' Genre_Employee BOOLEAN DEFAULT NULL,'+
           ' MaritalStatus_Employee BOOLEAN DEFAULT NULL,'+
-          ' Remark_Employee MEMO NOT NULL DEFAULT "",'+
+          ' Remarks_Employee MEMO(4096) NOT NULL DEFAULT "",'+
           ' DateInit_Contract DATE DEFAULT NULL,'+
           ' DateEnd_Contract DATE DEFAULT NULL,'+
           ' TypeContract_ID INTEGER DEFAULT NULL,'+
@@ -138,12 +146,19 @@ begin
               end;
   end; //case
 end;
-function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
+function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Dataset: TDataset; Target: String='';Confirm: Boolean=False): Boolean;
 var
 	SQLSentence: TStringList;
   ConfirmDel, Style: Integer;
   Msg: PChar;
 begin
+  if CheckDatasetEmpty(Dataset)= True then
+    begin
+    Style:= MB_OK + MB_ICONERROR;
+    Application.MessageBox(PChar(DelRec_Msg_03), PChar(DelRec_Title), Style);
+    Result:= False;
+    Exit;
+    end;
   if Confirm= True then
     begin
     Style:= MB_OKCANCEL + MB_ICONEXCLAMATION;
@@ -163,6 +178,7 @@ begin
             DataMod.QueVirtual.ExecSQL;
             DataMod.Transaction.CommitRetaining;
           	SQLSentence.Free;
+            DataSet.Refresh;
   					Result:= True;
             except
   					Result:= False;

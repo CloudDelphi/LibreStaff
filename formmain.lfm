@@ -744,8 +744,8 @@ object FrmMain: TFrmMain
             TabOrder = 0
           end
         end
-        object TabRemark: TTabSheet
-          Caption = 'Remark'
+        object TabRemarks: TTabSheet
+          Caption = 'Remarks'
           ClientHeight = 390
           ClientWidth = 1060
           object DbMmoRemarkEmployee: TDBMemo
@@ -754,7 +754,7 @@ object FrmMain: TFrmMain
             Top = 0
             Width = 1060
             Align = alClient
-            DataField = 'Remark_Employee'
+            DataField = 'Remarks_Employee'
             DataSource = DataMod.DsoEmployees
             MaxLength = 4096
             ScrollBars = ssAutoBoth

@@ -19,6 +19,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <RevisionNr Value="6"/>
+      <BuildNr Value="4"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable ProductName="LibreStaff" ProductVersion=""/>
     </VersionInfo>

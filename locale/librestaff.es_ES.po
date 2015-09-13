@@ -286,6 +286,10 @@ msgstr "¿Estás seguro que quieres ELIMINAR"
 msgid "It cannot revert!"
 msgstr "¡No se podrá revertir!"
 
+#: funcdata.delrec_msg_03
+msgid "There is not anything to eliminate."
+msgstr "No hay nada que eliminar."
+
 #: funcdata.delrec_title
 msgid "Deletion"
 msgstr "Eliminar"
@@ -773,9 +777,10 @@ msgctxt "tfrmmain.tabpersonaldata.caption"
 msgid "Personal Data"
 msgstr "Datos personales"
 
-#: tfrmmain.tabremark.caption
-msgid "Remark"
-msgstr "Observación"
+#: tfrmmain.tabremarks.caption
+msgctxt "tfrmmain.tabremarks.caption"
+msgid "Remarks"
+msgstr "Observaciones"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
