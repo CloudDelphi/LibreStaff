@@ -5,7 +5,8 @@ unit FormPrgBar;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
+  StdCtrls, ExtCtrls;
 
 type
 

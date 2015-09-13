@@ -18,7 +18,8 @@ object FrmPrgBar: TFrmPrgBar
     Top = 0
     Width = 349
     Align = alClient
-    Smooth = True
+    Style = pbstMarquee
     TabOrder = 0
+    BarShowText = True
   end
 end

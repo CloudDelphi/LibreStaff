@@ -456,10 +456,10 @@ begin
   LoadQueries[4].SQL:= SELECT_PICSEMPLOYEES;
 	LoadQueries[5].Query:= DataMod.QueContractsLog;
   LoadQueries[5].SQL:= SELECT_CONTRACTSLOG_SQL;
+  FrmPrgBar.Caption:= 'Loading Tables...';
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin
 		FuncData.ExecSQL(LoadQueries[i].Query, LoadQueries[i].SQL);
-	  FrmPrgBar.PrgBar.Position:= Round(100/(LoadQueriesCount-i));
     end;
   //Load the Configuration from the database
   CompanyName:= DataMod.QueConfig.FieldByName('CompanyName').AsString;
