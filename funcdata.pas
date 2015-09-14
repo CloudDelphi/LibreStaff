@@ -93,17 +93,17 @@ begin
           ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' IDCard_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' SSN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-    			' Address_Employee MEMO(4096) NOT NULL DEFAULT "",'+
-       		' City_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       		' State_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       		' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       		' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       		' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
+    	  ' Address_Employee MEMO(8192) NOT NULL DEFAULT "",'+
+       	  ' City_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       	  ' State_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       	  ' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       	  ' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
+       	  ' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' EMail_Employee CHAR(256) NOT NULL DEFAULT "",'+
           ' DateBirth_Employee DATE DEFAULT NULL,'+
           ' Genre_Employee BOOLEAN DEFAULT NULL,'+
           ' MaritalStatus_Employee BOOLEAN DEFAULT NULL,'+
-          ' Remarks_Employee MEMO(4096) NOT NULL DEFAULT "",'+
+          ' Remarks_Employee MEMO(8192) NOT NULL DEFAULT "",'+
           ' DateInit_Contract DATE DEFAULT NULL,'+
           ' DateEnd_Contract DATE DEFAULT NULL,'+
           ' TypeContract_ID INTEGER DEFAULT NULL,'+

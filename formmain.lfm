@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 435
+  Left = 301
   Height = 788
-  Top = 221
+  Top = 183
   Width = 1237
   Caption = 'LibreStaff'
   ClientHeight = 788
@@ -9,7 +9,7 @@ object FrmMain: TFrmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.5'
   WindowState = wsMaximized
   object PanMain: TPanel
     Left = 0

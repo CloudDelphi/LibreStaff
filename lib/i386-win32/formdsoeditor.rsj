@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":53199524,"name":"formdsoeditor.form_caption_typecontracts","value":"Type of Contract"},
+{"hash":346165,"name":"formdsoeditor.col_title_typecontracts","value":"Name"},
+{"hash":155829556,"name":"formdsoeditor.add_iptbox_caption_typecontracts","value":"Add type of contract"},
+{"hash":5538698,"name":"formdsoeditor.add_iptbox_prompt_typecontracts","value":"Name:"},
+{"hash":87194452,"name":"formdsoeditor.edit_iptbox_caption_typecontracts","value":"Change the name of contract"},
+{"hash":5538698,"name":"formdsoeditor.edit_iptbox_prompt_typecontracts","value":"Name:"},
+{"hash":153582069,"name":"formdsoeditor.form_caption_workplaces","value":"Workplace"},
+{"hash":346165,"name":"formdsoeditor.col_title_workplaces","value":"Name"},
+{"hash":8477093,"name":"formdsoeditor.add_iptbox_caption_workplaces","value":"Add workplace"},
+{"hash":5538698,"name":"formdsoeditor.add_iptbox_prompt_workplaces","value":"Name:"},
+{"hash":263912677,"name":"formdsoeditor.edit_iptbox_caption_workplaces","value":"Change the name of workplace"},
+{"hash":5538698,"name":"formdsoeditor.edit_iptbox_prompt_workplaces","value":"Name:"}
+]}

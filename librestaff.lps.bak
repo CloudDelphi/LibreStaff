@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Count="1" Active="Release">
+      <Item1 Name="Final">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="librestaff"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <StripSymbols Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item1>
+      <SessionMatrixOptions Count="1">
+        <Item1 ID="294887178594" Modes="QT" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt"/>
+      </SessionMatrixOptions>
+    </BuildModes>
+    <Units Count="58">
+      <Unit0>
+        <Filename Value="librestaff.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="27" Y="2"/>
+        <UsageCount Value="176"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="formmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormMain"/>
+        <TopLine Value="431"/>
+        <CursorPos X="19" Y="453"/>
+        <UsageCount Value="176"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="funcdata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncData"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="256"/>
+        <CursorPos X="17" Y="321"/>
+        <UsageCount Value="174"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="datamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataMod"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="DataModule"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17" Y="9"/>
+        <UsageCount Value="173"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="formpicemployee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPicEmployee"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormPicEmployee"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3"/>
+        <CursorPos X="12" Y="20"/>
+        <UsageCount Value="147"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="framesavecancel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraSaveCancel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="FrameSaveCancel"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="23" Y="23"/>
+        <UsageCount Value="147"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="funcdlgs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncDlgs"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="17" Y="13"/>
+        <UsageCount Value="145"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="formpreferences.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPreferences"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormPreferences"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="40" Y="70"/>
+        <UsageCount Value="131"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="frameclose.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraClose"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="FrameClose"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="49" Y="8"/>
+        <UsageCount Value="129"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="formlisteditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmListEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormListEditor"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="60" Y="66"/>
+        <UsageCount Value="125"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="formsearch.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmSearch"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormSearch"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="218"/>
+        <CursorPos X="61" Y="231"/>
+        <UsageCount Value="120"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="formdsoeditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmDsoEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormDsoEditor"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="118"/>
+        <CursorPos Y="101"/>
+        <UsageCount Value="104"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="frameadddeledisavcan.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraAddDelEdiSavCan"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="FrameAddDelEdiSavCan"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="42" Y="20"/>
+        <UsageCount Value="104"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="formprgbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPrgBar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormPrgBar"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="27" Y="24"/>
+        <UsageCount Value="84"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="formabout.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormAbout"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="53"/>
+        <CursorPos X="68" Y="69"/>
+        <UsageCount Value="75"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="formactivationemployee.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmActivationEmployee"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormActivationEmployee"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="81"/>
+        <CursorPos X="14" Y="116"/>
+        <UsageCount Value="68"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="fraacceptcancel.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FraAcceptCancel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+        <UnitName Value="FraAcceptCancel"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17" Y="13"/>
+        <UsageCount Value="68"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="funcprint.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncPrint"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="38" Y="51"/>
+        <UsageCount Value="42"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="funcapp.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="FuncApp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="23" Y="10"/>
+        <UsageCount Value="34"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="C:\sprite.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="5" Y="276"/>
+        <UsageCount Value="14"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="sprite.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="100"/>
+        <CursorPos Y="105"/>
+        <UsageCount Value="14"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="datamodule.lfm"/>
+        <ComponentName Value="DataMod"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18" Y="3"/>
+        <UsageCount Value="13"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\zcore.pas"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <CursorPos X="41" Y="13"/>
+        <UsageCount Value="4"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\lazarus\components\zeos\zcore.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="36" Y="11"/>
+        <UsageCount Value="4"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\lazarus\components\zeos\ZClasses.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="42"/>
+        <CursorPos X="2" Y="56"/>
+        <UsageCount Value="4"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="C:\lazarus\components\zeos\src\Zeos.inc"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="64"/>
+        <UsageCount Value="4"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="C:\lazarus\components\zeos\src\component\ZAbstractConnection.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="416"/>
+        <CursorPos Y="428"/>
+        <UsageCount Value="5"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="C:\lazarus\components\zeos\src\dbc\ZDbcSqLiteUtils.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="256"/>
+        <CursorPos Y="267"/>
+        <UsageCount Value="11"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="D:\AppData\Local\Temp\ActiveHomeScriptLib.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="237"/>
+        <UsageCount Value="4"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2713"/>
+        <CursorPos Y="2726"/>
+        <UsageCount Value="22"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-db\src\base\db.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2578"/>
+        <CursorPos X="9" Y="2562"/>
+        <UsageCount Value="11"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2062"/>
+        <CursorPos Y="2076"/>
+        <UsageCount Value="13"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="C:\lazarus\lcl\forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2023"/>
+        <CursorPos Y="2077"/>
+        <UsageCount Value="7"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="100"/>
+        <CursorPos Y="116"/>
+        <UsageCount Value="18"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="C:\lazarus\lcl\include\png.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="27"/>
+        <CursorPos Y="40"/>
+        <UsageCount Value="7"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="C:\lazarus\lcl\include\clipbrd.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="746"/>
+        <CursorPos Y="694"/>
+        <UsageCount Value="6"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="463"/>
+        <CursorPos Y="476"/>
+        <UsageCount Value="10"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
+        <UnitName Value="DbCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1503"/>
+        <CursorPos Y="1516"/>
+        <UsageCount Value="5"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="iniengine.pas"/>
+        <UnitName Value="IniEngine"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="15"/>
+        <UsageCount Value="20"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsbuttons.pp"/>
+        <UnitName Value="Win32WSButtons"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="481"/>
+        <CursorPos Y="494"/>
+        <UsageCount Value="6"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32memostrings.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="146"/>
+        <CursorPos X="37" Y="155"/>
+        <UsageCount Value="6"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5329"/>
+        <CursorPos Y="5342"/>
+        <UsageCount Value="9"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="C:\lazarus\lcl\include\screen.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="878"/>
+        <CursorPos Y="894"/>
+        <UsageCount Value="9"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2688"/>
+        <CursorPos Y="2709"/>
+        <UsageCount Value="9"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="C:\lazarus\components\richmemo\richmemoutils.pas"/>
+        <UnitName Value="RichMemoUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="74"/>
+        <CursorPos X="3" Y="88"/>
+        <UsageCount Value="9"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="C:\lazarus\components\lazreport\source\lr_previewtoolsabstract.pas"/>
+        <UnitName Value="lr_PreviewToolsAbstract"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <CursorPos X="14" Y="6"/>
+        <UsageCount Value="10"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="C:\lazarus\components\lazreport\source\lr_about.lfm"/>
+        <ComponentName Value="frAboutForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="C:\lazarus\components\lazreport\source\lr_prdlg.pas"/>
+        <ComponentName Value="frPrintForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LR_PrDlg"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="C:\lazarus\components\lazreport\source\lr_templ.pas"/>
+        <ComponentName Value="frTemplNewForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LR_Templ"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="lazreport\source\lr_view.pas"/>
+        <ComponentName Value="frPreviewForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="LR_View"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-db\fpmake.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit50>
+      <Unit51>
+        <Filename Value="C:\lazarus\packager\registration\registerfcl.pas"/>
+        <UnitName Value="RegisterFCL"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="31" Y="45"/>
+        <UsageCount Value="11"/>
+      </Unit51>
+      <Unit52>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fpmake.pp"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="42" Y="14"/>
+        <UsageCount Value="11"/>
+      </Unit52>
+      <Unit53>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-process\src\process.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="11"/>
+      </Unit53>
+      <Unit54>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-process\src\simpleipc.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit54>
+      <Unit55>
+        <Filename Value="C:\lazarus\packager\registration\lazaruspackageintf.pas"/>
+        <UnitName Value="LazarusPackageIntf"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit55>
+      <Unit56>
+        <Filename Value="C:\lazarus\packager\registration\fcllaz.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit56>
+      <Unit57>
+        <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-extra\src\win\ServiceManager.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit57>
+    </Units>
+    <JumpHistory HistoryIndex="-1"/>
+  </ProjectSession>
+  <Debugging>
+    <Watches Count="3">
+      <Item1>
+        <Expression Value="DataMod.QueSearch"/>
+      </Item1>
+      <Item2>
+        <Expression Value="SQL"/>
+      </Item2>
+      <Item3>
+        <Expression Value="SentenceSQl"/>
+      </Item3>
+    </Watches>
+  </Debugging>
+</CONFIG>

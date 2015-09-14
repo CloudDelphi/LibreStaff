@@ -1,0 +1,18 @@
+{"version":1,"strings":[
+{"hash":179358933,"name":"formmain.lg_captionbtn_activate","value":"Activate"},
+{"hash":179686613,"name":"formmain.lg_captionbtn_inactivate","value":"Inactivate"},
+{"hash":111269585,"name":"formmain.lg_idisblank","value":"This ID# cannot be in blank\rIt should be UNIQUE!"},
+{"hash":8023393,"name":"formmain.lg_idisnotunique","value":"This ID# is in use by another Employee\rIt should be UNIQUE!"},
+{"hash":251484325,"name":"formmain.lg_btndeltypecontract_hint","value":"Delete the type of contract of this employee"},
+{"hash":204246757,"name":"formmain.lg_btndelworkplace_hint","value":"Delete the workplace of this employee"},
+{"hash":219751095,"name":"formmain.lg_delcontractlogtarget","value":"the selected contract in the log"},
+{"hash":1878,"name":"formmain.lg_lblnavrecof","value":"of"},
+{"hash":95062723,"name":"formmain.lg_frmstatestitle","value":"States"},
+{"hash":128650371,"name":"formmain.lg_filter_active","value":"Actives"},
+{"hash":128670851,"name":"formmain.lg_filter_inactive","value":"Inactives"},
+{"hash":18476,"name":"formmain.lg_filter_all","value":"All"},
+{"hash":342053,"name":"formmain.lg_male","value":"Male"},
+{"hash":80492581,"name":"formmain.lg_female","value":"Female"},
+{"hash":94391845,"name":"formmain.lg_single","value":"Single"},
+{"hash":59346916,"name":"formmain.lg_married","value":"Married"}
+]}
