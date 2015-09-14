@@ -591,6 +591,24 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "DateEnd"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+#, fuzzy
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr "Lugar de trabajo"
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr "Género"

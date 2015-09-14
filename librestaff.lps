@@ -52,7 +52,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <TopLine Value="431"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="19" Y="453"/>
         <UsageCount Value="176"/>
         <Loaded Value="True"/>
@@ -62,12 +62,10 @@
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="340"/>
-        <CursorPos X="21" Y="354"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="84"/>
+        <CursorPos X="39" Y="106"/>
         <UsageCount Value="174"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -201,8 +199,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="53"/>
-        <CursorPos X="68" Y="69"/>
+        <CursorPos X="19" Y="12"/>
         <UsageCount Value="75"/>
       </Unit14>
       <Unit15>
