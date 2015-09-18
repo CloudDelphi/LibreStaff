@@ -1,9 +1,0 @@
-{"version":1,"strings":[
-{"hash":121026435,"name":"formpreferences.lg_lstview_caption_item_0","value":"Employees"},
-{"hash":139375349,"name":"formpreferences.lg_lstview_caption_item_1","value":"Language"},
-{"hash":145198133,"name":"formpreferences.lg_lstview_caption_item_2","value":"Database"},
-{"hash":151366455,"name":"formpreferences.lg_lstview_caption_item_3","value":"Printing"},
-{"hash":95946553,"name":"formpreferences.lg_selectdirdlg_title","value":"Select the path for the database (data.db)"},
-{"hash":78083137,"name":"formpreferences.lg_selectdirdlg_error_title","value":"ERROR!"},
-{"hash":10535214,"name":"formpreferences.lg_selectdirdlg_error_msg","value":"The file \"data.db\" does not exist in this path."}
-]}

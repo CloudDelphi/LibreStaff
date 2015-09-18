@@ -1,9 +1,0 @@
-{"version":1,"strings":[
-{"hash":257774943,"name":"formpicemployee.opendlg_title","value":"Select a photo"},
-{"hash":152870195,"name":"formpicemployee.opendlg_filter","value":"All image files"},
-{"hash":68434830,"name":"formpicemployee.opendlg_error_msg_01","value":"Photo not loaded."},
-{"hash":32105124,"name":"formpicemployee.opendlg_error_msg_02","value":"Possible cause: Photo format not valid"},
-{"hash":227435470,"name":"formpicemployee.opendlg_error_msg_03","value":"Please, check if photo format is jpg."},
-{"hash":263301599,"name":"formpicemployee.savedlg_title","value":"Save the photo"},
-{"hash":152870195,"name":"formpicemployee.savedlg_filter","value":"All image files"}
-]}

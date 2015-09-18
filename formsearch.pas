@@ -243,7 +243,7 @@ end;
 procedure TFrmSearch.Search(ViewAll: Boolean);
 begin
   case WhatSearch of
-    wtEmployees: ExecSearch('Employees', 'ID_Employee, Name_Employee, Surname1_Employee, Surname2_Employee', ViewAll);
+    wtEmployees: ExecSearch('Employees', 'ID_Employee, Name_Employee, Surname1_Employee, Surname2_Employee, Active_Employee', ViewAll);
   end;
 end;
 
@@ -266,7 +266,9 @@ procedure TFrmSearch.DBGridSearchResultCellClick(Column: TColumn);
 var
   Query: TSQLQuery;
   IDField: String;
-  RecordIDSelec: variant;
+  RecordIDSelec: Variant;
+  IsEmployeeActive: Boolean;
+  CboFilterIndex: Integer;
 begin
   case WhatSearch of
     wtEmployees:	begin
@@ -280,6 +282,21 @@ begin
   	begin
     RecordIDSelec:= FieldValues[IDField];
     if RecordIDSelec= Null then Exit;
+    case WhatSearch of
+      wtEmployees:  begin;
+                    IsEmployeeActive:= DBGridSearchResult.DataSource.DataSet.FieldByName('Active_Employee').AsBoolean;
+                    case ISEmployeeActive of
+                      False:  CboFilterIndex:= 1;
+                      True:   CboFilterIndex:= 0;
+                    end; //case
+                    if FrmMain.CboFilter.ItemIndex<>CboFilterIndex then
+                      if FrmMain.CboFilter.ItemIndex<2 then
+                        begin
+                        FrmMain.CboFilter.ItemIndex:= CboFilterIndex;
+                        FrmMain.CboFilterChange(nil);
+                        end;
+                    end;
+    end; //case
     Query.Locate(IDField,RecordIDSelec,[loCaseInsensitive,loPartialKey]);
     FrmMain.UpdateNavRec;
     end;

@@ -1,6 +1,0 @@
-{"version":1,"strings":[
-{"hash":225868949,"name":"formactivationemployee.lg_title_inactivate","value":"Do you want to inactivate"},
-{"hash":183963269,"name":"formactivationemployee.lg_title_activate","value":"Do you want to activate"},
-{"hash":43398538,"name":"formactivationemployee.lg_captiongrpcontract_inactivate","value":"Contract to log:"},
-{"hash":231323818,"name":"formactivationemployee.lg_captiongrpcontract_activate","value":"New contract of the employee:"}
-]}

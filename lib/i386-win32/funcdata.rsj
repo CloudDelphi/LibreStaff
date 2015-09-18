@@ -1,6 +1,0 @@
-{"version":1,"strings":[
-{"hash":204254462,"name":"funcdata.delrec_title","value":"Deletion"},
-{"hash":80038917,"name":"funcdata.delrec_msg_01","value":"Are you sure you want to DELETE"},
-{"hash":15321473,"name":"funcdata.delrec_msg_02","value":"It cannot revert!"},
-{"hash":20364830,"name":"funcdata.delrec_msg_03","value":"There is not anything to eliminate."}
-]}

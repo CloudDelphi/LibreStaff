@@ -330,7 +330,9 @@ procedure TFrmMain.UpdateRecordCount;
 begin
   TotalRecs:= DataMod.QueEmployees.RecordCount;
   if TotalRecs=0 then
-		DisableEmployees;
+		DisableEmployees
+    else
+    EnableEmployees;
   UpdateNavRec;
 end;
 procedure TFrmMain.ShowSidebar;
@@ -516,9 +518,6 @@ begin
   FuncData.ExecSQL(DataMod.QueEmployees, SQL);
   FuncData.ExecSQL(DataMod.QueContractsLog,SELECT_CONTRACTSLOG_SQL);
   FuncData.ExecSQL(DataMod.QuePicsEmployees,SELECT_PICSEMPLOYEES);
-  if DataMod.QueEmployees.IsEmpty= FALSE then
-  	EnableEmployees
-    else DisableEmployees;
   {Updating the recordcount-->}
   UpdateRecordCount;
   INIFile.WriteString('TableEmployees', 'Filter', IntToStr(CboFilter.ItemIndex));

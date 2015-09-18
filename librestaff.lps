@@ -43,7 +43,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="27" Y="2"/>
-        <UsageCount Value="176"/>
+        <UsageCount Value="178"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -53,19 +53,19 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="19" Y="453"/>
-        <UsageCount Value="176"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="503"/>
+        <CursorPos X="35" Y="508"/>
+        <UsageCount Value="178"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="84"/>
+        <TopLine Value="81"/>
         <CursorPos X="39" Y="106"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="176"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -76,7 +76,7 @@
         <UnitName Value="DataModule"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="9"/>
-        <UsageCount Value="173"/>
+        <UsageCount Value="175"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -88,7 +88,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="12" Y="20"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="149"/>
       </Unit4>
       <Unit5>
         <Filename Value="framesavecancel.pas"/>
@@ -100,7 +100,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="23" Y="23"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="149"/>
       </Unit5>
       <Unit6>
         <Filename Value="funcdlgs.pas"/>
@@ -109,7 +109,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="17" Y="13"/>
-        <UsageCount Value="145"/>
+        <UsageCount Value="147"/>
       </Unit6>
       <Unit7>
         <Filename Value="formpreferences.pas"/>
@@ -121,7 +121,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="56"/>
         <CursorPos X="40" Y="70"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="133"/>
       </Unit7>
       <Unit8>
         <Filename Value="frameclose.pas"/>
@@ -132,7 +132,7 @@
         <UnitName Value="FrameClose"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="49" Y="8"/>
-        <UsageCount Value="129"/>
+        <UsageCount Value="131"/>
       </Unit8>
       <Unit9>
         <Filename Value="formlisteditor.pas"/>
@@ -143,7 +143,7 @@
         <UnitName Value="FormListEditor"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="60" Y="66"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="127"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -153,9 +153,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="218"/>
-        <CursorPos X="61" Y="231"/>
-        <UsageCount Value="120"/>
+        <TopLine Value="283"/>
+        <CursorPos X="12" Y="288"/>
+        <UsageCount Value="122"/>
       </Unit10>
       <Unit11>
         <Filename Value="formdsoeditor.pas"/>
@@ -167,7 +167,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos Y="101"/>
-        <UsageCount Value="104"/>
+        <UsageCount Value="106"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -178,7 +178,7 @@
         <UnitName Value="FrameAddDelEdiSavCan"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="42" Y="20"/>
-        <UsageCount Value="104"/>
+        <UsageCount Value="106"/>
       </Unit12>
       <Unit13>
         <Filename Value="formprgbar.pas"/>
@@ -189,7 +189,7 @@
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="27" Y="24"/>
-        <UsageCount Value="84"/>
+        <UsageCount Value="86"/>
       </Unit13>
       <Unit14>
         <Filename Value="formabout.pas"/>
@@ -200,7 +200,7 @@
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="19" Y="12"/>
-        <UsageCount Value="75"/>
+        <UsageCount Value="77"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -212,7 +212,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="81"/>
         <CursorPos X="14" Y="116"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="70"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -223,7 +223,7 @@
         <UnitName Value="FraAcceptCancel"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="13"/>
-        <UsageCount Value="68"/>
+        <UsageCount Value="70"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
@@ -232,7 +232,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos X="38" Y="51"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="44"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
@@ -240,7 +240,7 @@
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="10"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="36"/>
       </Unit18>
       <Unit19>
         <Filename Value="C:\sprite.pas"/>
@@ -521,6 +521,9 @@
         <UsageCount Value="10"/>
       </Unit57>
     </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
     <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
   <Debugging>
