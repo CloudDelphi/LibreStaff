@@ -123,8 +123,10 @@ begin
   	  True:	FrmMain.CboFilter.ItemIndex:= 1; //Change filter to Inactives
     end; //case
     FrmMain.CboFilterChange(nil); //Apply the filter
-    DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
-  	end;
+  	end
+  else
+    DataMod.QueEmployees.Refresh;
+  DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   //Show the proper tab
   case Inactivate of
   	False: if Not(FrmMain.PagEmployees.TabIndex= 2) then FrmMain.PagEmployees.TabIndex:= 2;
