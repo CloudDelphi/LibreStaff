@@ -558,7 +558,7 @@ const
   WriteFieldsCount= 2;
   RandomIDLenght= 12;
 begin
-  if FilterIndex>0 then
+  if FilterIndex=1 then
   	begin
 		FilterIndex:= 0;
     CboFilter.ItemIndex:= 0;

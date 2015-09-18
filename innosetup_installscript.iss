@@ -2,10 +2,10 @@
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.8-alpha
+AppVerName=v0.0.9-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.8-alpha
+OutputBaseFilename=LibreStaff_v0.0.9-alpha
 Uninstallable=yes
 ;WizardImageFile=
 WizardImageStretch=no
@@ -17,7 +17,9 @@ ShowLanguageDialog=yes
 Source: "librestaff.exe"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "sqlite3.dll"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "lic\*.rtf"; DestDir: "{app}\lic"; Components: "base"; Flags: ignoreversion
-Source: "data\*.*"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "data\states_en_US.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "data\states_es_ES.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "data\states_pt_BR.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "locale\*.*"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "templates\*.lrf"; DestDir: "{app}\templates"; Components: "base"; Flags: ignoreversion recursesubdirs
 
