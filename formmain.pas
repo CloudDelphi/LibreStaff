@@ -56,6 +56,7 @@ type
     frReport: TfrReport;
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
+    Img16: TImageList;
     ImgPreferences: TImage;
     ImgAbout: TImage;
     Label1: TLabel;
@@ -104,7 +105,7 @@ type
     SaveDlg: TSaveDialog;
     SelectDirDlg: TSelectDirectoryDialog;
     SplMain: TSplitter;
-    StatusBar1: TStatusBar;
+    StBarMain: TStatusBar;
     TabEmployees: TTabSheet;
     TabAddress: TTabSheet;
     TabPersonalData: TTabSheet;

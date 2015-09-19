@@ -53,10 +53,10 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="517"/>
-        <CursorPos X="21" Y="554"/>
+        <TopLine Value="531"/>
+        <CursorPos X="21" Y="555"/>
         <UsageCount Value="179"/>
+        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -521,10 +521,12 @@
         <UsageCount Value="10"/>
       </Unit57>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="1">
+      <Position1>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="554" Column="21" TopLine="517"/>
+      </Position1>
+    </JumpHistory>
   </ProjectSession>
   <Debugging>
     <Watches Count="3">
