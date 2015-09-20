@@ -348,14 +348,11 @@ begin
     SQLSentence.Strings[1]:= SQLSentence.Strings[1]+WriteFields[i].FieldName+'='+
     	'"'+ValueStr+'"';
     if i<High(WriteFields) then
-    	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+','
-    else
-      //SQLSentence.Strings[1]:= SQLSentence.Strings[1]+')';
+    	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+',';
   	end; //for
   SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
-  //DataMod.QueVirtual.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   SQLSentence.Free;
 end;

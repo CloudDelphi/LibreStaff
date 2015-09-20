@@ -52,20 +52,22 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="531"/>
         <CursorPos X="21" Y="555"/>
         <UsageCount Value="179"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="81"/>
-        <CursorPos X="39" Y="106"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="16"/>
+        <CursorPos X="30" Y="355"/>
         <UsageCount Value="177"/>
+        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -141,9 +143,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormListEditor"/>
-        <EditorIndex Value="-1"/>
+        <EditorIndex Value="1"/>
         <CursorPos X="60" Y="66"/>
         <UsageCount Value="128"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -209,10 +213,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormActivationEmployee"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="101"/>
-        <CursorPos Y="129"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="66"/>
+        <CursorPos X="22" Y="78"/>
         <UsageCount Value="71"/>
+        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -521,11 +526,35 @@
         <UsageCount Value="10"/>
       </Unit57>
     </Units>
-    <JumpHistory Count="1">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="554" Column="21" TopLine="517"/>
       </Position1>
+      <Position2>
+        <Filename Value="funcdata.pas"/>
+        <Caret Line="106" Column="39" TopLine="81"/>
+      </Position2>
+      <Position3>
+        <Filename Value="formactivationemployee.pas"/>
+        <Caret Line="129" TopLine="101"/>
+      </Position3>
+      <Position4>
+        <Filename Value="funcdata.pas"/>
+        <Caret Line="328" Column="10" TopLine="315"/>
+      </Position4>
+      <Position5>
+        <Filename Value="formactivationemployee.pas"/>
+        <Caret Line="78" Column="21" TopLine="66"/>
+      </Position5>
+      <Position6>
+        <Filename Value="formactivationemployee.pas"/>
+        <Caret Line="75" Column="47" TopLine="66"/>
+      </Position6>
+      <Position7>
+        <Filename Value="formactivationemployee.pas"/>
+        <Caret Line="114" Column="20" TopLine="102"/>
+      </Position7>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
