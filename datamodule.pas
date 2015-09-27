@@ -5,7 +5,7 @@ unit DataModule;
 interface
 
 uses
-  Classes, SysUtils, db, sqlite3conn, sqldb;
+  Classes, SysUtils, db, sqlite3conn, sqldb, IBConnection;
 
 type
 
@@ -17,7 +17,6 @@ type
     DsoSearch: TDataSource;
     DsoPicsEmployees: TDataSource;
     DsoEmployees: TDataSource;
-    Connection: TSQLite3Connection;
     DsoPrint: TDataSource;
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
@@ -30,6 +29,7 @@ type
     QueTypeContracts: TSQLQuery;
     QueWorkplaces: TSQLQuery;
     QueContractsLog: TSQLQuery;
+    Connection: TSQLite3Connection;
     Transaction: TSQLTransaction;
   private
     { private declarations }

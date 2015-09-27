@@ -9,22 +9,8 @@ object DataMod: TDataMod
     left = 224
     top = 152
   end
-  object Connection: TSQLite3Connection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    Params.Strings = (
-      'foreign_keys=on'
-    )
-    Transaction = Transaction
-    LogEvents = []
-    Options = []
-    left = 56
-    top = 32
-  end
   object QueEmployees: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     SQL.Strings = (
       ''
@@ -47,7 +33,6 @@ object DataMod: TDataMod
   end
   object QuePicsEmployees: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     DataSource = DsoEmployees
@@ -61,7 +46,6 @@ object DataMod: TDataMod
   end
   object QueSearch: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 72
@@ -69,7 +53,6 @@ object DataMod: TDataMod
   end
   object QueTypeContracts: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 416
@@ -82,7 +65,6 @@ object DataMod: TDataMod
   end
   object QueWorkplaces: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 424
@@ -95,7 +77,6 @@ object DataMod: TDataMod
   end
   object QueContractsLog: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     DataSource = DsoEmployees
@@ -109,7 +90,6 @@ object DataMod: TDataMod
   end
   object QueVirtual: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 304
@@ -117,7 +97,6 @@ object DataMod: TDataMod
   end
   object QuePrint: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 424
@@ -130,7 +109,6 @@ object DataMod: TDataMod
   end
   object QueConfig: TSQLQuery
     FieldDefs = <>
-    Database = Connection
     Transaction = Transaction
     Params = <>
     left = 416
@@ -139,6 +117,16 @@ object DataMod: TDataMod
   object DsoConfig: TDataSource
     DataSet = QueConfig
     left = 592
+    top = 32
+  end
+  object Connection: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = Transaction
+    LogEvents = []
+    Options = []
+    left = 64
     top = 32
   end
 end

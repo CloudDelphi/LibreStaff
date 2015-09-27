@@ -47,21 +47,21 @@ procedure ConnectDatabase(Databasename: String);
 var
   newDatabase: Boolean;
 begin
-  DataMod.Connection.Databasename:= Databasename;
+  DataMod.Connection.DatabaseName:= Databasename;
   //check whether the database already exists
   newDatabase:= not FileExists(Databasename);
-  DataMod.Connection.CloseTransactions;
-  DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=WAL;');
 	if newDatabase then begin //Create the database and the tables
   	try
+    //DataMod.Connection.CreateDB;
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
-    //DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=WAL;');
     // Here we're setting up a table named "DATA" in the new database
     DataMod.Connection.ExecuteDirect('CREATE TABLE Config('+
           ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
           ' CompanyName CHAR(256) DEFAULT "");');
+    DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=wal;');
+    DataMod.Connection.ExecuteDirect('PRAGMA foreign_keys=on;');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config'+
           ' (DatabaseVersion, CompanyName)'+
       	  ' VALUES("'+DATABASEVERSION+'","My Company");');
