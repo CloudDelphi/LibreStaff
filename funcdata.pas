@@ -48,12 +48,15 @@ var
   newDatabase: Boolean;
 begin
   DataMod.Connection.Databasename:= Databasename;
-  // check whether the database already exists
+  //check whether the database already exists
   newDatabase:= not FileExists(Databasename);
+  DataMod.Connection.CloseTransactions;
+  DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=WAL;');
 	if newDatabase then begin //Create the database and the tables
   	try
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
+    //DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=WAL;');
     // Here we're setting up a table named "DATA" in the new database
     DataMod.Connection.ExecuteDirect('CREATE TABLE Config('+
           ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
@@ -179,6 +182,7 @@ begin
             DataMod.Transaction.CommitRetaining;
           	SQLSentence.Free;
             DataSet.Refresh;
+         	  DataMod.Transaction.CommitRetaining;
   					Result:= True;
             except
   					Result:= False;
@@ -223,6 +227,7 @@ begin
     StrLst.Free;
     end;
 	Query.Open;
+  DataMod.Transaction.CommitRetaining;
 end;
 
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
@@ -243,6 +248,7 @@ begin
   Query.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   Query.Refresh;
+  DataMod.Transaction.CommitRetaining;
   Query.Last;
   Result:= True;
 end;
@@ -323,6 +329,7 @@ begin
   Query.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   Query.Refresh;
+  DataMod.Transaction.CommitRetaining;
 end;
 
 function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;

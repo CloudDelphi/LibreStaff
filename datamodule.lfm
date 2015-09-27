@@ -35,6 +35,7 @@ object DataMod: TDataMod
   end
   object Transaction: TSQLTransaction
     Active = False
+    Action = caCommit
     Database = Connection
     left = 184
     top = 32

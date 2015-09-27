@@ -359,7 +359,7 @@ begin
     INIFile.WriteString('Database', 'Path', '"'+PathApp+'data\"');
   //Set some paths
   DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
-  Databasename:= DatabasePath + 'data.db';
+  DatabaseName:= DatabasePath + 'data.db';
   //Format the CboDat's
 	DefaultFormatSettings.ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case DefaultFormatSettings.ShortDateFormat of

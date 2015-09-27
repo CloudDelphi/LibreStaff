@@ -89,6 +89,7 @@ begin
     DataMod.QuePicsEmployees.ApplyUpdates;
 	  DataMod.Transaction.CommitRetaining;
    	DataMod.QuePicsEmployees.Refresh;
+ 	  DataMod.Transaction.CommitRetaining;
     Stream.Free;
     end
   else

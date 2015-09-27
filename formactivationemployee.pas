@@ -125,7 +125,10 @@ begin
     FrmMain.CboFilterChange(nil); //Apply the filter
   	end
   else
+    begin
     DataMod.QueEmployees.Refresh;
+    DataMod.Transaction.CommitRetaining;
+    end;
   DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   //Show the proper tab
   case Inactivate of
