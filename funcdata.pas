@@ -246,8 +246,6 @@ begin
   Query.Post;
   Query.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
-  //Query.Refresh;
-  //DataMod.Transaction.CommitRetaining;
   Query.Last;
   Result:= True;
 end;

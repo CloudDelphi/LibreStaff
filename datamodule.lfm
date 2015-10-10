@@ -132,7 +132,6 @@ object DataMod: TDataMod
   object Connection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
-    AfterConnect = ConnectionAfterConnect
     KeepConnection = False
     Params.Strings = (
       'foreign_keys=1'
