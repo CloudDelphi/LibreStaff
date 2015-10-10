@@ -8,9 +8,13 @@ uses
   Classes, SysUtils, db, sqlite3conn, sqldb, IBConnection;
 
 type
+  TSQLite3Connection = class(sqlite3conn.TSQLite3Connection)
+  protected
+    procedure DoInternalConnect; override;
+  end;
 
+type
   { TDataModule1 }
-
   TDataMod = class(TDataModule)
     DsoConfig: TDataSource;
     DsoTypeContracts: TDataSource;
@@ -31,6 +35,7 @@ type
     QueContractsLog: TSQLQuery;
     Connection: TSQLite3Connection;
     Transaction: TSQLTransaction;
+    procedure ConnectionAfterConnect(Sender: TObject);
   private
     { private declarations }
   public
@@ -44,6 +49,20 @@ implementation
 
 {$R *.lfm}
 
+{ TDataMod }
+
+procedure TDataMod.ConnectionAfterConnect(Sender: TObject);
+begin
+  Connection.ExecuteDirect('PRAGMA busy_timeout = 1000');
+end;
+
+{ TDataMod }
+
+procedure TSQLite3Connection.DoInternalConnect;
+begin
+  inherited;
+  execsql('PRAGMA journal_mode = WAL');
+end;
 
 end.
 

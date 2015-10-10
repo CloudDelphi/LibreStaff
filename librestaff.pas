@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator,
-  Controls, FormMain, FormPrgBar;
+  Controls, FormMain, FormPrgBar, uniqueinstance_package;
 
 {$R *.res}
 

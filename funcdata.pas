@@ -48,11 +48,12 @@ var
   newDatabase: Boolean;
 begin
   DataMod.Connection.DatabaseName:= Databasename;
+  //DataMod.Connection.Transaction:= DataMod.Transaction;
+  //DataMod.Transaction.DataBase:= DataMod.Connection;
   //check whether the database already exists
   newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
-    //DataMod.Connection.CreateDB;
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
     // Here we're setting up a table named "DATA" in the new database
@@ -60,8 +61,6 @@ begin
           ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
           ' CompanyName CHAR(256) DEFAULT "");');
-    DataMod.Connection.ExecuteDirect('PRAGMA journal_mode=wal;');
-    DataMod.Connection.ExecuteDirect('PRAGMA foreign_keys=on;');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config'+
           ' (DatabaseVersion, CompanyName)'+
       	  ' VALUES("'+DATABASEVERSION+'","My Company");');
@@ -247,8 +246,8 @@ begin
   Query.Post;
   Query.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
-  Query.Refresh;
-  DataMod.Transaction.CommitRetaining;
+  //Query.Refresh;
+  //DataMod.Transaction.CommitRetaining;
   Query.Last;
   Result:= True;
 end;

@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
-  gettext, LCLType, DBGrids, FormPrgBar, LR_DSet;
+  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, LR_DSet;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
@@ -113,6 +113,7 @@ type
     TabContractsLog: TTabSheet;
     TabMnuContractsLog: TTabSheet;
     TabRemarks: TTabSheet;
+    UniqueInstance: TUniqueInstance;
     procedure BtnDelContractLogClick(Sender: TObject);
     procedure BtnDeleteClick(Sender: TObject);
     procedure BtnDelTypeContractClick(Sender: TObject);
@@ -203,6 +204,7 @@ implementation
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
     FormAbout, FormActivationEmployee, FuncPrint, FormPreferences;
+
 //------------------------------------------------------------------------------
 //Private functions & procedures
 //------------------------------------------------------------------------------
