@@ -35,6 +35,7 @@ type
     QueContractsLog: TSQLQuery;
     Connection: TSQLite3Connection;
     Transaction: TSQLTransaction;
+    procedure ConnectionAfterConnect(Sender: TObject);
   private
     { private declarations }
   public
@@ -47,6 +48,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TDataMod }
+
+procedure TDataMod.ConnectionAfterConnect(Sender: TObject);
+begin
+  Connection.ExecuteDirect('PRAGMA busy_timeout = 1000');
+end;
 
 { TDataMod }
 
