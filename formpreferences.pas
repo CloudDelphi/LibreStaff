@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType;
+  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls;
 
 type
 
@@ -22,12 +22,14 @@ type
     ChkIDAllowBlank: TCheckBox;
     ChkIDUnique: TCheckBox;
     CboAutoType: TComboBox;
+    DBAccessControlEnabled: TDBCheckBox;
     EdiDtbPath: TEdit;
     EdiCompanyName: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
     GroupBox1: TGroupBox;
     GrpIDEmployee: TGroupBox;
+    GrpIDEmployee1: TGroupBox;
     ImgLstPreferences: TImageList;
     LblCompanyName: TLabel;
     LblDatabasePath: TLabel;
@@ -40,6 +42,7 @@ type
     TabLanguage: TTabSheet;
     TabGeneral: TTabSheet;
     TabPrinting: TTabSheet;
+    TabAccessControl: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnSaveCompanyNameClick(Sender: TObject);

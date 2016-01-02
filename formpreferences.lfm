@@ -9,7 +9,7 @@ object FrmPreferences: TFrmPreferences
   ClientWidth = 865
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.6.0.1'
   object LstViewPreferences: TListView
     Left = 0
     Height = 424
@@ -38,10 +38,10 @@ object FrmPreferences: TFrmPreferences
     Height = 424
     Top = 0
     Width = 689
-    ActivePage = TabGeneral
+    ActivePage = TabAccessControl
     Align = alClient
     ShowTabs = False
-    TabIndex = 0
+    TabIndex = 4
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
@@ -257,6 +257,30 @@ object FrmPreferences: TFrmPreferences
           OnClick = BtnSaveCompanyNameClick
           TabOrder = 2
         end
+      end
+    end
+    object TabAccessControl: TTabSheet
+      Caption = 'Access Control'
+      ClientHeight = 416
+      ClientWidth = 681
+      object GrpIDEmployee1: TGroupBox
+        Left = 40
+        Height = 96
+        Top = 32
+        Width = 184
+        Caption = 'Access Control'
+        TabOrder = 0
+      end
+      object DBAccessControlEnabled: TDBCheckBox
+        Left = 56
+        Height = 47
+        Top = 72
+        Width = 142
+        Caption = 'Enabled'
+        DataSource = DataMod.DsoConfig
+        TabOrder = 1
+        ValueChecked = 'True'
+        ValueUnchecked = 'False'
       end
     end
   end

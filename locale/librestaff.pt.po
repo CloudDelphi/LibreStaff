@@ -136,6 +136,10 @@ msgid "States"
 msgstr "Estados"
 
 #: formmain.lg_idisblank
+#, fuzzy
+#| msgid ""
+#| "This ID# cannot be in blank\n"
+#| "It should be UNIQUE!\n"
 msgctxt "formmain.lg_idisblank"
 msgid ""
 "This ID# cannot be in blank\n"
@@ -145,6 +149,10 @@ msgstr ""
 "Tenha que ser UNIQUE!\n"
 
 #: formmain.lg_idisnotunique
+#, fuzzy
+#| msgid ""
+#| "This ID# is in use by another Employee\n"
+#| "It should be UNIQUE!\n"
 msgctxt "formmain.lg_idisnotunique"
 msgid ""
 "This ID# is in use by another Employee\n"
@@ -592,24 +600,6 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
-#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
-msgid "Date Init"
-msgstr ""
-
-#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
-msgid "DateEnd"
-msgstr ""
-
-#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
-msgid "Type of contract"
-msgstr ""
-
-#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
-#, fuzzy
-msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
-msgid "Workplace"
-msgstr "Lugar de trabalho"
-
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr ""
@@ -864,6 +854,10 @@ msgstr "Mostra preview"
 msgid "Dates"
 msgstr "Datas"
 
+#: tfrmpreferences.dbaccesscontrolenabled.caption
+msgid "Enabled"
+msgstr ""
+
 #: tfrmpreferences.edicompanyname.text
 msgid "My Company"
 msgstr "A minha companhia"
@@ -875,6 +869,11 @@ msgstr "Informe"
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
 msgstr "ID Empregado"
+
+#: tfrmpreferences.grpidemployee1.caption
+msgctxt "tfrmpreferences.grpidemployee1.caption"
+msgid "Access Control"
+msgstr ""
 
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
@@ -892,6 +891,11 @@ msgstr "Formato de data:"
 #: tfrmpreferences.lbldateseparator.caption
 msgid "Date Separator:"
 msgstr "Separador de data:"
+
+#: tfrmpreferences.tabaccesscontrol.caption
+msgctxt "tfrmpreferences.tabaccesscontrol.caption"
+msgid "Access Control"
+msgstr ""
 
 #: tfrmpreferences.tabdatabase.caption
 msgctxt "tfrmpreferences.tabdatabase.caption"

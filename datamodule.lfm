@@ -17,6 +17,7 @@ object DataMod: TDataMod
     SQL.Strings = (
       ''
     )
+    Options = []
     Params = <>
     left = 56
     top = 152
@@ -25,6 +26,7 @@ object DataMod: TDataMod
     Active = False
     Action = caCommit
     Database = Connection
+    Options = []
     left = 192
     top = 32
   end
@@ -37,6 +39,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     DataSource = DsoEmployees
     left = 72
@@ -51,6 +54,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 72
     top = 368
@@ -59,6 +63,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 416
     top = 152
@@ -72,6 +77,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 424
     top = 264
@@ -85,6 +91,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     DataSource = DsoEmployees
     left = 424
@@ -99,6 +106,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 304
     top = 32
@@ -107,6 +115,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 424
     top = 480
@@ -120,6 +129,7 @@ object DataMod: TDataMod
     FieldDefs = <>
     Database = Connection
     Transaction = Transaction
+    Options = []
     Params = <>
     left = 416
     top = 32

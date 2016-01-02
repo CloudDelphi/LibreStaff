@@ -3,13 +3,14 @@ object FrmMain: TFrmMain
   Height = 788
   Top = 149
   Width = 1237
+  BorderStyle = bsSingle
   Caption = 'LibreStaff'
   ClientHeight = 788
   ClientWidth = 1237
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.4.4.0'
+  LCLVersion = '1.6.0.1'
   WindowState = wsMaximized
   object PanMain: TPanel
     Left = 0
@@ -227,14 +228,14 @@ object FrmMain: TFrmMain
   end
   object StBarMain: TStatusBar
     Left = 0
-    Height = 28
-    Top = 760
+    Height = 29
+    Top = 759
     Width = 1237
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 712
+    Height = 711
     Top = 48
     Width = 1237
     ActivePage = TabEmployees
@@ -244,11 +245,11 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 704
+      ClientHeight = 703
       ClientWidth = 1229
       object PagEmployees: TPageControl
         Left = 0
-        Height = 431
+        Height = 430
         Top = 128
         Width = 1068
         ActivePage = TabAddress
@@ -260,7 +261,7 @@ object FrmMain: TFrmMain
         Options = [nboMultiLine]
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 390
+          ClientHeight = 389
           ClientWidth = 1060
           ImageIndex = 2
           object GrpAddressEmployee: TGroupBox
@@ -750,7 +751,7 @@ object FrmMain: TFrmMain
       object PanBottom: TPanel
         Left = 0
         Height = 145
-        Top = 559
+        Top = 558
         Width = 1229
         Align = alBottom
         BevelOuter = bvNone
@@ -1074,18 +1075,18 @@ object FrmMain: TFrmMain
       end
       object PanRight: TPanel
         Left = 1072
-        Height = 431
+        Height = 430
         Top = 128
         Width = 157
         Align = alRight
         BevelOuter = bvNone
-        ClientHeight = 431
+        ClientHeight = 430
         ClientWidth = 157
         TabOrder = 3
         Visible = False
         object Sidebar: TPageControl
           Left = 0
-          Height = 403
+          Height = 402
           Top = 28
           Width = 157
           ActivePage = TabMnuContractsLog
@@ -1094,7 +1095,7 @@ object FrmMain: TFrmMain
           TabIndex = 0
           TabOrder = 0
           object TabMnuContractsLog: TTabSheet
-            ClientHeight = 395
+            ClientHeight = 394
             ClientWidth = 149
             object BtnDelContractLog: TBitBtn
               Left = 16
@@ -1123,7 +1124,7 @@ object FrmMain: TFrmMain
       end
       object SplMain: TSplitter
         Left = 1068
-        Height = 431
+        Height = 430
         Top = 128
         Width = 4
         Align = alRight

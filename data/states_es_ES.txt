@@ -1,6 +1,4 @@
 A Coruña
-Álava
-Ávila
 Albacete
 Alicante
 Almería
@@ -8,14 +6,14 @@ Asturias
 Badajoz
 Barcelona
 Burgos
-Cáceres
-Cádiz
-Córdoba
 Cantabria
 Castellón
 Ceuta
 Ciudad Real
 Cuenca
+Cáceres
+Cádiz
+Córdoba
 Girona
 Granada
 Guadalajara
@@ -29,10 +27,10 @@ Las Palmas
 León
 Lleida
 Lugo
-Málaga
 Madrid
 Melilla
 Murcia
+Málaga
 Navarra
 Ourense
 Palencia
@@ -50,3 +48,5 @@ Valladolid
 Vizcaya
 Zamora
 Zaragoza
+Álava
+Ávila

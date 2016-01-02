@@ -60,10 +60,13 @@ begin
     DataMod.Connection.ExecuteDirect('CREATE TABLE Config('+
           ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
-          ' CompanyName CHAR(256) DEFAULT "");');
-    DataMod.Connection.ExecuteDirect('INSERT INTO Config'+
-          ' (DatabaseVersion, CompanyName)'+
-      	  ' VALUES("'+DATABASEVERSION+'","My Company");');
+          ' CompanyName CHAR(256) DEFAULT "",'+
+          ' AccessControl BOOLEAN DEFAULT FALSE)'+
+          ';');
+    DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
+          ' DatabaseVersion, CompanyName, AccessControl)'+
+      	  ' VALUES('''+DATABASEVERSION+''', ''My Company'''+', ''FALSE'''+
+          ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
@@ -71,11 +74,11 @@ begin
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
 		DataMod.Connection.ExecuteDirect('CREATE TABLE TypeContracts('+
           ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_TypeContract CHAR(256) NOT NULL DEFAULT "");');
+          ' Name_TypeContract CHAR(256) DEFAULT "");');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
    	DataMod.Connection.ExecuteDirect('CREATE TABLE Workplaces('+
           ' ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_Workplace CHAR(256) NOT NULL DEFAULT "");');
+          ' Name_Workplace CHAR(256) DEFAULT "");');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
    	DataMod.Connection.ExecuteDirect('CREATE TABLE ContractsLog('+
           ' ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
@@ -90,22 +93,22 @@ begin
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Active_Employee BOOLEAN NOT NULL DEFAULT TRUE,'+
           ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Name_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Surname1_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Surname2_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' IDCard_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' SSN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-    	    ' Address_Employee MEMO(4096) NOT NULL DEFAULT "",'+
-       	  ' City_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       	  ' State_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       	  ' ZIPCode_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       	  ' Phone_Employee CHAR(256) NOT NULL DEFAULT "",'+
-       	  ' Cell_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' EMail_Employee CHAR(256) NOT NULL DEFAULT "",'+
+          ' Name_Employee CHAR(256) DEFAULT "",'+
+          ' Surname1_Employee CHAR(256) DEFAULT "",'+
+          ' Surname2_Employee CHAR(256) DEFAULT "",'+
+          ' IDCard_Employee CHAR(256) DEFAULT "",'+
+          ' SSN_Employee CHAR(256) DEFAULT "",'+
+    	    ' Address_Employee MEMO(8192) DEFAULT "",'+
+       	  ' City_Employee CHAR(256) DEFAULT "",'+
+       	  ' State_Employee CHAR(256) DEFAULT "",'+
+       	  ' ZIPCode_Employee CHAR(256) DEFAULT "",'+
+       	  ' Phone_Employee CHAR(256) DEFAULT "",'+
+       	  ' Cell_Employee CHAR(256) DEFAULT "",'+
+          ' EMail_Employee CHAR(256) DEFAULT "",'+
           ' DateBirth_Employee DATE DEFAULT NULL,'+
           ' Genre_Employee BOOLEAN DEFAULT NULL,'+
           ' MaritalStatus_Employee BOOLEAN DEFAULT NULL,'+
-          ' Remarks_Employee MEMO(4096) NOT NULL DEFAULT "",'+
+          ' Remarks_Employee MEMO(8152) DEFAULT "",'+
           ' DateInit_Contract DATE DEFAULT NULL,'+
           ' DateEnd_Contract DATE DEFAULT NULL,'+
           ' TypeContract_ID INTEGER DEFAULT NULL,'+
