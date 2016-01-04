@@ -7,6 +7,7 @@ object FrmPreferences: TFrmPreferences
   Caption = 'Preferences'
   ClientHeight = 490
   ClientWidth = 865
+  OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.6.0.1'
@@ -38,10 +39,10 @@ object FrmPreferences: TFrmPreferences
     Height = 424
     Top = 0
     Width = 689
-    ActivePage = TabAccessControl
+    ActivePage = TabDatabase
     Align = alClient
     ShowTabs = False
-    TabIndex = 4
+    TabIndex = 2
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
@@ -109,7 +110,7 @@ object FrmPreferences: TFrmPreferences
     object TabLanguage: TTabSheet
       Caption = 'Language'
       ClientHeight = 416
-      ClientWidth = 662
+      ClientWidth = 681
       OnShow = TabLanguageShow
       object Dates: TGroupBox
         Left = 40
@@ -177,7 +178,7 @@ object FrmPreferences: TFrmPreferences
     object TabDatabase: TTabSheet
       Caption = 'Database'
       ClientHeight = 416
-      ClientWidth = 662
+      ClientWidth = 681
       OnShow = TabDatabaseShow
       object EdiDtbPath: TEdit
         Left = 200
@@ -205,6 +206,41 @@ object FrmPreferences: TFrmPreferences
         Caption = 'Change...'
         OnClick = BtnChangeDtbPathClick
         TabOrder = 1
+      end
+      object GrpSQLite: TGroupBox
+        Left = 20
+        Height = 127
+        Top = 152
+        Width = 483
+        Caption = 'SQLite Options'
+        ClientHeight = 94
+        ClientWidth = 479
+        TabOrder = 2
+        object LblDatabasePath1: TLabel
+          Left = 20
+          Height = 28
+          Top = 22
+          Width = 164
+          AutoSize = False
+          Caption = 'Atomic Commit:'
+          ParentColor = False
+        end
+      end
+      object DbLkCboAtomicCommit: TDBLookupComboBox
+        Left = 208
+        Height = 36
+        Top = 200
+        Width = 272
+        DataField = 'AtomicCommit'
+        DataSource = DataMod.DsoConfig
+        KeyField = 'ID_AtomicCommit'
+        ListField = 'AtomicCommit'
+        ListFieldIndex = 0
+        LookupCache = False
+        NullValueKey = 48
+        OnCloseUp = DbLkCboAtomicCommitCloseUp
+        Style = csDropDownList
+        TabOrder = 3
       end
     end
     object TabPrinting: TTabSheet

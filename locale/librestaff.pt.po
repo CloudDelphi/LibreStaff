@@ -875,6 +875,10 @@ msgctxt "tfrmpreferences.grpidemployee1.caption"
 msgid "Access Control"
 msgstr ""
 
+#: tfrmpreferences.grpsqlite.caption
+msgid "SQLite Options"
+msgstr ""
+
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
 msgstr "Nome companhia:"
@@ -882,6 +886,10 @@ msgstr "Nome companhia:"
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
 msgstr "Caminho Base de dados:"
+
+#: tfrmpreferences.lbldatabasepath1.caption
+msgid "Atomic Commit:"
+msgstr ""
 
 #: tfrmpreferences.lbldateformat.caption
 msgctxt "TFRMPREFERENCES.LBLDATEFORMAT.CAPTION"

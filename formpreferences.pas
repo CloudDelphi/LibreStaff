@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls;
+  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db;
 
 type
 
@@ -23,16 +23,19 @@ type
     ChkIDUnique: TCheckBox;
     CboAutoType: TComboBox;
     DBAccessControlEnabled: TDBCheckBox;
+    DbLkCboAtomicCommit: TDBLookupComboBox;
     EdiDtbPath: TEdit;
     EdiCompanyName: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
     GroupBox1: TGroupBox;
+    GrpSQLite: TGroupBox;
     GrpIDEmployee: TGroupBox;
     GrpIDEmployee1: TGroupBox;
     ImgLstPreferences: TImageList;
     LblCompanyName: TLabel;
     LblDatabasePath: TLabel;
+    LblDatabasePath1: TLabel;
     LblDateFormat: TLabel;
     LblDateSeparator: TLabel;
     LstViewPreferences: TListView;
@@ -53,6 +56,9 @@ type
     procedure ChkIDAutoChange(Sender: TObject);
     procedure ChkIDUniqueChange(Sender: TObject);
     procedure ChkReportPreviewChange(Sender: TObject);
+    procedure DbLkCboAtomicCommitChange(Sender: TObject);
+    procedure DbLkCboAtomicCommitCloseUp(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
@@ -68,6 +74,8 @@ type
 
 var
   FrmPreferences: TFrmPreferences;
+  LstAtomicCommit: TBufDataset;
+  DsoLstAtomicCommit: TDatasource;
 
 resourcestring
   lg_LstView_Caption_Item_0= 'Employees';
@@ -146,6 +154,26 @@ begin
   INIFile.WriteString('Printing', 'ReportPreview', BoolToStr(ReportPreview));
 end;
 
+procedure TFrmPreferences.DbLkCboAtomicCommitChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFrmPreferences.DbLkCboAtomicCommitCloseUp(Sender: TObject);
+begin
+    FuncData.SaveTable(DataMod.QueConfig);
+end;
+
+procedure TFrmPreferences.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+ if Assigned(LstAtomicCommit) then
+   begin
+   LstAtomicCommit.Free;
+   DsoLstAtomicCommit.Free;
+   end;
+end;
+
 procedure TFrmPreferences.FormCreate(Sender: TObject);
 var
   i: Integer;
@@ -166,7 +194,6 @@ begin
   //Goto the first Tab
   PagPreferences.TabIndex:= 0;
 end;
-
 procedure TFrmPreferences.BtnChangeDtbPathClick(Sender: TObject);
 var
   ChangePath: Boolean;
@@ -189,6 +216,21 @@ end;
 procedure TFrmPreferences.TabDatabaseShow(Sender: TObject);
 begin
 	EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data\');
+  LstAtomicCommit:= TBufDataset.Create(self);
+  LstAtomicCommit.FieldDefs.Add('ID_AtomicCommit', ftInteger);
+  LstAtomicCommit.FieldDefs.Add('AtomicCommit', ftString, 20);
+  LstAtomicCommit.CreateDataset;
+  LstAtomicCommit.Open;
+  LstAtomicCommit.Insert;
+  LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 0;
+  LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Rollback journal';
+  LstAtomicCommit.Insert;
+  LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 1;
+  LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Write-Ahead Logging (WAL)';
+  LstAtomicCommit.Post;
+  DsoLstAtomicCommit:= TDatasource.Create(self);
+  DsoLstAtomicCommit.DataSet:= LstAtomicCommit;
+  DbLkCboAtomicCommit.ListSource:= DsoLstAtomicCommit;
 end;
 
 procedure TFrmPreferences.TabGeneralShow(Sender: TObject);

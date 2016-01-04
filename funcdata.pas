@@ -61,6 +61,7 @@ begin
           ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
           ' CompanyName CHAR(256) DEFAULT "",'+
+          ' AtomicCommit INTEGER NOT NULL DEFAULT "1",'+
           ' AccessControl BOOLEAN DEFAULT FALSE)'+
           ';');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+

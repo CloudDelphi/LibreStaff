@@ -50,6 +50,7 @@ implementation
 {$R *.lfm}
 
 { TDataMod }
+uses FormMain;
 
 procedure TDataMod.ConnectionAfterConnect(Sender: TObject);
 begin
@@ -61,7 +62,10 @@ end;
 procedure TSQLite3Connection.DoInternalConnect;
 begin
   inherited;
-  execsql('PRAGMA journal_mode = WAL');
+  if SQLite_AtomicCommmit=1 then
+    begin
+    execsql('PRAGMA journal_mode = WAL');
+    end;
 end;
 
 end.

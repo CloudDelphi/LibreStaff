@@ -228,14 +228,14 @@ object FrmMain: TFrmMain
   end
   object StBarMain: TStatusBar
     Left = 0
-    Height = 29
-    Top = 759
+    Height = 28
+    Top = 760
     Width = 1237
     Panels = <>
   end
   object PagMain: TPageControl
     Left = 0
-    Height = 711
+    Height = 712
     Top = 48
     Width = 1237
     ActivePage = TabEmployees
@@ -245,11 +245,11 @@ object FrmMain: TFrmMain
     TabOrder = 2
     object TabEmployees: TTabSheet
       Caption = 'TabEmployees'
-      ClientHeight = 703
+      ClientHeight = 704
       ClientWidth = 1229
       object PagEmployees: TPageControl
         Left = 0
-        Height = 430
+        Height = 431
         Top = 128
         Width = 1068
         ActivePage = TabAddress
@@ -261,7 +261,7 @@ object FrmMain: TFrmMain
         Options = [nboMultiLine]
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 389
+          ClientHeight = 390
           ClientWidth = 1060
           ImageIndex = 2
           object GrpAddressEmployee: TGroupBox
@@ -751,7 +751,7 @@ object FrmMain: TFrmMain
       object PanBottom: TPanel
         Left = 0
         Height = 145
-        Top = 558
+        Top = 559
         Width = 1229
         Align = alBottom
         BevelOuter = bvNone
@@ -1075,18 +1075,18 @@ object FrmMain: TFrmMain
       end
       object PanRight: TPanel
         Left = 1072
-        Height = 430
+        Height = 431
         Top = 128
         Width = 157
         Align = alRight
         BevelOuter = bvNone
-        ClientHeight = 430
+        ClientHeight = 431
         ClientWidth = 157
         TabOrder = 3
         Visible = False
         object Sidebar: TPageControl
           Left = 0
-          Height = 402
+          Height = 403
           Top = 28
           Width = 157
           ActivePage = TabMnuContractsLog
@@ -1095,7 +1095,7 @@ object FrmMain: TFrmMain
           TabIndex = 0
           TabOrder = 0
           object TabMnuContractsLog: TTabSheet
-            ClientHeight = 394
+            ClientHeight = 395
             ClientWidth = 149
             object BtnDelContractLog: TBitBtn
               Left = 16
@@ -1124,7 +1124,7 @@ object FrmMain: TFrmMain
       end
       object SplMain: TSplitter
         Left = 1068
-        Height = 430
+        Height = 431
         Top = 128
         Width = 4
         Align = alRight
