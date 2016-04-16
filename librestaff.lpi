@@ -28,6 +28,9 @@
     <BuildModes Count="3">
       <Item1 Name="Default" Default="True"/>
       <Item2 Name="Debug">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
@@ -50,12 +53,13 @@
               <OverflowChecks Value="True"/>
               <StackChecks Value="True"/>
             </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
             <TargetOS Value="win32"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
               <DebugInfoType Value="dsDwarf2Set"/>
-              <UseHeaptrc Value="True"/>
+              <UseValgrind Value="True"/>
               <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <Options>
@@ -67,6 +71,9 @@
         </CompilerOptions>
       </Item2>
       <Item3 Name="Release">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
@@ -99,7 +106,7 @@
       </Item3>
       <SharedMatrixOptions Count="2">
         <Item1 ID="124277365918" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt"/>
-        <Item2 ID="398221296785" Modes="Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item2 ID="398221296785" Modes="Release,Debug,Default" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>

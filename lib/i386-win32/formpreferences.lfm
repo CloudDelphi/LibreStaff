@@ -7,10 +7,9 @@ object FrmPreferences: TFrmPreferences
   Caption = 'Preferences'
   ClientHeight = 490
   ClientWidth = 865
-  OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.1'
+  LCLVersion = '1.6.0.4'
   object LstViewPreferences: TListView
     Left = 0
     Height = 424
@@ -222,7 +221,7 @@ object FrmPreferences: TFrmPreferences
           Top = 22
           Width = 164
           AutoSize = False
-          Caption = 'Atomic Commit:'
+          Caption = 'Journal Mode:'
           ParentColor = False
         end
       end

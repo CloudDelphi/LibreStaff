@@ -1,0 +1,18 @@
+{"version":1,"strings":[
+{"hash":179358933,"name":"formmain.lg_captionbtn_activate","sourcebytes":[65,99,116,105,118,97,116,101],"value":"Activate"},
+{"hash":179686613,"name":"formmain.lg_captionbtn_inactivate","sourcebytes":[73,110,97,99,116,105,118,97,116,101],"value":"Inactivate"},
+{"hash":111269585,"name":"formmain.lg_idisblank","sourcebytes":[84,104,105,115,32,73,68,35,32,99,97,110,110,111,116,32,98,101,32,105,110,32,98,108,97,110,107,13,73,116,32,115,104,111,117,108,100,32,98,101,32,85,78,73,81,85,69,33],"value":"This ID# cannot be in blank\rIt should be UNIQUE!"},
+{"hash":8023393,"name":"formmain.lg_idisnotunique","sourcebytes":[84,104,105,115,32,73,68,35,32,105,115,32,105,110,32,117,115,101,32,98,121,32,97,110,111,116,104,101,114,32,69,109,112,108,111,121,101,101,13,73,116,32,115,104,111,117,108,100,32,98,101,32,85,78,73,81,85,69,33],"value":"This ID# is in use by another Employee\rIt should be UNIQUE!"},
+{"hash":251484325,"name":"formmain.lg_btndeltypecontract_hint","sourcebytes":[68,101,108,101,116,101,32,116,104,101,32,116,121,112,101,32,111,102,32,99,111,110,116,114,97,99,116,32,111,102,32,116,104,105,115,32,101,109,112,108,111,121,101,101],"value":"Delete the type of contract of this employee"},
+{"hash":204246757,"name":"formmain.lg_btndelworkplace_hint","sourcebytes":[68,101,108,101,116,101,32,116,104,101,32,119,111,114,107,112,108,97,99,101,32,111,102,32,116,104,105,115,32,101,109,112,108,111,121,101,101],"value":"Delete the workplace of this employee"},
+{"hash":219751095,"name":"formmain.lg_delcontractlogtarget","sourcebytes":[116,104,101,32,115,101,108,101,99,116,101,100,32,99,111,110,116,114,97,99,116,32,105,110,32,116,104,101,32,108,111,103],"value":"the selected contract in the log"},
+{"hash":1878,"name":"formmain.lg_lblnavrecof","sourcebytes":[111,102],"value":"of"},
+{"hash":95062723,"name":"formmain.lg_frmstatestitle","sourcebytes":[83,116,97,116,101,115],"value":"States"},
+{"hash":128650371,"name":"formmain.lg_filter_active","sourcebytes":[65,99,116,105,118,101,115],"value":"Actives"},
+{"hash":128670851,"name":"formmain.lg_filter_inactive","sourcebytes":[73,110,97,99,116,105,118,101,115],"value":"Inactives"},
+{"hash":18476,"name":"formmain.lg_filter_all","sourcebytes":[65,108,108],"value":"All"},
+{"hash":342053,"name":"formmain.lg_male","sourcebytes":[77,97,108,101],"value":"Male"},
+{"hash":80492581,"name":"formmain.lg_female","sourcebytes":[70,101,109,97,108,101],"value":"Female"},
+{"hash":94391845,"name":"formmain.lg_single","sourcebytes":[83,105,110,103,108,101],"value":"Single"},
+{"hash":59346916,"name":"formmain.lg_married","sourcebytes":[77,97,114,114,105,101,100],"value":"Married"}
+]}

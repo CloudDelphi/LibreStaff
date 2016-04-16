@@ -62,7 +62,7 @@ end;
 procedure TSQLite3Connection.DoInternalConnect;
 begin
   inherited;
-  if SQLite_AtomicCommmit=1 then
+  if AtomicCommmit=1 then
     begin
     execsql('PRAGMA journal_mode = WAL');
     end;

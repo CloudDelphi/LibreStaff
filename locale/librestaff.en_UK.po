@@ -877,7 +877,7 @@ msgid "Database Path:"
 msgstr ""
 
 #: tfrmpreferences.lbldatabasepath1.caption
-msgid "Atomic Commit:"
+msgid "Journal Mode:"
 msgstr ""
 
 #: tfrmpreferences.lbldateformat.caption

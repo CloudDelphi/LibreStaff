@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 508
+  Left = 651
   Height = 788
-  Top = 149
+  Top = 118
   Width = 1237
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -10,7 +10,7 @@ object FrmMain: TFrmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.6.0.1'
+  LCLVersion = '1.6.0.4'
   WindowState = wsMaximized
   object PanMain: TPanel
     Left = 0
@@ -911,9 +911,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'Name:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object PanPicEmployee: TPanel
           Left = 24
@@ -960,9 +958,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'Surname 1:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object DBENameEmployee2: TDBEdit
           Left = 869
@@ -983,9 +979,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'Surname 2:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object DBENameEmployee3: TDBEdit
           Left = 520
@@ -1006,9 +1000,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'ID Card:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object DBESSN: TDBEdit
           Left = 869
@@ -1029,9 +1021,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'SSN Number:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object DBEIDEmployee: TDBEdit
           Left = 216
@@ -1053,9 +1043,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'ID:'
-          Font.Height = 29
           ParentColor = False
-          ParentFont = False
         end
         object LblInactive: TLabel
           Left = 24

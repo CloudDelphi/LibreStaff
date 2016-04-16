@@ -59,6 +59,11 @@ type
     class function GetStyleRange(const AWinControl: TWinControl; TextStart: Integer; var RangeStart, RangeLen: Integer): Boolean; virtual;
     class function GetTextAttributes(const AWinControl: TWinControl; TextStart: Integer;
       var Params: TIntFontParams): Boolean; virtual;
+
+    class function isInternalChange(const AWinControl: TWinControl; Params: TTextModifyMask): Boolean; virtual;
+    class procedure SetTextAttributesInternal(const AWinControl: TWinControl; TextStart, TextLen: Integer;
+      const AModifyMask: TTextModifyMask; const Params: TIntFontParams); virtual;
+
     class procedure SetTextAttributes(const AWinControl: TWinControl; TextStart, TextLen: Integer; 
       const Params: TIntFontParams); virtual;
     class function GetParaAlignment(const AWinControl: TWinControl; TextStart: Integer;
@@ -155,9 +160,22 @@ begin
   Result := false;
 end;
 
+class function TWSCustomRichMemo.isInternalChange(
+  const AWinControl: TWinControl; Params: TTextModifyMask): Boolean;
+begin
+  Result:=false;
+end;
+
+class procedure TWSCustomRichMemo.SetTextAttributesInternal(
+  const AWinControl: TWinControl; TextStart, TextLen: Integer;
+  const AModifyMask: TTextModifyMask; const Params: TIntFontParams);
+begin
+
+end;
+
 class procedure TWSCustomRichMemo.SetTextAttributes(const AWinControl: TWinControl; 
   TextStart, TextLen: Integer;  
-  {Mask: TTextStyleMask;} const Params: TIntFontParams);
+  const Params: TIntFontParams);
 begin
 end;
 
@@ -276,7 +294,67 @@ end;
 
 class function TWSCustomRichMemo.Search(const AWinControl: TWinControl; const ANiddle: string;
   const SearchOpts: TIntSearchOpt): Integer;
+var
+  Hay    : UnicodeString;
+  Niddle : UnicodeString;
+  Hay8   : String;
+  isUnicode : Boolean;
+  i, se, ln : Integer;
+
 begin
+  if not Assigned(AWinControl) or not (AWinControl is TCustomRichMemo) then begin
+    Result:=-1;
+    Exit;
+  end;
+  if not GetTextLen(AWinControl, ln) then begin
+    Result:=-1;
+    Exit;
+  end;
+
+  isUnicode:=false;
+  if not GetSubText(AWinControl, 0, ln, true, isUnicode, Hay8, Hay) then begin
+    Result:=-1;
+    Exit;
+  end;
+  if not isUnicode then begin
+    Hay:=UTF8Decode(Hay8);
+    Hay8:='';
+  end;
+
+  if not (soMatchCase in SearchOpts.Options) then begin
+    Niddle:=WideLowerCase(UTF8Decode(ANiddle));
+    Hay:=WideLowercase(Hay);
+  end else
+    Niddle:=UTF8Decode(ANiddle);
+
+  i:=SearchOpts.start;
+  if i<=0 then i:=1 else inc(i);
+
+  if soBackward in SearchOpts.Options then begin
+    dec(i); // to allow repeatative search
+
+    se:=0;
+    if (SearchOpts.len>0) then se:=i-SearchOpts.len;
+    if se<=0 then se:=1;
+
+    for i:=i downto se do
+      //todo: unicode comparison is "a bit more" complex, than just memory comparison
+      if CompareMem(@Niddle[1], @Hay[i], length(Niddle)*2) then begin
+        Result:=i-1; // offset one character! since it should be cursor position
+        Exit;
+      end;
+  end else begin
+    se:=length(Hay)-length(Niddle);
+    if (SearchOpts.len>0) and (se-i>SearchOpts.len) then
+      se:=i+SearchOpts.len;
+
+    for i:=i to se do
+      //todo: unicode comparison is "a bit more" complex, than just memory comparison
+      if CompareMem(@Niddle[1], @Hay[i], length(Niddle)*2) then begin
+        Result:=i-1; // offset one character! since it should be cursor position
+        Exit;
+    end;
+  end;
   Result:=-1;
 end;
 

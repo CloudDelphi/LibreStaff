@@ -20,6 +20,7 @@
 unit RichMemo; 
 
 {$mode objfpc}{$H+}
+{$OBJECTCHECKS OFF}
 
 interface
 
@@ -845,11 +846,29 @@ var
   j : Integer;
   l : Integer;
   p : TFontParams;
+  allowInternalChange: Boolean;
+  fp : TFontParams;
+const
+  AllFontStyles : TFontStyles = [fsBold, fsItalic, fsUnderline, fsStrikeOut];
 begin
   if not HandleAllocated then HandleNeeded;
 
   if (ModifyMask = []) or (TextLength = 0) then Exit;
 
+  allowInternalChange:=(not (tmm_Styles in ModifyMask)) or (AddFontStyle+RemoveFontStyle=AllFontStyles);
+
+  if allowInternalChange and (TWSCustomRichMemoClass(WidgetSetClass).isInternalChange(Self, ModifyMask)) then
+  begin
+    // more effecient from OS view
+    fp:=fnt;
+    if tmm_Styles in ModifyMask then  fp.Style:=AddFontStyle;
+    TWSCustomRichMemoClass(WidgetSetClass).SetTextAttributesInternal(Self,
+      TextStart, TextLength, ModifyMask, fp);
+    Exit;
+  end;
+
+  // manually looping from text ranges and re-applying
+  // all the style. changing only the ones that in the mask
   i := TextStart;
   j := TextStart + TextLength;
   while i < j do begin

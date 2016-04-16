@@ -166,7 +166,7 @@ var
   FilterIndex: Integer;
   ReportPreview: Boolean;
   CompanyName: String;
-  SQLite_AtomicCommmit: Integer;
+  AtomicCommmit: Integer;
 const
   DATABASEVERSION='0.0.0';
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
@@ -364,7 +364,7 @@ begin
   DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
   DatabaseName:= DatabasePath + 'data.db';
   //The mode of database Atomic Commit
-  SQLite_AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
+  AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
   //Format the CboDat's
 	DefaultFormatSettings.ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case DefaultFormatSettings.ShortDateFormat of
@@ -433,7 +433,7 @@ type TLoadQueries = record
 end;
 var
   LoadQueries: array of TLoadQueries;
-  i: Integer;
+  i: Integer; JournalMode: Integer;
   Bookmark: String;
   BookmarkInt: Integer;
   SQL: String;
@@ -471,8 +471,12 @@ begin
     end;
   //Load the Configuration from the database
   CompanyName:= DataMod.QueConfig.FieldByName('CompanyName').AsString;
-  //Save the type of commit
-  INIFile.WriteInteger('Database', 'AtomicCommit', DataMod.QueConfig.FieldByName('AtomicCommit').AsInteger);
+  //Save the type of commit in the INI if differs from the database one
+  JournalMode:= DataMod.QueConfig.FieldByName('AtomicCommit').AsInteger;
+  if (AtomicCommmit<>JournalMode) then
+    begin
+    INIFile.WriteInteger('Database', 'AtomicCommit', JournalMode);
+    end;
   //Mark the table for edition:
   DataMod.QueEmployees.Edit;
   //Grab the total amount of records:
