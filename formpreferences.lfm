@@ -304,7 +304,7 @@ object FrmPreferences: TFrmPreferences
         Left = 40
         Height = 96
         Top = 32
-        Width = 184
+        Width = 240
         Caption = 'Access Control'
         TabOrder = 0
       end
@@ -312,7 +312,7 @@ object FrmPreferences: TFrmPreferences
         Left = 56
         Height = 47
         Top = 72
-        Width = 142
+        Width = 208
         Caption = 'Enabled'
         DataField = 'AccessControl'
         DataSource = DataMod.DsoConfig

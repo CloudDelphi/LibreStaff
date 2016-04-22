@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: formactivationemployee.lg_captiongrpcontract_activate
 msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
@@ -136,10 +136,6 @@ msgid "States"
 msgstr "Estados"
 
 #: formmain.lg_idisblank
-#, fuzzy
-#| msgid ""
-#| "This ID# cannot be in blank\n"
-#| "It should be UNIQUE!\n"
 msgctxt "formmain.lg_idisblank"
 msgid ""
 "This ID# cannot be in blank\n"
@@ -149,10 +145,6 @@ msgstr ""
 "Tenha que ser UNIQUE!\n"
 
 #: formmain.lg_idisnotunique
-#, fuzzy
-#| msgid ""
-#| "This ID# is in use by another Employee\n"
-#| "It should be UNIQUE!\n"
 msgctxt "formmain.lg_idisnotunique"
 msgid ""
 "This ID# is in use by another Employee\n"
@@ -168,15 +160,15 @@ msgstr "de"
 
 #: formmain.lg_male
 msgid "Male"
-msgstr ""
+msgstr "Homem"
 
 #: formmain.lg_married
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #: formmain.lg_single
 msgid "Single"
-msgstr ""
+msgstr "Solteiro"
 
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
@@ -302,7 +294,7 @@ msgstr "Não pode reverter!"
 
 #: funcdata.delrec_msg_03
 msgid "There is not anything to eliminate."
-msgstr ""
+msgstr "Não há nada para eliminar."
 
 #: funcdata.delrec_title
 msgid "Deletion"
@@ -310,15 +302,15 @@ msgstr "Eliminação"
 
 #: funcprint.lg_genre
 msgid "Genre:"
-msgstr ""
+msgstr "Gênero"
 
 #: funcprint.lg_maritalstatus
 msgid "Marital Status:"
-msgstr ""
+msgstr "Estado civil:"
 
 #: funcprint.lg_mmobirthdate
 msgid "Birth Date:"
-msgstr ""
+msgstr "Data de nascimento:"
 
 #: funcprint.lg_mmocellemployee
 msgctxt "funcprint.lg_mmocellemployee"
@@ -394,7 +386,7 @@ msgstr "Dados do empregado:"
 
 #: funcprint.lg_mmotitlepersonaldata
 msgid "Personal Data:"
-msgstr ""
+msgstr "Dados pessoais:"
 
 #: funcprint.lg_mmotypecontract
 msgid "Type of Contract:"
@@ -510,12 +502,12 @@ msgstr "LibreStaff"
 #: tfrmaccess.btnaccess.caption
 msgctxt "tfrmaccess.btnaccess.caption"
 msgid "Enter"
-msgstr ""
+msgstr "Entrar"
 
 #: tfrmaccess.btnexit.caption
 msgctxt "tfrmaccess.btnexit.caption"
 msgid "Exit"
-msgstr ""
+msgstr "Sair"
 
 #: tfrmaccess.caption
 msgid "FrmAccess"
@@ -532,7 +524,6 @@ msgid "EdiUsername"
 msgstr ""
 
 #: tfrmaccess.lbllibrestaff.caption
-#, fuzzy
 msgctxt "tfrmaccess.lbllibrestaff.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
@@ -540,12 +531,12 @@ msgstr "LibreStaff"
 #: tfrmaccess.lblpassword.caption
 msgctxt "tfrmaccess.lblpassword.caption"
 msgid "Password:"
-msgstr ""
+msgstr "Contra-senha:"
 
 #: tfrmaccess.lbluser.caption
 msgctxt "tfrmaccess.lbluser.caption"
 msgid "Username:"
-msgstr ""
+msgstr "Nome:"
 
 #: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
 msgid "Accept"
@@ -595,21 +586,19 @@ msgstr "FrmListEditor"
 #: tfrmlogin.btnenter.caption
 msgctxt "tfrmlogin.btnenter.caption"
 msgid "Enter"
-msgstr ""
+msgstr "Entrar"
 
 #: tfrmlogin.btnexit.caption
 msgctxt "tfrmlogin.btnexit.caption"
 msgid "Exit"
-msgstr ""
+msgstr "Sair"
 
 #: tfrmlogin.caption
-#, fuzzy
 msgctxt "tfrmlogin.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
 #: tfrmlogin.lbllibrestaff.caption
-#, fuzzy
 msgctxt "tfrmlogin.lbllibrestaff.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
@@ -617,12 +606,12 @@ msgstr "LibreStaff"
 #: tfrmlogin.lblpassword.caption
 msgctxt "tfrmlogin.lblpassword.caption"
 msgid "Password:"
-msgstr ""
+msgstr "Contra-senha:"
 
 #: tfrmlogin.lbluser.caption
 msgctxt "tfrmlogin.lbluser.caption"
 msgid "Username:"
-msgstr ""
+msgstr "Nome:"
 
 #: tfrmmain.btnactivate.caption
 msgctxt "tfrmmain.btnactivate.caption"
@@ -679,12 +668,12 @@ msgstr "LibreStaff"
 
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
-msgstr ""
+msgstr "Gênero"
 
 #: tfrmmain.dbradmaritalstatus.caption
 msgctxt "tfrmmain.dbradmaritalstatus.caption"
 msgid "Marital Status"
-msgstr ""
+msgstr "Estado civil"
 
 #: tfrmmain.groupbox1.caption
 msgid "Employment Contract"
@@ -759,7 +748,7 @@ msgstr "Cidade:"
 
 #: tfrmmain.lbldatebirth.caption
 msgid "Date of Birth:"
-msgstr ""
+msgstr "Data de nascimento:"
 
 #: tfrmmain.lblemail.caption
 msgctxt "TFRMMAIN.LBLEMAIL.CAPTION"
@@ -849,7 +838,7 @@ msgstr "Dados pessoais"
 #: tfrmmain.tabremarks.caption
 msgctxt "tfrmmain.tabremarks.caption"
 msgid "Remarks"
-msgstr ""
+msgstr "Observações"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
@@ -933,7 +922,7 @@ msgstr "Datas"
 
 #: tfrmpreferences.dbaccesscontrolenabled.caption
 msgid "Enabled"
-msgstr ""
+msgstr "Ativado"
 
 #: tfrmpreferences.edicompanyname.text
 msgid "My Company"
@@ -950,11 +939,11 @@ msgstr "ID Empregado"
 #: tfrmpreferences.grpidemployee1.caption
 msgctxt "tfrmpreferences.grpidemployee1.caption"
 msgid "Access Control"
-msgstr ""
+msgstr "Controle de acesso"
 
 #: tfrmpreferences.grpsqlite.caption
 msgid "SQLite Options"
-msgstr ""
+msgstr "Opções SQLite"
 
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
@@ -966,7 +955,7 @@ msgstr "Caminho Base de dados:"
 
 #: tfrmpreferences.lbldatabasepath1.caption
 msgid "Journal Mode:"
-msgstr ""
+msgstr "Modo Journal:"
 
 #: tfrmpreferences.lbldateformat.caption
 msgctxt "TFRMPREFERENCES.LBLDATEFORMAT.CAPTION"
@@ -980,7 +969,7 @@ msgstr "Separador de data:"
 #: tfrmpreferences.tabaccesscontrol.caption
 msgctxt "tfrmpreferences.tabaccesscontrol.caption"
 msgid "Access Control"
-msgstr ""
+msgstr "Controle de acesso"
 
 #: tfrmpreferences.tabdatabase.caption
 msgctxt "tfrmpreferences.tabdatabase.caption"
@@ -1085,4 +1074,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
-
