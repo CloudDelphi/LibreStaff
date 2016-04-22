@@ -127,8 +127,8 @@
         <UnitName Value="FormPreferences"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="143"/>
-        <CursorPos X="29" Y="166"/>
+        <TopLine Value="199"/>
+        <CursorPos Y="201"/>
         <UsageCount Value="151"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -540,7 +540,7 @@
         <UsageCount Value="13"/>
       </Unit58>
     </Units>
-    <JumpHistory Count="9" HistoryIndex="8">
+    <JumpHistory Count="8" HistoryIndex="7">
       <Position1>
         <Filename Value="librestaff.pas"/>
         <Caret Line="17" Column="21"/>
@@ -573,10 +573,6 @@
         <Filename Value="formpreferences.pas"/>
         <Caret Line="212" TopLine="204"/>
       </Position8>
-      <Position9>
-        <Filename Value="formpreferences.pas"/>
-        <Caret Line="218" Column="26" TopLine="194"/>
-      </Position9>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
