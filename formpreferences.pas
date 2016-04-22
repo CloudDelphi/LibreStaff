@@ -57,10 +57,6 @@ type
     procedure ChkIDUniqueChange(Sender: TObject);
     procedure ChkReportPreviewChange(Sender: TObject);
     procedure DbLkCboAtomicCommitCloseUp(Sender: TObject);
-<<<<<<< HEAD
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
-=======
->>>>>>> bc4af43ffafa41ab28158baebffc6541104a2b5c
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
@@ -161,17 +157,6 @@ begin
     FuncData.SaveTable(DataMod.QueConfig);
 end;
 
-<<<<<<< HEAD
-procedure TFrmPreferences.FormClose(Sender: TObject;
-  var CloseAction: TCloseAction);
-begin
-	FreeAndNil(DsoLstAtomicCommit);
-  FreeAndNil(LstAtomicCommit);
-  FrmPreferences.Release;
-end;
-
-=======
->>>>>>> bc4af43ffafa41ab28158baebffc6541104a2b5c
 procedure TFrmPreferences.FormCreate(Sender: TObject);
 var
   i: Integer;

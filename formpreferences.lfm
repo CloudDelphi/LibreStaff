@@ -7,10 +7,6 @@ object FrmPreferences: TFrmPreferences
   Caption = 'Preferences'
   ClientHeight = 490
   ClientWidth = 865
-<<<<<<< HEAD
-  OnClose = FormClose
-=======
->>>>>>> bc4af43ffafa41ab28158baebffc6541104a2b5c
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.6.0.4'
