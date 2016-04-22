@@ -1,0 +1,52 @@
+A Coruña
+Albacete
+Alicante
+Almería
+Asturias
+Badajoz
+Barcelona
+Burgos
+Cantabria
+Castellón
+Ceuta
+Ciudad Real
+Cuenca
+Cáceres
+Cádiz
+Córdoba
+Girona
+Granada
+Guadalajara
+Guipúzcoa
+Huelva
+Huesca
+Illes Balears
+Jaén
+La Rioja
+Las Palmas
+León
+Lleida
+Lugo
+Madrid
+Melilla
+Murcia
+Málaga
+Navarra
+Ourense
+Palencia
+Pontevedra
+Salamanca
+Santa Cruz de Tenerife
+Segovia
+Sevilla
+Soria
+Tarragona
+Teruel
+Toledo
+Valencia
+Valladolid
+Vizcaya
+Zamora
+Zaragoza
+Álava
+Ávila
