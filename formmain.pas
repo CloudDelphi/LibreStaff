@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
-  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, LR_DSet;
+  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, LR_DSet, Globals;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
@@ -157,8 +157,6 @@ type
 
 var
   FrmMain: TFrmMain;
-  PathApp, DatabasePath, Databasename: String;
-  IniFile: TINIFile;
   Lang, FallBacklang: String;
   StatesFilename: String;
   IDUnique, IDAuto, IDAllowBlank: Boolean;
@@ -167,6 +165,7 @@ var
   ReportPreview: Boolean;
   CompanyName: String;
   AtomicCommmit: Integer;
+
 const
   DATABASEVERSION='0.0.0';
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
@@ -353,16 +352,7 @@ var
   DateFormat: TDateDisplayOrder;
   DateSeparator: Char;
 begin
-  PathApp:= ExtractFilePath(Paramstr(0));
-  SQLiteLibraryName:= PathApp+'sqlite3.dll';
   GetLanguageIDs(Lang, FallbackLang);
-  //INI File Section:
-  INIFile:= TINIFile.Create(PathApp+'config.ini', True);
-	if not FileExists(PathApp+'config.ini') then
-    INIFile.WriteString('Database', 'Path', '"'+PathApp+'data\"');
-  //Set some paths
-  DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
-  DatabaseName:= DatabasePath + 'data.db';
   //The mode of database Atomic Commit
   AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
   //Format the CboDat's
@@ -438,20 +428,17 @@ var
   BookmarkInt: Integer;
   SQL: String;
 const
-  LoadQueriesCount= 6;
+  LoadQueriesCount= 5;
 begin
   //Connect & Load to database
-  FuncData.ConnectDatabase(Databasename);
   //Open Tables
   //Note: The order is important! First the detailed tables.
   SetLength(LoadQueries, LoadQueriesCount);
-  LoadQueries[0].Query:= DataMod.QueConfig;
-  LoadQueries[0].SQL:= 'SELECT * from Config LIMIT 1;';
-  LoadQueries[1].Query:= DataMod.QueTypeContracts;
-  LoadQueries[1].SQL:= 'SELECT * from TypeContracts;';
-	LoadQueries[2].Query:= DataMod.QueWorkplaces;
-  LoadQueries[2].SQL:= 'SELECT * from Workplaces;';
-  LoadQueries[3].Query:= DataMod.QueEmployees;
+  LoadQueries[0].Query:= DataMod.QueTypeContracts;
+  LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
+	LoadQueries[1].Query:= DataMod.QueWorkplaces;
+  LoadQueries[1].SQL:= 'SELECT * from Workplaces;';
+  LoadQueries[2].Query:= DataMod.QueEmployees;
   FilterIndex:= StrToInt(INIFile.ReadString('TableEmployees','Filter','0'));
   CboFilter.ItemIndex:= FilterIndex;
   case FilterIndex of
@@ -459,11 +446,11 @@ begin
   	1: 	SQL:= SELECT_INACTIVE_EMPLOYEES_SQL;
 	  2: 	SQL:= SELECT_ALL_EMPLOYEES_SQL;
   end; //case
-  LoadQueries[3].SQL:= SQL;
-  LoadQueries[4].Query:= DataMod.QuePicsEmployees;
-  LoadQueries[4].SQL:= SELECT_PICSEMPLOYEES;
-	LoadQueries[5].Query:= DataMod.QueContractsLog;
-  LoadQueries[5].SQL:= SELECT_CONTRACTSLOG_SQL;
+  LoadQueries[2].SQL:= SQL;
+  LoadQueries[3].Query:= DataMod.QuePicsEmployees;
+  LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES;
+	LoadQueries[4].Query:= DataMod.QueContractsLog;
+  LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
   FrmPrgBar.Caption:= 'Loading Tables...';
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin

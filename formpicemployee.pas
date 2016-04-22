@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  FrameSaveCancel, LCLType, Buttons, DbCtrls, DataModule, db;
+  FrameSaveCancel, LCLType, Buttons, DbCtrls, DataModule, db, Globals;
 
 type
 

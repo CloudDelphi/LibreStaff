@@ -5,7 +5,7 @@ unit FuncPrint;
 interface
 
 uses
-  Classes, SysUtils, LR_Class;
+  Classes, SysUtils, LR_Class, Globals;
 
 procedure Print(TemplateFilename: String; Report: TfrReport; PrintCompanyName:Boolean; Var_1: Boolean=False; Var1: Integer=0; ValueVar1: String='';Var_2: Boolean=False; Var2:Integer=0;ValueVar2:String='');
 

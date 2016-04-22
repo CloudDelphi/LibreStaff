@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db;
+  StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db,
+  Globals;
 
 type
 
@@ -56,6 +57,7 @@ type
     procedure ChkIDAutoChange(Sender: TObject);
     procedure ChkIDUniqueChange(Sender: TObject);
     procedure ChkReportPreviewChange(Sender: TObject);
+    procedure DBAccessControlEnabledChange(Sender: TObject);
     procedure DbLkCboAtomicCommitCloseUp(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
@@ -81,6 +83,7 @@ resourcestring
   lg_LstView_Caption_Item_1= 'Language';
   lg_LstView_Caption_Item_2= 'Database';
   lg_LstView_Caption_Item_3= 'Printing';
+  lg_LstView_Caption_Item_4= 'Access Control';
 	lg_SelectDirDlg_Title= 'Select the path for the database (data.db)';
   lg_SelectDirDlg_Error_Title= 'ERROR!';
   lg_SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
@@ -153,6 +156,11 @@ begin
   INIFile.WriteString('Printing', 'ReportPreview', BoolToStr(ReportPreview));
 end;
 
+procedure TFrmPreferences.DBAccessControlEnabledChange(Sender: TObject);
+begin
+  FuncData.SaveTable(DataMod.QueConfig);
+end;
+
 procedure TFrmPreferences.DbLkCboAtomicCommitCloseUp(Sender: TObject);
 begin
     FuncData.SaveTable(DataMod.QueConfig);
@@ -178,6 +186,7 @@ begin
       1: Str:= lg_LstView_Caption_Item_1;
       2: Str:= lg_LstView_Caption_Item_2;
       3: Str:= lg_LstView_Caption_Item_3;
+      4: Str:= lg_LstView_Caption_Item_4;
     end; //case
   	LstViewPreferences.Items[i].Caption:= Str;
     end;

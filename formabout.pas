@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, IpHtml, Ipfilebroker, RichMemo, Forms, Controls,
-  Graphics, Dialogs, ComCtrls, StdCtrls, ExtCtrls, FrameClose, types;
+  Graphics, Dialogs, ComCtrls, StdCtrls, ExtCtrls, FrameClose, types, Globals;
 
 type
   TSimpleIpHtml = class(TIpHtml)

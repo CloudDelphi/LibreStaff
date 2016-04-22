@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
-  sqldb;
+  sqldb, Globals;
 
 type TSearchCriteria = record
     Name: String;

@@ -6,7 +6,7 @@ interface
 
 uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
-  sqldb, LCLType, db;
+  sqldb, LCLType, db, Globals;
 
 type TWriteField = record
     FieldName: String;

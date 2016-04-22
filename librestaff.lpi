@@ -144,7 +144,7 @@
         <PackageName Value="LCL"/>
       </Item8>
     </RequiredPackages>
-    <Units Count="19">
+    <Units Count="21">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -281,6 +281,19 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
       </Unit18>
+      <Unit19>
+        <Filename Value="formlogin.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormLogin"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="globals.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Globals"/>
+      </Unit20>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -220,6 +220,11 @@ msgctxt "formpreferences.lg_lstview_caption_item_3"
 msgid "Printing"
 msgstr ""
 
+#: formpreferences.lg_lstview_caption_item_4
+msgctxt "formpreferences.lg_lstview_caption_item_4"
+msgid "Access Control"
+msgstr ""
+
 #: formpreferences.lg_selectdirdlg_error_msg
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
 msgid "The file \"data.db\" does not exist in this path."
@@ -490,6 +495,45 @@ msgctxt "TFRMABOUT.TITLELIBRESTAFF.CAPTION"
 msgid "LibreStaff"
 msgstr ""
 
+#: tfrmaccess.btnaccess.caption
+msgctxt "tfrmaccess.btnaccess.caption"
+msgid "Enter"
+msgstr ""
+
+#: tfrmaccess.btnexit.caption
+msgctxt "tfrmaccess.btnexit.caption"
+msgid "Exit"
+msgstr ""
+
+#: tfrmaccess.caption
+msgid "FrmAccess"
+msgstr ""
+
+#: tfrmaccess.edipassword.text
+msgctxt "tfrmaccess.edipassword.text"
+msgid "EdiPassword"
+msgstr ""
+
+#: tfrmaccess.ediusername.text
+msgctxt "tfrmaccess.ediusername.text"
+msgid "EdiUsername"
+msgstr ""
+
+#: tfrmaccess.lbllibrestaff.caption
+msgctxt "TFRMACCESS.LBLLIBRESTAFF.CAPTION"
+msgid "LibreStaff"
+msgstr ""
+
+#: tfrmaccess.lblpassword.caption
+msgctxt "tfrmaccess.lblpassword.caption"
+msgid "Password:"
+msgstr ""
+
+#: tfrmaccess.lbluser.caption
+msgctxt "tfrmaccess.lbluser.caption"
+msgid "Username:"
+msgstr ""
+
 #: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
 msgid "Accept"
 msgstr ""
@@ -533,6 +577,36 @@ msgstr ""
 
 #: tfrmlisteditor.caption
 msgid "FrmListEditor"
+msgstr ""
+
+#: tfrmlogin.btnenter.caption
+msgctxt "TFRMLOGIN.BTNENTER.CAPTION"
+msgid "Enter"
+msgstr ""
+
+#: tfrmlogin.btnexit.caption
+msgctxt "TFRMLOGIN.BTNEXIT.CAPTION"
+msgid "Exit"
+msgstr ""
+
+#: tfrmlogin.caption
+msgctxt "tfrmlogin.caption"
+msgid "LibreStaff"
+msgstr ""
+
+#: tfrmlogin.lbllibrestaff.caption
+msgctxt "TFRMLOGIN.LBLLIBRESTAFF.CAPTION"
+msgid "LibreStaff"
+msgstr ""
+
+#: tfrmlogin.lblpassword.caption
+msgctxt "TFRMLOGIN.LBLPASSWORD.CAPTION"
+msgid "Password:"
+msgstr ""
+
+#: tfrmlogin.lbluser.caption
+msgctxt "TFRMLOGIN.LBLUSER.CAPTION"
+msgid "Username:"
 msgstr ""
 
 #: tfrmmain.btnactivate.caption
