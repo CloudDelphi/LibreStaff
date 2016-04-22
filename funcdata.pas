@@ -62,11 +62,20 @@ begin
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
           ' CompanyName CHAR(256) DEFAULT "",'+
           ' AtomicCommit INTEGER NOT NULL DEFAULT "1",'+
-          ' AccessControl BOOLEAN DEFAULT FALSE)'+
-          ';');
+          ' AccessControl BOOLEAN DEFAULT FALSE'+
+          ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
       	  ' VALUES('''+DATABASEVERSION+''', ''My Company'''+', ''FALSE'''+
+          ');');
+    DataMod.Connection.ExecuteDirect('CREATE TABLE Users('+
+          ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Name_User CHAR('+IntToStr(USERNAME_LENGHT)+') DEFAULT "",'+
+          ' Password_User CHAR('+IntToStr(PASSWORD_LENGHT)+') DEFAULT ""'+
+          ');');
+    DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
+          ' Name_User, Password_User)'+
+      	  ' VALUES('''+SUPERUSER_NAME+''', '''+SUPERUSER_PASSWORD+''''+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
@@ -295,6 +304,7 @@ begin
   DataMod.QueVirtual.ExecSQL;
   DataMod.Transaction.CommitRetaining;
   SQLSentence.Free;
+  Result:= TRUE;
 end;
 
 procedure SaveTable(Query: TSQLQuery);
@@ -365,6 +375,7 @@ begin
   DataMod.QueVirtual.ExecSQL;
   DataMod.Transaction.CommitRetaining;
   SQLSentence.Free;
+  Result:= True;
 end;
 
 end.

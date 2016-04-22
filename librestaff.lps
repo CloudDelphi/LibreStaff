@@ -60,8 +60,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="349"/>
-        <CursorPos X="24" Y="351"/>
+        <TopLine Value="162"/>
+        <CursorPos X="20" Y="168"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -71,7 +71,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="30" Y="9"/>
+        <TopLine Value="70"/>
+        <CursorPos X="25" Y="79"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -95,7 +96,7 @@
         <UnitName Value="FormPicEmployee"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="70" Y="9"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="175"/>
       </Unit4>
       <Unit5>
         <Filename Value="framesavecancel.pas"/>
@@ -107,7 +108,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="23" Y="23"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="175"/>
       </Unit5>
       <Unit6>
         <Filename Value="funcdlgs.pas"/>
@@ -116,7 +117,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="10" Y="24"/>
-        <UsageCount Value="172"/>
+        <UsageCount Value="173"/>
       </Unit6>
       <Unit7>
         <Filename Value="formpreferences.pas"/>
@@ -127,7 +128,7 @@
         <UnitName Value="FormPreferences"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="10" Y="10"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="159"/>
       </Unit7>
       <Unit8>
         <Filename Value="frameclose.pas"/>
@@ -138,7 +139,7 @@
         <UnitName Value="FrameClose"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="49" Y="8"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="157"/>
       </Unit8>
       <Unit9>
         <Filename Value="formlisteditor.pas"/>
@@ -149,7 +150,7 @@
         <UnitName Value="FormListEditor"/>
         <EditorIndex Value="-1"/>
         <CursorPos Y="8"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="153"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -160,7 +161,7 @@
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="10"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="148"/>
       </Unit10>
       <Unit11>
         <Filename Value="formdsoeditor.pas"/>
@@ -172,7 +173,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos Y="101"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="132"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -183,7 +184,7 @@
         <UnitName Value="FrameAddDelEdiSavCan"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="42" Y="20"/>
-        <UsageCount Value="131"/>
+        <UsageCount Value="132"/>
       </Unit12>
       <Unit13>
         <Filename Value="formprgbar.pas"/>
@@ -194,7 +195,7 @@
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="27" Y="24"/>
-        <UsageCount Value="111"/>
+        <UsageCount Value="112"/>
       </Unit13>
       <Unit14>
         <Filename Value="formabout.pas"/>
@@ -205,7 +206,7 @@
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="78" Y="9"/>
-        <UsageCount Value="102"/>
+        <UsageCount Value="103"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -217,7 +218,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="99"/>
         <CursorPos X="3" Y="59"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="96"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -228,7 +229,7 @@
         <UnitName Value="FraAcceptCancel"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="17" Y="13"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="96"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
@@ -236,7 +237,7 @@
         <UnitName Value="FuncPrint"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="8"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="70"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
@@ -244,7 +245,7 @@
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="10"/>
-        <UsageCount Value="61"/>
+        <UsageCount Value="62"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -254,16 +255,17 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormLogin"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="5" Y="11"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="32"/>
+        <CursorPos X="38" Y="48"/>
+        <UsageCount Value="28"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="6" Y="12"/>
-        <UsageCount Value="21"/>
+        <CursorPos X="29" Y="18"/>
+        <UsageCount Value="22"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\sprite.pas"/>
@@ -560,7 +562,7 @@
         <UsageCount Value="10"/>
       </Unit61>
     </Units>
-    <JumpHistory Count="6" HistoryIndex="5">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
         <Filename Value="formmain.pas"/>
         <Caret Line="357" Column="38" TopLine="351"/>
@@ -585,6 +587,10 @@
         <Filename Value="formmain.pas"/>
         <Caret Line="159" Column="21"/>
       </Position6>
+      <Position7>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="353" Column="21" TopLine="349"/>
+      </Position7>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
