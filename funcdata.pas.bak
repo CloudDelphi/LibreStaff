@@ -73,7 +73,7 @@ begin
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Users('+
           ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_User CHAR('+IntToStr(USERNAME_LENGHT)+') COLLATE NOCASE DEFAULT "",'+
+          ' Name_User CHAR('+IntToStr(USERNAME_LENGHT)+') DEFAULT "",'+
           ' Password_User CHAR('+IntToStr(PASSWORD_LENGHT)+') DEFAULT ""'+
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
@@ -396,7 +396,7 @@ begin
       end;
     if NoCase= TRUE then
       begin
-			Query.SQL.Add('COLLATE NOCASE');
+			Query.SQL.Add(' COLLATE NOCASE');
       end;
     Query.Active:= True;
     Result:= not Query.IsEmpty;

@@ -293,7 +293,7 @@ begin
     end
   else if (TableEdit.What= wtUsers) then
    	begin
-    if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString)= TRUE then
+    if FuncData.CheckValueExists('Users','Name_User',FieldValue,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString,TRUE)= TRUE then
       begin
 		  Error:= TRUE;
 	   	ErrorMsg:= User_Exists;
