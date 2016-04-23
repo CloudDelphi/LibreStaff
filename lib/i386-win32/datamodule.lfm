@@ -1,9 +1,9 @@
 object DataMod: TDataMod
   OldCreateOrder = False
-  Height = 597
+  Height = 569
   HorizontalOffset = 996
   VerticalOffset = 246
-  Width = 683
+  Width = 694
   object DsoEmployees: TDataSource
     DataSet = QueEmployees
     left = 224
@@ -152,5 +152,19 @@ object DataMod: TDataMod
     Options = []
     left = 56
     top = 32
+  end
+  object DsoUsers: TDataSource
+    DataSet = QueUsers
+    left = 248
+    top = 480
+  end
+  object QueUsers: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 72
+    top = 480
   end
 end

@@ -8,8 +8,8 @@ object FrmDsoEditor: TFrmDsoEditor
   ClientHeight = 486
   ClientWidth = 624
   Position = poScreenCenter
-  LCLVersion = '1.4.2.0'
-  object DBGrdTypeContracts: TDBGrid
+  LCLVersion = '1.6.0.4'
+  object DBGrd: TDBGrid
     Left = 0
     Height = 384
     Top = 0
@@ -25,7 +25,7 @@ object FrmDsoEditor: TFrmDsoEditor
       end>
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
     TabOrder = 0
-    OnCellClick = DBGrdTypeContractsCellClick
+    OnCellClick = DBGrdCellClick
   end
   inline FraAddDelEdiSavCan1: TFraAddDelEdiSavCan
     Height = 102
@@ -41,7 +41,6 @@ object FrmDsoEditor: TFrmDsoEditor
       Width = 624
       Align = alBottom
       ClientWidth = 624
-      OnClick = PanBottomClick
       inherited BtnSave: TBitBtn
         OnClick = BtnSaveClick
       end

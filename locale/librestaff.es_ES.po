@@ -31,16 +31,34 @@ msgctxt "formactivationemployee.lg_title_inactivate"
 msgid "Do you want to inactivate"
 msgstr "¿Quieres dar de baja"
 
+#: formdsoeditor.add_iptbox_caption_passwords
+msgid "Enter a password for this user"
+msgstr "Introduce una contraseña para este usuario"
+
 #: formdsoeditor.add_iptbox_caption_typecontracts
 msgid "Add type of contract"
 msgstr "Añadir tipo de contrato"
+
+#: formdsoeditor.add_iptbox_caption_users
+msgid "Add user"
+msgstr "Añadir usuario"
 
 #: formdsoeditor.add_iptbox_caption_workplaces
 msgid "Add workplace"
 msgstr "Aadir lugar de trabajo"
 
+#: formdsoeditor.add_iptbox_prompt_passwords
+msgctxt "formdsoeditor.add_iptbox_prompt_passwords"
+msgid "Password:"
+msgstr "Contraseña:"
+
 #: formdsoeditor.add_iptbox_prompt_typecontracts
 msgctxt "formdsoeditor.add_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.add_iptbox_prompt_users
+msgctxt "formdsoeditor.add_iptbox_prompt_users"
 msgid "Name:"
 msgstr "Nombre:"
 
@@ -49,8 +67,21 @@ msgctxt "formdsoeditor.add_iptbox_prompt_workplaces"
 msgid "Name:"
 msgstr "Nombre:"
 
+#: formdsoeditor.blank_value
+msgid "Blank not allowed!"
+msgstr "¡No se permite en blanco!"
+
+#: formdsoeditor.col_title_passwords
+msgid "Password"
+msgstr "Contraseña"
+
 #: formdsoeditor.col_title_typecontracts
 msgctxt "formdsoeditor.col_title_typecontracts"
+msgid "Name"
+msgstr "Nombre"
+
+#: formdsoeditor.col_title_users
+msgctxt "formdsoeditor.col_title_users"
 msgid "Name"
 msgstr "Nombre"
 
@@ -59,16 +90,34 @@ msgctxt "formdsoeditor.col_title_workplaces"
 msgid "Name"
 msgstr "Nombre"
 
+#: formdsoeditor.edit_iptbox_caption_passwords
+msgid "Change the password"
+msgstr "Cambia la contraseña"
+
 #: formdsoeditor.edit_iptbox_caption_typecontracts
 msgid "Change the name of contract"
 msgstr "Cambiar el nombre del contrato"
+
+#: formdsoeditor.edit_iptbox_caption_users
+msgid "Change the name of the user"
+msgstr "Cambia el nombre del usuario"
 
 #: formdsoeditor.edit_iptbox_caption_workplaces
 msgid "Change the name of workplace"
 msgstr "Cambiar el nombre del lugar de trabajo"
 
+#: formdsoeditor.edit_iptbox_prompt_passwords
+msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
+msgid "Password:"
+msgstr "Contraseña:"
+
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
 msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.edit_iptbox_prompt_users
+msgctxt "formdsoeditor.edit_iptbox_prompt_users"
 msgid "Name:"
 msgstr "Nombre:"
 
@@ -82,10 +131,33 @@ msgctxt "formdsoeditor.form_caption_typecontracts"
 msgid "Type of Contract"
 msgstr "Tipo de contrato"
 
+#: formdsoeditor.form_caption_users
+msgid "User"
+msgstr "Usuario"
+
 #: formdsoeditor.form_caption_workplaces
 msgctxt "formdsoeditor.form_caption_workplaces"
 msgid "Workplace"
 msgstr "Lugar de trabajo"
+
+#: formdsoeditor.no_delete_superuser
+msgctxt "formdsoeditor.no_delete_superuser"
+msgid "This user cannot be deleted!"
+msgstr "¡Este usuario no se puede eliminar!"
+
+#: formdsoeditor.no_edit_superuser
+msgctxt "formdsoeditor.no_edit_superuser"
+msgid "The name of this user cannot be edited!"
+msgstr "¡No se puede editar el nombre de este usuario!"
+
+#: formdsoeditor.of_lblnavrec
+msgctxt "formdsoeditor.of_lblnavrec"
+msgid "of"
+msgstr "de"
+
+#: formdsoeditor.user_exists
+msgid "This user already exists!"
+msgstr "¡Ese usuario ya existe!"
 
 #: formmain.lg_btndeltypecontract_hint
 msgctxt "formmain.lg_btndeltypecontract_hint"
@@ -510,17 +582,17 @@ msgstr "Salir"
 
 #: tfrmaccess.caption
 msgid "FrmAccess"
-msgstr ""
+msgstr "FrmAccess"
 
 #: tfrmaccess.edipassword.text
 msgctxt "tfrmaccess.edipassword.text"
 msgid "EdiPassword"
-msgstr ""
+msgstr "EdiPassword"
 
 #: tfrmaccess.ediusername.text
 msgctxt "tfrmaccess.ediusername.text"
 msgid "EdiUsername"
-msgstr ""
+msgstr "EdiUsername"
 
 #: tfrmaccess.lbllibrestaff.caption
 msgctxt "tfrmaccess.lbllibrestaff.caption"
@@ -558,11 +630,6 @@ msgstr "Fecha fin:"
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
 msgstr "Editor"
-
-#: tfrmdsoeditor.dbgrdtypecontracts.columns[0].title.caption
-msgctxt "tfrmdsoeditor.dbgrdtypecontracts.columns[0].title.caption"
-msgid "Name"
-msgstr "Nombre"
 
 #: tfrmlisteditor.btnclose.caption
 msgctxt "tfrmlisteditor.btnclose.caption"
@@ -872,6 +939,10 @@ msgstr "[Foto]"
 msgid "Change..."
 msgstr "Cambiar..."
 
+#: tfrmpreferences.btneditusers.caption
+msgid "Edit users..."
+msgstr "Editar usuarios..."
+
 #: tfrmpreferences.btnsavecompanyname.caption
 msgctxt "tfrmpreferences.btnsavecompanyname.caption"
 msgid "Save"
@@ -954,7 +1025,7 @@ msgstr "Ruta base de datos:"
 
 #: tfrmpreferences.lbldatabasepath1.caption
 msgid "Journal Mode:"
-msgstr ""
+msgstr "Modo Journal:"
 
 #: tfrmpreferences.lbldateformat.caption
 msgctxt "tfrmpreferences.lbldateformat.caption"

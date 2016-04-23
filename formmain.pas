@@ -15,7 +15,7 @@ type
 type
 	TCboListType= (cblStates);
 type
-	TWhatTable= (wtEmployees, wtTypeContracts, wtWorkplaces);
+	TWhatTable= (wtEmployees, wtTypeContracts, wtWorkplaces, wtUsers);
 type
   { TFrmMain }
   TFrmMain = class(TForm)
@@ -176,7 +176,8 @@ const
     ' LEFT JOIN Workplaces ON (ID_Workplace=Workplace_ID)'+
     ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
-  SELECT_PICSEMPLOYEES= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+  SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+  SELECT_ALL_USERS_SQL= 'SELECT * from Users;';
 resourcestring
   lg_CaptionBtn_Activate= 'Activate';
   lg_CaptionBtn_Inactivate= 'Inactivate';
@@ -427,12 +428,16 @@ var
   Bookmark: String;
   BookmarkInt: Integer;
   SQL: String;
-const
-  LoadQueriesCount= 5;
+  LoadQueriesCount: Integer;
 begin
   //Connect & Load to database
   //Open Tables
   //Note: The order is important! First the detailed tables.
+  LoadQueriesCount:= 5;
+  if (AccessControl= FALSE) then
+    begin
+    LoadQueriesCount:= LoadQueriesCount+1;
+    end;
   SetLength(LoadQueries, LoadQueriesCount);
   LoadQueries[0].Query:= DataMod.QueTypeContracts;
   LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
@@ -448,9 +453,14 @@ begin
   end; //case
   LoadQueries[2].SQL:= SQL;
   LoadQueries[3].Query:= DataMod.QuePicsEmployees;
-  LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES;
+  LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES_SQL;
 	LoadQueries[4].Query:= DataMod.QueContractsLog;
   LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
+  if (AccessControl= FALSE) then
+    begin
+		LoadQueries[5].Query:= DataMod.QueUsers;
+  	LoadQueries[5].SQL:= SELECT_ALL_USERS_SQL;
+    end;
   FrmPrgBar.Caption:= 'Loading Tables...';
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin
@@ -516,7 +526,7 @@ begin
   end;
   FuncData.ExecSQL(DataMod.QueEmployees, SQL);
   FuncData.ExecSQL(DataMod.QueContractsLog,SELECT_CONTRACTSLOG_SQL);
-  FuncData.ExecSQL(DataMod.QuePicsEmployees,SELECT_PICSEMPLOYEES);
+  FuncData.ExecSQL(DataMod.QuePicsEmployees,SELECT_PICSEMPLOYEES_SQL);
   {Updating the recordcount-->}
   UpdateRecordCount;
   INIFile.WriteString('TableEmployees', 'Filter', IntToStr(CboFilter.ItemIndex));

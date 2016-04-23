@@ -28,6 +28,7 @@ function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolea
 procedure SaveTable(Query: TSQLQuery);
 procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
 function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+function CheckValueExists(Table, Field, Value: String; FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 
 resourcestring
   DelRec_Title= 'Deletion';
@@ -377,6 +378,24 @@ begin
   SQLSentence.Free;
   Result:= True;
 end;
-
+function CheckValueExists(Table, Field, Value: String; FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
+var
+	Query: TSQLQuery;
+begin
+  Query:= TSQLQuery.Create(nil);
+  Query.DataBase:= DataMod.Connection;
+  try
+    Query.SQL.Add('SELECT 1 FROM '+Table+' WHERE ('+Field+'= '+ QuotedStr(Value)+')');
+		if FieldNoThis<>'' then
+      begin
+	    Query.SQL.Add('AND NOT ('+FieldNoThis+'='+ValueNoThis+')');
+      end;
+    Query.Active:= True;
+    Result:= not Query.IsEmpty;
+    Query.Active:= False;
+  finally
+  	FreeAndNil(Query);
+  end;
+end;
 end.
 

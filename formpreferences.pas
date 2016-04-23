@@ -7,13 +7,14 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
   StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db,
-  Globals;
+  Globals, FormDsoEditor;
 
 type
 
   { TFrmPreferences }
 
   TFrmPreferences = class(TForm)
+    BtnEditUsers: TSpeedButton;
     BtnSaveCompanyName: TBitBtn;
     BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
@@ -49,6 +50,7 @@ type
     TabAccessControl: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
+    procedure BtnEditUsersClick(Sender: TObject);
     procedure BtnSaveCompanyNameClick(Sender: TObject);
     procedure CboAutoTypeChange(Sender: TObject);
     procedure CboDateFormatChange(Sender: TObject);
@@ -105,6 +107,11 @@ end;
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFrmPreferences.BtnEditUsersClick(Sender: TObject);
+begin
+  FrmDsoEditor.EditTable(wtUsers);
 end;
 
 procedure TFrmPreferences.BtnSaveCompanyNameClick(Sender: TObject);
