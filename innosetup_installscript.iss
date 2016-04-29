@@ -1,11 +1,11 @@
-;InnoSetupVersion=5.5.5
+;InnoSetupVersion=5.5.9
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.10-alpha
+AppVerName=v0.0.11-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.10-alpha
+OutputBaseFilename=LibreStaff_v0.0.11-alpha
 Uninstallable=yes
 ;WizardImageFile=
 WizardImageStretch=no

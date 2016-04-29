@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
-    <BuildModes Count="1" Active="Default">
+    <BuildModes Count="1" Active="Final">
       <Item1 Name="Final">
         <MacroValues Count="1">
           <Macro2 Name="LCLWidgetType" Value="win32"/>
@@ -282,7 +282,7 @@
         <UnitName Value="FormInputBox"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="25"/>
+        <TopLine Value="24"/>
         <CursorPos Y="27"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
