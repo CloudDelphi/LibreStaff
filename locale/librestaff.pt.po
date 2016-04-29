@@ -480,8 +480,26 @@ msgctxt "funcprint.lg_mmozipcodeemployee"
 msgid "ZIP Code:"
 msgstr "CEP:"
 
+#: tform1.caption
+msgid "Form1"
+msgstr ""
+
+#: tform1.edit1.text
+msgctxt "tform1.edit1.text"
+msgid "Edit1"
+msgstr ""
+
+#: tform1.lbladdress.caption
+#, fuzzy
+msgctxt "tform1.lbladdress.caption"
+msgid "Address:"
+msgstr "Endereço:"
+
 #: tfraacceptcancel.btnaccept.caption
-msgid "BtnAccept"
+#, fuzzy
+#| msgid "BtnAccept"
+msgctxt "tfraacceptcancel.btnaccept.caption"
+msgid "Accept"
 msgstr "Aceptar"
 
 #: tfraacceptcancel.btncancel.caption
@@ -617,6 +635,7 @@ msgid "Username:"
 msgstr "Nome:"
 
 #: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
+msgctxt "tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption"
 msgid "Accept"
 msgstr "Aceptar"
 
@@ -637,6 +656,28 @@ msgstr "Data inicio:"
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
 msgstr "Tipo de contratos"
+
+#: tfrminputbox.caption
+msgid "Input"
+msgstr ""
+
+#: tfrminputbox.ediinput.text
+msgid "EdiInput"
+msgstr ""
+
+#: tfrminputbox.lblcaption.caption
+#, fuzzy
+#| msgid "Prompt:"
+msgctxt "tfrminputbox.lblcaption.caption"
+msgid "Caption"
+msgstr "Endereço:"
+
+#: tfrminputbox.lblprompt.caption
+#, fuzzy
+#| msgid "Address:"
+msgctxt "tfrminputbox.lblprompt.caption"
+msgid "Prompt:"
+msgstr "Endereço:"
 
 #: tfrmlisteditor.btnclose.caption
 msgctxt "TFRMLISTEDITOR.BTNCLOSE.CAPTION"

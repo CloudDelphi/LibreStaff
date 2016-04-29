@@ -5,7 +5,7 @@ unit FraAcceptCancel;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, ExtCtrls, StdCtrls, Buttons;
+  Classes, SysUtils, FileUtil, Forms, Controls, ExtCtrls, Buttons;
 
 type
 

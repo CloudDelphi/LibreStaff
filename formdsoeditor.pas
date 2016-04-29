@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType;
+  Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType,
+  FormInputBox;
 
 type TTableEdit = record
     What: TWhatTable;
@@ -156,6 +157,7 @@ var
   i: Integer;
   Error: Boolean= FALSE;
   ErrorMsg: String;
+  MaxLength: Integer;
 const
   WriteFieldsCount= 1;
 begin
@@ -180,14 +182,16 @@ begin
     		0:	begin
 						InpBox_Caption:= Add_IptBox_Caption_Users;
       			InpBox_Prompt:= Add_IptBox_Prompt_Users;
+            MaxLength:= USERNAME_LENGHT;
 		      	end;
 	      1:	begin
 				    InpBox_Caption:= Add_IptBox_Caption_Passwords;
     	  		InpBox_Prompt:= Add_IptBox_Prompt_Passwords;
+            MaxLength:= PASSWORD_LENGHT;
 		  	    end;
 	    end; //case
   		end;
-	  FieldValue:= InputBox(InpBox_Caption, InpBox_Prompt, '');
+	  FieldValue:= FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength);
     if FieldValue='' then
     	begin
 	    Error:= TRUE;
@@ -245,6 +249,7 @@ var
   ColIdx: Integer;
   Error: Boolean= FALSE;
   ErrorMsg: String;
+  MaxLength: Integer;
 const
   WriteFieldsCount= 1;
 begin
@@ -266,10 +271,12 @@ begin
         0:	begin
       			InpBox_Caption:= Edit_IptBox_Caption_Users;
 	      		InpBox_Prompt:= Edit_IptBox_Prompt_Users;
+            MaxLength:= USERNAME_LENGHT;
 		        end;
         1:	begin
       			InpBox_Caption:= Edit_IptBox_Caption_Passwords;
 	      		InpBox_Prompt:= Edit_IptBox_Prompt_Passwords;
+            MaxLength:= PASSWORD_LENGHT;
 		        end;
       end;
       end;
@@ -285,7 +292,7 @@ begin
       Exit;
       end;
     end;
-  FieldValue:= InputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString);
+  FieldValue:= FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength);
   if FieldValue='' then
     begin
     Error:= TRUE;

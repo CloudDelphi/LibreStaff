@@ -471,8 +471,23 @@ msgctxt "funcprint.lg_mmozipcodeemployee"
 msgid "ZIP Code:"
 msgstr ""
 
+#: tform1.caption
+msgid "Form1"
+msgstr ""
+
+#: tform1.edit1.text
+msgctxt "tform1.edit1.text"
+msgid "Edit1"
+msgstr ""
+
+#: tform1.lbladdress.caption
+msgctxt "tform1.lbladdress.caption"
+msgid "Address:"
+msgstr ""
+
 #: tfraacceptcancel.btnaccept.caption
-msgid "BtnAccept"
+msgctxt "tfraacceptcancel.btnaccept.caption"
+msgid "Accept"
 msgstr ""
 
 #: tfraacceptcancel.btncancel.caption
@@ -608,6 +623,7 @@ msgid "Username:"
 msgstr ""
 
 #: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
+msgctxt "tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption"
 msgid "Accept"
 msgstr ""
 
@@ -627,6 +643,24 @@ msgstr ""
 #: tfrmdsoeditor.caption
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
+msgstr ""
+
+#: tfrminputbox.caption
+msgid "Input"
+msgstr ""
+
+#: tfrminputbox.ediinput.text
+msgid "EdiInput"
+msgstr ""
+
+#: tfrminputbox.lblcaption.caption
+msgctxt "tfrminputbox.lblcaption.caption"
+msgid "Caption"
+msgstr ""
+
+#: tfrminputbox.lblprompt.caption
+msgctxt "tfrminputbox.lblprompt.caption"
+msgid "Prompt:"
 msgstr ""
 
 #: tfrmlisteditor.btnclose.caption

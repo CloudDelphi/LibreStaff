@@ -144,7 +144,7 @@
         <PackageName Value="LCL"/>
       </Item8>
     </RequiredPackages>
-    <Units Count="21">
+    <Units Count="22">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -294,6 +294,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
       </Unit20>
+      <Unit21>
+        <Filename Value="forminputbox.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmInputBox"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormInputBox"/>
+      </Unit21>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
