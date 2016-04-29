@@ -191,26 +191,28 @@ begin
 		  	    end;
 	    end; //case
   		end;
-	  FieldValue:= FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength);
-    if FieldValue='' then
-    	begin
-	    Error:= TRUE;
-  	  ErrorMsg:= Blank_Value;
-      break; //terminate the 'for' loop
-    	end
-		else if (TableEdit.What= wtUsers) then
-   		begin
-	    if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE)= TRUE then
-  	    begin
-			  Error:= TRUE;
-	   		ErrorMsg:= User_Exists;
+	  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength, FieldValue)= TRUE then
+      begin
+      if FieldValue='' then
+      	begin
+	      Error:= TRUE;
+  	    ErrorMsg:= Blank_Value;
         break; //terminate the 'for' loop
-	      end;
-  	  end;
-   	WriteFields[i].FieldName:= TableEdit.FieldNames[i];
- 	 	WriteFields[i].Value:= FieldValue;
- 		WriteFields[i].DataFormat:= dtString;
-    end;
+      	end
+  		else if (TableEdit.What= wtUsers) then
+     		begin
+	      if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE)= TRUE then
+  	      begin
+  			  Error:= TRUE;
+	     		ErrorMsg:= User_Exists;
+          break; //terminate the 'for' loop
+	        end;
+    	  end;
+     	WriteFields[i].FieldName:= TableEdit.FieldNames[i];
+ 	 	  WriteFields[i].Value:= FieldValue;
+   		WriteFields[i].DataFormat:= dtString;
+      end;
+    end; //for
   if (Error= FALSE) then
   	begin
  		FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
@@ -292,7 +294,7 @@ begin
       Exit;
       end;
     end;
-  FieldValue:= FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength);
+  FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength, FieldValue);
   if FieldValue='' then
     begin
     Error:= TRUE;

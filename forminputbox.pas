@@ -24,8 +24,8 @@ type
     { private declarations }
   public
     { public declarations }
-    function CustomInputBox(IptCaption:String=''; IptPrompt:String=''; DefaultValue: String='';
-      MaxLength:Integer=255): String;
+    function CustomInputBox(IptCaption, IptPrompt, DefaultValue: String;
+      MaxLength:Integer; out OutValue:String): Boolean;
   end;
 
 var
@@ -57,8 +57,8 @@ begin
   ModalResult:= mrCancel;
 end;
 
-function TFrmInputBox.CustomInputBox(IptCaption:String=''; IptPrompt:String='';
-  DefaultValue: String=''; MaxLength:Integer=255): String;
+function TFrmInputBox.CustomInputBox(IptCaption, IptPrompt, DefaultValue: String;
+      MaxLength:Integer; out OutValue:String): Boolean;
 begin
   with TFrmInputBox.Create(Application) do
   try
@@ -67,7 +67,10 @@ begin
     EdiInput.Text:= DefaultValue;
     EdiInput.MaxLength:= MaxLength;
     ShowModal;
-    Result:= EdiInput.Text;
+    if Result then
+      begin
+      OutValue:= EdiInput.Text;
+      end;
   finally
     FrmInputBox.Free;
     FrmInputBox:= nil;
