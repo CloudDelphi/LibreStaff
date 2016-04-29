@@ -17,12 +17,14 @@ type
     FraAcceptCancel1: TFraAcceptCancel;
     LblPrompt: TLabel;
     LblCaption: TLabel;
+    procedure BtnAcceptClick(Sender: TObject);
+    procedure BtnCancelClick(Sender: TObject);
     procedure EdiInputKeyPress(Sender: TObject; var Key: char);
   private
     { private declarations }
   public
     { public declarations }
-    function CustomInputBox(IptCaption, IptPrompt:String; Default: String='';
+    function CustomInputBox(IptCaption:String=''; IptPrompt:String=''; DefaultValue: String='';
       MaxLength:Integer=255): String;
   end;
 
@@ -45,16 +47,24 @@ begin
     end;
 end;
 
-function TFrmInputBox.CustomInputBox(IptCaption, IptPrompt:String; Default: String='';
-  MaxLength:Integer=255): String;
-var
-  i: Integer;
+procedure TFrmInputBox.BtnAcceptClick(Sender: TObject);
+begin
+  ModalResult:= mrOK;
+end;
+
+procedure TFrmInputBox.BtnCancelClick(Sender: TObject);
+begin
+  ModalResult:= mrCancel;
+end;
+
+function TFrmInputBox.CustomInputBox(IptCaption:String=''; IptPrompt:String='';
+  DefaultValue: String=''; MaxLength:Integer=255): String;
 begin
   with TFrmInputBox.Create(Application) do
   try
     LblCaption.Caption:= IptCaption;
     LblPrompt.Caption:= IptPrompt;
-    EdiInput.Text:= Default;
+    EdiInput.Text:= DefaultValue;
     EdiInput.MaxLength:= MaxLength;
     ShowModal;
     Result:= EdiInput.Text;

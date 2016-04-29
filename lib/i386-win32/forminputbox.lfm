@@ -36,6 +36,12 @@ object FrmInputBox: TFrmInputBox
     inherited PanBottom: TPanel
       Width = 355
       ClientWidth = 355
+      inherited BtnAccept: TBitBtn
+        OnClick = BtnAcceptClick
+      end
+      inherited BtnCancel: TBitBtn
+        OnClick = BtnCancelClick
+      end
     end
   end
   object LblCaption: TLabel
