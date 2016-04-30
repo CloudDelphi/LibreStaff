@@ -156,6 +156,7 @@ var
   InpBox_Caption, InpBox_Prompt: String;
   i: Integer;
   Error: Boolean= FALSE;
+  Cancel: Boolean= FALSE;
   ErrorMsg: String;
   MaxLength: Integer;
 const
@@ -190,7 +191,11 @@ begin
             MaxLength:= PASSWORD_LENGHT;
 		  	    end;
 	    end; //case
-  		end;
+  		end
+      else
+      begin
+      MaxLength:= 255;
+      end;
 	  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength, FieldValue)= TRUE then
       begin
       if FieldValue='' then
@@ -211,15 +216,20 @@ begin
      	WriteFields[i].FieldName:= TableEdit.FieldNames[i];
  	 	  WriteFields[i].Value:= FieldValue;
    		WriteFields[i].DataFormat:= dtString;
+      end
+    else
+      begin
+      Cancel:= TRUE;
+      break; //terminate the 'for' loop
       end;
     end; //for
-  if (Error= FALSE) then
+  if (Error= FALSE) and (Cancel=FALSE) then
   	begin
  		FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
 	  Inc(TotalRecs);
  		UpdateNavRec;
   	end
-	else
+	else if (Error= TRUE) then
 		begin
 		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
     end;
@@ -250,6 +260,7 @@ var
   InpBox_Caption, InpBox_Prompt: String;
   ColIdx: Integer;
   Error: Boolean= FALSE;
+  Cancel: Boolean= FALSE;
   ErrorMsg: String;
   MaxLength: Integer;
 const
@@ -294,21 +305,27 @@ begin
       Exit;
       end;
     end;
-  FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength, FieldValue);
-  if FieldValue='' then
+  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength, FieldValue)= TRUE then
     begin
-    Error:= TRUE;
-    ErrorMsg:= Blank_Value;
-    end
-  else if (TableEdit.What= wtUsers) then
-   	begin
-    if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString)= TRUE then
+    if FieldValue='' then
       begin
-		  Error:= TRUE;
-	   	ErrorMsg:= User_Exists;
+      Error:= TRUE;
+      ErrorMsg:= Blank_Value;
+      end
+    else if (TableEdit.What= wtUsers) then
+   	  begin
+      if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString)= TRUE then
+        begin
+		    Error:= TRUE;
+	   	  ErrorMsg:= User_Exists;
+        end;
       end;
+    end
+    else
+    begin
+    Cancel:= True;
     end;
-	if (Error= FALSE) then
+  if (Error= FALSE) and (Cancel= False) then
   	begin
 	  SetLength(WriteFields, WriteFieldsCount);
   	WriteFields[0].FieldName:= TableEdit.FieldNames[ColIdx];
@@ -316,7 +333,7 @@ begin
 		WriteFields[0].DataFormat:= dtString;
 	  FuncData.EditTableRecord(TableEdit.Table, WriteFields);
   	end
-	else
+	else if (Error= TRUE) then
 		begin
 		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
     end;

@@ -43,7 +43,7 @@ begin
     end
   else if (Key= #27) then //if ESC key pressed, cancel modal
     begin
-     FraAcceptCancel1.BtnCancel.Click;
+    FraAcceptCancel1.BtnCancel.Click;
     end;
 end;
 
@@ -66,10 +66,15 @@ begin
     LblPrompt.Caption:= IptPrompt;
     EdiInput.Text:= DefaultValue;
     EdiInput.MaxLength:= MaxLength;
-    ShowModal;
-    if Result then
+    if ShowModal= mrOk then
       begin
+      Result:= True;
       OutValue:= EdiInput.Text;
+      end
+    else
+      begin
+      Result:= False;
+      OutValue:= '';
       end;
   finally
     FrmInputBox.Free;
