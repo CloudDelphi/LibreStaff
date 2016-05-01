@@ -73,12 +73,13 @@ begin
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Users('+
           ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_User CHAR('+IntToStr(USERNAME_LENGHT)+') COLLATE NOCASE DEFAULT "",'+
-          ' Password_User CHAR('+IntToStr(PASSWORD_LENGHT)+') DEFAULT ""'+
+          ' Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT "",'+
+          ' Hash_User CHAR(256) DEFAULT "",'+
+          ' Salt_User CHAR(256) DEFAULT ""'+
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
-          ' Name_User, Password_User)'+
-      	  ' VALUES('''+SUPERUSER_NAME+''', '''+SUPERUSER_PASSWORD+''''+
+          ' Name_User, Hash_User, Salt_User)'+
+      	  ' VALUES('''+SUPERUSER_NAME+''', '''+SUPERUSER_PASSWORD+''', '''+SUPERUSER_SALT+''''+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+

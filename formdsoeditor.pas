@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType,
-  FormInputBox;
+  FormInputBox, Crypt;
 
 type TTableEdit = record
     What: TWhatTable;
@@ -122,12 +122,13 @@ begin
         TableEdit.Datasource:= DataMod.DsoUsers;
         TableEdit.FieldCount:= 2;
         TableEdit.Table:= DataMod.QueUsers;
-        SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
+        SetLength(TableEdit.FieldNames, TableEdit.FieldCount+1);
         TableEdit.FieldNames[0]:= 'Name_User';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_Users;
         DBGrd.Columns.Add;
-        TableEdit.FieldNames[1]:= 'Password_User';
+        TableEdit.FieldNames[1]:= 'Hash_User';
         DBGrd.Columns[1].Title.Caption:= Col_Title_Passwords;
+        TableEdit.FieldNames[2]:= 'Salt_User';
         end;
     end; //case
   	DBGrd.Datasource:= TableEdit.Datasource;
@@ -159,22 +160,28 @@ var
   Cancel: Boolean= FALSE;
   ErrorMsg: String;
   MaxLength: Integer;
-const
-  WriteFieldsCount= 1;
+  Salt: String;
+  WriteFieldsCount: Integer;
 begin
   case TableEdit.What of
     wtTypeContracts:
       begin
       InpBox_Caption:= Add_IptBox_Caption_TypeContracts;
       InpBox_Prompt:= Add_IptBox_Prompt_TypeContracts;
+      WriteFieldsCount:= 1;
       end;
     wtWorkplaces:
       begin
       InpBox_Caption:= Add_IptBox_Caption_Workplaces;
       InpBox_Prompt:= Add_IptBox_Prompt_Workplaces;
+      WriteFieldsCount:= 1;
+      end;
+    wtUsers:
+      begin
+      WriteFieldsCount:= 3;
       end;
   end; //case
-  SetLength(WriteFields, TableEdit.FieldCount);
+  SetLength(WriteFields, WriteFieldsCount);
   for i:=0 to (TableEdit.FieldCount-1) do
     begin
 	  if (TableEdit.What= wtUsers) then
@@ -183,12 +190,12 @@ begin
     		0:	begin
 						InpBox_Caption:= Add_IptBox_Caption_Users;
       			InpBox_Prompt:= Add_IptBox_Prompt_Users;
-            MaxLength:= USERNAME_LENGHT;
+            MaxLength:= USERNAME_LENGTH;
 		      	end;
 	      1:	begin
 				    InpBox_Caption:= Add_IptBox_Caption_Passwords;
     	  		InpBox_Prompt:= Add_IptBox_Prompt_Passwords;
-            MaxLength:= PASSWORD_LENGHT;
+            MaxLength:= PASSWORD_LENGTH;
 		  	    end;
 	    end; //case
   		end
@@ -204,7 +211,7 @@ begin
   	    ErrorMsg:= Blank_Value;
         break; //terminate the 'for' loop
       	end
-  		else if (TableEdit.What= wtUsers) then
+  		else if (TableEdit.What= wtUsers) AND (i= 0) then //if entering a user name
      		begin
 	      if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE)= TRUE then
   	      begin
@@ -212,10 +219,21 @@ begin
 	     		ErrorMsg:= User_Exists;
           break; //terminate the 'for' loop
 	        end;
-    	  end;
+    	  end
+      else if (TableEdit.What= wtUsers) AND (i= 1) then //if entering a password
+        begin
+        Salt:= GenerateSalt(SALT_LENGTH);
+        FieldValue:= Crypt.HashString(Salt+FieldValue);
+        end;
      	WriteFields[i].FieldName:= TableEdit.FieldNames[i];
  	 	  WriteFields[i].Value:= FieldValue;
    		WriteFields[i].DataFormat:= dtString;
+      if (TableEdit.What= wtUsers) AND (i= 1) then //if entering the salt
+        begin
+       	WriteFields[i+1].FieldName:= TableEdit.FieldNames[i+1];
+ 	 	    WriteFields[i+1].Value:= Salt;
+     		WriteFields[i+1].DataFormat:= dtString;
+        end
       end
     else
       begin
@@ -226,6 +244,7 @@ begin
   if (Error= FALSE) and (Cancel=FALSE) then
   	begin
  		FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
+    WriteFields:= nil;
 	  Inc(TotalRecs);
  		UpdateNavRec;
   	end
@@ -233,7 +252,6 @@ begin
 		begin
 		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
     end;
-	WriteFields:= nil;
 end;
 
 procedure TFrmDsoEditor.BtnDeleteClick(Sender: TObject);
@@ -256,15 +274,15 @@ end;
 
 procedure TFrmDsoEditor.BtnEditClick(Sender: TObject);
 var
-  FieldValue, FirstFieldValue: String;
+  FieldValue, FirstFieldValue, DefaultValue: String;
   InpBox_Caption, InpBox_Prompt: String;
   ColIdx: Integer;
   Error: Boolean= FALSE;
   Cancel: Boolean= FALSE;
   ErrorMsg: String;
   MaxLength: Integer;
-const
-  WriteFieldsCount= 1;
+  WriteFieldsCount: Integer;
+  Salt: String;
 begin
   ColIdx:= DBGrd.SelectedColumn.Index;
   case TableEdit.What of
@@ -272,11 +290,13 @@ begin
       begin
       InpBox_Caption:= Edit_IptBox_Caption_TypeContracts;
       InpBox_Prompt:= Edit_IptBox_Prompt_TypeContracts;
+      WriteFieldsCount:= 1;
       end;
     wtWorkplaces:
       begin
       InpBox_Caption:= Edit_IptBox_Caption_Workplaces;
       InpBox_Prompt:= Edit_IptBox_Prompt_Workplaces;
+      WriteFieldsCount:= 1;
       end;
     wtUsers:
       begin
@@ -284,12 +304,14 @@ begin
         0:	begin
       			InpBox_Caption:= Edit_IptBox_Caption_Users;
 	      		InpBox_Prompt:= Edit_IptBox_Prompt_Users;
-            MaxLength:= USERNAME_LENGHT;
+            MaxLength:= USERNAME_LENGTH;
+            WriteFieldsCount:= 1;
 		        end;
         1:	begin
       			InpBox_Caption:= Edit_IptBox_Caption_Passwords;
 	      		InpBox_Prompt:= Edit_IptBox_Prompt_Passwords;
-            MaxLength:= PASSWORD_LENGHT;
+            MaxLength:= PASSWORD_LENGTH;
+            WriteFieldsCount:= 2;
 		        end;
       end;
       end;
@@ -305,21 +327,27 @@ begin
       Exit;
       end;
     end;
-  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString, MaxLength, FieldValue)= TRUE then
+  DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
+  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, DefaultValue, MaxLength, FieldValue)= TRUE then
     begin
     if FieldValue='' then
       begin
       Error:= TRUE;
       ErrorMsg:= Blank_Value;
       end
-    else if (TableEdit.What= wtUsers) then
+    else if (TableEdit.What= wtUsers) AND (ColIdx=0) then
    	  begin
       if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString)= TRUE then
         begin
 		    Error:= TRUE;
 	   	  ErrorMsg:= User_Exists;
         end;
-      end;
+      end
+    else if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
+      begin
+      Salt:= GenerateSalt(SALT_LENGTH);
+      FieldValue:= Crypt.HashString(Salt+FieldValue);
+      end
     end
     else
     begin
@@ -331,13 +359,19 @@ begin
   	WriteFields[0].FieldName:= TableEdit.FieldNames[ColIdx];
 	  WriteFields[0].Value:= FieldValue;
 		WriteFields[0].DataFormat:= dtString;
+    if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
+      begin
+      WriteFields[1].FieldName:= 'Salt_User';
+	    WriteFields[1].Value:= Salt;
+   		WriteFields[1].DataFormat:= dtString;
+      end;
 	  FuncData.EditTableRecord(TableEdit.Table, WriteFields);
+    WriteFields:= nil;
   	end
 	else if (Error= TRUE) then
 		begin
 		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
     end;
-	WriteFields:= nil;
 end;
 
 procedure TFrmDsoEditor.BtnSaveClick(Sender: TObject);

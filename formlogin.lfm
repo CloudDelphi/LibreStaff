@@ -33,7 +33,6 @@ object FrmLogin: TFrmLogin
     Height = 36
     Top = 88
     Width = 152
-    Enabled = False
     TabOrder = 0
   end
   object EdiPassword: TEdit
@@ -42,7 +41,6 @@ object FrmLogin: TFrmLogin
     Top = 144
     Width = 152
     EchoMode = emPassword
-    Enabled = False
     PasswordChar = '*'
     TabOrder = 1
   end
@@ -52,7 +50,7 @@ object FrmLogin: TFrmLogin
     Top = 200
     Width = 110
     Caption = 'Enter'
-    ModalResult = 1
+    OnClick = BtnEnterClick
     TabOrder = 2
   end
   object BtnExit: TBitBtn
@@ -336,5 +334,16 @@ object FrmLogin: TFrmLogin
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000
     }
+  end
+  object PopLogin: TPopupNotifier
+    Color = 14483455
+    Icon.Data = {
+      07544269746D617000000000
+    }
+    Text = 'Text'
+    Title = 'Caption'
+    Visible = False
+    left = 24
+    top = 24
   end
 end

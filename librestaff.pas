@@ -47,7 +47,6 @@ begin
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;
   if (AccessControl= TRUE) then
   	begin
-    FuncData.ExecSQL(DataMod.QueUsers, SELECT_ALL_USERS_SQL); //Open User's table
 	  Login:= TFrmLogin.Create(nil); //Create Login Form not owned by object
   	LoginOK:= Login.ShowModal;
 	  if (LoginOK= mrOK) then
