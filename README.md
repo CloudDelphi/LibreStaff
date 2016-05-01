@@ -1,7 +1,6 @@
 # LibreStaff
 LibreStaff is a open source software for the management of the personnel of an enterprise.<br />
-<br /><a href="http://www.runs.es/1/librestaff/">Website</a><br /><br />
-<img src="http://www.runs.es/pics/articles/1/librestaff.png" class="alignleft" alt="LibreStaff" />
+
 Features
 -----------------------
 Programming Language: <a href="http://www.freepascal.org/">Free Pascal</a><br />
@@ -25,7 +24,7 @@ Goals
 How to Compile
 --------------
 1) Download & install Lazarus. ¡Version <strong>1.6</strong> or above! Get it here: <a href="http://www.lazarus-ide.org">Lazarus Home</a>.<br />
-2) Install manually the <a href="http://wiki.freepascal.org/RichMemo">RichMemo</a> component into Lazarus. (it's in the "richmemo" folder).<br />
+2) Install manually the <a href="http://wiki.freepascal.org/RichMemo">RichMemo</a> component into Lazarus. (it's in the "richmemo" folder). Also the  	"dcpcrypt-2.0.4.1" package<br />
 3) Install the "LazReport" component into Lazarus included with the source code. (it's in the "lazreport" folder). The first time you compile, automatically Lazarus request this installation.<br />
 4) Install the "uniqueinstance" component included.<br />
 5) Delete data.db file if exists.<br />
