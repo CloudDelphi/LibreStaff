@@ -54,7 +54,7 @@ begin
   Counter:= Counter+1;
   if Counter>= Seconds then
   	begin
-    Free;
+    Destroy;
     end;
 end;
 

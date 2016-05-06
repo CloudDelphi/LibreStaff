@@ -160,6 +160,24 @@ msgstr ""
 msgid "This user already exists!"
 msgstr ""
 
+#: formlogin.lg_passworddoesnotmatchtext
+msgid "Password does not match."
+msgstr ""
+
+#: formlogin.lg_passworddoesnotmatchtitle
+msgctxt "formlogin.lg_passworddoesnotmatchtitle"
+msgid "Error!"
+msgstr ""
+
+#: formlogin.lg_usernotexiststext
+msgid "Username does not exist."
+msgstr ""
+
+#: formlogin.lg_usernotexiststitle
+msgctxt "formlogin.lg_usernotexiststitle"
+msgid "Error!"
+msgstr ""
+
 #: formmain.lg_btndeltypecontract_hint
 msgctxt "formmain.lg_btndeltypecontract_hint"
 msgid "Delete the type of contract of this employee"

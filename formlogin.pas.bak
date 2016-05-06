@@ -65,7 +65,7 @@ var
 begin
   LoginUser:= EdiUser.Text;
   LoginPassword:= EdiPassword.Text;
-  PopLogin:= TCustomPopupNotifier.Create(2);
+  PopLogin:= TCustomPopupNotifier.Create(3);
   //Search the user name, password and salt
   FuncData.ExecSQL(DataMod.QueVirtual, 'SELECT ID_User, Hash_User, Salt_User FROM Users WHERE Name_User='''+LoginUser+''' LIMIT 1');
   if DataMod.QueVirtual.IsEmpty= FALSE then

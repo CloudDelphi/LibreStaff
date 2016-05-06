@@ -256,7 +256,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormLogin"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="66"/>
         <CursorPos X="23" Y="66"/>
@@ -268,9 +267,10 @@
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="28"/>
-        <CursorPos X="32" Y="35"/>
+        <TopLine Value="40"/>
+        <CursorPos X="9" Y="57"/>
         <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit20>

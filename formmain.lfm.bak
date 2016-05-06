@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 313
+  Left = 651
   Height = 788
-  Top = 184
+  Top = 118
   Width = 1237
   BorderStyle = bsSingle
   Caption = 'LibreStaff'

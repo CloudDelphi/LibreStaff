@@ -160,6 +160,26 @@ msgstr "de"
 msgid "This user already exists!"
 msgstr "Este usuário já existe!"
 
+#: formlogin.lg_passworddoesnotmatchtext
+msgid "Password does not match."
+msgstr ""
+
+#: formlogin.lg_passworddoesnotmatchtitle
+#, fuzzy
+msgctxt "formlogin.lg_passworddoesnotmatchtitle"
+msgid "Error!"
+msgstr "Erro!"
+
+#: formlogin.lg_usernotexiststext
+msgid "Username does not exist."
+msgstr ""
+
+#: formlogin.lg_usernotexiststitle
+#, fuzzy
+msgctxt "formlogin.lg_usernotexiststitle"
+msgid "Error!"
+msgstr "Erro!"
+
 #: formmain.lg_btndeltypecontract_hint
 msgctxt "formmain.lg_btndeltypecontract_hint"
 msgid "Delete the type of contract of this employee"
@@ -1179,3 +1199,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
+
