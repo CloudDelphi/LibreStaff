@@ -73,10 +73,8 @@ msgid "Blank not allowed!"
 msgstr "Em branco não é permitido!"
 
 #: formdsoeditor.col_title_passwords
-#, fuzzy
-#| msgid "Password"
 msgid "Password (encrypted)"
-msgstr "Contra-senha"
+msgstr "Contra-senha (criptografada)"
 
 #: formdsoeditor.col_title_typecontracts
 msgctxt "formdsoeditor.col_title_typecontracts"
@@ -110,11 +108,9 @@ msgid "Change the name of workplace"
 msgstr "Cambiar o nome do lugar de trabalho"
 
 #: formdsoeditor.edit_iptbox_prompt_passwords
-#, fuzzy
-#| msgid "Password:"
 msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
 msgid "New Password:"
-msgstr "Contra-senha:"
+msgstr "Nova contra-senha:"
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
 msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
@@ -166,7 +162,7 @@ msgstr "Este usuário já existe!"
 
 #: formlogin.lg_passworddoesnotmatchtext
 msgid "Password does not match."
-msgstr ""
+msgstr "Contra-senha não corresponde."
 
 #: formlogin.lg_passworddoesnotmatchtitle
 msgctxt "formlogin.lg_passworddoesnotmatchtitle"
@@ -175,7 +171,7 @@ msgstr "Erro!"
 
 #: formlogin.lg_usernotexiststext
 msgid "Username does not exist."
-msgstr ""
+msgstr "Usuário não existe."
 
 #: formlogin.lg_usernotexiststitle
 msgctxt "formlogin.lg_usernotexiststitle"
@@ -1040,7 +1036,7 @@ msgstr "Único"
 
 #: tfrmpreferences.chkrememberusername.caption
 msgid "Remember username"
-msgstr ""
+msgstr "Lembrar nome de usuário"
 
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
@@ -1065,7 +1061,7 @@ msgstr "Informe"
 
 #: tfrmpreferences.grpaccesscontroloptions.caption
 msgid "Options"
-msgstr ""
+msgstr "Opções"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
@@ -1209,4 +1205,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
-
