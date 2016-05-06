@@ -56,7 +56,7 @@ resourcestring
   Edit_IptBox_Prompt_Workplaces= 'Name:';
   Form_Caption_Users= 'User';
   Col_Title_Users= 'Name';
-  Col_Title_Passwords= 'Password';
+  Col_Title_Passwords= 'Password (encrypted)';
   Add_IptBox_Caption_Users= 'Add user';
   Add_IptBox_Prompt_Users= 'Name:';
   Add_IptBox_Caption_Passwords= 'Enter a password for this user';
@@ -64,7 +64,7 @@ resourcestring
   Edit_IptBox_Caption_Users= 'Change the name of the user';
   Edit_IptBox_Prompt_Users= 'Name:';
   Edit_IptBox_Caption_Passwords= 'Change the password';
-  Edit_IptBox_Prompt_Passwords= 'Password:';
+  Edit_IptBox_Prompt_Passwords= 'New Password:';
   No_Delete_SUPERUSER= 'This user cannot be deleted!';
   No_Edit_SUPERUSER= 'The name of this user cannot be edited!';
   User_Exists= 'This user already exists!';
@@ -261,7 +261,7 @@ begin
   FieldValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[0]).AsString;
   if (TableEdit.What= wtUsers) then //Don't delete SUPERUSER
     begin
-    if FieldValue= SUPERUSER_NAME then
+    if (FieldValue= SUPERUSER_NAME) then
       begin
       Application.MessageBox(PChar(No_Delete_SUPERUSER), 'Error!', MB_OK);
       Exit;
@@ -319,7 +319,7 @@ begin
   if (TableEdit.What= wtUsers) and (ColIdx=0) then //Don't edit SUPERUSER
     begin
   	FirstFieldValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[0]).AsString;
-    if FirstFieldValue= SUPERUSER_NAME then
+    if (FirstFieldValue= SUPERUSER_NAME) then
       begin
       Error:= TRUE;
       ErrorMsg:= No_Edit_SUPERUSER;
@@ -327,7 +327,14 @@ begin
       Exit;
       end;
     end;
-  DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
+  if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
+    begin
+    DefaultValue:= '';
+    end
+  else
+  	begin
+ 		DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
+    end;
   if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, DefaultValue, MaxLength, FieldValue)= TRUE then
     begin
     if FieldValue='' then

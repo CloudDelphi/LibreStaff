@@ -73,7 +73,9 @@ msgid "Blank not allowed!"
 msgstr "Em branco não é permitido!"
 
 #: formdsoeditor.col_title_passwords
-msgid "Password"
+#, fuzzy
+#| msgid "Password"
+msgid "Password (encrypted)"
 msgstr "Contra-senha"
 
 #: formdsoeditor.col_title_typecontracts
@@ -108,8 +110,10 @@ msgid "Change the name of workplace"
 msgstr "Cambiar o nome do lugar de trabalho"
 
 #: formdsoeditor.edit_iptbox_prompt_passwords
+#, fuzzy
+#| msgid "Password:"
 msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
-msgid "Password:"
+msgid "New Password:"
 msgstr "Contra-senha:"
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
@@ -165,7 +169,6 @@ msgid "Password does not match."
 msgstr ""
 
 #: formlogin.lg_passworddoesnotmatchtitle
-#, fuzzy
 msgctxt "formlogin.lg_passworddoesnotmatchtitle"
 msgid "Error!"
 msgstr "Erro!"
@@ -175,7 +178,6 @@ msgid "Username does not exist."
 msgstr ""
 
 #: formlogin.lg_usernotexiststitle
-#, fuzzy
 msgctxt "formlogin.lg_usernotexiststitle"
 msgid "Error!"
 msgstr "Erro!"
@@ -1036,6 +1038,10 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr "Único"
 
+#: tfrmpreferences.chkrememberusername.caption
+msgid "Remember username"
+msgstr ""
+
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
@@ -1056,6 +1062,10 @@ msgstr "A minha companhia"
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
 msgstr "Informe"
+
+#: tfrmpreferences.grpaccesscontroloptions.caption
+msgid "Options"
+msgstr ""
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"

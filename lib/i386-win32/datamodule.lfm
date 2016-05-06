@@ -1,0 +1,170 @@
+object DataMod: TDataMod
+  OldCreateOrder = False
+  Height = 569
+  HorizontalOffset = 996
+  VerticalOffset = 246
+  Width = 694
+  object DsoEmployees: TDataSource
+    DataSet = QueEmployees
+    left = 224
+    top = 152
+  end
+  object QueEmployees: TSQLQuery
+    PacketRecords = -1
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    SQL.Strings = (
+      ''
+    )
+    Options = []
+    Params = <>
+    left = 56
+    top = 152
+  end
+  object Transaction: TSQLTransaction
+    Active = False
+    Action = caCommit
+    Database = Connection
+    Options = []
+    left = 192
+    top = 32
+  end
+  object DsoPicsEmployees: TDataSource
+    DataSet = QuePicsEmployees
+    left = 248
+    top = 264
+  end
+  object QuePicsEmployees: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    DataSource = DsoEmployees
+    left = 72
+    top = 264
+  end
+  object DsoSearch: TDataSource
+    DataSet = QueSearch
+    left = 248
+    top = 368
+  end
+  object QueSearch: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 72
+    top = 368
+  end
+  object QueTypeContracts: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 416
+    top = 152
+  end
+  object DsoTypeContracts: TDataSource
+    DataSet = QueTypeContracts
+    left = 584
+    top = 152
+  end
+  object QueWorkplaces: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 424
+    top = 264
+  end
+  object DsoWorkplaces: TDataSource
+    DataSet = QueWorkplaces
+    left = 584
+    top = 264
+  end
+  object QueContractsLog: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    DataSource = DsoEmployees
+    left = 424
+    top = 368
+  end
+  object DsoContractsLog: TDataSource
+    DataSet = QueContractsLog
+    left = 584
+    top = 368
+  end
+  object QueVirtual: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 304
+    top = 32
+  end
+  object QuePrint: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 424
+    top = 480
+  end
+  object DsoPrint: TDataSource
+    DataSet = QuePrint
+    left = 592
+    top = 480
+  end
+  object QueConfig: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 416
+    top = 32
+  end
+  object DsoConfig: TDataSource
+    DataSet = QueConfig
+    left = 592
+    top = 32
+  end
+  object Connection: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    AfterConnect = ConnectionAfterConnect
+    KeepConnection = False
+    Params.Strings = (
+      'foreign_keys=1'
+    )
+    Transaction = Transaction
+    LogEvents = []
+    Options = []
+    left = 56
+    top = 32
+  end
+  object DsoUsers: TDataSource
+    DataSet = QueUsers
+    left = 248
+    top = 480
+  end
+  object QueUsers: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 72
+    top = 480
+  end
+end

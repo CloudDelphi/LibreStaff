@@ -5,8 +5,9 @@ unit Globals;
 interface
 
 uses
-  Classes, SysUtils, INIfiles, PopupNotifier, ExtCtrls;
+  Classes, SysUtils, INIfiles, PopupNotifier, ExtCtrls, Graphics;
 
+//Custom PopupNotifier with a autoclose delay
 type TCustomPopupNotifier= class(TPopupNotifier)
 		private
     Counter, Seconds: Integer;
@@ -19,23 +20,25 @@ type TCustomPopupNotifier= class(TPopupNotifier)
 var
 	PathApp, SQLiteLibraryName, DatabaseName, DatabasePath: String;
   INIFile: TINIFile;
-  AccessControl: Boolean;
+  AccessControl, RememberUsername: Boolean;
+  Username: String;
 
 const
-  POPUP_DELAY= 3600;
-  USERNAME_LENGTH= 12;
+  EDIT_ERROR_COLOR= clRed;
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;
   SUPERUSER_NAME= 'SUPERUSER';
-  SUPERUSER_PASSWORD= '';
-  SUPERUSER_SALT= '';
+  SUPERUSER_PASSWORD= 'B887275D13AA5DB8FBDFF89576D245F03B7E9C48';
+  SUPERUSER_SALT= 'zYJ';
+  USERNAME_LENGTH= 12;
 
 implementation
 
+//Custom Popup Notifier procedures
 constructor TCustomPopupNotifier.Create(Delay: Integer=0);
 begin
   inherited create(nil);
- 	if Delay>0 then
+ 	if (Delay>0) then
 	  begin
 	  PopupTimer:= TTimer.Create(Self);
   	with PopupTimer do
@@ -44,17 +47,17 @@ begin
       Seconds:= Delay;
       Interval:= 1000;
   		Enabled:= TRUE;
-  		OnTimer:= @OnPopupTimer;
+  		OnTimer:= @OnPopupTimer; //The @ avoid parameters
 	    end;
   	end;
 end;
 
 procedure TCustomPopupNotifier.OnPopupTimer(Sender: TObject);
 begin
-  Counter:= Counter+1;
-  if Counter>= Seconds then
+  Inc(Counter, 1); //Increase the counter
+  if (Counter>= Seconds) then //If counter equal to delay in seconds...
   	begin
-    Free;
+    Free; //...then free the popup
     end;
 end;
 

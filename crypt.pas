@@ -25,7 +25,9 @@ begin
     Hash.UpdateStr(StringToHash); //calculate the hesh-sum
     Hash.Final(Digest);
     for i:=1 to 20 do
+      begin
       ResultStr:=ResultStr+inttohex(Digest[i],1);
+      end;
     Result:= ResultStr;
   finally
     Hash.Free;
@@ -38,11 +40,11 @@ var
 begin
   Randomize;
   //string with all possible chars
-  Chars:= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  Chars:= 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!$%&/()=?#@,;:.-_{}[]';
   Result:= '';
   repeat
     Result:= Result + Chars[Random(Length(Chars)) + 1];
-  until (Length(Result) = SaltLength)
+  until (Length(Result)= SaltLength)
 end;
 
 end.

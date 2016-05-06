@@ -37,7 +37,7 @@ begin
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
 	if not FileExists(PathApp+'config.ini') then
-		INIFile.WriteString('Database', 'Path', '"'+PathApp+'data\"');
+		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
   //Set some paths
   DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
   DatabaseName:= DatabasePath + 'data.db';

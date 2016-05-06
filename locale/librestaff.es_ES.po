@@ -72,8 +72,8 @@ msgid "Blank not allowed!"
 msgstr "¡No se permite en blanco!"
 
 #: formdsoeditor.col_title_passwords
-msgid "Password"
-msgstr "Contraseña"
+msgid "Password (encrypted)"
+msgstr "Contraseña (encriptada)"
 
 #: formdsoeditor.col_title_typecontracts
 msgctxt "formdsoeditor.col_title_typecontracts"
@@ -108,8 +108,8 @@ msgstr "Cambiar el nombre del lugar de trabajo"
 
 #: formdsoeditor.edit_iptbox_prompt_passwords
 msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
-msgid "Password:"
-msgstr "Contraseña:"
+msgid "New Password:"
+msgstr "Contraseña nueva:"
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
 msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
@@ -161,20 +161,18 @@ msgstr "¡Ese usuario ya existe!"
 
 #: formlogin.lg_passworddoesnotmatchtext
 msgid "Password does not match."
-msgstr ""
+msgstr "La contraseña es incorrecta."
 
 #: formlogin.lg_passworddoesnotmatchtitle
-#, fuzzy
 msgctxt "formlogin.lg_passworddoesnotmatchtitle"
 msgid "Error!"
 msgstr "¡Error!"
 
 #: formlogin.lg_usernotexiststext
 msgid "Username does not exist."
-msgstr ""
+msgstr "Ese nombre de usuario no existe."
 
 #: formlogin.lg_usernotexiststitle
-#, fuzzy
 msgctxt "formlogin.lg_usernotexiststitle"
 msgid "Error!"
 msgstr "¡Error!"
@@ -1035,6 +1033,10 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr "Único"
 
+#: tfrmpreferences.chkrememberusername.caption
+msgid "Remember username"
+msgstr "Recordar el nombre de usuario"
+
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
@@ -1055,6 +1057,10 @@ msgstr "Mi Compañía"
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
 msgstr "Informe"
+
+#: tfrmpreferences.grpaccesscontroloptions.caption
+msgid "Options"
+msgstr "Opciones"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
@@ -1198,4 +1204,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

@@ -282,7 +282,7 @@ begin
     end;
   if Unique= False then
   	begin
-   	DBEIDEmployee.Color:= clRed;
+   	DBEIDEmployee.Color:= EDIT_ERROR_COLOR;
     Application.MessageBox(PChar(Msg), 'Error!', MB_OK);
     DBEIDEmployee.SetFocus;
     DBEIDEmployee.Color:= clDefault;
@@ -536,13 +536,21 @@ end;
 
 procedure TFrmMain.DBEIDEmployeeExit(Sender: TObject);
 begin
-	if (IDUnique= True) AND (TotalRecs>0) then IDIsUnique;
+	if (IDUnique= True) AND (TotalRecs>0) then
+    begin
+    IDIsUnique;
+    end;
 end;
 
 procedure TFrmMain.DBNavBeforeAction(Sender: TObject; Button: TDBNavButtonType);
 begin
   if (IDUnique= True) AND (DBEIDEmployee.Focused= True) then
-  		if IDIsUnique= False then Abort;
+    	begin
+  		if IDIsUnique= False then
+        begin
+        Abort;
+        end;
+      end;
 end;
 
 procedure TFrmMain.DBNavClick(Sender: TObject; Button: TDBNavButtonType);

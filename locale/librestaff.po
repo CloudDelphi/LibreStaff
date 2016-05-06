@@ -73,7 +73,7 @@ msgid "Blank not allowed!"
 msgstr ""
 
 #: formdsoeditor.col_title_passwords
-msgid "Password"
+msgid "Password (encrypted)"
 msgstr ""
 
 #: formdsoeditor.col_title_typecontracts
@@ -109,7 +109,7 @@ msgstr ""
 
 #: formdsoeditor.edit_iptbox_prompt_passwords
 msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
-msgid "Password:"
+msgid "New Password:"
 msgstr ""
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
@@ -1030,6 +1030,10 @@ msgctxt "TFRMPREFERENCES.CHKIDUNIQUE.CAPTION"
 msgid "Unique"
 msgstr ""
 
+#: tfrmpreferences.chkrememberusername.caption
+msgid "Remember username"
+msgstr ""
+
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "TFRMPREFERENCES.CHKREPORTPREVIEW.CAPTION"
 msgid "Show preview"
@@ -1049,6 +1053,10 @@ msgstr ""
 
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
+msgstr ""
+
+#: tfrmpreferences.grpaccesscontroloptions.caption
+msgid "Options"
 msgstr ""
 
 #: tfrmpreferences.grpidemployee.caption

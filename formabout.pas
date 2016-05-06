@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, IpHtml, Ipfilebroker, RichMemo, Forms, Controls,
-  Graphics, Dialogs, ComCtrls, StdCtrls, ExtCtrls, FrameClose, types, Globals;
+  Graphics, Dialogs, ComCtrls, StdCtrls, ExtCtrls, FrameClose, Globals;
 
 type
   TSimpleIpHtml = class(TIpHtml)
@@ -45,7 +45,7 @@ implementation
 {$R *.lfm}
 
 uses
-  FormMain, FuncApp;
+  FuncApp;
 
 { TFrmAbout }
 
