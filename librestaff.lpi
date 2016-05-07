@@ -149,7 +149,7 @@
         <PackageName Value="LCL"/>
       </Item9>
     </RequiredPackages>
-    <Units Count="23">
+    <Units Count="24">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -312,6 +312,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Crypt"/>
       </Unit22>
+      <Unit23>
+        <Filename Value="richmemo\formpermissions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPermissions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormPermissions"/>
+      </Unit23>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

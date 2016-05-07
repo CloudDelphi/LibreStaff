@@ -69,6 +69,7 @@ msgid "Name:"
 msgstr ""
 
 #: formdsoeditor.blank_value
+msgctxt "formdsoeditor.blank_value"
 msgid "Blank not allowed!"
 msgstr ""
 
@@ -254,6 +255,29 @@ msgstr ""
 
 #: formmain.lg_single
 msgid "Single"
+msgstr ""
+
+#: formpermissions.add_iptbox_caption
+msgid "Add User Group"
+msgstr ""
+
+#: formpermissions.add_iptbox_prompt
+msgctxt "formpermissions.add_iptbox_prompt"
+msgid "Name:"
+msgstr ""
+
+#: formpermissions.blank_value
+msgctxt "formpermissions.blank_value"
+msgid "Blank not allowed!"
+msgstr ""
+
+#: formpermissions.no_delete_superusers_group
+msgid "SUPERUSERS group cannot be deleted."
+msgstr ""
+
+#: formpermissions.of_lblnavrec
+msgctxt "formpermissions.of_lblnavrec"
+msgid "of"
 msgstr ""
 
 #: formpicemployee.opendlg_error_msg_01
@@ -955,6 +979,41 @@ msgctxt "TFRMMAIN.TABREMARKS.CAPTION"
 msgid "Remarks"
 msgstr ""
 
+#: tfrmpermissions.caption
+msgctxt "tfrmpermissions.caption"
+msgid "Permissions"
+msgstr ""
+
+#: tfrmpermissions.dbchksaveemployee.caption
+msgid "Save employee"
+msgstr ""
+
+#: tfrmpermissions.lblpermissions.caption
+msgctxt "TFRMPERMISSIONS.LBLPERMISSIONS.CAPTION"
+msgid "Permissions"
+msgstr ""
+
+#: tfrmpermissions.lblusergroups.caption
+msgid "User Groups"
+msgstr ""
+
+#: tfrmpermissions.panleft.caption
+msgid "PanLeft"
+msgstr ""
+
+#: tfrmpermissions.panright.caption
+msgid "PanRight"
+msgstr ""
+
+#: tfrmpermissions.tabsave.caption
+msgctxt "TFRMPERMISSIONS.TABSAVE.CAPTION"
+msgid "Save"
+msgstr ""
+
+#: tfrmpermissions.tabtabs.caption
+msgid "Tabs"
+msgstr ""
+
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
 msgstr ""
@@ -990,6 +1049,10 @@ msgstr ""
 
 #: tfrmpreferences.btneditusers.caption
 msgid "Edit users..."
+msgstr ""
+
+#: tfrmpreferences.btnpermissions.caption
+msgid "Permissions..."
 msgstr ""
 
 #: tfrmpreferences.btnsavecompanyname.caption

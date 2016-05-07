@@ -36,7 +36,7 @@ object FraAddDelEdiSavCan: TFraAddDelEdiSavCan
     object BtnAdd: TBitBtn
       Left = 8
       Height = 41
-      Top = 56
+      Top = 55
       Width = 91
       Caption = 'Add'
       TabOrder = 2

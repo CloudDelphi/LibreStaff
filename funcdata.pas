@@ -69,18 +69,37 @@ begin
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
-      	  ' VALUES('''+DATABASEVERSION+''', ''My Company'''+', ''FALSE'''+
+      	  ' VALUES('+QuotedStr(DATABASEVERSION)+', ''My Company'''+', ''0'''+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Users('+
           ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT "",'+
           ' Hash_User CHAR(256) DEFAULT "",'+
-          ' Salt_User CHAR(256) DEFAULT ""'+
+          ' Salt_User CHAR(256) DEFAULT "",'+
+          ' Usergroup_User INTEGER DEFAULT NULL'+
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
-          ' Name_User, Hash_User, Salt_User)'+
-      	  ' VALUES('''+SUPERUSER_NAME+''', '''+SUPERUSER_PASSWORD+''', '''+SUPERUSER_SALT+''''+
+          ' Name_User, Hash_User, Salt_User, Usergroup_User)'+
+      	  ' VALUES('+QuotedStr(SUPERUSER_NAME)+', '+QuotedStr(SUPERUSER_PASSWORD)+', '+QuotedStr(SUPERUSER_SALT)+', '+QuotedStr('1')+
           ');');
+    DataMod.Connection.ExecuteDirect('CREATE TABLE Usergroups('+
+    			' ID_Usergroup INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Name_Usergroup CHAR(256) COLLATE NOCASE DEFAULT ""'+
+          ');');
+    DataMod.Connection.ExecuteDirect('INSERT INTO Usergroups ('+
+    			' Name_Usergroup)'+
+    			' VALUES('+QuotedStr(SUPERUSER_GROUP)+
+    			');');
+    DataMod.Connection.ExecuteDirect('CREATE TABLE Permissions('+
+    			' ID_Permission INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
+          ' Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE,'+
+          ' SaveEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE'+
+          ');');
+    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
+    DataMod.Connection.ExecuteDirect('INSERT INTO Permissions ('+
+    			' Usergroup_ID, SaveEmployee_Permission)'+
+    			' VALUES('+QuotedStr('1')+', ''1'''+
+    			');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
@@ -107,14 +126,14 @@ begin
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Active_Employee BOOLEAN NOT NULL DEFAULT TRUE,'+
           ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Name_Employee CHAR(256) DEFAULT "",'+
-          ' Surname1_Employee CHAR(256) DEFAULT "",'+
-          ' Surname2_Employee CHAR(256) DEFAULT "",'+
+          ' Name_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
+          ' Surname1_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
+          ' Surname2_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
           ' IDCard_Employee CHAR(256) DEFAULT "",'+
           ' SSN_Employee CHAR(256) DEFAULT "",'+
-    	    ' Address_Employee MEMO(8192) DEFAULT "",'+
-       	  ' City_Employee CHAR(256) DEFAULT "",'+
-       	  ' State_Employee CHAR(256) DEFAULT "",'+
+    	    ' Address_Employee MEMO(8192) COLLATE NOCASE DEFAULT "",'+
+       	  ' City_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
+       	  ' State_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
        	  ' ZIPCode_Employee CHAR(256) DEFAULT "",'+
        	  ' Phone_Employee CHAR(256) DEFAULT "",'+
        	  ' Cell_Employee CHAR(256) DEFAULT "",'+
@@ -122,11 +141,11 @@ begin
           ' DateBirth_Employee DATE DEFAULT NULL,'+
           ' Genre_Employee BOOLEAN DEFAULT NULL,'+
           ' MaritalStatus_Employee BOOLEAN DEFAULT NULL,'+
-          ' Remarks_Employee MEMO(8152) DEFAULT "",'+
+          ' Remarks_Employee MEMO(8152) COLLATE NOCASE DEFAULT "",'+
           ' DateInit_Contract DATE DEFAULT NULL,'+
           ' DateEnd_Contract DATE DEFAULT NULL,'+
-          ' TypeContract_ID INTEGER DEFAULT NULL,'+
-          ' Workplace_ID INTEGER DEFAULT NULL'+
+          ' TypeContract_ID INTEGER COLLATE NOCASE DEFAULT NULL,'+
+          ' Workplace_ID INTEGER COLLATE NOCASE DEFAULT NULL'+
           ' );');
     //Creating an index based upon id in the DATA Table
 		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');

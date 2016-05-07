@@ -305,10 +305,10 @@ object FrmPreferences: TFrmPreferences
         Left = 40
         Height = 280
         Top = 32
-        Width = 536
+        Width = 384
         Caption = 'Access Control'
         ClientHeight = 247
-        ClientWidth = 532
+        ClientWidth = 380
         TabOrder = 0
         object BtnEditUsers: TSpeedButton
           Left = 16
@@ -322,10 +322,10 @@ object FrmPreferences: TFrmPreferences
           Left = 16
           Height = 89
           Top = 139
-          Width = 336
+          Width = 344
           Caption = 'Options'
           ClientHeight = 56
-          ClientWidth = 332
+          ClientWidth = 340
           TabOrder = 0
           object ChkRememberUsername: TCheckBox
             Left = 8
@@ -336,6 +336,14 @@ object FrmPreferences: TFrmPreferences
             OnChange = ChkRememberUsernameChange
             TabOrder = 0
           end
+        end
+        object BtnPermissions: TSpeedButton
+          Left = 216
+          Height = 43
+          Top = 72
+          Width = 144
+          Caption = 'Permissions...'
+          OnClick = BtnPermissionsClick
         end
       end
       object DBAccessControlEnabled: TDBCheckBox
@@ -385,8 +393,8 @@ object FrmPreferences: TFrmPreferences
   object ImgLstPreferences: TImageList
     Height = 48
     Width = 48
-    left = 584
-    top = 432
+    left = 64
+    top = 424
     Bitmap = {
       4C69050000003000000030000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

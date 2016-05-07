@@ -48,7 +48,6 @@ object FrmDsoEditor: TFrmDsoEditor
         OnClick = BtnCancelClick
       end
       inherited BtnAdd: TBitBtn
-        Top = 55
         OnClick = BtnAddClick
       end
       inherited BtnDelete: TBitBtn

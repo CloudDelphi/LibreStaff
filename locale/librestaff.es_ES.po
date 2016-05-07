@@ -68,6 +68,7 @@ msgid "Name:"
 msgstr "Nombre:"
 
 #: formdsoeditor.blank_value
+msgctxt "formdsoeditor.blank_value"
 msgid "Blank not allowed!"
 msgstr "¡No se permite en blanco!"
 
@@ -258,6 +259,32 @@ msgstr "Casado/a"
 #: formmain.lg_single
 msgid "Single"
 msgstr "Soltero/a"
+
+#: formpermissions.add_iptbox_caption
+msgid "Add User Group"
+msgstr ""
+
+#: formpermissions.add_iptbox_prompt
+#, fuzzy
+msgctxt "formpermissions.add_iptbox_prompt"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formpermissions.blank_value
+#, fuzzy
+msgctxt "formpermissions.blank_value"
+msgid "Blank not allowed!"
+msgstr "¡No se permite en blanco!"
+
+#: formpermissions.no_delete_superusers_group
+msgid "SUPERUSERS group cannot be deleted."
+msgstr ""
+
+#: formpermissions.of_lblnavrec
+#, fuzzy
+msgctxt "formpermissions.of_lblnavrec"
+msgid "of"
+msgstr "de"
 
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
@@ -958,6 +985,42 @@ msgctxt "tfrmmain.tabremarks.caption"
 msgid "Remarks"
 msgstr "Observaciones"
 
+#: tfrmpermissions.caption
+msgctxt "tfrmpermissions.caption"
+msgid "Permissions"
+msgstr ""
+
+#: tfrmpermissions.dbchksaveemployee.caption
+msgid "Save employee"
+msgstr ""
+
+#: tfrmpermissions.lblpermissions.caption
+msgctxt "tfrmpermissions.lblpermissions.caption"
+msgid "Permissions"
+msgstr ""
+
+#: tfrmpermissions.lblusergroups.caption
+msgid "User Groups"
+msgstr ""
+
+#: tfrmpermissions.panleft.caption
+msgid "PanLeft"
+msgstr ""
+
+#: tfrmpermissions.panright.caption
+msgid "PanRight"
+msgstr ""
+
+#: tfrmpermissions.tabsave.caption
+#, fuzzy
+msgctxt "tfrmpermissions.tabsave.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrmpermissions.tabtabs.caption
+msgid "Tabs"
+msgstr ""
+
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
 msgstr "Borrar"
@@ -994,6 +1057,10 @@ msgstr "Cambiar..."
 #: tfrmpreferences.btneditusers.caption
 msgid "Edit users..."
 msgstr "Editar usuarios..."
+
+#: tfrmpreferences.btnpermissions.caption
+msgid "Permissions..."
+msgstr ""
 
 #: tfrmpreferences.btnsavecompanyname.caption
 msgctxt "tfrmpreferences.btnsavecompanyname.caption"
@@ -1204,3 +1271,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
+

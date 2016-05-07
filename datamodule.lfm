@@ -1,9 +1,9 @@
 object DataMod: TDataMod
   OldCreateOrder = False
   Height = 569
-  HorizontalOffset = 996
-  VerticalOffset = 246
-  Width = 694
+  HorizontalOffset = 608
+  VerticalOffset = 235
+  Width = 1021
   object DsoEmployees: TDataSource
     DataSet = QueEmployees
     left = 224
@@ -166,5 +166,34 @@ object DataMod: TDataMod
     Params = <>
     left = 72
     top = 480
+  end
+  object QueUsergroups: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    left = 744
+    top = 152
+  end
+  object DsoUsergroups: TDataSource
+    DataSet = QueUsergroups
+    left = 904
+    top = 152
+  end
+  object QuePermissions: TSQLQuery
+    FieldDefs = <>
+    Database = Connection
+    Transaction = Transaction
+    Options = []
+    Params = <>
+    DataSource = DsoUsergroups
+    left = 744
+    top = 264
+  end
+  object DsoPermissions: TDataSource
+    DataSet = QuePermissions
+    left = 904
+    top = 264
   end
 end

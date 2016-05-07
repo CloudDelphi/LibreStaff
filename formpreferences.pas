@@ -15,6 +15,7 @@ type
 
   TFrmPreferences = class(TForm)
     BtnEditUsers: TSpeedButton;
+    BtnPermissions: TSpeedButton;
     BtnSaveCompanyName: TBitBtn;
     BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
@@ -53,6 +54,7 @@ type
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnEditUsersClick(Sender: TObject);
+    procedure BtnPermissionsClick(Sender: TObject);
     procedure BtnSaveCompanyNameClick(Sender: TObject);
     procedure CboAutoTypeChange(Sender: TObject);
     procedure CboDateFormatChange(Sender: TObject);
@@ -100,7 +102,7 @@ implementation
 
 { TFrmPreferences }
 uses
-	FuncDlgs, FormMain, FuncData, DataModule;
+	FuncDlgs, FormMain, FuncData, DataModule, FormPermissions;
 
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
@@ -123,7 +125,13 @@ end;
 
 procedure TFrmPreferences.BtnEditUsersClick(Sender: TObject);
 begin
-  FrmDsoEditor.EditTable(wtUsers);
+	FrmDsoEditor.EditTable(wtUsers);
+end;
+
+procedure TFrmPreferences.BtnPermissionsClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmPermissions, FrmPermissions);
+	FrmPermissions.ShowModal;
 end;
 
 procedure TFrmPreferences.BtnSaveCompanyNameClick(Sender: TObject);

@@ -17,9 +17,18 @@ type TCustomPopupNotifier= class(TPopupNotifier)
 		constructor Create(Delay: Integer=0); overload;
   end;
 
+type
+	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
+
+type TPermissions= class
+	public
+
+  end;
+
 var
 	PathApp, SQLiteLibraryName, DatabaseName, DatabasePath: String;
   INIFile: TINIFile;
+  Lang, FallBacklang: String;
   AccessControl, RememberUsername: Boolean;
   Username: String;
 
@@ -27,6 +36,7 @@ const
   EDIT_ERROR_COLOR= clRed;
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;
+  SUPERUSER_GROUP= 'SUPERUSERS';
   SUPERUSER_NAME= 'SUPERUSER';
   SUPERUSER_PASSWORD= 'B887275D13AA5DB8FBDFF89576D245F03B7E9C48';
   SUPERUSER_SALT= 'zYJ';

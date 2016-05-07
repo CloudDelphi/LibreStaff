@@ -17,6 +17,7 @@ type
   { TDataModule1 }
   TDataMod = class(TDataModule)
     DsoConfig: TDataSource;
+    DsoPermissions: TDataSource;
     DsoUsers: TDataSource;
     DsoTypeContracts: TDataSource;
     DsoSearch: TDataSource;
@@ -25,8 +26,10 @@ type
     DsoPrint: TDataSource;
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
+    DsoUsergroups: TDataSource;
     QueConfig: TSQLQuery;
     QuePrint: TSQLQuery;
+    QuePermissions: TSQLQuery;
     QueUsers: TSQLQuery;
     QueVirtual: TSQLQuery;
     QueEmployees: TSQLQuery;
@@ -36,6 +39,7 @@ type
     QueWorkplaces: TSQLQuery;
     QueContractsLog: TSQLQuery;
     Connection: TSQLite3Connection;
+    QueUsergroups: TSQLQuery;
     Transaction: TSQLTransaction;
     procedure ConnectionAfterConnect(Sender: TObject);
   private

@@ -44,7 +44,7 @@ implementation
 {$R *.lfm}
 
 uses
-  DataModule, FuncData, FormMain, db;
+  DataModule, FuncData, FormMain, db, globals;
 
 procedure TFrmActivationEmployee.BtnCancelClick(Sender: TObject);
 begin

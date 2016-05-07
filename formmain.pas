@@ -11,8 +11,6 @@ uses
   gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Globals, Types;
 
 type
-	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
-type
 	TCboListType= (cblStates);
 type
 	TWhatTable= (wtEmployees, wtTypeContracts, wtWorkplaces, wtUsers);
@@ -159,7 +157,6 @@ type
 
 var
   FrmMain: TFrmMain;
-  Lang, FallBacklang: String;
   StatesFilename: String;
   IDUnique, IDAuto, IDAllowBlank: Boolean;
   IDAutoType: Integer;
@@ -180,6 +177,9 @@ const
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
   SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
   SELECT_ALL_USERS_SQL= 'SELECT * from Users;';
+  SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
+  SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
+
 resourcestring
   lg_CaptionBtn_Activate= 'Activate';
   lg_CaptionBtn_Inactivate= 'Inactivate';
@@ -435,7 +435,7 @@ begin
   //Connect & Load to database
   //Open Tables
   //Note: The order is important! First the detailed tables.
-  LoadQueriesCount:= 5;
+  LoadQueriesCount:= 7;
   if (AccessControl= FALSE) then
     begin
     LoadQueriesCount:= LoadQueriesCount+1;
@@ -458,10 +458,14 @@ begin
   LoadQueries[3].SQL:= SELECT_PICSEMPLOYEES_SQL;
 	LoadQueries[4].Query:= DataMod.QueContractsLog;
   LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
+	LoadQueries[5].Query:= DataMod.QueUsergroups;
+  LoadQueries[5].SQL:= SELECT_ALL_USERGROUPS_SQL;
+	LoadQueries[6].Query:= DataMod.QuePermissions;
+  LoadQueries[6].SQL:= SELECT_PERMISSIONSUSERGROUPS_SQL;
   if (AccessControl= FALSE) then
     begin
-		LoadQueries[5].Query:= DataMod.QueUsers;
-  	LoadQueries[5].SQL:= SELECT_ALL_USERS_SQL;
+		LoadQueries[7].Query:= DataMod.QueUsers;
+  	LoadQueries[7].SQL:= SELECT_ALL_USERS_SQL;
     end;
   FrmPrgBar.Caption:= 'Loading Tables...';
 	for i:= Low(LoadQueries) to High(LoadQueries) do
