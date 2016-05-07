@@ -26,6 +26,7 @@ type
     procedure BtnAddClick(Sender: TObject);
     procedure BtnCancelClick(Sender: TObject);
     procedure BtnDeleteClick(Sender: TObject);
+    procedure BtnEditClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure GrdUserGroupsCellClick(Column: TColumn);
@@ -43,6 +44,9 @@ var
 resourcestring
   Add_IptBox_Caption= 'Add User Group';
   Add_IptBox_Prompt= 'Name:';
+  Edit_IptBox_Caption= 'Edit User Group';
+  Edit_IptBox_Prompt= 'Name:';
+  No_Edit_SUPERUSER= 'SUPERUSERS cannot be edited.';
   No_Delete_SUPERUSERS_Group= 'SUPERUSERS group cannot be deleted.';
   Blank_Value= 'Blank not allowed!';
   Of_LblNavRec= 'of';
@@ -81,6 +85,47 @@ begin
   FuncData.DeleteTableRecord(DataMod.QueUsergroups, True, FieldValue);
   Dec(TotalRecs);
   UpdateNavRec;
+end;
+
+procedure TFrmPermissions.BtnEditClick(Sender: TObject);
+var
+  FieldValue, DefaultValue, ErrorMsg: String;
+  Error: Boolean=FALSE;
+  Cancel: Boolean=FALSE;
+begin
+  DefaultValue:= DataMod.QueUsergroups.FieldByName(GrdUserGroups.Columns[0].FieldName).AsString;
+  if (DefaultValue= SUPERUSER_GROUP) then
+  	begin
+    Error:= TRUE;
+    ErrorMsg:= No_Edit_SUPERUSER;
+    Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
+    Exit;
+    end;
+	if FrmInputBox.CustomInputBox(Edit_IptBox_Caption, Edit_IptBox_Prompt, DefaultValue, 256, FieldValue)= TRUE then
+  	begin
+  	if FieldValue='' then
+    	begin
+	    Error:= TRUE;
+  	  ErrorMsg:= Blank_Value;
+    	end
+    end
+	else
+  	begin
+    Cancel:= True;
+		end;
+	if (Error= FALSE) AND (Cancel= False) then
+		begin
+	  SetLength(WriteFields, 1);
+		WriteFields[0].FieldName:= 'Name_Usergroup';
+  	WriteFields[0].Value:= FieldValue;
+		WriteFields[0].DataFormat:= dtString;
+	  FuncData.EditTableRecord(DataMod.QueUsergroups, WriteFields);
+ 		WriteFields:= nil;
+		end
+	else if (Error= TRUE) then
+		begin
+		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
+	  end;
 end;
 
 procedure TFrmPermissions.BtnSaveClick(Sender: TObject);

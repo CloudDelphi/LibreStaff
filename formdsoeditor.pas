@@ -356,7 +356,7 @@ begin
       FieldValue:= Crypt.HashString(Salt+FieldValue);
       end
     end
-    else
+  else
     begin
     Cancel:= True;
     end;

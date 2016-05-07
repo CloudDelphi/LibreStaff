@@ -313,7 +313,7 @@
         <UnitName Value="Crypt"/>
       </Unit22>
       <Unit23>
-        <Filename Value="richmemo\formpermissions.pas"/>
+        <Filename Value="formpermissions.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FrmPermissions"/>
         <HasResources Value="True"/>

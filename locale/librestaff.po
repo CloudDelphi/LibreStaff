@@ -271,8 +271,21 @@ msgctxt "formpermissions.blank_value"
 msgid "Blank not allowed!"
 msgstr ""
 
+#: formpermissions.edit_iptbox_caption
+msgid "Edit User Group"
+msgstr ""
+
+#: formpermissions.edit_iptbox_prompt
+msgctxt "formpermissions.edit_iptbox_prompt"
+msgid "Name:"
+msgstr ""
+
 #: formpermissions.no_delete_superusers_group
 msgid "SUPERUSERS group cannot be deleted."
+msgstr ""
+
+#: formpermissions.no_edit_superuser
+msgid "SUPERUSERS cannot be edited."
 msgstr ""
 
 #: formpermissions.of_lblnavrec

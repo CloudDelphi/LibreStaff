@@ -1,7 +1,7 @@
 object FrmPermissions: TFrmPermissions
-  Left = 714
+  Left = 652
   Height = 460
-  Top = 261
+  Top = 324
   Width = 625
   BorderStyle = bsDialog
   Caption = 'Permissions'
@@ -34,6 +34,9 @@ object FrmPermissions: TFrmPermissions
       end
       inherited BtnDelete: TBitBtn
         OnClick = BtnDeleteClick
+      end
+      inherited BtnEdit: TBitBtn
+        OnClick = BtnEditClick
       end
     end
   end
