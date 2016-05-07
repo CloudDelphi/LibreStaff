@@ -33,6 +33,6 @@ How to Compile
 
 Superuser
 ---------
-The admin account created by default for access control (if enabled) is the following:
-user: SUPERUSER
+The admin account created by default for access control (if enabled) is the following:<br />
+user: SUPERUSER<br />
 password: 1234
