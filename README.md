@@ -30,3 +30,9 @@ How to Compile
 5) Delete data.db file if exists.<br />
 6) Open the project (librestaff.lpi).<br />
 7) Goto to "Menu" -> Compile.<br />
+
+Superuser
+---------
+The admin account created by default for access control (if enabled) is the following:
+user: SUPERUSER
+password: 1234
