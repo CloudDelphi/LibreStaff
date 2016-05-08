@@ -335,7 +335,7 @@ end;
 procedure TFrmMain.UpdateRecordCount;
 begin
   TotalRecs:= DataMod.QueEmployees.RecordCount;
-  if TotalRecs=0 then
+  if (TotalRecs= 0) then
 		DisableEmployees
     else
     EnableEmployees;
@@ -647,14 +647,20 @@ end;
 
 procedure TFrmMain.BtnDelTypeContractClick(Sender: TObject);
 begin
-  DataMod.QueEmployees.Edit;
-  DataMod.QueEmployees.FieldValues['TypeContract_ID']:= null;
+  if (TotalRecs>0) then
+    begin
+	  DataMod.QueEmployees.Edit;
+  	DataMod.QueEmployees.FieldValues['TypeContract_ID']:= null;
+    end;
 end;
 
 procedure TFrmMain.BtnDelWorkplaceClick(Sender: TObject);
 begin
-  DataMod.QueEmployees.Edit;
-  DataMod.QueEmployees.FieldValues['Workplace_ID']:= null;
+  if (TotalRecs>0) then
+    begin
+	  DataMod.QueEmployees.Edit;
+  	DataMod.QueEmployees.FieldValues['Workplace_ID']:= null;
+    end;
 end;
 
 procedure TFrmMain.BtnEditStateListClick(Sender: TObject);

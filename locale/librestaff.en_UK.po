@@ -32,6 +32,19 @@ msgctxt "formactivationemployee.lg_title_inactivate"
 msgid "Do you want to inactivate"
 msgstr ""
 
+#: formadduser.blank_name
+msgid "The name cannot be blank"
+msgstr ""
+
+#: formadduser.blank_password
+msgid "The password cannot be blank"
+msgstr ""
+
+#: formadduser.user_exists
+msgctxt "formadduser.user_exists"
+msgid "This user already exists!"
+msgstr ""
+
 #: formdsoeditor.add_iptbox_caption_passwords
 msgid "Enter a password for this user"
 msgstr ""
@@ -155,10 +168,6 @@ msgstr ""
 #: formdsoeditor.of_lblnavrec
 msgctxt "formdsoeditor.of_lblnavrec"
 msgid "of"
-msgstr ""
-
-#: formdsoeditor.user_exists
-msgid "This user already exists!"
 msgstr ""
 
 #: formlogin.lg_passworddoesnotmatchtext
@@ -530,16 +539,6 @@ msgstr ""
 msgid "Form1"
 msgstr ""
 
-#: tform1.edit1.text
-msgctxt "tform1.edit1.text"
-msgid "Edit1"
-msgstr ""
-
-#: tform1.lbladdress.caption
-msgctxt "tform1.lbladdress.caption"
-msgid "Address:"
-msgstr ""
-
 #: tfraacceptcancel.btnaccept.caption
 msgctxt "tfraacceptcancel.btnaccept.caption"
 msgid "Accept"
@@ -693,6 +692,20 @@ msgstr ""
 
 #: tfrmactivationemployee.lbldateinit.caption
 msgid "Date init:"
+msgstr ""
+
+#: tfrmadduser.caption
+msgid "Add User"
+msgstr ""
+
+#: tfrmadduser.lblname.caption
+msgctxt "tfrmadduser.lblname.caption"
+msgid "Name:"
+msgstr ""
+
+#: tfrmadduser.lblpassword.caption
+msgctxt "tfrmadduser.lblpassword.caption"
+msgid "Password:"
 msgstr ""
 
 #: tfrmdsoeditor.caption

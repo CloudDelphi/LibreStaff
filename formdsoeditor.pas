@@ -67,7 +67,6 @@ resourcestring
   Edit_IptBox_Prompt_Passwords= 'New Password:';
   No_Delete_SUPERUSER= 'This user cannot be deleted!';
   No_Edit_SUPERUSER= 'The name of this user cannot be edited!';
-  User_Exists= 'This user already exists!';
   Blank_Value= 'Blank not allowed!';
 
 implementation
@@ -75,7 +74,7 @@ implementation
 {$R *.lfm}
 
 uses
-  FuncData, DataModule;
+  FuncData, DataModule, FormAddUser;
 
 { TFrmDsoEditor }
 
@@ -160,98 +159,64 @@ var
   Cancel: Boolean= FALSE;
   ErrorMsg: String;
   MaxLength: Integer;
-  Salt: String;
   WriteFieldsCount: Integer;
 begin
   case TableEdit.What of
-    wtTypeContracts:
-      begin
-      InpBox_Caption:= Add_IptBox_Caption_TypeContracts;
-      InpBox_Prompt:= Add_IptBox_Prompt_TypeContracts;
-      WriteFieldsCount:= 1;
-      end;
-    wtWorkplaces:
-      begin
-      InpBox_Caption:= Add_IptBox_Caption_Workplaces;
-      InpBox_Prompt:= Add_IptBox_Prompt_Workplaces;
-      WriteFieldsCount:= 1;
-      end;
     wtUsers:
       begin
-      WriteFieldsCount:= 3;
+      Cancel:= Not(FrmAddUser.AddUser(TableEdit));
       end;
-  end; //case
-  SetLength(WriteFields, WriteFieldsCount);
-  for i:=0 to (TableEdit.FieldCount-1) do
-    begin
-	  if (TableEdit.What= wtUsers) then
-	  	begin
-  	  case i of
-    		0:	begin
-						InpBox_Caption:= Add_IptBox_Caption_Users;
-      			InpBox_Prompt:= Add_IptBox_Prompt_Users;
-            MaxLength:= USERNAME_LENGTH;
-		      	end;
-	      1:	begin
-				    InpBox_Caption:= Add_IptBox_Caption_Passwords;
-    	  		InpBox_Prompt:= Add_IptBox_Prompt_Passwords;
-            MaxLength:= PASSWORD_LENGTH;
+    wtWorkplaces, WtTypeContracts:
+      begin
+	  	case TableEdit.What of
+    			wtWorkplaces:
+          	begin
+		    	  InpBox_Caption:= Add_IptBox_Caption_Workplaces;
+    		  	InpBox_Prompt:= Add_IptBox_Prompt_Workplaces;
+	      		WriteFieldsCount:= 1;
 		  	    end;
-	    end; //case
-  		end
-      else
-      begin
-      MaxLength:= 255;
-      end;
-	  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength, FieldValue)= TRUE then
-      begin
-      if FieldValue='' then
-      	begin
-	      Error:= TRUE;
-  	    ErrorMsg:= Blank_Value;
-        break; //terminate the 'for' loop
-      	end
-  		else if (TableEdit.What= wtUsers) AND (i= 0) then //if entering a user name
-     		begin
-	      if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE)= TRUE then
-  	      begin
-  			  Error:= TRUE;
-	     		ErrorMsg:= User_Exists;
-          break; //terminate the 'for' loop
-	        end;
-    	  end
-      else if (TableEdit.What= wtUsers) AND (i= 1) then //if entering a password
-        begin
-        Salt:= GenerateSalt(SALT_LENGTH);
-        FieldValue:= Crypt.HashString(Salt+FieldValue);
-        end;
-     	WriteFields[i].FieldName:= TableEdit.FieldNames[i];
- 	 	  WriteFields[i].Value:= FieldValue;
-   		WriteFields[i].DataFormat:= dtString;
-      if (TableEdit.What= wtUsers) AND (i= 1) then //if entering the salt
-        begin
-       	WriteFields[i+1].FieldName:= TableEdit.FieldNames[i+1];
- 	 	    WriteFields[i+1].Value:= Salt;
-     		WriteFields[i+1].DataFormat:= dtString;
-        end
-      end
-    else
-      begin
-      Cancel:= TRUE;
-      break; //terminate the 'for' loop
-      end;
-    end; //for
-  if (Error= FALSE) and (Cancel=FALSE) then
+    			wtTypeContracts:
+    	  		begin
+            InpBox_Caption:= Add_IptBox_Caption_TypeContracts;
+            InpBox_Prompt:= Add_IptBox_Prompt_TypeContracts;
+            WriteFieldsCount:= 1;
+      			end;
+      end; //case
+			SetLength(WriteFields, WriteFieldsCount);
+		  for i:=0 to (TableEdit.FieldCount-1) do
+		    begin
+	      MaxLength:= 255;
+		  	if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength, FieldValue)= TRUE then
+    	  	begin
+	      	if FieldValue='' then
+  	    		begin
+			      Error:= TRUE;
+  			    ErrorMsg:= Blank_Value;
+    	  	  break; //terminate the 'for' loop
+      			end;
+     			WriteFields[i].FieldName:= TableEdit.FieldNames[i];
+ 	 	  		WriteFields[i].Value:= FieldValue;
+   				WriteFields[i].DataFormat:= dtString;
+      		end
+	    	else
+  	    	begin
+	  	    Cancel:= TRUE;
+  	  	  break; //terminate the 'for' loop
+    	 		end;
+    	end; //for
+	  	end;
+	end; //case TableEdit.What
+ 	if (Error= FALSE) and (Cancel=FALSE) then
   	begin
- 		FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
-    WriteFields:= nil;
-	  Inc(TotalRecs);
- 		UpdateNavRec;
+	 	FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
+	  WriteFields:= nil;
+		Inc(TotalRecs);
+	 	UpdateNavRec;
   	end
 	else if (Error= TRUE) then
 		begin
 		Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
-    end;
+  	end;
 end;
 
 procedure TFrmDsoEditor.BtnDeleteClick(Sender: TObject);
