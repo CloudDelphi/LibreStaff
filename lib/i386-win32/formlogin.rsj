@@ -1,6 +1,0 @@
-{"version":1,"strings":[
-{"hash":80320065,"name":"formlogin.lg_usernotexiststitle","sourcebytes":[69,114,114,111,114,33],"value":"Error!"},
-{"hash":157874206,"name":"formlogin.lg_usernotexiststext","sourcebytes":[85,115,101,114,110,97,109,101,32,100,111,101,115,32,110,111,116,32,101,120,105,115,116,46],"value":"Username does not exist."},
-{"hash":80320065,"name":"formlogin.lg_passworddoesnotmatchtitle","sourcebytes":[69,114,114,111,114,33],"value":"Error!"},
-{"hash":176242302,"name":"formlogin.lg_passworddoesnotmatchtext","sourcebytes":[80,97,115,115,119,111,114,100,32,100,111,101,115,32,110,111,116,32,109,97,116,99,104,46],"value":"Password does not match."}
-]}
