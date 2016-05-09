@@ -16,19 +16,18 @@ end;
 var
   WriteFields: array of TWriteField;
 
-function CheckDatasetEmpty(Dataset: TDataset): Boolean;
+function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 procedure ConnectDatabase(Databasename: String);
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
-function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Dataset: TDataset; Target: String='';
-         Confirm: Boolean=False): Boolean;
+function DeleteRecordSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
 procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
-function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolean;
+function InsertSQL(Table: TSQLQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
 procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
-function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
 function CheckValueExists(Table, Field, Value: String; NoCase: Boolean=FALSE;
          FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 
@@ -40,10 +39,16 @@ resourcestring
 
 implementation
 
-function CheckDatasetEmpty(Dataset: TDataset): Boolean;
+function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 begin
-	if Dataset.IsEmpty= True then Result:=True
-  	else Result:= False;
+	if Query.Eof then
+    begin
+    Result:= True; //No records
+    end
+    else
+    begin
+    Result:= False; //It has results
+    end;
 end;
 
 procedure ConnectDatabase(Databasename: String);
@@ -76,10 +81,10 @@ begin
           ' Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT "",'+
           ' Hash_User CHAR(256) DEFAULT "",'+
           ' Salt_User CHAR(256) DEFAULT "",'+
-          ' Usergroup_User INTEGER DEFAULT NULL'+
+          ' Usergroup_ID INTEGER DEFAULT NULL'+
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
-          ' Name_User, Hash_User, Salt_User, Usergroup_User)'+
+          ' Name_User, Hash_User, Salt_User, Usergroup_ID)'+
       	  ' VALUES('+QuotedStr(SUPERUSER_NAME)+', '+QuotedStr(SUPERUSER_PASSWORD)+', '+QuotedStr(SUPERUSER_SALT)+', '+QuotedStr('1')+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE Usergroups('+
@@ -184,19 +189,19 @@ begin
               end;
   end; //case
 end;
-function DeleteRecordSQL(TableName, KeyField, KeyValue: String; Dataset: TDataset; Target: String='';Confirm: Boolean=False): Boolean;
+function DeleteRecordSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
 var
 	SQLSentence: TStringList;
-  ConfirmDel, Style: Integer;
+  ConfirmDel, Style, Bookmark: Integer;
   Msg: PChar;
 begin
-  if CheckDatasetEmpty(Dataset)= True then
-    begin
-    Style:= MB_OK + MB_ICONERROR;
-    Application.MessageBox(PChar(DelRec_Msg_03), PChar(DelRec_Title), Style);
-    Result:= False;
-    Exit;
-    end;
+	if (CheckQueryEmpty(Table)= True) then
+		begin
+		Style:= MB_OK + MB_ICONERROR;
+		Application.MessageBox(PChar(DelRec_Msg_03), PChar(DelRec_Title), Style);
+		Result:= False;
+		Exit;
+		end;
   if Confirm= True then
     begin
     Style:= MB_OKCANCEL + MB_ICONEXCLAMATION;
@@ -213,11 +218,12 @@ begin
             SQLSentence.Add('DELETE FROM '+ TableName);
             SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
             DataMod.QueVirtual.SQL.Assign(SQLSentence);
+            Bookmark:= Table.RecNo;
             DataMod.QueVirtual.ExecSQL;
             DataMod.Transaction.CommitRetaining;
           	SQLSentence.Free;
-            DataSet.Refresh;
-         	  DataMod.Transaction.CommitRetaining;
+            Table.Refresh;
+            Table.RecNo:= Bookmark-1;
   					Result:= True;
             except
   					Result:= False;
@@ -288,9 +294,9 @@ begin
   Result:= True;
 end;
 
-function InsertSQL(TableName: String; WriteFields: array of TWriteField): Boolean;
+function InsertSQL(Table: TSQLQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
 var
-  i: Integer;
+  i, Bookmark: Integer;
 	SQLSentence: TStringList;
   ValueStr: String;
 begin
@@ -325,8 +331,13 @@ begin
     end; //for
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
+  Table.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   SQLSentence.Free;
+  Table.Last;
+  Bookmark:= Table.RecNo;
+  Table.Refresh;
+  Table.RecNo:= Bookmark+1;
   Result:= TRUE;
 end;
 
@@ -368,9 +379,9 @@ begin
   DataMod.Transaction.CommitRetaining;
 end;
 
-function UpdateSQL(TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
 var
-  i: Integer;
+  i, Bookmark: Integer;
 	SQLSentence: TStringList;
   ValueStr: String;
 begin
@@ -394,9 +405,13 @@ begin
     	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+',';
   	end; //for
   SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
+  Bookmark:= Table.RecNo;
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
+  Table.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
+  Table.Refresh;
+  Table.RecNo:= Bookmark;
   SQLSentence.Free;
   Result:= True;
 end;

@@ -7,10 +7,11 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType,
-  FormInputBox, Crypt;
+  ExtCtrls, StdCtrls, FormInputBox, Crypt;
 
 type TTableEdit = record
     What: TWhatTable;
+    TableName: String;
     Table: TSQLQuery;
     Datasource: TDatasource;
     FieldCount: Integer;
@@ -55,8 +56,9 @@ resourcestring
   Edit_IptBox_Caption_Workplaces= 'Change the name of workplace';
   Edit_IptBox_Prompt_Workplaces= 'Name:';
   Form_Caption_Users= 'User';
-  Col_Title_Users= 'Name';
-  Col_Title_Passwords= 'Password (encrypted)';
+  Col_Title_User= 'Name';
+  Col_Title_Password= 'Password (encrypted)';
+  Col_Title_Usergroup= 'User Group';
   Add_IptBox_Caption_Users= 'Add user';
   Add_IptBox_Prompt_Users= 'Name:';
   Add_IptBox_Caption_Passwords= 'Enter a password for this user';
@@ -82,7 +84,6 @@ procedure TFrmDsoEditor.UpdateNavRec;
 begin
   CurrentRec:= TableEdit.Table.RecNo;
   FraAddDelEdiSavCan1.LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+ Of_LblNavRec +' '+ IntToStr(TotalRecs);
-  TableEdit.Table.Edit;
 end;
 
 function TFrmDsoEditor.EditTable(WhatTable: TWhatTable): Boolean;
@@ -96,6 +97,7 @@ begin
         begin
         Caption:= Form_Caption_TypeContracts;
         TableEdit.What:= wtTypeContracts;
+        TableEdit.TableName:= 'TypeContracts';
         TableEdit.Datasource:= DataMod.DsoTypeContracts;
         TableEdit.FieldCount:= 1;
         TableEdit.Table:= DataMod.QueTypeContracts;
@@ -107,6 +109,7 @@ begin
         begin
         Caption:= Form_Caption_Workplaces;
         TableEdit.What:= wtWorkplaces;
+        TableEdit.TableName:= 'Workplaces';
         TableEdit.Datasource:= DataMod.DsoWorkplaces;
         TableEdit.FieldCount:= 1;
         TableEdit.Table:= DataMod.QueWorkplaces;
@@ -118,20 +121,25 @@ begin
         begin
       	Caption:= Form_Caption_Users;
         TableEdit.What:= wtUsers;
+        TableEdit.TableName:= 'Users';
         TableEdit.Datasource:= DataMod.DsoUsers;
-        TableEdit.FieldCount:= 2;
+        TableEdit.FieldCount:= 4;
         TableEdit.Table:= DataMod.QueUsers;
-        SetLength(TableEdit.FieldNames, TableEdit.FieldCount+1);
+        SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
         TableEdit.FieldNames[0]:= 'Name_User';
-     		DBGrd.Columns[0].Title.Caption:= Col_Title_Users;
+     		DBGrd.Columns[0].Title.Caption:= Col_Title_User;
         DBGrd.Columns.Add;
         TableEdit.FieldNames[1]:= 'Hash_User';
-        DBGrd.Columns[1].Title.Caption:= Col_Title_Passwords;
-        TableEdit.FieldNames[2]:= 'Salt_User';
+        DBGrd.Columns[1].Title.Caption:= Col_Title_Password;
+        DBGrd.Columns.Add;
+ 	      TableEdit.FieldNames[2]:= 'Name_Usergroup';
+        DBGrd.Columns[2].Title.Caption:= Col_Title_Usergroup;
+        //Put the fields do not shown in column below here:
+        TableEdit.FieldNames[3]:= 'Salt_User';
         end;
     end; //case
   	DBGrd.Datasource:= TableEdit.Datasource;
-    for i:=0 to (TableEdit.FieldCount-1) do
+    for i:=0 to (DBGrd.Columns.Count-1) do
     	begin
 	    DBGrd.Columns[i].FieldName:= TableEdit.FieldNames[i];
       end;
@@ -208,7 +216,7 @@ begin
 	end; //case TableEdit.What
  	if (Error= FALSE) and (Cancel=FALSE) then
   	begin
-	 	FuncData.AppendTableRecord(TableEdit.Table, WriteFields);
+	 	FuncData.InsertSQL(TableEdit.Table, TableEdit.TableName, WriteFields); //Not use AppendTableRecord, because the users Table is selected with another tables with join clause!!!!
 	  WriteFields:= nil;
 		Inc(TotalRecs);
 	 	UpdateNavRec;
@@ -232,9 +240,11 @@ begin
       Exit;
       end;
     end;
-  FuncData.DeleteTableRecord(TableEdit.Table, True, FieldValue);
-  Dec(TotalRecs);
-  UpdateNavRec;
+  if FuncData.DeleteRecordSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[0], FieldValue, FieldValue, True)= TRUE then
+  	begin
+	  Dec(TotalRecs);
+  	UpdateNavRec;
+    end;
 end;
 
 procedure TFrmDsoEditor.BtnEditClick(Sender: TObject);
@@ -337,7 +347,7 @@ begin
 	    WriteFields[1].Value:= Salt;
    		WriteFields[1].DataFormat:= dtString;
       end;
-	  FuncData.EditTableRecord(TableEdit.Table, WriteFields);
+    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[ColIdx], DefaultValue, WriteFields);
     WriteFields:= nil;
   	end
 	else if (Error= TRUE) then

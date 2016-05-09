@@ -40,6 +40,10 @@ msgstr ""
 msgid "The password cannot be blank"
 msgstr ""
 
+#: formadduser.blank_usergroup
+msgid "The group of the user cannot be blank"
+msgstr ""
+
 #: formadduser.user_exists
 #, fuzzy
 msgctxt "formadduser.user_exists"
@@ -87,7 +91,9 @@ msgctxt "formdsoeditor.blank_value"
 msgid "Blank not allowed!"
 msgstr "Em branco não é permitido!"
 
-#: formdsoeditor.col_title_passwords
+#: formdsoeditor.col_title_password
+#, fuzzy
+msgctxt "formdsoeditor.col_title_password"
 msgid "Password (encrypted)"
 msgstr "Contra-senha (criptografada)"
 
@@ -96,10 +102,15 @@ msgctxt "formdsoeditor.col_title_typecontracts"
 msgid "Name"
 msgstr "Nome"
 
-#: formdsoeditor.col_title_users
-msgctxt "formdsoeditor.col_title_users"
+#: formdsoeditor.col_title_user
+#, fuzzy
+msgctxt "formdsoeditor.col_title_user"
 msgid "Name"
 msgstr "Nome"
+
+#: formdsoeditor.col_title_usergroup
+msgid "User Group"
+msgstr ""
 
 #: formdsoeditor.col_title_workplaces
 msgctxt "formdsoeditor.col_title_workplaces"
@@ -717,6 +728,10 @@ msgstr "Nome:"
 msgctxt "tfrmadduser.lblpassword.caption"
 msgid "Password:"
 msgstr "Contra-senha:"
+
+#: tfrmadduser.lblusergroup.caption
+msgid "User Group:"
+msgstr ""
 
 #: tfrmdsoeditor.caption
 msgctxt "tfrmdsoeditor.caption"

@@ -33,14 +33,17 @@ msgstr "¿Quieres dar de baja"
 
 #: formadduser.blank_name
 msgid "The name cannot be blank"
-msgstr ""
+msgstr "El nombre no puede estar en blanco."
 
 #: formadduser.blank_password
 msgid "The password cannot be blank"
+msgstr "La contraseña no puede estar en blanco."
+
+#: formadduser.blank_usergroup
+msgid "The group of the user cannot be blank"
 msgstr ""
 
 #: formadduser.user_exists
-#, fuzzy
 msgctxt "formadduser.user_exists"
 msgid "This user already exists!"
 msgstr "¡Ese usuario ya existe!"
@@ -86,7 +89,9 @@ msgctxt "formdsoeditor.blank_value"
 msgid "Blank not allowed!"
 msgstr "¡No se permite en blanco!"
 
-#: formdsoeditor.col_title_passwords
+#: formdsoeditor.col_title_password
+#, fuzzy
+msgctxt "formdsoeditor.col_title_password"
 msgid "Password (encrypted)"
 msgstr "Contraseña (encriptada)"
 
@@ -95,10 +100,15 @@ msgctxt "formdsoeditor.col_title_typecontracts"
 msgid "Name"
 msgstr "Nombre"
 
-#: formdsoeditor.col_title_users
-msgctxt "formdsoeditor.col_title_users"
+#: formdsoeditor.col_title_user
+#, fuzzy
+msgctxt "formdsoeditor.col_title_user"
 msgid "Name"
 msgstr "Nombre"
+
+#: formdsoeditor.col_title_usergroup
+msgid "User Group"
+msgstr ""
 
 #: formdsoeditor.col_title_workplaces
 msgctxt "formdsoeditor.col_title_workplaces"
@@ -272,40 +282,36 @@ msgstr "Soltero/a"
 
 #: formpermissions.add_iptbox_caption
 msgid "Add User Group"
-msgstr ""
+msgstr "Añadir grupo de usuarios"
 
 #: formpermissions.add_iptbox_prompt
-#, fuzzy
 msgctxt "formpermissions.add_iptbox_prompt"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: formpermissions.blank_value
-#, fuzzy
 msgctxt "formpermissions.blank_value"
 msgid "Blank not allowed!"
 msgstr "¡No se permite en blanco!"
 
 #: formpermissions.edit_iptbox_caption
 msgid "Edit User Group"
-msgstr ""
+msgstr "Editar grupo de usuarios"
 
 #: formpermissions.edit_iptbox_prompt
-#, fuzzy
 msgctxt "formpermissions.edit_iptbox_prompt"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: formpermissions.no_delete_superusers_group
 msgid "SUPERUSERS group cannot be deleted."
-msgstr ""
+msgstr "No se puede eliminar el grupo SUPERUSERS."
 
 #: formpermissions.no_edit_superuser
 msgid "SUPERUSERS cannot be edited."
-msgstr ""
+msgstr "No se puede editar SUPERUSERS"
 
 #: formpermissions.of_lblnavrec
-#, fuzzy
 msgctxt "formpermissions.of_lblnavrec"
 msgid "of"
 msgstr "de"
@@ -703,19 +709,21 @@ msgstr "Fecha fin:"
 
 #: tfrmadduser.caption
 msgid "Add User"
-msgstr ""
+msgstr "Añadir usuario"
 
 #: tfrmadduser.lblname.caption
-#, fuzzy
 msgctxt "tfrmadduser.lblname.caption"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: tfrmadduser.lblpassword.caption
-#, fuzzy
 msgctxt "tfrmadduser.lblpassword.caption"
 msgid "Password:"
 msgstr "Contraseña:"
+
+#: tfrmadduser.lblusergroup.caption
+msgid "User Group:"
+msgstr ""
 
 #: tfrmdsoeditor.caption
 msgctxt "tfrmdsoeditor.caption"
@@ -1018,20 +1026,20 @@ msgstr "Observaciones"
 #: tfrmpermissions.caption
 msgctxt "tfrmpermissions.caption"
 msgid "Permissions"
-msgstr ""
+msgstr "Permisos"
 
 #: tfrmpermissions.dbchksaveemployee.caption
 msgid "Save employee"
-msgstr ""
+msgstr "Guardar empleado"
 
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
 msgid "Permissions"
-msgstr ""
+msgstr "Permisos"
 
 #: tfrmpermissions.lblusergroups.caption
 msgid "User Groups"
-msgstr ""
+msgstr "Grupos de usuarios"
 
 #: tfrmpermissions.panleft.caption
 msgid "PanLeft"
@@ -1042,14 +1050,13 @@ msgid "PanRight"
 msgstr ""
 
 #: tfrmpermissions.tabsave.caption
-#, fuzzy
 msgctxt "tfrmpermissions.tabsave.caption"
 msgid "Save"
 msgstr "Guardar"
 
 #: tfrmpermissions.tabtabs.caption
 msgid "Tabs"
-msgstr ""
+msgstr "Pestañas"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
@@ -1090,7 +1097,7 @@ msgstr "Editar usuarios..."
 
 #: tfrmpreferences.btnpermissions.caption
 msgid "Permissions..."
-msgstr ""
+msgstr "Permisos..."
 
 #: tfrmpreferences.btnsavecompanyname.caption
 msgctxt "tfrmpreferences.btnsavecompanyname.caption"

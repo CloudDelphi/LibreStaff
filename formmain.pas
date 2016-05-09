@@ -176,7 +176,8 @@ const
     ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
   SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
-  SELECT_ALL_USERS_SQL= 'SELECT * from Users;';
+  SELECT_ALL_USERS_SQL= 'SELECT Users.*, Usergroups.Name_Usergroup from Users'+
+    '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup);';
   SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
   SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
 
@@ -642,7 +643,7 @@ var
   ID_Contract: String;
 begin
   ID_Contract:= DataMod.DsoContractsLog.DataSet.FieldByName('ID_Contract').AsString;
-  FuncData.DeleteRecordSQL('ContractsLog','ID_Contract',ID_Contract, DataMod.DsoContractsLog.DataSet, lg_DelContractLogTarget, True);
+  FuncData.DeleteRecordSQL(DataMod.QueContractsLog,'ContractsLog','ID_Contract',ID_Contract, lg_DelContractLogTarget, True);
 end;
 
 procedure TFrmMain.BtnDelTypeContractClick(Sender: TObject);

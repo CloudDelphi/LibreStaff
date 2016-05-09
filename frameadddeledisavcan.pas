@@ -19,6 +19,7 @@ type
     BtnSave: TBitBtn;
     LblNavRec: TLabel;
     PanBottom: TPanel;
+    PanNavRec: TPanel;
   private
     { private declarations }
   public

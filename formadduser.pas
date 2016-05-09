@@ -14,12 +14,14 @@ type
   { TFrmAddUser }
 
   TFrmAddUser = class(TForm)
+    DbLkCboUsergroup: TDBLookupComboBox;
     EdiName: TEdit;
     EdiPassword: TEdit;
     FraSaveCancel1: TFraSaveCancel;
     ImgPassword: TImage;
     ImgUser: TImage;
     LblName: TLabel;
+    LblUserGroup: TLabel;
     LblPassword: TLabel;
     procedure BtnCancelClick(Sender: TObject);
     procedure BtnSaveClick(Sender: TObject);
@@ -38,6 +40,7 @@ resourcestring
   User_Exists= 'This user already exists!';
   Blank_Name= 'The name cannot be blank';
   Blank_Password= 'The password cannot be blank';
+  Blank_Usergroup= 'The group of the user cannot be blank';
 
 implementation
 
@@ -55,6 +58,11 @@ begin
     Error:= TRUE;
     ErrorMsg:= Blank_Name;
 		end
+  else if (DbLkCboUsergroup.KeyValue= null) then
+    begin
+    Error:= TRUE;
+    ErrorMsg:= Blank_Usergroup;
+    end
 	else if (EdiPassword.Text= '') then
   	begin
     Error:= TRUE;
@@ -98,7 +106,7 @@ begin
       begin
       EdiName.MaxLength:= USERNAME_LENGTH;
       EdiPassword.MaxLength:= PASSWORD_LENGTH;
-      SetLength(WriteFields, 2);
+      SetLength(WriteFields, 4);
  	    WriteFields[0].FieldName:= TableEdit.FieldNames[0];
  			WriteFields[0].Value:= EdiName.Text;
 			WriteFields[0].DataFormat:= dtString;
@@ -106,6 +114,12 @@ begin
  	    WriteFields[1].FieldName:= TableEdit.FieldNames[1];
  			WriteFields[1].Value:= Crypt.HashString(Salt+EdiPassword.Text);
 			WriteFields[1].DataFormat:= dtString;
+ 	    WriteFields[2].FieldName:= 'Usergroup_ID';
+ 			WriteFields[2].Value:= DBLkCboUsergroup.KeyValue;
+			WriteFields[2].DataFormat:= dtInteger;
+ 	    WriteFields[3].FieldName:= TableEdit.FieldNames[3];
+ 			WriteFields[3].Value:= Salt;
+			WriteFields[3].DataFormat:= dtString;
       Result:= TRUE;
       end
     else

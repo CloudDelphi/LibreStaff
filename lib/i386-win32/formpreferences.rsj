@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":121026435,"name":"formpreferences.lg_lstview_caption_item_0","sourcebytes":[69,109,112,108,111,121,101,101,115],"value":"Employees"},
+{"hash":139375349,"name":"formpreferences.lg_lstview_caption_item_1","sourcebytes":[76,97,110,103,117,97,103,101],"value":"Language"},
+{"hash":145198133,"name":"formpreferences.lg_lstview_caption_item_2","sourcebytes":[68,97,116,97,98,97,115,101],"value":"Database"},
+{"hash":151366455,"name":"formpreferences.lg_lstview_caption_item_3","sourcebytes":[80,114,105,110,116,105,110,103],"value":"Printing"},
+{"hash":31005292,"name":"formpreferences.lg_lstview_caption_item_4","sourcebytes":[65,99,99,101,115,115,32,67,111,110,116,114,111,108],"value":"Access Control"},
+{"hash":95946553,"name":"formpreferences.lg_selectdirdlg_title","sourcebytes":[83,101,108,101,99,116,32,116,104,101,32,112,97,116,104,32,102,111,114,32,116,104,101,32,100,97,116,97,98,97,115,101,32,40,100,97,116,97,46,100,98,41],"value":"Select the path for the database (data.db)"},
+{"hash":78083137,"name":"formpreferences.lg_selectdirdlg_error_title","sourcebytes":[69,82,82,79,82,33],"value":"ERROR!"},
+{"hash":10535214,"name":"formpreferences.lg_selectdirdlg_error_msg","sourcebytes":[84,104,101,32,102,105,108,101,32,34,100,97,116,97,46,100,98,34,32,100,111,101,115,32,110,111,116,32,101,120,105,115,116,32,105,110,32,116,104,105,115,32,112,97,116,104,46],"value":"The file \"data.db\" does not exist in this path."}
+]}

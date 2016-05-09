@@ -75,7 +75,7 @@ begin
           	WriteFields[4].FieldName:= 'Workplace_ID';
  				  	WriteFields[4].Value:= -1;
 				  	WriteFields[4].DataFormat:= dtNull;
-          	FuncData.UpdateSQL('Employees', 'ID_Employee', IDEmployee,  WriteFields);
+          	FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields);
           	end;
 		True:	begin
   			  SetLength(WriteFields,5);
@@ -94,7 +94,7 @@ begin
     			WriteFields[4].FieldName:= 'Workplace_ID';
 				  WriteFields[4].Value:=DataMod.QueEmployees.FieldByName('Workplace_ID').AsInteger;
         	WriteFields[4].DataFormat:= dtInteger;
-          FuncData.InsertSQL('ContractsLog', WriteFields);
+          FuncData.InsertSQL(DataMod.QueContractsLog, 'ContractsLog', WriteFields);
           SetLength(WriteFields,5);
           WriteFields[0].FieldName:= 'Active_Employee';
 				  WriteFields[0].Value:= False;
@@ -111,7 +111,7 @@ begin
           WriteFields[4].FieldName:= 'Workplace_ID';
  				  WriteFields[4].Value:= -1;
 				  WriteFields[4].DataFormat:= dtNull;
-          FuncData.UpdateSQL('Employees', 'ID_Employee', IDEmployee,  WriteFields);
+          FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields);
           end;
   end; //case
   //Change the filter and go to the record:
