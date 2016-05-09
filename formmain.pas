@@ -198,6 +198,7 @@ resourcestring
   lg_Female= 'Female';
   lg_Single= 'Single';
   lg_Married= 'Married';
+  lg_Employee_Still_Not_Saved= 'You have to save the employee first.';
 
 implementation
 
@@ -681,7 +682,14 @@ end;
 
 procedure TFrmMain.BtnActivateClick(Sender: TObject);
 begin
- 	FrmActivationEmployee.ActivateEmployee;
+  if (FuncData.CheckQueryEmpty(DataMod.QueEmployees)= FALSE) then
+    begin
+	 	FrmActivationEmployee.ActivateEmployee;
+    end
+  else
+  	begin
+    Application.MessageBox(PChar(lg_Employee_Still_Not_Saved), 'Error!', MB_OK);
+    end;
 end;
 
 procedure TFrmMain.ImgExitClick(Sender: TObject);

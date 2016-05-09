@@ -27,7 +27,7 @@ function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): B
 function InsertSQL(Table: TSQLQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
 procedure SaveTable(Query: TSQLQuery);
 procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
-function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
 function CheckValueExists(Table, Field, Value: String; NoCase: Boolean=FALSE;
          FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 
@@ -379,7 +379,7 @@ begin
   DataMod.Transaction.CommitRetaining;
 end;
 
-function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField): Boolean;
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
 var
   i, Bookmark: Integer;
 	SQLSentence: TStringList;
@@ -405,13 +405,13 @@ begin
     	SQLSentence.Strings[1]:= SQLSentence.Strings[1]+',';
   	end; //for
   SQLSentence.Add('WHERE ('+KeyField+'="'+KeyValue+'");');
-  Bookmark:= Table.RecNo;
+  if (BookmarkPos= TRUE) then Bookmark:= Table.RecNo;
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
   Table.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   Table.Refresh;
-  Table.RecNo:= Bookmark;
+ 	if (BookmarkPos= TRUE) then Table.RecNo:= Bookmark;
   SQLSentence.Free;
   Result:= True;
 end;

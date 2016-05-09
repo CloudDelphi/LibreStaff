@@ -224,6 +224,10 @@ msgstr "Inactivar"
 msgid "the selected contract in the log"
 msgstr "o contrato seleccionado no registro"
 
+#: formmain.lg_employee_still_not_saved
+msgid "You have to save the employee first."
+msgstr ""
+
 #: formmain.lg_female
 msgid "Female"
 msgstr "Fêmea"
@@ -694,11 +698,6 @@ msgstr "Contra-senha:"
 msgctxt "tfrmaccess.lbluser.caption"
 msgid "Username:"
 msgstr "Nome:"
-
-#: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
-msgctxt "tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption"
-msgid "Accept"
-msgstr "Aceptar"
 
 #: tfrmactivationemployee.grpcontract.caption
 msgctxt "tfrmactivationemployee.grpcontract.caption"

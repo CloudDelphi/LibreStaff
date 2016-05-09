@@ -61,8 +61,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="8"/>
-        <CursorPos X="15" Y="22"/>
+        <TopLine Value="676"/>
+        <CursorPos X="23" Y="689"/>
         <UsageCount Value="200"/>
       </Unit1>
       <Unit2>
@@ -70,8 +70,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="231"/>
-        <CursorPos X="37" Y="226"/>
+        <TopLine Value="4"/>
+        <CursorPos X="10" Y="19"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -84,7 +84,6 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="30"/>
         <CursorPos X="22" Y="17"/>
-        <ComponentState Value="1"/>
         <UsageCount Value="200"/>
       </Unit3>
       <Unit4>
@@ -173,9 +172,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="161"/>
-        <CursorPos X="3" Y="172"/>
-        <UsageCount Value="198"/>
+        <TopLine Value="289"/>
+        <CursorPos X="7" Y="301"/>
+        <UsageCount Value="199"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -187,7 +186,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="21"/>
         <CursorPos X="61" Y="6"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="199"/>
       </Unit12>
       <Unit13>
         <Filename Value="formprgbar.pas"/>
@@ -198,7 +197,7 @@
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="9"/>
-        <UsageCount Value="178"/>
+        <UsageCount Value="179"/>
       </Unit13>
       <Unit14>
         <Filename Value="formabout.pas"/>
@@ -209,7 +208,7 @@
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="64" Y="9"/>
-        <UsageCount Value="169"/>
+        <UsageCount Value="170"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -219,9 +218,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormActivationEmployee"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="31"/>
-        <CursorPos X="108" Y="65"/>
-        <UsageCount Value="162"/>
+        <TopLine Value="29"/>
+        <CursorPos X="17" Y="61"/>
+        <UsageCount Value="163"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -232,7 +231,7 @@
         <UnitName Value="FraAcceptCancel"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="25" Y="9"/>
-        <UsageCount Value="162"/>
+        <UsageCount Value="163"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
@@ -240,7 +239,7 @@
         <UnitName Value="FuncPrint"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="8"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="137"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
@@ -248,7 +247,7 @@
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="10"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="129"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -260,7 +259,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="46"/>
         <CursorPos X="21" Y="9"/>
-        <UsageCount Value="94"/>
+        <UsageCount Value="95"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
@@ -269,7 +268,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <CursorPos X="3" Y="43"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="89"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -281,7 +280,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="79"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -290,7 +289,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="68"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -302,7 +301,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="90"/>
         <CursorPos X="22" Y="105"/>
-        <UsageCount Value="47"/>
+        <UsageCount Value="48"/>
       </Unit23>
       <Unit24>
         <Filename Value="formadduser.pas"/>
@@ -314,7 +313,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="65" Y="58"/>
-        <UsageCount Value="37"/>
+        <UsageCount Value="38"/>
       </Unit24>
       <Unit25>
         <Filename Value="C:\sprite.pas"/>
@@ -389,8 +388,8 @@
       <Unit35>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1463"/>
-        <CursorPos Y="1476"/>
+        <TopLine Value="2724"/>
+        <CursorPos X="9" Y="2731"/>
         <UsageCount Value="20"/>
       </Unit35>
       <Unit36>
@@ -420,8 +419,8 @@
         <UnitName Value="LCLMessageGlue"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
-        <CursorPos Y="114"/>
-        <UsageCount Value="19"/>
+        <CursorPos Y="116"/>
+        <UsageCount Value="20"/>
       </Unit39>
       <Unit40>
         <Filename Value="C:\lazarus\lcl\include\png.inc"/>
@@ -435,7 +434,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="746"/>
         <CursorPos Y="694"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit41>
       <Unit42>
         <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
@@ -472,7 +471,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="146"/>
         <CursorPos X="37" Y="155"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>

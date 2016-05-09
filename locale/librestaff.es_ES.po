@@ -220,6 +220,10 @@ msgstr "Dar de baja"
 msgid "the selected contract in the log"
 msgstr "el contrato seleccionado del histórico"
 
+#: formmain.lg_employee_still_not_saved
+msgid "You have to save the employee first."
+msgstr "Primero tienes que guardar al empleado."
+
 #: formmain.lg_female
 msgid "Female"
 msgstr "Mujer"
@@ -686,11 +690,6 @@ msgstr "Contraseña:"
 msgctxt "tfrmaccess.lbluser.caption"
 msgid "Username:"
 msgstr "Nombre:"
-
-#: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
-msgctxt "tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption"
-msgid "Accept"
-msgstr "Aceptar"
 
 #: tfrmactivationemployee.grpcontract.caption
 msgctxt "tfrmactivationemployee.grpcontract.caption"

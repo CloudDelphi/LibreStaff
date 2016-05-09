@@ -221,6 +221,10 @@ msgstr ""
 msgid "the selected contract in the log"
 msgstr ""
 
+#: formmain.lg_employee_still_not_saved
+msgid "You have to save the employee first."
+msgstr ""
+
 #: formmain.lg_female
 msgid "Female"
 msgstr ""
@@ -683,11 +687,6 @@ msgstr ""
 #: tfrmaccess.lbluser.caption
 msgctxt "tfrmaccess.lbluser.caption"
 msgid "Username:"
-msgstr ""
-
-#: tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption
-msgctxt "tfrmactivationemployee.fraacceptcancel1.panbottom.btnaccept.caption"
-msgid "Accept"
 msgstr ""
 
 #: tfrmactivationemployee.grpcontract.caption

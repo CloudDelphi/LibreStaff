@@ -75,7 +75,7 @@ begin
           	WriteFields[4].FieldName:= 'Workplace_ID';
  				  	WriteFields[4].Value:= -1;
 				  	WriteFields[4].DataFormat:= dtNull;
-          	FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields);
+          	FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields, FALSE);
           	end;
 		True:	begin
   			  SetLength(WriteFields,5);
@@ -111,7 +111,7 @@ begin
           WriteFields[4].FieldName:= 'Workplace_ID';
  				  WriteFields[4].Value:= -1;
 				  WriteFields[4].DataFormat:= dtNull;
-          FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields);
+          FuncData.UpdateSQL(DataMod.QueEmployees, 'Employees', 'ID_Employee', IDEmployee,  WriteFields, FALSE);
           end;
   end; //case
   //Change the filter and go to the record:
@@ -120,7 +120,7 @@ begin
   	begin
     case Inactivate of
 	    False:	FrmMain.CboFilter.ItemIndex:= 0; //Change filter to Actives
-  	  True:	FrmMain.CboFilter.ItemIndex:= 1; //Change filter to Inactives
+  	  True:		FrmMain.CboFilter.ItemIndex:= 1; //Change filter to Inactives
     end; //case
     FrmMain.CboFilterChange(nil); //Apply the filter
   	end

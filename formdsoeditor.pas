@@ -347,7 +347,7 @@ begin
 	    WriteFields[1].Value:= Salt;
    		WriteFields[1].DataFormat:= dtString;
       end;
-    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[ColIdx], DefaultValue, WriteFields);
+    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[ColIdx], DefaultValue, WriteFields, TRUE);
     WriteFields:= nil;
   	end
 	else if (Error= TRUE) then
