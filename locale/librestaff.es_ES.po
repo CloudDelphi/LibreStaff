@@ -41,7 +41,7 @@ msgstr "La contraseña no puede estar en blanco."
 
 #: formadduser.blank_usergroup
 msgid "The group of the user cannot be blank"
-msgstr ""
+msgstr "El grupo de usuario no puede estar en blanco."
 
 #: formadduser.user_exists
 msgctxt "formadduser.user_exists"
@@ -90,7 +90,6 @@ msgid "Blank not allowed!"
 msgstr "¡No se permite en blanco!"
 
 #: formdsoeditor.col_title_password
-#, fuzzy
 msgctxt "formdsoeditor.col_title_password"
 msgid "Password (encrypted)"
 msgstr "Contraseña (encriptada)"
@@ -101,14 +100,13 @@ msgid "Name"
 msgstr "Nombre"
 
 #: formdsoeditor.col_title_user
-#, fuzzy
 msgctxt "formdsoeditor.col_title_user"
 msgid "Name"
 msgstr "Nombre"
 
 #: formdsoeditor.col_title_usergroup
 msgid "User Group"
-msgstr ""
+msgstr "Grupo de usuario"
 
 #: formdsoeditor.col_title_workplaces
 msgctxt "formdsoeditor.col_title_workplaces"
@@ -723,7 +721,7 @@ msgstr "Contraseña:"
 
 #: tfrmadduser.lblusergroup.caption
 msgid "User Group:"
-msgstr ""
+msgstr "Grupo usuario:"
 
 #: tfrmdsoeditor.caption
 msgctxt "tfrmdsoeditor.caption"
@@ -1308,4 +1306,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-
