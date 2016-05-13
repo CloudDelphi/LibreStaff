@@ -305,16 +305,16 @@ object FrmPreferences: TFrmPreferences
         Left = 40
         Height = 280
         Top = 32
-        Width = 384
+        Width = 424
         Caption = 'Access Control'
         ClientHeight = 247
-        ClientWidth = 380
+        ClientWidth = 420
         TabOrder = 0
         object BtnEditUsers: TSpeedButton
           Left = 16
           Height = 43
           Top = 72
-          Width = 168
+          Width = 192
           Caption = 'Edit users...'
           OnClick = BtnEditUsersClick
         end
@@ -338,10 +338,10 @@ object FrmPreferences: TFrmPreferences
           end
         end
         object BtnPermissions: TSpeedButton
-          Left = 216
+          Left = 240
           Height = 43
           Top = 72
-          Width = 144
+          Width = 152
           Caption = 'Permissions...'
           OnClick = BtnPermissionsClick
         end

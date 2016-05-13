@@ -62,6 +62,8 @@ begin
 end;
 
 procedure TFrmLogin.FormShow(Sender: TObject);
+var
+  Username: String;
 begin
 	//Remember the username?
   RememberUsername:= StrToBool(INIFile.ReadString('Access Control','RememberUsername','False'));
@@ -78,7 +80,7 @@ end;
 
 procedure TFrmLogin.BtnEnterClick(Sender: TObject);
 var
-  LoginUser, LoginPassword, HashLoginPassword, HashUser, SaltUser: String;
+  LoginUser, LoginPassword, HashLoginPassword, HashUser, SaltUser, IDUser: String;
 begin
   LoginUser:= EdiUser.Text;
   LoginPassword:= EdiPassword.Text;
@@ -96,6 +98,16 @@ begin
         begin
 	      INIFile.WriteString('Access Control', 'Username', QuotedStr(LoginUser));
         end;
+      //Create User
+      User:= TUser.Create;
+      User.Name:= LoginUser;
+      IDUser:= DataMod.QueVirtual.FieldByName('ID_User').AsString;
+      //Read & save permissions in the User variable
+      FuncData.ExecSQL(DataMod.QueVirtual, 'SELECT * from Permissions LEFT JOIN Users ON (Permissions.Usergroup_ID=Users.Usergroup_ID) WHERE (Users.ID_User='+IDUser+');'); //Open Permissions's table
+      User.Permissions.EditEmployee:= DataMod.QueVirtual.FieldByName('EditEmployee_Permission').AsBoolean;
+      User.Permissions.AddEmployee:= DataMod.QueVirtual.FieldByName('AddEmployee_Permission').AsBoolean;
+      User.Permissions.DeleteEmployee:= DataMod.QueVirtual.FieldByName('DeleteEmployee_Permission').AsBoolean;
+      User.Permissions.ShowTabAddress:= DataMod.QueVirtual.FieldByName('ShowTabAddress_Permission').AsBoolean;
       ModalResult:= mrOK;
       end
     else

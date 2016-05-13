@@ -1025,9 +1025,21 @@ msgctxt "tfrmpermissions.caption"
 msgid "Permissions"
 msgstr "Permisos"
 
-#: tfrmpermissions.dbchksaveemployee.caption
-msgid "Save employee"
-msgstr "Guardar empleado"
+#: tfrmpermissions.dbchkaddemployee.caption
+msgid "Add employee"
+msgstr "Añadir empleado"
+
+#: tfrmpermissions.dbchkdeleteemployee.caption
+msgid "Delete employee"
+msgstr "Eliminar empleado"
+
+#: tfrmpermissions.dbchkeditemployee.caption
+msgid "Edit employee"
+msgstr "Editar empleado"
+
+#: tfrmpermissions.dbchkshowtabaddress.caption
+msgid "Show tab Address"
+msgstr "Mostrar pestaña Dirección"
 
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
@@ -1046,10 +1058,10 @@ msgstr ""
 msgid "PanRight"
 msgstr ""
 
-#: tfrmpermissions.tabsave.caption
-msgctxt "tfrmpermissions.tabsave.caption"
-msgid "Save"
-msgstr "Guardar"
+#: tfrmpermissions.tabemployees.caption
+msgctxt "tfrmpermissions.tabemployees.caption"
+msgid "Employees"
+msgstr "Empleados"
 
 #: tfrmpermissions.tabtabs.caption
 msgid "Tabs"

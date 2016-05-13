@@ -1023,8 +1023,20 @@ msgctxt "tfrmpermissions.caption"
 msgid "Permissions"
 msgstr ""
 
-#: tfrmpermissions.dbchksaveemployee.caption
-msgid "Save employee"
+#: tfrmpermissions.dbchkaddemployee.caption
+msgid "Add employee"
+msgstr ""
+
+#: tfrmpermissions.dbchkdeleteemployee.caption
+msgid "Delete employee"
+msgstr ""
+
+#: tfrmpermissions.dbchkeditemployee.caption
+msgid "Edit employee"
+msgstr ""
+
+#: tfrmpermissions.dbchkshowtabaddress.caption
+msgid "Show tab Address"
 msgstr ""
 
 #: tfrmpermissions.lblpermissions.caption
@@ -1044,9 +1056,9 @@ msgstr ""
 msgid "PanRight"
 msgstr ""
 
-#: tfrmpermissions.tabsave.caption
-msgctxt "tfrmpermissions.tabsave.caption"
-msgid "Save"
+#: tfrmpermissions.tabemployees.caption
+msgctxt "tfrmpermissions.tabemployees.caption"
+msgid "Employees"
 msgstr ""
 
 #: tfrmpermissions.tabtabs.caption

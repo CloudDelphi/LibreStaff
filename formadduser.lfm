@@ -98,4 +98,10 @@ object FrmAddUser: TFrmAddUser
     LookupCache = False
     TabOrder = 1
   end
+  object ImgUsergroup: TImage
+    Left = 32
+    Height = 22
+    Top = 102
+    Width = 22
+  end
 end

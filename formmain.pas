@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
-  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Globals, Types;
+  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Types;
 
 type
 	TCboListType= (cblStates);
@@ -151,6 +151,7 @@ type
     procedure ShowSidebar;
   public
     { public declarations }
+    procedure CheckPermissions;
     procedure UpdateNavRec;
     procedure UpdateRecordCount;
   end;
@@ -208,7 +209,7 @@ implementation
 
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
-    FormAbout, FormActivationEmployee, FuncPrint, FormPreferences;
+    FormAbout, FormActivationEmployee, FuncPrint, FormPreferences, Globals;
 
 //------------------------------------------------------------------------------
 //Private functions & procedures
@@ -223,6 +224,31 @@ begin
     ID:= DataMod.QueSearch.Fields[0].AsInteger;
 	  Inc(ID, 1);
   	Result:= IntToStr(ID);
+    end;
+end;
+
+procedure TFrmMain.CheckPermissions;
+begin
+  if (AccessControl= TRUE) then
+    begin
+    if (User.Permissions.EditEmployee= TRUE) then
+      begin
+      BtnSave.Enabled:= True;
+      BtnActivate.Enabled:= True;
+      end
+    else
+      begin
+      BtnSave.Enabled:= False;
+      BtnActivate.Enabled:= False;
+      end;
+    if (User.Permissions.DeleteEmployee= TRUE) then
+      BtnDelete.Enabled:= True
+    else
+      BtnDelete.Enabled:= False;
+    if (User.Permissions.AddEmployee= TRUE) then
+      BtnNew.Enabled:= True
+    else
+      BtnNew.Enabled:= False;
     end;
 end;
 
@@ -311,6 +337,7 @@ begin
   CurrentRec:= DataMod.DsoEmployees.DataSet.RecNo;
   LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+lg_LblNavRecOf +' '+ IntToStr(TotalRecs);
   DataMod.QueEmployees.Edit;
+  CheckPermissions;
 end;
 function TFrmMain.RandomID(IDLen: Integer): string;
 var
@@ -439,9 +466,8 @@ begin
   //Note: The order is important! First the detailed tables.
   LoadQueriesCount:= 7;
   if (AccessControl= FALSE) then
-    begin
-    LoadQueriesCount:= LoadQueriesCount+1;
-    end;
+    LoadQueriesCount:= 8
+  else LoadQueriesCount:= 7;
   SetLength(LoadQueries, LoadQueriesCount);
   LoadQueries[0].Query:= DataMod.QueTypeContracts;
   LoadQueries[0].SQL:= 'SELECT * from TypeContracts;';
@@ -462,7 +488,7 @@ begin
   LoadQueries[4].SQL:= SELECT_CONTRACTSLOG_SQL;
 	LoadQueries[5].Query:= DataMod.QueUsergroups;
   LoadQueries[5].SQL:= SELECT_ALL_USERGROUPS_SQL;
-	LoadQueries[6].Query:= DataMod.QuePermissions;
+ 	LoadQueries[6].Query:= DataMod.QuePermissions;
   LoadQueries[6].SQL:= SELECT_PERMISSIONSUSERGROUPS_SQL;
   if (AccessControl= FALSE) then
     begin
@@ -576,6 +602,10 @@ begin
   DataMod.Connection.CloseDataSets;
   DataMod.Connection.Connected:= False;
   //Free memory
+  if (AccessControl= TRUE) then
+    begin
+    FreeAndNil(User);
+    end;
   FreeAndNil(INIFile);
 end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
@@ -607,8 +637,6 @@ begin
 	  begin
 	 	Inc(TotalRecs, 1);
     UpdateNavRec;
-  	if (BtnSave.Enabled= False) then
-			EnableEmployees;
 		end;
   WriteFields:= nil;
 end;

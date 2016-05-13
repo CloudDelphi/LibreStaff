@@ -20,6 +20,7 @@ type
     FraSaveCancel1: TFraSaveCancel;
     ImgPassword: TImage;
     ImgUser: TImage;
+    ImgUsergroup: TImage;
     LblName: TLabel;
     LblUserGroup: TLabel;
     LblPassword: TLabel;
@@ -89,6 +90,7 @@ begin
   //Get bitmaps
 	FrmMain.ImgLstBtn.GetBitmap(19, ImgUser.Picture.Bitmap);
 	FrmMain.ImgLstBtn.GetBitmap(20, ImgPassword.Picture.Bitmap);
+  FrmMain.ImgLstBtn.GetBitmap(23, ImgUsergroup.Picture.Bitmap);
 end;
 
 procedure TFrmAddUser.BtnCancelClick(Sender: TObject);

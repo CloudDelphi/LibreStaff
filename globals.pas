@@ -20,9 +20,15 @@ type TCustomPopupNotifier= class(TPopupNotifier)
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
 
-type TPermissions= class
-	public
+type TPermission= record
+  EditEmployee, AddEmployee, DeleteEmployee: Boolean;
+  ShowTabAddress: Boolean;
+  end;
 
+type TUser= class
+  public
+  Name: String;
+  Permissions: TPermission;
   end;
 
 var
@@ -30,7 +36,7 @@ var
   INIFile: TINIFile;
   Lang, FallBacklang: String;
   AccessControl, RememberUsername: Boolean;
-  Username: String;
+  User: TUser;
 
 const
   EDIT_ERROR_COLOR= clRed;

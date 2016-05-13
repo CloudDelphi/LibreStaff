@@ -98,11 +98,14 @@ begin
     DataMod.Connection.ExecuteDirect('CREATE TABLE Permissions('+
     			' ID_Permission INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE,'+
-          ' SaveEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE'+
+          ' EditEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE,'+
+          ' AddEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE,'+
+          ' DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE,'+
+          ' ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT FALSE'+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
     DataMod.Connection.ExecuteDirect('INSERT INTO Permissions ('+
-    			' Usergroup_ID, SaveEmployee_Permission)'+
+    			' Usergroup_ID, EditEmployee_Permission)'+
     			' VALUES('+QuotedStr('1')+', ''1'''+
     			');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
