@@ -26,10 +26,9 @@ type TPermission= record
   end;
 
 type TUser= class(TObject)
-  var
-    Permissions: TPermission;
   public
-    Name: String;
+  Name: String;
+  Permissions: TPermission;
   end;
 
 var
