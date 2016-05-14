@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
-    <BuildModes Count="1" Active="Default">
+    <BuildModes Count="1" Active="Final">
       <Item1 Name="Final">
         <MacroValues Count="1">
           <Macro2 Name="LCLWidgetType" Value="win32"/>
@@ -63,7 +63,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="619"/>
-        <CursorPos X="21" Y="641"/>
+        <CursorPos X="32" Y="624"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -422,7 +422,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2023"/>
         <CursorPos Y="2077"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit38>
       <Unit39>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
@@ -437,7 +437,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="27"/>
         <CursorPos Y="40"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit40>
       <Unit41>
         <Filename Value="C:\lazarus\lcl\include\clipbrd.inc"/>
@@ -650,7 +650,7 @@
         <UsageCount Value="9"/>
       </Unit69>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="globals.pas"/>
         <Caret Line="25" Column="27" TopLine="15"/>
@@ -660,117 +660,109 @@
         <Caret Line="102" TopLine="89"/>
       </Position2>
       <Position3>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="80" Column="24" TopLine="436"/>
-      </Position3>
-      <Position4>
         <Filename Value="globals.pas"/>
         <Caret Line="32" Column="5" TopLine="7"/>
+      </Position3>
+      <Position4>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="361" Column="10" TopLine="350"/>
       </Position4>
       <Position5>
         <Filename Value="formmain.pas"/>
-        <Caret Line="361" Column="10" TopLine="350"/>
+        <Caret Line="364" Column="37" TopLine="349"/>
       </Position5>
       <Position6>
         <Filename Value="formmain.pas"/>
-        <Caret Line="364" Column="37" TopLine="349"/>
+        <Caret Line="566" Column="20" TopLine="544"/>
       </Position6>
       <Position7>
         <Filename Value="formmain.pas"/>
-        <Caret Line="566" Column="20" TopLine="544"/>
+        <Caret Line="156" Column="32" TopLine="144"/>
       </Position7>
       <Position8>
         <Filename Value="formmain.pas"/>
-        <Caret Line="156" Column="32" TopLine="144"/>
+        <Caret Line="364" Column="37" TopLine="342"/>
       </Position8>
       <Position9>
         <Filename Value="formmain.pas"/>
-        <Caret Line="364" Column="37" TopLine="342"/>
+        <Caret Line="562" Column="21" TopLine="544"/>
       </Position9>
       <Position10>
         <Filename Value="formmain.pas"/>
-        <Caret Line="562" Column="21" TopLine="544"/>
+        <Caret Line="566" Column="20" TopLine="544"/>
       </Position10>
       <Position11>
         <Filename Value="formmain.pas"/>
-        <Caret Line="566" Column="20" TopLine="544"/>
+        <Caret Line="156" Column="32" TopLine="144"/>
       </Position11>
       <Position12>
         <Filename Value="formmain.pas"/>
-        <Caret Line="156" Column="32" TopLine="144"/>
+        <Caret Line="364" Column="37" TopLine="336"/>
       </Position12>
       <Position13>
         <Filename Value="formmain.pas"/>
-        <Caret Line="364" Column="37" TopLine="336"/>
+        <Caret Line="368" Column="12" TopLine="346"/>
       </Position13>
       <Position14>
         <Filename Value="formmain.pas"/>
-        <Caret Line="368" Column="12" TopLine="346"/>
+        <Caret Line="524" Column="14" TopLine="491"/>
       </Position14>
       <Position15>
         <Filename Value="formmain.pas"/>
-        <Caret Line="524" Column="14" TopLine="491"/>
+        <Caret Line="667" Column="13" TopLine="645"/>
       </Position15>
       <Position16>
         <Filename Value="formmain.pas"/>
-        <Caret Line="667" Column="13" TopLine="645"/>
+        <Caret Line="146" Column="24" TopLine="134"/>
       </Position16>
       <Position17>
         <Filename Value="formmain.pas"/>
-        <Caret Line="146" Column="24" TopLine="134"/>
+        <Caret Line="255" Column="29" TopLine="233"/>
       </Position17>
       <Position18>
         <Filename Value="formmain.pas"/>
-        <Caret Line="255" Column="29" TopLine="233"/>
+        <Caret Line="368" Column="12" TopLine="346"/>
       </Position18>
       <Position19>
         <Filename Value="formmain.pas"/>
-        <Caret Line="368" Column="12" TopLine="346"/>
+        <Caret Line="522" Column="15" TopLine="503"/>
       </Position19>
       <Position20>
         <Filename Value="formmain.pas"/>
-        <Caret Line="522" Column="15" TopLine="503"/>
+        <Caret Line="663" Column="18" TopLine="643"/>
       </Position20>
       <Position21>
         <Filename Value="formmain.pas"/>
-        <Caret Line="663" Column="18" TopLine="643"/>
+        <Caret Line="146" Column="24" TopLine="134"/>
       </Position21>
       <Position22>
         <Filename Value="formmain.pas"/>
-        <Caret Line="146" Column="24" TopLine="134"/>
+        <Caret Line="255" Column="29" TopLine="239"/>
       </Position22>
       <Position23>
         <Filename Value="formmain.pas"/>
-        <Caret Line="255" Column="29" TopLine="239"/>
+        <Caret Line="366" Column="48" TopLine="346"/>
       </Position23>
       <Position24>
         <Filename Value="formmain.pas"/>
-        <Caret Line="366" Column="48" TopLine="346"/>
+        <Caret Line="145" Column="32" TopLine="134"/>
       </Position24>
       <Position25>
         <Filename Value="formmain.pas"/>
-        <Caret Line="145" Column="32" TopLine="134"/>
+        <Caret Line="231" Column="28" TopLine="224"/>
       </Position25>
       <Position26>
         <Filename Value="formmain.pas"/>
-        <Caret Line="231" Column="28" TopLine="224"/>
+        <Caret Line="341" Column="21" TopLine="328"/>
       </Position26>
       <Position27>
         <Filename Value="formmain.pas"/>
-        <Caret Line="341" Column="21" TopLine="328"/>
+        <Caret Line="340" Column="16" TopLine="327"/>
       </Position27>
       <Position28>
         <Filename Value="formmain.pas"/>
-        <Caret Line="340" Column="16" TopLine="327"/>
-      </Position28>
-      <Position29>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="262" Column="11" TopLine="333"/>
-      </Position29>
-      <Position30>
-        <Filename Value="formmain.pas"/>
         <Caret Line="340" TopLine="326"/>
-      </Position30>
+      </Position28>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

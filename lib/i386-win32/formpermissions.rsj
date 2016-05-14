@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":237722480,"name":"formpermissions.add_iptbox_caption","sourcebytes":[65,100,100,32,85,115,101,114,32,71,114,111,117,112],"value":"Add User Group"},
+{"hash":5538698,"name":"formpermissions.add_iptbox_prompt","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":69932208,"name":"formpermissions.edit_iptbox_caption","sourcebytes":[69,100,105,116,32,85,115,101,114,32,71,114,111,117,112],"value":"Edit User Group"},
+{"hash":5538698,"name":"formpermissions.edit_iptbox_prompt","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":48281998,"name":"formpermissions.no_edit_superuser","sourcebytes":[83,85,80,69,82,85,83,69,82,83,32,99,97,110,110,111,116,32,98,101,32,101,100,105,116,101,100,46],"value":"SUPERUSERS cannot be edited."},
+{"hash":198500734,"name":"formpermissions.no_delete_superusers_group","sourcebytes":[83,85,80,69,82,85,83,69,82,83,32,103,114,111,117,112,32,99,97,110,110,111,116,32,98,101,32,100,101,108,101,116,101,100,46],"value":"SUPERUSERS group cannot be deleted."},
+{"hash":47331793,"name":"formpermissions.blank_value","sourcebytes":[66,108,97,110,107,32,110,111,116,32,97,108,108,111,119,101,100,33],"value":"Blank not allowed!"},
+{"hash":1878,"name":"formpermissions.of_lblnavrec","sourcebytes":[111,102],"value":"of"}
+]}

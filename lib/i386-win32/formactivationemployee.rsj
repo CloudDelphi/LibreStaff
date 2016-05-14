@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":225868949,"name":"formactivationemployee.lg_title_inactivate","sourcebytes":[68,111,32,121,111,117,32,119,97,110,116,32,116,111,32,105,110,97,99,116,105,118,97,116,101],"value":"Do you want to inactivate"},
+{"hash":183963269,"name":"formactivationemployee.lg_title_activate","sourcebytes":[68,111,32,121,111,117,32,119,97,110,116,32,116,111,32,97,99,116,105,118,97,116,101],"value":"Do you want to activate"},
+{"hash":43398538,"name":"formactivationemployee.lg_captiongrpcontract_inactivate","sourcebytes":[67,111,110,116,114,97,99,116,32,116,111,32,108,111,103,58],"value":"Contract to log:"},
+{"hash":231323818,"name":"formactivationemployee.lg_captiongrpcontract_activate","sourcebytes":[78,101,119,32,99,111,110,116,114,97,99,116,32,111,102,32,116,104,101,32,101,109,112,108,111,121,101,101,58],"value":"New contract of the employee:"}
+]}
