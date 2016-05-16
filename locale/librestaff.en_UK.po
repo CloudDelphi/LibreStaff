@@ -885,6 +885,11 @@ msgctxt "tfrmmain.imgpreferences.hint"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmmain.imgprofile.hint
+msgctxt "tfrmmain.imgprofile.hint"
+msgid "Profile"
+msgstr ""
+
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
@@ -1144,10 +1149,6 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr ""
 
-#: tfrmpreferences.chkrememberusername.caption
-msgid "Remember username"
-msgstr ""
-
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
@@ -1167,10 +1168,6 @@ msgstr ""
 
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
-msgstr ""
-
-#: tfrmpreferences.grpaccesscontroloptions.caption
-msgid "Options"
 msgstr ""
 
 #: tfrmpreferences.grpidemployee.caption
@@ -1234,6 +1231,35 @@ msgstr ""
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
+msgstr ""
+
+#: tfrmprofile.caption
+msgctxt "tfrmprofile.caption"
+msgid "Profile"
+msgstr ""
+
+#: tfrmprofile.chkrememberusername.caption
+msgctxt "tfrmprofile.chkrememberusername.caption"
+msgid "Remember username on login"
+msgstr ""
+
+#: tfrmprofile.grpaccesscontroloptions.caption
+msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
+msgid "Options"
+msgstr ""
+
+#: tfrmprofile.lblusername.caption
+msgctxt "tfrmprofile.lblusername.caption"
+msgid "Name:"
+msgstr ""
+
+#: tfrmprofile.lbl_username.caption
+msgctxt "tfrmprofile.lbl_username.caption"
+msgid "Name:"
+msgstr ""
+
+#: tfrmprofile.tabaccount.caption
+msgid "Account"
 msgstr ""
 
 #: tfrmsearch.btnclose.caption

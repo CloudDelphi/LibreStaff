@@ -149,7 +149,7 @@
         <PackageName Value="LCL"/>
       </Item9>
     </RequiredPackages>
-    <Units Count="25">
+    <Units Count="26">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -328,6 +328,13 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormAddUser"/>
       </Unit24>
+      <Unit25>
+        <Filename Value="formprofile.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmProfile"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormProfile"/>
+      </Unit25>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

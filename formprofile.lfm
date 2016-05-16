@@ -1,0 +1,80 @@
+object FrmProfile: TFrmProfile
+  Left = 628
+  Height = 373
+  Top = 325
+  Width = 427
+  BorderStyle = bsDialog
+  Caption = 'Profile'
+  ClientHeight = 373
+  ClientWidth = 427
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  inline FraClose1: TFraClose
+    Top = 291
+    Width = 427
+    Align = alBottom
+    ClientWidth = 427
+    inherited PanClose: TPanel
+      Width = 427
+      ClientWidth = 427
+      inherited BtnClose: TBitBtn
+        Left = 136
+        OnClick = BtnCloseClick
+      end
+    end
+  end
+  object PagProfile: TPageControl
+    Left = 0
+    Height = 291
+    Top = 0
+    Width = 427
+    ActivePage = TabAccount
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 1
+    object TabAccount: TTabSheet
+      Caption = 'Account'
+      ClientHeight = 250
+      ClientWidth = 419
+      object Lbl_Username: TLabel
+        Left = 16
+        Height = 28
+        Top = 32
+        Width = 88
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = 'Name:'
+        ParentColor = False
+      end
+      object LblUsername: TLabel
+        Left = 120
+        Height = 28
+        Top = 32
+        Width = 56
+        Alignment = taRightJustify
+        Caption = 'Name:'
+        ParentColor = False
+      end
+      object GrpAccessControlOptions: TGroupBox
+        Left = 16
+        Height = 89
+        Top = 120
+        Width = 384
+        Caption = 'Options'
+        ClientHeight = 56
+        ClientWidth = 380
+        TabOrder = 0
+        object ChkRememberUsername: TCheckBox
+          Left = 24
+          Height = 33
+          Top = 8
+          Width = 296
+          Caption = 'Remember username on login'
+          OnChange = ChkRememberUsernameChange
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end

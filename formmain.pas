@@ -55,8 +55,9 @@ type
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
     Img16: TImageList;
-    ImgPreferences: TImage;
     ImgAbout: TImage;
+    ImgPreferences: TImage;
+    ImgProfile: TImage;
     Label1: TLabel;
     LblSidebar: TLabel;
     LblInactive: TLabel;
@@ -132,6 +133,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ImgAboutClick(Sender: TObject);
+    procedure ImgProfileClick(Sender: TObject);
     procedure ImgPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
     procedure PicEmployeeClick(Sender: TObject);
@@ -152,6 +154,7 @@ type
   public
     { public declarations }
     procedure CheckPermissions;
+    procedure CheckTabPermissions;
     procedure UpdateNavRec;
     procedure UpdateRecordCount;
   end;
@@ -209,7 +212,8 @@ implementation
 
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
-    FormAbout, FormActivationEmployee, FuncPrint, FormPreferences, Globals;
+    FormAbout, FormActivationEmployee, FuncPrint, FormPreferences, Globals,
+    FormProfile;
 
 //------------------------------------------------------------------------------
 //Private functions & procedures
@@ -445,7 +449,9 @@ begin
   DBRadMaritalStatus.Items.Add(lg_Married);
   //Load Printing preferences
   ReportPreview:= StrToBool(INIFile.ReadString('Printing', 'ReportPreview', 'True'));
-  //Check Tab permissions
+  //Show Image of Profile to click by user
+  if (AccessControl= TRUE) then
+      ImgProfile.Visible:= TRUE;
 end;
 
 procedure TFrmMain.FormShow(Sender: TObject);
@@ -522,12 +528,29 @@ begin
   //Close the Progress Bar
 	FrmPrgBar.Close;
  	Screen.Cursor:=crDefault;
+  //Check Tab permissions
+  CheckTabPermissions;
 end;
 
 procedure TFrmMain.ImgAboutClick(Sender: TObject);
 begin
   Application.CreateForm(TFrmAbout, FrmAbout);
 	FrmAbout.ShowModal;
+end;
+
+procedure TFrmMain.CheckTabPermissions;
+begin
+  if (AccessControl= TRUE) then
+    begin
+    if (User.Permissions.ShowTabAddress= FALSE) then
+      TabAddress.TabVisible:= FALSE;
+  end;
+end;
+
+procedure TFrmMain.ImgProfileClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmProfile, FrmProfile);
+	FrmProfile.ShowModal;
 end;
 
 procedure TFrmMain.ImgPreferencesClick(Sender: TObject);

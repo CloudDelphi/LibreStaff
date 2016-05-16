@@ -105,12 +105,14 @@ object FrmPermissions: TFrmPermissions
       Width = 455
       ActivePage = TabEmployees
       Align = alClient
+      Images = FrmMain.Img16
       TabIndex = 0
       TabOrder = 0
       object TabEmployees: TTabSheet
         Caption = 'Employees'
         ClientHeight = 285
         ClientWidth = 447
+        ImageIndex = 5
         object DBChkEditEmployee: TDBCheckBox
           Left = 8
           Height = 33
@@ -155,6 +157,7 @@ object FrmPermissions: TFrmPermissions
         Caption = 'Tabs'
         ClientHeight = 285
         ClientWidth = 447
+        ImageIndex = 4
         object DBChkShowTabAddress: TDBCheckBox
           Left = 8
           Height = 33

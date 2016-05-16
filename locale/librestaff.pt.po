@@ -45,7 +45,6 @@ msgid "The group of the user cannot be blank"
 msgstr ""
 
 #: formadduser.user_exists
-#, fuzzy
 msgctxt "formadduser.user_exists"
 msgid "This user already exists!"
 msgstr "Este usuário já existe!"
@@ -92,7 +91,6 @@ msgid "Blank not allowed!"
 msgstr "Em branco não é permitido!"
 
 #: formdsoeditor.col_title_password
-#, fuzzy
 msgctxt "formdsoeditor.col_title_password"
 msgid "Password (encrypted)"
 msgstr "Contra-senha (criptografada)"
@@ -103,7 +101,6 @@ msgid "Name"
 msgstr "Nome"
 
 #: formdsoeditor.col_title_user
-#, fuzzy
 msgctxt "formdsoeditor.col_title_user"
 msgid "Name"
 msgstr "Nome"
@@ -291,13 +288,11 @@ msgid "Add User Group"
 msgstr ""
 
 #: formpermissions.add_iptbox_prompt
-#, fuzzy
 msgctxt "formpermissions.add_iptbox_prompt"
 msgid "Name:"
 msgstr "Nome:"
 
 #: formpermissions.blank_value
-#, fuzzy
 msgctxt "formpermissions.blank_value"
 msgid "Blank not allowed!"
 msgstr "Em branco não é permitido!"
@@ -307,7 +302,6 @@ msgid "Edit User Group"
 msgstr ""
 
 #: formpermissions.edit_iptbox_prompt
-#, fuzzy
 msgctxt "formpermissions.edit_iptbox_prompt"
 msgid "Name:"
 msgstr "Nome:"
@@ -321,7 +315,6 @@ msgid "SUPERUSERS cannot be edited."
 msgstr ""
 
 #: formpermissions.of_lblnavrec
-#, fuzzy
 msgctxt "formpermissions.of_lblnavrec"
 msgid "of"
 msgstr "de"
@@ -714,16 +707,14 @@ msgstr "Data inicio:"
 
 #: tfrmadduser.caption
 msgid "Add User"
-msgstr ""
+msgstr "Adicionar usuário"
 
 #: tfrmadduser.lblname.caption
-#, fuzzy
 msgctxt "tfrmadduser.lblname.caption"
 msgid "Name:"
 msgstr "Nome:"
 
 #: tfrmadduser.lblpassword.caption
-#, fuzzy
 msgctxt "tfrmadduser.lblpassword.caption"
 msgid "Password:"
 msgstr "Contra-senha:"
@@ -897,6 +888,13 @@ msgctxt "TFRMMAIN.IMGPREFERENCES.HINT"
 msgid "Preferences"
 msgstr "Preferências"
 
+#: tfrmmain.imgprofile.hint
+#, fuzzy
+#| msgid "Info"
+msgctxt "tfrmmain.imgprofile.hint"
+msgid "Profile"
+msgstr "Info"
+
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
@@ -1033,11 +1031,11 @@ msgstr "Observações"
 #: tfrmpermissions.caption
 msgctxt "tfrmpermissions.caption"
 msgid "Permissions"
-msgstr ""
+msgstr "Permissões"
 
 #: tfrmpermissions.dbchkaddemployee.caption
 msgid "Add employee"
-msgstr ""
+msgstr "Adicionar empregado"
 
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
@@ -1045,7 +1043,7 @@ msgstr ""
 
 #: tfrmpermissions.dbchkeditemployee.caption
 msgid "Edit employee"
-msgstr ""
+msgstr "Editar empregado"
 
 #: tfrmpermissions.dbchkshowtabaddress.caption
 msgid "Show tab Address"
@@ -1054,11 +1052,11 @@ msgstr ""
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
 msgid "Permissions"
-msgstr ""
+msgstr "Permissões"
 
 #: tfrmpermissions.lblusergroups.caption
 msgid "User Groups"
-msgstr ""
+msgstr "Grupos de uiuários"
 
 #: tfrmpermissions.panleft.caption
 msgid "PanLeft"
@@ -1069,7 +1067,6 @@ msgid "PanRight"
 msgstr ""
 
 #: tfrmpermissions.tabemployees.caption
-#, fuzzy
 msgctxt "tfrmpermissions.tabemployees.caption"
 msgid "Employees"
 msgstr "Empregados"
@@ -1117,7 +1114,7 @@ msgstr "Editar usuários..."
 
 #: tfrmpreferences.btnpermissions.caption
 msgid "Permissions..."
-msgstr ""
+msgstr "Permissões"
 
 #: tfrmpreferences.btnsavecompanyname.caption
 msgctxt "tfrmpreferences.btnsavecompanyname.caption"
@@ -1157,10 +1154,6 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr "Único"
 
-#: tfrmpreferences.chkrememberusername.caption
-msgid "Remember username"
-msgstr "Lembrar nome de usuário"
-
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
@@ -1181,10 +1174,6 @@ msgstr "A minha companhia"
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
 msgstr "Informe"
-
-#: tfrmpreferences.grpaccesscontroloptions.caption
-msgid "Options"
-msgstr "Opções"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
@@ -1248,6 +1237,42 @@ msgstr "Impressão"
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
+
+#: tfrmprofile.caption
+#, fuzzy
+#| msgid "Info"
+msgctxt "tfrmprofile.caption"
+msgid "Profile"
+msgstr "Info"
+
+#: tfrmprofile.chkrememberusername.caption
+#, fuzzy
+#| msgid "Remember username"
+msgctxt "tfrmprofile.chkrememberusername.caption"
+msgid "Remember username on login"
+msgstr "Lembrar nome de usuário"
+
+#: tfrmprofile.grpaccesscontroloptions.caption
+#, fuzzy
+msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
+msgid "Options"
+msgstr "Opções"
+
+#: tfrmprofile.lblusername.caption
+#, fuzzy
+msgctxt "tfrmprofile.lblusername.caption"
+msgid "Name:"
+msgstr "Nome:"
+
+#: tfrmprofile.lbl_username.caption
+#, fuzzy
+msgctxt "tfrmprofile.lbl_username.caption"
+msgid "Name:"
+msgstr "Nome:"
+
+#: tfrmprofile.tabaccount.caption
+msgid "Account"
+msgstr ""
 
 #: tfrmsearch.btnclose.caption
 msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"

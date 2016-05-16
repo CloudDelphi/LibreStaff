@@ -20,7 +20,6 @@ type
     BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
     CboDateSeparator: TComboBox;
-    ChkRememberUsername: TCheckBox;
     ChkReportPreview: TCheckBox;
     ChkIDAuto: TCheckBox;
     ChkIDAllowBlank: TCheckBox;
@@ -33,7 +32,6 @@ type
     FraClose1: TFraClose;
     Dates: TGroupBox;
     GroupBox1: TGroupBox;
-    GrpAccessControlOptions: TGroupBox;
     GrpSQLite: TGroupBox;
     GrpIDEmployee: TGroupBox;
     GrpIDEmployee1: TGroupBox;
@@ -62,7 +60,6 @@ type
     procedure ChkIDAllowBlankChange(Sender: TObject);
     procedure ChkIDAutoChange(Sender: TObject);
     procedure ChkIDUniqueChange(Sender: TObject);
-    procedure ChkRememberUsernameChange(Sender: TObject);
     procedure ChkReportPreviewChange(Sender: TObject);
     procedure DBAccessControlEnabledChange(Sender: TObject);
     procedure DbLkCboAtomicCommitCloseUp(Sender: TObject);
@@ -70,7 +67,6 @@ type
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
-    procedure TabAccessControlShow(Sender: TObject);
     procedure TabDatabaseShow(Sender: TObject);
     procedure TabGeneralShow(Sender: TObject);
     procedure TabLanguageShow(Sender: TObject);
@@ -108,14 +104,6 @@ procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
 begin
 	PagPreferences.ActivePageIndex:= Item.Index;
-end;
-
-procedure TFrmPreferences.TabAccessControlShow(Sender: TObject);
-begin
-	case RememberUsername of
-  	False:	ChkRememberUsername.State:= cbUnchecked;
-    True: 	ChkRememberUsername.State:= cbChecked;
-  end; //case
 end;
 
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
@@ -175,16 +163,6 @@ begin
   INIFile.WriteString('General', 'IDUnique', BoolToStr(IDUnique));
   ChkIDAuto.Enabled:= ChkIDUnique.Checked;
   ChkIDAllowBlank.Enabled:= ChkIDUnique.Checked;
-end;
-
-procedure TFrmPreferences.ChkRememberUsernameChange(Sender: TObject);
-begin
-  RememberUsername:= not RememberUsername;
-  INIFile.WriteString('Access Control', 'RememberUsername', BoolToStr(RememberUsername));
-  if (RememberUsername= FALSE) then
-    begin
-    INIFile.WriteString('Access Control', 'Username', '');
-    end;
 end;
 
 procedure TFrmPreferences.ChkReportPreviewChange(Sender: TObject);

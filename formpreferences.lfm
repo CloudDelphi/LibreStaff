@@ -300,14 +300,13 @@ object FrmPreferences: TFrmPreferences
       Caption = 'Access Control'
       ClientHeight = 416
       ClientWidth = 681
-      OnShow = TabAccessControlShow
       object GrpIDEmployee1: TGroupBox
         Left = 40
-        Height = 280
+        Height = 176
         Top = 32
         Width = 424
         Caption = 'Access Control'
-        ClientHeight = 247
+        ClientHeight = 143
         ClientWidth = 420
         TabOrder = 0
         object BtnEditUsers: TSpeedButton
@@ -317,25 +316,6 @@ object FrmPreferences: TFrmPreferences
           Width = 192
           Caption = 'Edit users...'
           OnClick = BtnEditUsersClick
-        end
-        object GrpAccessControlOptions: TGroupBox
-          Left = 16
-          Height = 89
-          Top = 139
-          Width = 344
-          Caption = 'Options'
-          ClientHeight = 56
-          ClientWidth = 340
-          TabOrder = 0
-          object ChkRememberUsername: TCheckBox
-            Left = 8
-            Height = 33
-            Top = 8
-            Width = 218
-            Caption = 'Remember username'
-            OnChange = ChkRememberUsernameChange
-            TabOrder = 0
-          end
         end
         object BtnPermissions: TSpeedButton
           Left = 240

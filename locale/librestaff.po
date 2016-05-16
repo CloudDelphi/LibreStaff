@@ -9,8 +9,8 @@ msgstr ""
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"X-Generator: Poedit 1.8.4\n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: formactivationemployee.lg_captiongrpcontract_activate
 msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
@@ -73,27 +73,28 @@ msgstr ""
 #: formdsoeditor.add_iptbox_prompt_typecontracts
 msgctxt "formdsoeditor.add_iptbox_prompt_typecontracts"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.add_iptbox_prompt_users
 msgctxt "formdsoeditor.add_iptbox_prompt_users"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.add_iptbox_prompt_workplaces
+#, fuzzy
 msgctxt "formdsoeditor.add_iptbox_prompt_workplaces"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.blank_value
 msgctxt "formdsoeditor.blank_value"
 msgid "Blank not allowed!"
-msgstr ""
+msgstr "Blank, nicht erlaubt!"
 
 #: formdsoeditor.col_title_password
 msgctxt "formdsoeditor.col_title_password"
 msgid "Password (encrypted)"
-msgstr ""
+msgstr "Passwort (verschlüsselt)"
 
 #: formdsoeditor.col_title_typecontracts
 msgctxt "formdsoeditor.col_title_typecontracts"
@@ -128,7 +129,7 @@ msgstr ""
 
 #: formdsoeditor.edit_iptbox_caption_workplaces
 msgid "Change the name of workplace"
-msgstr ""
+msgstr "Ändern Sie den Namen des Arbeitsplatzes"
 
 #: formdsoeditor.edit_iptbox_prompt_passwords
 msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
@@ -136,19 +137,22 @@ msgid "New Password:"
 msgstr ""
 
 #: formdsoeditor.edit_iptbox_prompt_typecontracts
+#, fuzzy
 msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.edit_iptbox_prompt_users
+#, fuzzy
 msgctxt "formdsoeditor.edit_iptbox_prompt_users"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.edit_iptbox_prompt_workplaces
+#, fuzzy
 msgctxt "formdsoeditor.edit_iptbox_prompt_workplaces"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formdsoeditor.form_caption_typecontracts
 msgctxt "formdsoeditor.form_caption_typecontracts"
@@ -284,23 +288,26 @@ msgid "Add User Group"
 msgstr ""
 
 #: formpermissions.add_iptbox_prompt
+#, fuzzy
 msgctxt "formpermissions.add_iptbox_prompt"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formpermissions.blank_value
+#, fuzzy
 msgctxt "formpermissions.blank_value"
 msgid "Blank not allowed!"
-msgstr ""
+msgstr "Blank, nicht erlaubt!"
 
 #: formpermissions.edit_iptbox_caption
 msgid "Edit User Group"
 msgstr ""
 
 #: formpermissions.edit_iptbox_prompt
+#, fuzzy
 msgctxt "formpermissions.edit_iptbox_prompt"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: formpermissions.no_delete_superusers_group
 msgid "SUPERUSERS group cannot be deleted."
@@ -493,9 +500,10 @@ msgid "ID:"
 msgstr ""
 
 #: funcprint.lg_mmonameemployee
+#, fuzzy
 msgctxt "funcprint.lg_mmonameemployee"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: funcprint.lg_mmophoneemployee
 msgctxt "funcprint.lg_mmophoneemployee"
@@ -706,9 +714,10 @@ msgid "Add User"
 msgstr ""
 
 #: tfrmadduser.lblname.caption
+#, fuzzy
 msgctxt "TFRMADDUSER.LBLNAME.CAPTION"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: tfrmadduser.lblpassword.caption
 msgctxt "TFRMADDUSER.LBLPASSWORD.CAPTION"
@@ -884,6 +893,11 @@ msgctxt "TFRMMAIN.IMGPREFERENCES.HINT"
 msgid "Preferences"
 msgstr ""
 
+#: tfrmmain.imgprofile.hint
+msgctxt "TFRMMAIN.IMGPROFILE.HINT"
+msgid "Profile"
+msgstr ""
+
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
@@ -948,9 +962,10 @@ msgid "Inactive"
 msgstr ""
 
 #: tfrmmain.lblnameemployee.caption
+#, fuzzy
 msgctxt "tfrmmain.lblnameemployee.caption"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: tfrmmain.lblnameemployee1.caption
 msgid "Surname 1:"
@@ -1143,10 +1158,6 @@ msgctxt "TFRMPREFERENCES.CHKIDUNIQUE.CAPTION"
 msgid "Unique"
 msgstr ""
 
-#: tfrmpreferences.chkrememberusername.caption
-msgid "Remember username"
-msgstr ""
-
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "TFRMPREFERENCES.CHKREPORTPREVIEW.CAPTION"
 msgid "Show preview"
@@ -1166,10 +1177,6 @@ msgstr ""
 
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
-msgstr ""
-
-#: tfrmpreferences.grpaccesscontroloptions.caption
-msgid "Options"
 msgstr ""
 
 #: tfrmpreferences.grpidemployee.caption
@@ -1233,6 +1240,35 @@ msgstr ""
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
+msgstr ""
+
+#: tfrmprofile.caption
+msgctxt "tfrmprofile.caption"
+msgid "Profile"
+msgstr ""
+
+#: tfrmprofile.chkrememberusername.caption
+msgid "Remember username on login"
+msgstr ""
+
+#: tfrmprofile.grpaccesscontroloptions.caption
+msgid "Options"
+msgstr ""
+
+#: tfrmprofile.lblusername.caption
+#, fuzzy
+msgctxt "TFRMPROFILE.LBLUSERNAME.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: tfrmprofile.lbl_username.caption
+#, fuzzy
+msgctxt "TFRMPROFILE.LBL_USERNAME.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: tfrmprofile.tabaccount.caption
+msgid "Account"
 msgstr ""
 
 #: tfrmsearch.btnclose.caption

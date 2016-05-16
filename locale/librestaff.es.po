@@ -887,6 +887,13 @@ msgctxt "tfrmmain.imgpreferences.hint"
 msgid "Preferences"
 msgstr "Preferencias"
 
+#: tfrmmain.imgprofile.hint
+#, fuzzy
+#| msgid "Info"
+msgctxt "tfrmmain.imgprofile.hint"
+msgid "Profile"
+msgstr "Info"
+
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
 msgid "Filter:"
@@ -1146,10 +1153,6 @@ msgctxt "tfrmpreferences.chkidunique.caption"
 msgid "Unique"
 msgstr "Único"
 
-#: tfrmpreferences.chkrememberusername.caption
-msgid "Remember username"
-msgstr "Recordar el nombre de usuario"
-
 #: tfrmpreferences.chkreportpreview.caption
 msgctxt "tfrmpreferences.chkreportpreview.caption"
 msgid "Show preview"
@@ -1170,10 +1173,6 @@ msgstr "Mi Compañía"
 #: tfrmpreferences.groupbox1.caption
 msgid "Report"
 msgstr "Informe"
-
-#: tfrmpreferences.grpaccesscontroloptions.caption
-msgid "Options"
-msgstr "Opciones"
 
 #: tfrmpreferences.grpidemployee.caption
 msgid "ID Employee"
@@ -1237,6 +1236,42 @@ msgstr "Impresión"
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
+
+#: tfrmprofile.caption
+#, fuzzy
+#| msgid "Info"
+msgctxt "tfrmprofile.caption"
+msgid "Profile"
+msgstr "Info"
+
+#: tfrmprofile.chkrememberusername.caption
+#, fuzzy
+#| msgid "Remember username"
+msgctxt "tfrmprofile.chkrememberusername.caption"
+msgid "Remember username on login"
+msgstr "Recordar el nombre de usuario"
+
+#: tfrmprofile.grpaccesscontroloptions.caption
+#, fuzzy
+msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
+msgid "Options"
+msgstr "Opciones"
+
+#: tfrmprofile.lblusername.caption
+#, fuzzy
+msgctxt "tfrmprofile.lblusername.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmprofile.lbl_username.caption
+#, fuzzy
+msgctxt "tfrmprofile.lbl_username.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmprofile.tabaccount.caption
+msgid "Account"
+msgstr ""
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -1317,3 +1352,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
+
