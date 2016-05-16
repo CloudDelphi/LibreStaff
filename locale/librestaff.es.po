@@ -888,11 +888,9 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: tfrmmain.imgprofile.hint
-#, fuzzy
-#| msgid "Info"
 msgctxt "tfrmmain.imgprofile.hint"
 msgid "Profile"
-msgstr "Info"
+msgstr "Perfil"
 
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
@@ -1238,40 +1236,33 @@ msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
 #: tfrmprofile.caption
-#, fuzzy
-#| msgid "Info"
 msgctxt "tfrmprofile.caption"
 msgid "Profile"
-msgstr "Info"
+msgstr "Perfil"
 
 #: tfrmprofile.chkrememberusername.caption
-#, fuzzy
-#| msgid "Remember username"
 msgctxt "tfrmprofile.chkrememberusername.caption"
 msgid "Remember username on login"
-msgstr "Recordar el nombre de usuario"
+msgstr "Recordar el nombre de usuario al identificarse"
 
 #: tfrmprofile.grpaccesscontroloptions.caption
-#, fuzzy
 msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
 msgid "Options"
 msgstr "Opciones"
 
 #: tfrmprofile.lblusername.caption
-#, fuzzy
 msgctxt "tfrmprofile.lblusername.caption"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: tfrmprofile.lbl_username.caption
-#, fuzzy
 msgctxt "tfrmprofile.lbl_username.caption"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: tfrmprofile.tabaccount.caption
 msgid "Account"
-msgstr ""
+msgstr "Cuenta"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -1352,4 +1343,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-
