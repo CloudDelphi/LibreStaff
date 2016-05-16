@@ -34,15 +34,15 @@ msgstr "Você quer inactivar"
 
 #: formadduser.blank_name
 msgid "The name cannot be blank"
-msgstr ""
+msgstr "O nome não pode estar em branco"
 
 #: formadduser.blank_password
 msgid "The password cannot be blank"
-msgstr ""
+msgstr "A contra-senha não pode ficar em branco"
 
 #: formadduser.blank_usergroup
 msgid "The group of the user cannot be blank"
-msgstr ""
+msgstr "O grupo do usuário não pode estar em branco."
 
 #: formadduser.user_exists
 msgctxt "formadduser.user_exists"
@@ -107,7 +107,7 @@ msgstr "Nome"
 
 #: formdsoeditor.col_title_usergroup
 msgid "User Group"
-msgstr ""
+msgstr "Grupo de usuários"
 
 #: formdsoeditor.col_title_workplaces
 msgctxt "formdsoeditor.col_title_workplaces"
@@ -223,7 +223,7 @@ msgstr "o contrato seleccionado no registro"
 
 #: formmain.lg_employee_still_not_saved
 msgid "You have to save the employee first."
-msgstr ""
+msgstr "Você tem que salvar o empregado em primeiro lugar."
 
 #: formmain.lg_female
 msgid "Female"
@@ -285,7 +285,7 @@ msgstr "Solteiro"
 
 #: formpermissions.add_iptbox_caption
 msgid "Add User Group"
-msgstr ""
+msgstr "Adicionar grupo de usuários"
 
 #: formpermissions.add_iptbox_prompt
 msgctxt "formpermissions.add_iptbox_prompt"
@@ -299,7 +299,7 @@ msgstr "Em branco não é permitido!"
 
 #: formpermissions.edit_iptbox_caption
 msgid "Edit User Group"
-msgstr ""
+msgstr "Editar grupo de usuários"
 
 #: formpermissions.edit_iptbox_prompt
 msgctxt "formpermissions.edit_iptbox_prompt"
@@ -308,11 +308,11 @@ msgstr "Nome:"
 
 #: formpermissions.no_delete_superusers_group
 msgid "SUPERUSERS group cannot be deleted."
-msgstr ""
+msgstr "O grupo SUPERUSERS não pode ser eliminado."
 
 #: formpermissions.no_edit_superuser
 msgid "SUPERUSERS cannot be edited."
-msgstr ""
+msgstr "SUPERUSERS não pode ser editado."
 
 #: formpermissions.of_lblnavrec
 msgctxt "formpermissions.of_lblnavrec"
@@ -721,7 +721,7 @@ msgstr "Contra-senha:"
 
 #: tfrmadduser.lblusergroup.caption
 msgid "User Group:"
-msgstr ""
+msgstr "Grupo de usuários"
 
 #: tfrmdsoeditor.caption
 msgctxt "tfrmdsoeditor.caption"
@@ -889,11 +889,9 @@ msgid "Preferences"
 msgstr "Preferências"
 
 #: tfrmmain.imgprofile.hint
-#, fuzzy
-#| msgid "Info"
 msgctxt "tfrmmain.imgprofile.hint"
 msgid "Profile"
-msgstr "Info"
+msgstr "Perfil"
 
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
@@ -1039,7 +1037,7 @@ msgstr "Adicionar empregado"
 
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
-msgstr ""
+msgstr "Eliminar empregado"
 
 #: tfrmpermissions.dbchkeditemployee.caption
 msgid "Edit employee"
@@ -1047,7 +1045,7 @@ msgstr "Editar empregado"
 
 #: tfrmpermissions.dbchkshowtabaddress.caption
 msgid "Show tab Address"
-msgstr ""
+msgstr "Mostrar aba 'Endereço'"
 
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
@@ -1073,7 +1071,7 @@ msgstr "Empregados"
 
 #: tfrmpermissions.tabtabs.caption
 msgid "Tabs"
-msgstr ""
+msgstr "Abas"
 
 #: tfrmpicemployee.btnclearpic.caption
 msgid "Clear"
@@ -1239,40 +1237,33 @@ msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
 #: tfrmprofile.caption
-#, fuzzy
-#| msgid "Info"
 msgctxt "tfrmprofile.caption"
 msgid "Profile"
-msgstr "Info"
+msgstr "Perfil"
 
 #: tfrmprofile.chkrememberusername.caption
-#, fuzzy
-#| msgid "Remember username"
 msgctxt "tfrmprofile.chkrememberusername.caption"
 msgid "Remember username on login"
-msgstr "Lembrar nome de usuário"
+msgstr "Lembrar nome de usuário no login"
 
 #: tfrmprofile.grpaccesscontroloptions.caption
-#, fuzzy
 msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
 msgid "Options"
 msgstr "Opções"
 
 #: tfrmprofile.lblusername.caption
-#, fuzzy
 msgctxt "tfrmprofile.lblusername.caption"
 msgid "Name:"
 msgstr "Nome:"
 
 #: tfrmprofile.lbl_username.caption
-#, fuzzy
 msgctxt "tfrmprofile.lbl_username.caption"
 msgid "Name:"
 msgstr "Nome:"
 
 #: tfrmprofile.tabaccount.caption
 msgid "Account"
-msgstr ""
+msgstr "Conta de usuário"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"
@@ -1353,4 +1344,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
-
