@@ -3,7 +3,7 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
-    <BuildModes Count="1" Active="Default">
+    <BuildModes Count="1" Active="Final">
       <Item1 Name="Final">
         <MacroValues Count="1">
           <Macro2 Name="LCLWidgetType" Value="win32"/>

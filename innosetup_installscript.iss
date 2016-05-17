@@ -2,10 +2,10 @@
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.12-alpha
+AppVerName=v0.0.13-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.12-alpha
+OutputBaseFilename=LibreStaff_v0.0.13-alpha
 Uninstallable=yes
 ;WizardImageFile=
 WizardImageStretch=no
@@ -21,6 +21,7 @@ Source: "data\states_en_US.txt"; DestDir: "{app}\data"; Components: "base"; Flag
 Source: "data\states_es_ES.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "data\states_pt_BR.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "locale\*.*"; DestDir: "{app}\locale"; Components: "base"; Flags: ignoreversion recursesubdirs
+Source: "avatars\*.*"; DestDir: "{app}\avatars"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "templates\*.lrf"; DestDir: "{app}\templates"; Components: "base"; Flags: ignoreversion recursesubdirs
 
 [Dirs]

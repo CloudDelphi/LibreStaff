@@ -1236,7 +1236,6 @@ msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
 #: tfrmprofile.btnsaveavatar.caption
-#, fuzzy
 msgctxt "tfrmprofile.btnsaveavatar.caption"
 msgid "Save"
 msgstr "Guardar"
@@ -1353,4 +1352,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-
