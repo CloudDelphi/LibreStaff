@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":124985745,"name":"formadduser.user_exists","sourcebytes":[84,104,105,115,32,117,115,101,114,32,97,108,114,101,97,100,121,32,101,120,105,115,116,115,33],"value":"This user already exists!"},
+{"hash":260595851,"name":"formadduser.blank_name","sourcebytes":[84,104,101,32,110,97,109,101,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The name cannot be blank"},
+{"hash":30813467,"name":"formadduser.blank_password","sourcebytes":[84,104,101,32,112,97,115,115,119,111,114,100,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The password cannot be blank"},
+{"hash":7488811,"name":"formadduser.blank_usergroup","sourcebytes":[84,104,101,32,103,114,111,117,112,32,111,102,32,116,104,101,32,117,115,101,114,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The group of the user cannot be blank"}
+]}

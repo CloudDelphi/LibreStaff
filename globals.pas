@@ -40,6 +40,7 @@ var
   User: TUser;
 
 const
+  AVATARS_COUNT= 399;
   EDIT_ERROR_COLOR= clRed;
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;

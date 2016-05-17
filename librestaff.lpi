@@ -332,6 +332,7 @@
         <Filename Value="formprofile.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FrmProfile"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormProfile"/>
       </Unit25>

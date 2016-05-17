@@ -1242,6 +1242,11 @@ msgstr ""
 msgid "FrmPrgBar"
 msgstr ""
 
+#: tfrmprofile.btnsaveavatar.caption
+msgctxt "TFRMPROFILE.BTNSAVEAVATAR.CAPTION"
+msgid "Save"
+msgstr ""
+
 #: tfrmprofile.caption
 msgctxt "tfrmprofile.caption"
 msgid "Profile"
@@ -1269,6 +1274,10 @@ msgstr "Name:"
 
 #: tfrmprofile.tabaccount.caption
 msgid "Account"
+msgstr ""
+
+#: tfrmprofile.tabavatar.caption
+msgid "Avatar"
 msgstr ""
 
 #: tfrmsearch.btnclose.caption

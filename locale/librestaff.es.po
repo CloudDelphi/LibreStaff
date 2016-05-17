@@ -1235,6 +1235,12 @@ msgstr "Impresión"
 msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
+#: tfrmprofile.btnsaveavatar.caption
+#, fuzzy
+msgctxt "tfrmprofile.btnsaveavatar.caption"
+msgid "Save"
+msgstr "Guardar"
+
 #: tfrmprofile.caption
 msgctxt "tfrmprofile.caption"
 msgid "Profile"
@@ -1263,6 +1269,10 @@ msgstr "Nombre:"
 #: tfrmprofile.tabaccount.caption
 msgid "Account"
 msgstr "Cuenta"
+
+#: tfrmprofile.tabavatar.caption
+msgid "Avatar"
+msgstr ""
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -1343,3 +1353,4 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
+
