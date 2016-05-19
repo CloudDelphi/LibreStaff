@@ -33,14 +33,17 @@ msgid "Do you want to inactivate"
 msgstr ""
 
 #: formadduser.blank_name
+msgctxt "formadduser.blank_name"
 msgid "The name cannot be blank"
 msgstr ""
 
 #: formadduser.blank_password
+msgctxt "formadduser.blank_password"
 msgid "The password cannot be blank"
 msgstr ""
 
 #: formadduser.blank_usergroup
+msgctxt "formadduser.blank_usergroup"
 msgid "The group of the user cannot be blank"
 msgstr ""
 
@@ -116,6 +119,7 @@ msgid "Name"
 msgstr ""
 
 #: formdsoeditor.edit_iptbox_caption_passwords
+msgctxt "formdsoeditor.edit_iptbox_caption_passwords"
 msgid "Change the password"
 msgstr ""
 
@@ -181,6 +185,45 @@ msgstr ""
 #: formdsoeditor.of_lblnavrec
 msgctxt "formdsoeditor.of_lblnavrec"
 msgid "of"
+msgstr ""
+
+#: formeditadduser.blank_name
+msgctxt "formeditadduser.blank_name"
+msgid "The name cannot be blank"
+msgstr ""
+
+#: formeditadduser.blank_password
+msgctxt "formeditadduser.blank_password"
+msgid "The password cannot be blank"
+msgstr ""
+
+#: formeditadduser.blank_usergroup
+msgctxt "formeditadduser.blank_usergroup"
+msgid "The group of the user cannot be blank"
+msgstr ""
+
+#: formeditadduser.lg_edit_iptbox_caption_passwords
+msgctxt "formeditadduser.lg_edit_iptbox_caption_passwords"
+msgid "Change the password"
+msgstr ""
+
+#: formeditadduser.lg_edit_iptbox_prompt_passwords
+msgctxt "formeditadduser.lg_edit_iptbox_prompt_passwords"
+msgid "New Password:"
+msgstr ""
+
+#: formeditadduser.lg_frmaddcaption
+msgctxt "formeditadduser.lg_frmaddcaption"
+msgid "Add User"
+msgstr ""
+
+#: formeditadduser.lg_frmeditcaption
+msgid "Edit User"
+msgstr ""
+
+#: formeditadduser.user_exists
+msgctxt "formeditadduser.user_exists"
+msgid "This user already exists!"
 msgstr ""
 
 #: formlogin.lg_passworddoesnotmatchtext
@@ -710,6 +753,7 @@ msgid "Date init:"
 msgstr ""
 
 #: tfrmadduser.caption
+msgctxt "tfrmadduser.caption"
 msgid "Add User"
 msgstr ""
 
@@ -725,12 +769,34 @@ msgid "Password:"
 msgstr ""
 
 #: tfrmadduser.lblusergroup.caption
+msgctxt "tfrmadduser.lblusergroup.caption"
 msgid "User Group:"
 msgstr ""
 
 #: tfrmdsoeditor.caption
 msgctxt "TFRMDSOEDITOR.CAPTION"
 msgid "Editor"
+msgstr ""
+
+#: tfrmeditadduser.btnchangepassworduser.caption
+msgctxt "TFRMEDITADDUSER.BTNCHANGEPASSWORDUSER.CAPTION"
+msgid "Change..."
+msgstr ""
+
+#: tfrmeditadduser.lblname.caption
+#, fuzzy
+msgctxt "TFRMEDITADDUSER.LBLNAME.CAPTION"
+msgid "Name:"
+msgstr "Name:"
+
+#: tfrmeditadduser.lblpassword.caption
+msgctxt "TFRMEDITADDUSER.LBLPASSWORD.CAPTION"
+msgid "Password:"
+msgstr ""
+
+#: tfrmeditadduser.lblusergroup.caption
+msgctxt "TFRMEDITADDUSER.LBLUSERGROUP.CAPTION"
+msgid "User Group:"
 msgstr ""
 
 #: tfrminputbox.caption
@@ -1109,6 +1175,7 @@ msgid "[Photo]"
 msgstr ""
 
 #: tfrmpreferences.btnchangedtbpath.caption
+msgctxt "tfrmpreferences.btnchangedtbpath.caption"
 msgid "Change..."
 msgstr ""
 

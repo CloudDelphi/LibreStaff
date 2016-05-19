@@ -33,14 +33,17 @@ msgid "Do you want to inactivate"
 msgstr "Você quer inactivar"
 
 #: formadduser.blank_name
+msgctxt "formadduser.blank_name"
 msgid "The name cannot be blank"
 msgstr "O nome não pode estar em branco"
 
 #: formadduser.blank_password
+msgctxt "formadduser.blank_password"
 msgid "The password cannot be blank"
 msgstr "A contra-senha não pode ficar em branco"
 
 #: formadduser.blank_usergroup
+msgctxt "formadduser.blank_usergroup"
 msgid "The group of the user cannot be blank"
 msgstr "O grupo do usuário não pode estar em branco."
 
@@ -115,6 +118,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: formdsoeditor.edit_iptbox_caption_passwords
+msgctxt "formdsoeditor.edit_iptbox_caption_passwords"
 msgid "Change the password"
 msgstr "Alterar a contra-senha"
 
@@ -178,6 +182,52 @@ msgstr "O nome deste usuário não pode ser editado!"
 msgctxt "formdsoeditor.of_lblnavrec"
 msgid "of"
 msgstr "de"
+
+#: formeditadduser.blank_name
+#, fuzzy
+msgctxt "formeditadduser.blank_name"
+msgid "The name cannot be blank"
+msgstr "O nome não pode estar em branco"
+
+#: formeditadduser.blank_password
+#, fuzzy
+msgctxt "formeditadduser.blank_password"
+msgid "The password cannot be blank"
+msgstr "A contra-senha não pode ficar em branco"
+
+#: formeditadduser.blank_usergroup
+#, fuzzy
+msgctxt "formeditadduser.blank_usergroup"
+msgid "The group of the user cannot be blank"
+msgstr "O grupo do usuário não pode estar em branco."
+
+#: formeditadduser.lg_edit_iptbox_caption_passwords
+#, fuzzy
+msgctxt "formeditadduser.lg_edit_iptbox_caption_passwords"
+msgid "Change the password"
+msgstr "Alterar a contra-senha"
+
+#: formeditadduser.lg_edit_iptbox_prompt_passwords
+#, fuzzy
+msgctxt "formeditadduser.lg_edit_iptbox_prompt_passwords"
+msgid "New Password:"
+msgstr "Nova contra-senha:"
+
+#: formeditadduser.lg_frmaddcaption
+#, fuzzy
+msgctxt "formeditadduser.lg_frmaddcaption"
+msgid "Add User"
+msgstr "Adicionar usuário"
+
+#: formeditadduser.lg_frmeditcaption
+msgid "Edit User"
+msgstr ""
+
+#: formeditadduser.user_exists
+#, fuzzy
+msgctxt "formeditadduser.user_exists"
+msgid "This user already exists!"
+msgstr "Este usuário já existe!"
 
 #: formlogin.lg_passworddoesnotmatchtext
 msgid "Password does not match."
@@ -706,6 +756,7 @@ msgid "Date init:"
 msgstr "Data inicio:"
 
 #: tfrmadduser.caption
+msgctxt "tfrmadduser.caption"
 msgid "Add User"
 msgstr "Adicionar usuário"
 
@@ -720,6 +771,7 @@ msgid "Password:"
 msgstr "Contra-senha:"
 
 #: tfrmadduser.lblusergroup.caption
+msgctxt "tfrmadduser.lblusergroup.caption"
 msgid "User Group:"
 msgstr "Grupo de usuários"
 
@@ -727,6 +779,30 @@ msgstr "Grupo de usuários"
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
 msgstr "Tipo de contratos"
+
+#: tfrmeditadduser.btnchangepassworduser.caption
+#, fuzzy
+msgctxt "tfrmeditadduser.btnchangepassworduser.caption"
+msgid "Change..."
+msgstr "Mudar..."
+
+#: tfrmeditadduser.lblname.caption
+#, fuzzy
+msgctxt "tfrmeditadduser.lblname.caption"
+msgid "Name:"
+msgstr "Nome:"
+
+#: tfrmeditadduser.lblpassword.caption
+#, fuzzy
+msgctxt "tfrmeditadduser.lblpassword.caption"
+msgid "Password:"
+msgstr "Contra-senha:"
+
+#: tfrmeditadduser.lblusergroup.caption
+#, fuzzy
+msgctxt "tfrmeditadduser.lblusergroup.caption"
+msgid "User Group:"
+msgstr "Grupo de usuários"
 
 #: tfrminputbox.caption
 msgid "Input"
@@ -1103,6 +1179,7 @@ msgid "[Photo]"
 msgstr "[Foto]"
 
 #: tfrmpreferences.btnchangedtbpath.caption
+msgctxt "tfrmpreferences.btnchangedtbpath.caption"
 msgid "Change..."
 msgstr "Mudar..."
 

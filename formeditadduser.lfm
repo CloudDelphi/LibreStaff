@@ -1,38 +1,39 @@
-object FrmAddUser: TFrmAddUser
+object FrmEditAddUser: TFrmEditAddUser
   Left = 741
   Height = 285
   Top = 439
-  Width = 402
+  Width = 462
   Align = alCustom
   BorderStyle = bsSingle
-  Caption = 'Add User'
   ClientHeight = 285
-  ClientWidth = 402
+  ClientWidth = 462
   OnCreate = FormCreate
   Position = poScreenCenter
   LCLVersion = '1.6.0.4'
   inline FraSaveCancel1: TFraSaveCancel
     Top = 214
-    Width = 402
+    Width = 462
     Align = alBottom
-    ClientWidth = 402
+    ClientWidth = 462
     TabOrder = 3
     inherited PanSaveCancel: TPanel
-      Width = 402
+      Width = 462
       Align = alBottom
-      ClientWidth = 402
+      ClientWidth = 462
       inherited BtnSave: TBitBtn
+        Left = 88
         OnClick = BtnSaveClick
       end
       inherited BtnCancel: TBitBtn
+        Left = 256
         OnClick = BtnCancelClick
       end
     end
   end
   object LblName: TLabel
-    Left = 64
+    Left = 48
     Height = 28
-    Top = 35
+    Top = 43
     Width = 136
     Alignment = taCenter
     AutoSize = False
@@ -40,9 +41,9 @@ object FrmAddUser: TFrmAddUser
     ParentColor = False
   end
   object LblPassword: TLabel
-    Left = 64
+    Left = 48
     Height = 28
-    Top = 155
+    Top = 163
     Width = 136
     Alignment = taCenter
     AutoSize = False
@@ -50,35 +51,35 @@ object FrmAddUser: TFrmAddUser
     ParentColor = False
   end
   object EdiName: TEdit
-    Left = 208
+    Left = 192
     Height = 36
-    Top = 32
+    Top = 40
     Width = 162
     TabOrder = 0
   end
   object EdiPassword: TEdit
-    Left = 208
+    Left = 192
     Height = 36
-    Top = 152
+    Top = 160
     Width = 162
     TabOrder = 2
   end
   object ImgUser: TImage
-    Left = 32
+    Left = 16
     Height = 22
-    Top = 40
+    Top = 48
     Width = 22
   end
   object ImgPassword: TImage
-    Left = 32
+    Left = 16
     Height = 22
-    Top = 155
+    Top = 163
     Width = 22
   end
   object LblUserGroup: TLabel
-    Left = 56
+    Left = 40
     Height = 28
-    Top = 96
+    Top = 104
     Width = 152
     Alignment = taCenter
     AutoSize = False
@@ -86,12 +87,12 @@ object FrmAddUser: TFrmAddUser
     ParentColor = False
   end
   object DbLkCboUsergroup: TDBLookupComboBox
-    Left = 208
+    Left = 192
     Height = 36
-    Top = 88
+    Top = 104
     Width = 164
     AutoComplete = True
-    KeyField = 'ID_usergroup'
+    KeyField = 'ID_Usergroup'
     ListField = 'Name_Usergroup'
     ListFieldIndex = 0
     ListSource = DataMod.DsoUsergroups
@@ -99,9 +100,19 @@ object FrmAddUser: TFrmAddUser
     TabOrder = 1
   end
   object ImgUsergroup: TImage
-    Left = 32
+    Left = 16
     Height = 22
-    Top = 102
+    Top = 110
     Width = 22
+  end
+  object BtnChangePasswordUser: TBitBtn
+    Left = 360
+    Height = 41
+    Top = 160
+    Width = 96
+    Caption = 'Change...'
+    OnClick = BtnChangePasswordUserClick
+    TabOrder = 4
+    Visible = False
   end
 end

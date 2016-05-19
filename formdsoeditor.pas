@@ -16,6 +16,7 @@ type TTableEdit = record
     Datasource: TDatasource;
     FieldCount: Integer;
     FieldNames: array of String;
+    KeyField: String;
 end;
 type
   { TFrmDsoEditor }
@@ -76,7 +77,7 @@ implementation
 {$R *.lfm}
 
 uses
-  FuncData, DataModule, FormAddUser;
+  FuncData, DataModule, FormEditAddUser;
 
 { TFrmDsoEditor }
 
@@ -101,6 +102,7 @@ begin
         TableEdit.Datasource:= DataMod.DsoTypeContracts;
         TableEdit.FieldCount:= 1;
         TableEdit.Table:= DataMod.QueTypeContracts;
+        TableEdit.KeyField:= 'ID_TypeContract';
         SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
         TableEdit.FieldNames[0]:= 'Name_TypeContract';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_TypeContracts;
@@ -113,6 +115,7 @@ begin
         TableEdit.Datasource:= DataMod.DsoWorkplaces;
         TableEdit.FieldCount:= 1;
         TableEdit.Table:= DataMod.QueWorkplaces;
+        TableEdit.KeyField:= 'ID_Workplace';
         SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
         TableEdit.FieldNames[0]:= 'Name_Workplace';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_Workplaces;
@@ -125,6 +128,7 @@ begin
         TableEdit.Datasource:= DataMod.DsoUsers;
         TableEdit.FieldCount:= 4;
         TableEdit.Table:= DataMod.QueUsers;
+        TableEdit.KeyField:= 'ID_User';
         SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
         TableEdit.FieldNames[0]:= 'Name_User';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_User;
@@ -172,7 +176,7 @@ begin
   case TableEdit.What of
     wtUsers:
       begin
-      Cancel:= Not(FrmAddUser.AddUser(TableEdit));
+      Cancel:= Not(FrmEditAddUser.EditAddUser(acAdd, TableEdit));
       end;
     wtWorkplaces, WtTypeContracts:
       begin
@@ -259,7 +263,6 @@ var
   WriteFieldsCount: Integer;
   Salt: String;
 begin
-  ColIdx:= DBGrd.SelectedColumn.Index;
   case TableEdit.What of
     wtTypeContracts:
       begin
@@ -275,79 +278,37 @@ begin
       end;
     wtUsers:
       begin
-      case ColIdx of
-        0:	begin
-      			InpBox_Caption:= Edit_IptBox_Caption_Users;
-	      		InpBox_Prompt:= Edit_IptBox_Prompt_Users;
-            MaxLength:= USERNAME_LENGTH;
-            WriteFieldsCount:= 1;
-		        end;
-        1:	begin
-      			InpBox_Caption:= Edit_IptBox_Caption_Passwords;
-	      		InpBox_Prompt:= Edit_IptBox_Prompt_Passwords;
-            MaxLength:= PASSWORD_LENGTH;
-            WriteFieldsCount:= 2;
-		        end;
-      end;
+			Cancel:= Not(FrmEditAddUser.EditAddUser(acEdit, TableEdit));
       end;
   end; //case
-  if (TableEdit.What= wtUsers) and (ColIdx=0) then //Don't edit SUPERUSER
+	if (TableEdit.What= wtTypeContracts) OR (TableEdit.What= wtWorkplaces) then
     begin
-  	FirstFieldValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[0]).AsString;
-    if (FirstFieldValue= SUPERUSER_NAME) then
-      begin
-      Error:= TRUE;
-      ErrorMsg:= No_Edit_SUPERUSER;
-      Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
-      Exit;
-      end;
-    end;
-  if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
-    begin
-    DefaultValue:= '';
-    end
-  else
-  	begin
- 		DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
-    end;
-  if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, DefaultValue, MaxLength, FieldValue)= TRUE then
-    begin
-    if FieldValue='' then
-      begin
-      Error:= TRUE;
-      ErrorMsg:= Blank_Value;
-      end
-    else if (TableEdit.What= wtUsers) AND (ColIdx=0) then
-   	  begin
-      if FuncData.CheckValueExists('Users','Name_User',FieldValue,TRUE,'ID_User',DataMod.DsoUsers.DataSet.FieldByName('ID_User').AsString)= TRUE then
-        begin
-		    Error:= TRUE;
-	   	  ErrorMsg:= User_Exists;
-        end;
-      end
-    else if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
-      begin
-      Salt:= GenerateSalt(SALT_LENGTH);
-      FieldValue:= Crypt.HashString(Salt+FieldValue);
-      end
-    end
-  else
-    begin
-    Cancel:= True;
+    ColIdx:= DBGrd.SelectedColumn.Index;
+    DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
+  	if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, DefaultValue, MaxLength, FieldValue)= TRUE then
+    	begin
+	    if FieldValue='' then
+  	    begin
+    	  Error:= TRUE;
+      	ErrorMsg:= Blank_Value;
+	      end
+  	  end
+	  else
+  	  begin
+    	Cancel:= True;
+	    end;
     end;
   if (Error= FALSE) and (Cancel= False) then
   	begin
-	  SetLength(WriteFields, WriteFieldsCount);
-  	WriteFields[0].FieldName:= TableEdit.FieldNames[ColIdx];
-	  WriteFields[0].Value:= FieldValue;
-		WriteFields[0].DataFormat:= dtString;
-    if (TableEdit.What= wtUsers) AND (ColIdx=1) then //if editing a password
+    if (TableEdit.What= wtTypeContracts) OR (TableEdit.What= wtWorkplaces) then
       begin
-      WriteFields[1].FieldName:= 'Salt_User';
-	    WriteFields[1].Value:= Salt;
-   		WriteFields[1].DataFormat:= dtString;
+		  SetLength(WriteFields, WriteFieldsCount);
+  		WriteFields[0].FieldName:= TableEdit.FieldNames[ColIdx];
+	  	WriteFields[0].Value:= FieldValue;
+			WriteFields[0].DataFormat:= dtString;
       end;
-    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[ColIdx], DefaultValue, WriteFields, TRUE);
+    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.KeyField,
+  		TableEdit.Table.FieldByName(TableEdit.KeyField).AsString, WriteFields, TRUE);
     WriteFields:= nil;
   	end
 	else if (Error= TRUE) then

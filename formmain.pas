@@ -181,7 +181,7 @@ const
     ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
   SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
   SELECT_ALL_USERS_SQL= 'SELECT Users.*, Usergroups.Name_Usergroup from Users'+
-    '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup);';
+    '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup)';
   SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
   SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
 

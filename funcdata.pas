@@ -70,7 +70,7 @@ begin
           ' DatabaseVersion CHAR(20) DEFAULT "",'+
           ' CompanyName CHAR(256) DEFAULT "",'+
           ' AtomicCommit INTEGER NOT NULL DEFAULT "1",'+
-          ' AccessControl BOOLEAN DEFAULT FALSE'+
+          ' AccessControl BOOLEAN DEFAULT 0'+
           ');');
     DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
@@ -98,15 +98,15 @@ begin
     DataMod.Connection.ExecuteDirect('CREATE TABLE Permissions('+
     			' ID_Permission INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE,'+
-          ' EditEmployee_Permission BOOLEAN NOT NULL DEFAULT TRUE,'+
-          ' AddEmployee_Permission BOOLEAN NOT NULL DEFAULT TRUE,'+
-          ' DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT FALSE,'+
-          ' ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT TRUE'+
+          ' EditEmployee_Permission BOOLEAN NOT NULL DEFAULT 1,'+
+          ' AddEmployee_Permission BOOLEAN NOT NULL DEFAULT 1,'+
+          ' DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT 0,'+
+          ' ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT 1'+
           ');');
     DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
     DataMod.Connection.ExecuteDirect('INSERT INTO Permissions ('+
     			' Usergroup_ID, DeleteEmployee_Permission)'+
-    			' VALUES('+QuotedStr('1')+', ''1'''+
+    			' VALUES('+QuotedStr('1')+', 1'+
     			');');
     DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+

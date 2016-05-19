@@ -20,6 +20,9 @@ type TCustomPopupNotifier= class(TPopupNotifier)
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
 
+type
+	TAction= (acEdit, acAdd);
+
 type TPermission= record
   EditEmployee, AddEmployee, DeleteEmployee: Boolean;
   ShowTabAddress: Boolean;

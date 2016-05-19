@@ -17,6 +17,7 @@ type
     BtnAdd: TBitBtn;
     BtnCancel: TBitBtn;
     BtnSave: TBitBtn;
+    BtnSortList: TSpeedButton;
     LblNavRec: TLabel;
     PanBottom: TPanel;
     PanNavRec: TPanel;
@@ -43,6 +44,7 @@ begin
   FrmMain.ImgLstBtn.GetBitmap(11, BtnAdd.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(12, BtnEdit.Glyph);
+  FrmMain.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);
 end;
 end.
 

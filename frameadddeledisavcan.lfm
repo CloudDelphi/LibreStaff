@@ -81,5 +81,11 @@ object FraAddDelEdiSavCan: TFraAddDelEdiSavCan
         Transparent = False
       end
     end
+    object BtnSortList: TSpeedButton
+      Left = 216
+      Height = 34
+      Top = 8
+      Width = 34
+    end
   end
 end

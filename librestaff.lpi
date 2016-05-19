@@ -321,20 +321,20 @@
         <UnitName Value="FormPermissions"/>
       </Unit23>
       <Unit24>
-        <Filename Value="formadduser.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="FrmAddUser"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="FormAddUser"/>
-      </Unit24>
-      <Unit25>
         <Filename Value="formprofile.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FrmProfile"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormProfile"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="formeditadduser.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmEditAddUser"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormEditAddUser"/>
       </Unit25>
     </Units>
   </ProjectOptions>
