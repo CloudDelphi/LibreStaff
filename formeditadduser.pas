@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  DbCtrls, FrameSaveCancel, FormDsoEditor, FuncData, Globals, PopupNotifier,
-  LCLType, ExtCtrls, Buttons;
+  DbCtrls, FrameSaveCancel, FormDsoEditor, FuncData, Globals, LCLType,
+  ExtCtrls, Buttons;
 
 type
 
@@ -33,7 +33,7 @@ type
     { private declarations }
   public
     { public declarations }
-    function EditAddUser(WhatAction: TAction; TableEdit: TTableEdit): Boolean;
+    function EditAddUser(WhatAction: TAction; TableEdit: TTable): Boolean;
   end;
 
 var
@@ -126,7 +126,7 @@ begin
 	if FrmInputBox.CustomInputBox(lg_Edit_IptBox_Caption_Passwords, lg_Edit_IptBox_Prompt_Passwords, '', PASSWORD_LENGTH, FieldValue)= TRUE then
     	begin
       if (FieldValue='') then
-        Application.MessageBox(PChar(Blank_Password), 'Error!', MB_OK)
+      	Application.MessageBox(PChar(Blank_Password), 'Error!', MB_OK)
       else
       	begin
 	      Salt:= GenerateSalt(SALT_LENGTH);
@@ -136,7 +136,7 @@ begin
       end;
 end;
 
-function TFrmEditAddUser.EditAddUser(WhatAction: TAction; TableEdit: TTableEdit): Boolean;
+function TFrmEditAddUser.EditAddUser(WhatAction: TAction; TableEdit: TTable): Boolean;
 var
   Salt: String;
 begin
@@ -149,7 +149,6 @@ begin
     	acEdit: begin
 				      EdiPassWord.Enabled:= FALSE;
               BtnChangePasswordUser.Visible:= TRUE;
-      				//FrmEditAddUser.Caption:= lg_FrmAddCaption;
       				EdiName.Text:= DataMod.QueUsers.FieldByName('Name_User').AsString;
               DbLkCboUsergroup.KeyValue:= DataMod.QueUsers.FieldByName('Usergroup_ID').AsInteger;
               if (EdiName.Text= SUPERUSER_NAME) then
@@ -159,17 +158,14 @@ begin
                 end;
               EdiPassWord.Text:= DataMod.QueUsers.FieldByName('Hash_User').AsString;
               end;
-      acAdd:	begin
-       				//FrmEditAddUser.Caption:= lg_FrmEditCaption;
-      				end;
-    end;
+    end; //case
     if (ShowModal= mrOk) then
       begin
       SetLength(WriteFields, 4);
- 	    WriteFields[0].FieldName:= TableEdit.FieldNames[0];
+ 	    WriteFields[0].FieldName:= TableEdit.FieldsToEdit[0];
  			WriteFields[0].Value:= EdiName.Text;
 			WriteFields[0].DataFormat:= dtString;
- 	    WriteFields[1].FieldName:= TableEdit.FieldNames[1];
+ 	    WriteFields[1].FieldName:= TableEdit.FieldsToEdit[1];
       case WhatAction of
         acAdd:	begin
 					      Salt:= GenerateSalt(SALT_LENGTH);
@@ -181,7 +177,7 @@ begin
  	    WriteFields[2].FieldName:= 'Usergroup_ID';
  			WriteFields[2].Value:= DBLkCboUsergroup.KeyValue;
 			WriteFields[2].DataFormat:= dtInteger;
- 	    WriteFields[3].FieldName:= TableEdit.FieldNames[3];
+ 	    WriteFields[3].FieldName:= TableEdit.FieldsToEdit[3];
  			WriteFields[3].Value:= Salt;
 			WriteFields[3].DataFormat:= dtString;
       Result:= TRUE;

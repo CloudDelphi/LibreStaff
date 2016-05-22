@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
-  sqldb, Globals;
+  sqldb, Globals, FuncData;
 
 type TSearchCriteria = record
     Name: String;
@@ -50,12 +50,12 @@ type
     procedure Search(ViewAll: Boolean);
   public
     { public declarations }
-    function Search(What: TWhatTable): Boolean;
+    function Search(What: TIDTable): Boolean;
   end;
 
 var
   FrmSearch: TFrmSearch;
-  WhatSearch: TWhatTable;
+  WhatSearch: TIDTable;
   SearchCriteria: array of TSearchCriteria;
 
 resourcestring
@@ -73,11 +73,11 @@ implementation
 {$R *.lfm}
 
 uses
-  FuncData, DataModule;
+  DataModule;
 
 { TFrmSearch }
 
-function TFrmSearch.Search(What: TWhatTable): Boolean;
+function TFrmSearch.Search(What: TIDTable): Boolean;
 var
   i, CriteriaCount: Integer;
 begin
@@ -197,11 +197,6 @@ begin
         							end;
 	      end; //case
   	    SearchStr:= '"'+EdiSearch.Text+Wildcard+'"';
-    	  if ChkCaseSensitive.Checked= False then
-      	  begin
-        	SearchStr:= 'LOWER('+SearchStr+')';
-        	SearchField:= 'LOWER('+SearchField+')';
-        	end;
 	      LastStrIdx:= SQLSearch.Count-1;
   	    SQLSearch.Strings[LastStrIdx]:= SQLSearch.Strings[LastStrIdx]+'('+SearchField+CompareOperator+SearchStr+')';
     	  ConcatenateWhere:= True;
@@ -225,6 +220,8 @@ begin
                   end;
   	end; //case
   end;
+  if ChkCaseSensitive.Checked= False then
+    SQLSearch.Add('COLLATE NOCASE');
   //SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
 	FuncData.ExecSQL(DataMod.QueSearch, '', True, SQLSearch);
   ResultCount:= DataMod.QueSearch.RecordCount;

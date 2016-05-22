@@ -8,16 +8,52 @@ uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
   sqldb, LCLType, db, Globals;
 
-type TWriteField = record
-    FieldName: String;
-    Value: Variant;
-    DataFormat: TDataFormat;
+type TField= record
+  Name: String;
+  DataFormat: TDataFormat; DataLength: Integer;
+  HasDefaultValue: Boolean;
+  	DefaultValueQuoted: Boolean;
+  	DefaultValue: String;
+  PutNull: Boolean;
+  	IsNotNull: Boolean;
+  IsPrimaryKey: Boolean;
+  Autoincrement: Boolean;
+  PutNocase: Boolean;
+  	Nocase: Boolean;
+  IsReferenced: Boolean;
+  	ReferenceTable: String;
+  	ReferenceField: String;
 end;
+
+type
+	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
+  	wtUsergroups);
+
+type TTable = record
+  ID: TIDTable;
+	Name: String;
+  Table: TSQLQuery;
+  Datasource: TDatasource;
+  FieldsCount: Integer;
+	Fields: array of TField;
+  FieldsToEditCount: Integer;
+  FieldsToEdit: array of String;
+  KeyField: String;
+end;
+
+type TWriteField = record
+	FieldName: String;
+	Value: Variant;
+  DataFormat: TDataFormat;
+end;
+
 var
+  Tables: array of TTable;
   WriteFields: array of TWriteField;
 
 function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 procedure ConnectDatabase(Databasename: String);
+procedure DefineTables;
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
 function DeleteRecordSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
@@ -42,36 +78,128 @@ implementation
 function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 begin
 	if Query.Eof then
-    begin
-    Result:= True; //No records
-    end
-    else
-    begin
+    Result:= True //No records
+  else
     Result:= False; //It has results
-    end;
 end;
 
 procedure ConnectDatabase(Databasename: String);
 var
   newDatabase: Boolean;
+  i, j: Integer;
+  SQL: String;
 begin
   DataMod.Connection.DatabaseName:= Databasename;
   //DataMod.Connection.Transaction:= DataMod.Transaction;
   //DataMod.Transaction.DataBase:= DataMod.Connection;
   //check whether the database already exists
+  DefineTables;
   newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
     DataMod.Connection.Open;
     DataMod.Transaction.Active:= TRUE;
+    //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+    Tables[0].Fields[0].Name:= 'IDConfig';
+    	Tables[0].Fields[0].DataFormat:= dtInteger;
+		  	Tables[0].Fields[0].DataLength:= 0;
+	    Tables[0].Fields[0].HasDefaultValue:=	FALSE;
+	    Tables[0].Fields[0].PutNull:= TRUE;
+		    Tables[0].Fields[0].IsNotNull:= TRUE;
+    	Tables[0].Fields[0].IsPrimaryKey:= TRUE;
+	    Tables[0].Fields[0].Autoincrement:= TRUE;
+  	  Tables[0].Fields[0].PutNoCase:= FALSE;
+  		  Tables[0].Fields[0].NoCase:= FALSE;
+	    Tables[0].Fields[0].IsReferenced:= FALSE;
+    //DatabaseVersion CHAR(20) DEFAULT ""
+    Tables[0].Fields[1].Name:= 'DatabaseVersion';
+	    Tables[0].Fields[1].DataFormat:= dtChar;
+		  	Tables[0].Fields[1].DataLength:= 20;
+    	Tables[0].Fields[1].HasDefaultValue:=	TRUE;
+	 	  	Tables[0].Fields[1].DefaultValueQuoted:= TRUE;
+			  Tables[0].Fields[1].DefaultValue:= '';
+  	  Tables[0].Fields[1].PutNull:= FALSE;
+   	 	Tables[0].Fields[1].IsPrimaryKey:= FALSE;
+    	Tables[0].Fields[1].Autoincrement:= FALSE;
+    	Tables[0].Fields[1].PutNoCase:= FALSE;
+    	Tables[0].Fields[1].IsReferenced:= FALSE;
+    //CompanyName CHAR(256) DEFAULT ""
+    Tables[0].Fields[2].Name:= 'CompanyName';
+      Tables[0].Fields[2].DataFormat:= dtChar;
+  	  	Tables[0].Fields[2].DataLength:= 256;
+      Tables[0].Fields[2].HasDefaultValue:=	TRUE;
+  	 	  Tables[0].Fields[2].DefaultValueQuoted:= TRUE;
+  		  Tables[0].Fields[2].DefaultValue:= '';
+      Tables[0].Fields[2].PutNull:= FALSE;
+      Tables[0].Fields[2].IsPrimaryKey:= FALSE;
+      Tables[0].Fields[2].Autoincrement:= FALSE;
+      Tables[0].Fields[2].PutNoCase:= FALSE;
+      Tables[0].Fields[2].IsReferenced:= FALSE;
+    //AtomicCommit INTEGER NOT NULL DEFAULT "1"
+    Tables[0].Fields[3].Name:= 'AtomicCommit';
+    	Tables[0].Fields[3].DataFormat:= dtInteger;
+      	Tables[0].Fields[3].DataLength:= 0;
+      Tables[0].Fields[3].HasDefaultValue:=	TRUE;
+      	Tables[0].Fields[3].DefaultValueQuoted:= TRUE;
+      	Tables[0].Fields[3].DefaultValue:= '1';
+      Tables[0].Fields[3].PutNull:= TRUE;
+      	Tables[0].Fields[3].IsNotNull:= TRUE;
+      Tables[0].Fields[3].IsPrimaryKey:= FALSE;
+      Tables[0].Fields[3].Autoincrement:= FALSE;
+      Tables[0].Fields[3].PutNoCase:= FALSE;
+      Tables[0].Fields[3].IsReferenced:= FALSE;
+    //AccessControl BOOLEAN DEFAULT 0
+    Tables[0].Fields[4].Name:= 'AccessControl';
+    	Tables[0].Fields[4].DataFormat:= dtBoolean;
+      	Tables[0].Fields[4].DataLength:= 0;
+      Tables[0].Fields[4].HasDefaultValue:=	TRUE;
+      	Tables[0].Fields[4].DefaultValueQuoted:= FALSE;
+        Tables[0].Fields[4].DefaultValue:= '0';
+      Tables[0].Fields[4].PutNull:= FALSE;
+      Tables[0].Fields[4].IsPrimaryKey:= FALSE;
+      Tables[0].Fields[4].Autoincrement:= FALSE;
+      Tables[0].Fields[4].PutNoCase:= FALSE;
+      Tables[0].Fields[4].IsReferenced:= FALSE;
     // Here we're setting up a table named "DATA" in the new database
-    DataMod.Connection.ExecuteDirect('CREATE TABLE Config('+
-          ' ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' DatabaseVersion CHAR(20) DEFAULT "",'+
-          ' CompanyName CHAR(256) DEFAULT "",'+
-          ' AtomicCommit INTEGER NOT NULL DEFAULT "1",'+
-          ' AccessControl BOOLEAN DEFAULT 0'+
-          ');');
+    for i:=0 to (Length(Tables)-1) do
+    	begin
+      SQL:= '';
+      SQL:= 'CREATE TABLE '+Tables[i].Name+'(';
+      for j:= 0 to (Tables[i].FieldsCount-1) do
+        begin
+        if (j>0) then
+        	SQL:= SQL+', ';
+        SQL:= SQL+Tables[i].Fields[j].Name + ' ';
+        case Tables[i].Fields[j].DataFormat of
+          dtInteger:	SQL:= SQL + 'INTEGER';
+          dtChar:	SQL:= SQL + 'CHAR';
+          dtBoolean:	SQL:= SQL + 'BOOLEAN';
+        end; //case
+        if NOT(Tables[i].Fields[j].DataLength= 0) then
+        	begin
+          SQL:= SQL+'('+IntToStr(Tables[i].Fields[j].DataLength)+')';
+          end;
+        if (Tables[i].Fields[j].PutNull= TRUE) then
+          begin
+          if (Tables[i].Fields[j].IsNotNull= TRUE) then
+            SQL:= SQL + ' NOT NULL';
+          end;
+        if (Tables[i].Fields[j].HasDefaultValue= TRUE) then
+          begin
+          SQL:= SQL + ' DEFAULT ';
+          if (Tables[i].Fields[j].DefaultValueQuoted= TRUE) then
+          	SQL:= SQL + QuotedStr(Tables[i].Fields[j].DefaultValue)
+          	else
+            SQL:= SQL + Tables[i].Fields[j].DefaultValue;
+          end;
+         if (Tables[i].Fields[j].IsPrimaryKey= TRUE) then
+           SQL:= SQL + ' PRIMARY KEY';
+         if (Tables[i].Fields[j].Autoincrement= TRUE) then
+           SQL:= SQL + ' AUTOINCREMENT';
+        end; //for 'j'
+      SQL:= SQL+');';
+      DataMod.Connection.ExecuteDirect(SQL);
+	  	end; //for 'i'
     DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
       	  ' VALUES('+QuotedStr(DATABASEVERSION)+', ''My Company'''+', ''0'''+
@@ -163,6 +291,66 @@ begin
     end;
   end;
 end;
+
+procedure DefineTables;
+var
+	i: Integer;
+begin
+  //Amount of Tables
+  SetLength(Tables, TABLES_COUNT);
+  Tables[0].Name:= 'Config';
+  Tables[0].ID:= wtConfig;
+  Tables[0].Table:= DataMod.QueConfig;
+  Tables[0].Datasource:= DataMod.DsoConfig;
+  Tables[0].FieldsCount:= 5;
+  Tables[1].Name:= 'Users';
+  Tables[1].ID:= wtUsers;
+  Tables[1].Table:= DataMod.QueUsers;
+  Tables[1].Datasource:= DataMod.DsoUsers;
+  Tables[1].FieldsCount:= 5;
+  Tables[1].KeyField:= 'ID_User';
+  Tables[2].Name:= 'Usersgroups';
+  Tables[2].Table:= DataMod.QueUsergroups;
+  Tables[2].Datasource:= DataMod.DsoUsergroups;
+  Tables[2].ID:= wtUsergroups;
+  Tables[2].FieldsCount:= 2;
+  Tables[3].Name:= 'Permissions';
+  Tables[3].ID:= wtPermissions;
+  Tables[3].Table:= DataMod.QuePermissions;
+  Tables[3].Datasource:= DataMod.DsoPermissions;
+  Tables[3].FieldsCount:= 6;
+  Tables[4].Name:= 'PicsEmployees';
+  Tables[4].ID:= wtPicsEmployees;
+  Tables[4].Table:= DataMod.QuePicsEmployees;
+  Tables[4].Datasource:= DataMod.DsoPicsEmployees;
+  Tables[4].FieldsCount:= 3;
+  Tables[5].Name:= 'TypeContracts';
+  Tables[5].ID:= wtTypeContracts;
+  Tables[5].Table:= DataMod.QueTypeContracts;
+  Tables[5].Datasource:= DataMod.DsoTypeContracts;
+  Tables[5].KeyField:= 'ID_TypeContract';
+  Tables[5].FieldsCount:= 2;
+  Tables[6].Name:= 'Workplaces';
+  Tables[6].Table:= DataMod.QueWorkplaces;
+  Tables[6].Datasource:= DataMod.DsoWorkplaces;
+  Tables[6].ID:= wtWorkplaces;
+  Tables[6].FieldsCount:= 2;
+  Tables[6].KeyField:= 'ID_Workplace';
+  Tables[7].Name:= 'ContractsLog';
+  Tables[7].Table:= DataMod.QueContractsLog;
+  Tables[7].Datasource:= DataMod.DsoContractsLog;
+  Tables[7].ID:= wtContractsLog;
+  Tables[7].FieldsCount:= 6;
+  Tables[8].Name:= 'Employees';
+  Tables[8].ID:= wtEmployees;
+  Tables[8].Table:= DataMod.QueEmployees;
+  Tables[8].Datasource:= DataMod.DsoEmployees;
+  Tables[8].FieldsCount:= 6;
+  Tables[8].KeyField:= 'ID_Employee';
+  for i:= 0 to (TABLES_COUNT-1) do
+  	SetLength(Tables[0].Fields, Tables[0].FieldsCount);
+end;
+
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False; Target: String=''): Boolean;
 var
   ConfirmDel, Style: Integer;
@@ -414,7 +602,8 @@ begin
   Table.ApplyUpdates;
   DataMod.Transaction.CommitRetaining;
   Table.Refresh;
- 	if (BookmarkPos= TRUE) then Table.RecNo:= Bookmark;
+ 	if (BookmarkPos= TRUE) then
+    Table.RecNo:= Bookmark;
   SQLSentence.Free;
   Result:= True;
 end;

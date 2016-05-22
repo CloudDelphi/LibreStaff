@@ -12,8 +12,7 @@ uses
 
 type
 	TCboListType= (cblStates);
-type
-	TWhatTable= (wtEmployees, wtTypeContracts, wtWorkplaces, wtUsers);
+
 type
   { TFrmMain }
   TFrmMain = class(TForm)

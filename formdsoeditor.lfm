@@ -51,6 +51,10 @@ object FrmDsoEditor: TFrmDsoEditor
       inherited BtnEdit: TBitBtn
         OnClick = BtnEditClick
       end
+      inherited PanNavRec: TPanel
+        ClientHeight = 25
+        ClientWidth = 108
+      end
     end
   end
 end

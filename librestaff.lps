@@ -48,10 +48,10 @@
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="29"/>
-        <CursorPos X="18" Y="42"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="25" Y="8"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -60,9 +60,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="172"/>
-        <CursorPos X="106" Y="174"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="226"/>
+        <CursorPos Y="15"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -71,9 +71,9 @@
         <Filename Value="funcdata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="16"/>
-        <CursorPos X="43" Y="70"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="439"/>
+        <CursorPos X="28" Y="404"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -84,12 +84,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="46"/>
-        <CursorPos X="4" Y="18"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="15" Y="45"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -120,7 +118,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncDlgs"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="17"/>
         <CursorPos X="10" Y="24"/>
         <UsageCount Value="200"/>
       </Unit6>
@@ -154,11 +151,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormListEditor"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <CursorPos Y="8"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -168,8 +163,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="33"/>
-        <CursorPos X="31" Y="46"/>
+        <TopLine Value="67"/>
+        <CursorPos X="37" Y="80"/>
         <UsageCount Value="200"/>
       </Unit10>
       <Unit11>
@@ -179,9 +174,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="280"/>
-        <CursorPos X="15" Y="306"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="154"/>
+        <CursorPos X="52" Y="202"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -193,12 +188,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameAddDelEdiSavCan"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="23"/>
         <CursorPos X="28" Y="27"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit12>
       <Unit13>
         <Filename Value="formprgbar.pas"/>
@@ -209,7 +202,7 @@
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="9"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="200"/>
       </Unit13>
       <Unit14>
         <Filename Value="formabout.pas"/>
@@ -220,7 +213,7 @@
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="64" Y="9"/>
-        <UsageCount Value="185"/>
+        <UsageCount Value="194"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -232,7 +225,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="29"/>
         <CursorPos X="17" Y="61"/>
-        <UsageCount Value="178"/>
+        <UsageCount Value="187"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -241,11 +234,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FraAcceptCancel"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="4" Y="2"/>
-        <UsageCount Value="178"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <UsageCount Value="187"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
@@ -253,7 +244,7 @@
         <UnitName Value="FuncPrint"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="8"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="161"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
@@ -261,7 +252,7 @@
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="10"/>
-        <UsageCount Value="144"/>
+        <UsageCount Value="153"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -273,17 +264,16 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="26" Y="102"/>
-        <UsageCount Value="110"/>
+        <UsageCount Value="119"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="40"/>
-        <CursorPos X="3" Y="48"/>
-        <UsageCount Value="104"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="29"/>
+        <CursorPos X="18" Y="54"/>
+        <UsageCount Value="113"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -295,7 +285,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="94"/>
+        <UsageCount Value="103"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -304,7 +294,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="92"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -316,7 +306,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="36" Y="177"/>
-        <UsageCount Value="63"/>
+        <UsageCount Value="72"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -328,7 +318,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <CursorPos X="40" Y="70"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="38"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -337,13 +327,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="141"/>
-        <CursorPos X="17" Y="152"/>
-        <UsageCount Value="53"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="23" Y="22"/>
+        <UsageCount Value="62"/>
       </Unit25>
       <Unit26>
         <Filename Value="richmemo\formeditadduser.pas"/>
@@ -427,8 +413,8 @@
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3257"/>
-        <CursorPos X="35" Y="3265"/>
-        <UsageCount Value="21"/>
+        <CursorPos Y="3271"/>
+        <UsageCount Value="23"/>
       </Unit37>
       <Unit38>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-db\src\base\db.pas"/>
@@ -500,9 +486,9 @@
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsbuttons.pp"/>
         <UnitName Value="Win32WSButtons"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="441"/>
-        <CursorPos Y="491"/>
-        <UsageCount Value="13"/>
+        <TopLine Value="557"/>
+        <CursorPos X="28" Y="494"/>
+        <UsageCount Value="15"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32memostrings.inc"/>
@@ -692,127 +678,27 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit73>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="136" TopLine="121"/>
+        <Filename Value="formdsoeditor.pas"/>
+        <Caret Line="293" Column="20" TopLine="282"/>
       </Position1>
       <Position2>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="131" TopLine="121"/>
+        <Filename Value="formdsoeditor.pas"/>
+        <Caret Line="245" Column="3" TopLine="278"/>
       </Position2>
       <Position3>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="132" TopLine="121"/>
+        <Filename Value="formdsoeditor.pas"/>
+        <Caret Line="226" TopLine="213"/>
       </Position3>
       <Position4>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="133" TopLine="121"/>
+        <Filename Value="funcdata.pas"/>
+        <Caret Line="599" TopLine="577"/>
       </Position4>
       <Position5>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="151" TopLine="125"/>
+        <Filename Value="funcdata.pas"/>
+        <Caret Line="600" TopLine="578"/>
       </Position5>
-      <Position6>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="133" Column="30" TopLine="112"/>
-      </Position6>
-      <Position7>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="131" Column="20" TopLine="95"/>
-      </Position7>
-      <Position8>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="138" Column="30" TopLine="121"/>
-      </Position8>
-      <Position9>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="88" Column="8" TopLine="76"/>
-      </Position9>
-      <Position10>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="91" TopLine="79"/>
-      </Position10>
-      <Position11>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="92" TopLine="79"/>
-      </Position11>
-      <Position12>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="94" TopLine="79"/>
-      </Position12>
-      <Position13>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="306" Column="13" TopLine="37"/>
-      </Position13>
-      <Position14>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="307" Column="13" TopLine="281"/>
-      </Position14>
-      <Position15>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="306" Column="13" TopLine="280"/>
-      </Position15>
-      <Position16>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="307" Column="13" TopLine="281"/>
-      </Position16>
-      <Position17>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="306" Column="13" TopLine="280"/>
-      </Position17>
-      <Position18>
-        <Filename Value="frameadddeledisavcan.pas"/>
-        <Caret Line="6" Column="61" TopLine="21"/>
-      </Position18>
-      <Position19>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="306" Column="13" TopLine="280"/>
-      </Position19>
-      <Position20>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="307" Column="13" TopLine="281"/>
-      </Position20>
-      <Position21>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="306" Column="13" TopLine="280"/>
-      </Position21>
-      <Position22>
-        <Filename Value="frameadddeledisavcan.pas"/>
-        <Caret Line="47" Column="32" TopLine="22"/>
-      </Position22>
-      <Position23>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="78" Column="15"/>
-      </Position23>
-      <Position24>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="126" TopLine="121"/>
-      </Position24>
-      <Position25>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="132" TopLine="121"/>
-      </Position25>
-      <Position26>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="174" Column="106" TopLine="172"/>
-      </Position26>
-      <Position27>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="129" Column="8" TopLine="172"/>
-      </Position27>
-      <Position28>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="143" Column="42" TopLine="129"/>
-      </Position28>
-      <Position29>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="129" Column="52" TopLine="109"/>
-      </Position29>
-      <Position30>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="152" Column="11" TopLine="144"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

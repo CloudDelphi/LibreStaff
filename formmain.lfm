@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 555
+  Left = 442
   Height = 682
-  Top = 301
+  Top = 212
   Width = 1131
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -799,9 +799,9 @@ object FrmMain: TFrmMain
           OnShow = TabContractsLogShow
           object DBGrdLogContracts: TDBGrid
             Left = 0
-            Height = 390
+            Height = 284
             Top = 0
-            Width = 1060
+            Width = 954
             Align = alClient
             AutoEdit = False
             AutoFillColumns = True
@@ -809,22 +809,22 @@ object FrmMain: TFrmMain
             Columns = <            
               item
                 Title.Caption = 'Date Init'
-                Width = 254
+                Width = 228
                 FieldName = 'DateInit_Contract'
               end            
               item
                 Title.Caption = 'DateEnd'
-                Width = 254
+                Width = 228
                 FieldName = 'DateEnd_Contract'
               end            
               item
                 Title.Caption = 'Type of contract'
-                Width = 254
+                Width = 228
                 FieldName = 'Name_TypeContract'
               end            
               item
                 Title.Caption = 'Workplace'
-                Width = 256
+                Width = 228
                 FieldName = 'Name_Workplace'
               end>
             DataSource = DataMod.DsoContractsLog

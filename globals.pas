@@ -18,7 +18,7 @@ type TCustomPopupNotifier= class(TPopupNotifier)
   end;
 
 type
-	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate);
+	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate, dtChar);
 
 type
 	TAction= (acEdit, acAdd);
@@ -51,6 +51,7 @@ const
   SUPERUSER_NAME= 'SUPERUSER';
   SUPERUSER_PASSWORD= 'B887275D13AA5DB8FBDFF89576D245F03B7E9C48';
   SUPERUSER_SALT= 'zYJ';
+  TABLES_COUNT= 9;
   USERNAME_LENGTH= 12;
 
 implementation

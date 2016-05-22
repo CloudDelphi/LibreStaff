@@ -7,17 +7,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType,
-  ExtCtrls, StdCtrls, FormInputBox, Crypt;
+  ExtCtrls, StdCtrls, FormInputBox, Crypt, FuncData;
 
-type TTableEdit = record
-    What: TWhatTable;
-    TableName: String;
-    Table: TSQLQuery;
-    Datasource: TDatasource;
-    FieldCount: Integer;
-    FieldNames: array of String;
-    KeyField: String;
-end;
 type
   { TFrmDsoEditor }
   TFrmDsoEditor = class(TForm)
@@ -35,12 +26,12 @@ type
     procedure UpdateNavRec;
   public
     { public declarations }
-  	function EditTable(WhatTable: TWhatTable): Boolean;
+  	function EditTable(WhatTable: TIDTable): Boolean;
   end;
 
 var
   FrmDsoEditor: TFrmDsoEditor;
-  TableEdit: TTableEdit;
+  TableEdit: TTable;
 
 resourcestring
   Of_LblNavRec= 'of';
@@ -77,7 +68,7 @@ implementation
 {$R *.lfm}
 
 uses
-  FuncData, DataModule, FormEditAddUser;
+  DataModule, FormEditAddUser;
 
 { TFrmDsoEditor }
 
@@ -87,7 +78,7 @@ begin
   FraAddDelEdiSavCan1.LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+ Of_LblNavRec +' '+ IntToStr(TotalRecs);
 end;
 
-function TFrmDsoEditor.EditTable(WhatTable: TWhatTable): Boolean;
+function TFrmDsoEditor.EditTable(WhatTable: TIDTable): Boolean;
 var
   i: Integer;
 begin
@@ -97,55 +88,43 @@ begin
     	wtTypeContracts:
         begin
         Caption:= Form_Caption_TypeContracts;
-        TableEdit.What:= wtTypeContracts;
-        TableEdit.TableName:= 'TypeContracts';
-        TableEdit.Datasource:= DataMod.DsoTypeContracts;
-        TableEdit.FieldCount:= 1;
-        TableEdit.Table:= DataMod.QueTypeContracts;
-        TableEdit.KeyField:= 'ID_TypeContract';
-        SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
-        TableEdit.FieldNames[0]:= 'Name_TypeContract';
+        TableEdit:= Tables[5];
+        TableEdit.FieldsToEditCount:= 1;
+        SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
+        TableEdit.FieldsToEdit[0]:= 'Name_TypeContract';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_TypeContracts;
 				end;
       wtWorkplaces:
         begin
         Caption:= Form_Caption_Workplaces;
-        TableEdit.What:= wtWorkplaces;
-        TableEdit.TableName:= 'Workplaces';
-        TableEdit.Datasource:= DataMod.DsoWorkplaces;
-        TableEdit.FieldCount:= 1;
-        TableEdit.Table:= DataMod.QueWorkplaces;
-        TableEdit.KeyField:= 'ID_Workplace';
-        SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
-        TableEdit.FieldNames[0]:= 'Name_Workplace';
+        TableEdit:= Tables[6];
+        TableEdit.FieldsToEditCount:= 1;
+        SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
+        TableEdit.FieldsToEdit[0]:= 'Name_Workplace';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_Workplaces;
         end;
       wtUsers:
         begin
       	Caption:= Form_Caption_Users;
-        TableEdit.What:= wtUsers;
-        TableEdit.TableName:= 'Users';
-        TableEdit.Datasource:= DataMod.DsoUsers;
-        TableEdit.FieldCount:= 4;
-        TableEdit.Table:= DataMod.QueUsers;
-        TableEdit.KeyField:= 'ID_User';
-        SetLength(TableEdit.FieldNames, TableEdit.FieldCount);
-        TableEdit.FieldNames[0]:= 'Name_User';
+        TableEdit:= Tables[1];
+        TableEdit.FieldsToEditCount:= 4;
+        SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
+        TableEdit.FieldsToEdit[0]:= 'Name_User';
      		DBGrd.Columns[0].Title.Caption:= Col_Title_User;
         DBGrd.Columns.Add;
-        TableEdit.FieldNames[1]:= 'Hash_User';
+        TableEdit.FieldsToEdit[1]:= 'Hash_User';
         DBGrd.Columns[1].Title.Caption:= Col_Title_Password;
         DBGrd.Columns.Add;
- 	      TableEdit.FieldNames[2]:= 'Name_Usergroup';
+ 	      TableEdit.FieldsToEdit[2]:= 'Name_Usergroup';
         DBGrd.Columns[2].Title.Caption:= Col_Title_Usergroup;
         //Put the fields do not shown in column below here:
-        TableEdit.FieldNames[3]:= 'Salt_User';
+        TableEdit.FieldsToEdit[3]:= 'Salt_User';
         end;
     end; //case
-  	DBGrd.Datasource:= TableEdit.Datasource;
+  	DBGrd.Datasource:= TableEdit.DataSource;
     for i:=0 to (DBGrd.Columns.Count-1) do
     	begin
-	    DBGrd.Columns[i].FieldName:= TableEdit.FieldNames[i];
+	    DBGrd.Columns[i].FieldName:= TableEdit.FieldsToEdit[i];
       end;
     //Grab the total amount of records:
 		TotalRecs:= TableEdit.Table.RecordCount;
@@ -173,14 +152,14 @@ var
   MaxLength: Integer;
   WriteFieldsCount: Integer;
 begin
-  case TableEdit.What of
+  case TableEdit.ID of
     wtUsers:
       begin
       Cancel:= Not(FrmEditAddUser.EditAddUser(acAdd, TableEdit));
       end;
     wtWorkplaces, WtTypeContracts:
       begin
-	  	case TableEdit.What of
+	  	case TableEdit.ID of
     			wtWorkplaces:
           	begin
 		    	  InpBox_Caption:= Add_IptBox_Caption_Workplaces;
@@ -195,7 +174,7 @@ begin
       			end;
       end; //case
 			SetLength(WriteFields, WriteFieldsCount);
-		  for i:=0 to (TableEdit.FieldCount-1) do
+		  for i:=0 to (TableEdit.FieldsToEditCount-1) do
 		    begin
 	      MaxLength:= 255;
 		  	if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, '', MaxLength, FieldValue)= TRUE then
@@ -206,7 +185,7 @@ begin
   			    ErrorMsg:= Blank_Value;
     	  	  break; //terminate the 'for' loop
       			end;
-     			WriteFields[i].FieldName:= TableEdit.FieldNames[i];
+     			WriteFields[i].FieldName:= TableEdit.FieldsToEdit[i];
  	 	  		WriteFields[i].Value:= FieldValue;
    				WriteFields[i].DataFormat:= dtString;
       		end
@@ -220,7 +199,7 @@ begin
 	end; //case TableEdit.What
  	if (Error= FALSE) and (Cancel=FALSE) then
   	begin
-	 	FuncData.InsertSQL(TableEdit.Table, TableEdit.TableName, WriteFields); //Not use AppendTableRecord, because the users Table is selected with another tables with join clause!!!!
+	 	FuncData.InsertSQL(TableEdit.Table, TableEdit.Name, WriteFields); //Not use AppendTableRecord, because the users Table is selected with another tables with join clause!!!!
 	  WriteFields:= nil;
 		Inc(TotalRecs);
 	 	UpdateNavRec;
@@ -235,8 +214,8 @@ procedure TFrmDsoEditor.BtnDeleteClick(Sender: TObject);
 var
   FieldValue: String;
 begin
-  FieldValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[0]).AsString;
-  if (TableEdit.What= wtUsers) then //Don't delete SUPERUSER
+  FieldValue:= TableEdit.Table.FieldByName(TableEdit.FieldsToEdit[0]).AsString;
+  if (TableEdit.ID= wtUsers) then //Don't delete SUPERUSER
     begin
     if (FieldValue= SUPERUSER_NAME) then
       begin
@@ -244,7 +223,7 @@ begin
       Exit;
       end;
     end;
-  if FuncData.DeleteRecordSQL(TableEdit.Table, TableEdit.TableName, TableEdit.FieldNames[0], FieldValue, FieldValue, True)= TRUE then
+  if FuncData.DeleteRecordSQL(TableEdit.Table, TableEdit.Name, TableEdit.FieldsToEdit[0], FieldValue, FieldValue, True)= TRUE then
   	begin
 	  Dec(TotalRecs);
   	UpdateNavRec;
@@ -263,7 +242,7 @@ var
   WriteFieldsCount: Integer;
   Salt: String;
 begin
-  case TableEdit.What of
+  case TableEdit.ID of
     wtTypeContracts:
       begin
       InpBox_Caption:= Edit_IptBox_Caption_TypeContracts;
@@ -281,10 +260,10 @@ begin
 			Cancel:= Not(FrmEditAddUser.EditAddUser(acEdit, TableEdit));
       end;
   end; //case
-	if (TableEdit.What= wtTypeContracts) OR (TableEdit.What= wtWorkplaces) then
+	if (TableEdit.ID= wtTypeContracts) OR (TableEdit.ID= wtWorkplaces) then
     begin
     ColIdx:= DBGrd.SelectedColumn.Index;
-    DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldNames[ColIdx]).AsString;
+    DefaultValue:= TableEdit.Table.FieldByName(TableEdit.FieldsToEdit[ColIdx]).AsString;
   	if FrmInputBox.CustomInputBox(InpBox_Caption, InpBox_Prompt, DefaultValue, MaxLength, FieldValue)= TRUE then
     	begin
 	    if FieldValue='' then
@@ -300,15 +279,17 @@ begin
     end;
   if (Error= FALSE) and (Cancel= False) then
   	begin
-    if (TableEdit.What= wtTypeContracts) OR (TableEdit.What= wtWorkplaces) then
+    if (TableEdit.ID= wtTypeContracts) OR (TableEdit.ID= wtWorkplaces) then
       begin
 		  SetLength(WriteFields, WriteFieldsCount);
-  		WriteFields[0].FieldName:= TableEdit.FieldNames[ColIdx];
+  		WriteFields[0].FieldName:= TableEdit.FieldsToEdit[ColIdx];
 	  	WriteFields[0].Value:= FieldValue;
 			WriteFields[0].DataFormat:= dtString;
       end;
-    FuncData.UpdateSQL(TableEdit.Table, TableEdit.TableName, TableEdit.KeyField,
-  		TableEdit.Table.FieldByName(TableEdit.KeyField).AsString, WriteFields, TRUE);
+    FuncData.UpdateSQL(TableEdit.Table, TableEdit.Name, TableEdit.KeyField,
+    	TableEdit.Table.FieldByName(TableEdit.KeyField).AsString, WriteFields, TRUE);
+    TableEdit.Datasource.DataSet.Close;
+    TableEdit.Datasource.DataSet.Open;
     WriteFields:= nil;
   	end
 	else if (Error= TRUE) then
