@@ -161,7 +161,7 @@ begin
       Tables[0].Fields[4].PutNoCase:= FALSE;
       Tables[0].Fields[4].IsReferenced:= FALSE;
     // Here we're setting up a table named "DATA" in the new database
-    for i:=0 to (Length(Tables)-1) do
+    for i:=0 to (0) do //change the second 0 to Length(Tables)-1
     	begin
       SQL:= '';
       SQL:= 'CREATE TABLE '+Tables[i].Name+'(';
