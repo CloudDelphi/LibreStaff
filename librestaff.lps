@@ -71,8 +71,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="150"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="205"/>
         <CursorPos X="65" Y="164"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -162,10 +162,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="67"/>
-        <CursorPos X="37" Y="80"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="212"/>
+        <CursorPos X="7" Y="224"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="formdsoeditor.pas"/>
@@ -174,7 +176,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="154"/>
         <CursorPos X="52" Y="202"/>
         <UsageCount Value="200"/>
@@ -678,7 +680,7 @@
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit73>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="formdsoeditor.pas"/>
         <Caret Line="293" Column="20" TopLine="282"/>
@@ -695,10 +697,6 @@
         <Filename Value="funcdata.pas"/>
         <Caret Line="600" TopLine="578"/>
       </Position4>
-      <Position5>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="15" TopLine="226"/>
-      </Position5>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

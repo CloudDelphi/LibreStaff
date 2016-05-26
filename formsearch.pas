@@ -221,7 +221,7 @@ begin
   	end; //case
   end;
   if ChkCaseSensitive.Checked= False then
-    SQLSearch.Add('COLLATE NOCASE');
+    //SQLSearch.Add('COLLATE NOCASE');
   //SQLSearch.Strings[LastStrIdx]:=  SQLSearch.Strings[LastStrIdx]+';';
 	FuncData.ExecSQL(DataMod.QueSearch, '', True, SQLSearch);
   ResultCount:= DataMod.QueSearch.RecordCount;
