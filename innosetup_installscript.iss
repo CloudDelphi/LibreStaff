@@ -2,11 +2,12 @@
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.13-alpha
+AppVerName=v0.0.14-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.13-alpha
+OutputBaseFilename=LibreStaff_v0.0.14-alpha
 Uninstallable=yes
+UninstallDisplayName=LibreStaff
 ;WizardImageFile=
 WizardImageStretch=no
 WizardImageBackColor=clWhite
