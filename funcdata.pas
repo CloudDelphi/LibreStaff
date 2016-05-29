@@ -5,8 +5,8 @@ unit FuncData;
 interface
 
 uses
-  Forms, Controls, Classes, SysUtils, Dialogs, DataModule,
-  sqldb, LCLType, db, Globals, ZDataset;
+  Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
+  sqldb, LCLType, db, Globals;
 
 type TField= record
   Name: String;
@@ -24,13 +24,6 @@ type TField= record
   	ReferenceTable: String;
   	ReferenceField: String;
 end;
- type TEngineType= (dbtSQLite);
-
- type TDBEngine = class
-   EngineType: TEngineType;
-   TrueValue: Variant;
-   FalseValue: Variant;
- end;
 
 type
 	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
@@ -39,7 +32,7 @@ type
 type TTable = record
   ID: TIDTable;
 	Name: String;
-  Table: TZQuery;
+  Table: TSQLQuery;
   Datasource: TDatasource;
   FieldsCount: Integer;
 	Fields: array of TField;
@@ -55,37 +48,22 @@ type TWriteField = record
 end;
 
 var
-  DBEngine: TDBEngine;
   Tables: array of TTable;
   WriteFields: array of TWriteField;
 
-const
-  SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
-  SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* FROM ContractsLog'+
-    	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID)'+
-      ' LEFT JOIN Workplaces ON (ID_Workplace=Workplace_ID)'+
-      ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
-      ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
-  SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
-  SELECT_ALL_USERS_SQL= 'SELECT Users.*, Usergroups.Name_Usergroup from Users'+
-      '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup)';
-  SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
-  SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
-
-
-function CheckQueryEmpty(Query: TZQuery): Boolean;
+function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 procedure ConnectDatabase(Databasename: String);
 procedure DefineTables;
-function DeleteTableRecord(Query: TZQuery; Confirm: Boolean=False;
+function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
-function DeleteRecordSQL(Table: TZQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
-procedure ExecSQL(Query: TZQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
-function AppendTableRecord(Query: TZQuery; WriteFields: array of TWriteField): Boolean;
-function EditTableRecord(Query: TZQuery; WriteFields: array of TWriteField): Boolean;
-function InsertSQL(Table: TZQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
-procedure SaveTable(Query: TZQuery);
-procedure UpdateRecord(Query: TZQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
-function UpdateSQL(Table: TZQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
+function DeleteRecordSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
+procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
+function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
+function InsertSQL(Table: TSQLQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
+procedure SaveTable(Query: TSQLQuery);
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
 function CheckValueExists(Table, Field, Value: String; NoCase: Boolean=FALSE;
          FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 
@@ -97,7 +75,7 @@ resourcestring
 
 implementation
 
-function CheckQueryEmpty(Query: TZQuery): Boolean;
+function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 begin
 	if Query.Eof then
     Result:= True //No records
@@ -111,11 +89,7 @@ var
   i, j: Integer;
   SQL: String;
 begin
-  DBEngine:= TDBEngine.Create;
-  DBEngine.EngineType:= dbtSQLite;
-  DBEngine.TrueValue:= 'Y';
-  DBEngine.FalseValue:= 'N';
-  DataMod.Connection.Database:= Databasename;
+  DataMod.Connection.DatabaseName:= Databasename;
   //DataMod.Connection.Transaction:= DataMod.Transaction;
   //DataMod.Transaction.DataBase:= DataMod.Connection;
   //check whether the database already exists
@@ -123,7 +97,8 @@ begin
   newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
-    DataMod.Connection.Connect;
+    DataMod.Connection.Open;
+    DataMod.Transaction.Active:= TRUE;
     //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
     Tables[0].Fields[0].Name:= 'IDConfig';
     	Tables[0].Fields[0].DataFormat:= dtInteger;
@@ -310,7 +285,7 @@ begin
           ' );');
     //Creating an index based upon id in the DATA Table
 		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
-	  DataMod.Connection.Commit;
+	  DataMod.Transaction.Commit;
     except
     ShowMessage('Unable to create new database');
     end;
@@ -376,7 +351,7 @@ begin
   	SetLength(Tables[0].Fields, Tables[0].FieldsCount);
 end;
 
-function DeleteTableRecord(Query: TZQuery; Confirm: Boolean=False; Target: String=''): Boolean;
+function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False; Target: String=''): Boolean;
 var
   ConfirmDel, Style: Integer;
   Msg: PChar;
@@ -393,7 +368,7 @@ begin
     			try
    				Query.Delete;
        	  Query.ApplyUpdates;
-         	DataMod.Connection.Commit;
+         	DataMod.Transaction.CommitRetaining;
 					Result:= True;
           except
 					Result:= False;
@@ -405,7 +380,7 @@ begin
               end;
   end; //case
 end;
-function DeleteRecordSQL(Table: TZQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
+function DeleteRecordSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; Target: String='';Confirm: Boolean=False): Boolean;
 var
 	SQLSentence: TStringList;
   ConfirmDel, Style, Bookmark: Integer;
@@ -436,7 +411,7 @@ begin
             DataMod.QueVirtual.SQL.Assign(SQLSentence);
             Bookmark:= Table.RecNo;
             DataMod.QueVirtual.ExecSQL;
-            DataMod.Connection.Commit;
+            DataMod.Transaction.CommitRetaining;
           	SQLSentence.Free;
             Table.Refresh;
             Table.RecNo:= Bookmark-1;
@@ -452,7 +427,7 @@ begin
     end; //case
 end;
 
-function EditTableRecord(Query: TZQuery; WriteFields: array of TWriteField): Boolean;
+function EditTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 var
   i: Integer;
 begin
@@ -468,11 +443,11 @@ begin
     end;
   Query.Post;
   Query.ApplyUpdates;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   Result:= True;
 end;
 
-procedure ExecSQL(Query: TZQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
+procedure ExecSQL(Query: TSQLQuery; SQL: String; IsStrLst: Boolean=False; StrLst: TStringList=nil);
 begin
   Query.Close;
   Query.SQL.Clear;
@@ -484,10 +459,10 @@ begin
     StrLst.Free;
     end;
 	Query.Open;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
 end;
 
-function AppendTableRecord(Query: TZQuery; WriteFields: array of TWriteField): Boolean;
+function AppendTableRecord(Query: TSQLQuery; WriteFields: array of TWriteField): Boolean;
 var
   i: Integer;
 begin
@@ -497,20 +472,20 @@ begin
     case WriteFields[i].DataFormat of
 			dtString: Query.FieldByName(WriteFields[i].FieldName).AsString:= WriteFields[i].Value;
  			dtInteger: Query.FieldByName(WriteFields[i].FieldName).AsInteger:= WriteFields[i].Value;
- 			dtBoolean: Query.FieldByName(WriteFields[i].FieldName).AsBoolean:= TRUE;
+ 			dtBoolean: Query.FieldByName(WriteFields[i].FieldName).AsBoolean:= WriteFields[i].Value;
       dtDate: Query.FieldByName(WriteFields[i].FieldName).AsDateTime:= WriteFields[i].Value;
     end; //case
     end;
   Query.Post;
   Query.ApplyUpdates;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   //Query.Refresh;
   //DataMod.Transaction.CommitRetaining;
   Query.Last;
   Result:= True;
 end;
 
-function InsertSQL(Table: TZQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
+function InsertSQL(Table: TSQLQuery; TableName: String; WriteFields: array of TWriteField): Boolean;
 var
   i, Bookmark: Integer;
 	SQLSentence: TStringList;
@@ -548,7 +523,7 @@ begin
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
   Table.ApplyUpdates;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   SQLSentence.Free;
   Table.Last;
   Bookmark:= Table.RecNo;
@@ -557,7 +532,7 @@ begin
   Result:= TRUE;
 end;
 
-procedure SaveTable(Query: TZQuery);
+procedure SaveTable(Query: TSQLQuery);
 var
 	SubstringPos: Integer;
 begin
@@ -575,11 +550,11 @@ begin
   	  ShowMessage('Exception message = '+E.Message);
     end;
   end;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   Screen.Cursor:= crDefault;
 end;
 
-procedure UpdateRecord(Query: TZQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
+procedure UpdateRecord(Query: TSQLQuery; FieldName, Value: Variant; DataFormat: TDataFormat);
 begin
   Query.Edit;
   case DataFormat of
@@ -590,12 +565,12 @@ begin
   end;
   Query.Post;
   Query.ApplyUpdates;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   Query.Refresh;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
 end;
 
-function UpdateSQL(Table: TZQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
+function UpdateSQL(Table: TSQLQuery; TableName, KeyField, KeyValue: String; WriteFields: array of TWriteField; BookmarkPos: Boolean): Boolean;
 var
   i, Bookmark: Integer;
 	SQLSentence: TStringList;
@@ -612,7 +587,7 @@ begin
       dtString: ValueStr:= WriteFields[i].Value;
       dtInteger: ValueStr:= IntToStr(WriteFields[i].Value);
       dtDate: ValueStr:= FormatDateTime('yyyy"-"mm"-"dd"',WriteFields[i].Value);
-      dtBoolean: ValueStr:= WriteFields[i].Value;
+      dtBoolean: ValueStr:= BoolToStr(WriteFields[i].Value);
       dtNull: ValueStr:= 'NULL';
     end; //case
     SQLSentence.Strings[1]:= SQLSentence.Strings[1]+WriteFields[i].FieldName+'='+
@@ -625,7 +600,7 @@ begin
   DataMod.QueVirtual.SQL.Assign(SQLSentence);
   DataMod.QueVirtual.ExecSQL;
   Table.ApplyUpdates;
-  DataMod.Connection.Commit;
+  DataMod.Transaction.CommitRetaining;
   Table.Refresh;
  	if (BookmarkPos= TRUE) then
     Table.RecNo:= Bookmark;
@@ -636,10 +611,10 @@ end;
 function CheckValueExists(Table, Field, Value: String; NoCase: Boolean=FALSE;
          FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 var
-	Query: TZQuery;
+	Query: TSQLQuery;
 begin
-  Query:= TZQuery.Create(nil);
-  Query.Connection:= DataMod.Connection;
+  Query:= TSQLQuery.Create(nil);
+  Query.DataBase:= DataMod.Connection;
   try
     Query.SQL.Add('SELECT 1 FROM '+Table+' WHERE ('+Field+'= '+ QuotedStr(Value)+')');
 		if FieldNoThis<>'' then

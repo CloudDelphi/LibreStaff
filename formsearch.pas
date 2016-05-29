@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
-  sqldb, Globals, FuncData, ZDataset;
+  sqldb, Globals, FuncData;
 
 type TSearchCriteria = record
     Name: String;
@@ -214,8 +214,8 @@ begin
     							if (ConcatenateWhere= True) AND (CboFilter.ItemIndex<2) then
 					    		  SQLSearch.Add('AND ');
     							case CboFilter.ItemIndex of
-                    0: SQLSearch.Add('(Active_Employee="'+DBEngine.TrueValue+'")');
-                    1: SQLSearch.Add('(Active_Employee="'+DBEngine.FalseValue+'")');
+                    0: SQLSearch.Add('(Active_Employee)');
+                    1: SQLSearch.Add('NOT(Active_Employee)');
     							end; //case
                   end;
   	end; //case
@@ -261,7 +261,7 @@ end;
 
 procedure TFrmSearch.DBGridSearchResultCellClick(Column: TColumn);
 var
-  Query: TZQuery;
+  Query: TSQLQuery;
   IDField: String;
   RecordIDSelec: Variant;
   IsEmployeeActive: Boolean;

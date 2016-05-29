@@ -9,7 +9,7 @@ object FrmPicEmployee: TFrmPicEmployee
   ClientWidth = 406
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.4.2.0'
   object BtnLoadPic: TBitBtn
     Left = 160
     Height = 41

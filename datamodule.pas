@@ -5,8 +5,7 @@ unit DataModule;
 interface
 
 uses
-  Classes, SysUtils, ZConnection, ZDataset, db, sqlite3conn, sqldb,
-  IBConnection;
+  Classes, SysUtils, db, sqlite3conn, sqldb, IBConnection;
 
 type
   TSQLite3Connection = class(sqlite3conn.TSQLite3Connection)
@@ -28,19 +27,20 @@ type
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
     DsoUsergroups: TDataSource;
-    QuePermissions: TZQuery;
-    QueContractsLog: TZQuery;
-    QuePrint: TZQuery;
-    QueVirtual: TZQuery;
-    QueWorkplaces: TZQuery;
-    QueUsers: TZQuery;
-    QueTypeContracts: TZQuery;
-    QuePicsEmployees: TZQuery;
-    QueUsergroups: TZQuery;
-    QueSearch: TZQuery;
-    Connection: TZConnection;
-    QueConfig: TZQuery;
-    QueEmployees: TZQuery;
+    QueConfig: TSQLQuery;
+    QuePrint: TSQLQuery;
+    QuePermissions: TSQLQuery;
+    QueUsers: TSQLQuery;
+    QueVirtual: TSQLQuery;
+    QueEmployees: TSQLQuery;
+    QuePicsEmployees: TSQLQuery;
+    QueSearch: TSQLQuery;
+    QueTypeContracts: TSQLQuery;
+    QueWorkplaces: TSQLQuery;
+    QueContractsLog: TSQLQuery;
+    Connection: TSQLite3Connection;
+    QueUsergroups: TSQLQuery;
+    Transaction: TSQLTransaction;
     procedure ConnectionAfterConnect(Sender: TObject);
   private
     { private declarations }

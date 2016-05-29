@@ -61,7 +61,7 @@ begin
     False:	begin
 	          SetLength(WriteFields,5);
   	        WriteFields[0].FieldName:= 'Active_Employee';
-					  WriteFields[0].Value:= DBEngine.TrueValue;
+					  WriteFields[0].Value:= true;
       	    WriteFields[0].DataFormat:= dtBoolean;
         	  WriteFields[1].FieldName:= 'DateInit_Contract';
 				 	 	WriteFields[1].Value:= DatDateInit.DateTime;
@@ -97,7 +97,7 @@ begin
           FuncData.InsertSQL(DataMod.QueContractsLog, 'ContractsLog', WriteFields);
           SetLength(WriteFields,5);
           WriteFields[0].FieldName:= 'Active_Employee';
-				  WriteFields[0].Value:= DBEngine.FalseValue;
+				  WriteFields[0].Value:= False;
           WriteFields[0].DataFormat:= dtBoolean;
           WriteFields[1].FieldName:= 'DateInit_Contract';
 				  WriteFields[1].Value:= -1;
@@ -127,7 +127,7 @@ begin
   else
     begin
     DataMod.QueEmployees.Refresh;
-    DataMod.Connection.Commit;
+    DataMod.Transaction.CommitRetaining;
     end;
   DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   //Show the proper tab

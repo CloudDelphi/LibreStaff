@@ -87,9 +87,9 @@ begin
     ImgEmployee.Picture.Graphic.SaveToStream(Stream);
     DataMod.QuePicsEmployees.Post;
     DataMod.QuePicsEmployees.ApplyUpdates;
-	  DataMod.Connection.Commit;
+	  DataMod.Transaction.CommitRetaining;
    	DataMod.QuePicsEmployees.Refresh;
- 	  DataMod.Connection.Commit;
+ 	  DataMod.Transaction.CommitRetaining;
     Stream.Free;
     end
   else
@@ -155,7 +155,7 @@ begin
   FrmMain.ImgLstBtn.GetBitmap(6, BtnPasteFromClipboard.Glyph);
   //Load the current pic of the employee
   Stream:= DataMod.QueEmployees.CreateBlobStream(DataMod.QuePicsEmployees.FieldByName('Pic_Employee'), bmRead);
-  if (Stream.Size>0) then //If there is a pic for the employee
+  if not(Stream= nil) then //If there is a pic for the employee
 	   begin
      ImgEmployee.Picture.LoadFromStream(Stream);
      EmployeeHasPic:= True;
