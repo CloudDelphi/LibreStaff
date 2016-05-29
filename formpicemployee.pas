@@ -87,9 +87,9 @@ begin
     ImgEmployee.Picture.Graphic.SaveToStream(Stream);
     DataMod.QuePicsEmployees.Post;
     DataMod.QuePicsEmployees.ApplyUpdates;
-	  DataMod.Transaction.CommitRetaining;
+	  DataMod.Connection.Commit;
    	DataMod.QuePicsEmployees.Refresh;
- 	  DataMod.Transaction.CommitRetaining;
+ 	  DataMod.Connection.Commit;
     Stream.Free;
     end
   else

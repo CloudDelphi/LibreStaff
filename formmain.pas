@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
-  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Types;
+  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Types, ZDataset;
 
 type
 	TCboListType= (cblStates);
@@ -455,7 +455,7 @@ end;
 
 procedure TFrmMain.FormShow(Sender: TObject);
 type TLoadQueries = record
-	Query: TSQLQuery;
+	Query: TZQuery;
   SQL: String;
 end;
 var
@@ -618,8 +618,6 @@ begin
   RecNo:= DataMod.QueEmployees.RecNo;
   INIFile.WriteString('TableEmployees', 'Bookmark', IntToStr(RecNo));
   //Close database
-  DataMod.Connection.CloseTransactions;
-  DataMod.Connection.CloseDataSets;
   DataMod.Connection.Connected:= False;
   //Free memory
   if (AccessControl= TRUE) then
@@ -651,7 +649,7 @@ begin
     else WriteFields[0].Value:= '';
   WriteFields[0].DataFormat:= dtString;
   WriteFields[1].FieldName:= 'Active_Employee';
-  WriteFields[1].Value:= True;
+  WriteFields[1].Value:= TRUE;
   WriteFields[1].DataFormat:= dtBoolean;
   if FuncData.AppendTableRecord(DataMod.QueEmployees, WriteFields)= True then
 	  begin

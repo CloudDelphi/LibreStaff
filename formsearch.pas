@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
   StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
-  sqldb, Globals, FuncData;
+  sqldb, Globals, FuncData, ZDataset;
 
 type TSearchCriteria = record
     Name: String;
@@ -261,7 +261,7 @@ end;
 
 procedure TFrmSearch.DBGridSearchResultCellClick(Column: TColumn);
 var
-  Query: TSQLQuery;
+  Query: TZQuery;
   IDField: String;
   RecordIDSelec: Variant;
   IsEmployeeActive: Boolean;

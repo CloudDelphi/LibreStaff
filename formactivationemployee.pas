@@ -127,7 +127,7 @@ begin
   else
     begin
     DataMod.QueEmployees.Refresh;
-    DataMod.Transaction.CommitRetaining;
+    DataMod.Connection.Commit;
     end;
   DataMod.QueEmployees.Locate('ID_Employee',IDEmployee,[loCaseInsensitive,loPartialKey]); //Locate the employee
   //Show the proper tab

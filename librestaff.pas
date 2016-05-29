@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
   FormLogin, FormPrgBar, FormMain, FuncData, SysUtils, INIfiles,
-  Globals;
+  Globals, zcomponent;
 
 {$R *.res}
 
