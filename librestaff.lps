@@ -49,7 +49,7 @@
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="23"/>
+        <TopLine Value="19"/>
         <CursorPos Y="31"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -62,8 +62,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="639"/>
-        <CursorPos X="36" Y="651"/>
+        <TopLine Value="645"/>
+        <CursorPos X="3" Y="623"/>
         <UsageCount Value="200"/>
       </Unit1>
       <Unit2>
@@ -71,8 +71,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="461"/>
-        <CursorPos X="40" Y="470"/>
+        <TopLine Value="596"/>
+        <CursorPos X="37" Y="60"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -161,7 +161,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="37" Y="10"/>
+        <TopLine Value="200"/>
+        <CursorPos X="57" Y="218"/>
         <UsageCount Value="200"/>
       </Unit10>
       <Unit11>
@@ -208,7 +209,7 @@
         <UnitName Value="FormAbout"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="64" Y="9"/>
-        <UsageCount Value="199"/>
+        <UsageCount Value="200"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -218,9 +219,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormActivationEmployee"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="99"/>
-        <CursorPos X="3" Y="59"/>
-        <UsageCount Value="192"/>
+        <TopLine Value="19"/>
+        <CursorPos X="21" Y="33"/>
+        <UsageCount Value="194"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -231,7 +232,7 @@
         <UnitName Value="FraAcceptCancel"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="4" Y="2"/>
-        <UsageCount Value="192"/>
+        <UsageCount Value="194"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
@@ -239,7 +240,7 @@
         <UnitName Value="FuncPrint"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="8"/>
-        <UsageCount Value="166"/>
+        <UsageCount Value="168"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
@@ -247,7 +248,7 @@
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="23" Y="10"/>
-        <UsageCount Value="158"/>
+        <UsageCount Value="160"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -259,16 +260,15 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="81"/>
         <CursorPos X="38" Y="89"/>
-        <UsageCount Value="124"/>
+        <UsageCount Value="126"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="29"/>
-        <CursorPos X="18" Y="54"/>
-        <UsageCount Value="118"/>
+        <CursorPos X="16" Y="50"/>
+        <UsageCount Value="120"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -280,7 +280,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="108"/>
+        <UsageCount Value="110"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -289,7 +289,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="97"/>
+        <UsageCount Value="99"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -301,7 +301,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="36" Y="177"/>
-        <UsageCount Value="77"/>
+        <UsageCount Value="79"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -313,7 +313,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <CursorPos X="40" Y="70"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="45"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -325,7 +325,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="135"/>
         <CursorPos X="25" Y="143"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="69"/>
       </Unit25>
       <Unit26>
         <Filename Value="richmemo\formeditadduser.pas"/>

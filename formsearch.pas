@@ -214,8 +214,8 @@ begin
     							if (ConcatenateWhere= True) AND (CboFilter.ItemIndex<2) then
 					    		  SQLSearch.Add('AND ');
     							case CboFilter.ItemIndex of
-                    0: SQLSearch.Add('(Active_Employee)');
-                    1: SQLSearch.Add('NOT(Active_Employee)');
+                    0: SQLSearch.Add('(Active_Employee="'+DBEngine.TrueValue+'")');
+                    1: SQLSearch.Add('(Active_Employee="'+DBEngine.FalseValue+'")');
     							end; //case
                   end;
   	end; //case

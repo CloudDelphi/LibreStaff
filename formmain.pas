@@ -167,22 +167,9 @@ var
   ReportPreview: Boolean;
   CompanyName: String;
   AtomicCommmit: Integer;
+  SELECT_ACTIVE_EMPLOYEES_SQL: String;
+  SELECT_INACTIVE_EMPLOYEES_SQL: String;
 
-const
-  DATABASEVERSION='0.0.0';
-  SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
-  SELECT_ACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE Active_Employee;';
-  SELECT_INACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE NOT(Active_Employee);';
-  SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* FROM ContractsLog'+
-  	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID)'+
-    ' LEFT JOIN Workplaces ON (ID_Workplace=Workplace_ID)'+
-    ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
-    ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
-  SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
-  SELECT_ALL_USERS_SQL= 'SELECT Users.*, Usergroups.Name_Usergroup from Users'+
-    '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup)';
-  SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
-  SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
 
 resourcestring
   lg_CaptionBtn_Activate= 'Activate';
@@ -210,9 +197,9 @@ implementation
 { TFrmMain }
 
 uses
-    FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
+    FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
     FormAbout, FormActivationEmployee, FuncPrint, FormPreferences, Globals,
-    FormProfile;
+    FormProfile, FuncData;
 
 //------------------------------------------------------------------------------
 //Private functions & procedures
@@ -389,6 +376,8 @@ begin
   GetLanguageIDs(Lang, FallbackLang);
   //The mode of database Atomic Commit
   AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
+  SELECT_ACTIVE_EMPLOYEES_SQL:= 'SELECT * from Employees WHERE (Active_Employee="'+DBEngine.TrueValue+'");';
+  SELECT_INACTIVE_EMPLOYEES_SQL:= 'SELECT * from Employees WHERE (Active_Employee="'+DBEngine.FalseValue+'");';
   //Format the CboDat's
 	DefaultFormatSettings.ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case DefaultFormatSettings.ShortDateFormat of

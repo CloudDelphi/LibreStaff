@@ -5,7 +5,7 @@ unit FuncData;
 interface
 
 uses
-  Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
+  Forms, Controls, Classes, SysUtils, Dialogs, DataModule,
   sqldb, LCLType, db, Globals, ZDataset;
 
 type TField= record
@@ -24,6 +24,13 @@ type TField= record
   	ReferenceTable: String;
   	ReferenceField: String;
 end;
+ type TEngineType= (dbtSQLite);
+
+ type TDBEngine = class
+   EngineType: TEngineType;
+   TrueValue: Variant;
+   FalseValue: Variant;
+ end;
 
 type
 	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
@@ -48,8 +55,23 @@ type TWriteField = record
 end;
 
 var
+  DBEngine: TDBEngine;
   Tables: array of TTable;
   WriteFields: array of TWriteField;
+
+const
+  SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
+  SELECT_CONTRACTSLOG_SQL= 'SELECT ContractsLog.*, TypeContracts.*, Workplaces.* FROM ContractsLog'+
+    	' LEFT JOIN TypeContracts ON (ID_TypeContract=TypeContract_ID)'+
+      ' LEFT JOIN Workplaces ON (ID_Workplace=Workplace_ID)'+
+      ' WHERE (ContractsLog.Employee_ID=:ID_Employee)'+
+      ' ORDER BY ContractsLog.DateEnd_Contract DESC;';
+  SELECT_PICSEMPLOYEES_SQL= 'SELECT * from PicsEmployees WHERE PicsEmployees.Employee_ID=:ID_Employee;';
+  SELECT_ALL_USERS_SQL= 'SELECT Users.*, Usergroups.Name_Usergroup from Users'+
+      '  LEFT JOIN Usergroups ON (Users.Usergroup_ID=Usergroups.ID_Usergroup)';
+  SELECT_ALL_USERGROUPS_SQL= 'SELECT * from Usergroups;';
+  SELECT_PERMISSIONSUSERGROUPS_SQL= 'SELECT * from Permissions WHERE Permissions.Usergroup_ID=:ID_Usergroup;';
+
 
 function CheckQueryEmpty(Query: TZQuery): Boolean;
 procedure ConnectDatabase(Databasename: String);
@@ -89,6 +111,10 @@ var
   i, j: Integer;
   SQL: String;
 begin
+  DBEngine:= TDBEngine.Create;
+  DBEngine.EngineType:= dbtSQLite;
+  DBEngine.TrueValue:= 'Y';
+  DBEngine.FalseValue:= 'N';
   DataMod.Connection.Database:= Databasename;
   //DataMod.Connection.Transaction:= DataMod.Transaction;
   //DataMod.Transaction.DataBase:= DataMod.Connection;
@@ -586,7 +612,7 @@ begin
       dtString: ValueStr:= WriteFields[i].Value;
       dtInteger: ValueStr:= IntToStr(WriteFields[i].Value);
       dtDate: ValueStr:= FormatDateTime('yyyy"-"mm"-"dd"',WriteFields[i].Value);
-      dtBoolean: ValueStr:= BoolToStr(WriteFields[i].Value);
+      dtBoolean: ValueStr:= WriteFields[i].Value;
       dtNull: ValueStr:= 'NULL';
     end; //case
     SQLSentence.Strings[1]:= SQLSentence.Strings[1]+WriteFields[i].FieldName+'='+
