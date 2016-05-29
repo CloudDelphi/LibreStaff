@@ -100,6 +100,7 @@ object DataMod: TDataMod
     Connection = Connection
     Params = <>
     DataSource = DsoEmployees
+    MasterSource = DsoEmployees
     left = 72
     top = 264
   end

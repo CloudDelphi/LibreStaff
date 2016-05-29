@@ -155,7 +155,7 @@ begin
   FrmMain.ImgLstBtn.GetBitmap(6, BtnPasteFromClipboard.Glyph);
   //Load the current pic of the employee
   Stream:= DataMod.QueEmployees.CreateBlobStream(DataMod.QuePicsEmployees.FieldByName('Pic_Employee'), bmRead);
-  if not(Stream= nil) then //If there is a pic for the employee
+  if (Stream.Size>0) then //If there is a pic for the employee
 	   begin
      ImgEmployee.Picture.LoadFromStream(Stream);
      EmployeeHasPic:= True;
