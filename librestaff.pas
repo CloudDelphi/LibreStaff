@@ -16,6 +16,7 @@ uses
 var
   LoginOK: Integer;
   Login: TFrmLogin;
+  DBEngineID: Integer;
 
 procedure CreateMainForm;
 	begin
@@ -36,13 +37,34 @@ begin
   SQLiteLibraryName:= PathApp+'sqlite3.dll';
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
-	if not FileExists(PathApp+'config.ini') then
-		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
-  //Set some paths
-  DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
-  DatabaseName:= DatabasePath + 'data.db';
   //Connect & Load to database
-  FuncData.ConnectDatabase(Databasename);
+  DBEngineID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
+  DBEngine:= TDBEngine.Create;
+  case DBEngineID of
+  	0:	begin
+	      //Set some paths
+    		if not FileExists(PathApp+'config.ini') then
+					INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
+			  DBEngine.DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
+			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME;
+        DBEngine.HostName:= '';
+	      DBEngine.DBType:= dbtSQLite;
+        DataMod.Transaction.DataBase:= DataMod.SQLiteConnection;
+        DataMod.SQLiteConnection.Transaction:= DataMod.Transaction;
+      	end;
+    1:	begin
+        DBEngine.DatabaseName:= DATABASE_NAME;
+        DBEngine.HostName:= INIFile.ReadString('Database', 'MySQLHostName', '');
+        DBEngine.UserName:= INIFile.ReadString('Database', 'MySQLUserName', '');
+        DBEngine.Password:= INIFile.ReadString('Database', 'MySQLPassword', '');
+	      DBEngine.DBType:= dbtMariaDB;
+        DataMod.Transaction.DataBase:= DataMod.MySQLConnection;
+        DataMod.MySQLConnection.Transaction:= DataMod.Transaction;
+      	end;
+  end;
+  //The mode of database Atomic Commit
+  AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
+  FuncData.ConnectDatabase(DBEngine.Databasename);
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;
   if (AccessControl= TRUE) then

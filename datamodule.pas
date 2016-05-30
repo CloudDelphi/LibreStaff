@@ -5,13 +5,13 @@ unit DataModule;
 interface
 
 uses
-  Classes, SysUtils, db, sqlite3conn, sqldb, IBConnection;
+  Classes, SysUtils, db, sqlite3conn, sqldb, mysql56conn;
 
 type
   TSQLite3Connection = class(sqlite3conn.TSQLite3Connection)
   protected
     procedure DoInternalConnect; override;
-  end;
+	end;
 
 type
   { TDataModule1 }
@@ -27,6 +27,7 @@ type
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
     DsoUsergroups: TDataSource;
+    MySQLConnection: TMySQL56Connection;
     QueConfig: TSQLQuery;
     QuePrint: TSQLQuery;
     QuePermissions: TSQLQuery;
@@ -38,10 +39,10 @@ type
     QueTypeContracts: TSQLQuery;
     QueWorkplaces: TSQLQuery;
     QueContractsLog: TSQLQuery;
-    Connection: TSQLite3Connection;
+    SQLiteConnection: TSQLite3Connection;
     QueUsergroups: TSQLQuery;
     Transaction: TSQLTransaction;
-    procedure ConnectionAfterConnect(Sender: TObject);
+    procedure SQLiteConnectionAfterConnect(Sender: TObject);
   private
     { private declarations }
   public
@@ -58,9 +59,9 @@ implementation
 { TDataMod }
 uses FormMain;
 
-procedure TDataMod.ConnectionAfterConnect(Sender: TObject);
+procedure TDataMod.SQLiteConnectionAfterConnect(Sender: TObject);
 begin
-  Connection.ExecuteDirect('PRAGMA busy_timeout = 1000');
+  SQLiteConnection.ExecuteDirect('PRAGMA busy_timeout = 1000;');
 end;
 
 { TDataMod }
@@ -70,7 +71,7 @@ begin
   inherited;
   if AtomicCommmit=1 then
     begin
-    execsql('PRAGMA journal_mode = WAL');
+    execsql('PRAGMA journal_mode = WAL;');
     end;
 end;
 

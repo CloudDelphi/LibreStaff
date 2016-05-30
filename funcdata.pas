@@ -8,6 +8,22 @@ uses
   Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
   sqldb, LCLType, db, Globals;
 
+type
+  TDBType= (dbtSQLite, dbtMariaDB);
+
+type TDBEngine = class
+  DBType: TDBType;
+  DatabasePath: String;
+  DatabaseName: String;
+  HostName: String;
+  UserName: String;
+  Password: String;
+end;
+
+type
+	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
+  	wtUsergroups);
+
 type TField= record
   Name: String;
   DataFormat: TDataFormat; DataLength: Integer;
@@ -24,10 +40,6 @@ type TField= record
   	ReferenceTable: String;
   	ReferenceField: String;
 end;
-
-type
-	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
-  	wtUsergroups);
 
 type TTable = record
   ID: TIDTable;
@@ -48,6 +60,7 @@ type TWriteField = record
 end;
 
 var
+  DBEngine: TDBEngine;
   Tables: array of TTable;
   WriteFields: array of TWriteField;
 
@@ -89,7 +102,7 @@ var
   i, j: Integer;
   SQL: String;
 begin
-  DataMod.Connection.DatabaseName:= Databasename;
+  DataMod.SQLiteConnection.DatabaseName:= Databasename;
   //DataMod.Connection.Transaction:= DataMod.Transaction;
   //DataMod.Transaction.DataBase:= DataMod.Connection;
   //check whether the database already exists
@@ -97,8 +110,7 @@ begin
   newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
-    DataMod.Connection.Open;
-    DataMod.Transaction.Active:= TRUE;
+    DataMod.SQLiteConnection.Open;
     //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
     Tables[0].Fields[0].Name:= 'IDConfig';
     	Tables[0].Fields[0].DataFormat:= dtInteger;
@@ -135,31 +147,44 @@ begin
       Tables[0].Fields[2].Autoincrement:= FALSE;
       Tables[0].Fields[2].PutNoCase:= FALSE;
       Tables[0].Fields[2].IsReferenced:= FALSE;
-    //AtomicCommit INTEGER NOT NULL DEFAULT "1"
-    Tables[0].Fields[3].Name:= 'AtomicCommit';
+    //DBEngine INTEGER NOT NULL DEFAULT "0"
+    Tables[0].Fields[3].Name:= 'DBEngine';
     	Tables[0].Fields[3].DataFormat:= dtInteger;
       	Tables[0].Fields[3].DataLength:= 0;
       Tables[0].Fields[3].HasDefaultValue:=	TRUE;
       	Tables[0].Fields[3].DefaultValueQuoted:= TRUE;
-      	Tables[0].Fields[3].DefaultValue:= '1';
+      	Tables[0].Fields[3].DefaultValue:= '0';
       Tables[0].Fields[3].PutNull:= TRUE;
       	Tables[0].Fields[3].IsNotNull:= TRUE;
       Tables[0].Fields[3].IsPrimaryKey:= FALSE;
       Tables[0].Fields[3].Autoincrement:= FALSE;
       Tables[0].Fields[3].PutNoCase:= FALSE;
       Tables[0].Fields[3].IsReferenced:= FALSE;
-    //AccessControl BOOLEAN DEFAULT 0
-    Tables[0].Fields[4].Name:= 'AccessControl';
-    	Tables[0].Fields[4].DataFormat:= dtBoolean;
+    //AtomicCommit INTEGER NOT NULL DEFAULT "1"
+    Tables[0].Fields[4].Name:= 'AtomicCommit';
+    	Tables[0].Fields[4].DataFormat:= dtInteger;
       	Tables[0].Fields[4].DataLength:= 0;
       Tables[0].Fields[4].HasDefaultValue:=	TRUE;
-      	Tables[0].Fields[4].DefaultValueQuoted:= FALSE;
-        Tables[0].Fields[4].DefaultValue:= '0';
-      Tables[0].Fields[4].PutNull:= FALSE;
+      	Tables[0].Fields[4].DefaultValueQuoted:= TRUE;
+      	Tables[0].Fields[4].DefaultValue:= '1';
+      Tables[0].Fields[4].PutNull:= TRUE;
+      	Tables[0].Fields[4].IsNotNull:= TRUE;
       Tables[0].Fields[4].IsPrimaryKey:= FALSE;
       Tables[0].Fields[4].Autoincrement:= FALSE;
       Tables[0].Fields[4].PutNoCase:= FALSE;
       Tables[0].Fields[4].IsReferenced:= FALSE;
+    //AccessControl BOOLEAN DEFAULT 0
+    Tables[0].Fields[5].Name:= 'AccessControl';
+    	Tables[0].Fields[5].DataFormat:= dtBoolean;
+      	Tables[0].Fields[5].DataLength:= 0;
+      Tables[0].Fields[5].HasDefaultValue:=	TRUE;
+      	Tables[0].Fields[5].DefaultValueQuoted:= FALSE;
+        Tables[0].Fields[5].DefaultValue:= '0';
+      Tables[0].Fields[5].PutNull:= FALSE;
+      Tables[0].Fields[5].IsPrimaryKey:= FALSE;
+      Tables[0].Fields[5].Autoincrement:= FALSE;
+      Tables[0].Fields[5].PutNoCase:= FALSE;
+      Tables[0].Fields[5].IsReferenced:= FALSE;
     // Here we're setting up a table named "DATA" in the new database
     for i:=0 to (0) do //change the second 0 to Length(Tables)-1
     	begin
@@ -198,32 +223,32 @@ begin
            SQL:= SQL + ' AUTOINCREMENT';
         end; //for 'j'
       SQL:= SQL+');';
-      DataMod.Connection.ExecuteDirect(SQL);
+      DataMod.SQLiteConnection.ExecuteDirect(SQL);
 	  	end; //for 'i'
-    DataMod.Connection.ExecuteDirect('INSERT INTO Config ('+
+    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
       	  ' VALUES('+QuotedStr(DATABASEVERSION)+', ''My Company'''+', ''0'''+
           ');');
-    DataMod.Connection.ExecuteDirect('CREATE TABLE Users('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Users('+
           ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT "",'+
           ' Hash_User CHAR(256) DEFAULT "",'+
           ' Salt_User CHAR(256) DEFAULT "",'+
           ' Usergroup_ID INTEGER DEFAULT NULL'+
           ');');
-    DataMod.Connection.ExecuteDirect('INSERT INTO Users ('+
+    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Users ('+
           ' Name_User, Hash_User, Salt_User, Usergroup_ID)'+
       	  ' VALUES('+QuotedStr(SUPERUSER_NAME)+', '+QuotedStr(SUPERUSER_PASSWORD)+', '+QuotedStr(SUPERUSER_SALT)+', '+QuotedStr('1')+
           ');');
-    DataMod.Connection.ExecuteDirect('CREATE TABLE Usergroups('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Usergroups('+
     			' ID_Usergroup INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_Usergroup CHAR(256) COLLATE NOCASE DEFAULT ""'+
           ');');
-    DataMod.Connection.ExecuteDirect('INSERT INTO Usergroups ('+
+    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Usergroups ('+
     			' Name_Usergroup)'+
     			' VALUES('+QuotedStr(SUPERUSER_GROUP)+
     			');');
-    DataMod.Connection.ExecuteDirect('CREATE TABLE Permissions('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Permissions('+
     			' ID_Permission INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE,'+
           ' EditEmployee_Permission BOOLEAN NOT NULL DEFAULT 1,'+
@@ -231,25 +256,25 @@ begin
           ' DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT 0,'+
           ' ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT 1'+
           ');');
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
-    DataMod.Connection.ExecuteDirect('INSERT INTO Permissions ('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
+    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Permissions ('+
     			' Usergroup_ID, DeleteEmployee_Permission)'+
     			' VALUES('+QuotedStr('1')+', 1'+
     			');');
-    DataMod.Connection.ExecuteDirect('CREATE TABLE PicsEmployees('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE PicsEmployees('+
           ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
           ' Pic_Employee BLOB);');
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
-		DataMod.Connection.ExecuteDirect('CREATE TABLE TypeContracts('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
+		DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE TypeContracts('+
           ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_TypeContract CHAR(256) DEFAULT "");');
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
-   	DataMod.Connection.ExecuteDirect('CREATE TABLE Workplaces('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
+   	DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Workplaces('+
           ' ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Name_Workplace CHAR(256) DEFAULT "");');
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
-   	DataMod.Connection.ExecuteDirect('CREATE TABLE ContractsLog('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
+   	DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE ContractsLog('+
           ' ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
           ' DateInit_Contract DATE,'+
@@ -257,8 +282,8 @@ begin
           ' TypeContract_ID INTEGER DEFAULT NULL,'+
           ' Workplace_ID INTEGER DEFAULT NULL'+
           ' );');
-    DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "ContractsLog_id_idx" ON "ContractsLog"("ID_Contract");');
-    DataMod.Connection.ExecuteDirect('CREATE TABLE Employees('+
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "ContractsLog_id_idx" ON "ContractsLog"("ID_Contract");');
+    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Employees('+
           ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
           ' Active_Employee BOOLEAN NOT NULL DEFAULT TRUE,'+
           ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
@@ -284,7 +309,7 @@ begin
           ' Workplace_ID INTEGER COLLATE NOCASE DEFAULT NULL'+
           ' );');
     //Creating an index based upon id in the DATA Table
-		DataMod.Connection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
+		DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
 	  DataMod.Transaction.Commit;
     except
     ShowMessage('Unable to create new database');
@@ -302,7 +327,7 @@ begin
   Tables[0].ID:= wtConfig;
   Tables[0].Table:= DataMod.QueConfig;
   Tables[0].Datasource:= DataMod.DsoConfig;
-  Tables[0].FieldsCount:= 5;
+  Tables[0].FieldsCount:= 6;
   Tables[1].Name:= 'Users';
   Tables[1].ID:= wtUsers;
   Tables[1].Table:= DataMod.QueUsers;
@@ -614,7 +639,7 @@ var
 	Query: TSQLQuery;
 begin
   Query:= TSQLQuery.Create(nil);
-  Query.DataBase:= DataMod.Connection;
+  Query.DataBase:= DataMod.SQLiteConnection;
   try
     Query.SQL.Add('SELECT 1 FROM '+Table+' WHERE ('+Field+'= '+ QuotedStr(Value)+')');
 		if FieldNoThis<>'' then

@@ -12,7 +12,7 @@ object DataMod: TDataMod
   object QueEmployees: TSQLQuery
     PacketRecords = -1
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     SQL.Strings = (
       ''
@@ -24,11 +24,11 @@ object DataMod: TDataMod
   end
   object Transaction: TSQLTransaction
     Active = False
-    Action = caCommit
-    Database = Connection
+    Action = caCommitRetaining
+    Database = SQLiteConnection
     Options = []
-    left = 192
-    top = 32
+    left = 56
+    top = 40
   end
   object DsoPicsEmployees: TDataSource
     DataSet = QuePicsEmployees
@@ -37,7 +37,7 @@ object DataMod: TDataMod
   end
   object QuePicsEmployees: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -52,7 +52,7 @@ object DataMod: TDataMod
   end
   object QueSearch: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -61,7 +61,7 @@ object DataMod: TDataMod
   end
   object QueTypeContracts: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -75,7 +75,7 @@ object DataMod: TDataMod
   end
   object QueWorkplaces: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -89,7 +89,7 @@ object DataMod: TDataMod
   end
   object QueContractsLog: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -104,16 +104,16 @@ object DataMod: TDataMod
   end
   object QueVirtual: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
-    left = 304
-    top = 32
+    left = 584
+    top = 48
   end
   object QuePrint: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -122,27 +122,27 @@ object DataMod: TDataMod
   end
   object DsoPrint: TDataSource
     DataSet = QuePrint
-    left = 592
+    left = 584
     top = 480
   end
   object QueConfig: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
-    left = 416
-    top = 32
+    left = 744
+    top = 48
   end
   object DsoConfig: TDataSource
     DataSet = QueConfig
-    left = 592
-    top = 32
+    left = 904
+    top = 40
   end
-  object Connection: TSQLite3Connection
+  object SQLiteConnection: TSQLite3Connection
     Connected = False
     LoginPrompt = False
-    AfterConnect = ConnectionAfterConnect
+    AfterConnect = SQLiteConnectionAfterConnect
     KeepConnection = False
     Params.Strings = (
       'foreign_keys=1'
@@ -150,8 +150,8 @@ object DataMod: TDataMod
     Transaction = Transaction
     LogEvents = []
     Options = []
-    left = 56
-    top = 32
+    left = 416
+    top = 40
   end
   object DsoUsers: TDataSource
     DataSet = QueUsers
@@ -160,7 +160,7 @@ object DataMod: TDataMod
   end
   object QueUsers: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -169,7 +169,7 @@ object DataMod: TDataMod
   end
   object QueUsergroups: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -183,7 +183,7 @@ object DataMod: TDataMod
   end
   object QuePermissions: TSQLQuery
     FieldDefs = <>
-    Database = Connection
+    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -195,5 +195,13 @@ object DataMod: TDataMod
     DataSet = QuePermissions
     left = 904
     top = 264
+  end
+  object MySQLConnection: TMySQL56Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Options = []
+    left = 232
+    top = 40
   end
 end

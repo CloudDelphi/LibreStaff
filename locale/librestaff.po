@@ -426,7 +426,7 @@ msgstr ""
 
 #: formpreferences.lg_selectdirdlg_error_msg
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
-msgid "The file \"data.db\" does not exist in this path."
+msgid "The file \"xxx.db\" does not exist in this path."
 msgstr ""
 
 #: formpreferences.lg_selectdirdlg_error_title
@@ -436,7 +436,7 @@ msgstr ""
 
 #: formpreferences.lg_selectdirdlg_title
 msgctxt "formpreferences.lg_selectdirdlg_title"
-msgid "Select the path for the database (data.db)"
+msgid "Select the path for the database (xxx.db)"
 msgstr ""
 
 #: formsearch.lg_blanksearchtext
@@ -1255,6 +1255,10 @@ msgctxt "TFRMPREFERENCES.GRPIDEMPLOYEE1.CAPTION"
 msgid "Access Control"
 msgstr ""
 
+#: tfrmpreferences.grpmariadb.caption
+msgid "MariaDB Options"
+msgstr ""
+
 #: tfrmpreferences.grpsqlite.caption
 msgid "SQLite Options"
 msgstr ""
@@ -1267,10 +1271,6 @@ msgstr ""
 msgid "Database Path:"
 msgstr ""
 
-#: tfrmpreferences.lbldatabasepath1.caption
-msgid "Journal Mode:"
-msgstr ""
-
 #: tfrmpreferences.lbldateformat.caption
 msgctxt "TFRMPREFERENCES.LBLDATEFORMAT.CAPTION"
 msgid "Date Display Format:"
@@ -1278,6 +1278,29 @@ msgstr ""
 
 #: tfrmpreferences.lbldateseparator.caption
 msgid "Date Separator:"
+msgstr ""
+
+#: tfrmpreferences.lbldbengine.caption
+msgid "DB Engine:"
+msgstr ""
+
+#: tfrmpreferences.lblhostname.caption
+msgid "Host Name:"
+msgstr ""
+
+#: tfrmpreferences.lbljournalmode.caption
+msgctxt "TFRMPREFERENCES.LBLJOURNALMODE.CAPTION"
+msgid "Journal Mode:"
+msgstr ""
+
+#: tfrmpreferences.lblpassword.caption
+msgctxt "TFRMPREFERENCES.LBLPASSWORD.CAPTION"
+msgid "Password:"
+msgstr ""
+
+#: tfrmpreferences.lblusername.caption
+msgctxt "TFRMPREFERENCES.LBLUSERNAME.CAPTION"
+msgid "Username:"
 msgstr ""
 
 #: tfrmpreferences.tabaccesscontrol.caption
@@ -1300,9 +1323,18 @@ msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr ""
 
+#: tfrmpreferences.tabmariadboptions.caption
+msgid "TabMariaDBOptions"
+msgstr ""
+
 #: tfrmpreferences.tabprinting.caption
 msgctxt "TFRMPREFERENCES.TABPRINTING.CAPTION"
 msgid "Printing"
+msgstr ""
+
+#: tfrmpreferences.tabsqliteoptions.caption
+msgctxt "TFRMPREFERENCES.TABSQLITEOPTIONS.CAPTION"
+msgid "SQLite"
 msgstr ""
 
 #: tfrmprgbar.caption

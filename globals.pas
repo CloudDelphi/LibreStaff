@@ -36,7 +36,7 @@ type TUser= class(TObject)
   end;
 
 var
-	PathApp, SQLiteLibraryName, DatabaseName, DatabasePath: String;
+	PathApp, SQLiteLibraryName: String;
   INIFile: TINIFile;
   Lang, FallBacklang: String;
   AccessControl, RememberUsername: Boolean;
@@ -44,6 +44,7 @@ var
 
 const
   AVATARS_COUNT= 399;
+  DATABASE_NAME= 'librestaff.db';
   EDIT_ERROR_COLOR= clRed;
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;

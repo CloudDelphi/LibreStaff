@@ -23,7 +23,10 @@ type
     LblUser: TLabel;
     LblLibreStaff: TLabel;
     procedure BtnEnterClick(Sender: TObject);
+    procedure BtnExitClick(Sender: TObject);
     procedure EdiPasswordKeyPress(Sender: TObject; var Key: char);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -126,12 +129,28 @@ begin
   //Get the user
 end;
 
+procedure TFrmLogin.BtnExitClick(Sender: TObject);
+begin
+  //Free DBEngine
+  FreeAndNil(DBEngine);
+end;
+
 procedure TFrmLogin.EdiPasswordKeyPress(Sender: TObject; var Key: char);
 begin
 	if (Key= #13) then
     begin
     BtnEnter.Click;
     end
+end;
+
+procedure TFrmLogin.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+
+end;
+
+procedure TFrmLogin.FormCloseQuery(Sender: TObject; var CanClose: boolean);
+begin
+
 end;
 
 end.

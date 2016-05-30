@@ -2912,7 +2912,6 @@ object FrmMain: TFrmMain
     }
   end
   object UniqueInstance: TUniqueInstance
-    Enabled = True
     left = 744
     top = 544
   end

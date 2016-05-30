@@ -40,10 +40,10 @@ object FrmPreferences: TFrmPreferences
     Height = 424
     Top = 0
     Width = 689
-    ActivePage = TabAccessControl
+    ActivePage = TabDatabase
     Align = alClient
     ShowTabs = False
-    TabIndex = 4
+    TabIndex = 2
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
@@ -181,73 +181,189 @@ object FrmPreferences: TFrmPreferences
       ClientHeight = 416
       ClientWidth = 681
       OnShow = TabDatabaseShow
-      object EdiDtbPath: TEdit
-        Left = 200
-        Height = 36
-        Top = 22
-        Width = 344
-        OnClick = BtnChangeDtbPathClick
-        ReadOnly = True
+      object PagDBEngine: TPageControl
+        Left = 0
+        Height = 296
+        Top = 120
+        Width = 681
+        ActivePage = TabMariaDBOptions
+        Align = alBottom
+        ShowTabs = False
+        TabIndex = 1
         TabOrder = 0
-      end
-      object LblDatabasePath: TLabel
-        Left = 20
-        Height = 28
-        Top = 22
-        Width = 172
-        AutoSize = False
-        Caption = 'Database Path:'
-        ParentColor = False
-      end
-      object BtnChangeDtbPath: TBitBtn
-        Left = 560
-        Height = 36
-        Top = 22
-        Width = 108
-        Caption = 'Change...'
-        OnClick = BtnChangeDtbPathClick
-        TabOrder = 1
-      end
-      object GrpSQLite: TGroupBox
-        Left = 20
-        Height = 127
-        Top = 152
-        Width = 483
-        Caption = 'SQLite Options'
-        ClientHeight = 94
-        ClientWidth = 479
-        TabOrder = 2
-        object LblDatabasePath1: TLabel
-          Left = 20
-          Height = 28
-          Top = 22
-          Width = 164
-          AutoSize = False
-          Caption = 'Journal Mode:'
-          ParentColor = False
+        object TabSQLiteOptions: TTabSheet
+          Caption = 'SQLite'
+          ClientHeight = 288
+          ClientWidth = 673
+          OnShow = TabSQLiteOptionsShow
+          object GrpSQLite: TGroupBox
+            Left = 0
+            Height = 288
+            Top = 0
+            Width = 673
+            Align = alClient
+            Caption = 'SQLite Options'
+            ClientHeight = 255
+            ClientWidth = 669
+            TabOrder = 0
+            object LblJournalMode: TLabel
+              Left = 32
+              Height = 28
+              Top = 112
+              Width = 152
+              AutoSize = False
+              Caption = 'Journal Mode:'
+              ParentColor = False
+            end
+            object BtnChangeDtbPath: TBitBtn
+              Left = 544
+              Height = 36
+              Top = 40
+              Width = 108
+              Caption = 'Change...'
+              OnClick = BtnChangeDtbPathClick
+              TabOrder = 0
+            end
+            object EdiDtbPath: TEdit
+              Left = 192
+              Height = 36
+              Top = 40
+              Width = 344
+              OnClick = BtnChangeDtbPathClick
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object DbLkCboAtomicCommit: TDBLookupComboBox
+              Left = 192
+              Height = 36
+              Top = 104
+              Width = 272
+              DataField = 'AtomicCommit'
+              DataSource = DataMod.DsoConfig
+              KeyField = 'ID_AtomicCommit'
+              ListField = 'AtomicCommit'
+              ListFieldIndex = 0
+              LookupCache = False
+              NullValueKey = 48
+              OnCloseUp = DbLkCboAtomicCommitCloseUp
+              Style = csDropDownList
+              TabOrder = 2
+            end
+            object LblDatabasePath: TLabel
+              Left = 8
+              Height = 28
+              Top = 48
+              Width = 176
+              AutoSize = False
+              Caption = 'Database Path:'
+              ParentColor = False
+            end
+          end
+        end
+        object TabMariaDBOptions: TTabSheet
+          Caption = 'TabMariaDBOptions'
+          ClientHeight = 288
+          ClientWidth = 673
+          object GrpMariaDB: TGroupBox
+            Left = 0
+            Height = 288
+            Top = 0
+            Width = 673
+            Align = alClient
+            Caption = 'MariaDB Options'
+            ClientHeight = 255
+            ClientWidth = 669
+            TabOrder = 0
+            object EdiHostName: TEdit
+              Left = 240
+              Height = 36
+              Top = 40
+              Width = 264
+              MaxLength = 256
+              OnClick = BtnChangeDtbPathClick
+              ReadOnly = True
+              TabOrder = 0
+            end
+            object LblHostName: TLabel
+              Left = 56
+              Height = 28
+              Top = 48
+              Width = 176
+              AutoSize = False
+              Caption = 'Host Name:'
+              ParentColor = False
+            end
+            object LblUserName: TLabel
+              Left = 56
+              Height = 28
+              Top = 104
+              Width = 176
+              AutoSize = False
+              Caption = 'Username:'
+              ParentColor = False
+            end
+            object EdiUserName: TEdit
+              Left = 240
+              Height = 36
+              Top = 96
+              Width = 264
+              MaxLength = 256
+              OnClick = BtnChangeDtbPathClick
+              ReadOnly = True
+              TabOrder = 1
+            end
+            object LblPassword: TLabel
+              Left = 56
+              Height = 28
+              Top = 160
+              Width = 176
+              AutoSize = False
+              Caption = 'Password:'
+              ParentColor = False
+            end
+            object EdiPassword: TEdit
+              Left = 240
+              Height = 36
+              Top = 152
+              Width = 264
+              MaxLength = 256
+              OnClick = BtnChangeDtbPathClick
+              ReadOnly = True
+              TabOrder = 2
+            end
+          end
         end
       end
-      object DbLkCboAtomicCommit: TDBLookupComboBox
-        Left = 208
+      object LblDBEngine: TLabel
+        Left = 40
+        Height = 28
+        Top = 48
+        Width = 172
+        AutoSize = False
+        Caption = 'DB Engine:'
+        ParentColor = False
+      end
+      object DbLkCboDBEngines: TDBLookupComboBox
+        Left = 216
         Height = 36
-        Top = 200
-        Width = 272
-        DataField = 'AtomicCommit'
+        Top = 48
+        Width = 192
+        DataField = 'DBEngine'
         DataSource = DataMod.DsoConfig
-        KeyField = 'ID_AtomicCommit'
-        ListField = 'AtomicCommit'
+        KeyField = 'ID_DBEngine'
+        ListField = 'DBEngine'
         ListFieldIndex = 0
         LookupCache = False
         NullValueKey = 48
-        OnCloseUp = DbLkCboAtomicCommitCloseUp
+        OnCloseUp = DbLkCboDBEnginesCloseUp
         Style = csDropDownList
-        TabOrder = 3
+        TabOrder = 1
       end
     end
     object TabPrinting: TTabSheet
       Caption = 'Printing'
       ClientHeight = 416
-      ClientWidth = 662
+      ClientWidth = 681
       OnShow = TabPrintingShow
       object GroupBox1: TGroupBox
         Left = 24

@@ -422,8 +422,8 @@ msgstr "Control de acceso"
 
 #: formpreferences.lg_selectdirdlg_error_msg
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
-msgid "The file \"data.db\" does not exist in this path."
-msgstr "El archivo \"data.db\" no existe en esa ruta."
+msgid "The file \"xxx.db\" does not exist in this path."
+msgstr "El archivo \"xxx.db\" no existe en esa ruta."
 
 #: formpreferences.lg_selectdirdlg_error_title
 msgctxt "formpreferences.lg_selectdirdlg_error_title"
@@ -432,8 +432,8 @@ msgstr "¡ERROR!"
 
 #: formpreferences.lg_selectdirdlg_title
 msgctxt "formpreferences.lg_selectdirdlg_title"
-msgid "Select the path for the database (data.db)"
-msgstr "Selecciona la ruta para la base de datos (data.db)"
+msgid "Select the path for the database (xxx.db)"
+msgstr "Selecciona la ruta para la base de datos (xxx.db)"
 
 #: formsearch.lg_blanksearchtext
 msgctxt "formsearch.lg_blanksearchtext"
@@ -1247,6 +1247,10 @@ msgctxt "tfrmpreferences.grpidemployee1.caption"
 msgid "Access Control"
 msgstr "Control de Acceso"
 
+#: tfrmpreferences.grpmariadb.caption
+msgid "MariaDB Options"
+msgstr "Opciones MariaDB"
+
 #: tfrmpreferences.grpsqlite.caption
 msgid "SQLite Options"
 msgstr "Opciones SQLite"
@@ -1259,10 +1263,6 @@ msgstr "Nombre Compañía:"
 msgid "Database Path:"
 msgstr "Ruta base de datos:"
 
-#: tfrmpreferences.lbldatabasepath1.caption
-msgid "Journal Mode:"
-msgstr "Modo Journal:"
-
 #: tfrmpreferences.lbldateformat.caption
 msgctxt "tfrmpreferences.lbldateformat.caption"
 msgid "Date Display Format:"
@@ -1271,6 +1271,29 @@ msgstr "Formato de fecha:"
 #: tfrmpreferences.lbldateseparator.caption
 msgid "Date Separator:"
 msgstr "Separador de fecha:"
+
+#: tfrmpreferences.lbldbengine.caption
+msgid "DB Engine:"
+msgstr "Motor BD:"
+
+#: tfrmpreferences.lblhostname.caption
+msgid "Host Name:"
+msgstr "Nombre Host:"
+
+#: tfrmpreferences.lbljournalmode.caption
+msgctxt "tfrmpreferences.lbljournalmode.caption"
+msgid "Journal Mode:"
+msgstr "Modo Journal:"
+
+#: tfrmpreferences.lblpassword.caption
+msgctxt "tfrmpreferences.lblpassword.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmpreferences.lblusername.caption
+msgctxt "tfrmpreferences.lblusername.caption"
+msgid "Username:"
+msgstr "Nombre usuario:"
 
 #: tfrmpreferences.tabaccesscontrol.caption
 msgctxt "tfrmpreferences.tabaccesscontrol.caption"
@@ -1292,10 +1315,19 @@ msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr "Idioma"
 
+#: tfrmpreferences.tabmariadboptions.caption
+msgid "TabMariaDBOptions"
+msgstr ""
+
 #: tfrmpreferences.tabprinting.caption
 msgctxt "tfrmpreferences.tabprinting.caption"
 msgid "Printing"
 msgstr "Impresión"
+
+#: tfrmpreferences.tabsqliteoptions.caption
+msgctxt "tfrmpreferences.tabsqliteoptions.caption"
+msgid "SQLite"
+msgstr "SQLite"
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"

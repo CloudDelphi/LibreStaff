@@ -7,17 +7,17 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
   StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db,
-  Globals, FormDsoEditor;
+  Globals, FormDsoEditor, Types;
 
 type
 
   { TFrmPreferences }
 
   TFrmPreferences = class(TForm)
+    BtnChangeDtbPath: TBitBtn;
     BtnEditUsers: TSpeedButton;
     BtnPermissions: TSpeedButton;
     BtnSaveCompanyName: TBitBtn;
-    BtnChangeDtbPath: TBitBtn;
     CboDateFormat: TComboBox;
     CboDateSeparator: TComboBox;
     ChkReportPreview: TCheckBox;
@@ -27,21 +27,31 @@ type
     CboAutoType: TComboBox;
     DBAccessControlEnabled: TDBCheckBox;
     DbLkCboAtomicCommit: TDBLookupComboBox;
-    EdiDtbPath: TEdit;
+    DbLkCboDBEngines: TDBLookupComboBox;
     EdiCompanyName: TEdit;
+    EdiDtbPath: TEdit;
+    EdiHostName: TEdit;
+    EdiUserName: TEdit;
+    EdiPassword: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
     GroupBox1: TGroupBox;
-    GrpSQLite: TGroupBox;
     GrpIDEmployee: TGroupBox;
     GrpIDEmployee1: TGroupBox;
+    GrpSQLite: TGroupBox;
+    GrpMariaDB: TGroupBox;
     ImgLstPreferences: TImageList;
     LblCompanyName: TLabel;
     LblDatabasePath: TLabel;
-    LblDatabasePath1: TLabel;
+    LblHostName: TLabel;
+    LblUserName: TLabel;
+    LblPassword: TLabel;
+    LblDBEngine: TLabel;
+    LblJournalMode: TLabel;
     LblDateFormat: TLabel;
     LblDateSeparator: TLabel;
     LstViewPreferences: TListView;
+    PagDBEngine: TPageControl;
     PagPreferences: TPageControl;
     Splitter1: TSplitter;
     TabDatabase: TTabSheet;
@@ -49,6 +59,8 @@ type
     TabGeneral: TTabSheet;
     TabPrinting: TTabSheet;
     TabAccessControl: TTabSheet;
+    TabMariaDBOptions: TTabSheet;
+    TabSQLiteOptions: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnEditUsersClick(Sender: TObject);
@@ -63,6 +75,7 @@ type
     procedure ChkReportPreviewChange(Sender: TObject);
     procedure DBAccessControlEnabledChange(Sender: TObject);
     procedure DbLkCboAtomicCommitCloseUp(Sender: TObject);
+    procedure DbLkCboDBEnginesCloseUp(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
@@ -71,8 +84,10 @@ type
     procedure TabGeneralShow(Sender: TObject);
     procedure TabLanguageShow(Sender: TObject);
     procedure TabPrintingShow(Sender: TObject);
+    procedure TabSQLiteOptionsShow(Sender: TObject);
   private
     { private declarations }
+    procedure ChangeDBEngineTab;
   public
     { public declarations }
   end;
@@ -81,6 +96,8 @@ var
   FrmPreferences: TFrmPreferences;
   LstAtomicCommit: TBufDataset;
   DsoLstAtomicCommit: TDatasource;
+  LstDBEngines: TBufDataset;
+  DsoLstDBEngines: TDatasource;
 
 resourcestring
   lg_LstView_Caption_Item_0= 'Employees';
@@ -88,9 +105,9 @@ resourcestring
   lg_LstView_Caption_Item_2= 'Database';
   lg_LstView_Caption_Item_3= 'Printing';
   lg_LstView_Caption_Item_4= 'Access Control';
-	lg_SelectDirDlg_Title= 'Select the path for the database (data.db)';
+	lg_SelectDirDlg_Title= 'Select the path for the database (xxx.db)';
   lg_SelectDirDlg_Error_Title= 'ERROR!';
-  lg_SelectDirDlg_Error_Msg= 'The file "data.db" does not exist in this path.';
+  lg_SelectDirDlg_Error_Msg= 'The file "xxx.db" does not exist in this path.';
 
 implementation
 
@@ -178,15 +195,38 @@ end;
 
 procedure TFrmPreferences.DbLkCboAtomicCommitCloseUp(Sender: TObject);
 begin
-    FuncData.SaveTable(DataMod.QueConfig);
+	FuncData.SaveTable(DataMod.QueConfig);
+end;
+
+procedure TFrmPreferences.DbLkCboDBEnginesCloseUp(Sender: TObject);
+begin
+  FuncData.SaveTable(DataMod.QueConfig);
+  INIFile.WriteInteger('Database', 'DBEngine', DbLkCboDBEngines.ItemIndex);
+  ChangeDBEngineTab;
+end;
+
+procedure TFrmPreferences.ChangeDBEngineTab;
+begin
+  case DbLkCboDBEngines.ItemIndex of
+    0: PagDBEngine.ActivePageIndex:= 0;
+    1: PagDBEngine.ActivePageIndex:= 1;
+  end;
 end;
 
 procedure TFrmPreferences.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
   FrmPreferences.Release;
-  FreeAndNil(DsoLstAtomicCommit);
-  FreeAndNil(LstAtomicCommit);
+  if Assigned(LstAtomicCommit) then
+  	begin
+    FreeAndNil(DsoLstAtomicCommit);
+	  FreeAndNil(LstAtomicCommit);
+    end;
+	if Assigned(LstDBEngines) then
+    begin
+    FreeAndNil(DsoLstDBEngines);
+	  FreeAndNil(LstDBEngines);
+    end;
 end;
 
 procedure TFrmPreferences.FormCreate(Sender: TObject);
@@ -212,6 +252,7 @@ begin
   //Goto the first Tab
   PagPreferences.TabIndex:= 0;
 end;
+
 procedure TFrmPreferences.BtnChangeDtbPathClick(Sender: TObject);
 var
   ChangePath: Boolean;
@@ -221,7 +262,7 @@ begin
   if ChangePath=True then
     begin
     NewPath:= FrmMain.SelectDirDlg.FileName+'\';
-    if FileExists(NewPath+'data.db') then
+    if FileExists(NewPath+DATABASE_NAME) then
     	begin
 	    INIFile.WriteString('Database','Path',QuotedStr(NewPath));
   	  EdiDtbPath.Text:= NewPath;
@@ -233,25 +274,25 @@ end;
 
 procedure TFrmPreferences.TabDatabaseShow(Sender: TObject);
 begin
-	EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data\');
-  if Not(Assigned(LstAtomicCommit)) then //only it create the first time tab is selected
+   if Not(Assigned(LstDBEngines)) then //only it create the first time tab is selected
     begin
- 		LstAtomicCommit:= TBufDataset.Create(self);
-		LstAtomicCommit.FieldDefs.Add('ID_AtomicCommit', ftInteger);
-		LstAtomicCommit.FieldDefs.Add('AtomicCommit', ftString, 20);
-		LstAtomicCommit.CreateDataset;
-		LstAtomicCommit.Open;
-    LstAtomicCommit.Insert;
-    LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 0;
-    LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Rollback journal';
-    LstAtomicCommit.Insert;
-    LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 1;
-    LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Write-Ahead Logging (WAL)';
-    LstAtomicCommit.Post;
-    DsoLstAtomicCommit:= TDatasource.Create(self);
-    DsoLstAtomicCommit.DataSet:= LstAtomicCommit;
+ 		LstDBEngines:= TBufDataset.Create(self);
+		LstDBEngines.FieldDefs.Add('ID_DBEngine', ftInteger);
+		LstDBEngines.FieldDefs.Add('DBEngine', ftString, 20);
+		LstDBEngines.CreateDataset;
+		LstDBEngines.Open;
+    LstDBEngines.Insert;
+    LstDBEngines.FieldByName('ID_DBEngine').AsInteger:= 1;
+    LstDBEngines.FieldByName('DBEngine').AsString:= 'MariaDB';
+    LstDBEngines.Insert;
+    LstDBEngines.FieldByName('ID_DBEngine').AsInteger:= 0;
+    LstDBEngines.FieldByName('DBEngine').AsString:= 'SQLite';
+    LstDBEngines.Post;
+    DsoLstDBEngines:= TDatasource.Create(self);
+    DsoLstDBEngines.DataSet:= LstDBEngines;
     end;
-  DbLkCboAtomicCommit.ListSource:= DsoLstAtomicCommit;
+  DbLkCboDBEngines.ListSource:= DsoLstDBEngines;
+  ChangeDBEngineTab;
 end;
 
 procedure TFrmPreferences.TabGeneralShow(Sender: TObject);
@@ -293,6 +334,29 @@ begin
     True:		ChkReportPreview.State:= cbChecked;
   end; //case
   EdiCompanyName.Text:= CompanyName;
+end;
+
+procedure TFrmPreferences.TabSQLiteOptionsShow(Sender: TObject);
+begin
+	EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data\');
+  if Not(Assigned(LstAtomicCommit)) then //only it create the first time tab is selected
+    begin
+ 		LstAtomicCommit:= TBufDataset.Create(self);
+		LstAtomicCommit.FieldDefs.Add('ID_AtomicCommit', ftInteger);
+		LstAtomicCommit.FieldDefs.Add('AtomicCommit', ftString, 20);
+		LstAtomicCommit.CreateDataset;
+		LstAtomicCommit.Open;
+    LstAtomicCommit.Insert;
+    LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 0;
+    LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Rollback journal';
+    LstAtomicCommit.Insert;
+    LstAtomicCommit.FieldByName('ID_AtomicCommit').AsInteger:= 1;
+    LstAtomicCommit.FieldByName('AtomicCommit').AsString:= 'Write-Ahead Logging (WAL)';
+    LstAtomicCommit.Post;
+    DsoLstAtomicCommit:= TDatasource.Create(self);
+    DsoLstAtomicCommit.DataSet:= LstAtomicCommit;
+    end;
+  DbLkCboAtomicCommit.ListSource:= DsoLstAtomicCommit;
 end;
 
 end.

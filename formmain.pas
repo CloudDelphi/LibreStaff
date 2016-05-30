@@ -387,8 +387,6 @@ var
   DateSeparator: Char;
 begin
   GetLanguageIDs(Lang, FallbackLang);
-  //The mode of database Atomic Commit
-  AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
   //Format the CboDat's
 	DefaultFormatSettings.ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
 	Case DefaultFormatSettings.ShortDateFormat of
@@ -410,7 +408,7 @@ begin
   DBDatEndContract.DateDisplayOrder:= DateFormat;
   DBDatEndContract.DateSeparator:= DateSeparator;
 	//Load the combos:
-  StatesFilename:= DatabasePath+'states_'+Lang+'.txt';
+  StatesFilename:= DBEngine.DatabasePath+'states_'+Lang+'.txt';
   if not FileExists(StatesFilename) then
       begin
 	    AssignFile(tfOut, StatesFilename);
@@ -618,15 +616,17 @@ begin
   RecNo:= DataMod.QueEmployees.RecNo;
   INIFile.WriteString('TableEmployees', 'Bookmark', IntToStr(RecNo));
   //Close database
-  DataMod.Connection.CloseTransactions;
-  DataMod.Connection.CloseDataSets;
-  DataMod.Connection.Connected:= False;
+  DataMod.SQLiteConnection.CloseTransactions;
+  DataMod.SQLiteConnection.CloseDataSets;
+  DataMod.SQLiteConnection.Connected:= False;
   //Free memory
   if (AccessControl= TRUE) then
     begin
     FreeAndNil(User);
     end;
   FreeAndNil(INIFile);
+  //Free DBEngine
+  FreeAndNil(DBEngine);
 end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
 const
