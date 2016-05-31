@@ -2,10 +2,10 @@
 
 [Setup]
 AppName=LibreStaff
-AppVerName=v0.0.14-alpha
+AppVerName=v0.0.15-alpha
 DefaultDirName={pf}\LibreStaff
 DefaultGroupName=LibreStaff
-OutputBaseFilename=LibreStaff_v0.0.14-alpha
+OutputBaseFilename=LibreStaff_v0.0.15-alpha
 Uninstallable=yes
 UninstallDisplayName=LibreStaff
 ;WizardImageFile=
@@ -17,6 +17,7 @@ ShowLanguageDialog=yes
 [Files]
 Source: "librestaff.exe"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "sqlite3.dll"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
+Source: "libmysql.dll"; DestDir: "{app}"; Components: "base"; Flags: ignoreversion
 Source: "lic\*.rtf"; DestDir: "{app}\lic"; Components: "base"; Flags: ignoreversion
 Source: "data\states_en_US.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
 Source: "data\states_es_ES.txt"; DestDir: "{app}\data"; Components: "base"; Flags: ignoreversion recursesubdirs
