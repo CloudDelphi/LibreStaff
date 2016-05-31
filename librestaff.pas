@@ -34,7 +34,6 @@ begin
 	Application.Initialize;
   Application.CreateForm(TDataMod, DataMod);
   PathApp:= ExtractFilePath(Paramstr(0));
-  SQLiteLibraryName:= PathApp+'sqlite3.dll';
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
   //Connect & Load to database
@@ -45,23 +44,33 @@ begin
 	      //Set some paths
     		if not FileExists(PathApp+'config.ini') then
 					INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
+ 	      DBEngine.DBType:= dbtSQLite;
+        DBEngine.Connection:= DataMod.SQLiteConnection;
 			  DBEngine.DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
-			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME;
+			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME+'.db';
         DBEngine.HostName:= '';
-	      DBEngine.DBType:= dbtSQLite;
         DataMod.Transaction.DataBase:= DataMod.SQLiteConnection;
-        DataMod.SQLiteConnection.Transaction:= DataMod.Transaction;
+        SQLiteLibraryName:= PathApp+'sqlite3.dll';
+        DBEngine.TrueValue:= '1';
+        DBEngine.FalseValue:= '0';
+        DBEngine.AutoIncrementKeyword:= 'AUTOINCREMENT';
       	end;
     1:	begin
+ 	      DBEngine.DBType:= dbtMySQL;
+        DBEngine.Connection:= DataMod.MySQLConnection;
         DBEngine.DatabaseName:= DATABASE_NAME;
-        DBEngine.HostName:= INIFile.ReadString('Database', 'MySQLHostName', '');
-        DBEngine.UserName:= INIFile.ReadString('Database', 'MySQLUserName', '');
-        DBEngine.Password:= INIFile.ReadString('Database', 'MySQLPassword', '');
-	      DBEngine.DBType:= dbtMariaDB;
+        //DBEngine.HostName:= INIFile.ReadString('Database', 'MySQLHostName', '');
+        DBEngine.HostName:= 'localhost';
+        DBEngine.UserName:= 'root';
+        //DBEngine.UserName:= INIFile.ReadString('Database', 'MySQLUserName', '');
+        //DBEngine.Password:= INIFile.ReadString('Database', 'MySQLPassword', '');
         DataMod.Transaction.DataBase:= DataMod.MySQLConnection;
-        DataMod.MySQLConnection.Transaction:= DataMod.Transaction;
+        DBEngine.TrueValue:= 'TRUE';
+        DBEngine.FalseValue:= 'FALSE';
+        DBEngine.AutoIncrementKeyword:= 'AUTO_INCREMENT';
       	end;
   end;
+  DBEngine.Connection.Transaction:= DataMod.Transaction;
   //The mode of database Atomic Commit
   AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
   FuncData.ConnectDatabase(DBEngine.Databasename);

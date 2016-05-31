@@ -104,7 +104,7 @@ begin
     Application.MessageBox(PChar(ErrorMsg), 'Error!', MB_OK);
     Exit;
     end;
-	if FrmInputBox.CustomInputBox(Edit_IptBox_Caption, Edit_IptBox_Prompt, DefaultValue, 256, FieldValue)= TRUE then
+	if FrmInputBox.CustomInputBox(Edit_IptBox_Caption, Edit_IptBox_Prompt, DefaultValue, 255, FieldValue)= TRUE then
   	begin
   	if FieldValue='' then
     	begin
@@ -155,7 +155,7 @@ var
   FieldValue, ErrorMsg: String;
   Error: Boolean=FALSE;
 begin
-  if FrmInputBox.CustomInputBox(Add_IptBox_Caption, Add_IptBox_Prompt, '', 256, FieldValue)= TRUE then
+  if FrmInputBox.CustomInputBox(Add_IptBox_Caption, Add_IptBox_Prompt, '', 255, FieldValue)= TRUE then
   	begin
     if FieldValue='' then
    		begin

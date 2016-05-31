@@ -57,11 +57,13 @@ implementation
 {$R *.lfm}
 
 { TDataMod }
-uses FormMain;
+uses FormMain, FuncData;
 
 procedure TDataMod.SQLiteConnectionAfterConnect(Sender: TObject);
 begin
-  SQLiteConnection.ExecuteDirect('PRAGMA busy_timeout = 1000;');
+  if (DBEngine.DBType= dbtSQLite) then
+	  SQLiteConnection.ExecuteDirect('PRAGMA busy_timeout = 1000;');
+
 end;
 
 { TDataMod }
@@ -69,7 +71,7 @@ end;
 procedure TSQLite3Connection.DoInternalConnect;
 begin
   inherited;
-  if AtomicCommmit=1 then
+  if (DBEngine.DBType= dbtSQLite) AND (AtomicCommmit=1) then
     begin
     execsql('PRAGMA journal_mode = WAL;');
     end;

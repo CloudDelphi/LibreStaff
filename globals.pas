@@ -44,7 +44,7 @@ var
 
 const
   AVATARS_COUNT= 399;
-  DATABASE_NAME= 'librestaff.db';
+  DATABASE_NAME= 'librestaff';
   EDIT_ERROR_COLOR= clRed;
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;

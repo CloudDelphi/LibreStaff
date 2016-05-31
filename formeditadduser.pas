@@ -143,7 +143,7 @@ begin
   with TFrmEditAddUser.Create(Application) do
   try
     EdiName.MaxLength:= USERNAME_LENGTH;
-    EdiPassword.MaxLength:= 256;
+    EdiPassword.MaxLength:= 255;
     WhatActionIs:= WhatAction;
     case WhatAction of
     	acEdit: begin

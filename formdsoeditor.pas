@@ -248,14 +248,14 @@ begin
       InpBox_Caption:= Edit_IptBox_Caption_TypeContracts;
       InpBox_Prompt:= Edit_IptBox_Prompt_TypeContracts;
       WriteFieldsCount:= 1;
-      MaxLength:= 256;
+      MaxLength:= 255;
       end;
     wtWorkplaces:
       begin
       InpBox_Caption:= Edit_IptBox_Caption_Workplaces;
       InpBox_Prompt:= Edit_IptBox_Prompt_Workplaces;
       WriteFieldsCount:= 1;
-      MaxLength:= 256;
+      MaxLength:= 255;
       end;
     wtUsers:
       begin

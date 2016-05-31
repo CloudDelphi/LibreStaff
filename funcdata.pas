@@ -9,15 +9,19 @@ uses
   sqldb, LCLType, db, Globals;
 
 type
-  TDBType= (dbtSQLite, dbtMariaDB);
+  TDBType= (dbtSQLite, dbtMySQL);
 
 type TDBEngine = class
   DBType: TDBType;
+  Connection: TSQLConnection;
   DatabasePath: String;
   DatabaseName: String;
   HostName: String;
   UserName: String;
   Password: String;
+  TrueValue: String;
+  FalseValue: String;
+  AutoIncrementKeyword: String;
 end;
 
 type
@@ -102,15 +106,15 @@ var
   i, j: Integer;
   SQL: String;
 begin
-  DataMod.SQLiteConnection.DatabaseName:= Databasename;
-  //DataMod.Connection.Transaction:= DataMod.Transaction;
-  //DataMod.Transaction.DataBase:= DataMod.Connection;
+	DBEngine.Connection.DatabaseName:= Databasename;
+  DBEngine.Connection.HostName:= DBEngine.HostName;
+  DBEngine.Connection.UserName:= DBEngine.UserName;
   //check whether the database already exists
   DefineTables;
   newDatabase:= not FileExists(Databasename);
 	if newDatabase then begin //Create the database and the tables
   	try
-    DataMod.SQLiteConnection.Open;
+		DBEngine.Connection.Open;
     //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
     Tables[0].Fields[0].Name:= 'IDConfig';
     	Tables[0].Fields[0].DataFormat:= dtInteger;
@@ -138,7 +142,7 @@ begin
     //CompanyName CHAR(256) DEFAULT ""
     Tables[0].Fields[2].Name:= 'CompanyName';
       Tables[0].Fields[2].DataFormat:= dtChar;
-  	  	Tables[0].Fields[2].DataLength:= 256;
+  	  	Tables[0].Fields[2].DataLength:= 255;
       Tables[0].Fields[2].HasDefaultValue:=	TRUE;
   	 	  Tables[0].Fields[2].DefaultValueQuoted:= TRUE;
   		  Tables[0].Fields[2].DefaultValue:= '';
@@ -179,13 +183,12 @@ begin
       	Tables[0].Fields[5].DataLength:= 0;
       Tables[0].Fields[5].HasDefaultValue:=	TRUE;
       	Tables[0].Fields[5].DefaultValueQuoted:= FALSE;
-        Tables[0].Fields[5].DefaultValue:= '0';
+        Tables[0].Fields[5].DefaultValue:= DBEngine.FalseValue;
       Tables[0].Fields[5].PutNull:= FALSE;
       Tables[0].Fields[5].IsPrimaryKey:= FALSE;
       Tables[0].Fields[5].Autoincrement:= FALSE;
       Tables[0].Fields[5].PutNoCase:= FALSE;
       Tables[0].Fields[5].IsReferenced:= FALSE;
-    // Here we're setting up a table named "DATA" in the new database
     for i:=0 to (0) do //change the second 0 to Length(Tables)-1
     	begin
       SQL:= '';
@@ -220,14 +223,16 @@ begin
          if (Tables[i].Fields[j].IsPrimaryKey= TRUE) then
            SQL:= SQL + ' PRIMARY KEY';
          if (Tables[i].Fields[j].Autoincrement= TRUE) then
-           SQL:= SQL + ' AUTOINCREMENT';
+           begin
+           SQL:= SQL + ' '+ DBEngine.AutoIncrementKeyword;
+           end;
         end; //for 'j'
       SQL:= SQL+');';
-      DataMod.SQLiteConnection.ExecuteDirect(SQL);
+      DBEngine.Connection.ExecuteDirect(SQL);
 	  	end; //for 'i'
-    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Config ('+
+    DBEngine.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
-      	  ' VALUES('+QuotedStr(DATABASEVERSION)+', ''My Company'''+', ''0'''+
+      	  ' VALUES('+QuotedStr(DATABASEVERSION)+', '+QuotedStr('My Company')+', '+DBEngine.FalseValue+
           ');');
     DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Users('+
           ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
