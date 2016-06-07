@@ -18,7 +18,8 @@ type TCustomPopupNotifier= class(TPopupNotifier)
   end;
 
 type
-	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate, dtChar);
+	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate, dtChar, dtText,
+  							dtBlob);
 
 type
 	TAction= (acEdit, acAdd);
@@ -46,8 +47,11 @@ const
   AVATARS_COUNT= 399;
   DATABASE_NAME= 'librestaff';
   EDIT_ERROR_COLOR= clRed;
+  MYSQL_COLLATION= 'utf8_unicode_ci';
+  MYSQL_ENGINE_VERSION= '5.6.27.0';
   PASSWORD_LENGTH= 12;
   SALT_LENGTH= 3;
+  SQLITE_ENGINE_VERSION= '3.13.0.0';
   SUPERUSER_GROUP= 'SUPERUSERS';
   SUPERUSER_NAME= 'SUPERUSER';
   SUPERUSER_PASSWORD= 'B887275D13AA5DB8FBDFF89576D245F03B7E9C48';

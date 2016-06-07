@@ -491,6 +491,14 @@ msgstr "No hay nada que eliminar."
 msgid "Deletion"
 msgstr "Eliminar"
 
+#: funcdata.lg_cannotconnectdatabase
+msgid "Database cannot be connected."
+msgstr "No s epuede conectar a la base de datos."
+
+#: funcdata.lg_databasenotexist
+msgid "Database does not exist."
+msgstr "La base de datos no existe."
+
 #: funcprint.lg_genre
 msgid "Genre:"
 msgstr "Género:"
@@ -676,6 +684,14 @@ msgstr "Guardar y cerrar"
 msgctxt "tfrmabout.caption"
 msgid "About"
 msgstr "Acerca de..."
+
+#: tfrmabout.lblmysqlversion.caption
+msgid "MySQL DLL Version:"
+msgstr "Versión MySQL DLL:"
+
+#: tfrmabout.lblsqliteversion.caption
+msgid "SQLite DLL Version:"
+msgstr "Versión SQLite DLL:"
 
 #: tfrmabout.lblversion.caption
 msgid "Version:"
@@ -1184,6 +1200,11 @@ msgctxt "tfrmpreferences.btnsavecompanyname.caption"
 msgid "Save"
 msgstr "Guardar"
 
+#: tfrmpreferences.btnsavemysqloptions.caption
+msgctxt "tfrmpreferences.btnsavemysqloptions.caption"
+msgid "Save"
+msgstr "Guardar"
+
 #: tfrmpreferences.caption
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
@@ -1247,9 +1268,9 @@ msgctxt "tfrmpreferences.grpidemployee1.caption"
 msgid "Access Control"
 msgstr "Control de Acceso"
 
-#: tfrmpreferences.grpmariadb.caption
-msgid "MariaDB Options"
-msgstr "Opciones MariaDB"
+#: tfrmpreferences.grpmysql.caption
+msgid "MySQL Options"
+msgstr "Opciones SQL"
 
 #: tfrmpreferences.grpsqlite.caption
 msgid "SQLite Options"
@@ -1258,6 +1279,10 @@ msgstr "Opciones SQLite"
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
 msgstr "Nombre Compañía:"
+
+#: tfrmpreferences.lbldatabasename.caption
+msgid "Database Name:"
+msgstr "Nombre base datos:"
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -1276,7 +1301,8 @@ msgstr "Separador de fecha:"
 msgid "DB Engine:"
 msgstr "Motor BD:"
 
-#: tfrmpreferences.lblhostname.caption
+#: tfrmpreferences.lblhostnamemysql.caption
+msgctxt "tfrmpreferences.lblhostnamemysql.caption"
 msgid "Host Name:"
 msgstr "Nombre Host:"
 
@@ -1285,13 +1311,13 @@ msgctxt "tfrmpreferences.lbljournalmode.caption"
 msgid "Journal Mode:"
 msgstr "Modo Journal:"
 
-#: tfrmpreferences.lblpassword.caption
-msgctxt "tfrmpreferences.lblpassword.caption"
+#: tfrmpreferences.lblpasswordmysql.caption
+msgctxt "tfrmpreferences.lblpasswordmysql.caption"
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: tfrmpreferences.lblusername.caption
-msgctxt "tfrmpreferences.lblusername.caption"
+#: tfrmpreferences.lblusernamemysql.caption
+msgctxt "tfrmpreferences.lblusernamemysql.caption"
 msgid "Username:"
 msgstr "Nombre usuario:"
 
@@ -1315,8 +1341,8 @@ msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr "Idioma"
 
-#: tfrmpreferences.tabmariadboptions.caption
-msgid "TabMariaDBOptions"
+#: tfrmpreferences.tabmysqloptions.caption
+msgid "TabMySQLOptions"
 msgstr ""
 
 #: tfrmpreferences.tabprinting.caption

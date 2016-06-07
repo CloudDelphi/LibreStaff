@@ -16,7 +16,6 @@ uses
 var
   LoginOK: Integer;
   Login: TFrmLogin;
-  DBEngineID: Integer;
 
 procedure CreateMainForm;
 	begin
@@ -37,9 +36,9 @@ begin
   //INI File Section:
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
   //Connect & Load to database
-  DBEngineID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
   DBEngine:= TDBEngine.Create;
-  case DBEngineID of
+  DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
+  case (DBEngine.ID) of
   	0:	begin
 	      //Set some paths
     		if not FileExists(PathApp+'config.ini') then
@@ -58,15 +57,15 @@ begin
     1:	begin
  	      DBEngine.DBType:= dbtMySQL;
         DBEngine.Connection:= DataMod.MySQLConnection;
-        DBEngine.DatabaseName:= DATABASE_NAME;
-        //DBEngine.HostName:= INIFile.ReadString('Database', 'MySQLHostName', '');
+        DBEngine.DatabaseName:= INIFile.ReadString('MySQL', 'DatabaseName', '');;
+        DBEngine.HostName:= INIFile.ReadString('MySQL', 'HostName', '');
         DBEngine.HostName:= 'localhost';
         DBEngine.UserName:= 'root';
-        //DBEngine.UserName:= INIFile.ReadString('Database', 'MySQLUserName', '');
-        //DBEngine.Password:= INIFile.ReadString('Database', 'MySQLPassword', '');
+        DBEngine.UserName:= INIFile.ReadString('MySQL', 'UserName', '');
+        DBEngine.Password:= INIFile.ReadString('MySQL', 'Password', '');
         DataMod.Transaction.DataBase:= DataMod.MySQLConnection;
-        DBEngine.TrueValue:= 'TRUE';
-        DBEngine.FalseValue:= 'FALSE';
+        DBEngine.TrueValue:= '1';
+        DBEngine.FalseValue:= '0';
         DBEngine.AutoIncrementKeyword:= 'AUTO_INCREMENT';
       	end;
   end;

@@ -12,6 +12,7 @@ type
   TDBType= (dbtSQLite, dbtMySQL);
 
 type TDBEngine = class
+  ID: Integer;
   DBType: TDBType;
   Connection: TSQLConnection;
   DatabasePath: String;
@@ -25,8 +26,13 @@ type TDBEngine = class
 end;
 
 type
-	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts, wtPermissions, wtWorkplaces, wtUsers,
-  	wtUsergroups);
+	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts,
+  wtPermissions, wtWorkplaces, wtUsers, wtUsergroups);
+
+type
+  TFKReferentialAction= (fkOnDelete, fkOnUpdate);
+type
+  TFKReferenceOption= (fkRestrict, fkCascade, fkSetNull, fkNoAction);
 
 type TField= record
   Name: String;
@@ -38,11 +44,13 @@ type TField= record
   	IsNotNull: Boolean;
   IsPrimaryKey: Boolean;
   Autoincrement: Boolean;
-  PutNocase: Boolean;
-  	Nocase: Boolean;
-  IsReferenced: Boolean;
-  	ReferenceTable: String;
-  	ReferenceField: String;
+  PutCase: Boolean;
+  	_Case: Boolean;
+  IsForeignKey: Boolean;
+  	FK_ParentTable: String;
+  	FK_ParentField: String;
+  	FK_ReferentialAction: TFKReferentialAction;
+  	FK_ReferenceOption: TFKReferenceOption;
 end;
 
 type TTable = record
@@ -68,8 +76,10 @@ var
   Tables: array of TTable;
   WriteFields: array of TWriteField;
 
+procedure AssignDatabase;
 function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 procedure ConnectDatabase(Databasename: String);
+procedure DefineFields;
 procedure DefineTables;
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False;
          Target: String=''): Boolean;
@@ -85,12 +95,25 @@ function CheckValueExists(Table, Field, Value: String; NoCase: Boolean=FALSE;
          FieldNoThis: String=''; ValueNoThis: String=''): Boolean;
 
 resourcestring
+  lg_DatabaseNotExist= 'Database does not exist.';
+  lg_CannotConnectDatabase= 'Database cannot be connected.';
   DelRec_Title= 'Deletion';
 	DelRec_Msg_01= 'Are you sure you want to DELETE';
   DelRec_Msg_02= 'It cannot revert!';
   DelRec_Msg_03= 'There is not anything to eliminate.';
 
 implementation
+
+procedure AssignDatabase;
+var
+  i: Integer;
+begin
+  for i:= (DataMod.ComponentCount - 1) downto 0 do
+  begin
+    if DataMod.Components[i] is TSQLQuery then
+      TSQLQuery(DataMod.Components[i]).DataBase:= DBEngine.Connection;
+  end;
+end;
 
 function CheckQueryEmpty(Query: TSQLQuery): Boolean;
 begin
@@ -105,95 +128,41 @@ var
   newDatabase: Boolean;
   i, j: Integer;
   SQL: String;
+  ErrorMsg: String;
 begin
+  AssignDatabase;
+  DefineTables;
+	DefineFields;
 	DBEngine.Connection.DatabaseName:= Databasename;
   DBEngine.Connection.HostName:= DBEngine.HostName;
   DBEngine.Connection.UserName:= DBEngine.UserName;
-  //check whether the database already exists
-  DefineTables;
-  newDatabase:= not FileExists(Databasename);
+  try
+	  DBEngine.Connection.Open;
+  except
+	  on E: ESQLDatabaseError do
+    	begin
+      i:= E.ErrorCode;
+      case E.ErrorCode of
+        2003: Errormsg:= lg_CannotConnectDatabase+': '+E.Message;
+        1049:	Errormsg:= lg_DatabaseNotExist+': '+E.Message;
+        end; //case
+      ShowMessage(ErrorMsg);
+   	  Application.Terminate;
+      Exit;
+      end;
+  end;
+  //Check whether the database already exists
+  case DBEngine.DBType of
+    dbtSQLite: newDatabase:= not FileExists(Databasename);
+  end; //case
 	if newDatabase then begin //Create the database and the tables
   	try
-		DBEngine.Connection.Open;
-    //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
-    Tables[0].Fields[0].Name:= 'IDConfig';
-    	Tables[0].Fields[0].DataFormat:= dtInteger;
-		  	Tables[0].Fields[0].DataLength:= 0;
-	    Tables[0].Fields[0].HasDefaultValue:=	FALSE;
-	    Tables[0].Fields[0].PutNull:= TRUE;
-		    Tables[0].Fields[0].IsNotNull:= TRUE;
-    	Tables[0].Fields[0].IsPrimaryKey:= TRUE;
-	    Tables[0].Fields[0].Autoincrement:= TRUE;
-  	  Tables[0].Fields[0].PutNoCase:= FALSE;
-  		  Tables[0].Fields[0].NoCase:= FALSE;
-	    Tables[0].Fields[0].IsReferenced:= FALSE;
-    //DatabaseVersion CHAR(20) DEFAULT ""
-    Tables[0].Fields[1].Name:= 'DatabaseVersion';
-	    Tables[0].Fields[1].DataFormat:= dtChar;
-		  	Tables[0].Fields[1].DataLength:= 20;
-    	Tables[0].Fields[1].HasDefaultValue:=	TRUE;
-	 	  	Tables[0].Fields[1].DefaultValueQuoted:= TRUE;
-			  Tables[0].Fields[1].DefaultValue:= '';
-  	  Tables[0].Fields[1].PutNull:= FALSE;
-   	 	Tables[0].Fields[1].IsPrimaryKey:= FALSE;
-    	Tables[0].Fields[1].Autoincrement:= FALSE;
-    	Tables[0].Fields[1].PutNoCase:= FALSE;
-    	Tables[0].Fields[1].IsReferenced:= FALSE;
-    //CompanyName CHAR(256) DEFAULT ""
-    Tables[0].Fields[2].Name:= 'CompanyName';
-      Tables[0].Fields[2].DataFormat:= dtChar;
-  	  	Tables[0].Fields[2].DataLength:= 255;
-      Tables[0].Fields[2].HasDefaultValue:=	TRUE;
-  	 	  Tables[0].Fields[2].DefaultValueQuoted:= TRUE;
-  		  Tables[0].Fields[2].DefaultValue:= '';
-      Tables[0].Fields[2].PutNull:= FALSE;
-      Tables[0].Fields[2].IsPrimaryKey:= FALSE;
-      Tables[0].Fields[2].Autoincrement:= FALSE;
-      Tables[0].Fields[2].PutNoCase:= FALSE;
-      Tables[0].Fields[2].IsReferenced:= FALSE;
-    //DBEngine INTEGER NOT NULL DEFAULT "0"
-    Tables[0].Fields[3].Name:= 'DBEngine';
-    	Tables[0].Fields[3].DataFormat:= dtInteger;
-      	Tables[0].Fields[3].DataLength:= 0;
-      Tables[0].Fields[3].HasDefaultValue:=	TRUE;
-      	Tables[0].Fields[3].DefaultValueQuoted:= TRUE;
-      	Tables[0].Fields[3].DefaultValue:= '0';
-      Tables[0].Fields[3].PutNull:= TRUE;
-      	Tables[0].Fields[3].IsNotNull:= TRUE;
-      Tables[0].Fields[3].IsPrimaryKey:= FALSE;
-      Tables[0].Fields[3].Autoincrement:= FALSE;
-      Tables[0].Fields[3].PutNoCase:= FALSE;
-      Tables[0].Fields[3].IsReferenced:= FALSE;
-    //AtomicCommit INTEGER NOT NULL DEFAULT "1"
-    Tables[0].Fields[4].Name:= 'AtomicCommit';
-    	Tables[0].Fields[4].DataFormat:= dtInteger;
-      	Tables[0].Fields[4].DataLength:= 0;
-      Tables[0].Fields[4].HasDefaultValue:=	TRUE;
-      	Tables[0].Fields[4].DefaultValueQuoted:= TRUE;
-      	Tables[0].Fields[4].DefaultValue:= '1';
-      Tables[0].Fields[4].PutNull:= TRUE;
-      	Tables[0].Fields[4].IsNotNull:= TRUE;
-      Tables[0].Fields[4].IsPrimaryKey:= FALSE;
-      Tables[0].Fields[4].Autoincrement:= FALSE;
-      Tables[0].Fields[4].PutNoCase:= FALSE;
-      Tables[0].Fields[4].IsReferenced:= FALSE;
-    //AccessControl BOOLEAN DEFAULT 0
-    Tables[0].Fields[5].Name:= 'AccessControl';
-    	Tables[0].Fields[5].DataFormat:= dtBoolean;
-      	Tables[0].Fields[5].DataLength:= 0;
-      Tables[0].Fields[5].HasDefaultValue:=	TRUE;
-      	Tables[0].Fields[5].DefaultValueQuoted:= FALSE;
-        Tables[0].Fields[5].DefaultValue:= DBEngine.FalseValue;
-      Tables[0].Fields[5].PutNull:= FALSE;
-      Tables[0].Fields[5].IsPrimaryKey:= FALSE;
-      Tables[0].Fields[5].Autoincrement:= FALSE;
-      Tables[0].Fields[5].PutNoCase:= FALSE;
-      Tables[0].Fields[5].IsReferenced:= FALSE;
-    for i:=0 to (0) do //change the second 0 to Length(Tables)-1
+ 		//Define Fields
+    for i:=0 to (Length(Tables)-1) do
     	begin
       SQL:= '';
       SQL:= 'CREATE TABLE '+Tables[i].Name+'(';
-      for j:= 0 to (Tables[i].FieldsCount-1) do
+      for j:= 0 to ((Length(Tables[i].Fields))-1) do
         begin
         if (j>0) then
         	SQL:= SQL+', ';
@@ -202,6 +171,9 @@ begin
           dtInteger:	SQL:= SQL + 'INTEGER';
           dtChar:	SQL:= SQL + 'CHAR';
           dtBoolean:	SQL:= SQL + 'BOOLEAN';
+          dtDate:	SQL:= SQL + 'DATE';
+          dtText:	SQL:= SQL + 'TEXT';
+          dtBlob:	SQL:= SQL + 'BLOB';
         end; //case
         if NOT(Tables[i].Fields[j].DataLength= 0) then
         	begin
@@ -220,12 +192,39 @@ begin
           	else
             SQL:= SQL + Tables[i].Fields[j].DefaultValue;
           end;
-         if (Tables[i].Fields[j].IsPrimaryKey= TRUE) then
-           SQL:= SQL + ' PRIMARY KEY';
-         if (Tables[i].Fields[j].Autoincrement= TRUE) then
-           begin
-           SQL:= SQL + ' '+ DBEngine.AutoIncrementKeyword;
-           end;
+        if (Tables[i].Fields[j].PutCase= TRUE) then
+        	begin
+          case (Tables[i].Fields[j]._Case) of
+            FALSE:	begin
+				      	  	case DBEngine.DBType of
+    	  				    	dbtSQLite:	SQL:= SQL + ' COLLATE NOCASE';
+					          end; //case
+                    end;
+            TRUE:	begin
+          					case DBEngine.DBType of
+    	  				    	dbtSQLite:	SQL:= SQL + ' COLLATE BINARY';
+                      dbtMYSQL:	SQL:= SQL + ' COLLATE '+MYSQL_COLLATION;
+					          end; //case
+            			end;
+          end; //case
+          end;
+        if (Tables[i].Fields[j].IsPrimaryKey= TRUE) then
+           SQL:= SQL + ' PRIMARY KEY'
+        else if (Tables[i].Fields[j].IsForeignKey= TRUE) then
+          begin
+          SQL:= SQL + ' REFERENCES '+Tables[i].Fields[j].FK_ParentTable+'('+Tables[i].Fields[j].FK_ParentField+')';
+        	case Tables[i].Fields[j].FK_ReferentialAction of
+           	fkOnDelete:	SQL:= SQL + ' ON DELETE';
+            fkOnUpdate:	SQL:= SQL + ' ON UPDATE';
+          end; //case
+          case Tables[i].Fields[j].FK_ReferenceOption of
+           	fkCascade:	SQL:= SQL + ' CASCADE';
+          end; //case
+          end;
+        if (Tables[i].Fields[j].Autoincrement= TRUE) then
+        	begin
+          SQL:= SQL + ' '+ DBEngine.AutoIncrementKeyword;
+          end;
         end; //for 'j'
       SQL:= SQL+');';
       DBEngine.Connection.ExecuteDirect(SQL);
@@ -234,87 +233,24 @@ begin
           ' DatabaseVersion, CompanyName, AccessControl)'+
       	  ' VALUES('+QuotedStr(DATABASEVERSION)+', '+QuotedStr('My Company')+', '+DBEngine.FalseValue+
           ');');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Users('+
-          ' ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT "",'+
-          ' Hash_User CHAR(256) DEFAULT "",'+
-          ' Salt_User CHAR(256) DEFAULT "",'+
-          ' Usergroup_ID INTEGER DEFAULT NULL'+
-          ');');
-    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Users ('+
-          ' Name_User, Hash_User, Salt_User, Usergroup_ID)'+
-      	  ' VALUES('+QuotedStr(SUPERUSER_NAME)+', '+QuotedStr(SUPERUSER_PASSWORD)+', '+QuotedStr(SUPERUSER_SALT)+', '+QuotedStr('1')+
-          ');');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Usergroups('+
-    			' ID_Usergroup INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_Usergroup CHAR(256) COLLATE NOCASE DEFAULT ""'+
-          ');');
-    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Usergroups ('+
+    DBEngine.Connection.ExecuteDirect('INSERT INTO Usergroups ('+
     			' Name_Usergroup)'+
     			' VALUES('+QuotedStr(SUPERUSER_GROUP)+
     			');');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Permissions('+
-    			' ID_Permission INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE,'+
-          ' EditEmployee_Permission BOOLEAN NOT NULL DEFAULT 1,'+
-          ' AddEmployee_Permission BOOLEAN NOT NULL DEFAULT 1,'+
-          ' DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT 0,'+
-          ' ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT 1'+
+    DBEngine.Connection.ExecuteDirect('INSERT INTO Users ('+
+          ' Name_User, Hash_User, Salt_User, Usergroup_ID)'+
+      	  ' VALUES('+QuotedStr(SUPERUSER_NAME)+', '+QuotedStr(SUPERUSER_PASSWORD)+', '+QuotedStr(SUPERUSER_SALT)+', '+QuotedStr('1')+
           ');');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Perm_id_idx" ON "Permissions"("ID_Permission");');
-    DataMod.SQLiteConnection.ExecuteDirect('INSERT INTO Permissions ('+
+    DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Perm_id_idx ON Permissions(ID_Permission);');
+    DBEngine.Connection.ExecuteDirect('INSERT INTO Permissions ('+
     			' Usergroup_ID, DeleteEmployee_Permission)'+
-    			' VALUES('+QuotedStr('1')+', 1'+
+    			' VALUES('+QuotedStr('1')+', '+DBEngine.TrueValue+
     			');');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE PicsEmployees('+
-          ' ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
-          ' Pic_Employee BLOB);');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Pic_id_idx" ON "PicsEmployees"("ID_PicEmployee");');
-		DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE TypeContracts('+
-          ' ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_TypeContract CHAR(256) DEFAULT "");');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "TypeContracts_id_idx" ON "TypeContracts"("ID_TypeContract");');
-   	DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Workplaces('+
-          ' ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Name_Workplace CHAR(256) DEFAULT "");');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Workplaces_id_idx" ON "Workplaces"("ID_Workplace");');
-   	DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE ContractsLog('+
-          ' ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE,'+
-          ' DateInit_Contract DATE,'+
-          ' DateEnd_Contract DATE,'+
-          ' TypeContract_ID INTEGER DEFAULT NULL,'+
-          ' Workplace_ID INTEGER DEFAULT NULL'+
-          ' );');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "ContractsLog_id_idx" ON "ContractsLog"("ID_Contract");');
-    DataMod.SQLiteConnection.ExecuteDirect('CREATE TABLE Employees('+
-          ' ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,'+
-          ' Active_Employee BOOLEAN NOT NULL DEFAULT TRUE,'+
-          ' IDN_Employee CHAR(256) NOT NULL DEFAULT "",'+
-          ' Name_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
-          ' Surname1_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
-          ' Surname2_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
-          ' IDCard_Employee CHAR(256) DEFAULT "",'+
-          ' SSN_Employee CHAR(256) DEFAULT "",'+
-    	    ' Address_Employee MEMO(8192) COLLATE NOCASE DEFAULT "",'+
-       	  ' City_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
-       	  ' State_Employee CHAR(256) COLLATE NOCASE DEFAULT "",'+
-       	  ' ZIPCode_Employee CHAR(256) DEFAULT "",'+
-       	  ' Phone_Employee CHAR(256) DEFAULT "",'+
-       	  ' Cell_Employee CHAR(256) DEFAULT "",'+
-          ' EMail_Employee CHAR(256) DEFAULT "",'+
-          ' DateBirth_Employee DATE DEFAULT NULL,'+
-          ' Genre_Employee BOOLEAN DEFAULT NULL,'+
-          ' MaritalStatus_Employee BOOLEAN DEFAULT NULL,'+
-          ' Remarks_Employee MEMO(8152) COLLATE NOCASE DEFAULT "",'+
-          ' DateInit_Contract DATE DEFAULT NULL,'+
-          ' DateEnd_Contract DATE DEFAULT NULL,'+
-          ' TypeContract_ID INTEGER COLLATE NOCASE DEFAULT NULL,'+
-          ' Workplace_ID INTEGER COLLATE NOCASE DEFAULT NULL'+
-          ' );');
-    //Creating an index based upon id in the DATA Table
-		DataMod.SQLiteConnection.ExecuteDirect('CREATE UNIQUE INDEX "Employee_id_idx" ON "Employees"("ID_Employee");');
+    DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Pic_id_idx ON PicsEmployees(ID_PicEmployee);');
+    DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX TypeContracts_id_idx ON TypeContracts(ID_TypeContract);');
+    DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Workplaces_id_idx ON Workplaces(ID_Workplace);');
+    DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX ContractsLog_id_idx ON ContractsLog(ID_Contract);');
+		DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Employee_id_idx ON Employees(ID_Employee);');
 	  DataMod.Transaction.Commit;
     except
     ShowMessage('Unable to create new database');
@@ -322,63 +258,490 @@ begin
   end;
 end;
 
+procedure DefineFields;
+begin
+  //Table 'Config'
+  //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+   Tables[0].Fields[0].Name:= 'ID_Config';
+   	Tables[0].Fields[0].DataFormat:= dtInteger;
+     Tables[0].Fields[0].PutNull:= TRUE;
+ 	    Tables[0].Fields[0].IsNotNull:= TRUE;
+   	Tables[0].Fields[0].IsPrimaryKey:= TRUE;
+     Tables[0].Fields[0].Autoincrement:= TRUE;
+   //DatabaseVersion CHAR(20) DEFAULT ""
+   Tables[0].Fields[1].Name:= 'DatabaseVersion';
+    Tables[0].Fields[1].DataFormat:= dtChar;
+ 	  	Tables[0].Fields[1].DataLength:= 20;
+   	Tables[0].Fields[1].HasDefaultValue:=	TRUE;
+  		Tables[0].Fields[1].DefaultValueQuoted:= TRUE;
+ 		  Tables[0].Fields[1].DefaultValue:= '';
+   //CompanyName CHAR(255) DEFAULT ""
+   Tables[0].Fields[2].Name:= 'CompanyName';
+     Tables[0].Fields[2].DataFormat:= dtChar;
+ 	  	Tables[0].Fields[2].DataLength:= 255;
+     Tables[0].Fields[2].HasDefaultValue:=	TRUE;
+ 	 	  Tables[0].Fields[2].DefaultValueQuoted:= TRUE;
+ 		  Tables[0].Fields[2].DefaultValue:= '';
+   //DBEngine INTEGER NOT NULL DEFAULT "0"
+   Tables[0].Fields[3].Name:= 'DBEngine';
+   	Tables[0].Fields[3].DataFormat:= dtInteger;
+    Tables[0].Fields[3].HasDefaultValue:=	TRUE;
+     	Tables[0].Fields[3].DefaultValueQuoted:= TRUE;
+     	Tables[0].Fields[3].DefaultValue:= '0';
+    Tables[0].Fields[3].PutNull:= TRUE;
+     	Tables[0].Fields[3].IsNotNull:= TRUE;
+   //AtomicCommit INTEGER NOT NULL DEFAULT "1"
+   Tables[0].Fields[4].Name:= 'AtomicCommit';
+   	Tables[0].Fields[4].DataFormat:= dtInteger;
+     Tables[0].Fields[4].HasDefaultValue:=	TRUE;
+     	Tables[0].Fields[4].DefaultValueQuoted:= TRUE;
+     	Tables[0].Fields[4].DefaultValue:= '1';
+     Tables[0].Fields[4].PutNull:= TRUE;
+     	Tables[0].Fields[4].IsNotNull:= TRUE;
+   //AccessControl BOOLEAN DEFAULT 0
+   Tables[0].Fields[5].Name:= 'AccessControl';
+   	Tables[0].Fields[5].DataFormat:= dtBoolean;
+     Tables[0].Fields[5].HasDefaultValue:=	TRUE;
+     	Tables[0].Fields[5].DefaultValueQuoted:= FALSE;
+      Tables[0].Fields[5].DefaultValue:= DBEngine.FalseValue;
+  //Table 'Usergroups'
+  //ID_Usergroup INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[1].Fields[0].Name:= 'ID_Usergroup';
+   	Tables[1].Fields[0].DataFormat:= dtInteger;
+    Tables[1].Fields[0].PutNull:= TRUE;
+      Tables[1].Fields[0].IsNotNull:= TRUE;
+   	Tables[1].Fields[0].IsPrimaryKey:= TRUE;
+      Tables[1].Fields[0].Autoincrement:= TRUE;
+	//Name_Usergroup CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[1].Fields[1].Name:= 'Name_Usergroup';
+    Tables[1].Fields[1].DataFormat:= dtChar;
+  		Tables[1].Fields[1].DataLength:= 255;
+  	Tables[1].Fields[1].HasDefaultValue:=	TRUE;
+   		Tables[1].Fields[1].DefaultValueQuoted:= TRUE;
+   		Tables[1].Fields[1].DefaultValue:= '';
+    Tables[1].Fields[1].PutCase:= TRUE;
+    	Tables[1].Fields[1]._Case:= FALSE;
+	//Table 'Users'
+  //ID_User INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[2].Fields[0].Name:= 'ID_User';
+   	Tables[2].Fields[0].DataFormat:= dtInteger;
+    Tables[2].Fields[0].PutNull:= TRUE;
+      Tables[2].Fields[0].IsNotNull:= TRUE;
+   	Tables[2].Fields[0].IsPrimaryKey:= TRUE;
+      Tables[1].Fields[0].Autoincrement:= TRUE;
+	//Name_User CHAR('+IntToStr(USERNAME_LENGTH)+') COLLATE NOCASE DEFAULT ""
+  Tables[2].Fields[1].Name:= 'Name_User';
+    Tables[2].Fields[1].DataFormat:= dtChar;
+  		Tables[2].Fields[1].DataLength:= USERNAME_LENGTH;
+  	Tables[2].Fields[1].HasDefaultValue:=	TRUE;
+   		Tables[2].Fields[1].DefaultValueQuoted:= TRUE;
+   		Tables[2].Fields[1].DefaultValue:= '';
+    Tables[2].Fields[1].PutCase:= TRUE;
+    	Tables[2].Fields[1]._Case:= FALSE;
+	//Hash_User CHAR(255) DEFAULT ""
+  Tables[2].Fields[2].Name:= 'Hash_User';
+  	Tables[2].Fields[2].DataFormat:= dtChar;
+   		Tables[2].Fields[2].DataLength:= 255;
+    Tables[2].Fields[2].HasDefaultValue:=	TRUE;
+   		Tables[2].Fields[2].DefaultValueQuoted:= TRUE;
+   		Tables[2].Fields[2].DefaultValue:= '';
+	//Salt_User CHAR(255) DEFAULT ""
+  Tables[2].Fields[3].Name:= 'Salt_User';
+  	Tables[2].Fields[3].DataFormat:= dtChar;
+    	Tables[2].Fields[3].DataLength:= 255;
+    Tables[2].Fields[3].HasDefaultValue:=	TRUE;
+    	Tables[2].Fields[3].DefaultValueQuoted:= TRUE;
+      Tables[2].Fields[3].DefaultValue:= '';
+	//Usergroup_ID INTEGER FOREIGN KEY REFERENCES Usergroups(ID_Usergroup)
+  Tables[2].Fields[4].Name:= 'Usergroup_ID';
+  	Tables[2].Fields[4].DataFormat:= dtInteger;
+   	Tables[2].Fields[4].IsForeignKey:= TRUE;
+    	Tables[2].Fields[4].FK_ParentTable:= 'Usergroups';
+      Tables[2].Fields[4].FK_ParentField:= 'ID_Usergroup';
+      Tables[2].Fields[4].FK_ReferentialAction:= fkOnUpdate;
+      Tables[2].Fields[4].FK_ReferenceOption:= fkCascade;
+  //Table 'Permissions'
+  //ID_Permissions INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[3].Fields[0].Name:= 'ID_Permission';
+   	Tables[3].Fields[0].DataFormat:= dtInteger;
+    Tables[3].Fields[0].PutNull:= TRUE;
+      Tables[3].Fields[0].IsNotNull:= TRUE;
+   	Tables[3].Fields[0].IsPrimaryKey:= TRUE;
+      Tables[3].Fields[0].Autoincrement:= TRUE;
+	//Usergroup_ID INTEGER REFERENCES Usergroups(ID_Usergroup) ON DELETE CASCADE
+  Tables[3].Fields[1].Name:= 'Usergroup_ID';
+    Tables[3].Fields[1].DataFormat:= dtInteger;
+   	Tables[3].Fields[1].IsForeignKey:= TRUE;
+    	Tables[3].Fields[1].FK_ParentTable:= 'Usergroups';
+      Tables[3].Fields[1].FK_ParentField:= 'ID_Usergroup';
+      Tables[3].Fields[1].FK_ReferentialAction:= fkOnDelete;
+      Tables[3].Fields[1].FK_ReferenceOption:= fkCascade;
+  //EditEmployee_Permission BOOLEAN NOT NULL DEFAULT 1
+  Tables[3].Fields[2].Name:= 'EditEmployee_Permission';
+  	Tables[3].Fields[2].DataFormat:= dtBoolean;
+    Tables[3].Fields[2].HasDefaultValue:=	TRUE;
+    	Tables[3].Fields[2].DefaultValueQuoted:= FALSE;
+    	Tables[3].Fields[2].DefaultValue:= DBEngine.TrueValue;
+    Tables[3].Fields[2].PutNull:= TRUE;
+    	Tables[3].Fields[2].IsNotNull:= TRUE;
+	//AddEmployee_Permission BOOLEAN NOT NULL DEFAULT 1
+  Tables[3].Fields[3].Name:= 'AddEmployee_Permission';
+  	Tables[3].Fields[3].DataFormat:= dtBoolean;
+    Tables[3].Fields[3].HasDefaultValue:=	TRUE;
+    	Tables[3].Fields[3].DefaultValueQuoted:= FALSE;
+    	Tables[3].Fields[3].DefaultValue:= DBEngine.TrueValue;
+    Tables[3].Fields[3].PutNull:= TRUE;
+    	Tables[3].Fields[3].IsNotNull:= TRUE;
+	//DeleteEmployee_Permission BOOLEAN NOT NULL DEFAULT 0
+  Tables[3].Fields[4].Name:= 'DeleteEmployee_Permission';
+  	Tables[3].Fields[4].DataFormat:= dtBoolean;
+    Tables[3].Fields[4].HasDefaultValue:=	TRUE;
+    	Tables[3].Fields[4].DefaultValueQuoted:= FALSE;
+    	Tables[3].Fields[4].DefaultValue:= DBEngine.FalseValue;
+    Tables[3].Fields[4].PutNull:= TRUE;
+    	Tables[3].Fields[4].IsNotNull:= TRUE;
+	//ShowTabAddress_Permission BOOLEAN NOT NULL DEFAULT 1
+  Tables[3].Fields[5].Name:= 'ShowTabAddress_Permission';
+  	Tables[3].Fields[5].DataFormat:= dtBoolean;
+    Tables[3].Fields[5].HasDefaultValue:=	TRUE;
+    	Tables[3].Fields[5].DefaultValueQuoted:= FALSE;
+    	Tables[3].Fields[5].DefaultValue:= DBEngine.TrueValue;
+    Tables[3].Fields[5].PutNull:= TRUE;
+    	Tables[3].Fields[5].IsNotNull:= TRUE;
+  //Table 'Employees'
+  //ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[4].Fields[0].Name:= 'ID_Employee';
+  	Tables[4].Fields[0].DataFormat:= dtInteger;
+    Tables[4].Fields[0].PutNull:= TRUE;
+	    Tables[4].Fields[0].IsNotNull:= TRUE;
+  	Tables[4].Fields[0].IsPrimaryKey:= TRUE;
+    Tables[4].Fields[0].Autoincrement:= TRUE;
+  //Active_Employee BOOLEAN NOT NULL DEFAULT TRUE
+  Tables[4].Fields[1].Name:= 'Active_Employee';
+  	Tables[4].Fields[1].DataFormat:= dtBoolean;
+    Tables[4].Fields[1].HasDefaultValue:=	TRUE;
+    	Tables[4].Fields[1].DefaultValueQuoted:= FALSE;
+    	Tables[4].Fields[1].DefaultValue:= DBEngine.TrueValue;
+    Tables[4].Fields[1].PutNull:= TRUE;
+    	Tables[4].Fields[1].IsNotNull:= TRUE;
+  //IDN_Employee CHAR(255) NOT NULL DEFAULT ""
+  Tables[4].Fields[2].Name:= 'IDN_Employee';
+  	Tables[4].Fields[2].DataFormat:= dtChar;
+    	Tables[4].Fields[2].DataLength:= 255;
+    Tables[4].Fields[2].HasDefaultValue:=	TRUE;
+    	Tables[4].Fields[2].DefaultValueQuoted:= TRUE;
+    	Tables[4].Fields[2].DefaultValue:= '';
+    Tables[4].Fields[2].PutNull:= TRUE;
+    	Tables[4].Fields[2].IsNotNull:= TRUE;
+  //Name_Employee CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[3].Name:= 'Name_Employee';
+    Tables[4].Fields[3].DataFormat:= dtChar;
+  		Tables[4].Fields[3].DataLength:= 255;
+  	Tables[4].Fields[3].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[3].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[3].DefaultValue:= '';
+    Tables[4].Fields[3].PutCase:= TRUE;
+    	Tables[4].Fields[3]._Case:= FALSE;
+  //Surname1_Employee CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[4].Name:= 'Surname1_Employee';
+    Tables[4].Fields[4].DataFormat:= dtChar;
+  		Tables[4].Fields[4].DataLength:= 255;
+  	Tables[4].Fields[4].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[4].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[4].DefaultValue:= '';
+    Tables[4].Fields[4].PutCase:= TRUE;
+    	Tables[4].Fields[4]._Case:= FALSE;
+  //Surname2_Employee CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[5].Name:= 'Surname2_Employee';
+    Tables[4].Fields[5].DataFormat:= dtChar;
+  		Tables[4].Fields[5].DataLength:= 255;
+  	Tables[4].Fields[5].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[5].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[5].DefaultValue:= '';
+    Tables[4].Fields[5].PutCase:= TRUE;
+    	Tables[4].Fields[5]._Case:= FALSE;
+  //IDCard_Employee CHAR(255) DEFAULT ""
+  Tables[4].Fields[6].Name:= 'IDCard_Employee';
+    Tables[4].Fields[6].DataFormat:= dtChar;
+  		Tables[4].Fields[6].DataLength:= 255;
+  	Tables[4].Fields[6].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[6].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[6].DefaultValue:= '';
+  //SSN_Employee CHAR(25) DEFAULT ""
+  Tables[4].Fields[7].Name:= 'SSN_Employee';
+    Tables[4].Fields[7].DataFormat:= dtChar;
+  		Tables[4].Fields[7].DataLength:= 25;
+  	Tables[4].Fields[7].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[7].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[7].DefaultValue:= '';
+  //Address_Employee MEMO(8192) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[8].Name:= 'Address_Employee';
+    Tables[4].Fields[8].DataFormat:= dtText;
+  		Tables[4].Fields[8].DataLength:= 8192;
+  	Tables[4].Fields[8].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[8].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[8].DefaultValue:= '';
+    Tables[4].Fields[8].PutCase:= TRUE;
+    	Tables[4].Fields[8]._Case:= FALSE;
+	//City_Employee CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[9].Name:= 'City_Employee';
+    Tables[4].Fields[9].DataFormat:= dtChar;
+  		Tables[4].Fields[9].DataLength:= 255;
+  	Tables[4].Fields[9].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[9].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[9].DefaultValue:= '';
+    Tables[4].Fields[9].PutCase:= TRUE;
+    	Tables[4].Fields[9]._Case:= FALSE;
+	//State_Employee CHAR(255) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[10].Name:= 'State_Employee';
+    Tables[4].Fields[10].DataFormat:= dtChar;
+  		Tables[4].Fields[10].DataLength:= 255;
+  	Tables[4].Fields[10].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[10].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[10].DefaultValue:= '';
+    Tables[4].Fields[10].PutCase:= TRUE;
+    	Tables[4].Fields[10]._Case:= FALSE;
+  //ZIPCode_Employee CHAR(255) DEFAULT ""
+  Tables[4].Fields[11].Name:= 'ZIPCode_Employee';
+    Tables[4].Fields[11].DataFormat:= dtChar;
+  		Tables[4].Fields[11].DataLength:= 255;
+  	Tables[4].Fields[11].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[11].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[11].DefaultValue:= '';
+	//Phone_Employee CHAR(255) DEFAULT ""
+  Tables[4].Fields[12].Name:= 'Phone_Employee';
+    Tables[4].Fields[12].DataFormat:= dtChar;
+  		Tables[4].Fields[12].DataLength:= 255;
+  	Tables[4].Fields[12].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[12].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[12].DefaultValue:= '';
+	//Cell_Employee CHAR(255) DEFAULT ""
+  Tables[4].Fields[13].Name:= 'Cell_Employee';
+    Tables[4].Fields[13].DataFormat:= dtChar;
+  		Tables[4].Fields[13].DataLength:= 255;
+  	Tables[4].Fields[13].HasDefaultValue:= TRUE;
+   		Tables[4].Fields[13].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[13].DefaultValue:= '';
+	//EMail_Employee CHAR(255) DEFAULT ""
+  Tables[4].Fields[14].Name:= 'EMail_Employee';
+    Tables[4].Fields[14].DataFormat:= dtChar;
+  		Tables[4].Fields[14].DataLength:= 255;
+  	Tables[4].Fields[14].HasDefaultValue:= TRUE;
+   		Tables[4].Fields[14].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[14].DefaultValue:= '';
+	//DateBirth_Employee DATE DEFAULT NULL
+  Tables[4].Fields[15].Name:= 'DateBirth_Employee';
+  	Tables[4].Fields[15].DataFormat:= dtDate;
+   	Tables[4].Fields[15].HasDefaultValue:= TRUE;
+    		Tables[4].Fields[15].DefaultValueQuoted:= FALSE;
+    		Tables[4].Fields[15].DefaultValue:= 'NULL';
+	//Genre_Employee BOOLEAN DEFAULT NULL
+  Tables[4].Fields[16].Name:= 'Genre_Employee';
+  	Tables[4].Fields[16].DataFormat:= dtBoolean;
+   	Tables[4].Fields[16].HasDefaultValue:= TRUE;
+    		Tables[4].Fields[16].DefaultValueQuoted:= FALSE;
+    		Tables[4].Fields[16].DefaultValue:= 'NULL';
+	//MaritalStatus_Employee BOOLEAN DEFAULT NULL
+  Tables[4].Fields[17].Name:= 'MaritalStatus_Employee';
+  	Tables[4].Fields[17].DataFormat:= dtBoolean;
+   	Tables[4].Fields[17].HasDefaultValue:= TRUE;
+    		Tables[4].Fields[17].DefaultValueQuoted:= FALSE;
+    		Tables[4].Fields[17].DefaultValue:= 'NULL';
+	//Remarks_Employee MEMO(8192) COLLATE NOCASE DEFAULT ""
+  Tables[4].Fields[18].Name:= 'Remarks_Employee';
+    Tables[4].Fields[18].DataFormat:= dtText;
+  		Tables[4].Fields[18].DataLength:= 8192;
+  	Tables[4].Fields[18].HasDefaultValue:=	TRUE;
+   		Tables[4].Fields[18].DefaultValueQuoted:= TRUE;
+   		Tables[4].Fields[18].DefaultValue:= '';
+    Tables[4].Fields[18].PutCase:= TRUE;
+    	Tables[4].Fields[18]._Case:= FALSE;
+	//DateInit_Contract DATE DEFAULT NULL
+  Tables[4].Fields[19].Name:= 'DateInit_Contract';
+  	Tables[4].Fields[19].DataFormat:= dtDate;
+   	Tables[4].Fields[19].HasDefaultValue:= TRUE;
+    		Tables[4].Fields[19].DefaultValueQuoted:= FALSE;
+    		Tables[4].Fields[19].DefaultValue:= 'NULL';
+	//DateEnd_Contract DATE DEFAULT NULL
+  Tables[4].Fields[20].Name:= 'DateEnd_Contract';
+  	Tables[4].Fields[20].DataFormat:= dtDate;
+   	Tables[4].Fields[20].HasDefaultValue:= TRUE;
+    		Tables[4].Fields[20].DefaultValueQuoted:= FALSE;
+    		Tables[4].Fields[20].DefaultValue:= 'NULL';
+	//TypeContract_ID INTEGER COLLATE NOCASE DEFAULT NULL
+  Tables[4].Fields[21].Name:= 'TypeContract_ID';
+  	Tables[4].Fields[21].DataFormat:= dtInteger;
+    Tables[4].Fields[21].HasDefaultValue:=	TRUE;
+    	Tables[4].Fields[21].DefaultValueQuoted:= FALSE;
+    	Tables[4].Fields[21].DefaultValue:= 'NULL';
+    Tables[4].Fields[21].PutCase:= TRUE;
+     	Tables[4].Fields[21]._Case:= FALSE;
+	//Workplace_ID INTEGER COLLATE NOCASE DEFAULT NULL
+  Tables[4].Fields[22].Name:= 'Workplace_ID';
+  	Tables[4].Fields[22].DataFormat:= dtInteger;
+    Tables[4].Fields[22].HasDefaultValue:=	TRUE;
+    	Tables[4].Fields[22].DefaultValueQuoted:= FALSE;
+    	Tables[4].Fields[22].DefaultValue:= 'NULL';
+    Tables[4].Fields[22].PutCase:= TRUE;
+     	Tables[4].Fields[22]._Case:= FALSE;
+  //Table 'PicsEmployees'
+  //ID_PicEmployee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[5].Fields[0].Name:= 'ID_PicEmployee';
+  	Tables[5].Fields[0].DataFormat:= dtInteger;
+    Tables[5].Fields[0].PutNull:= TRUE;
+	    Tables[5].Fields[0].IsNotNull:= TRUE;
+  	Tables[5].Fields[0].IsPrimaryKey:= TRUE;
+    Tables[5].Fields[0].Autoincrement:= TRUE;
+	//Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE
+  Tables[5].Fields[1].Name:= 'Employee_ID';
+    Tables[5].Fields[1].DataFormat:= dtInteger;
+   	Tables[5].Fields[1].IsForeignKey:= TRUE;
+    	Tables[5].Fields[1].FK_ParentTable:= 'Employees';
+      Tables[5].Fields[1].FK_ParentField:= 'ID_Employee';
+      Tables[5].Fields[1].FK_ReferentialAction:= fkOnDelete;
+      Tables[5].Fields[1].FK_ReferenceOption:= fkCascade;
+	//Pic_Employee BLOB)
+  Tables[5].Fields[2].Name:= 'Pic_Employee';
+    Tables[5].Fields[2].DataFormat:= dtBlob;
+  //Table 'TypeContracts'
+  //ID_TypeContract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[6].Fields[0].Name:= 'ID_TypeContract';
+  	Tables[6].Fields[0].DataFormat:= dtInteger;
+    Tables[6].Fields[0].PutNull:= TRUE;
+	    Tables[6].Fields[0].IsNotNull:= TRUE;
+  	Tables[6].Fields[0].IsPrimaryKey:= TRUE;
+    Tables[6].Fields[0].Autoincrement:= TRUE;
+  //Name_TypeContract CHAR(255) DEFAULT ""
+  Tables[6].Fields[1].Name:= 'Name_TypeContract';
+  	Tables[6].Fields[1].DataFormat:= dtChar;
+   		Tables[6].Fields[1].DataLength:= 255;
+    Tables[6].Fields[1].HasDefaultValue:=	TRUE;
+   		Tables[6].Fields[1].DefaultValueQuoted:= TRUE;
+   		Tables[6].Fields[1].DefaultValue:= '';
+  //Table 'Workplaces'
+	//ID_Workplace INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[7].Fields[0].Name:= 'ID_Workplace';
+  	Tables[7].Fields[0].DataFormat:= dtInteger;
+    Tables[7].Fields[0].PutNull:= TRUE;
+	    Tables[7].Fields[0].IsNotNull:= TRUE;
+  	Tables[7].Fields[0].IsPrimaryKey:= TRUE;
+    Tables[7].Fields[0].Autoincrement:= TRUE;
+	//Name_Workplace CHAR(256) DEFAULT ""
+  Tables[7].Fields[1].Name:= 'Name_Workplace';
+  	Tables[7].Fields[1].DataFormat:= dtChar;
+   		Tables[7].Fields[1].DataLength:= 255;
+    Tables[7].Fields[1].HasDefaultValue:=	TRUE;
+   		Tables[7].Fields[1].DefaultValueQuoted:= TRUE;
+   		Tables[7].Fields[1].DefaultValue:= '';
+	//Table 'ContractLog'
+	//ID_Contract INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  Tables[8].Fields[0].Name:= 'ID_Contract';
+  	Tables[8].Fields[0].DataFormat:= dtInteger;
+    Tables[8].Fields[0].PutNull:= TRUE;
+	    Tables[8].Fields[0].IsNotNull:= TRUE;
+  	Tables[8].Fields[0].IsPrimaryKey:= TRUE;
+    Tables[8].Fields[0].Autoincrement:= TRUE;
+  //Employee_ID INTEGER REFERENCES Employees(ID_Employee) ON DELETE CASCADE
+  Tables[8].Fields[1].Name:= 'Employee_ID';
+    Tables[8].Fields[1].DataFormat:= dtInteger;
+   	Tables[8].Fields[1].IsForeignKey:= TRUE;
+    	Tables[8].Fields[1].FK_ParentTable:= 'Employees';
+      Tables[8].Fields[1].FK_ParentField:= 'ID_Employee';
+      Tables[8].Fields[1].FK_ReferentialAction:= fkOnDelete;
+      Tables[8].Fields[1].FK_ReferenceOption:= fkCascade;
+  //DateInit_Contract DATE
+  Tables[8].Fields[2].Name:= 'DateInit_Contract';
+  	Tables[8].Fields[2].DataFormat:= dtDate;
+	//DateEnd_Contract DATE
+  Tables[8].Fields[3].Name:= 'DateEnd_Contract';
+  	Tables[8].Fields[3].DataFormat:= dtDate;
+	//TypeContract_ID INTEGER DEFAULT NULL
+  Tables[8].Fields[4].Name:= 'TypeContract_ID';
+  	Tables[8].Fields[4].DataFormat:= dtInteger;
+    Tables[8].Fields[4].HasDefaultValue:=	TRUE;
+    	Tables[8].Fields[4].DefaultValueQuoted:= FALSE;
+    	Tables[8].Fields[4].DefaultValue:= 'NULL';
+	//Workplace_ID INTEGER DEFAULT NULL
+  Tables[8].Fields[5].Name:= 'Workplace_ID';
+  	Tables[8].Fields[5].DataFormat:= dtInteger;
+    Tables[8].Fields[5].HasDefaultValue:=	TRUE;
+    	Tables[8].Fields[5].DefaultValueQuoted:= FALSE;
+    	Tables[8].Fields[5].DefaultValue:= 'NULL';
+end;
+
 procedure DefineTables;
 var
 	i: Integer;
 begin
-  //Amount of Tables
-  SetLength(Tables, TABLES_COUNT);
-  Tables[0].Name:= 'Config';
-  Tables[0].ID:= wtConfig;
-  Tables[0].Table:= DataMod.QueConfig;
-  Tables[0].Datasource:= DataMod.DsoConfig;
-  Tables[0].FieldsCount:= 6;
-  Tables[1].Name:= 'Users';
-  Tables[1].ID:= wtUsers;
-  Tables[1].Table:= DataMod.QueUsers;
-  Tables[1].Datasource:= DataMod.DsoUsers;
-  Tables[1].FieldsCount:= 5;
-  Tables[1].KeyField:= 'ID_User';
-  Tables[2].Name:= 'Usersgroups';
-  Tables[2].Table:= DataMod.QueUsergroups;
-  Tables[2].Datasource:= DataMod.DsoUsergroups;
-  Tables[2].ID:= wtUsergroups;
-  Tables[2].FieldsCount:= 2;
-  Tables[3].Name:= 'Permissions';
-  Tables[3].ID:= wtPermissions;
-  Tables[3].Table:= DataMod.QuePermissions;
-  Tables[3].Datasource:= DataMod.DsoPermissions;
-  Tables[3].FieldsCount:= 6;
-  Tables[4].Name:= 'PicsEmployees';
-  Tables[4].ID:= wtPicsEmployees;
-  Tables[4].Table:= DataMod.QuePicsEmployees;
-  Tables[4].Datasource:= DataMod.DsoPicsEmployees;
-  Tables[4].FieldsCount:= 3;
-  Tables[5].Name:= 'TypeContracts';
-  Tables[5].ID:= wtTypeContracts;
-  Tables[5].Table:= DataMod.QueTypeContracts;
-  Tables[5].Datasource:= DataMod.DsoTypeContracts;
-  Tables[5].KeyField:= 'ID_TypeContract';
-  Tables[5].FieldsCount:= 2;
-  Tables[6].Name:= 'Workplaces';
-  Tables[6].Table:= DataMod.QueWorkplaces;
-  Tables[6].Datasource:= DataMod.DsoWorkplaces;
-  Tables[6].ID:= wtWorkplaces;
-  Tables[6].FieldsCount:= 2;
-  Tables[6].KeyField:= 'ID_Workplace';
-  Tables[7].Name:= 'ContractsLog';
-  Tables[7].Table:= DataMod.QueContractsLog;
-  Tables[7].Datasource:= DataMod.DsoContractsLog;
-  Tables[7].ID:= wtContractsLog;
-  Tables[7].FieldsCount:= 6;
-  Tables[8].Name:= 'Employees';
-  Tables[8].ID:= wtEmployees;
-  Tables[8].Table:= DataMod.QueEmployees;
-  Tables[8].Datasource:= DataMod.DsoEmployees;
-  Tables[8].FieldsCount:= 6;
-  Tables[8].KeyField:= 'ID_Employee';
-  for i:= 0 to (TABLES_COUNT-1) do
-  	SetLength(Tables[0].Fields, Tables[0].FieldsCount);
+  i:= 0;
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Config';
+  Tables[i].ID:= wtConfig;
+  Tables[i].Table:= DataMod.QueConfig;
+  Tables[i].Datasource:= DataMod.DsoConfig;
+  Tables[i].FieldsCount:= 6;
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Usergroups';
+  Tables[i].Table:= DataMod.QueUsergroups;
+  Tables[i].Datasource:= DataMod.DsoUsergroups;
+  Tables[i].ID:= wtUsergroups;
+  Tables[i].FieldsCount:= 2;
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Users';
+  Tables[i].ID:= wtUsers;
+  Tables[i].Table:= DataMod.QueUsers;
+  Tables[i].Datasource:= DataMod.DsoUsers;
+  Tables[i].FieldsCount:= 5;
+  Tables[i].KeyField:= 'ID_User';
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Permissions';
+  Tables[i].ID:= wtPermissions;
+  Tables[i].Table:= DataMod.QuePermissions;
+  Tables[i].Datasource:= DataMod.DsoPermissions;
+  Tables[i].FieldsCount:= 6;
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Employees';
+  Tables[i].ID:= wtEmployees;
+  Tables[i].Table:= DataMod.QueEmployees;
+  Tables[i].Datasource:= DataMod.DsoEmployees;
+  Tables[i].FieldsCount:= 23;
+  Tables[i].KeyField:= 'ID_Employee';
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'PicsEmployees';
+  Tables[i].ID:= wtPicsEmployees;
+  Tables[i].Table:= DataMod.QuePicsEmployees;
+  Tables[i].Datasource:= DataMod.DsoPicsEmployees;
+  Tables[i].FieldsCount:= 3;
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'TypeContracts';
+  Tables[i].ID:= wtTypeContracts;
+  Tables[i].Table:= DataMod.QueTypeContracts;
+  Tables[i].Datasource:= DataMod.DsoTypeContracts;
+  Tables[i].KeyField:= 'ID_TypeContract';
+  Tables[i].FieldsCount:= 2;
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'Workplaces';
+  Tables[i].Table:= DataMod.QueWorkplaces;
+  Tables[i].Datasource:= DataMod.DsoWorkplaces;
+  Tables[i].ID:= wtWorkplaces;
+  Tables[i].FieldsCount:= 2;
+  Tables[i].KeyField:= 'ID_Workplace';
+  Inc(i);
+  SetLength(Tables, i+1);
+  Tables[i].Name:= 'ContractsLog';
+  Tables[i].Table:= DataMod.QueContractsLog;
+  Tables[i].Datasource:= DataMod.DsoContractsLog;
+  Tables[i].ID:= wtContractsLog;
+  Tables[i].FieldsCount:= 6;
+  for i:= 0 to ((Length(Tables))-1) do
+  	SetLength(Tables[i].Fields, Tables[i].FieldsCount);
 end;
 
 function DeleteTableRecord(Query: TSQLQuery; Confirm: Boolean=False; Target: String=''): Boolean;

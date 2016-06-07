@@ -1,9 +1,9 @@
 object DataMod: TDataMod
   OldCreateOrder = False
-  Height = 569
-  HorizontalOffset = 608
-  VerticalOffset = 235
-  Width = 1021
+  Height = 448
+  HorizontalOffset = 752
+  VerticalOffset = 353
+  Width = 1008
   object DsoEmployees: TDataSource
     DataSet = QueEmployees
     left = 224
@@ -137,7 +137,7 @@ object DataMod: TDataMod
   object DsoConfig: TDataSource
     DataSet = QueConfig
     left = 904
-    top = 40
+    top = 48
   end
   object SQLiteConnection: TSQLite3Connection
     Connected = False
@@ -160,7 +160,6 @@ object DataMod: TDataMod
   end
   object QueUsers: TSQLQuery
     FieldDefs = <>
-    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -169,7 +168,6 @@ object DataMod: TDataMod
   end
   object QueUsergroups: TSQLQuery
     FieldDefs = <>
-    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>
@@ -183,7 +181,6 @@ object DataMod: TDataMod
   end
   object QuePermissions: TSQLQuery
     FieldDefs = <>
-    Database = SQLiteConnection
     Transaction = Transaction
     Options = []
     Params = <>

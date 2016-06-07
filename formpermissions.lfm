@@ -123,8 +123,8 @@ object FrmPermissions: TFrmPermissions
           DataField = 'EditEmployee_Permission'
           DataSource = DataMod.DsoPermissions
           TabOrder = 0
-          ValueChecked = 'True'
-          ValueUnchecked = 'False'
+          ValueChecked = '1'
+          ValueUnchecked = '0'
         end
         object DBChkAddEmployee: TDBCheckBox
           Left = 8
@@ -136,8 +136,8 @@ object FrmPermissions: TFrmPermissions
           DataField = 'AddEmployee_Permission'
           DataSource = DataMod.DsoPermissions
           TabOrder = 1
-          ValueChecked = 'True'
-          ValueUnchecked = 'False'
+          ValueChecked = '1'
+          ValueUnchecked = '0'
         end
         object DBChkDeleteEmployee: TDBCheckBox
           Left = 8
@@ -149,8 +149,8 @@ object FrmPermissions: TFrmPermissions
           DataField = 'DeleteEmployee_Permission'
           DataSource = DataMod.DsoPermissions
           TabOrder = 2
-          ValueChecked = 'True'
-          ValueUnchecked = 'False'
+          ValueChecked = '1'
+          ValueUnchecked = '0'
         end
       end
       object TabTabs: TTabSheet
@@ -168,8 +168,8 @@ object FrmPermissions: TFrmPermissions
           DataField = 'ShowTabAddress_Permission'
           DataSource = DataMod.DsoPermissions
           TabOrder = 0
-          ValueChecked = 'True'
-          ValueUnchecked = 'False'
+          ValueChecked = '1'
+          ValueUnchecked = '0'
         end
       end
     end

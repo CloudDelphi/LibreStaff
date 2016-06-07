@@ -21,8 +21,11 @@ type
   TFrmAbout = class(TForm)
     FraClose1: TFraClose;
     GrpVersion: TGroupBox;
+    GrpDBVersions: TGroupBox;
     ImgLibreStaff: TImage;
+    LblSQLiteVersion: TLabel;
     LblVersion: TLabel;
+    LblMySQLVersion: TLabel;
     TitleLibreStaff: TLabel;
     PagAbout: TPageControl;
     RchMmoLicense: TRichMemo;
@@ -67,6 +70,8 @@ end;
 procedure TFrmAbout.FormCreate(Sender: TObject);
 begin
 	LblVersion.Caption:= LblVersion.Caption+' '+FuncApp.GetAppVersion;
+  LblSQLiteVersion.Caption:= LblSQLiteVersion.Caption+' '+SQLITE_ENGINE_VERSION;
+	LblMySQLVersion.Caption:= LblMySQLVersion.Caption+' '+MySQL_ENGINE_VERSION;
 end;
 
 { TFrmAbout }

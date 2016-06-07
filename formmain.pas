@@ -232,27 +232,24 @@ end;
 
 procedure TFrmMain.CheckPermissions;
 begin
-  if (AccessControl= TRUE) then
-    begin
-    if (User.Permissions.EditEmployee= TRUE) then
-      begin
-      BtnSave.Enabled:= True;
-      BtnActivate.Enabled:= True;
-      end
-    else
-      begin
-      BtnSave.Enabled:= False;
-      BtnActivate.Enabled:= False;
-      end;
-    if (User.Permissions.DeleteEmployee= TRUE) then
-      BtnDelete.Enabled:= True
-    else
-      BtnDelete.Enabled:= False;
-    if (User.Permissions.AddEmployee= TRUE) then
-      BtnNew.Enabled:= True
-    else
-      BtnNew.Enabled:= False;
+	if (User.Permissions.EditEmployee= TRUE) then
+  	begin
+    BtnSave.Enabled:= True;
+    BtnActivate.Enabled:= True;
+    end
+  else
+  	begin
+    BtnSave.Enabled:= False;
+    BtnActivate.Enabled:= False;
     end;
+  if (User.Permissions.DeleteEmployee= TRUE) then
+  	BtnDelete.Enabled:= True
+  else
+  	BtnDelete.Enabled:= False;
+  if (User.Permissions.AddEmployee= TRUE) then
+  	BtnNew.Enabled:= True
+  else
+    BtnNew.Enabled:= False;
 end;
 
 procedure TFrmMain.DisableEmployees;
@@ -343,7 +340,12 @@ begin
   if (TotalRecs=0) then
     DisableEmployees
   else
-    CheckPermissions;
+    begin
+    if (AccessControl= FALSE) then
+	    EnableEmployees
+    else
+    	CheckPermissions;
+    end;
 end;
 function TFrmMain.RandomID(IDLen: Integer): string;
 var

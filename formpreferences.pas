@@ -18,6 +18,7 @@ type
     BtnEditUsers: TSpeedButton;
     BtnPermissions: TSpeedButton;
     BtnSaveCompanyName: TBitBtn;
+    BtnSaveMySQLOptions: TBitBtn;
     CboDateFormat: TComboBox;
     CboDateSeparator: TComboBox;
     ChkReportPreview: TCheckBox;
@@ -30,22 +31,26 @@ type
     DbLkCboDBEngines: TDBLookupComboBox;
     EdiCompanyName: TEdit;
     EdiDtbPath: TEdit;
-    EdiHostName: TEdit;
-    EdiUserName: TEdit;
-    EdiPassword: TEdit;
+    EdiMySQLHostName: TEdit;
+    EdiMySQLDatabaseName: TEdit;
+    EdiMySQLUserName: TEdit;
+    EdiMySQLPassword: TEdit;
     FraClose1: TFraClose;
     Dates: TGroupBox;
     GroupBox1: TGroupBox;
     GrpIDEmployee: TGroupBox;
     GrpIDEmployee1: TGroupBox;
     GrpSQLite: TGroupBox;
-    GrpMariaDB: TGroupBox;
+    GrpMySQL: TGroupBox;
+    ImgLogoMySQL: TImage;
+    ImgLogoSQLite: TImage;
     ImgLstPreferences: TImageList;
     LblCompanyName: TLabel;
     LblDatabasePath: TLabel;
-    LblHostName: TLabel;
-    LblUserName: TLabel;
-    LblPassword: TLabel;
+    LblHostNameMySQL: TLabel;
+    LblDatabaseName: TLabel;
+    LblUserNameMySQL: TLabel;
+    LblPasswordMySQL: TLabel;
     LblDBEngine: TLabel;
     LblJournalMode: TLabel;
     LblDateFormat: TLabel;
@@ -59,13 +64,14 @@ type
     TabGeneral: TTabSheet;
     TabPrinting: TTabSheet;
     TabAccessControl: TTabSheet;
-    TabMariaDBOptions: TTabSheet;
+    TabMySQLOptions: TTabSheet;
     TabSQLiteOptions: TTabSheet;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnEditUsersClick(Sender: TObject);
     procedure BtnPermissionsClick(Sender: TObject);
     procedure BtnSaveCompanyNameClick(Sender: TObject);
+    procedure BtnSaveMySQLOptionsClick(Sender: TObject);
     procedure CboAutoTypeChange(Sender: TObject);
     procedure CboDateFormatChange(Sender: TObject);
     procedure CboDateSeparatorChange(Sender: TObject);
@@ -83,6 +89,7 @@ type
     procedure TabDatabaseShow(Sender: TObject);
     procedure TabGeneralShow(Sender: TObject);
     procedure TabLanguageShow(Sender: TObject);
+    procedure TabMySQLOptionsShow(Sender: TObject);
     procedure TabPrintingShow(Sender: TObject);
     procedure TabSQLiteOptionsShow(Sender: TObject);
   private
@@ -143,6 +150,14 @@ procedure TFrmPreferences.BtnSaveCompanyNameClick(Sender: TObject);
 begin
   CompanyName:= EdiCompanyName.Text;
   UpdateRecord(DataMod.QueConfig, 'CompanyName', CompanyName, dtString);
+end;
+
+procedure TFrmPreferences.BtnSaveMySQLOptionsClick(Sender: TObject);
+begin
+  INIFile.WriteString('MySQL', 'DatabaseName', QuotedStr(EdiMySQLDatabaseName.Text));
+	INIFile.WriteString('MySQL', 'HostName', QuotedStr(EdiMySQLHostName.Text));
+	INIFile.WriteString('MySQL', 'UserName', QuotedStr(EdiMySQLUserName.Text));
+	INIFile.WriteString('MySQL', 'Password', QuotedStr(EdiMySQLPassword.Text));
 end;
 
 procedure TFrmPreferences.CboAutoTypeChange(Sender: TObject);
@@ -207,7 +222,7 @@ end;
 
 procedure TFrmPreferences.ChangeDBEngineTab;
 begin
-  case DbLkCboDBEngines.ItemIndex of
+  case (DbLkCboDBEngines.ItemIndex) of
     0: PagDBEngine.ActivePageIndex:= 0;
     1: PagDBEngine.ActivePageIndex:= 1;
   end;
@@ -249,6 +264,7 @@ begin
   FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveCompanyName.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(21, BtnEditUsers.Glyph);
   FrmMain.ImgLstBtn.GetBitmap(22, BtnPermissions.Glyph);
+  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveMySQLOptions.Glyph);
   //Goto the first Tab
   PagPreferences.TabIndex:= 0;
 end;
@@ -283,7 +299,7 @@ begin
 		LstDBEngines.Open;
     LstDBEngines.Insert;
     LstDBEngines.FieldByName('ID_DBEngine').AsInteger:= 1;
-    LstDBEngines.FieldByName('DBEngine').AsString:= 'MariaDB';
+    LstDBEngines.FieldByName('DBEngine').AsString:= 'MySQL 5.6';
     LstDBEngines.Insert;
     LstDBEngines.FieldByName('ID_DBEngine').AsInteger:= 0;
     LstDBEngines.FieldByName('DBEngine').AsString:= 'SQLite';
@@ -292,6 +308,7 @@ begin
     DsoLstDBEngines.DataSet:= LstDBEngines;
     end;
   DbLkCboDBEngines.ListSource:= DsoLstDBEngines;
+  DbLkCboDBEngines.ItemIndex:= DBEngine.ID;
   ChangeDBEngineTab;
 end;
 
@@ -325,6 +342,13 @@ procedure TFrmPreferences.TabLanguageShow(Sender: TObject);
 begin
   CboDateFormat.ItemIndex:= CboDateFormat.Items.IndexOf(INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy'));
   CboDateSeparator.ItemIndex:= CboDateSeparator.Items.IndexOf(INIFile.ReadString('Lang', 'DateSeparator', '/'));
+end;
+
+procedure TFrmPreferences.TabMySQLOptionsShow(Sender: TObject);
+begin
+	EdiMySQLHostName.Text:= INIFile.ReadString('MySQL', 'HostName', '');
+  EdiMySQLUserName.Text:= INIFile.ReadString('MySQL', 'UserName', '');
+  EdiMySQLPassword.Text:= INIFile.ReadString('MySQL', 'Password', '');
 end;
 
 procedure TFrmPreferences.TabPrintingShow(Sender: TObject);

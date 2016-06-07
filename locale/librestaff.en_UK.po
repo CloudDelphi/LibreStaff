@@ -488,6 +488,14 @@ msgstr ""
 msgid "Deletion"
 msgstr ""
 
+#: funcdata.lg_cannotconnectdatabase
+msgid "Database cannot be connected."
+msgstr ""
+
+#: funcdata.lg_databasenotexist
+msgid "Database does not exist."
+msgstr ""
+
 #: funcprint.lg_genre
 msgid "Genre:"
 msgstr ""
@@ -673,6 +681,14 @@ msgstr ""
 #: tfrmabout.caption
 msgctxt "tfrmabout.caption"
 msgid "About"
+msgstr ""
+
+#: tfrmabout.lblmysqlversion.caption
+msgid "MySQL DLL Version:"
+msgstr ""
+
+#: tfrmabout.lblsqliteversion.caption
+msgid "SQLite DLL Version:"
 msgstr ""
 
 #: tfrmabout.lblversion.caption
@@ -1182,6 +1198,11 @@ msgctxt "tfrmpreferences.btnsavecompanyname.caption"
 msgid "Save"
 msgstr ""
 
+#: tfrmpreferences.btnsavemysqloptions.caption
+msgctxt "tfrmpreferences.btnsavemysqloptions.caption"
+msgid "Save"
+msgstr ""
+
 #: tfrmpreferences.caption
 msgctxt "tfrmpreferences.caption"
 msgid "Preferences"
@@ -1245,8 +1266,8 @@ msgctxt "tfrmpreferences.grpidemployee1.caption"
 msgid "Access Control"
 msgstr ""
 
-#: tfrmpreferences.grpmariadb.caption
-msgid "MariaDB Options"
+#: tfrmpreferences.grpmysql.caption
+msgid "MySQL Options"
 msgstr ""
 
 #: tfrmpreferences.grpsqlite.caption
@@ -1255,6 +1276,10 @@ msgstr ""
 
 #: tfrmpreferences.lblcompanyname.caption
 msgid "Company Name:"
+msgstr ""
+
+#: tfrmpreferences.lbldatabasename.caption
+msgid "Database Name:"
 msgstr ""
 
 #: tfrmpreferences.lbldatabasepath.caption
@@ -1274,7 +1299,8 @@ msgstr ""
 msgid "DB Engine:"
 msgstr ""
 
-#: tfrmpreferences.lblhostname.caption
+#: tfrmpreferences.lblhostnamemysql.caption
+msgctxt "tfrmpreferences.lblhostnamemysql.caption"
 msgid "Host Name:"
 msgstr ""
 
@@ -1283,13 +1309,13 @@ msgctxt "tfrmpreferences.lbljournalmode.caption"
 msgid "Journal Mode:"
 msgstr ""
 
-#: tfrmpreferences.lblpassword.caption
-msgctxt "tfrmpreferences.lblpassword.caption"
+#: tfrmpreferences.lblpasswordmysql.caption
+msgctxt "tfrmpreferences.lblpasswordmysql.caption"
 msgid "Password:"
 msgstr ""
 
-#: tfrmpreferences.lblusername.caption
-msgctxt "tfrmpreferences.lblusername.caption"
+#: tfrmpreferences.lblusernamemysql.caption
+msgctxt "tfrmpreferences.lblusernamemysql.caption"
 msgid "Username:"
 msgstr ""
 
@@ -1313,8 +1339,8 @@ msgctxt "tfrmpreferences.tablanguage.caption"
 msgid "Language"
 msgstr ""
 
-#: tfrmpreferences.tabmariadboptions.caption
-msgid "TabMariaDBOptions"
+#: tfrmpreferences.tabmysqloptions.caption
+msgid "TabMySQLOptions"
 msgstr ""
 
 #: tfrmpreferences.tabprinting.caption
