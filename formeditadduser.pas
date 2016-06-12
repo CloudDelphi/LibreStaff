@@ -109,9 +109,9 @@ end;
 procedure TFrmEditAddUser.FormCreate(Sender: TObject);
 begin
   //Get bitmaps
-	FrmMain.ImgLstBtn.GetBitmap(19, ImgUser.Picture.Bitmap);
-	FrmMain.ImgLstBtn.GetBitmap(20, ImgPassword.Picture.Bitmap);
-  FrmMain.ImgLstBtn.GetBitmap(23, ImgUsergroup.Picture.Bitmap);
+	DataMod.ImgLstBtn.GetBitmap(19, ImgUser.Picture.Bitmap);
+	DataMod.ImgLstBtn.GetBitmap(20, ImgPassword.Picture.Bitmap);
+  DataMod.ImgLstBtn.GetBitmap(23, ImgUsergroup.Picture.Bitmap);
 end;
 
 procedure TFrmEditAddUser.BtnCancelClick(Sender: TObject);

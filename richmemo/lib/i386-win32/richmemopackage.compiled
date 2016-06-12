@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.0\bin\i386-win32\fpc.exe" Date="1213097031"/>
+  <Params Value=" -MObjFPC -Scgi -O1 -g -gl -l -vewnhibq -vm5060,5057,5024,4055 -FiD:\Documentos\LibreStaff\richmemo\cocoa -FiD:\Documentos\LibreStaff\richmemo\qt -FuD:\Documentos\LibreStaff\richmemo\win32 -FuD:\Documentos\LibreStaff\richmemo\carbon -FuD:\Documentos\LibreStaff\richmemo\gtk2 -FuD:\Documentos\LibreStaff\richmemo\cocoa -FuD:\Documentos\LibreStaff\richmemo\qt -FuD:\Documentos\LibreStaff\richmemo\ide -FuC:\lazarus\packager\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\components\lazcontrols\lib\i386-win32\win32 -FuC:\lazarus\components\ideintf\units\i386-win32\win32 -FuD:\Documentos\LibreStaff\richmemo\ -FUD:\Documentos\LibreStaff\richmemo\lib\i386-win32\ -dLCL -dLCLwin32 richmemopackage.pas"/>
+</CONFIG>

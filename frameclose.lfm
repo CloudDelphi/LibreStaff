@@ -5,6 +5,7 @@ object FraClose: TFraClose
   Width = 549
   ClientHeight = 82
   ClientWidth = 549
+  LCLVersion = '1.6.0.4'
   TabOrder = 0
   DesignLeft = 721
   DesignTop = 268

@@ -5,7 +5,7 @@ unit DataModule;
 interface
 
 uses
-  Classes, SysUtils, db, sqlite3conn, sqldb, mysql56conn;
+  Classes, SysUtils, Controls, Dialogs, db, sqlite3conn, sqldb, mysql56conn;
 
 type
   TSQLite3Connection = class(sqlite3conn.TSQLite3Connection)
@@ -27,7 +27,10 @@ type
     DsoWorkplaces: TDataSource;
     DsoContractsLog: TDataSource;
     DsoUsergroups: TDataSource;
+    Img16: TImageList;
+    ImgLstBtn: TImageList;
     MySQLConnection: TMySQL56Connection;
+    OpenDlg: TOpenDialog;
     QueConfig: TSQLQuery;
     QuePrint: TSQLQuery;
     QuePermissions: TSQLQuery;
@@ -39,6 +42,8 @@ type
     QueTypeContracts: TSQLQuery;
     QueWorkplaces: TSQLQuery;
     QueContractsLog: TSQLQuery;
+    SaveDlg: TSaveDialog;
+    SelectDirDlg: TSelectDirectoryDialog;
     SQLiteConnection: TSQLite3Connection;
     QueUsergroups: TSQLQuery;
     Transaction: TSQLTransaction;

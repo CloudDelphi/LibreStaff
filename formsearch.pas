@@ -323,9 +323,9 @@ begin
   CboFilter.Items.Add(lg_Filter_Active);
   CboFilter.Items.Add(lg_Filter_Inactive);
   CboFilter.Items.Add(lg_Filter_All);
-  FrmMain.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
-	FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(9, BtnViewAll.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
+	DataMod.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(9, BtnViewAll.Glyph);
   ChkClose.Checked:= StrToBool(INIFile.ReadString('Search', 'CloseOnSelect', 'True'));
 end;
 

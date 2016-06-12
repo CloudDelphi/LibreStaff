@@ -29,13 +29,13 @@ implementation
 
 
 uses
-  FormMain;
+  DataModule;
 
 procedure TFraAcceptCancel.Loaded;
 begin
   inherited;
-  FrmMain.ImgLstBtn.GetBitmap(4, BtnAccept.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(4, BtnAccept.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
 end;
 
 end.

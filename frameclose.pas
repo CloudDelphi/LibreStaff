@@ -28,12 +28,12 @@ implementation
 
 { TFraClose }
 uses
-  FormMain;
+  DataModule;
 
 procedure TFraClose.Loaded;
 begin
   inherited;
-  FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
 end;
 
 end.

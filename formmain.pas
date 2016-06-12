@@ -53,7 +53,6 @@ type
     frReport: TfrReport;
     GroupBox1: TGroupBox;
     GrpMisc: TGroupBox;
-    Img16: TImageList;
     ImgAbout: TImage;
     ImgPreferences: TImage;
     ImgProfile: TImage;
@@ -70,7 +69,6 @@ type
     DBNav: TDBNavigator;
     GrpAddressEmployee: TGroupBox;
     GrprContactEmployee: TGroupBox;
-    ImgLstBtn: TImageList;
     ImgExit: TImage;
     LblNameEmployee: TLabel;
     LblNameEmployee1: TLabel;
@@ -86,7 +84,6 @@ type
     LblState: TLabel;
     LblNavRec: TLabel;
     DbMmoRemarkEmployee: TDBMemo;
-    OpenDlg: TOpenDialog;
     PopNot: TPopupNotifier;
     Sidebar: TPageControl;
     PagMain: TPageControl;
@@ -100,8 +97,6 @@ type
     PanMain: TPanel;
     PanSep1: TPanel;
     PicEmployee: TDBImage;
-    SaveDlg: TSaveDialog;
-    SelectDirDlg: TSelectDirectoryDialog;
     SplMain: TSplitter;
     StBarMain: TStatusBar;
     TabEmployees: TTabSheet;
@@ -326,13 +321,13 @@ begin
     begin
     BtnActivate.Caption:= lg_CaptionBtn_Inactivate;
     LblInactive.Visible:= False;
-    ImgLstBtn.GetBitmap(13, BtnActivate.Glyph)
+    DataMod.ImgLstBtn.GetBitmap(13, BtnActivate.Glyph)
     end
   else
   	begin
     BtnActivate.Caption:= lg_CaptionBtn_Activate;
     LblInactive.Visible:= True;
-    ImgLstBtn.GetBitmap(14, BtnActivate.Glyph)
+    DataMod.ImgLstBtn.GetBitmap(14, BtnActivate.Glyph)
     end;
   CurrentRec:= DataMod.DsoEmployees.DataSet.RecNo;
   LblNavRec.Caption:= IntToStr(CurrentRec) + ' '+lg_LblNavRecOf +' '+ IntToStr(TotalRecs);
@@ -424,14 +419,14 @@ begin
   IDAutoType:= StrToInt(INIFile.ReadString('General','IDAutoType','0'));
   IDAllowBlank:= StrToBool(INIFile.ReadString('General','IDAllowBlank','False'));
   //Get bitmaps for the buttons
-  ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
-	ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
-	ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
-  ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
-  ImgLstBtn.GetBitmap(15, BtnPrint.Glyph);
-  ImgLstBtn.GetBitmap(10, BtnDelTypeContract.Glyph);
-  ImgLstBtn.GetBitmap(10, BtnDelWorkplace.Glyph);
-	ImgLstBtn.GetBitmap(10, BtnDelContractLog.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
+	DataMod.ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
+	DataMod.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(15, BtnPrint.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(10, BtnDelTypeContract.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(10, BtnDelWorkplace.Glyph);
+	DataMod.ImgLstBtn.GetBitmap(10, BtnDelContractLog.Glyph);
   //Load the Hints:
   BtnDelTypeContract.Hint:= lg_BtnDelTypeContract_Hint;
   BtnDelWorkplace.Hint:= lg_BtnDelWorkplace_Hint;

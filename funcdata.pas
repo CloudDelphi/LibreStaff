@@ -136,6 +136,10 @@ begin
 	DBEngine.Connection.DatabaseName:= Databasename;
   DBEngine.Connection.HostName:= DBEngine.HostName;
   DBEngine.Connection.UserName:= DBEngine.UserName;
+  //Check whether the database already exists
+  case DBEngine.DBType of
+    dbtSQLite: newDatabase:= not FileExists(Databasename);
+  end; //case
   try
 	  DBEngine.Connection.Open;
   except
@@ -151,10 +155,6 @@ begin
       Exit;
       end;
   end;
-  //Check whether the database already exists
-  case DBEngine.DBType of
-    dbtSQLite: newDatabase:= not FileExists(Databasename);
-  end; //case
 	if newDatabase then begin //Create the database and the tables
   	try
  		//Define Fields

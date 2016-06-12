@@ -127,7 +127,7 @@ begin
   if ChangePic=True then
     begin
     try
-    	ImgEmployee.Picture.LoadFromFile(FrmMain.OpenDlg.Files[0]);
+    	ImgEmployee.Picture.LoadFromFile(DataMod.OpenDlg.Files[0]);
 	    BtnExportPic.Enabled:= True;
       ActivateSavePic;
     except
@@ -144,15 +144,15 @@ var
 begin
   Change:= FuncDlgs.SaveDlg(SaveDlg_Title,SaveDlg_Filter+' (*.jpg)|*.jpg|JPG (*.jpg)|*.jpg', PathApp,'foto.jpg');
   if Change= True then
-     ImgEmployee.Picture.SaveToFile(FrmMain.SaveDlg.Files[0]);
+     ImgEmployee.Picture.SaveToFile(DataMod.SaveDlg.Files[0]);
 end;
 
 procedure TFrmPicEmployee.FormCreate(Sender: TObject);
 begin
-  FrmMain.ImgLstBtn.GetBitmap(1, BtnLoadPic.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnExportPic.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(5, BtnCopyToClipboard.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(6, BtnPasteFromClipboard.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(1, BtnLoadPic.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnExportPic.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(5, BtnCopyToClipboard.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(6, BtnPasteFromClipboard.Glyph);
   //Load the current pic of the employee
   Stream:= DataMod.QueEmployees.CreateBlobStream(DataMod.QuePicsEmployees.FieldByName('Pic_Employee'), bmRead);
   if not(Stream= nil) then //If there is a pic for the employee

@@ -215,7 +215,7 @@ end;
 
 procedure TFrmPreferences.DbLkCboDBEnginesCloseUp(Sender: TObject);
 begin
-  FuncData.SaveTable(DataMod.QueConfig);
+  //FuncData.SaveTable(DataMod.QueConfig);
   INIFile.WriteInteger('Database', 'DBEngine', DbLkCboDBEngines.ItemIndex);
   ChangeDBEngineTab;
 end;
@@ -261,10 +261,10 @@ begin
   	LstViewPreferences.Items[i].Caption:= Str;
     end;
   //Load the Glyphs:
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveCompanyName.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(21, BtnEditUsers.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(22, BtnPermissions.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveMySQLOptions.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSaveCompanyName.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(21, BtnEditUsers.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(22, BtnPermissions.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSaveMySQLOptions.Glyph);
   //Goto the first Tab
   PagPreferences.TabIndex:= 0;
 end;
@@ -277,7 +277,7 @@ begin
   ChangePath:= FuncDlgs.SelectDirDlg(lg_SelectDirDlg_Title, EdiDtbPath.Text);
   if ChangePath=True then
     begin
-    NewPath:= FrmMain.SelectDirDlg.FileName+'\';
+    NewPath:= DataMod.SelectDirDlg.FileName+'\';
     if FileExists(NewPath+DATABASE_NAME) then
     	begin
 	    INIFile.WriteString('Database','Path',QuotedStr(NewPath));

@@ -35,6 +35,9 @@ implementation
 
 {$R *.lfm}
 
+uses
+  DataModule;
+
 function TFrmListEditor.EditList(const Title, Filename: string; Combo: TCboListType): Boolean;
 begin
   with TFrmListEditor.Create(Application) do
@@ -58,9 +61,9 @@ end;
 //------------------------------------------------------------------------------
 procedure TFrmListEditor.FormCreate(Sender: TObject);
 begin
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveList.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSaveList.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);
 end;
 //------------------------------------------------------------------------------
 procedure TFrmListEditor.BtnSortListClick(Sender: TObject);

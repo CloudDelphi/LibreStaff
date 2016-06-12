@@ -34,17 +34,17 @@ implementation
 {$R *.lfm}
 
 uses
-  FormMain;
+  DataModule;
 
 procedure TFraAddDelEdiSavCan.Loaded;
 begin
   inherited;
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(11, BtnAdd.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(12, BtnEdit.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(11, BtnAdd.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(12, BtnEdit.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(7, BtnSortList.Glyph);
 end;
 end.
 

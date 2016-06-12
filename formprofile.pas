@@ -45,7 +45,7 @@ implementation
 {$R *.lfm}
 
 uses
-  Globals, FormMain;
+  Globals, DataModule;
 
 { TFrmProfile }
 
@@ -57,7 +57,7 @@ begin
     True: 	ChkRememberUsername.State:= cbChecked;
   end; //case
   //Load the Glyphs:
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSaveAvatar.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSaveAvatar.Glyph);
   SpiAvatar.MaxValue:= AVATARS_COUNT+1;
 end;
 

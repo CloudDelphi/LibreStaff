@@ -5,6 +5,7 @@ object FraAddDelEdiSavCan: TFraAddDelEdiSavCan
   Width = 631
   ClientHeight = 106
   ClientWidth = 631
+  LCLVersion = '1.6.0.4'
   TabOrder = 0
   DesignLeft = 613
   DesignTop = 443
@@ -64,8 +65,8 @@ object FraAddDelEdiSavCan: TFraAddDelEdiSavCan
       Width = 112
       BevelOuter = bvNone
       BorderStyle = bsSingle
-      ClientHeight = 25
-      ClientWidth = 108
+      ClientHeight = 29
+      ClientWidth = 112
       TabOrder = 5
       object LblNavRec: TLabel
         Left = 0

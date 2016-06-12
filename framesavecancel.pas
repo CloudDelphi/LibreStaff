@@ -28,13 +28,13 @@ implementation
 {$R *.lfm}
 
 uses
-  FormMain;
+  DataModule;
 
 procedure TFraSaveCancel.Loaded;
 begin
   inherited;
-  FrmMain.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
-  FrmMain.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+  DataMod.ImgLstBtn.GetBitmap(2, BtnCancel.Glyph);
 end;
 
 end.

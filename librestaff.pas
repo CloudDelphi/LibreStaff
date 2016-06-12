@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
   FormLogin, FormPrgBar, FormMain, FuncData, SysUtils, INIfiles,
-  Globals;
+  Globals, FormPreferences;
 
 {$R *.res}
 
@@ -23,7 +23,7 @@ procedure CreateMainForm;
 	//The progress bar to show the database load:
 	FrmPrgBar:= TFrmPrgBar.Create(Application);
 	FrmPrgBar.ShowOnTop;
-	Application.CreateForm(TFrmMain, FrmMain);
+  Application.CreateForm(TFrmMain, FrmMain);
 	Application.Run;
   end;
 
@@ -37,13 +37,24 @@ begin
   INIFile:= TINIFile.Create(PathApp+'config.ini', True);
   //Connect & Load to database
   DBEngine:= TDBEngine.Create;
+  //Set some paths
+  if not FileExists(PathApp+'config.ini') then //First time or 'config.ini' deleted
+    begin
+		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
+    INIFile.WriteString('Database', 'DBEngine', '0');
+    INIFile.WriteString('Database', 'AtomicCommmit', '1');
+    FrmPreferences:= TFrmPreferences.Create(nil);
+    FrmPreferences.LstViewPreferences.Visible:= False;
+    FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
+    FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
+    FrmPreferences.PagPreferences.TabIndex:= 2;
+    FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
+  	FrmPreferences.ShowModal;
+    end;
   DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
   case (DBEngine.ID) of
   	0:	begin
-	      //Set some paths
-    		if not FileExists(PathApp+'config.ini') then
-					INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
- 	      DBEngine.DBType:= dbtSQLite;
+        DBEngine.DBType:= dbtSQLite;
         DBEngine.Connection:= DataMod.SQLiteConnection;
 			  DBEngine.DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
 			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME+'.db';
