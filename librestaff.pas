@@ -9,13 +9,16 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
   FormLogin, FormPrgBar, FormMain, FuncData, SysUtils, INIfiles,
-  Globals, FormPreferences;
+  Globals, FormPreferences, Dialogs;
 
 {$R *.res}
 
 var
   LoginOK: Integer;
   Login: TFrmLogin;
+
+resourcestring
+  Error_DatabaseName_Blank= 'Database name is blank!';
 
 procedure CreateMainForm;
 	begin
@@ -26,6 +29,17 @@ procedure CreateMainForm;
   Application.CreateForm(TFrmMain, FrmMain);
 	Application.Run;
   end;
+
+procedure ConfigureDBEngine;
+begin
+  FrmPreferences:= TFrmPreferences.Create(nil);
+  FrmPreferences.LstViewPreferences.Visible:= False;
+  FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
+  FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
+  FrmPreferences.PagPreferences.TabIndex:= 2;
+  FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
+  FrmPreferences.ShowModal;
+end;
 
 begin
   RequireDerivedFormResource:= True;
@@ -43,13 +57,7 @@ begin
 		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
     INIFile.WriteString('Database', 'DBEngine', '0');
     INIFile.WriteString('Database', 'AtomicCommmit', '1');
-    FrmPreferences:= TFrmPreferences.Create(nil);
-    FrmPreferences.LstViewPreferences.Visible:= False;
-    FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
-    FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
-    FrmPreferences.PagPreferences.TabIndex:= 2;
-    FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
-  	FrmPreferences.ShowModal;
+    ConfigureDBEngine;
     end;
   DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
   case (DBEngine.ID) of
@@ -68,7 +76,12 @@ begin
     1:	begin
  	      DBEngine.DBType:= dbtMySQL;
         DBEngine.Connection:= DataMod.MySQLConnection;
-        DBEngine.DatabaseName:= INIFile.ReadString('MySQL', 'DatabaseName', '');;
+        DBEngine.DatabaseName:= INIFile.ReadString('MySQL', 'DatabaseName', '');
+        if DBEngine.DatabaseName='' then
+          begin
+          ShowMessage('Error: '+Error_DatabaseName_Blank);
+          ConfigureDBEngine;
+          end;
         DBEngine.HostName:= INIFile.ReadString('MySQL', 'HostName', '');
         DBEngine.HostName:= 'localhost';
         DBEngine.UserName:= 'root';

@@ -1,0 +1,129 @@
+object FrmActivationEmployee: TFrmActivationEmployee
+  Left = 727
+  Height = 320
+  Top = 359
+  Width = 346
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 320
+  ClientWidth = 346
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  inline FraAcceptCancel1: TFraAcceptCancel
+    Top = 244
+    Width = 346
+    Align = alBottom
+    ClientWidth = 346
+    inherited PanBottom: TPanel
+      Width = 346
+      ClientWidth = 346
+      inherited BtnAccept: TBitBtn
+        OnClick = BtnAcceptClick
+      end
+      inherited BtnCancel: TBitBtn
+        OnClick = BtnCancelClick
+      end
+    end
+  end
+  object PanTop: TPanel
+    Left = 0
+    Height = 244
+    Top = 0
+    Width = 346
+    Align = alClient
+    ClientHeight = 244
+    ClientWidth = 346
+    TabOrder = 1
+    object LblTitle: TLabel
+      Left = 16
+      Height = 56
+      Top = 8
+      Width = 312
+      AutoSize = False
+      Color = 16052701
+      Font.Height = 29
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      WordWrap = True
+      OptimalFill = True
+    end
+    object GrpContract: TGroupBox
+      Left = 16
+      Height = 154
+      Top = 80
+      Width = 312
+      Caption = 'Contract'
+      ClientHeight = 121
+      ClientWidth = 308
+      TabOrder = 0
+      object DatDateInit: TDateTimePicker
+        Left = 128
+        Height = 36
+        Top = 16
+        Width = 144
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 0
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object LblDateInit: TLabel
+        Left = 8
+        Height = 28
+        Top = 24
+        Width = 112
+        AutoSize = False
+        Caption = 'Date init:'
+        Font.Height = 29
+        ParentColor = False
+        ParentFont = False
+      end
+      object LblDateEnd: TLabel
+        Left = 8
+        Height = 28
+        Top = 80
+        Width = 112
+        AutoSize = False
+        Caption = 'Date end:'
+        Font.Height = 29
+        ParentColor = False
+        ParentFont = False
+      end
+      object DatDateEnd: TDateTimePicker
+        Left = 128
+        Height = 36
+        Top = 72
+        Width = 144
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        AutoSize = False
+        TabOrder = 1
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkDate
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        Date = 1.7E308
+        Time = 1.7E308
+        UseDefaultSeparators = True
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+    end
+  end
+end

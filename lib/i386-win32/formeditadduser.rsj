@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":174443954,"name":"formeditadduser.lg_frmaddcaption","sourcebytes":[65,100,100,32,85,115,101,114],"value":"Add User"},
+{"hash":6652530,"name":"formeditadduser.lg_frmeditcaption","sourcebytes":[69,100,105,116,32,85,115,101,114],"value":"Edit User"},
+{"hash":116194516,"name":"formeditadduser.lg_edit_iptbox_caption_passwords","sourcebytes":[67,104,97,110,103,101,32,116,104,101,32,112,97,115,115,119,111,114,100],"value":"Change the password"},
+{"hash":241516202,"name":"formeditadduser.lg_edit_iptbox_prompt_passwords","sourcebytes":[78,101,119,32,80,97,115,115,119,111,114,100,58],"value":"New Password:"},
+{"hash":124985745,"name":"formeditadduser.user_exists","sourcebytes":[84,104,105,115,32,117,115,101,114,32,97,108,114,101,97,100,121,32,101,120,105,115,116,115,33],"value":"This user already exists!"},
+{"hash":260595851,"name":"formeditadduser.blank_name","sourcebytes":[84,104,101,32,110,97,109,101,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The name cannot be blank"},
+{"hash":30813467,"name":"formeditadduser.blank_password","sourcebytes":[84,104,101,32,112,97,115,115,119,111,114,100,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The password cannot be blank"},
+{"hash":7488811,"name":"formeditadduser.blank_usergroup","sourcebytes":[84,104,101,32,103,114,111,117,112,32,111,102,32,116,104,101,32,117,115,101,114,32,99,97,110,110,111,116,32,98,101,32,98,108,97,110,107],"value":"The group of the user cannot be blank"}
+]}

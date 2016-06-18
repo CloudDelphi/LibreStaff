@@ -613,6 +613,10 @@ msgctxt "funcprint.lg_mmozipcodeemployee"
 msgid "ZIP Code:"
 msgstr "CEP:"
 
+#: librestaff.error_databasename_blank
+msgid "Database name is blank!"
+msgstr ""
+
 #: tform1.caption
 msgid "Form1"
 msgstr ""
