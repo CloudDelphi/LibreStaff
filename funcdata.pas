@@ -101,6 +101,7 @@ resourcestring
 	DelRec_Msg_01= 'Are you sure you want to DELETE';
   DelRec_Msg_02= 'It cannot revert!';
   DelRec_Msg_03= 'There is not anything to eliminate.';
+  Error_DatabaseName_Blank= 'Database name is blank!';
 
 implementation
 

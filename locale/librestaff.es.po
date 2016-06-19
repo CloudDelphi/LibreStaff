@@ -491,6 +491,11 @@ msgstr "No hay nada que eliminar."
 msgid "Deletion"
 msgstr "Eliminar"
 
+#: funcdata.error_databasename_blank
+msgctxt "funcdata.error_databasename_blank"
+msgid "Database name is blank!"
+msgstr ""
+
 #: funcdata.lg_cannotconnectdatabase
 msgid "Database cannot be connected."
 msgstr "No s epuede conectar a la base de datos."
@@ -602,6 +607,7 @@ msgid "ZIP Code:"
 msgstr "Cóg. Postal:"
 
 #: librestaff.error_databasename_blank
+msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
 msgstr ""
 

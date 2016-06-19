@@ -17,9 +17,6 @@ var
   LoginOK: Integer;
   Login: TFrmLogin;
 
-resourcestring
-  Error_DatabaseName_Blank= 'Database name is blank!';
-
 procedure CreateMainForm;
 	begin
   Screen.Cursor:= crHourglass;
@@ -56,7 +53,7 @@ begin
     begin
 		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
     INIFile.WriteString('Database', 'DBEngine', '0');
-    INIFile.WriteString('Database', 'AtomicCommmit', '1');
+    INIFile.WriteString('SQLite', 'AtomicCommmit', '1');
     ConfigureDBEngine;
     end;
   DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
@@ -77,11 +74,6 @@ begin
  	      DBEngine.DBType:= dbtMySQL;
         DBEngine.Connection:= DataMod.MySQLConnection;
         DBEngine.DatabaseName:= INIFile.ReadString('MySQL', 'DatabaseName', '');
-        if DBEngine.DatabaseName='' then
-          begin
-          ShowMessage('Error: '+Error_DatabaseName_Blank);
-          ConfigureDBEngine;
-          end;
         DBEngine.HostName:= INIFile.ReadString('MySQL', 'HostName', '');
         DBEngine.HostName:= 'localhost';
         DBEngine.UserName:= 'root';
@@ -95,7 +87,13 @@ begin
   end;
   DBEngine.Connection.Transaction:= DataMod.Transaction;
   //The mode of database Atomic Commit
-  AtomicCommmit:= INIFile.ReadInteger('Database', 'AtomicCommit', 1);
+  AtomicCommmit:= INIFile.ReadInteger('SQLite', 'AtomicCommit', 1);
+  //Check if Databasename is set
+  if (DBEngine.DatabaseName='') then
+    begin
+    ShowMessage('Error: '+Error_DatabaseName_Blank);
+    ConfigureDBEngine;
+    end;
   FuncData.ConnectDatabase(DBEngine.Databasename);
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;

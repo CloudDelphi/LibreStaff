@@ -488,6 +488,11 @@ msgstr ""
 msgid "Deletion"
 msgstr ""
 
+#: funcdata.error_databasename_blank
+msgctxt "funcdata.error_databasename_blank"
+msgid "Database name is blank!"
+msgstr ""
+
 #: funcdata.lg_cannotconnectdatabase
 msgid "Database cannot be connected."
 msgstr ""
@@ -600,6 +605,7 @@ msgid "ZIP Code:"
 msgstr ""
 
 #: librestaff.error_databasename_blank
+msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
 msgstr ""
 
