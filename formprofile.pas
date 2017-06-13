@@ -80,7 +80,7 @@ begin
           IDAvatar:= '0'+IDAvatar;
         until Length(IDAvatar)=4;
         end;
-      PathAvatar:= PathApp+'Avatars\'+IDAvatar;
+      PathAvatar:= PathApp+'Avatars'+PATH_SEPARATOR+IDAvatar;
       if FileExists(PathAvatar+'.jpg') then
         begin
         AvatarExists:= TRUE;

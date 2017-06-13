@@ -57,7 +57,7 @@ var
   LicenseFile: TMemoryStream;
 begin
  LicenseFile:= TMemoryStream.Create;
- LicenseFile.LoadFromFile(PathApp+'lic\License-GPL-3.rtf');
+ LicenseFile.LoadFromFile(PathApp+'lic'+PATH_SEPARATOR+'License-GPL-3.rtf');
  RchMmoLicense.LoadRichText(LicenseFile);
  FreeAndNil(LicenseFile);
 end;

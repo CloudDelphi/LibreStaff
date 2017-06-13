@@ -50,6 +50,12 @@ const
   MYSQL_COLLATION= 'utf8_unicode_ci';
   MYSQL_ENGINE_VERSION= '5.6.27.0';
   PASSWORD_LENGTH= 12;
+  PATH_SEPARATOR=
+  {$ifdef Win32}
+    '\';
+  {$else}
+		'/';
+  {$endif}
   SALT_LENGTH= 3;
   SQLITE_ENGINE_VERSION= '3.13.0.0';
   SUPERUSER_GROUP= 'SUPERUSERS';

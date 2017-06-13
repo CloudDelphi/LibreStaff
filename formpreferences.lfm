@@ -10,7 +10,7 @@ object FrmPreferences: TFrmPreferences
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.4.0'
   object LstViewPreferences: TListView
     Left = 0
     Height = 424
@@ -40,15 +40,15 @@ object FrmPreferences: TFrmPreferences
     Height = 424
     Top = 0
     Width = 689
-    ActivePage = TabDatabase
+    ActivePage = TabAccessControl
     Align = alClient
     ShowTabs = False
-    TabIndex = 2
+    TabIndex = 4
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
-      ClientHeight = 416
-      ClientWidth = 681
+      ClientHeight = 420
+      ClientWidth = 685
       OnShow = TabGeneralShow
       object GrpIDEmployee: TGroupBox
         Left = 40
@@ -56,7 +56,7 @@ object FrmPreferences: TFrmPreferences
         Top = 32
         Width = 384
         Caption = 'ID Employee'
-        ClientHeight = 144
+        ClientHeight = 150
         ClientWidth = 380
         TabOrder = 0
         object ChkIDUnique: TCheckBox
@@ -95,7 +95,7 @@ object FrmPreferences: TFrmPreferences
           Top = 52
           Width = 144
           Enabled = False
-          ItemHeight = 28
+          ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
             'INC'
@@ -110,8 +110,8 @@ object FrmPreferences: TFrmPreferences
     end
     object TabLanguage: TTabSheet
       Caption = 'Language'
-      ClientHeight = 416
-      ClientWidth = 681
+      ClientHeight = 420
+      ClientWidth = 685
       OnShow = TabLanguageShow
       object Dates: TGroupBox
         Left = 40
@@ -119,7 +119,7 @@ object FrmPreferences: TFrmPreferences
         Top = 16
         Width = 400
         Caption = 'Dates'
-        ClientHeight = 146
+        ClientHeight = 152
         ClientWidth = 396
         TabOrder = 0
         object LblDateSeparator: TLabel
@@ -136,7 +136,7 @@ object FrmPreferences: TFrmPreferences
           Height = 36
           Top = 80
           Width = 56
-          ItemHeight = 28
+          ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
             '/'
@@ -153,7 +153,7 @@ object FrmPreferences: TFrmPreferences
           Height = 36
           Top = 24
           Width = 144
-          ItemHeight = 28
+          ItemHeight = 0
           ItemIndex = 0
           Items.Strings = (
             'dd.mm.yyyy'
@@ -178,14 +178,14 @@ object FrmPreferences: TFrmPreferences
     end
     object TabDatabase: TTabSheet
       Caption = 'Database'
-      ClientHeight = 416
-      ClientWidth = 681
+      ClientHeight = 420
+      ClientWidth = 685
       OnShow = TabDatabaseShow
       object PagDBEngine: TPageControl
         Left = 0
         Height = 304
-        Top = 112
-        Width = 681
+        Top = 116
+        Width = 685
         ActivePage = TabMySQLOptions
         Align = alBottom
         ShowTabs = False
@@ -193,8 +193,8 @@ object FrmPreferences: TFrmPreferences
         TabOrder = 0
         object TabSQLiteOptions: TTabSheet
           Caption = 'SQLite'
-          ClientHeight = 296
-          ClientWidth = 673
+          ClientHeight = 300
+          ClientWidth = 681
           OnShow = TabSQLiteOptionsShow
           object GrpSQLite: TGroupBox
             Left = 0
@@ -203,7 +203,7 @@ object FrmPreferences: TFrmPreferences
             Width = 673
             Align = alClient
             Caption = 'SQLite Options'
-            ClientHeight = 263
+            ClientHeight = 269
             ClientWidth = 669
             TabOrder = 0
             object LblJournalMode: TLabel
@@ -390,22 +390,22 @@ object FrmPreferences: TFrmPreferences
         end
         object TabMySQLOptions: TTabSheet
           Caption = 'TabMySQLOptions'
-          ClientHeight = 296
-          ClientWidth = 673
+          ClientHeight = 300
+          ClientWidth = 681
           OnShow = TabMySQLOptionsShow
           object GrpMySQL: TGroupBox
             Left = 0
-            Height = 296
+            Height = 300
             Top = 0
-            Width = 673
+            Width = 681
             Align = alClient
             Caption = 'MySQL Options'
-            ClientHeight = 263
-            ClientWidth = 669
+            ClientHeight = 273
+            ClientWidth = 677
             TabOrder = 0
             object EdiMySQLHostName: TEdit
               Left = 336
-              Height = 36
+              Height = 35
               Top = 56
               Width = 264
               MaxLength = 256
@@ -431,7 +431,7 @@ object FrmPreferences: TFrmPreferences
             end
             object EdiMySQLUserName: TEdit
               Left = 336
-              Height = 36
+              Height = 35
               Top = 112
               Width = 264
               MaxLength = 256
@@ -448,7 +448,7 @@ object FrmPreferences: TFrmPreferences
             end
             object EdiMySQLPassword: TEdit
               Left = 336
-              Height = 36
+              Height = 35
               Top = 168
               Width = 264
               MaxLength = 256
@@ -474,7 +474,7 @@ object FrmPreferences: TFrmPreferences
             end
             object EdiMySQLDatabaseName: TEdit
               Left = 336
-              Height = 36
+              Height = 35
               Top = 0
               Width = 264
               MaxLength = 256
@@ -579,7 +579,7 @@ object FrmPreferences: TFrmPreferences
       end
       object DbLkCboDBEngines: TDBLookupComboBox
         Left = 216
-        Height = 36
+        Height = 39
         Top = 48
         Width = 192
         DataField = 'DBEngine'
@@ -596,8 +596,8 @@ object FrmPreferences: TFrmPreferences
     end
     object TabPrinting: TTabSheet
       Caption = 'Printing'
-      ClientHeight = 416
-      ClientWidth = 681
+      ClientHeight = 420
+      ClientWidth = 685
       OnShow = TabPrintingShow
       object GroupBox1: TGroupBox
         Left = 24
@@ -605,7 +605,7 @@ object FrmPreferences: TFrmPreferences
         Top = 24
         Width = 624
         Caption = 'Report'
-        ClientHeight = 162
+        ClientHeight = 168
         ClientWidth = 620
         TabOrder = 0
         object ChkReportPreview: TCheckBox
@@ -648,21 +648,21 @@ object FrmPreferences: TFrmPreferences
     end
     object TabAccessControl: TTabSheet
       Caption = 'Access Control'
-      ClientHeight = 416
-      ClientWidth = 681
+      ClientHeight = 420
+      ClientWidth = 685
       object GrpIDEmployee1: TGroupBox
         Left = 40
         Height = 176
         Top = 32
         Width = 424
         Caption = 'Access Control'
-        ClientHeight = 143
+        ClientHeight = 149
         ClientWidth = 420
         TabOrder = 0
         object BtnEditUsers: TSpeedButton
           Left = 16
           Height = 43
-          Top = 72
+          Top = 80
           Width = 192
           Caption = 'Edit users...'
           OnClick = BtnEditUsersClick
@@ -670,24 +670,24 @@ object FrmPreferences: TFrmPreferences
         object BtnPermissions: TSpeedButton
           Left = 240
           Height = 43
-          Top = 72
+          Top = 80
           Width = 152
           Caption = 'Permissions...'
           OnClick = BtnPermissionsClick
         end
-      end
-      object DBAccessControlEnabled: TDBCheckBox
-        Left = 56
-        Height = 47
-        Top = 72
-        Width = 208
-        Caption = 'Enabled'
-        DataField = 'AccessControl'
-        DataSource = DataMod.DsoConfig
-        OnChange = DBAccessControlEnabledChange
-        TabOrder = 1
-        ValueChecked = '1'
-        ValueUnchecked = '0'
+        object DBAccessControlEnabled: TDBCheckBox
+          Left = 16
+          Height = 47
+          Top = 16
+          Width = 208
+          Caption = 'Enabled'
+          DataField = 'AccessControl'
+          DataSource = DataMod.DsoConfig
+          OnChange = DBAccessControlEnabledChange
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
       end
     end
   end
@@ -711,8 +711,8 @@ object FrmPreferences: TFrmPreferences
       Align = alClient
       BevelOuter = bvNone
       BorderStyle = bsSingle
-      ClientHeight = 62
-      ClientWidth = 861
+      ClientHeight = 64
+      ClientWidth = 863
       inherited BtnClose: TBitBtn
         Left = 360
         Top = 8

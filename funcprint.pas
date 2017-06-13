@@ -39,7 +39,7 @@ uses FormMain;
 
 procedure Print(TemplateFilename: String; Report: TfrReport; PrintCompanyName:Boolean; Var_1: Boolean=False; Var1: Integer=0; ValueVar1: String='';Var_2: Boolean=False; Var2:Integer=0;ValueVar2:String='');
 begin
-  Report.LoadFromFile(PathApp+'templates\'+TemplateFilename);
+  Report.LoadFromFile(PathApp+'templates'+PATH_SEPARATOR+TemplateFilename);
 	if PrintCompanyName= True then TfrMemoView(Report.FindObject('MmoCompanyName')).Memo.Strings[0]:= CompanyName;
   TfrMemoView(Report.FindObject('MmoTitleDataOfEmployee')).Memo.Strings[0]:= lg_MmoTitleDataOfEmployee;
   TfrMemoView(Report.FindObject('MmoTitleAddress')).Memo.Strings[0]:= lg_MmoTitleAddress;

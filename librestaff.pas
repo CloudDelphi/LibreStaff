@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
   FormLogin, FormPrgBar, FormMain, FuncData, SysUtils, INIfiles,
-  Globals, FormPreferences, Dialogs;
+  Globals, FormPreferences, Dialogs, StrUtils;
 
 {$R *.res}
 
@@ -27,17 +27,6 @@ procedure CreateMainForm;
 	Application.Run;
   end;
 
-procedure ConfigureDBEngine;
-begin
-  FrmPreferences:= TFrmPreferences.Create(nil);
-  FrmPreferences.LstViewPreferences.Visible:= False;
-  FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
-  FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
-  FrmPreferences.PagPreferences.TabIndex:= 2;
-  FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
-  FrmPreferences.ShowModal;
-end;
-
 begin
   RequireDerivedFormResource:= True;
   Application.Title:= 'LibreStaff';
@@ -51,17 +40,17 @@ begin
   //Set some paths
   if not FileExists(PathApp+'config.ini') then //First time or 'config.ini' deleted
     begin
-		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data\'));
+		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data'+PATH_SEPARATOR));
     INIFile.WriteString('Database', 'DBEngine', '0');
     INIFile.WriteString('SQLite', 'AtomicCommmit', '1');
-    ConfigureDBEngine;
+    FuncData.ConfigureDBEngine;
     end;
   DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
   case (DBEngine.ID) of
   	0:	begin
         DBEngine.DBType:= dbtSQLite;
         DBEngine.Connection:= DataMod.SQLiteConnection;
-			  DBEngine.DatabasePath:= INIFile.ReadString('Database', 'Path', PathApp+'data\');
+			  DBEngine.DatabasePath:= ReplaceStr(INIFile.ReadString('Database', 'Path', PathApp+'data'+PATH_SEPARATOR),'''','');
 			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME+'.db';
         DBEngine.HostName:= '';
         DataMod.Transaction.DataBase:= DataMod.SQLiteConnection;

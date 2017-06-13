@@ -56,6 +56,7 @@ uses
 	FormMain, Crypt, DataModule, FormInputBox;
 
 var
+  Salt: String;
   WhatActionIs: TAction;
 
 procedure TFrmEditAddUser.BtnSaveClick(Sender: TObject);
@@ -121,7 +122,7 @@ end;
 
 procedure TFrmEditAddUser.BtnChangePasswordUserClick(Sender: TObject);
 var
-  FieldValue, Salt: String;
+  FieldValue: String;
 begin
 	if FrmInputBox.CustomInputBox(lg_Edit_IptBox_Caption_Passwords, lg_Edit_IptBox_Prompt_Passwords, '', PASSWORD_LENGTH, FieldValue)= TRUE then
     	begin
@@ -137,10 +138,9 @@ begin
 end;
 
 function TFrmEditAddUser.EditAddUser(WhatAction: TAction; TableEdit: TTable): Boolean;
-var
-  Salt: String;
 begin
-  with TFrmEditAddUser.Create(Application) do
+	FrmEditAddUser:= TFrmEditAddUser.Create(Application);
+  with FrmEditAddUser do
   try
     EdiName.MaxLength:= USERNAME_LENGTH;
     EdiPassword.MaxLength:= 255;
