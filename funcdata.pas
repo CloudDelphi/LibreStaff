@@ -78,6 +78,7 @@ var
 
 procedure AssignDatabase;
 function CheckQueryEmpty(Query: TSQLQuery): Boolean;
+procedure ConfigureDBEngine;
 procedure ConnectDatabase(Databasename: String);
 procedure DefineFields;
 procedure DefineTables;
@@ -104,6 +105,19 @@ resourcestring
   Error_DatabaseName_Blank= 'Database name is blank!';
 
 implementation
+
+uses FormPreferences;
+
+procedure ConfigureDBEngine;
+begin
+  FrmPreferences:= TFrmPreferences.Create(nil);
+  FrmPreferences.LstViewPreferences.Visible:= False;
+  FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
+  FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
+  FrmPreferences.PagPreferences.TabIndex:= 2;
+  FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
+  FrmPreferences.ShowModal;
+end;
 
 procedure AssignDatabase;
 var
@@ -142,9 +156,9 @@ begin
     dbtSQLite: newDatabase:= not FileExists(Databasename);
   end; //case
   try
-	  DBEngine.Connection.Open;
+  	DBEngine.Connection.Open;
   except
-	  on E: ESQLDatabaseError do
+  	on E: ESQLDatabaseError do
     	begin
       i:= E.ErrorCode;
       case E.ErrorCode of
@@ -152,6 +166,7 @@ begin
         1049:	Errormsg:= lg_DatabaseNotExist+': '+E.Message;
         end; //case
       ShowMessage(ErrorMsg);
+      ConfigureDBEngine;
    	  Application.Terminate;
       Exit;
       end;

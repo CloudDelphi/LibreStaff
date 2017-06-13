@@ -7,7 +7,7 @@ object FrmActivationEmployee: TFrmActivationEmployee
   ClientHeight = 320
   ClientWidth = 346
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.4.0'
   inline FraAcceptCancel1: TFraAcceptCancel
     Top = 244
     Width = 346
@@ -40,9 +40,7 @@ object FrmActivationEmployee: TFrmActivationEmployee
       Width = 312
       AutoSize = False
       Color = 16052701
-      Font.Height = 29
       ParentColor = False
-      ParentFont = False
       Transparent = False
       WordWrap = True
       OptimalFill = True
@@ -53,7 +51,7 @@ object FrmActivationEmployee: TFrmActivationEmployee
       Top = 80
       Width = 312
       Caption = 'Contract'
-      ClientHeight = 121
+      ClientHeight = 124
       ClientWidth = 308
       TabOrder = 0
       object DatDateInit: TDateTimePicker
@@ -86,9 +84,7 @@ object FrmActivationEmployee: TFrmActivationEmployee
         Width = 112
         AutoSize = False
         Caption = 'Date init:'
-        Font.Height = 29
         ParentColor = False
-        ParentFont = False
       end
       object LblDateEnd: TLabel
         Left = 8
@@ -97,9 +93,7 @@ object FrmActivationEmployee: TFrmActivationEmployee
         Width = 112
         AutoSize = False
         Caption = 'Date end:'
-        Font.Height = 29
         ParentColor = False
-        ParentFont = False
       end
       object DatDateEnd: TDateTimePicker
         Left = 128

@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 447
+  Left = 499
   Height = 713
-  Top = 288
+  Top = 126
   Width = 1131
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -10,7 +10,7 @@ object FrmMain: TFrmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.6.4.0'
   WindowState = wsMaximized
   object PanMain: TPanel
     Left = 0
@@ -363,7 +363,7 @@ object FrmMain: TFrmMain
         Options = [nboMultiLine]
         object TabAddress: TTabSheet
           Caption = 'Address/Contact'
-          ClientHeight = 315
+          ClientHeight = 318
           ClientWidth = 954
           ImageIndex = 2
           object GrpAddressEmployee: TGroupBox
@@ -372,7 +372,7 @@ object FrmMain: TFrmMain
             Top = 16
             Width = 808
             Caption = 'Address'
-            ClientHeight = 219
+            ClientHeight = 222
             ClientWidth = 804
             TabOrder = 0
             object MmoAddress: TDBMemo
@@ -397,7 +397,7 @@ object FrmMain: TFrmMain
             end
             object DBENameEmployee5: TDBEdit
               Left = 120
-              Height = 36
+              Height = 33
               Top = 160
               Width = 154
               DataField = 'ZIPCode_Employee'
@@ -417,7 +417,7 @@ object FrmMain: TFrmMain
             end
             object DBECity: TDBEdit
               Left = 544
-              Height = 36
+              Height = 33
               Top = 24
               Width = 176
               DataField = 'City_Employee'
@@ -446,13 +446,13 @@ object FrmMain: TFrmMain
             end
             object DBCboState: TDBComboBox
               Left = 544
-              Height = 36
+              Height = 33
               Top = 83
               Width = 176
               AutoComplete = True
               DataField = 'State_Employee'
               DataSource = DataMod.DsoEmployees
-              ItemHeight = 28
+              ItemHeight = 25
               MaxLength = 0
               TabOrder = 3
             end
@@ -472,12 +472,12 @@ object FrmMain: TFrmMain
             Top = 272
             Width = 808
             Caption = 'Contact'
-            ClientHeight = 131
+            ClientHeight = 134
             ClientWidth = 804
             TabOrder = 1
             object DBEPhone: TDBEdit
               Left = 112
-              Height = 36
+              Height = 33
               Top = 16
               Width = 154
               DataField = 'Phone_Employee'
@@ -497,7 +497,7 @@ object FrmMain: TFrmMain
             end
             object DBECell: TDBEdit
               Left = 424
-              Height = 36
+              Height = 33
               Top = 16
               Width = 168
               DataField = 'Cell_Employee'
@@ -522,13 +522,11 @@ object FrmMain: TFrmMain
               Width = 88
               AutoSize = False
               Caption = 'E-Mail:'
-              Font.Height = 29
               ParentColor = False
-              ParentFont = False
             end
             object DBEEmail: TDBEdit
               Left = 112
-              Height = 36
+              Height = 33
               Top = 80
               Width = 298
               DataField = 'EMail_Employee'
@@ -541,7 +539,7 @@ object FrmMain: TFrmMain
         end
         object TabPersonalData: TTabSheet
           Caption = 'Personal Data'
-          ClientHeight = 314
+          ClientHeight = 318
           ClientWidth = 954
           ImageIndex = 1
           object GrpMisc: TGroupBox
@@ -550,7 +548,7 @@ object FrmMain: TFrmMain
             Top = 24
             Width = 370
             Caption = 'Misc'
-            ClientHeight = 71
+            ClientHeight = 74
             ClientWidth = 366
             TabOrder = 0
             object DBDatDateBirth: TDBDateTimePicker
@@ -601,8 +599,8 @@ object FrmMain: TFrmMain
             )
             TabOrder = 1
             Values.Strings = (
-              '1'
-              '0'
+              'True'
+              'False'
             )
           end
           object DBRadMaritalStatus: TDBRadioGroup
@@ -619,8 +617,8 @@ object FrmMain: TFrmMain
             )
             TabOrder = 2
             Values.Strings = (
-              '1'
-              '0'
+              'True'
+              'False'
             )
           end
         end
@@ -635,7 +633,7 @@ object FrmMain: TFrmMain
             Top = 24
             Width = 624
             Caption = 'Employment Contract'
-            ClientHeight = 191
+            ClientHeight = 194
             ClientWidth = 620
             TabOrder = 0
             object DBDatInitContract: TDBDateTimePicker
@@ -742,7 +740,7 @@ object FrmMain: TFrmMain
             end
             object DBLkCboWorkplace: TDBLookupComboBox
               Left = 168
-              Height = 36
+              Height = 33
               Top = 136
               Width = 264
               DataField = 'Workplace_ID'
@@ -756,7 +754,7 @@ object FrmMain: TFrmMain
             end
             object DBLkCboTypeContract: TDBLookupComboBox
               Left = 168
-              Height = 36
+              Height = 33
               Top = 80
               Width = 264
               DataField = 'TypeContract_ID'
@@ -944,10 +942,10 @@ object FrmMain: TFrmMain
         end
         object CboFilter: TComboBox
           Left = 160
-          Height = 36
+          Height = 33
           Top = 40
           Width = 120
-          ItemHeight = 28
+          ItemHeight = 25
           Items.Strings = (
             ''
           )
@@ -966,9 +964,9 @@ object FrmMain: TFrmMain
         end
         object Label1: TLabel
           Left = 104
-          Height = 28
+          Height = 25
           Top = 42
-          Width = 48
+          Width = 46
           Caption = 'Filter:'
           Color = 14483385
           ParentColor = False
@@ -995,7 +993,7 @@ object FrmMain: TFrmMain
         TabOrder = 2
         object DBENameEmployee: TDBEdit
           Left = 216
-          Height = 36
+          Height = 33
           Top = 32
           Width = 162
           DataField = 'Name_Employee'
@@ -1043,7 +1041,7 @@ object FrmMain: TFrmMain
         end
         object DBESurname1: TDBEdit
           Left = 520
-          Height = 36
+          Height = 33
           Top = 32
           Width = 194
           DataField = 'Surname1_Employee'
@@ -1064,7 +1062,7 @@ object FrmMain: TFrmMain
         end
         object DBENameEmployee2: TDBEdit
           Left = 869
-          Height = 36
+          Height = 33
           Top = 32
           Width = 194
           DataField = 'Surname2_Employee'
@@ -1085,7 +1083,7 @@ object FrmMain: TFrmMain
         end
         object DBENameEmployee3: TDBEdit
           Left = 520
-          Height = 36
+          Height = 33
           Top = 78
           Width = 194
           DataField = 'IDCard_Employee'
@@ -1106,7 +1104,7 @@ object FrmMain: TFrmMain
         end
         object DBESSN: TDBEdit
           Left = 869
-          Height = 36
+          Height = 33
           Top = 75
           Width = 194
           DataField = 'SSN_Employee'
@@ -1127,7 +1125,7 @@ object FrmMain: TFrmMain
         end
         object DBEIDEmployee: TDBEdit
           Left = 216
-          Height = 36
+          Height = 33
           Top = 78
           Width = 162
           DataField = 'IDN_Employee'
@@ -1176,8 +1174,8 @@ object FrmMain: TFrmMain
         Visible = False
         object Sidebar: TPageControl
           Left = 0
-          Height = 328
-          Top = 28
+          Height = 331
+          Top = 25
           Width = 157
           ActivePage = TabMnuContractsLog
           Align = alClient
@@ -1185,7 +1183,7 @@ object FrmMain: TFrmMain
           TabIndex = 0
           TabOrder = 0
           object TabMnuContractsLog: TTabSheet
-            ClientHeight = 320
+            ClientHeight = 323
             ClientWidth = 149
             OnContextPopup = TabMnuContractsLogContextPopup
             object BtnDelContractLog: TBitBtn
@@ -1201,7 +1199,7 @@ object FrmMain: TFrmMain
         end
         object LblSidebar: TLabel
           Left = 0
-          Height = 28
+          Height = 25
           Top = 0
           Width = 157
           Align = alTop

@@ -605,6 +605,7 @@ begin
 	inherited; //<-- to execute the default onclick event
 	UpdateNavRec;
 end;
+
 procedure TFrmMain.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   RecNo: Integer;
