@@ -623,6 +623,14 @@ msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
 msgstr ""
 
+#: tform1.bitbtn1.caption
+msgid "BitBtn1"
+msgstr ""
+
+#: tform1.button1.caption
+msgid "Button1"
+msgstr ""
+
 #: tform1.caption
 msgid "Form1"
 msgstr ""
