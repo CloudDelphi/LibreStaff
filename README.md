@@ -30,7 +30,8 @@ How to Compile
 4) Install the "uniqueinstance" component included.<br />
 5) Delete data.db file if exists.<br />
 6) Open the project (librestaff.lpi).<br />
-7) Goto to "Menu" -> Compile.<br />
+7) Go to "Project" -> "Options" and select the build mode: Win32 or Linux.
+8) Go to "Menu" -> Compile.<br />
 
 Superuser
 ---------
