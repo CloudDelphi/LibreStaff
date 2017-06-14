@@ -37,7 +37,7 @@ type TUser= class(TObject)
   end;
 
 var
-	PathApp, SQLiteLibraryName: String;
+	PathApp, PathIni, SQLiteLibraryName: String;
   INIFile: TINIFile;
   Lang, FallBacklang: String;
   AccessControl, RememberUsername: Boolean;

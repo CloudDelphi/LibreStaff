@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1488055450"/>
+  <Params Value=" -MDelphi -Sah -Cg -O1 -g -gl -l -vewnhibq -Fu/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/dcpcrypt-2.0.4.1/Ciphers -Fu/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/dcpcrypt-2.0.4.1/Hashes -Fu/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/dcpcrypt-2.0.4.1/lib/x86_64-linux -Fu/home/runs/.lazarus/lib/units/x86_64-linux -Fu/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/dcpcrypt-2.0.4.1/ -FU/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/dcpcrypt-2.0.4.1/lib/x86_64-linux/ -Xd LCLWidgetType:=qt dcpcrypt.pas"/>
+</CONFIG>

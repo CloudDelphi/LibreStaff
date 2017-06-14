@@ -34,11 +34,17 @@ begin
   Application.CreateForm(TDataMod, DataMod);
   PathApp:= ExtractFilePath(Paramstr(0));
   //INI File Section:
-  INIFile:= TINIFile.Create(PathApp+'config.ini', True);
+  PathIni:=
+  	{$ifdef Win32}
+    	PathApp+'config.ini';
+	  {$else}
+			GetUserDir+'.config/librestaff/config.ini';
+	  {$endif}
+  INIFile:= TINIFile.Create(PathIni, True);
   //Connect & Load to database
   DBEngine:= TDBEngine.Create;
   //Set some paths
-  if not FileExists(PathApp+'config.ini') then //First time or 'config.ini' deleted
+  if not FileExists(PathIni) then //First time or 'config.ini' deleted
     begin
 		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data'+PATH_SEPARATOR));
     INIFile.WriteString('Database', 'DBEngine', '0');

@@ -125,11 +125,13 @@
         <Item2 Mode="Linux-Debug" Option="309854063960"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="78">
+    <Units Count="79">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="46" Y="12"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="25"/>
+        <CursorPos X="3" Y="42"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -141,7 +143,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="318"/>
+        <TopLine Value="202"/>
         <CursorPos X="32" Y="318"/>
         <UsageCount Value="200"/>
       </Unit1>
@@ -254,12 +256,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="233"/>
         <CursorPos X="3" Y="245"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -353,11 +353,10 @@
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="44"/>
-        <CursorPos X="21" Y="50"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="40"/>
+        <CursorPos Y="54"/>
         <UsageCount Value="170"/>
-        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -387,13 +386,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPermissions"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="144"/>
         <CursorPos X="79" Y="158"/>
         <UsageCount Value="129"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -414,12 +410,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="118"/>
         <CursorPos X="33" Y="136"/>
         <UsageCount Value="119"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit25>
       <Unit26>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -797,8 +791,15 @@
         <CursorPos X="3" Y="31"/>
         <UsageCount Value="10"/>
       </Unit77>
+      <Unit78>
+        <Filename Value="..\..\..\usr\share\fpcsrc\3.0.2\rtl\objpas\sysutils\osutilsh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="10" Y="44"/>
+        <UsageCount Value="10"/>
+      </Unit78>
     </Units>
-    <JumpHistory Count="13" HistoryIndex="12">
+    <JumpHistory Count="20" HistoryIndex="19">
       <Position1>
         <Filename Value="librestaff.pas"/>
         <Caret Line="56" TopLine="41"/>
@@ -832,25 +833,53 @@
         <Caret Line="53" Column="109" TopLine="30"/>
       </Position8>
       <Position9>
-        <Filename Value="formdsoeditor.pas"/>
-        <Caret Line="9" Column="53" TopLine="9"/>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="48" Column="28" TopLine="25"/>
       </Position9>
       <Position10>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="110" Column="16" TopLine="99"/>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="31" Column="26" TopLine="25"/>
       </Position10>
       <Position11>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="144" Column="22" TopLine="136"/>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="41" Column="13" TopLine="35"/>
       </Position11>
       <Position12>
-        <Filename Value="formeditadduser.pas"/>
-        <Caret Line="143" Column="20" TopLine="130"/>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="44" Column="3" TopLine="31"/>
       </Position12>
       <Position13>
-        <Filename Value="globals.pas"/>
-        <Caret Line="55" Column="5" TopLine="44"/>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="41" Column="3" TopLine="34"/>
       </Position13>
+      <Position14>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="44" Column="3" TopLine="31"/>
+      </Position14>
+      <Position15>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="37" Column="29" TopLine="31"/>
+      </Position15>
+      <Position16>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="44" Column="3" TopLine="31"/>
+      </Position16>
+      <Position17>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="42" Column="11" TopLine="31"/>
+      </Position17>
+      <Position18>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="41" TopLine="31"/>
+      </Position18>
+      <Position19>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="37" TopLine="31"/>
+      </Position19>
+      <Position20>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="41" TopLine="31"/>
+      </Position20>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

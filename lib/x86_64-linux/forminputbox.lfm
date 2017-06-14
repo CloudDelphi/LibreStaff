@@ -1,0 +1,60 @@
+object FrmInputBox: TFrmInputBox
+  Left = 575
+  Height = 189
+  Top = 325
+  Width = 355
+  BorderStyle = bsDialog
+  Caption = 'Input'
+  ClientHeight = 189
+  ClientWidth = 355
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object LblPrompt: TLabel
+    Left = 8
+    Height = 28
+    Top = 32
+    Width = 336
+    AutoSize = False
+    Caption = 'Prompt:'
+    ParentColor = False
+  end
+  object EdiInput: TEdit
+    Left = 8
+    Height = 36
+    Top = 72
+    Width = 336
+    OnKeyPress = EdiInputKeyPress
+    TabOrder = 0
+    Text = 'EdiInput'
+  end
+  inline FraAcceptCancel1: TFraAcceptCancel
+    Top = 113
+    Width = 355
+    Align = alBottom
+    ClientWidth = 355
+    TabOrder = 1
+    inherited PanBottom: TPanel
+      Width = 355
+      ClientWidth = 355
+      inherited BtnAccept: TBitBtn
+        OnClick = BtnAcceptClick
+      end
+      inherited BtnCancel: TBitBtn
+        OnClick = BtnCancelClick
+      end
+    end
+  end
+  object LblCaption: TLabel
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 355
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Caption'
+    Color = 14811135
+    ParentColor = False
+    Transparent = False
+  end
+end

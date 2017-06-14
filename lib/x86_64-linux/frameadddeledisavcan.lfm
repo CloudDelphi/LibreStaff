@@ -1,0 +1,92 @@
+object FraAddDelEdiSavCan: TFraAddDelEdiSavCan
+  Left = 0
+  Height = 106
+  Top = 0
+  Width = 631
+  ClientHeight = 106
+  ClientWidth = 631
+  LCLVersion = '1.6.0.4'
+  TabOrder = 0
+  DesignLeft = 613
+  DesignTop = 443
+  object PanBottom: TPanel
+    Left = 0
+    Height = 106
+    Top = 0
+    Width = 631
+    Align = alClient
+    ClientHeight = 106
+    ClientWidth = 631
+    TabOrder = 0
+    object BtnSave: TBitBtn
+      Left = 312
+      Height = 41
+      Top = 56
+      Width = 176
+      Caption = 'Save and Close'
+      TabOrder = 0
+    end
+    object BtnCancel: TBitBtn
+      Left = 496
+      Height = 41
+      Top = 56
+      Width = 120
+      Caption = 'Cancel'
+      TabOrder = 1
+    end
+    object BtnAdd: TBitBtn
+      Left = 8
+      Height = 41
+      Top = 55
+      Width = 91
+      Caption = 'Add'
+      TabOrder = 2
+    end
+    object BtnDelete: TBitBtn
+      Left = 104
+      Height = 41
+      Top = 55
+      Width = 104
+      Caption = 'Delete'
+      TabOrder = 3
+    end
+    object BtnEdit: TBitBtn
+      Left = 216
+      Height = 40
+      Top = 56
+      Width = 88
+      Caption = 'Edit'
+      TabOrder = 4
+    end
+    object PanNavRec: TPanel
+      Left = 256
+      Height = 29
+      Top = 10
+      Width = 112
+      BevelOuter = bvNone
+      BorderStyle = bsSingle
+      ClientHeight = 29
+      ClientWidth = 112
+      TabOrder = 5
+      object LblNavRec: TLabel
+        Left = 0
+        Height = 25
+        Top = 0
+        Width = 108
+        Align = alClient
+        Alignment = taCenter
+        AutoSize = False
+        Color = 12582911
+        Layout = tlCenter
+        ParentColor = False
+        Transparent = False
+      end
+    end
+    object BtnSortList: TSpeedButton
+      Left = 216
+      Height = 34
+      Top = 8
+      Width = 34
+    end
+  end
+end

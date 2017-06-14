@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":257774943,"name":"formpicemployee.opendlg_title","sourcebytes":[83,101,108,101,99,116,32,97,32,112,104,111,116,111],"value":"Select a photo"},
+{"hash":152870195,"name":"formpicemployee.opendlg_filter","sourcebytes":[65,108,108,32,105,109,97,103,101,32,102,105,108,101,115],"value":"All image files"},
+{"hash":68434830,"name":"formpicemployee.opendlg_error_msg_01","sourcebytes":[80,104,111,116,111,32,110,111,116,32,108,111,97,100,101,100,46],"value":"Photo not loaded."},
+{"hash":32105124,"name":"formpicemployee.opendlg_error_msg_02","sourcebytes":[80,111,115,115,105,98,108,101,32,99,97,117,115,101,58,32,80,104,111,116,111,32,102,111,114,109,97,116,32,110,111,116,32,118,97,108,105,100],"value":"Possible cause: Photo format not valid"},
+{"hash":227435470,"name":"formpicemployee.opendlg_error_msg_03","sourcebytes":[80,108,101,97,115,101,44,32,99,104,101,99,107,32,105,102,32,112,104,111,116,111,32,102,111,114,109,97,116,32,105,115,32,106,112,103,46],"value":"Please, check if photo format is jpg."},
+{"hash":263301599,"name":"formpicemployee.savedlg_title","sourcebytes":[83,97,118,101,32,116,104,101,32,112,104,111,116,111],"value":"Save the photo"},
+{"hash":152870195,"name":"formpicemployee.savedlg_filter","sourcebytes":[65,108,108,32,105,109,97,103,101,32,102,105,108,101,115],"value":"All image files"}
+]}
