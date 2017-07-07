@@ -38,3 +38,12 @@ Superuser
 The admin account created by default for access control (if enabled) is the following:<br />
 user: SUPERUSER<br />
 password: 1234
+
+How to Create Install Package
+--------------------------------------
+*Windows*
+Install Inno Setup (it's a free installer for Windows programs available in the Web) and then open "innosetup_installscript.iss" file.
+
+*Linux*
+Execute in terminal the "create_deb_package_script" script.
+
