@@ -16,6 +16,7 @@ uses
 var
   LoginOK: Integer;
   Login: TFrmLogin;
+  _DatabasePath: String;
 
 procedure CreateMainForm;
 	begin
@@ -36,9 +37,9 @@ begin
   //INI File Section:
   PathIni:=
   	{$ifdef Win32}
-    	PathApp+'config.ini';
+    	PathApp+'config.ini'; //Windows
 	  {$else}
-			GetUserDir+'.config/librestaff/config.ini';
+			GetUserDir+'.config/librestaff/config.ini'; //Linux
 	  {$endif}
   INIFile:= TINIFile.Create(PathIni, True);
   //Connect & Load to database
@@ -46,7 +47,13 @@ begin
   //Set some paths
   if not FileExists(PathIni) then //First time or 'config.ini' deleted
     begin
-		INIFile.WriteString('Database', 'Path', QuotedStr(PathApp+'data'+PATH_SEPARATOR));
+    _DatabasePath:=
+  		{$ifdef Win32}
+		    PathApp+'data'+PATH_SEPARATOR;  //Windows
+		  {$else}
+		    '/opt/librestaff/data'+PATH_SEPARATOR;  //Linux
+	  	{$endif}
+   	INIFile.WriteString('Database', 'Path', QuotedStr(_DatabasePath));  //Windows
     INIFile.WriteString('Database', 'DBEngine', '0');
     INIFile.WriteString('SQLite', 'AtomicCommmit', '1');
     FuncData.ConfigureDBEngine;

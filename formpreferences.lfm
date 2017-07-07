@@ -1,7 +1,7 @@
 object FrmPreferences: TFrmPreferences
-  Left = 606
+  Left = 872
   Height = 490
-  Top = 266
+  Top = 241
   Width = 865
   BorderIcons = [biSystemMenu]
   Caption = 'Preferences'
@@ -21,6 +21,7 @@ object FrmPreferences: TFrmPreferences
     BorderSpacing.CellAlignVertical = ccaCenter
     BorderStyle = bsNone
     Columns = <>
+    IconOptions.WrapText = False
     Items.LazData = {
       9B0000000500000000000000FFFFFFFFFFFFFFFF0000000009000000456D706C
       6F7965657301000000FFFFFFFFFFFFFFFF00000000080000004C616E67756167
