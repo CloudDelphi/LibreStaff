@@ -1,5 +1,5 @@
 Package: librestaff
-Version: 0.0.15
+Version: librestaff_0.0-15
 Section: base
 Priority: optional
 Architecture: i386
