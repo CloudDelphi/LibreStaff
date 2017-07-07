@@ -41,9 +41,9 @@ password: 1234
 
 How to Create Install Package
 --------------------------------------
-*Windows*
+*Windows*<br />
 Install Inno Setup (it's a free installer for Windows programs available in the Web) and then open "innosetup_installscript.iss" file.
-
-*Linux*
-Execute in terminal the "create_deb_package_script" script.
+<br /><br />
+*Linux*<br />
+Execute in terminal the "create_deb_package_script" script.<br />
 
