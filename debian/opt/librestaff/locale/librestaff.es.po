@@ -1,0 +1,1497 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"X-Generator: Poedit 1.8.7\n"
+
+#: formactivationemployee.lg_captiongrpcontract_activate
+msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
+msgid "New contract of the employee:"
+msgstr "Nuevo contrato del empleado:"
+
+#: formactivationemployee.lg_captiongrpcontract_inactivate
+msgctxt "formactivationemployee.lg_captiongrpcontract_inactivate"
+msgid "Contract to log:"
+msgstr "Contrato a almacenar:"
+
+#: formactivationemployee.lg_title_activate
+msgctxt "formactivationemployee.lg_title_activate"
+msgid "Do you want to activate"
+msgstr "¿Quieres dar de alta"
+
+#: formactivationemployee.lg_title_inactivate
+msgctxt "formactivationemployee.lg_title_inactivate"
+msgid "Do you want to inactivate"
+msgstr "¿Quieres dar de baja"
+
+#: formadduser.blank_name
+msgctxt "formadduser.blank_name"
+msgid "The name cannot be blank"
+msgstr "El nombre no puede estar en blanco."
+
+#: formadduser.blank_password
+msgctxt "formadduser.blank_password"
+msgid "The password cannot be blank"
+msgstr "La contraseña no puede estar en blanco."
+
+#: formadduser.blank_usergroup
+msgctxt "formadduser.blank_usergroup"
+msgid "The group of the user cannot be blank"
+msgstr "El grupo de usuario no puede estar en blanco."
+
+#: formadduser.user_exists
+msgctxt "formadduser.user_exists"
+msgid "This user already exists!"
+msgstr "¡Ese usuario ya existe!"
+
+#: formdsoeditor.add_iptbox_caption_passwords
+msgid "Enter a password for this user"
+msgstr "Introduce una contraseña para este usuario"
+
+#: formdsoeditor.add_iptbox_caption_typecontracts
+msgid "Add type of contract"
+msgstr "Añadir tipo de contrato"
+
+#: formdsoeditor.add_iptbox_caption_users
+msgid "Add user"
+msgstr "Añadir usuario"
+
+#: formdsoeditor.add_iptbox_caption_workplaces
+msgid "Add workplace"
+msgstr "Aadir lugar de trabajo"
+
+#: formdsoeditor.add_iptbox_prompt_passwords
+msgctxt "formdsoeditor.add_iptbox_prompt_passwords"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: formdsoeditor.add_iptbox_prompt_typecontracts
+msgctxt "formdsoeditor.add_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.add_iptbox_prompt_users
+msgctxt "formdsoeditor.add_iptbox_prompt_users"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.add_iptbox_prompt_workplaces
+msgctxt "formdsoeditor.add_iptbox_prompt_workplaces"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.blank_value
+msgctxt "formdsoeditor.blank_value"
+msgid "Blank not allowed!"
+msgstr "¡No se permite en blanco!"
+
+#: formdsoeditor.col_title_password
+msgctxt "formdsoeditor.col_title_password"
+msgid "Password (encrypted)"
+msgstr "Contraseña (encriptada)"
+
+#: formdsoeditor.col_title_typecontracts
+msgctxt "formdsoeditor.col_title_typecontracts"
+msgid "Name"
+msgstr "Nombre"
+
+#: formdsoeditor.col_title_user
+msgctxt "formdsoeditor.col_title_user"
+msgid "Name"
+msgstr "Nombre"
+
+#: formdsoeditor.col_title_usergroup
+msgid "User Group"
+msgstr "Grupo de usuario"
+
+#: formdsoeditor.col_title_workplaces
+msgctxt "formdsoeditor.col_title_workplaces"
+msgid "Name"
+msgstr "Nombre"
+
+#: formdsoeditor.edit_iptbox_caption_passwords
+msgctxt "formdsoeditor.edit_iptbox_caption_passwords"
+msgid "Change the password"
+msgstr "Cambia la contraseña"
+
+#: formdsoeditor.edit_iptbox_caption_typecontracts
+msgid "Change the name of contract"
+msgstr "Cambiar el nombre del contrato"
+
+#: formdsoeditor.edit_iptbox_caption_users
+msgid "Change the name of the user"
+msgstr "Cambia el nombre del usuario"
+
+#: formdsoeditor.edit_iptbox_caption_workplaces
+msgid "Change the name of workplace"
+msgstr "Cambiar el nombre del lugar de trabajo"
+
+#: formdsoeditor.edit_iptbox_prompt_passwords
+msgctxt "formdsoeditor.edit_iptbox_prompt_passwords"
+msgid "New Password:"
+msgstr "Contraseña nueva:"
+
+#: formdsoeditor.edit_iptbox_prompt_typecontracts
+msgctxt "formdsoeditor.edit_iptbox_prompt_typecontracts"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.edit_iptbox_prompt_users
+msgctxt "formdsoeditor.edit_iptbox_prompt_users"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.edit_iptbox_prompt_workplaces
+msgctxt "formdsoeditor.edit_iptbox_prompt_workplaces"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formdsoeditor.form_caption_typecontracts
+msgctxt "formdsoeditor.form_caption_typecontracts"
+msgid "Type of Contract"
+msgstr "Tipo de contrato"
+
+#: formdsoeditor.form_caption_users
+msgid "User"
+msgstr "Usuario"
+
+#: formdsoeditor.form_caption_workplaces
+msgctxt "formdsoeditor.form_caption_workplaces"
+msgid "Workplace"
+msgstr "Lugar de trabajo"
+
+#: formdsoeditor.no_delete_superuser
+msgctxt "formdsoeditor.no_delete_superuser"
+msgid "This user cannot be deleted!"
+msgstr "¡Este usuario no se puede eliminar!"
+
+#: formdsoeditor.no_edit_superuser
+msgctxt "formdsoeditor.no_edit_superuser"
+msgid "The name of this user cannot be edited!"
+msgstr "¡No se puede editar el nombre de este usuario!"
+
+#: formdsoeditor.of_lblnavrec
+msgctxt "formdsoeditor.of_lblnavrec"
+msgid "of"
+msgstr "de"
+
+#: formeditadduser.blank_name
+msgctxt "formeditadduser.blank_name"
+msgid "The name cannot be blank"
+msgstr "El nombre no puede estar en blanco."
+
+#: formeditadduser.blank_password
+msgctxt "formeditadduser.blank_password"
+msgid "The password cannot be blank"
+msgstr "La contraseña no puede estar en blanco."
+
+#: formeditadduser.blank_usergroup
+msgctxt "formeditadduser.blank_usergroup"
+msgid "The group of the user cannot be blank"
+msgstr "El grupo de usuario no puede estar en blanco."
+
+#: formeditadduser.lg_edit_iptbox_caption_passwords
+msgctxt "formeditadduser.lg_edit_iptbox_caption_passwords"
+msgid "Change the password"
+msgstr "Cambia la contraseña"
+
+#: formeditadduser.lg_edit_iptbox_prompt_passwords
+msgctxt "formeditadduser.lg_edit_iptbox_prompt_passwords"
+msgid "New Password:"
+msgstr "Contraseña nueva:"
+
+#: formeditadduser.lg_frmaddcaption
+msgctxt "formeditadduser.lg_frmaddcaption"
+msgid "Add User"
+msgstr "Añadir usuario"
+
+#: formeditadduser.lg_frmeditcaption
+msgid "Edit User"
+msgstr "Editar usuario"
+
+#: formeditadduser.user_exists
+msgctxt "formeditadduser.user_exists"
+msgid "This user already exists!"
+msgstr "¡Ese usuario ya existe!"
+
+#: formlogin.lg_passworddoesnotmatchtext
+msgid "Password does not match."
+msgstr "La contraseña es incorrecta."
+
+#: formlogin.lg_passworddoesnotmatchtitle
+msgctxt "formlogin.lg_passworddoesnotmatchtitle"
+msgid "Error!"
+msgstr "¡Error!"
+
+#: formlogin.lg_usernotexiststext
+msgid "Username does not exist."
+msgstr "Ese nombre de usuario no existe."
+
+#: formlogin.lg_usernotexiststitle
+msgctxt "formlogin.lg_usernotexiststitle"
+msgid "Error!"
+msgstr "¡Error!"
+
+#: formmain.lg_btndeltypecontract_hint
+msgctxt "formmain.lg_btndeltypecontract_hint"
+msgid "Delete the type of contract of this employee"
+msgstr "Borra el tipo de contrato de este empleado."
+
+#: formmain.lg_btndelworkplace_hint
+msgctxt "formmain.lg_btndelworkplace_hint"
+msgid "Delete the workplace of this employee"
+msgstr "Borra el lugar de trabajo de este empleado."
+
+#: formmain.lg_captionbtn_activate
+msgctxt "formmain.lg_captionbtn_activate"
+msgid "Activate"
+msgstr "Dar de alta"
+
+#: formmain.lg_captionbtn_inactivate
+msgctxt "formmain.lg_captionbtn_inactivate"
+msgid "Inactivate"
+msgstr "Dar de baja"
+
+#: formmain.lg_delcontractlogtarget
+msgid "the selected contract in the log"
+msgstr "el contrato seleccionado del histórico"
+
+#: formmain.lg_employee_still_not_saved
+msgid "You have to save the employee first."
+msgstr "Primero tienes que guardar al empleado."
+
+#: formmain.lg_female
+msgid "Female"
+msgstr "Mujer"
+
+#: formmain.lg_filter_active
+msgctxt "formmain.lg_filter_active"
+msgid "Actives"
+msgstr "Altas"
+
+#: formmain.lg_filter_all
+msgid "All"
+msgstr "Todos"
+
+#: formmain.lg_filter_inactive
+msgctxt "formmain.lg_filter_inactive"
+msgid "Inactives"
+msgstr "Bajas"
+
+#: formmain.lg_frmstatestitle
+msgctxt "formmain.lg_frmstatestitle"
+msgid "States"
+msgstr "Provincias"
+
+#: formmain.lg_idisblank
+msgctxt "formmain.lg_idisblank"
+msgid ""
+"This ID# cannot be in blank\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"El IDno puede estar en blanco\n"
+"¡Tiene que ser Único!\n"
+
+#: formmain.lg_idisnotunique
+msgctxt "formmain.lg_idisnotunique"
+msgid ""
+"This ID# is in use by another Employee\n"
+"It should be UNIQUE!\n"
+msgstr ""
+"Este ID está en uso por otro empleado\n"
+"¡Debería ser único!\n"
+
+#: formmain.lg_lblnavrecof
+msgctxt "formmain.lg_lblnavrecof"
+msgid "of"
+msgstr "de"
+
+#: formmain.lg_male
+msgid "Male"
+msgstr "Hombre"
+
+#: formmain.lg_married
+msgid "Married"
+msgstr "Casado/a"
+
+#: formmain.lg_single
+msgid "Single"
+msgstr "Soltero/a"
+
+#: formpermissions.add_iptbox_caption
+msgid "Add User Group"
+msgstr "Añadir grupo de usuarios"
+
+#: formpermissions.add_iptbox_prompt
+msgctxt "formpermissions.add_iptbox_prompt"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formpermissions.blank_value
+msgctxt "formpermissions.blank_value"
+msgid "Blank not allowed!"
+msgstr "¡No se permite en blanco!"
+
+#: formpermissions.edit_iptbox_caption
+msgid "Edit User Group"
+msgstr "Editar grupo de usuarios"
+
+#: formpermissions.edit_iptbox_prompt
+msgctxt "formpermissions.edit_iptbox_prompt"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: formpermissions.no_delete_superusers_group
+msgid "SUPERUSERS group cannot be deleted."
+msgstr "No se puede eliminar el grupo SUPERUSERS."
+
+#: formpermissions.no_edit_superuser
+msgid "SUPERUSERS cannot be edited."
+msgstr "No se puede editar SUPERUSERS"
+
+#: formpermissions.of_lblnavrec
+msgctxt "formpermissions.of_lblnavrec"
+msgid "of"
+msgstr "de"
+
+#: formpicemployee.opendlg_error_msg_01
+msgctxt "formpicemployee.opendlg_error_msg_01"
+msgid "Photo not loaded."
+msgstr "No se ha cargado la foto."
+
+#: formpicemployee.opendlg_error_msg_02
+msgctxt "formpicemployee.opendlg_error_msg_02"
+msgid "Possible cause: Photo format not valid"
+msgstr "Posible causa: El formato de la imagén no es válido."
+
+#: formpicemployee.opendlg_error_msg_03
+msgctxt "formpicemployee.opendlg_error_msg_03"
+msgid "Please, check if photo format is jpg."
+msgstr "Por favor, comprueba si la imagen es de formato JPG."
+
+#: formpicemployee.opendlg_filter
+msgctxt "formpicemployee.opendlg_filter"
+msgid "All image files"
+msgstr "Todos los archivos de imagen"
+
+#: formpicemployee.opendlg_title
+msgctxt "formpicemployee.opendlg_title"
+msgid "Select a photo"
+msgstr "Selecciona una foto"
+
+#: formpicemployee.savedlg_filter
+msgctxt "formpicemployee.savedlg_filter"
+msgid "All image files"
+msgstr "Todos los archivos de imagen"
+
+#: formpicemployee.savedlg_title
+msgid "Save the photo"
+msgstr "Guardar la foto"
+
+#: formpreferences.lg_lstview_caption_item_0
+msgctxt "formpreferences.lg_lstview_caption_item_0"
+msgid "Employees"
+msgstr "Empleados"
+
+#: formpreferences.lg_lstview_caption_item_1
+msgctxt "formpreferences.lg_lstview_caption_item_1"
+msgid "Language"
+msgstr "Idioma"
+
+#: formpreferences.lg_lstview_caption_item_2
+msgctxt "formpreferences.lg_lstview_caption_item_2"
+msgid "Database"
+msgstr "Base de datos"
+
+#: formpreferences.lg_lstview_caption_item_3
+msgctxt "formpreferences.lg_lstview_caption_item_3"
+msgid "Printing"
+msgstr "Impresión"
+
+#: formpreferences.lg_lstview_caption_item_4
+msgctxt "formpreferences.lg_lstview_caption_item_4"
+msgid "Access Control"
+msgstr "Control de acceso"
+
+#: formpreferences.lg_selectdirdlg_error_msg
+msgctxt "formpreferences.lg_selectdirdlg_error_msg"
+msgid "The file \"xxx.db\" does not exist in this path."
+msgstr "El archivo \"xxx.db\" no existe en esa ruta."
+
+#: formpreferences.lg_selectdirdlg_error_title
+msgctxt "formpreferences.lg_selectdirdlg_error_title"
+msgid "ERROR!"
+msgstr "¡ERROR!"
+
+#: formpreferences.lg_selectdirdlg_title
+msgctxt "formpreferences.lg_selectdirdlg_title"
+msgid "Select the path for the database (xxx.db)"
+msgstr "Selecciona la ruta para la base de datos (xxx.db)"
+
+#: formsearch.lg_blanksearchtext
+msgctxt "formsearch.lg_blanksearchtext"
+msgid "Search string must be not blank."
+msgstr "La cadena de texto de búsqueda no debe estar en blanco."
+
+#: formsearch.lg_blanksearchtitle
+msgctxt "formsearch.lg_blanksearchtitle"
+msgid "Error!"
+msgstr "¡Error!"
+
+#: formsearch.lg_criteriaemployeename
+msgctxt "formsearch.lg_criteriaemployeename"
+msgid "Name"
+msgstr "Nombre"
+
+#: formsearch.lg_criteriasurname1name
+msgctxt "formsearch.lg_criteriasurname1name"
+msgid "Surname 1"
+msgstr "1º Apellido"
+
+#: formsearch.lg_criteriasurname2name
+msgctxt "formsearch.lg_criteriasurname2name"
+msgid "Surname 2"
+msgstr "2º Apellido"
+
+#: formsearch.lg_nocriteriatext
+msgctxt "formsearch.lg_nocriteriatext"
+msgid "One criteria must be selected at least."
+msgstr "Debes seleccionar por lo menos un criterio de busqueda."
+
+#: formsearch.lg_nocriteriatitle
+msgctxt "formsearch.lg_nocriteriatitle"
+msgid "Error!"
+msgstr "¡Error!"
+
+#: formsearch.lg_resultcounttext
+msgctxt "formsearch.lg_resultcounttext"
+msgid "result/s"
+msgstr "resultado/s"
+
+#: funcdata.delrec_msg_01
+msgid "Are you sure you want to DELETE"
+msgstr "¿Estás seguro que quieres ELIMINAR"
+
+#: funcdata.delrec_msg_02
+msgid "It cannot revert!"
+msgstr "¡No se podrá revertir!"
+
+#: funcdata.delrec_msg_03
+msgid "There is not anything to eliminate."
+msgstr "No hay nada que eliminar."
+
+#: funcdata.delrec_title
+msgid "Deletion"
+msgstr "Eliminar"
+
+#: funcdata.error_databasename_blank
+msgctxt "funcdata.error_databasename_blank"
+msgid "Database name is blank!"
+msgstr ""
+
+#: funcdata.lg_cannotconnectdatabase
+msgid "Database cannot be connected."
+msgstr "No s epuede conectar a la base de datos."
+
+#: funcdata.lg_databasenotexist
+msgid "Database does not exist."
+msgstr "La base de datos no existe."
+
+#: funcprint.lg_genre
+msgid "Genre:"
+msgstr "Género:"
+
+#: funcprint.lg_maritalstatus
+msgid "Marital Status:"
+msgstr "Estado civil:"
+
+#: funcprint.lg_mmobirthdate
+msgid "Birth Date:"
+msgstr "Fecha nacimie.:"
+
+#: funcprint.lg_mmocellemployee
+msgctxt "funcprint.lg_mmocellemployee"
+msgid "Cell Phone:"
+msgstr "Móvil:"
+
+#: funcprint.lg_mmocityemployee
+msgctxt "funcprint.lg_mmocityemployee"
+msgid "City:"
+msgstr "Ciudad:"
+
+#: funcprint.lg_mmodateendcontract
+msgctxt "funcprint.lg_mmodateendcontract"
+msgid "Date End:"
+msgstr "Fecha fin:"
+
+#: funcprint.lg_mmodateinitcontract
+msgctxt "funcprint.lg_mmodateinitcontract"
+msgid "Date Init:"
+msgstr "Fecha inicio:"
+
+#: funcprint.lg_mmoemailemployee
+msgctxt "funcprint.lg_mmoemailemployee"
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: funcprint.lg_mmoidcardemployee
+msgctxt "funcprint.lg_mmoidcardemployee"
+msgid "ID Card:"
+msgstr "NIF:"
+
+#: funcprint.lg_mmoidnemployee
+msgctxt "funcprint.lg_mmoidnemployee"
+msgid "ID:"
+msgstr "ID:"
+
+#: funcprint.lg_mmonameemployee
+msgctxt "funcprint.lg_mmonameemployee"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: funcprint.lg_mmophoneemployee
+msgctxt "funcprint.lg_mmophoneemployee"
+msgid "Phone:"
+msgstr "Tel.:"
+
+#: funcprint.lg_mmossnemployee
+msgid "SSN:"
+msgstr "Nº Seg. Soc.:"
+
+#: funcprint.lg_mmostateemployee
+msgctxt "funcprint.lg_mmostateemployee"
+msgid "State:"
+msgstr "Provincia:"
+
+#: funcprint.lg_mmotitleaddress
+msgctxt "funcprint.lg_mmotitleaddress"
+msgid "Address"
+msgstr "Dirección"
+
+#: funcprint.lg_mmotitlecontact
+msgctxt "funcprint.lg_mmotitlecontact"
+msgid "Contact"
+msgstr "Contacto"
+
+#: funcprint.lg_mmotitlecurrentcontract
+msgid "Current Contract"
+msgstr "Contrato actual"
+
+#: funcprint.lg_mmotitledataofemployee
+msgid "Data of the employee"
+msgstr "Datos del empleado"
+
+#: funcprint.lg_mmotitlepersonaldata
+msgid "Personal Data:"
+msgstr "Datos personales"
+
+#: funcprint.lg_mmotypecontract
+msgid "Type of Contract:"
+msgstr "Tipo de contrato:"
+
+#: funcprint.lg_mmoworkplace
+msgctxt "funcprint.lg_mmoworkplace"
+msgid "Workplace:"
+msgstr "Lugar de trabajo:"
+
+#: funcprint.lg_mmozipcodeemployee
+msgctxt "funcprint.lg_mmozipcodeemployee"
+msgid "ZIP Code:"
+msgstr "Cóg. Postal:"
+
+#: librestaff.error_databasename_blank
+msgctxt "librestaff.error_databasename_blank"
+msgid "Database name is blank!"
+msgstr ""
+
+#: tform1.bitbtn1.caption
+msgid "BitBtn1"
+msgstr ""
+
+#: tform1.button1.caption
+msgid "Button1"
+msgstr ""
+
+#: tform1.caption
+msgid "Form1"
+msgstr "Form1"
+
+#: tfraacceptcancel.btnaccept.caption
+msgctxt "tfraacceptcancel.btnaccept.caption"
+msgid "Accept"
+msgstr "Aceptar"
+
+#: tfraacceptcancel.btncancel.caption
+msgctxt "tfraacceptcancel.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfraadddeledisavcan.btnadd.caption
+msgctxt "tfraadddeledisavcan.btnadd.caption"
+msgid "Add"
+msgstr "Añadir"
+
+#: tfraadddeledisavcan.btncancel.caption
+msgctxt "tfraadddeledisavcan.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfraadddeledisavcan.btndelete.caption
+msgctxt "tfraadddeledisavcan.btndelete.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfraadddeledisavcan.btnedit.caption
+msgctxt "tfraadddeledisavcan.btnedit.caption"
+msgid "Edit"
+msgstr "Editar"
+
+#: tfraadddeledisavcan.btnsave.caption
+msgctxt "tfraadddeledisavcan.btnsave.caption"
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
+#: tfraclose.btnclose.caption
+msgctxt "tfraclose.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrasavecancel.btncancel.caption
+msgctxt "tfrasavecancel.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfrasavecancel.btnsave.caption
+msgctxt "tfrasavecancel.btnsave.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrasavecanceladddelete.btnadd.caption
+msgctxt "tfrasavecanceladddelete.btnadd.caption"
+msgid "Add"
+msgstr "Añadir"
+
+#: tfrasavecanceladddelete.btncancel.caption
+msgctxt "tfrasavecanceladddelete.btncancel.caption"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: tfrasavecanceladddelete.btndelete.caption
+msgctxt "tfrasavecanceladddelete.btndelete.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfrasavecanceladddelete.btnedit.caption
+msgctxt "tfrasavecanceladddelete.btnedit.caption"
+msgid "Edit"
+msgstr "Editar"
+
+#: tfrasavecanceladddelete.btnsave.caption
+msgctxt "tfrasavecanceladddelete.btnsave.caption"
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
+#: tfrmabout.caption
+msgctxt "tfrmabout.caption"
+msgid "About"
+msgstr "Acerca de..."
+
+#: tfrmabout.lblmysqlversion.caption
+msgid "MySQL DLL Version:"
+msgstr "Versión MySQL DLL:"
+
+#: tfrmabout.lblsqliteversion.caption
+msgid "SQLite DLL Version:"
+msgstr "Versión SQLite DLL:"
+
+#: tfrmabout.lblversion.caption
+msgid "Version:"
+msgstr "Versión:"
+
+#: tfrmabout.tababout.caption
+msgctxt "tfrmabout.tababout.caption"
+msgid "About"
+msgstr "Acerca de..."
+
+#: tfrmabout.tablicense.caption
+msgid "License"
+msgstr "Licencia"
+
+#: tfrmabout.titlelibrestaff.caption
+msgctxt "tfrmabout.titlelibrestaff.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmaccess.btnaccess.caption
+msgctxt "tfrmaccess.btnaccess.caption"
+msgid "Enter"
+msgstr "Entrar"
+
+#: tfrmaccess.btnexit.caption
+msgctxt "tfrmaccess.btnexit.caption"
+msgid "Exit"
+msgstr "Salir"
+
+#: tfrmaccess.caption
+msgid "FrmAccess"
+msgstr "FrmAccess"
+
+#: tfrmaccess.edipassword.text
+msgctxt "tfrmaccess.edipassword.text"
+msgid "EdiPassword"
+msgstr "EdiPassword"
+
+#: tfrmaccess.ediusername.text
+msgctxt "tfrmaccess.ediusername.text"
+msgid "EdiUsername"
+msgstr "EdiUsername"
+
+#: tfrmaccess.lbllibrestaff.caption
+msgctxt "tfrmaccess.lbllibrestaff.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmaccess.lblpassword.caption
+msgctxt "tfrmaccess.lblpassword.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmaccess.lbluser.caption
+msgctxt "tfrmaccess.lbluser.caption"
+msgid "Username:"
+msgstr "Nombre:"
+
+#: tfrmactivationemployee.grpcontract.caption
+msgctxt "tfrmactivationemployee.grpcontract.caption"
+msgid "Contract"
+msgstr "Contrato"
+
+#: tfrmactivationemployee.lbldateend.caption
+msgid "Date end:"
+msgstr "Fecha inicio:"
+
+#: tfrmactivationemployee.lbldateinit.caption
+msgid "Date init:"
+msgstr "Fecha fin:"
+
+#: tfrmadduser.caption
+msgctxt "tfrmadduser.caption"
+msgid "Add User"
+msgstr "Añadir usuario"
+
+#: tfrmadduser.lblname.caption
+msgctxt "tfrmadduser.lblname.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmadduser.lblpassword.caption
+msgctxt "tfrmadduser.lblpassword.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmadduser.lblusergroup.caption
+msgctxt "tfrmadduser.lblusergroup.caption"
+msgid "User Group:"
+msgstr "Grupo usuario:"
+
+#: tfrmdsoeditor.caption
+msgctxt "tfrmdsoeditor.caption"
+msgid "Editor"
+msgstr "Editor"
+
+#: tfrmeditadduser.btnchangepassworduser.caption
+msgctxt "tfrmeditadduser.btnchangepassworduser.caption"
+msgid "Change..."
+msgstr "Cambiar..."
+
+#: tfrmeditadduser.lblname.caption
+msgctxt "tfrmeditadduser.lblname.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmeditadduser.lblpassword.caption
+msgctxt "tfrmeditadduser.lblpassword.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmeditadduser.lblusergroup.caption
+msgctxt "tfrmeditadduser.lblusergroup.caption"
+msgid "User Group:"
+msgstr "Grupo usuario:"
+
+#: tfrminputbox.caption
+msgid "Input"
+msgstr "Introducir"
+
+#: tfrminputbox.ediinput.text
+msgid "EdiInput"
+msgstr "EdiInput"
+
+#: tfrminputbox.lblcaption.caption
+msgctxt "tfrminputbox.lblcaption.caption"
+msgid "Caption"
+msgstr "Caption"
+
+#: tfrminputbox.lblprompt.caption
+msgctxt "tfrminputbox.lblprompt.caption"
+msgid "Prompt:"
+msgstr "Prompt:"
+
+#: tfrmlisteditor.btnclose.caption
+msgctxt "tfrmlisteditor.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrmlisteditor.btnsavelist.caption
+msgctxt "tfrmlisteditor.btnsavelist.caption"
+msgid "Save and Close"
+msgstr "Guardar y cerrar"
+
+#: tfrmlisteditor.btnsortlist.caption
+msgid "Sort"
+msgstr "Ordenar"
+
+#: tfrmlisteditor.caption
+msgid "FrmListEditor"
+msgstr "FrmListEditor"
+
+#: tfrmlogin.btnenter.caption
+msgctxt "tfrmlogin.btnenter.caption"
+msgid "Enter"
+msgstr "Entrar"
+
+#: tfrmlogin.btnexit.caption
+msgctxt "tfrmlogin.btnexit.caption"
+msgid "Exit"
+msgstr "Salir"
+
+#: tfrmlogin.caption
+msgctxt "tfrmlogin.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmlogin.lbllibrestaff.caption
+msgctxt "tfrmlogin.lbllibrestaff.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmlogin.lblpassword.caption
+msgctxt "tfrmlogin.lblpassword.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmlogin.lbluser.caption
+msgctxt "tfrmlogin.lbluser.caption"
+msgid "Username:"
+msgstr "Nombre:"
+
+#: tfrmmain.btnactivate.caption
+msgctxt "tfrmmain.btnactivate.caption"
+msgid "Inactivate"
+msgstr "Dar de baja"
+
+#: tfrmmain.btndelcontractlog.caption
+msgctxt "tfrmmain.btndelcontractlog.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfrmmain.btndelete.caption
+msgctxt "tfrmmain.btndelete.caption"
+msgid "Delete"
+msgstr "Eliminar"
+
+#: tfrmmain.btneditstatelist.caption
+msgctxt "tfrmmain.btneditstatelist.caption"
+msgid "..."
+msgstr "..."
+
+#: tfrmmain.btnedittypecontracts.caption
+msgctxt "tfrmmain.btnedittypecontracts.caption"
+msgid "..."
+msgstr "..."
+
+#: tfrmmain.btneditworkplaces.caption
+msgctxt "tfrmmain.btneditworkplaces.caption"
+msgid "..."
+msgstr "..."
+
+#: tfrmmain.btnnew.caption
+msgid "New"
+msgstr "Nuevo"
+
+#: tfrmmain.btnprint.caption
+msgid "Print"
+msgstr "Imprimir"
+
+#: tfrmmain.btnsave.caption
+msgctxt "tfrmmain.btnsave.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrmmain.btnsearch.caption
+msgctxt "tfrmmain.btnsearch.caption"
+msgid "Search"
+msgstr "Buscar"
+
+#: tfrmmain.caption
+msgctxt "tfrmmain.caption"
+msgid "LibreStaff"
+msgstr "LibreStaff"
+
+#: tfrmmain.dbradgenre.caption
+msgid "Genre"
+msgstr "Género"
+
+#: tfrmmain.dbradmaritalstatus.caption
+msgctxt "tfrmmain.dbradmaritalstatus.caption"
+msgid "Marital Status"
+msgstr "Estado civil"
+
+#: tfrmmain.groupbox1.caption
+msgid "Employment Contract"
+msgstr "Contrato de trabajo"
+
+#: tfrmmain.grpaddressemployee.caption
+msgctxt "tfrmmain.grpaddressemployee.caption"
+msgid "Address"
+msgstr "Dirección"
+
+#: tfrmmain.grpmisc.caption
+msgid "Misc"
+msgstr "Misc."
+
+#: tfrmmain.grprcontactemployee.caption
+msgctxt "tfrmmain.grprcontactemployee.caption"
+msgid "Contact"
+msgstr "Contacto"
+
+#: tfrmmain.imgabout.hint
+msgctxt "tfrmmain.imgabout.hint"
+msgid "Info"
+msgstr "Info"
+
+#: tfrmmain.imgexit.hint
+msgid "Close app"
+msgstr "Cerrar aplicación"
+
+#: tfrmmain.imgpreferences.hint
+msgctxt "tfrmmain.imgpreferences.hint"
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: tfrmmain.imgprofile.hint
+msgctxt "tfrmmain.imgprofile.hint"
+msgid "Profile"
+msgstr "Perfil"
+
+#: tfrmmain.label1.caption
+msgctxt "tfrmmain.label1.caption"
+msgid "Filter:"
+msgstr "Filtro:"
+
+#: tfrmmain.lbladdress.caption
+msgctxt "tfrmmain.lbladdress.caption"
+msgid "Address:"
+msgstr "Dirección:"
+
+#: tfrmmain.lblbirthday1.caption
+msgctxt "tfrmmain.lblbirthday1.caption"
+msgid "Date Init:"
+msgstr "Fecha inicio:"
+
+#: tfrmmain.lblbirthday2.caption
+msgctxt "tfrmmain.lblbirthday2.caption"
+msgid "Date End:"
+msgstr "Fecha fin:"
+
+#: tfrmmain.lblbirthday3.caption
+msgid "Type of contract:"
+msgstr "Tipo de contrato:"
+
+#: tfrmmain.lblbirthday4.caption
+msgctxt "tfrmmain.lblbirthday4.caption"
+msgid "Workplace:"
+msgstr "Lugar de trabajo:"
+
+#: tfrmmain.lblcell.caption
+msgctxt "tfrmmain.lblcell.caption"
+msgid "Cell Phone:"
+msgstr "Móvil:"
+
+#: tfrmmain.lblcity.caption
+msgctxt "tfrmmain.lblcity.caption"
+msgid "City:"
+msgstr "Ciudad:"
+
+#: tfrmmain.lbldatebirth.caption
+msgid "Date of Birth:"
+msgstr "Fecha nacimie.:"
+
+#: tfrmmain.lblemail.caption
+msgctxt "tfrmmain.lblemail.caption"
+msgid "E-Mail:"
+msgstr "E-Mail:"
+
+#: tfrmmain.lblidcard.caption
+msgctxt "tfrmmain.lblidcard.caption"
+msgid "ID Card:"
+msgstr "NIF:"
+
+#: tfrmmain.lblidemployee.caption
+msgctxt "tfrmmain.lblidemployee.caption"
+msgid "ID:"
+msgstr "ID:"
+
+#: tfrmmain.lblinactive.caption
+msgctxt "tfrmmain.lblinactive.caption"
+msgid "Inactive"
+msgstr "Baja"
+
+#: tfrmmain.lblnameemployee.caption
+msgctxt "tfrmmain.lblnameemployee.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmmain.lblnameemployee1.caption
+msgid "Surname 1:"
+msgstr "1º apellido:"
+
+#: tfrmmain.lblphone.caption
+msgctxt "tfrmmain.lblphone.caption"
+msgid "Phone:"
+msgstr "Tel.:"
+
+#: tfrmmain.lblsidebar.caption
+msgid "Menu"
+msgstr "Menú"
+
+#: tfrmmain.lblsse.caption
+msgctxt "tfrmmain.lblsse.caption"
+msgid "SSN Number:"
+msgstr "Nº Seg. Soc.:"
+
+#: tfrmmain.lblstate.caption
+msgctxt "tfrmmain.lblstate.caption"
+msgid "State:"
+msgstr "Provincia:"
+
+#: tfrmmain.lblsurname2.caption
+msgctxt "tfrmmain.lblsurname2.caption"
+msgid "Surname 2:"
+msgstr "2º apellido:"
+
+#: tfrmmain.lblzipcode.caption
+msgctxt "tfrmmain.lblzipcode.caption"
+msgid "ZIP Code:"
+msgstr "Cóg. Postal:"
+
+#: tfrmmain.panpicemployee.caption
+msgctxt "tfrmmain.panpicemployee.caption"
+msgid "[Photo]"
+msgstr "[Foto]"
+
+#: tfrmmain.tabaddress.caption
+msgid "Address/Contact"
+msgstr "Dirección/Contacto"
+
+#: tfrmmain.tabcontract.caption
+msgctxt "tfrmmain.tabcontract.caption"
+msgid "Contract"
+msgstr "Contrato"
+
+#: tfrmmain.tabcontractslog.caption
+msgid "Contracts Log"
+msgstr "Histórico de contratos"
+
+#: tfrmmain.tabemployees.caption
+msgid "TabEmployees"
+msgstr "Empleados"
+
+#: tfrmmain.tabpersonaldata.caption
+msgctxt "tfrmmain.tabpersonaldata.caption"
+msgid "Personal Data"
+msgstr "Datos personales"
+
+#: tfrmmain.tabremarks.caption
+msgctxt "tfrmmain.tabremarks.caption"
+msgid "Remarks"
+msgstr "Observaciones"
+
+#: tfrmpermissions.caption
+msgctxt "tfrmpermissions.caption"
+msgid "Permissions"
+msgstr "Permisos"
+
+#: tfrmpermissions.dbchkaddemployee.caption
+msgid "Add employee"
+msgstr "Añadir empleado"
+
+#: tfrmpermissions.dbchkdeleteemployee.caption
+msgid "Delete employee"
+msgstr "Eliminar empleado"
+
+#: tfrmpermissions.dbchkeditemployee.caption
+msgid "Edit employee"
+msgstr "Editar empleado"
+
+#: tfrmpermissions.dbchkshowtabaddress.caption
+msgid "Show tab Address"
+msgstr "Mostrar pestaña Dirección"
+
+#: tfrmpermissions.lblpermissions.caption
+msgctxt "tfrmpermissions.lblpermissions.caption"
+msgid "Permissions"
+msgstr "Permisos"
+
+#: tfrmpermissions.lblusergroups.caption
+msgid "User Groups"
+msgstr "Grupos de usuarios"
+
+#: tfrmpermissions.panleft.caption
+msgid "PanLeft"
+msgstr ""
+
+#: tfrmpermissions.panright.caption
+msgid "PanRight"
+msgstr ""
+
+#: tfrmpermissions.tabemployees.caption
+msgctxt "tfrmpermissions.tabemployees.caption"
+msgid "Employees"
+msgstr "Empleados"
+
+#: tfrmpermissions.tabtabs.caption
+msgid "Tabs"
+msgstr "Pestañas"
+
+#: tfrmpicemployee.btnclearpic.caption
+msgid "Clear"
+msgstr "Borrar"
+
+#: tfrmpicemployee.btncopytoclipboard.caption
+msgid "Copy to Clipboad"
+msgstr "Copiar al portapapeles"
+
+#: tfrmpicemployee.btnexportpic.caption
+msgid "Export..."
+msgstr "Exportar..."
+
+#: tfrmpicemployee.btnloadpic.caption
+msgid "Load..."
+msgstr "Cargar..."
+
+#: tfrmpicemployee.btnpastefromclipboard.caption
+msgid "Paste from Clipboad"
+msgstr "Pegar del portapapeles"
+
+#: tfrmpicemployee.caption
+msgid "Picture"
+msgstr "Imagen"
+
+#: tfrmpicemployee.panpicemployee.caption
+msgctxt "tfrmpicemployee.panpicemployee.caption"
+msgid "[Photo]"
+msgstr "[Foto]"
+
+#: tfrmpreferences.btnchangedtbpath.caption
+msgctxt "tfrmpreferences.btnchangedtbpath.caption"
+msgid "Change..."
+msgstr "Cambiar..."
+
+#: tfrmpreferences.btneditusers.caption
+msgid "Edit users..."
+msgstr "Editar usuarios..."
+
+#: tfrmpreferences.btnpermissions.caption
+msgid "Permissions..."
+msgstr "Permisos..."
+
+#: tfrmpreferences.btnsavecompanyname.caption
+msgctxt "tfrmpreferences.btnsavecompanyname.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrmpreferences.btnsavemysqloptions.caption
+msgctxt "tfrmpreferences.btnsavemysqloptions.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrmpreferences.caption
+msgctxt "tfrmpreferences.caption"
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: tfrmpreferences.cboautotype.text
+msgctxt "tfrmpreferences.cboautotype.text"
+msgid "INC"
+msgstr "Incremental"
+
+#: tfrmpreferences.cbodateformat.text
+msgctxt "tfrmpreferences.cbodateformat.text"
+msgid "dd.mm.yyyy"
+msgstr "dd.mm.yyyy"
+
+#: tfrmpreferences.cbodateseparator.text
+msgid "/"
+msgstr "/"
+
+#: tfrmpreferences.chkidallowblank.caption
+msgctxt "tfrmpreferences.chkidallowblank.caption"
+msgid "Allow blank"
+msgstr "Permitir en blanco"
+
+#: tfrmpreferences.chkidauto.caption
+msgid "Auto"
+msgstr "Auto"
+
+#: tfrmpreferences.chkidunique.caption
+msgctxt "tfrmpreferences.chkidunique.caption"
+msgid "Unique"
+msgstr "Único"
+
+#: tfrmpreferences.chkreportpreview.caption
+msgctxt "tfrmpreferences.chkreportpreview.caption"
+msgid "Show preview"
+msgstr "Mostrar previsualiz."
+
+#: tfrmpreferences.dates.caption
+msgid "Dates"
+msgstr "Fechas"
+
+#: tfrmpreferences.dbaccesscontrolenabled.caption
+msgid "Enabled"
+msgstr "Activado"
+
+#: tfrmpreferences.edicompanyname.text
+msgid "My Company"
+msgstr "Mi Compañía"
+
+#: tfrmpreferences.groupbox1.caption
+msgid "Report"
+msgstr "Informe"
+
+#: tfrmpreferences.grpidemployee.caption
+msgid "ID Employee"
+msgstr "ID Empleado"
+
+#: tfrmpreferences.grpidemployee1.caption
+msgctxt "tfrmpreferences.grpidemployee1.caption"
+msgid "Access Control"
+msgstr "Control de Acceso"
+
+#: tfrmpreferences.grpmysql.caption
+msgid "MySQL Options"
+msgstr "Opciones SQL"
+
+#: tfrmpreferences.grpsqlite.caption
+msgid "SQLite Options"
+msgstr "Opciones SQLite"
+
+#: tfrmpreferences.lblcompanyname.caption
+msgid "Company Name:"
+msgstr "Nombre Compañía:"
+
+#: tfrmpreferences.lbldatabasename.caption
+msgid "Database Name:"
+msgstr "Nombre base datos:"
+
+#: tfrmpreferences.lbldatabasepath.caption
+msgid "Database Path:"
+msgstr "Ruta base de datos:"
+
+#: tfrmpreferences.lbldateformat.caption
+msgctxt "tfrmpreferences.lbldateformat.caption"
+msgid "Date Display Format:"
+msgstr "Formato de fecha:"
+
+#: tfrmpreferences.lbldateseparator.caption
+msgid "Date Separator:"
+msgstr "Separador de fecha:"
+
+#: tfrmpreferences.lbldbengine.caption
+msgid "DB Engine:"
+msgstr "Motor BD:"
+
+#: tfrmpreferences.lblhostnamemysql.caption
+msgctxt "tfrmpreferences.lblhostnamemysql.caption"
+msgid "Host Name:"
+msgstr "Nombre Host:"
+
+#: tfrmpreferences.lbljournalmode.caption
+msgctxt "tfrmpreferences.lbljournalmode.caption"
+msgid "Journal Mode:"
+msgstr "Modo Journal:"
+
+#: tfrmpreferences.lblpasswordmysql.caption
+msgctxt "tfrmpreferences.lblpasswordmysql.caption"
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: tfrmpreferences.lblusernamemysql.caption
+msgctxt "tfrmpreferences.lblusernamemysql.caption"
+msgid "Username:"
+msgstr "Nombre usuario:"
+
+#: tfrmpreferences.tabaccesscontrol.caption
+msgctxt "tfrmpreferences.tabaccesscontrol.caption"
+msgid "Access Control"
+msgstr "Control de acceso"
+
+#: tfrmpreferences.tabdatabase.caption
+msgctxt "tfrmpreferences.tabdatabase.caption"
+msgid "Database"
+msgstr "Base de datos"
+
+#: tfrmpreferences.tabgeneral.caption
+msgctxt "tfrmpreferences.tabgeneral.caption"
+msgid "General"
+msgstr "General"
+
+#: tfrmpreferences.tablanguage.caption
+msgctxt "tfrmpreferences.tablanguage.caption"
+msgid "Language"
+msgstr "Idioma"
+
+#: tfrmpreferences.tabmysqloptions.caption
+msgid "TabMySQLOptions"
+msgstr ""
+
+#: tfrmpreferences.tabprinting.caption
+msgctxt "tfrmpreferences.tabprinting.caption"
+msgid "Printing"
+msgstr "Impresión"
+
+#: tfrmpreferences.tabsqliteoptions.caption
+msgctxt "tfrmpreferences.tabsqliteoptions.caption"
+msgid "SQLite"
+msgstr "SQLite"
+
+#: tfrmprgbar.caption
+msgid "FrmPrgBar"
+msgstr "FrmPrgBar"
+
+#: tfrmprofile.btnsaveavatar.caption
+msgctxt "tfrmprofile.btnsaveavatar.caption"
+msgid "Save"
+msgstr "Guardar"
+
+#: tfrmprofile.caption
+msgctxt "tfrmprofile.caption"
+msgid "Profile"
+msgstr "Perfil"
+
+#: tfrmprofile.chkrememberusername.caption
+msgctxt "tfrmprofile.chkrememberusername.caption"
+msgid "Remember username on login"
+msgstr "Recordar el nombre de usuario al identificarse"
+
+#: tfrmprofile.grpaccesscontroloptions.caption
+msgctxt "tfrmprofile.grpaccesscontroloptions.caption"
+msgid "Options"
+msgstr "Opciones"
+
+#: tfrmprofile.lblusername.caption
+msgctxt "tfrmprofile.lblusername.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmprofile.lbl_username.caption
+msgctxt "tfrmprofile.lbl_username.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmprofile.tabaccount.caption
+msgid "Account"
+msgstr "Cuenta"
+
+#: tfrmprofile.tabavatar.caption
+msgid "Avatar"
+msgstr "Avatar"
+
+#: tfrmsearch.btnclose.caption
+msgctxt "tfrmsearch.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrmsearch.btnsearch.caption
+msgctxt "tfrmsearch.btnsearch.caption"
+msgid "Search"
+msgstr "Buscar"
+
+#: tfrmsearch.btnviewall.caption
+msgid "View All"
+msgstr "Ver todo"
+
+#: tfrmsearch.caption
+msgctxt "tfrmsearch.caption"
+msgid "Search"
+msgstr "Buscar"
+
+#: tfrmsearch.cbofilter.text
+msgctxt "tfrmsearch.cbofilter.text"
+msgid "Active"
+msgstr "Altas"
+
+#: tfrmsearch.chkcasesensitive.caption
+msgctxt "tfrmsearch.chkcasesensitive.caption"
+msgid "Case sensitive"
+msgstr "Coinc. may/min"
+
+#: tfrmsearch.chkclose.caption
+msgid "Close on select"
+msgstr "Cerrar al seleccionar"
+
+#: tfrmsearch.label1.caption
+msgid "Query Result"
+msgstr "Resultado de la busqueda"
+
+#: tfrmsearch.lblfilter.caption
+msgctxt "tfrmsearch.lblfilter.caption"
+msgid "Filter:"
+msgstr "Filtro:"
+
+#: tfrmsearch.lblsearchcriteria.caption
+msgid "Search Criteria"
+msgstr "Criterios de busqueda"
+
+#: tfrmsimpletableedit.caption
+msgctxt "tfrmsimpletableedit.caption"
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmsimpletableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr "Nombre del tipo de contrato"
+
+#: tfrmtableedit.caption
+msgctxt "tfrmtableedit.caption"
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtableedit.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr "Nombre de tipo de contrato"
+
+#: tfrmtypecontract.caption
+msgid "FrmTypeContract"
+msgstr "FrmTypeContract"
+
+#: tfrmtypecontracts.caption
+msgctxt "tfrmtypecontracts.caption"
+msgid "Type of Contracts"
+msgstr "Tipo de contratos"
+
+#: tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption
+msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
+msgid "Name of Type of Contract"
+msgstr "Nombre del tipo de contrato"
+

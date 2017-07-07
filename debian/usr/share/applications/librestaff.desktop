@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LibreStaff
+GenericName=LibreStaff
+Comment=Management of staff
+TryExec=/opt/librestaff/librestaff
+Exec=/opt/librestaff/librestaff
+Icon=librestaff
+Categories=Office;
+MimeType=
