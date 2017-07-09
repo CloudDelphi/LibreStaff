@@ -20,7 +20,6 @@ Goals
 	<li>Update engine via the Web or local.</li>
 	<li>Website engine.</li>
  </ul>
-<br/>
 
 Superuser
 ---------
