@@ -28,3 +28,4 @@ The admin account created by default for access control (if enabled) is the foll
 user: SUPERUSER<br />
 password: 1234
 
+Go to the <a https://github.com/runsy/LibreStaff/wiki">Wiki</a>for further information.<br />
