@@ -1,5 +1,5 @@
 # LibreStaff
-LibreStaff is a open source software for human resources management.<br />
+LibreStaff is an open source software for human resources management.<br />
 
 Features
 -----------------------
