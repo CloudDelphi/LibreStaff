@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, LCLProc, LCLIntf, LConvEncoding, Graphics,
-  RichMemo, RTFParsPre211;
+  RichMemo, RTFParsPre211, LazUtf8;
 
 function MVCParserLoadStream(ARich: TCustomRichMemo; Source: TStream): Boolean;
 procedure RegisterRTFLoader;

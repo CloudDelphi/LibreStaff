@@ -21,7 +21,7 @@
       <RevisionNr Value="15"/>
       <BuildNr Value="1"/>
       <Attributes pvaPreRelease="True"/>
-      <StringTable ProductName="LibreStaff" ProductVersion=""/>
+      <StringTable ProductName="LibreStaff"/>
     </VersionInfo>
     <MacroValues Count="1">
       <Macro2 Name="LCLWidgetType" Value="win32"/>
