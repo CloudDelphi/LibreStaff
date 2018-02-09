@@ -259,8 +259,8 @@ begin
           ');');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Perm_id_idx ON Permissions(ID_Permission);');
     DBEngine.Connection.ExecuteDirect('INSERT INTO Permissions ('+
-    			' Usergroup_ID, DeleteEmployee_Permission)'+
-    			' VALUES('+QuotedStr('1')+', '+DBEngine.TrueValue+
+    			' Usergroup_ID, EditEmployee_Permission, AddEmployee_Permission, DeleteEmployee_Permission, ShowTabAddress_Permission)'+
+    			' VALUES('+QuotedStr('1')+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+
     			');');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Pic_id_idx ON PicsEmployees(ID_PicEmployee);');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX TypeContracts_id_idx ON TypeContracts(ID_TypeContract);');

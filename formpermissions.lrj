@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":16731411,"name":"tfrmpermissions.caption","sourcebytes":[80,101,114,109,105,115,115,105,111,110,115],"value":"Permissions"},
+{"hash":109259652,"name":"tfrmpermissions.panleft.caption","sourcebytes":[80,97,110,76,101,102,116],"value":"PanLeft"},
+{"hash":79032371,"name":"tfrmpermissions.lblusergroups.caption","sourcebytes":[85,115,101,114,32,71,114,111,117,112,115],"value":"User Groups"},
+{"hash":79027984,"name":"tfrmpermissions.grdusergroups.columns[0].title.caption","sourcebytes":[78,97,109,101,95,85,115,101,114,103,114,111,117,112],"value":"Name_Usergroup"},
+{"hash":137951380,"name":"tfrmpermissions.panright.caption","sourcebytes":[80,97,110,82,105,103,104,116],"value":"PanRight"},
+{"hash":121026435,"name":"tfrmpermissions.tabemployees.caption","sourcebytes":[69,109,112,108,111,121,101,101,115],"value":"Employees"},
+{"hash":266537141,"name":"tfrmpermissions.dbchkeditemployee.caption","sourcebytes":[69,100,105,116,32,101,109,112,108,111,121,101,101],"value":"Edit employee"},
+{"hash":2689397,"name":"tfrmpermissions.dbchkaddemployee.caption","sourcebytes":[65,100,100,32,101,109,112,108,111,121,101,101],"value":"Add employee"},
+{"hash":112808757,"name":"tfrmpermissions.dbchkdeleteemployee.caption","sourcebytes":[68,101,108,101,116,101,32,101,109,112,108,111,121,101,101],"value":"Delete employee"},
+{"hash":370579,"name":"tfrmpermissions.tabtabs.caption","sourcebytes":[84,97,98,115],"value":"Tabs"},
+{"hash":248801155,"name":"tfrmpermissions.dbchkshowtabaddress.caption","sourcebytes":[83,104,111,119,32,116,97,98,32,65,100,100,114,101,115,115],"value":"Show tab Address"},
+{"hash":16731411,"name":"tfrmpermissions.lblpermissions.caption","sourcebytes":[80,101,114,109,105,115,115,105,111,110,115],"value":"Permissions"}
+]}

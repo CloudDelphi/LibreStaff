@@ -9,7 +9,7 @@ object FrmPermissions: TFrmPermissions
   ClientWidth = 625
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.8.0.6'
   inline FraAddDelEdiSavCan1: TFraAddDelEdiSavCan
     Top = 354
     Width = 625
@@ -20,8 +20,8 @@ object FrmPermissions: TFrmPermissions
       Align = alBottom
       BevelOuter = bvNone
       BorderStyle = bsSingle
-      ClientHeight = 102
-      ClientWidth = 621
+      ClientHeight = 104
+      ClientWidth = 623
       inherited BtnSave: TBitBtn
         OnClick = BtnSaveClick
       end
@@ -39,8 +39,12 @@ object FrmPermissions: TFrmPermissions
         OnClick = BtnEditClick
       end
       inherited PanNavRec: TPanel
-        ClientHeight = 25
-        ClientWidth = 108
+        ClientHeight = 27
+        ClientWidth = 110
+        inherited LblNavRec: TLabel
+          Height = 27
+          Width = 110
+        end
       end
     end
   end
@@ -57,7 +61,7 @@ object FrmPermissions: TFrmPermissions
     TabOrder = 1
     object LblUserGroups: TLabel
       Left = 0
-      Height = 28
+      Height = 25
       Top = 0
       Width = 170
       Align = alTop
@@ -69,8 +73,8 @@ object FrmPermissions: TFrmPermissions
     end
     object GrdUserGroups: TDBGrid
       Left = 0
-      Height = 326
-      Top = 28
+      Height = 329
+      Top = 25
       Width = 170
       Align = alClient
       Color = clWindow
@@ -100,8 +104,8 @@ object FrmPermissions: TFrmPermissions
     TabOrder = 2
     object PagPermissions: TPageControl
       Left = 0
-      Height = 326
-      Top = 28
+      Height = 329
+      Top = 25
       Width = 455
       ActivePage = TabEmployees
       Align = alClient
@@ -109,14 +113,14 @@ object FrmPermissions: TFrmPermissions
       TabOrder = 0
       object TabEmployees: TTabSheet
         Caption = 'Employees'
-        ClientHeight = 285
-        ClientWidth = 447
+        ClientHeight = 290
+        ClientWidth = 451
         ImageIndex = 5
         object DBChkEditEmployee: TDBCheckBox
           Left = 8
-          Height = 33
+          Height = 29
           Top = 24
-          Width = 159
+          Width = 173
           AutoSize = True
           Caption = 'Edit employee'
           DataField = 'EditEmployee_Permission'
@@ -127,9 +131,9 @@ object FrmPermissions: TFrmPermissions
         end
         object DBChkAddEmployee: TDBCheckBox
           Left = 8
-          Height = 33
+          Height = 29
           Top = 64
-          Width = 162
+          Width = 173
           AutoSize = True
           Caption = 'Add employee'
           DataField = 'AddEmployee_Permission'
@@ -140,9 +144,9 @@ object FrmPermissions: TFrmPermissions
         end
         object DBChkDeleteEmployee: TDBCheckBox
           Left = 8
-          Height = 33
+          Height = 29
           Top = 104
-          Width = 181
+          Width = 202
           AutoSize = True
           Caption = 'Delete employee'
           DataField = 'DeleteEmployee_Permission'
@@ -154,8 +158,8 @@ object FrmPermissions: TFrmPermissions
       end
       object TabTabs: TTabSheet
         Caption = 'Tabs'
-        ClientHeight = 285
-        ClientWidth = 447
+        ClientHeight = 290
+        ClientWidth = 451
         ImageIndex = 4
         object DBChkShowTabAddress: TDBCheckBox
           Left = 8
@@ -174,7 +178,7 @@ object FrmPermissions: TFrmPermissions
     end
     object LblPermissions: TLabel
       Left = 0
-      Height = 28
+      Height = 25
       Top = 0
       Width = 455
       Align = alTop

@@ -1153,6 +1153,10 @@ msgstr ""
 msgid "Show tab Address"
 msgstr ""
 
+#: tfrmpermissions.grdusergroups.columns[0].title.caption
+msgid "Name_Usergroup"
+msgstr ""
+
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "TFRMPERMISSIONS.LBLPERMISSIONS.CAPTION"
 msgid "Permissions"

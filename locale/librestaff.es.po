@@ -1145,6 +1145,10 @@ msgstr "Editar empleado"
 msgid "Show tab Address"
 msgstr "Mostrar pestaña Dirección"
 
+#: tfrmpermissions.grdusergroups.columns[0].title.caption
+msgid "Name_Usergroup"
+msgstr ""
+
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
 msgid "Permissions"
