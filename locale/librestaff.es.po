@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-02-10 00:07+0100\n"
+"PO-Revision-Date: 2018-02-10 00:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -66,7 +66,7 @@ msgstr "Añadir usuario"
 
 #: formdsoeditor.add_iptbox_caption_workplaces
 msgid "Add workplace"
-msgstr "Aadir lugar de trabajo"
+msgstr "Añadir lugar de trabajo"
 
 #: formdsoeditor.add_iptbox_prompt_passwords
 msgctxt "formdsoeditor.add_iptbox_prompt_passwords"
@@ -946,6 +946,38 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
+#: tfrmmain.dbdatdatebirth.textfornulldate
+msgctxt "tfrmmain.dbdatdatebirth.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbdatendcontract.textfornulldate
+msgctxt "tfrmmain.dbdatendcontract.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbdatinitcontract.textfornulldate
+msgctxt "tfrmmain.dbdatinitcontract.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init Contract"
+msgstr "Fecha inicio contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "Date End Contract"
+msgstr "Fecha fin contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr "Tipo de contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr "Lugar de trabajo"
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr "Género"
@@ -1511,4 +1543,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

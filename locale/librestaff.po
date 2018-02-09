@@ -952,6 +952,38 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr ""
 
+#: tfrmmain.dbdatdatebirth.textfornulldate
+msgctxt "tfrmmain.dbdatdatebirth.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbdatendcontract.textfornulldate
+msgctxt "tfrmmain.dbdatendcontract.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbdatinitcontract.textfornulldate
+msgctxt "tfrmmain.dbdatinitcontract.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init Contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "Date End Contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr ""
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr ""

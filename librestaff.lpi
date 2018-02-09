@@ -18,7 +18,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <RevisionNr Value="17"/>
+      <RevisionNr Value="18"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable ProductName="LibreStaff"/>
     </VersionInfo>

@@ -946,6 +946,38 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
+#: tfrmmain.dbdatdatebirth.textfornulldate
+msgctxt "tfrmmain.dbdatdatebirth.textfornulldate"
+msgid "NULL"
+msgstr "VAZIO"
+
+#: tfrmmain.dbdatendcontract.textfornulldate
+msgctxt "tfrmmain.dbdatendcontract.textfornulldate"
+msgid "NULL"
+msgstr "VAZIO"
+
+#: tfrmmain.dbdatinitcontract.textfornulldate
+msgctxt "tfrmmain.dbdatinitcontract.textfornulldate"
+msgid "NULL"
+msgstr "VAZIO"
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init Contract"
+msgstr "Data inicio contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "Date End Contract"
+msgstr "Data fim contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr "Tipo de contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr "Lugar de trabalho"
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr "Gênero"
@@ -1511,4 +1543,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nome de tipo de contrato"
-
