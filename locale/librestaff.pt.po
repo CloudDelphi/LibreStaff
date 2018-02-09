@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: formactivationemployee.lg_captiongrpcontract_activate
 msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
@@ -184,47 +184,40 @@ msgid "of"
 msgstr "de"
 
 #: formeditadduser.blank_name
-#, fuzzy
 msgctxt "formeditadduser.blank_name"
 msgid "The name cannot be blank"
 msgstr "O nome não pode estar em branco"
 
 #: formeditadduser.blank_password
-#, fuzzy
 msgctxt "formeditadduser.blank_password"
 msgid "The password cannot be blank"
 msgstr "A contra-senha não pode ficar em branco"
 
 #: formeditadduser.blank_usergroup
-#, fuzzy
 msgctxt "formeditadduser.blank_usergroup"
 msgid "The group of the user cannot be blank"
 msgstr "O grupo do usuário não pode estar em branco."
 
 #: formeditadduser.lg_edit_iptbox_caption_passwords
-#, fuzzy
 msgctxt "formeditadduser.lg_edit_iptbox_caption_passwords"
 msgid "Change the password"
 msgstr "Alterar a contra-senha"
 
 #: formeditadduser.lg_edit_iptbox_prompt_passwords
-#, fuzzy
 msgctxt "formeditadduser.lg_edit_iptbox_prompt_passwords"
 msgid "New Password:"
 msgstr "Nova contra-senha:"
 
 #: formeditadduser.lg_frmaddcaption
-#, fuzzy
 msgctxt "formeditadduser.lg_frmaddcaption"
 msgid "Add User"
 msgstr "Adicionar usuário"
 
 #: formeditadduser.lg_frmeditcaption
 msgid "Edit User"
-msgstr ""
+msgstr "Editar usuário"
 
 #: formeditadduser.user_exists
-#, fuzzy
 msgctxt "formeditadduser.user_exists"
 msgid "This user already exists!"
 msgstr "Este usuário já existe!"
@@ -429,11 +422,9 @@ msgid "Access Control"
 msgstr "Controle de acesso"
 
 #: formpreferences.lg_selectdirdlg_error_msg
-#, fuzzy
-#| msgid "The file \"data.db\" does not exist in this path."
 msgctxt "formpreferences.lg_selectdirdlg_error_msg"
 msgid "The file \"xxx.db\" does not exist in this path."
-msgstr "O arquivo \"data.db \" não existe neste caminho."
+msgstr "O arquivo \"xxx.db\" não existe neste caminho."
 
 #: formpreferences.lg_selectdirdlg_error_title
 msgctxt "formpreferences.lg_selectdirdlg_error_title"
@@ -441,11 +432,9 @@ msgid "ERROR!"
 msgstr "ERRO!"
 
 #: formpreferences.lg_selectdirdlg_title
-#, fuzzy
-#| msgid "Select the path for the database (data.db)"
 msgctxt "formpreferences.lg_selectdirdlg_title"
 msgid "Select the path for the database (xxx.db)"
-msgstr "Selecione o caminho para o banco de dados (data.db)"
+msgstr "Selecione o caminho para o banco de dados (xxx.db)"
 
 #: formsearch.lg_blanksearchtext
 msgctxt "formsearch.lg_blanksearchtext"
@@ -506,15 +495,15 @@ msgstr "Eliminação"
 #: funcdata.error_databasename_blank
 msgctxt "funcdata.error_databasename_blank"
 msgid "Database name is blank!"
-msgstr ""
+msgstr "O nome do banco de dados está em branco!"
 
 #: funcdata.lg_cannotconnectdatabase
 msgid "Database cannot be connected."
-msgstr ""
+msgstr "O banco de dados não pode ser conectado."
 
 #: funcdata.lg_databasenotexist
 msgid "Database does not exist."
-msgstr ""
+msgstr "O banco de dados não existe."
 
 #: funcprint.lg_genre
 msgid "Genre:"
@@ -621,19 +610,19 @@ msgstr "CEP:"
 #: librestaff.error_databasename_blank
 msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
-msgstr ""
+msgstr "O nome do banco de dados está em branco!"
 
 #: tform1.bitbtn1.caption
 msgid "BitBtn1"
-msgstr ""
+msgstr "BitBtn1"
 
 #: tform1.button1.caption
 msgid "Button1"
-msgstr ""
+msgstr "Button1"
 
 #: tform1.caption
 msgid "Form1"
-msgstr ""
+msgstr "Form1"
 
 #: tfraacceptcancel.btnaccept.caption
 msgctxt "tfraacceptcancel.btnaccept.caption"
@@ -717,11 +706,11 @@ msgstr "Sobre..."
 
 #: tfrmabout.lblmysqlversion.caption
 msgid "MySQL DLL Version:"
-msgstr ""
+msgstr "Versão MySQL DLL:"
 
 #: tfrmabout.lblsqliteversion.caption
 msgid "SQLite DLL Version:"
-msgstr ""
+msgstr "Versão SQLite DLL:"
 
 #: tfrmabout.lblversion.caption
 msgid "Version:"
@@ -753,17 +742,17 @@ msgstr "Sair"
 
 #: tfrmaccess.caption
 msgid "FrmAccess"
-msgstr ""
+msgstr "FrmAccess"
 
 #: tfrmaccess.edipassword.text
 msgctxt "tfrmaccess.edipassword.text"
 msgid "EdiPassword"
-msgstr ""
+msgstr "EdiPassword"
 
 #: tfrmaccess.ediusername.text
 msgctxt "tfrmaccess.ediusername.text"
 msgid "EdiUsername"
-msgstr ""
+msgstr "EdiUsername"
 
 #: tfrmaccess.lbllibrestaff.caption
 msgctxt "tfrmaccess.lbllibrestaff.caption"
@@ -819,25 +808,21 @@ msgid "Editor"
 msgstr "Tipo de contratos"
 
 #: tfrmeditadduser.btnchangepassworduser.caption
-#, fuzzy
 msgctxt "tfrmeditadduser.btnchangepassworduser.caption"
 msgid "Change..."
 msgstr "Mudar..."
 
 #: tfrmeditadduser.lblname.caption
-#, fuzzy
 msgctxt "tfrmeditadduser.lblname.caption"
 msgid "Name:"
 msgstr "Nome:"
 
 #: tfrmeditadduser.lblpassword.caption
-#, fuzzy
 msgctxt "tfrmeditadduser.lblpassword.caption"
 msgid "Password:"
 msgstr "Contra-senha:"
 
 #: tfrmeditadduser.lblusergroup.caption
-#, fuzzy
 msgctxt "tfrmeditadduser.lblusergroup.caption"
 msgid "User Group:"
 msgstr "Grupo de usuários"
@@ -848,7 +833,7 @@ msgstr "Introduzir"
 
 #: tfrminputbox.ediinput.text
 msgid "EdiInput"
-msgstr ""
+msgstr "EdiInput"
 
 #: tfrminputbox.lblcaption.caption
 msgctxt "tfrminputbox.lblcaption.caption"
@@ -1151,11 +1136,11 @@ msgstr "Adicionar empregado"
 
 #: tfrmpermissions.dbchkadmincontrolaccess.caption
 msgid "Admin Control Access"
-msgstr ""
+msgstr "Gerenciar Controle de acesso"
 
 #: tfrmpermissions.dbchkadmincontrolaccess1.caption
 msgid "Admin Database"
-msgstr ""
+msgstr "Gerenciar banco de datos"
 
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
@@ -1171,7 +1156,7 @@ msgstr "Mostrar aba 'Endereço'"
 
 #: tfrmpermissions.grdusergroups.columns[0].title.caption
 msgid "Name_Usergroup"
-msgstr ""
+msgstr "Name_Usergroup"
 
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
@@ -1184,15 +1169,15 @@ msgstr "Grupos de uiuários"
 
 #: tfrmpermissions.panleft.caption
 msgid "PanLeft"
-msgstr ""
+msgstr "PanLeft"
 
 #: tfrmpermissions.panright.caption
 msgid "PanRight"
-msgstr ""
+msgstr "PanRight"
 
 #: tfrmpermissions.tabadmin.caption
 msgid "Admin"
-msgstr ""
+msgstr "Gerenciar"
 
 #: tfrmpermissions.tabemployees.caption
 msgctxt "tfrmpermissions.tabemployees.caption"
@@ -1251,7 +1236,6 @@ msgid "Save"
 msgstr "Salvar"
 
 #: tfrmpreferences.btnsavemysqloptions.caption
-#, fuzzy
 msgctxt "tfrmpreferences.btnsavemysqloptions.caption"
 msgid "Save"
 msgstr "Salvar"
@@ -1321,7 +1305,7 @@ msgstr "Controle de acesso"
 
 #: tfrmpreferences.grpmysql.caption
 msgid "MySQL Options"
-msgstr ""
+msgstr "Opções MySQL"
 
 #: tfrmpreferences.grpsqlite.caption
 msgid "SQLite Options"
@@ -1333,7 +1317,7 @@ msgstr "Nome companhia:"
 
 #: tfrmpreferences.lbldatabasename.caption
 msgid "Database Name:"
-msgstr ""
+msgstr "Nome banco datos:"
 
 #: tfrmpreferences.lbldatabasepath.caption
 msgid "Database Path:"
@@ -1350,27 +1334,24 @@ msgstr "Separador de data:"
 
 #: tfrmpreferences.lbldbengine.caption
 msgid "DB Engine:"
-msgstr ""
+msgstr "Motor DB:"
 
 #: tfrmpreferences.lblhostnamemysql.caption
 msgctxt "tfrmpreferences.lblhostnamemysql.caption"
 msgid "Host Name:"
-msgstr ""
+msgstr "Nome Host:"
 
 #: tfrmpreferences.lbljournalmode.caption
-#, fuzzy
 msgctxt "tfrmpreferences.lbljournalmode.caption"
 msgid "Journal Mode:"
 msgstr "Modo Journal:"
 
 #: tfrmpreferences.lblpasswordmysql.caption
-#, fuzzy
 msgctxt "tfrmpreferences.lblpasswordmysql.caption"
 msgid "Password:"
 msgstr "Contra-senha:"
 
 #: tfrmpreferences.lblusernamemysql.caption
-#, fuzzy
 msgctxt "tfrmpreferences.lblusernamemysql.caption"
 msgid "Username:"
 msgstr "Nome:"
@@ -1397,7 +1378,7 @@ msgstr "Idioma"
 
 #: tfrmpreferences.tabmysqloptions.caption
 msgid "TabMySQLOptions"
-msgstr ""
+msgstr "TabMySQLOptions"
 
 #: tfrmpreferences.tabprinting.caption
 msgctxt "tfrmpreferences.tabprinting.caption"
@@ -1407,14 +1388,13 @@ msgstr "Impressão"
 #: tfrmpreferences.tabsqliteoptions.caption
 msgctxt "tfrmpreferences.tabsqliteoptions.caption"
 msgid "SQLite"
-msgstr ""
+msgstr "SQLite"
 
 #: tfrmprgbar.caption
 msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
 #: tfrmprofile.btnsaveavatar.caption
-#, fuzzy
 msgctxt "tfrmprofile.btnsaveavatar.caption"
 msgid "Save"
 msgstr "Salvar"
@@ -1450,7 +1430,7 @@ msgstr "Conta de usuário"
 
 #: tfrmprofile.tabavatar.caption
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "TFRMSEARCH.BTNCLOSE.CAPTION"
