@@ -1149,6 +1149,14 @@ msgstr "Permissões"
 msgid "Add employee"
 msgstr "Adicionar empregado"
 
+#: tfrmpermissions.dbchkadmincontrolaccess.caption
+msgid "Admin Control Access"
+msgstr ""
+
+#: tfrmpermissions.dbchkadmincontrolaccess1.caption
+msgid "Admin Database"
+msgstr ""
+
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
 msgstr "Eliminar empregado"
@@ -1180,6 +1188,10 @@ msgstr ""
 
 #: tfrmpermissions.panright.caption
 msgid "PanRight"
+msgstr ""
+
+#: tfrmpermissions.tabadmin.caption
+msgid "Admin"
 msgstr ""
 
 #: tfrmpermissions.tabemployees.caption

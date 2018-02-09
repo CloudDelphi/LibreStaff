@@ -25,8 +25,12 @@ type
 	TAction= (acEdit, acAdd);
 
 type TPermission= record
+  //Edit employees
   EditEmployee, AddEmployee, DeleteEmployee: Boolean;
+	//Show Tabs
   ShowTabAddress: Boolean;
+  //Admin
+  AdminControlAccess, AdminDatabase: Boolean;
   end;
 
 type TUser= class(TObject)

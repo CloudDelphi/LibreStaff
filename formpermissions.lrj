@@ -10,5 +10,8 @@
 {"hash":112808757,"name":"tfrmpermissions.dbchkdeleteemployee.caption","sourcebytes":[68,101,108,101,116,101,32,101,109,112,108,111,121,101,101],"value":"Delete employee"},
 {"hash":370579,"name":"tfrmpermissions.tabtabs.caption","sourcebytes":[84,97,98,115],"value":"Tabs"},
 {"hash":248801155,"name":"tfrmpermissions.dbchkshowtabaddress.caption","sourcebytes":[83,104,111,119,32,116,97,98,32,65,100,100,114,101,115,115],"value":"Show tab Address"},
+{"hash":4699134,"name":"tfrmpermissions.tabadmin.caption","sourcebytes":[65,100,109,105,110],"value":"Admin"},
+{"hash":190974387,"name":"tfrmpermissions.dbchkadmincontrolaccess.caption","sourcebytes":[65,100,109,105,110,32,67,111,110,116,114,111,108,32,65,99,99,101,115,115],"value":"Admin Control Access"},
+{"hash":65505349,"name":"tfrmpermissions.dbchkadmincontrolaccess1.caption","sourcebytes":[65,100,109,105,110,32,68,97,116,97,98,97,115,101],"value":"Admin Database"},
 {"hash":16731411,"name":"tfrmpermissions.lblpermissions.caption","sourcebytes":[80,101,114,109,105,115,115,105,111,110,115],"value":"Permissions"}
 ]}

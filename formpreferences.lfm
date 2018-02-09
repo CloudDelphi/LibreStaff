@@ -1,7 +1,7 @@
 object FrmPreferences: TFrmPreferences
-  Left = 872
+  Left = 585
   Height = 490
-  Top = 241
+  Top = 295
   Width = 865
   BorderIcons = [biSystemMenu]
   Caption = 'Preferences'
@@ -9,8 +9,9 @@ object FrmPreferences: TFrmPreferences
   ClientWidth = 865
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.4.0'
+  LCLVersion = '1.8.0.6'
   object LstViewPreferences: TListView
     Left = 0
     Height = 424

@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
   StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db,
-  Globals, FormDsoEditor, Types;
+  FormDsoEditor, Types;
 
 type
 
@@ -84,6 +84,7 @@ type
     procedure DbLkCboDBEnginesCloseUp(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure LstViewPreferencesSelectItem(Sender: TObject; Item: TListItem;
       Selected: Boolean);
     procedure TabDatabaseShow(Sender: TObject);
@@ -122,7 +123,7 @@ implementation
 
 { TFrmPreferences }
 uses
-	FuncDlgs, FormMain, FuncData, DataModule, FormPermissions;
+	FuncDlgs, FormMain, FuncData, DataModule, FormPermissions, Globals;
 
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
@@ -269,6 +270,20 @@ begin
   PagPreferences.TabIndex:= 0;
 end;
 
+procedure TFrmPreferences.FormShow(Sender: TObject);
+begin
+    if (AccessControl= TRUE) then	//Check Permissions & enable/disable regarding to
+    begin
+	  if (User.Permissions.AdminControlAccess= FALSE) then
+  	  begin
+    	LstViewPreferences.Items.Item[4].Delete;
+	    end;
+	  if (User.Permissions.AdminDatabase= FALSE) then
+  	  begin
+    	LstViewPreferences.Items.Item[2].Delete;
+	    end;
+    end;
+end;
 procedure TFrmPreferences.BtnChangeDtbPathClick(Sender: TObject);
 var
   ChangePath: Boolean;

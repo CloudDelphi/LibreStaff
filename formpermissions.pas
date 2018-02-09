@@ -13,9 +13,11 @@ type
   { TFrmPermissions }
 
   TFrmPermissions = class(TForm)
+    DBChkAdminControlAccess1: TDBCheckBox;
     DBChkEditEmployee: TDBCheckBox;
     DBChkAddEmployee: TDBCheckBox;
     DBChkDeleteEmployee: TDBCheckBox;
+    DBChkAdminControlAccess: TDBCheckBox;
     DBChkShowTabAddress: TDBCheckBox;
     GrdUserGroups: TDBGrid;
     FraAddDelEdiSavCan1: TFraAddDelEdiSavCan;
@@ -25,6 +27,7 @@ type
     PanRight: TPanel;
     Panleft: TPanel;
     TabEmployees: TTabSheet;
+    TabAdmin: TTabSheet;
     TabTabs: TTabSheet;
     procedure BtnAddClick(Sender: TObject);
     procedure BtnCancelClick(Sender: TObject);
@@ -170,7 +173,7 @@ begin
    		WriteFields[0].DataFormat:= dtString;
  			FuncData.AppendTableRecord(DataMod.QueUsergroups, WriteFields);
     	WriteFields:= nil;
-      SetLength(WriteFields, 5);
+      SetLength(WriteFields, 7); //Change here the number if you add or remove permissions
 		  WriteFields[0].FieldName:= 'Usergroup_ID';
  	 	  WriteFields[0].Value:= DataMod.QueUsergroups.FieldByName('ID_Usergroup').AsInteger;
    		WriteFields[0].DataFormat:= dtInteger;
@@ -186,6 +189,12 @@ begin
  		  WriteFields[4].FieldName:= 'ShowTabAddress_Permission';
  	 	  WriteFields[4].Value:= TRUE;
    		WriteFields[4].DataFormat:= dtBoolean;
+ 		  WriteFields[5].FieldName:= 'AdminControlAccess_Permission';
+ 	 	  WriteFields[5].Value:= FALSE;
+   		WriteFields[5].DataFormat:= dtBoolean;
+ 		  WriteFields[6].FieldName:= 'AdminDatabase_Permission';
+ 	 	  WriteFields[6].Value:= FALSE;
+   		WriteFields[6].DataFormat:= dtBoolean;
  			FuncData.AppendTableRecord(DataMod.QuePermissions, WriteFields);
       WriteFields:= nil;
 		  Inc(TotalRecs);

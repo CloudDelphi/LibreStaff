@@ -163,14 +163,45 @@ object FrmPermissions: TFrmPermissions
         ImageIndex = 4
         object DBChkShowTabAddress: TDBCheckBox
           Left = 8
-          Height = 33
+          Height = 29
           Top = 24
-          Width = 191
+          Width = 211
           AutoSize = True
           Caption = 'Show tab Address'
           DataField = 'ShowTabAddress_Permission'
           DataSource = DataMod.DsoPermissions
           TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+      end
+      object TabAdmin: TTabSheet
+        Caption = 'Admin'
+        ClientHeight = 290
+        ClientWidth = 451
+        object DBChkAdminControlAccess: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 24
+          Width = 253
+          AutoSize = True
+          Caption = 'Admin Control Access'
+          DataField = 'AdminControlAccess_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBChkAdminControlAccess1: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 72
+          Width = 196
+          AutoSize = True
+          Caption = 'Admin Database'
+          DataField = 'AdminDatabase_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 1
           ValueChecked = '1'
           ValueUnchecked = '0'
         end

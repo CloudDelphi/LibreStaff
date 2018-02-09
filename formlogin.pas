@@ -111,6 +111,8 @@ begin
       User.Permissions.AddEmployee:= DataMod.QueVirtual.FieldByName('AddEmployee_Permission').AsBoolean;
       User.Permissions.DeleteEmployee:= DataMod.QueVirtual.FieldByName('DeleteEmployee_Permission').AsBoolean;
       User.Permissions.ShowTabAddress:= DataMod.QueVirtual.FieldByName('ShowTabAddress_Permission').AsBoolean;
+      User.Permissions.AdminControlAccess:= DataMod.QueVirtual.FieldByName('AdminControlAccess_Permission').AsBoolean;
+      User.Permissions.AdminDatabase:= DataMod.QueVirtual.FieldByName('AdminDatabase_Permission').AsBoolean;
       ModalResult:= mrOK;
       end
     else

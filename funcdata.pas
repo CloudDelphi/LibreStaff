@@ -259,8 +259,8 @@ begin
           ');');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Perm_id_idx ON Permissions(ID_Permission);');
     DBEngine.Connection.ExecuteDirect('INSERT INTO Permissions ('+
-    			' Usergroup_ID, EditEmployee_Permission, AddEmployee_Permission, DeleteEmployee_Permission, ShowTabAddress_Permission)'+
-    			' VALUES('+QuotedStr('1')+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+
+    			' Usergroup_ID, EditEmployee_Permission, AddEmployee_Permission, DeleteEmployee_Permission, ShowTabAddress_Permission, AdminControlAccess_Permission, AdminDatabase_Permission)'+
+    			' VALUES('+QuotedStr('1')+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+', '+DBEngine.TrueValue+
     			');');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX Pic_id_idx ON PicsEmployees(ID_PicEmployee);');
     DBEngine.Connection.ExecuteDirect('CREATE UNIQUE INDEX TypeContracts_id_idx ON TypeContracts(ID_TypeContract);');
@@ -424,6 +424,22 @@ begin
     	Tables[3].Fields[5].DefaultValue:= DBEngine.TrueValue;
     Tables[3].Fields[5].PutNull:= TRUE;
     	Tables[3].Fields[5].IsNotNull:= TRUE;
+ 	//AdminControlAccess_Permission BOOLEAN NOT NULL DEFAULT 1
+  Tables[3].Fields[6].Name:= 'AdminControlAccess_Permission';
+   	Tables[3].Fields[6].DataFormat:= dtBoolean;
+    Tables[3].Fields[6].HasDefaultValue:=	TRUE;
+     	Tables[3].Fields[6].DefaultValueQuoted:= FALSE;
+     	Tables[3].Fields[6].DefaultValue:= DBEngine.TrueValue;
+    Tables[3].Fields[6].PutNull:= TRUE;
+     	Tables[3].Fields[6].IsNotNull:= TRUE;
+ 	//AdminControlAccess_Permission BOOLEAN NOT NULL DEFAULT 1
+  Tables[3].Fields[7].Name:= 'AdminDatabase_Permission';
+   	Tables[3].Fields[7].DataFormat:= dtBoolean;
+    Tables[3].Fields[7].HasDefaultValue:=	TRUE;
+    	Tables[3].Fields[7].DefaultValueQuoted:= FALSE;
+      Tables[3].Fields[7].DefaultValue:= DBEngine.TrueValue;
+    Tables[3].Fields[7].PutNull:= TRUE;
+     	Tables[3].Fields[7].IsNotNull:= TRUE;
   //Table 'Employees'
   //ID_Employee INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
   Tables[4].Fields[0].Name:= 'ID_Employee';
@@ -717,7 +733,13 @@ begin
   Tables[i].ID:= wtPermissions;
   Tables[i].Table:= DataMod.QuePermissions;
   Tables[i].Datasource:= DataMod.DsoPermissions;
-  Tables[i].FieldsCount:= 6;
+  //If you add a new permission:
+	  //1: Incthe following number in Tables[i].FieldsCount
+  	//2: Add a field and change the query when adding the default SUPERUSER in FuncData
+	  //3: Add the field in the event BtnAddClick() in FormPremissions
+  	//4: Add the new permission to User in FormLogin
+	  //5: Add new the permission to TPermission in Globals
+  Tables[i].FieldsCount:= 8;
   Inc(i);
   SetLength(Tables, i+1);
   Tables[i].Name:= 'Employees';
