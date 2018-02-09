@@ -292,8 +292,8 @@ begin
   ChangePath:= FuncDlgs.SelectDirDlg(lg_SelectDirDlg_Title, EdiDtbPath.Text);
   if ChangePath=True then
     begin
-    NewPath:= DataMod.SelectDirDlg.FileName+PATH_SEPARATOR;
-    if FileExists(NewPath+DATABASE_NAME) then
+    NewPath:= DataMod.SelectDirDlg.FileName + PATH_SEPARATOR;
+    if FileExists(NewPath+DATABASE_NAME + DATABASE_EXTENSION) then
     	begin
 	    INIFile.WriteString('Database','Path',QuotedStr(NewPath));
   	  EdiDtbPath.Text:= NewPath;
@@ -377,7 +377,7 @@ end;
 
 procedure TFrmPreferences.TabSQLiteOptionsShow(Sender: TObject);
 begin
-	EdiDtbPath.Text:= INIFile.ReadString('Database','Path',PathApp+'data'+PATH_SEPARATOR);
+	EdiDtbPath.Text:= AnsiDequotedStr(INIFile.ReadString('Database','Path',PathApp+'data'+PATH_SEPARATOR),'''');
   if Not(Assigned(LstAtomicCommit)) then //only it create the first time tab is selected
     begin
  		LstAtomicCommit:= TBufDataset.Create(self);

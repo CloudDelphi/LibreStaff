@@ -80,7 +80,7 @@ begin
           IDAvatar:= '0'+IDAvatar;
         until Length(IDAvatar)=4;
         end;
-      PathAvatar:= PathApp+'Avatars'+PATH_SEPARATOR+IDAvatar;
+      PathAvatar:= PathApp+'avatars'+PATH_SEPARATOR+IDAvatar;
       if FileExists(PathAvatar+'.jpg') then
         begin
         AvatarExists:= TRUE;
@@ -125,6 +125,10 @@ begin
   if (RememberUsername= FALSE) then
     begin
     INIFile.WriteString('Access Control', 'Username', '');
+    end
+  else
+  	begin
+    INIFile.WriteString('Access Control', 'Username', QuotedStr(User.Name));
     end;
 end;
 

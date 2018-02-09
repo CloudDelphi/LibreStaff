@@ -1,0 +1,10 @@
+{"version":1,"strings":[
+{"hash":127258741,"name":"tfrmprofile.caption","sourcebytes":[80,114,111,102,105,108,101],"value":"Profile"},
+{"hash":127560724,"name":"tfrmprofile.tabaccount.caption","sourcebytes":[65,99,99,111,117,110,116],"value":"Account"},
+{"hash":5538698,"name":"tfrmprofile.lbl_username.caption","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":5538698,"name":"tfrmprofile.lblusername.caption","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":108725763,"name":"tfrmprofile.grpaccesscontroloptions.caption","sourcebytes":[79,112,116,105,111,110,115],"value":"Options"},
+{"hash":204637550,"name":"tfrmprofile.chkrememberusername.caption","sourcebytes":[82,101,109,101,109,98,101,114,32,117,115,101,114,110,97,109,101,32,111,110,32,108,111,103,105,110],"value":"Remember username on login"},
+{"hash":76319362,"name":"tfrmprofile.tabavatar.caption","sourcebytes":[65,118,97,116,97,114],"value":"Avatar"},
+{"hash":366789,"name":"tfrmprofile.btnsaveavatar.caption","sourcebytes":[83,97,118,101],"value":"Save"}
+]}

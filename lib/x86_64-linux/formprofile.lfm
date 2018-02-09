@@ -9,7 +9,7 @@ object FrmProfile: TFrmProfile
   ClientWidth = 427
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.8.0.6'
   inline FraClose1: TFraClose
     Top = 291
     Width = 427
@@ -35,8 +35,8 @@ object FrmProfile: TFrmProfile
     TabOrder = 1
     object TabAccount: TTabSheet
       Caption = 'Account'
-      ClientHeight = 250
-      ClientWidth = 419
+      ClientHeight = 252
+      ClientWidth = 423
       object Lbl_Username: TLabel
         Left = 16
         Height = 28
@@ -49,9 +49,9 @@ object FrmProfile: TFrmProfile
       end
       object LblUsername: TLabel
         Left = 120
-        Height = 28
+        Height = 25
         Top = 32
-        Width = 56
+        Width = 69
         Alignment = taRightJustify
         Caption = 'Name:'
         ParentColor = False
@@ -62,14 +62,14 @@ object FrmProfile: TFrmProfile
         Top = 120
         Width = 384
         Caption = 'Options'
-        ClientHeight = 56
+        ClientHeight = 62
         ClientWidth = 380
         TabOrder = 0
         object ChkRememberUsername: TCheckBox
           Left = 24
-          Height = 33
+          Height = 29
           Top = 8
-          Width = 296
+          Width = 341
           Caption = 'Remember username on login'
           OnChange = ChkRememberUsernameChange
           TabOrder = 0
@@ -78,12 +78,12 @@ object FrmProfile: TFrmProfile
     end
     object TabAvatar: TTabSheet
       Caption = 'Avatar'
-      ClientHeight = 250
-      ClientWidth = 419
+      ClientHeight = 252
+      ClientWidth = 423
       OnShow = TabAvatarShow
       object SpiAvatar: TSpinEdit
         Left = 88
-        Height = 36
+        Height = 35
         Top = 176
         Width = 128
         MaxValue = 0

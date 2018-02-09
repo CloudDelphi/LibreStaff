@@ -50,6 +50,7 @@ var
 const
   AVATARS_COUNT= 399;
   DATABASE_NAME= 'librestaff';
+  DATABASE_EXTENSION= '.db';
   EDIT_ERROR_COLOR= clRed;
   MYSQL_COLLATION= 'utf8_unicode_ci';
   MYSQL_ENGINE_VERSION= '5.6.27.0';

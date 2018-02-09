@@ -64,7 +64,7 @@ begin
         DBEngine.DBType:= dbtSQLite;
         DBEngine.Connection:= DataMod.SQLiteConnection;
 			  DBEngine.DatabasePath:= ReplaceStr(INIFile.ReadString('Database', 'Path', PathApp+'data'+PATH_SEPARATOR),'''','');
-			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME+'.db';
+			  DBEngine.DatabaseName:= DBEngine.DatabasePath + DATABASE_NAME + DATABASE_EXTENSION;
         DBEngine.HostName:= '';
         DataMod.Transaction.DataBase:= DataMod.SQLiteConnection;
         SQLiteLibraryName:= PathApp+'sqlite3.dll';

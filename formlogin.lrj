@@ -1,0 +1,8 @@
+{"version":1,"strings":[
+{"hash":145721430,"name":"tfrmlogin.caption","sourcebytes":[76,105,98,114,101,83,116,97,102,102],"value":"LibreStaff"},
+{"hash":211042074,"name":"tfrmlogin.lbluser.caption","sourcebytes":[85,115,101,114,110,97,109,101,58],"value":"Username:"},
+{"hash":179191546,"name":"tfrmlogin.lblpassword.caption","sourcebytes":[80,97,115,115,119,111,114,100,58],"value":"Password:"},
+{"hash":5003970,"name":"tfrmlogin.btnenter.caption","sourcebytes":[69,110,116,101,114],"value":"Enter"},
+{"hash":315140,"name":"tfrmlogin.btnexit.caption","sourcebytes":[69,120,105,116],"value":"Exit"},
+{"hash":145721430,"name":"tfrmlogin.lbllibrestaff.caption","sourcebytes":[76,105,98,114,101,83,116,97,102,102],"value":"LibreStaff"}
+]}

@@ -73,6 +73,7 @@ begin
   if (RememberUsername= TRUE) then
   	begin
     Username:= INIFile.ReadString('Access Control','Username','');
+    Username:= AnsiDequotedStr(Username, '''');
     if Not(Username= '') then
       begin
       EdiUser.Text:= Username;

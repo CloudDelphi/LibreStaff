@@ -12,7 +12,7 @@ object FrmLogin: TFrmLogin
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.8.0.6'
   object LblUser: TLabel
     Left = 48
     Height = 28
@@ -33,14 +33,14 @@ object FrmLogin: TFrmLogin
   end
   object EdiUser: TEdit
     Left = 160
-    Height = 36
+    Height = 35
     Top = 88
     Width = 152
     TabOrder = 0
   end
   object EdiPassword: TEdit
     Left = 160
-    Height = 36
+    Height = 35
     Top = 144
     Width = 152
     EchoMode = emPassword
