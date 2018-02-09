@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-02-10 00:28+0100\n"
+"PO-Revision-Date: 2018-02-10 00:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,12 @@ msgstr "Contrato a almacenar:"
 #: formactivationemployee.lg_title_activate
 msgctxt "formactivationemployee.lg_title_activate"
 msgid "Do you want to activate"
-msgstr "¿Quieres dar de alta"
+msgstr "¿Quieres dar de alta?"
 
 #: formactivationemployee.lg_title_inactivate
 msgctxt "formactivationemployee.lg_title_inactivate"
 msgid "Do you want to inactivate"
-msgstr "¿Quieres dar de baja"
+msgstr "¿Quieres dar de baja?"
 
 #: formadduser.blank_name
 msgctxt "formadduser.blank_name"
@@ -297,7 +297,7 @@ msgid ""
 "This ID# cannot be in blank\n"
 "It should be UNIQUE!\n"
 msgstr ""
-"El IDno puede estar en blanco\n"
+"El ID no puede estar en blanco\n"
 "¡Tiene que ser ÚNICO!\n"
 
 #: formmain.lg_idisnotunique
@@ -355,7 +355,7 @@ msgstr "No se puede eliminar el grupo SUPERUSERS."
 
 #: formpermissions.no_edit_superuser
 msgid "SUPERUSERS cannot be edited."
-msgstr "No se puede editar SUPERUSERS"
+msgstr "No se puede editar SUPERUSERS."
 
 #: formpermissions.of_lblnavrec
 msgctxt "formpermissions.of_lblnavrec"
@@ -478,7 +478,7 @@ msgstr "resultado/s"
 
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"
-msgstr "¿Estás seguro que quieres ELIMINAR"
+msgstr "¿Estás seguro que quieres ELIMINAR?"
 
 #: funcdata.delrec_msg_02
 msgid "It cannot revert!"
