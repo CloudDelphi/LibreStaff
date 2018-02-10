@@ -355,10 +355,10 @@ object FrmMain: TFrmMain
         Height = 359
         Top = 128
         Width = 966
-        ActivePage = TabContract
+        ActivePage = TabAddress
         Align = alClient
         MultiLine = True
-        TabIndex = 2
+        TabIndex = 0
         TabOrder = 0
         Options = [nboMultiLine]
         object TabAddress: TTabSheet

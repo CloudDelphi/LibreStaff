@@ -1540,3 +1540,4 @@ msgstr ""
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr ""
+

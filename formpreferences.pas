@@ -345,6 +345,7 @@ begin
     True: 	begin
     				ChkIDAuto.State:= cbChecked;
             CboAutoType.Enabled:= True;
+            CboAutoType.ItemIndex:= IDAutoType;
 				    end;
   end; //case
   case IDAllowBlank of

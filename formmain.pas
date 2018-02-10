@@ -214,12 +214,15 @@ uses
 //------------------------------------------------------------------------------
 function TFrmMain.AutoIncID: String;
 var
-  ID: Integer;
+  ID_Str: String;
+  ID, Code: Integer;
 begin
   FuncData.ExecSQL(DataMod.QueSearch, 'SELECT MAX(CAST(IDN_Employee AS INTEGER)) FROM Employees WHERE (NOT IDN_Employee IS NULL);');
   if Not(DataMod.QueSearch.Fields[0].AsString= '') then
     begin
-    ID:= DataMod.QueSearch.Fields[0].AsInteger;
+    ID_Str:= DataMod.QueSearch.Fields[0].AsString;
+    ID_Str:= LeftStr(ID_Str, 9);
+    Val(ID_Str, ID, Code);
 	  Inc(ID, 1);
   	Result:= IntToStr(ID);
     end;
@@ -629,7 +632,6 @@ end;
 procedure TFrmMain.BtnNewClick(Sender: TObject);
 const
   WriteFieldsCount= 2;
-  RandomIDLenght= 12;
 begin
   if FilterIndex=1 then
   	begin
@@ -643,7 +645,7 @@ begin
     begin
     case IDAutoType of
 			0: WriteFields[0].Value:= AutoIncID;
-      1: WriteFields[0].Value:= RandomID(RandomIDLenght);
+      1: WriteFields[0].Value:= RandomID(RANDOMIDLENGHT);
     end; //case
     end
     else WriteFields[0].Value:= '';

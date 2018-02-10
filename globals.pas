@@ -61,6 +61,7 @@ const
   {$else}
 		'/';
   {$endif}
+  RANDOMIDLENGHT= 9;
   SALT_LENGTH= 3;
   SQLITE_ENGINE_VERSION= '3.13.0.0';
   SUPERUSER_GROUP= 'SUPERUSERS';
