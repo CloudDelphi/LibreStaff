@@ -1,15 +1,16 @@
+#  <>, 2018.
 msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2018-02-10 00:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: formactivationemployee.lg_captiongrpcontract_activate
 msgctxt "formactivationemployee.lg_captiongrpcontract_activate"
@@ -24,12 +25,12 @@ msgstr "Contrato a almacenar:"
 #: formactivationemployee.lg_title_activate
 msgctxt "formactivationemployee.lg_title_activate"
 msgid "Do you want to activate"
-msgstr "¿Quieres dar de alta"
+msgstr "¿Quieres dar de alta?"
 
 #: formactivationemployee.lg_title_inactivate
 msgctxt "formactivationemployee.lg_title_inactivate"
 msgid "Do you want to inactivate"
-msgstr "¿Quieres dar de baja"
+msgstr "¿Quieres dar de baja?"
 
 #: formadduser.blank_name
 msgctxt "formadduser.blank_name"
@@ -65,7 +66,7 @@ msgstr "Añadir usuario"
 
 #: formdsoeditor.add_iptbox_caption_workplaces
 msgid "Add workplace"
-msgstr "Aadir lugar de trabajo"
+msgstr "Añadir lugar de trabajo"
 
 #: formdsoeditor.add_iptbox_prompt_passwords
 msgctxt "formdsoeditor.add_iptbox_prompt_passwords"
@@ -296,8 +297,8 @@ msgid ""
 "This ID# cannot be in blank\n"
 "It should be UNIQUE!\n"
 msgstr ""
-"El IDno puede estar en blanco\n"
-"¡Tiene que ser Único!\n"
+"El ID no puede estar en blanco\n"
+"¡Tiene que ser ÚNICO!\n"
 
 #: formmain.lg_idisnotunique
 msgctxt "formmain.lg_idisnotunique"
@@ -354,7 +355,7 @@ msgstr "No se puede eliminar el grupo SUPERUSERS."
 
 #: formpermissions.no_edit_superuser
 msgid "SUPERUSERS cannot be edited."
-msgstr "No se puede editar SUPERUSERS"
+msgstr "No se puede editar SUPERUSERS."
 
 #: formpermissions.of_lblnavrec
 msgctxt "formpermissions.of_lblnavrec"
@@ -477,7 +478,7 @@ msgstr "resultado/s"
 
 #: funcdata.delrec_msg_01
 msgid "Are you sure you want to DELETE"
-msgstr "¿Estás seguro que quieres ELIMINAR"
+msgstr "¿Estás seguro que quieres ELIMINAR?"
 
 #: funcdata.delrec_msg_02
 msgid "It cannot revert!"
@@ -494,11 +495,11 @@ msgstr "Eliminar"
 #: funcdata.error_databasename_blank
 msgctxt "funcdata.error_databasename_blank"
 msgid "Database name is blank!"
-msgstr ""
+msgstr "¡Nombre de la base de datos en blanco!"
 
 #: funcdata.lg_cannotconnectdatabase
 msgid "Database cannot be connected."
-msgstr "No s epuede conectar a la base de datos."
+msgstr "No se puede conectar a la base de datos."
 
 #: funcdata.lg_databasenotexist
 msgid "Database does not exist."
@@ -609,15 +610,15 @@ msgstr "Cóg. Postal:"
 #: librestaff.error_databasename_blank
 msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
-msgstr ""
+msgstr "¡Nombre de la base de datos en blanco!"
 
 #: tform1.bitbtn1.caption
 msgid "BitBtn1"
-msgstr ""
+msgstr "BitBtn1"
 
 #: tform1.button1.caption
 msgid "Button1"
-msgstr ""
+msgstr "Button1"
 
 #: tform1.caption
 msgid "Form1"
@@ -945,6 +946,38 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr "LibreStaff"
 
+#: tfrmmain.dbdatdatebirth.textfornulldate
+msgctxt "tfrmmain.dbdatdatebirth.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbdatendcontract.textfornulldate
+msgctxt "tfrmmain.dbdatendcontract.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbdatinitcontract.textfornulldate
+msgctxt "tfrmmain.dbdatinitcontract.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init Contract"
+msgstr "Fecha inicio contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "Date End Contract"
+msgstr "Fecha fin contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr "Tipo de contrato"
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr "Lugar de trabajo"
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr "Género"
@@ -1133,6 +1166,14 @@ msgstr "Permisos"
 msgid "Add employee"
 msgstr "Añadir empleado"
 
+#: tfrmpermissions.dbchkadmincontrolaccess.caption
+msgid "Admin Control Access"
+msgstr "Admin. Control de acceso"
+
+#: tfrmpermissions.dbchkadmincontrolaccess1.caption
+msgid "Admin Database"
+msgstr "Admin. base datos"
+
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
 msgstr "Eliminar empleado"
@@ -1145,6 +1186,10 @@ msgstr "Editar empleado"
 msgid "Show tab Address"
 msgstr "Mostrar pestaña Dirección"
 
+#: tfrmpermissions.grdusergroups.columns[0].title.caption
+msgid "Name_Usergroup"
+msgstr "Name_Usergroup"
+
 #: tfrmpermissions.lblpermissions.caption
 msgctxt "tfrmpermissions.lblpermissions.caption"
 msgid "Permissions"
@@ -1156,11 +1201,15 @@ msgstr "Grupos de usuarios"
 
 #: tfrmpermissions.panleft.caption
 msgid "PanLeft"
-msgstr ""
+msgstr "PanLeft"
 
 #: tfrmpermissions.panright.caption
 msgid "PanRight"
-msgstr ""
+msgstr "PanRight"
+
+#: tfrmpermissions.tabadmin.caption
+msgid "Admin"
+msgstr "Admin"
 
 #: tfrmpermissions.tabemployees.caption
 msgctxt "tfrmpermissions.tabemployees.caption"
@@ -1361,7 +1410,7 @@ msgstr "Idioma"
 
 #: tfrmpreferences.tabmysqloptions.caption
 msgid "TabMySQLOptions"
-msgstr ""
+msgstr "TabMySQLOptions"
 
 #: tfrmpreferences.tabprinting.caption
 msgctxt "tfrmpreferences.tabprinting.caption"

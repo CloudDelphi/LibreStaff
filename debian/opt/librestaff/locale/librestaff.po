@@ -952,6 +952,38 @@ msgctxt "tfrmmain.caption"
 msgid "LibreStaff"
 msgstr ""
 
+#: tfrmmain.dbdatdatebirth.textfornulldate
+msgctxt "tfrmmain.dbdatdatebirth.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbdatendcontract.textfornulldate
+msgctxt "tfrmmain.dbdatendcontract.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbdatinitcontract.textfornulldate
+msgctxt "tfrmmain.dbdatinitcontract.textfornulldate"
+msgid "NULL"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[0].title.caption
+msgid "Date Init Contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[1].title.caption
+msgid "Date End Contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[2].title.caption
+msgid "Type of contract"
+msgstr ""
+
+#: tfrmmain.dbgrdlogcontracts.columns[3].title.caption
+msgctxt "tfrmmain.dbgrdlogcontracts.columns[3].title.caption"
+msgid "Workplace"
+msgstr ""
+
 #: tfrmmain.dbradgenre.caption
 msgid "Genre"
 msgstr ""
@@ -1141,6 +1173,14 @@ msgstr ""
 msgid "Add employee"
 msgstr ""
 
+#: tfrmpermissions.dbchkadmincontrolaccess.caption
+msgid "Admin Control Access"
+msgstr ""
+
+#: tfrmpermissions.dbchkadmincontrolaccess1.caption
+msgid "Admin Database"
+msgstr ""
+
 #: tfrmpermissions.dbchkdeleteemployee.caption
 msgid "Delete employee"
 msgstr ""
@@ -1151,6 +1191,10 @@ msgstr ""
 
 #: tfrmpermissions.dbchkshowtabaddress.caption
 msgid "Show tab Address"
+msgstr ""
+
+#: tfrmpermissions.grdusergroups.columns[0].title.caption
+msgid "Name_Usergroup"
 msgstr ""
 
 #: tfrmpermissions.lblpermissions.caption
@@ -1168,6 +1212,10 @@ msgstr ""
 
 #: tfrmpermissions.panright.caption
 msgid "PanRight"
+msgstr ""
+
+#: tfrmpermissions.tabadmin.caption
+msgid "Admin"
 msgstr ""
 
 #: tfrmpermissions.tabemployees.caption
