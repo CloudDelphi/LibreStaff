@@ -612,16 +612,11 @@ msgctxt "librestaff.error_databasename_blank"
 msgid "Database name is blank!"
 msgstr "¡Nombre de la base de datos en blanco!"
 
-#: tform1.bitbtn1.caption
-msgid "BitBtn1"
-msgstr "BitBtn1"
-
-#: tform1.button1.caption
-msgid "Button1"
-msgstr "Button1"
-
 #: tform1.caption
-msgid "Form1"
+#, fuzzy
+#| msgid "Form1"
+msgctxt "tform1.caption"
+msgid "FrmReports"
 msgstr "Form1"
 
 #: tfraacceptcancel.btnaccept.caption
@@ -1020,8 +1015,17 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: tfrmmain.imgprofile.hint
+#, fuzzy
+#| msgid "Reports"
 msgctxt "tfrmmain.imgprofile.hint"
 msgid "Profile"
+msgstr "Perfil"
+
+#: tfrmmain.imgreports.hint
+#, fuzzy
+#| msgid "Profile"
+msgctxt "tfrmmain.imgreports.hint"
+msgid "Reports"
 msgstr "Perfil"
 
 #: tfrmmain.label1.caption
@@ -1064,6 +1068,7 @@ msgid "City:"
 msgstr "Ciudad:"
 
 #: tfrmmain.lbldatebirth.caption
+msgctxt "tfrmmain.lbldatebirth.caption"
 msgid "Date of Birth:"
 msgstr "Fecha nacimie.:"
 
@@ -1463,6 +1468,97 @@ msgstr "Cuenta"
 #: tfrmprofile.tabavatar.caption
 msgid "Avatar"
 msgstr "Avatar"
+
+#: tfrmreports.btnaddfield.caption
+#, fuzzy
+msgctxt "tfrmreports.btnaddfield.caption"
+msgid "Add"
+msgstr "Añadir"
+
+#: tfrmreports.btnclose.caption
+#, fuzzy
+msgctxt "tfrmreports.btnclose.caption"
+msgid "Close"
+msgstr "Cerrar"
+
+#: tfrmreports.btndownfield.caption
+msgid "Down"
+msgstr ""
+
+#: tfrmreports.btnquery.caption
+msgid "Query"
+msgstr ""
+
+#: tfrmreports.btnremovefield.caption
+msgid "Remove"
+msgstr ""
+
+#: tfrmreports.btnupfield.caption
+msgid "Up"
+msgstr ""
+
+#: tfrmreports.caption
+#, fuzzy
+#| msgid "FrmReports"
+msgctxt "tfrmreports.caption"
+msgid "Reports"
+msgstr "Form1"
+
+#: tfrmreports.chkactbybirthday.caption
+#, fuzzy
+msgctxt "tfrmreports.chkactbybirthday.caption"
+msgid "Activate"
+msgstr "Dar de alta"
+
+#: tfrmreports.chkactbyname.caption
+msgid "Act."
+msgstr ""
+
+#: tfrmreports.datdatebirthend.textfornulldate
+#, fuzzy
+msgctxt "tfrmreports.datdatebirthend.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmreports.groupbox1.caption
+msgid "By Birthday"
+msgstr ""
+
+#: tfrmreports.lbldatebirthend.caption
+#, fuzzy
+msgctxt "tfrmreports.lbldatebirthend.caption"
+msgid "Date End:"
+msgstr "Fecha fin:"
+
+#: tfrmreports.lbldatebirthinit.textfornulldate
+#, fuzzy
+msgctxt "tfrmreports.lbldatebirthinit.textfornulldate"
+msgid "NULL"
+msgstr "VACÍO"
+
+#: tfrmreports.lblnameemployee.caption
+#, fuzzy
+msgctxt "tfrmreports.lblnameemployee.caption"
+msgid "Name:"
+msgstr "Nombre:"
+
+#: tfrmreports.llbldatebirthinit.caption
+#, fuzzy
+msgctxt "tfrmreports.llbldatebirthinit.caption"
+msgid "Date Init:"
+msgstr "Fecha inicio:"
+
+#: tfrmreports.tabcriterionpersonaldata.caption
+msgid "By Personal"
+msgstr ""
+
+#: tfrmreports.tabecriterioncontract.caption
+msgid "By Contract"
+msgstr ""
+
+#: tfrmreports.tabfields.caption
+msgid "Fields"
+msgstr ""
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"

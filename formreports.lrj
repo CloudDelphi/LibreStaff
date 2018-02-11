@@ -1,0 +1,20 @@
+{"version":1,"strings":[
+{"hash":147286499,"name":"tfrmreports.caption","sourcebytes":[82,101,112,111,114,116,115],"value":"Reports"},
+{"hash":4863637,"name":"tfrmreports.btnclose.caption","sourcebytes":[67,108,111,115,101],"value":"Close"},
+{"hash":5815449,"name":"tfrmreports.btnquery.caption","sourcebytes":[81,117,101,114,121],"value":"Query"},
+{"hash":215085340,"name":"tfrmreports.tabcriterionpersonaldata.caption","sourcebytes":[66,121,32,80,101,114,115,111,110,97,108],"value":"By Personal"},
+{"hash":13852185,"name":"tfrmreports.groupbox1.caption","sourcebytes":[66,121,32,66,105,114,116,104,100,97,121],"value":"By Birthday"},
+{"hash":122484954,"name":"tfrmreports.llbldatebirthinit.caption","sourcebytes":[68,97,116,101,32,73,110,105,116,58],"value":"Date Init:"},
+{"hash":175443706,"name":"tfrmreports.lbldatebirthend.caption","sourcebytes":[68,97,116,101,32,69,110,100,58],"value":"Date End:"},
+{"hash":342540,"name":"tfrmreports.lbldatebirthinit.textfornulldate","sourcebytes":[78,85,76,76],"value":"NULL"},
+{"hash":342540,"name":"tfrmreports.datdatebirthend.textfornulldate","sourcebytes":[78,85,76,76],"value":"NULL"},
+{"hash":179358933,"name":"tfrmreports.chkactbybirthday.caption","sourcebytes":[65,99,116,105,118,97,116,101],"value":"Activate"},
+{"hash":5538698,"name":"tfrmreports.lblnameemployee.caption","sourcebytes":[78,97,109,101,58],"value":"Name:"},
+{"hash":293486,"name":"tfrmreports.chkactbyname.caption","sourcebytes":[65,99,116,46],"value":"Act."},
+{"hash":101856004,"name":"tfrmreports.tabecriterioncontract.caption","sourcebytes":[66,121,32,67,111,110,116,114,97,99,116],"value":"By Contract"},
+{"hash":80724659,"name":"tfrmreports.tabfields.caption","sourcebytes":[70,105,101,108,100,115],"value":"Fields"},
+{"hash":18340,"name":"tfrmreports.btnaddfield.caption","sourcebytes":[65,100,100],"value":"Add"},
+{"hash":93079237,"name":"tfrmreports.btnremovefield.caption","sourcebytes":[82,101,109,111,118,101],"value":"Remove"},
+{"hash":1472,"name":"tfrmreports.btnupfield.caption","sourcebytes":[85,112],"value":"Up"},
+{"hash":308958,"name":"tfrmreports.btndownfield.caption","sourcebytes":[68,111,119,110],"value":"Down"}
+]}

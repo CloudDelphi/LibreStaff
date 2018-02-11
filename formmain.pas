@@ -55,6 +55,7 @@ type
     GrpMisc: TGroupBox;
     ImgAbout: TImage;
     ImgPreferences: TImage;
+    ImgReports: TImage;
     ImgProfile: TImage;
     Label1: TLabel;
     LblSidebar: TLabel;
@@ -127,9 +128,10 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ImgAboutClick(Sender: TObject);
-    procedure ImgProfileClick(Sender: TObject);
+    procedure ImgReportsClick(Sender: TObject);
     procedure ImgPreferencesClick(Sender: TObject);
     procedure ImgExitClick(Sender: TObject);
+    procedure ImgProfileClick(Sender: TObject);
     procedure PicEmployeeClick(Sender: TObject);
     procedure TabContractsLogHide(Sender: TObject);
     procedure TabContractsLogShow(Sender: TObject);
@@ -207,7 +209,7 @@ implementation
 uses
     FuncData, FormListEditor, FormSearch, DateTimePicker, FormDsoEditor,
     FormAbout, FormActivationEmployee, FuncPrint, FormPreferences, Globals,
-    FormProfile;
+    FormProfile, FormReports;
 
 //------------------------------------------------------------------------------
 //Private functions & procedures
@@ -544,10 +546,10 @@ begin
   end;
 end;
 
-procedure TFrmMain.ImgProfileClick(Sender: TObject);
+procedure TFrmMain.ImgReportsClick(Sender: TObject);
 begin
-  Application.CreateForm(TFrmProfile, FrmProfile);
-	FrmProfile.ShowModal;
+  Application.CreateForm(TFrmReports, FrmReports);
+	FrmReports.ShowModal;
 end;
 
 procedure TFrmMain.ImgPreferencesClick(Sender: TObject);
@@ -744,6 +746,13 @@ procedure TFrmMain.ImgExitClick(Sender: TObject);
 begin
   Close;
 end;
+
+procedure TFrmMain.ImgProfileClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmProfile, FrmProfile);
+	FrmProfile.ShowModal;
+end;
+
 procedure TFrmMain.PicEmployeeClick(Sender: TObject);
 begin
 	if (TotalRecs>0) then

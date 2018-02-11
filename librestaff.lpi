@@ -70,7 +70,7 @@
         <PackageName Value="SQLDBLaz"/>
       </Item9>
     </RequiredPackages>
-    <Units Count="26">
+    <Units Count="27">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -257,6 +257,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
       </Unit25>
+      <Unit26>
+        <Filename Value="formreports.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmReports"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="FormReports"/>
+      </Unit26>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

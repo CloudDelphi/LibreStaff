@@ -18,6 +18,7 @@ type
   TDataMod = class(TDataModule)
     DsoConfig: TDataSource;
     DsoPermissions: TDataSource;
+    DsoQuery: TDataSource;
     DsoUsers: TDataSource;
     DsoTypeContracts: TDataSource;
     DsoSearch: TDataSource;
@@ -34,6 +35,7 @@ type
     QueConfig: TSQLQuery;
     QuePrint: TSQLQuery;
     QuePermissions: TSQLQuery;
+    QueQuery: TSQLQuery;
     QueUsers: TSQLQuery;
     QueVirtual: TSQLQuery;
     QueEmployees: TSQLQuery;
