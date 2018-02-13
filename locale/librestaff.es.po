@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-02-10 00:35+0100\n"
+"PO-Revision-Date: 2018-02-13 23:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -613,11 +613,9 @@ msgid "Database name is blank!"
 msgstr "¡Nombre de la base de datos en blanco!"
 
 #: tform1.caption
-#, fuzzy
-#| msgid "Form1"
 msgctxt "tform1.caption"
 msgid "FrmReports"
-msgstr "Form1"
+msgstr "FrmReports"
 
 #: tfraacceptcancel.btnaccept.caption
 msgctxt "tfraacceptcancel.btnaccept.caption"
@@ -1015,18 +1013,14 @@ msgid "Preferences"
 msgstr "Preferencias"
 
 #: tfrmmain.imgprofile.hint
-#, fuzzy
-#| msgid "Reports"
 msgctxt "tfrmmain.imgprofile.hint"
 msgid "Profile"
 msgstr "Perfil"
 
 #: tfrmmain.imgreports.hint
-#, fuzzy
-#| msgid "Profile"
 msgctxt "tfrmmain.imgreports.hint"
 msgid "Reports"
-msgstr "Perfil"
+msgstr "Informes"
 
 #: tfrmmain.label1.caption
 msgctxt "tfrmmain.label1.caption"
@@ -1471,107 +1465,96 @@ msgid "Avatar"
 msgstr "Avatar"
 
 #: tfrmreports.btnaddfield.caption
-#, fuzzy
 msgctxt "tfrmreports.btnaddfield.caption"
 msgid "Add"
 msgstr "Añadir"
 
 #: tfrmreports.btnclose.caption
-#, fuzzy
 msgctxt "tfrmreports.btnclose.caption"
 msgid "Close"
 msgstr "Cerrar"
 
 #: tfrmreports.btndownfield.caption
 msgid "Down"
-msgstr ""
+msgstr "Bajar"
 
 #: tfrmreports.btnquery.caption
 msgid "Query"
-msgstr ""
+msgstr "Consultar"
 
 #: tfrmreports.btnremovefield.caption
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 #: tfrmreports.btnupfield.caption
 msgid "Up"
-msgstr ""
+msgstr "Subir"
 
 #: tfrmreports.caption
-#, fuzzy
-#| msgid "FrmReports"
 msgctxt "tfrmreports.caption"
 msgid "Reports"
-msgstr "Form1"
+msgstr "Informes"
 
 #: tfrmreports.chkactbybirthday.caption
-#, fuzzy
 msgctxt "tfrmreports.chkactbybirthday.caption"
 msgid "Activate"
-msgstr "Dar de alta"
+msgstr "Activar"
 
 #: tfrmreports.chkactbyname.caption
 msgctxt "tfrmreports.chkactbyname.caption"
 msgid "Act."
-msgstr ""
+msgstr "Act."
 
 #: tfrmreports.chkactbysurname1.caption
 msgctxt "tfrmreports.chkactbysurname1.caption"
 msgid "Act."
-msgstr ""
+msgstr "Act."
 
 #: tfrmreports.datdatebirthend.textfornulldate
-#, fuzzy
 msgctxt "tfrmreports.datdatebirthend.textfornulldate"
 msgid "NULL"
 msgstr "VACÍO"
 
 #: tfrmreports.groupbox1.caption
 msgid "By Birthday"
-msgstr ""
+msgstr "Por cumpleaños"
 
 #: tfrmreports.lbldatebirthend.caption
-#, fuzzy
 msgctxt "tfrmreports.lbldatebirthend.caption"
 msgid "Date End:"
 msgstr "Fecha fin:"
 
 #: tfrmreports.lbldatebirthinit.textfornulldate
-#, fuzzy
 msgctxt "tfrmreports.lbldatebirthinit.textfornulldate"
 msgid "NULL"
 msgstr "VACÍO"
 
 #: tfrmreports.lblnameemployee.caption
-#, fuzzy
 msgctxt "tfrmreports.lblnameemployee.caption"
 msgid "Name:"
 msgstr "Nombre:"
 
 #: tfrmreports.lblsurname1employee1.caption
-#, fuzzy
 msgctxt "tfrmreports.lblsurname1employee1.caption"
 msgid "Surname 1:"
 msgstr "1º apellido:"
 
 #: tfrmreports.llbldatebirthinit.caption
-#, fuzzy
 msgctxt "tfrmreports.llbldatebirthinit.caption"
 msgid "Date Init:"
 msgstr "Fecha inicio:"
 
 #: tfrmreports.tabcriterionpersonaldata.caption
 msgid "By Personal"
-msgstr ""
+msgstr "Por Personal"
 
 #: tfrmreports.tabecriterioncontract.caption
 msgid "By Contract"
-msgstr ""
+msgstr "Por Contrato"
 
 #: tfrmreports.tabfields.caption
 msgid "Fields"
-msgstr ""
+msgstr "Campos"
 
 #: tfrmsearch.btnclose.caption
 msgctxt "tfrmsearch.btnclose.caption"
@@ -1652,4 +1635,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-
