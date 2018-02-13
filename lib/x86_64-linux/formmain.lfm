@@ -976,7 +976,7 @@ object FrmMain: TFrmMain
         end
         object CboFilter: TComboBox
           Left = 160
-          Height = 35
+          Height = 39
           Top = 40
           Width = 120
           ItemHeight = 0
