@@ -1,0 +1,7 @@
+/mnt/d397caf2-88ab-4dae-8e5b-9d3e414652fb/LibreStaff/librestaff -moreinstances 
+Heap dump by heaptrc unit
+58366 memory blocks allocated : 12651850/12782360
+58366 memory blocks freed     : 12651850/12782360
+0 unfreed memory blocks : 0
+True heap size : 950272
+True free heap : 950272

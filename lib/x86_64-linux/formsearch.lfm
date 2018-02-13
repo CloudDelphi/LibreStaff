@@ -10,7 +10,7 @@ object FrmSearch: TFrmSearch
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.8.0.6'
   object PanLeft: TPanel
     Left = 0
     Height = 557
@@ -23,7 +23,7 @@ object FrmSearch: TFrmSearch
     TabOrder = 0
     object EdiSearch: TEdit
       Left = 8
-      Height = 36
+      Height = 35
       Top = 29
       Width = 201
       OnKeyPress = EdiSearchKeyPress
@@ -64,6 +64,7 @@ object FrmSearch: TFrmSearch
       Width = 203
       ItemHeight = 0
       TabOrder = 4
+      TopIndex = -1
     end
     object LblSearchCriteria: TLabel
       Left = 9
@@ -77,18 +78,18 @@ object FrmSearch: TFrmSearch
     end
     object ChkCaseSensitive: TCheckBox
       Left = 11
-      Height = 33
+      Height = 29
       Top = 360
-      Width = 153
+      Width = 175
       Caption = 'Case sensitive'
       TabOrder = 5
     end
     object CboFilter: TComboBox
       Left = 64
-      Height = 36
+      Height = 35
       Top = 400
       Width = 120
-      ItemHeight = 28
+      ItemHeight = 0
       ItemIndex = 0
       Items.Strings = (
         'Active'
@@ -102,9 +103,9 @@ object FrmSearch: TFrmSearch
     end
     object LblFilter: TLabel
       Left = 11
-      Height = 28
+      Height = 25
       Top = 402
-      Width = 48
+      Width = 59
       Caption = 'Filter:'
       Color = 14483385
       ParentColor = False
@@ -160,9 +161,9 @@ object FrmSearch: TFrmSearch
       TabOrder = 1
       object ChkClose: TCheckBox
         Left = 272
-        Height = 33
+        Height = 29
         Top = 0
-        Width = 163
+        Width = 184
         Caption = 'Close on select'
         Checked = True
         OnChange = ChkCloseChange

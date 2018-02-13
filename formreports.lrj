@@ -11,6 +11,8 @@
 {"hash":179358933,"name":"tfrmreports.chkactbybirthday.caption","sourcebytes":[65,99,116,105,118,97,116,101],"value":"Activate"},
 {"hash":5538698,"name":"tfrmreports.lblnameemployee.caption","sourcebytes":[78,97,109,101,58],"value":"Name:"},
 {"hash":293486,"name":"tfrmreports.chkactbyname.caption","sourcebytes":[65,99,116,46],"value":"Act."},
+{"hash":75947994,"name":"tfrmreports.lblsurname1employee1.caption","sourcebytes":[83,117,114,110,97,109,101,32,49,58],"value":"Surname 1:"},
+{"hash":293486,"name":"tfrmreports.chkactbysurname1.caption","sourcebytes":[65,99,116,46],"value":"Act."},
 {"hash":101856004,"name":"tfrmreports.tabecriterioncontract.caption","sourcebytes":[66,121,32,67,111,110,116,114,97,99,116],"value":"By Contract"},
 {"hash":80724659,"name":"tfrmreports.tabfields.caption","sourcebytes":[70,105,101,108,100,115],"value":"Fields"},
 {"hash":18340,"name":"tfrmreports.btnaddfield.caption","sourcebytes":[65,100,100],"value":"Add"},

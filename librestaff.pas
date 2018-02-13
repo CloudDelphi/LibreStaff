@@ -34,6 +34,14 @@ begin
 	Application.Initialize;
   Application.CreateForm(TDataMod, DataMod);
   PathApp:= ExtractFilePath(Paramstr(0));
+  {$IFDEF DEBUG}
+  	// Assuming your build mode sets -dDEBUG in Project Options/Other when defining -gh
+		// This avoids interference when running a production/default build without -gh
+		// Set up -gh output for the Leakview package:
+	  if FileExists(PathApp+'heap.trc') then
+  	  DeleteFile(PathApp+'heap.trc');
+		SetHeapTraceOutput(PathApp+'heap.trc');
+  {$ENDIF DEBUG}
   //INI File Section:
   PathIni:=
   	{$ifdef Win32}

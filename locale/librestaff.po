@@ -1099,6 +1099,7 @@ msgid "Name:"
 msgstr "Name:"
 
 #: tfrmmain.lblnameemployee1.caption
+msgctxt "tfrmmain.lblnameemployee1.caption"
 msgid "Surname 1:"
 msgstr ""
 
@@ -1507,6 +1508,12 @@ msgid "Activate"
 msgstr ""
 
 #: tfrmreports.chkactbyname.caption
+msgctxt "tfrmreports.chkactbyname.caption"
+msgid "Act."
+msgstr ""
+
+#: tfrmreports.chkactbysurname1.caption
+msgctxt "tfrmreports.chkactbysurname1.caption"
 msgid "Act."
 msgstr ""
 
@@ -1534,6 +1541,11 @@ msgstr ""
 msgctxt "tfrmreports.lblnameemployee.caption"
 msgid "Name:"
 msgstr "Name:"
+
+#: tfrmreports.lblsurname1employee1.caption
+msgctxt "tfrmreports.lblsurname1employee1.caption"
+msgid "Surname 1:"
+msgstr ""
 
 #: tfrmreports.llbldatebirthinit.caption
 msgctxt "tfrmreports.llbldatebirthinit.caption"

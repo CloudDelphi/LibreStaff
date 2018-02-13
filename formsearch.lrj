@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":94079128,"name":"tfrmsearch.caption","sourcebytes":[83,101,97,114,99,104],"value":"Search"},
+{"hash":94079128,"name":"tfrmsearch.btnsearch.caption","sourcebytes":[83,101,97,114,99,104],"value":"Search"},
+{"hash":4863637,"name":"tfrmsearch.btnclose.caption","sourcebytes":[67,108,111,115,101],"value":"Close"},
+{"hash":264848364,"name":"tfrmsearch.btnviewall.caption","sourcebytes":[86,105,101,119,32,65,108,108],"value":"View All"},
+{"hash":25376225,"name":"tfrmsearch.lblsearchcriteria.caption","sourcebytes":[83,101,97,114,99,104,32,67,114,105,116,101,114,105,97],"value":"Search Criteria"},
+{"hash":219672053,"name":"tfrmsearch.chkcasesensitive.caption","sourcebytes":[67,97,115,101,32,115,101,110,115,105,116,105,118,101],"value":"Case sensitive"},
+{"hash":75149509,"name":"tfrmsearch.cbofilter.text","sourcebytes":[65,99,116,105,118,101],"value":"Active"},
+{"hash":218344474,"name":"tfrmsearch.lblfilter.caption","sourcebytes":[70,105,108,116,101,114,58],"value":"Filter:"},
+{"hash":484228,"name":"tfrmsearch.label1.caption","sourcebytes":[81,117,101,114,121,32,82,101,115,117,108,116],"value":"Query Result"},
+{"hash":17656724,"name":"tfrmsearch.chkclose.caption","sourcebytes":[67,108,111,115,101,32,111,110,32,115,101,108,101,99,116],"value":"Close on select"}
+]}
