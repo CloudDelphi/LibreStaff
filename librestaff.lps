@@ -64,11 +64,10 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <GenerateDebugInfo Value="False"/>
               <DebugInfoType Value="dsDwarf2Set"/>
-              <UseHeaptrc Value="True"/>
-              <TrashVariables Value="True"/>
+              <UseLineInfoUnit Value="False"/>
               <StripSymbols Value="True"/>
-              <UseExternalDbgSyms Value="True"/>
             </Debugging>
             <Options>
               <Win32>
@@ -133,8 +132,8 @@
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="27"/>
-        <CursorPos X="50" Y="31"/>
+        <TopLine Value="46"/>
+        <CursorPos X="32" Y="34"/>
         <UsageCount Value="200"/>
       </Unit0>
       <Unit1>
@@ -144,10 +143,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="541"/>
-        <CursorPos X="21" Y="236"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="11" Y="458"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -247,8 +246,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="309"/>
-        <CursorPos Y="318"/>
+        <TopLine Value="225"/>
+        <CursorPos X="5" Y="233"/>
         <UsageCount Value="200"/>
       </Unit10>
       <Unit11>
@@ -336,8 +335,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="2"/>
-        <CursorPos X="19" Y="6"/>
+        <TopLine Value="27"/>
+        <CursorPos X="15" Y="45"/>
         <UsageCount Value="200"/>
       </Unit18>
       <Unit19>
@@ -359,7 +358,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="24" Y="82"/>
-        <UsageCount Value="198"/>
+        <UsageCount Value="200"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -371,7 +370,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="188"/>
+        <UsageCount Value="190"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -380,7 +379,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="179"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -392,7 +391,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="157"/>
+        <UsageCount Value="159"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -404,7 +403,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="34"/>
         <CursorPos Y="54"/>
-        <UsageCount Value="123"/>
+        <UsageCount Value="125"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -416,7 +415,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="43" Y="31"/>
-        <UsageCount Value="147"/>
+        <UsageCount Value="149"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -425,11 +424,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="90"/>
-        <CursorPos Y="100"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="156"/>
+        <CursorPos X="22" Y="93"/>
+        <UsageCount Value="39"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -838,7 +836,7 @@
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\lclrescache.pas"/>
         <UnitName Value="LCLResCache"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="234"/>
+        <TopLine Value="240"/>
         <CursorPos Y="247"/>
         <UsageCount Value="10"/>
       </Unit82>

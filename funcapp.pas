@@ -7,6 +7,7 @@ interface
 uses
   Classes, SysUtils, resource, versiontypes, versionresource;
 
+procedure FreeAndInvalidate(var obj);
 function GetAppVersion: String;
 
 implementation
@@ -36,6 +37,15 @@ begin
     end
   except
   end
+end;
+//Use the next procedure instead of Free and Nil
+procedure FreeAndInvalidate(var obj);
+var
+   temp : TObject;
+begin
+   temp := TObject(obj);
+   Pointer(obj) := Pointer(1);
+   temp.Free;
 end;
 
 end.

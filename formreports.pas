@@ -19,11 +19,12 @@ type
 
 	TReportField= class(TObject)
     private
- 			fName, fTitle: String;
+ 			fName, fTitle, fShortTitle: String;
     public
       property Name: string read fName write fName;
 			property Title: string read fTitle write fTitle;
-      constructor Create(stName : string; stTitle: string);
+      property ShortTitle: string read fShortTitle write fShortTitle;
+      constructor Create(stName : string; stTitle: string; stShortTitle: string);
   end;
 
 type
@@ -89,12 +90,13 @@ implementation
 {$R *.lfm}
 
 uses
-  DataModule;
+  DataModule, FuncApp;
 
-constructor TReportField.Create(stName: String; stTitle: String);
+constructor TReportField.Create(stName: String; stTitle: String; stShortTitle: String);
 begin
 	self.Name:= stName;
 	self.Title:= stTitle;
+  self.ShortTitle:= stShortTitle;
 end;
 
 constructor TReport.Create(tbTable: TTable; lsReportFieldsList: TList; lsAvailableReportFieldsList: TList);
@@ -108,7 +110,6 @@ destructor TReport.Destroy;
 begin
   FreeAndNil(fReportFieldsList);
   FreeAndNil(fAvailableReportFieldsList);
-  inherited;
 end;
 
 { TFrmReports }
@@ -121,16 +122,16 @@ begin
 	DataMod.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
   DataMod.ImgLstBtn.GetBitmap(16, BtnQuery.Glyph);
   Report:= TReport.Create(Tables[4], TList.Create, TList.Create);
-  Report.ReportFieldsList.Add(TReportField.Create('Name_Employee', 'Name of Employee'));
-  Report.ReportFieldsList.Add(TReportField.Create('Surname1_Employee', 'Surname 1 of Employee'));
-  Report.ReportFieldsList.Add(TReportField.Create('Surname2_Employee', 'Surname 2 of Employee'));
+  Report.ReportFieldsList.Add(TReportField.Create('Name_Employee', 'Name of Employee', 'Name'));
+  Report.ReportFieldsList.Add(TReportField.Create('Surname1_Employee', 'Surname 1 of Employee', 'Surname 1'));
+  Report.ReportFieldsList.Add(TReportField.Create('Surname2_Employee', 'Surname 2 of Employee', 'Surname 2'));
   ReportFieldsStrings:= TStringList.Create;
   for i:=0 to (Report.ReportFieldsList.Count-1) do
    	begin
 		ReportFieldsStrings.Add(TReportField(Report.ReportFieldsList.Items[i]).Title);
   	end;
   LstBoxFields.Items.Assign(ReportFieldsStrings);
-  FreeAndNil(ReportFieldsStrings);
+  FreeAndInvalidate(ReportFieldsStrings);
 end;
 
 procedure TFrmReports.BtnCloseClick(Sender: TObject);
@@ -140,10 +141,10 @@ end;
 
 procedure TFrmReports.BtnQueryClick(Sender: TObject);
 var
-  SQLQuery: TStringList;
   i: Integer;
 	SelectFields: String;
   HighCriteria: Integer;
+  SQLReport: TStringList;
 begin
   for i:=0 to (Report.ReportFieldsList.Count-1) do
   	begin
@@ -153,32 +154,35 @@ begin
     	SelectFields:= SelectFields + ',';
       end;
     end;
-  SetLength(Criteria,0);
-  SQLQuery:= TStringList.Create;
-  SQLQuery.Add('SELECT '+ SelectFields + ' FROM ' + Report.Table.Name);
+  SetLength(Criteria, 0);
+  SQLReport:= TStringList.Create;
+  SQLReport.Add('SELECT '+ SelectFields + ' FROM ' + Report.Table.Name);
   if ChkActByName.Checked= True then
-    begin
     AddCriteria('Name_Employee', EdiNameEmployee.Text, dtString);
-    end;
   if ChkActBySurname1.Checked= True then
-    begin
     AddCriteria('Surname1_Employee', EdiSurname1Employee.Text, dtString);
-    end;
   if (Criteria<>nil) then
     begin
-	  SQLQuery.Add('WHERE');
+	  SQLReport.Add('WHERE');
     HighCriteria:= High(Criteria);
   	for i:= 0 to HighCriteria do
     	begin
       if (i>0) then
         begin
-        SQLQuery.Add('AND');
+        SQLReport.Add('AND');
         end;
-      SQLQuery.Add('('+Criteria[i].FieldName+'='+'"'+Criteria[i].Criteria+'")');
+      SQLReport.Add('('+Criteria[i].FieldName+'='+'"'+Criteria[i].Criteria+'")');
   	  end;
     end;
-  FuncData.ExecSQL(DataMod.QueQuery, '', True, SQLQuery);
-  SQLQuery.Free;
+  FuncData.ExecSQL(DataMod.QueQuery, '', True, SQLReport);
+  //Fill the grid titles:
+  for i:=0 to (Report.ReportFieldsList.Count-1) do
+    begin
+	  DBGridQueryResult.Columns.Items[i].Title.Caption:= TReportField(Report.ReportFieldsList.Items[i]).ShortTitle;
+    end;
+  //FreeAndNil(SQLReport): PUT THIS BEFORE COULD CASUE ERRORS
+  SQLReport:= nil;
+  SQLReport.Free;
 end;
 
 procedure TFrmReports.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -186,7 +190,7 @@ var
   i: Integer;
 begin
   //Before delete Report, It's mandatory to Free the ReportFields objects
-  for i := 0 to Report.ReportFieldsList.Count - 1 do
+  for i:= 0 to Report.ReportFieldsList.Count - 1 do
 		begin;
 	  TReportField(Report.ReportFieldsList[i]).Free
 		end;

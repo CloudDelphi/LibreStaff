@@ -230,6 +230,7 @@ begin
     LblResult.Color:= clMoneyGreen
     else
     LblResult.Color:= StringToColor('$AEAEE9');
+  //FreeAndNil(SQLSearch): PUT THIS BEFORE COULD CASUE ERRORS
   SQLSearch:= nil;
   SQLSearch.Free;
 end;
