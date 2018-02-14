@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 499
+  Left = 479
   Height = 713
-  Top = 126
+  Top = 218
   Width = 1131
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -830,7 +830,7 @@ object FrmMain: TFrmMain
           OnShow = TabContractsLogShow
           object DBGrdLogContracts: TDBGrid
             Left = 0
-            Height = 320
+            Height = 318
             Top = 0
             Width = 962
             Align = alClient
@@ -840,22 +840,22 @@ object FrmMain: TFrmMain
             Columns = <            
               item
                 Title.Caption = 'Date Init Contract'
-                Width = 236
+                Width = 232
                 FieldName = 'DateInit_Contract'
               end            
               item
                 Title.Caption = 'Date End Contract'
-                Width = 236
+                Width = 232
                 FieldName = 'DateEnd_Contract'
               end            
               item
                 Title.Caption = 'Type of contract'
-                Width = 236
+                Width = 232
                 FieldName = 'Name_TypeContract'
               end            
               item
                 Title.Caption = 'Workplace'
-                Width = 238
+                Width = 235
                 FieldName = 'Name_Workplace'
               end>
             DataSource = DataMod.DsoContractsLog
@@ -870,7 +870,7 @@ object FrmMain: TFrmMain
           ImageIndex = 0
           object DbMmoRemarkEmployee: TDBMemo
             Left = 0
-            Height = 320
+            Height = 318
             Top = 0
             Width = 962
             Align = alClient
@@ -976,7 +976,7 @@ object FrmMain: TFrmMain
         end
         object CboFilter: TComboBox
           Left = 160
-          Height = 39
+          Height = 35
           Top = 40
           Width = 120
           ItemHeight = 0
@@ -1220,7 +1220,6 @@ object FrmMain: TFrmMain
           object TabMnuContractsLog: TTabSheet
             ClientHeight = 328
             ClientWidth = 153
-            OnContextPopup = TabMnuContractsLogContextPopup
             object BtnDelContractLog: TBitBtn
               Left = 16
               Height = 40

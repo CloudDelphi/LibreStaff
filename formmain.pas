@@ -135,8 +135,6 @@ type
     procedure PicEmployeeClick(Sender: TObject);
     procedure TabContractsLogHide(Sender: TObject);
     procedure TabContractsLogShow(Sender: TObject);
-    procedure TabMnuContractsLogContextPopup(Sender: TObject; MousePos: TPoint;
-      var Handled: Boolean);
   private
     { private declarations }
     CurrentRec, TotalRecs: Integer;
@@ -771,12 +769,6 @@ procedure TFrmMain.TabContractsLogShow(Sender: TObject);
 begin
   ShowSidebar;
   Sidebar.TabIndex:= 0;
-end;
-
-procedure TFrmMain.TabMnuContractsLogContextPopup(Sender: TObject;
-  MousePos: TPoint; var Handled: Boolean);
-begin
-
 end;
 
 end.

@@ -127,7 +127,7 @@
         <Item2 Mode="Linux QT-Debug" Option="309854063960"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="83">
+    <Units Count="85">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -143,9 +143,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="444"/>
-        <CursorPos X="32" Y="452"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="138"/>
+        <CursorPos Y="138"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -166,12 +166,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="25"/>
         <CursorPos X="12" Y="40"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -428,12 +426,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="113"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="59"/>
         <CursorPos X="60" Y="126"/>
         <UsageCount Value="40"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -846,36 +842,29 @@
         <CursorPos Y="247"/>
         <UsageCount Value="10"/>
       </Unit82>
+      <Unit83>
+        <Filename Value="..\..\..\opt\lazarus\lcl\interfaces\gtk2\gtk2wscustommemo.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="382"/>
+        <CursorPos X="2" Y="392"/>
+        <UsageCount Value="10"/>
+      </Unit83>
+      <Unit84>
+        <Filename Value="formmain.lfm"/>
+        <EditorIndex Value="-1"/>
+        <ExtraEditorCount Value="1"/>
+        <ExtraEditor1>
+          <EditorIndex Value="1"/>
+        </ExtraEditor1>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit84>
     </Units>
-    <JumpHistory Count="7" HistoryIndex="6">
+    <JumpHistory Count="1">
       <Position1>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="111" Column="33" TopLine="93"/>
+        <Filename Value="formmain.pas"/>
+        <Caret Line="775" TopLine="756"/>
       </Position1>
-      <Position2>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="112" Column="33" TopLine="94"/>
-      </Position2>
-      <Position3>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="111" Column="33" TopLine="93"/>
-      </Position3>
-      <Position4>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="112" TopLine="94"/>
-      </Position4>
-      <Position5>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="195" Column="2" TopLine="149"/>
-      </Position5>
-      <Position6>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="135" Column="28" TopLine="123"/>
-      </Position6>
-      <Position7>
-        <Filename Value="formreports.pas"/>
-        <Caret Line="126" Column="45" TopLine="113"/>
-      </Position7>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

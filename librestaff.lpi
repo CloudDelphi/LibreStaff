@@ -307,7 +307,7 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="7">
+    <Exceptions Count="9">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -329,6 +329,12 @@
       <Item7>
         <Name Value="EUpdateError"/>
       </Item7>
+      <Item8>
+        <Name Value="RunError(219)"/>
+      </Item8>
+      <Item9>
+        <Name Value="EInvalidCast"/>
+      </Item9>
     </Exceptions>
   </Debugging>
 </CONFIG>
