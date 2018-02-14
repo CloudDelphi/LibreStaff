@@ -1543,6 +1543,11 @@ msgctxt "tfrmreports.lbldatebirthinit.textfornulldate"
 msgid "NULL"
 msgstr "VAZIO"
 
+#: tfrmreports.lblfilters.caption
+msgctxt "tfrmreports.lblfilters.caption"
+msgid "Filtros"
+msgstr ""
+
 #: tfrmreports.lblnameemployee.caption
 #, fuzzy
 msgctxt "tfrmreports.lblnameemployee.caption"

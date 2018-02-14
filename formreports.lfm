@@ -41,17 +41,17 @@ object FrmReports: TFrmReports
   end
   object PanTop: TPanel
     Left = 0
-    Height = 184
+    Height = 208
     Top = 0
     Width = 937
     Align = alTop
-    ClientHeight = 184
+    ClientHeight = 208
     ClientWidth = 937
     TabOrder = 1
     object PagCriterion: TPageControl
       Left = 1
-      Height = 182
-      Top = 1
+      Height = 181
+      Top = 26
       Width = 935
       ActivePage = TabCriterionPersonalData
       Align = alClient
@@ -59,15 +59,15 @@ object FrmReports: TFrmReports
       TabOrder = 0
       object TabCriterionPersonalData: TTabSheet
         Caption = 'By Personal'
-        ClientHeight = 143
+        ClientHeight = 142
         ClientWidth = 931
         object GroupBox1: TGroupBox
           Left = 544
-          Height = 128
+          Height = 136
           Top = 0
           Width = 384
           Caption = 'By Birthday'
-          ClientHeight = 101
+          ClientHeight = 109
           ClientWidth = 380
           TabOrder = 0
           object LLblDateBirthInit: TLabel
@@ -203,7 +203,7 @@ object FrmReports: TFrmReports
       end
       object TabFields: TTabSheet
         Caption = 'Fields'
-        ClientHeight = 143
+        ClientHeight = 142
         ClientWidth = 931
         object LstBoxFields: TListBox
           Left = 8
@@ -259,11 +259,32 @@ object FrmReports: TFrmReports
         end
       end
     end
+    object LblFilters: TLabel
+      Left = 1
+      Height = 25
+      Top = 1
+      Width = 935
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Filtros'
+      Color = clCream
+      Font.Color = clNavy
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object ImgFilters: TImage
+      Left = 400
+      Height = 22
+      Top = 3
+      Width = 22
+    end
   end
   object DBGridQueryResult: TDBGrid
     Left = 0
-    Height = 380
-    Top = 184
+    Height = 356
+    Top = 208
     Width = 937
     Align = alClient
     AutoEdit = False

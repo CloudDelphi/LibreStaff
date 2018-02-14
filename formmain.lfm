@@ -1045,6 +1045,7 @@ object FrmMain: TFrmMain
           Alignment = taRightJustify
           AutoSize = False
           Caption = 'Name:'
+          Layout = tlCenter
           ParentColor = False
         end
         object PanPicEmployee: TPanel
