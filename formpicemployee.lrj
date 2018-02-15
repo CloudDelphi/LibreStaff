@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":117095637,"name":"tfrmpicemployee.caption","sourcebytes":[80,105,99,116,117,114,101],"value":"Picture"},
+{"hash":56062302,"name":"tfrmpicemployee.btnloadpic.caption","sourcebytes":[76,111,97,100,46,46,46],"value":"Load..."},
+{"hash":124337662,"name":"tfrmpicemployee.btnexportpic.caption","sourcebytes":[69,120,112,111,114,116,46,46,46],"value":"Export..."},
+{"hash":4860802,"name":"tfrmpicemployee.btnclearpic.caption","sourcebytes":[67,108,101,97,114],"value":"Clear"},
+{"hash":169469636,"name":"tfrmpicemployee.btnpastefromclipboard.caption","sourcebytes":[80,97,115,116,101,32,102,114,111,109,32,67,108,105,112,98,111,97,100],"value":"Paste from Clipboad"},
+{"hash":175720324,"name":"tfrmpicemployee.btncopytoclipboard.caption","sourcebytes":[67,111,112,121,32,116,111,32,67,108,105,112,98,111,97,100],"value":"Copy to Clipboad"},
+{"hash":7301933,"name":"tfrmpicemployee.panpicemployee.caption","sourcebytes":[91,80,104,111,116,111,93],"value":"[Photo]"}
+]}

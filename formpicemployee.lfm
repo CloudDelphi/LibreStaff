@@ -9,7 +9,7 @@ object FrmPicEmployee: TFrmPicEmployee
   ClientWidth = 406
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.4.2.0'
+  LCLVersion = '1.8.0.6'
   object BtnLoadPic: TBitBtn
     Left = 160
     Height = 41
@@ -82,16 +82,16 @@ object FrmPicEmployee: TFrmPicEmployee
     BevelOuter = bvNone
     BorderStyle = bsSingle
     Caption = '[Photo]'
-    ClientHeight = 85
-    ClientWidth = 84
+    ClientHeight = 87
+    ClientWidth = 86
     Color = 15132390
     ParentColor = False
     TabOrder = 6
     object ImgEmployee: TImage
       Left = 0
-      Height = 85
+      Height = 87
       Top = 0
-      Width = 84
+      Width = 86
       Align = alClient
       Stretch = True
     end

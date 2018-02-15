@@ -144,11 +144,10 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="138"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="179"/>
         <CursorPos Y="138"/>
         <UsageCount Value="200"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -179,8 +178,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPicEmployee"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="74"/>
-        <CursorPos X="38" Y="86"/>
+        <TopLine Value="72"/>
+        <CursorPos X="7" Y="74"/>
         <UsageCount Value="200"/>
       </Unit4>
       <Unit5>
@@ -372,7 +371,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="191"/>
+        <UsageCount Value="192"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -381,7 +380,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="180"/>
+        <UsageCount Value="181"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -393,7 +392,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="161"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -405,7 +404,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="34"/>
         <CursorPos Y="54"/>
-        <UsageCount Value="126"/>
+        <UsageCount Value="127"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -417,7 +416,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="43" Y="31"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="151"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -429,7 +428,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="60" Y="126"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="41"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -860,12 +859,7 @@
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit84>
     </Units>
-    <JumpHistory Count="1">
-      <Position1>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="775" TopLine="756"/>
-      </Position1>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
   <Debugging>
     <Watches Count="3">

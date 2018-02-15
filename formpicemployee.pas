@@ -42,7 +42,9 @@ var
 	EmployeeHasPic: Boolean;
 
 resourcestring
-	OpenDlg_Title= 'Select a photo';
+  Employee_Has_No_Pic_Wrn= 'Employee has no pic.';
+  No_Pic_in_Clipboard_Wrn= 'No an available image in clipboard.';
+  OpenDlg_Title= 'Select a photo';
 	OpenDlg_Filter= 'All image files';
 	OpenDlg_Error_Msg_01= 'Photo not loaded.';
 	OpenDlg_Error_Msg_02= 'Possible cause: Photo format not valid';
@@ -59,7 +61,7 @@ uses
 
 procedure TFrmPicEmployee.ActivateSavePic;
 begin
-  if FraSaveCancel01.BtnSave.Enabled= False then FraSaveCancel01.BtnSave.Enabled:= True;
+	if FraSaveCancel01.BtnSave.Enabled= False then FraSaveCancel01.BtnSave.Enabled:= True;
 end;
 
 procedure TFrmPicEmployee.BtnCancelClick(Sender: TObject);
@@ -69,8 +71,10 @@ end;
 
 procedure TFrmPicEmployee.BtnCopyToClipboardClick(Sender: TObject);
 begin
-  if not(ImgEmployee.Picture.Bitmap= nil) then
-		Clipboard.Assign(ImgEmployee.Picture);
+  if not(ImgEmployee.Picture.Bitmap.Empty) then
+		Clipboard.Assign(ImgEmployee.Picture)
+  else
+		Application.MessageBox(PChar(Employee_Has_No_Pic_Wrn),'Error',MB_OK + MB_ICONERROR);
 end;
 
 procedure TFrmPicEmployee.BtnSaveClick(Sender: TObject);
@@ -110,13 +114,15 @@ end;
 
 procedure TFrmPicEmployee.BtnPasteFromClipboardClick(Sender: TObject);
 begin
-	if Clipboard.HasFormat(CF_Picture) then
+	if Clipboard.HasFormat(CF_METAFILEPICT) then
 		begin
     imgEmployee.Picture.LoadFromClipboardFormat(cf_Bitmap);
     if BtnExportPic.Enabled= False then
     	BtnExportPic.Enabled:= True;
     ActivateSavePic;
-    end;
+    end
+  else
+  		Application.MessageBox(PChar(No_Pic_in_Clipboard_Wrn),'Error',MB_OK + MB_ICONERROR);
 end;
 
 procedure TFrmPicEmployee.BtnLoadPicClick(Sender: TObject);

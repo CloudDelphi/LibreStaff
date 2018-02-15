@@ -358,6 +358,16 @@ msgctxt "formpermissions.of_lblnavrec"
 msgid "of"
 msgstr ""
 
+#: formpicemployee.employee_has_no_pic_wrn
+msgctxt "formpicemployee.employee_has_no_pic_wrn"
+msgid "Employee has no pic."
+msgstr ""
+
+#: formpicemployee.no_pic_in_clipboard_wrn
+msgctxt "formpicemployee.no_pic_in_clipboard_wrn"
+msgid "No an available image in clipboard."
+msgstr ""
+
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
 msgid "Photo not loaded."
