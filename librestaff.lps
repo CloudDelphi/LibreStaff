@@ -127,7 +127,7 @@
         <Item2 Mode="Linux QT-Debug" Option="309854063960"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="85">
+    <Units Count="89">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -143,10 +143,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="179"/>
-        <CursorPos Y="138"/>
+        <TopLine Value="124"/>
+        <CursorPos X="45" Y="126"/>
         <UsageCount Value="200"/>
       </Unit1>
       <Unit2>
@@ -154,8 +153,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="110"/>
-        <CursorPos X="35" Y="113"/>
+        <TopLine Value="782"/>
+        <CursorPos X="32" Y="565"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -166,8 +165,8 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="25"/>
-        <CursorPos X="12" Y="40"/>
+        <TopLine Value="63"/>
+        <CursorPos Y="10"/>
         <UsageCount Value="200"/>
       </Unit3>
       <Unit4>
@@ -247,8 +246,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="225"/>
-        <CursorPos X="5" Y="233"/>
+        <TopLine Value="295"/>
+        <CursorPos X="30" Y="311"/>
         <UsageCount Value="200"/>
       </Unit10>
       <Unit11>
@@ -336,8 +335,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="27"/>
-        <CursorPos X="15" Y="45"/>
+        <TopLine Value="8"/>
+        <CursorPos X="13" Y="51"/>
         <UsageCount Value="200"/>
       </Unit18>
       <Unit19>
@@ -356,9 +355,10 @@
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="74"/>
-        <CursorPos X="24" Y="82"/>
+        <TopLine Value="46"/>
+        <CursorPos X="3" Y="51"/>
         <UsageCount Value="200"/>
       </Unit20>
       <Unit21>
@@ -371,7 +371,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="59"/>
         <CursorPos X="19" Y="70"/>
-        <UsageCount Value="192"/>
+        <UsageCount Value="200"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
@@ -380,7 +380,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="194"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -392,7 +392,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="161"/>
+        <UsageCount Value="174"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -402,9 +402,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormProfile"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="34"/>
+        <TopLine Value="24"/>
         <CursorPos Y="54"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="140"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -416,7 +416,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="43" Y="31"/>
-        <UsageCount Value="151"/>
+        <UsageCount Value="164"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -426,9 +426,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="59"/>
-        <CursorPos X="60" Y="126"/>
-        <UsageCount Value="41"/>
+        <TopLine Value="225"/>
+        <CursorPos Y="235"/>
+        <UsageCount Value="54"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -858,6 +858,35 @@
         <UsageCount Value="10"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit84>
+      <Unit85>
+        <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2851"/>
+        <CursorPos Y="2863"/>
+        <UsageCount Value="10"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4315"/>
+        <CursorPos Y="4327"/>
+        <UsageCount Value="10"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\popupnotifier.pas"/>
+        <UnitName Value="PopupNotifier"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="432"/>
+        <CursorPos Y="327"/>
+        <UsageCount Value="11"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2282"/>
+        <CursorPos Y="2295"/>
+        <UsageCount Value="10"/>
+      </Unit88>
     </Units>
     <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>

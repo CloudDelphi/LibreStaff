@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  StdCtrls, ExtCtrls, Buttons, CheckLst, PopupNotifier, FormMain, db,
-  sqldb, Globals, FuncData;
+  StdCtrls, ExtCtrls, Buttons, CheckLst, FormMain, db, sqldb,
+  Globals, FuncData, FuncApp;
 
 type TSearchCriteria = record
     Name: String;
@@ -34,7 +34,6 @@ type
     PanOptions: TPanel;
     PanLeft: TPanel;
     PanRight: TPanel;
-    PopupNotifier1: TPopupNotifier;
     Splitter: TSplitter;
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
@@ -142,10 +141,7 @@ var
 begin
   if (EdiSearch.Text='') AND (ViewAll= False) then
     begin
-   	p:= FrmMain.ScreenToClient(Mouse.CursorPos);
-    FrmMain.PopNot.Title:= lg_BlankSearchTitle;
-    FrmMain.PopNot.Text:= lg_BlankSearchText;
-    FrmMain.PopNot.ShowAtPos(p.x, p.y);
+    FuncApp.PopNotifier(FrmSearch, lg_BlankSearchTitle, lg_BlankSearchText, FrmMain.ScreenToClient(Mouse.CursorPos));
     Exit;
     end
   else
@@ -158,10 +154,7 @@ begin
   	  end;
     if CriteriaSelectedCount=0 then
       begin
-	    p:= FrmMain.ScreenToClient(Mouse.CursorPos);
-  	  FrmMain.PopNot.Title:= lg_NoCriteriaTitle;
-    	FrmMain.PopNot.Text:= lg_NoCriteriaText;
-	    FrmMain.PopNot.ShowAtPos(p.x, p.y);
+      FuncApp.PopNotifier(FrmSearch, lg_NoCriteriaTitle, lg_NoCriteriaText, FrmMain.ScreenToClient(Mouse.CursorPos));
 	    Exit;
       end;
     end;
@@ -315,7 +308,7 @@ end;
 procedure TFrmSearch.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   DataMod.QueSearch.Close;
-  FrmMain.PopNot.Hide;
+  FreeAndNil(PopNotifierObj);
 	CloseAction:= caFree;
 end;
 

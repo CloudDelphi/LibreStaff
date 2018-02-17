@@ -48,6 +48,7 @@ var
   User: TUser;
 
 const
+  AUTOCLOSE_POPUPNOTIFIER_TIME= 3000;
   AVATARS_COUNT= 399;
   DATABASE_NAME= 'librestaff';
   DATABASE_EXTENSION= '.db';

@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
-  Left = 479
+  Left = 212
   Height = 713
-  Top = 218
+  Top = 174
   Width = 1131
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -840,22 +840,22 @@ object FrmMain: TFrmMain
             Columns = <            
               item
                 Title.Caption = 'Date Init Contract'
-                Width = 232
+                Width = 236
                 FieldName = 'DateInit_Contract'
               end            
               item
                 Title.Caption = 'Date End Contract'
-                Width = 232
+                Width = 236
                 FieldName = 'DateEnd_Contract'
               end            
               item
                 Title.Caption = 'Type of contract'
-                Width = 232
+                Width = 236
                 FieldName = 'Name_TypeContract'
               end            
               item
                 Title.Caption = 'Workplace'
-                Width = 235
+                Width = 238
                 FieldName = 'Name_Workplace'
               end>
             DataSource = DataMod.DsoContractsLog
@@ -976,7 +976,7 @@ object FrmMain: TFrmMain
         end
         object CboFilter: TComboBox
           Left = 160
-          Height = 35
+          Height = 39
           Top = 40
           Width = 120
           ItemHeight = 0
@@ -1273,16 +1273,5 @@ object FrmMain: TFrmMain
   object UniqueInstance: TUniqueInstance
     left = 744
     top = 544
-  end
-  object PopNot: TPopupNotifier
-    Color = 14483455
-    Icon.Data = {
-      07544269746D617000000000
-    }
-    Text = 'Text'
-    Title = 'Caption'
-    Visible = False
-    left = 864
-    top = 456
   end
 end

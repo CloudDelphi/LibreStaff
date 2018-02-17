@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-02-13 23:58+0100\n"
+"PO-Revision-Date: 2018-02-15 12:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -365,12 +365,12 @@ msgstr "de"
 #: formpicemployee.employee_has_no_pic_wrn
 msgctxt "formpicemployee.employee_has_no_pic_wrn"
 msgid "Employee has no pic."
-msgstr ""
+msgstr "El empleado no tiene ninguna imagen."
 
 #: formpicemployee.no_pic_in_clipboard_wrn
 msgctxt "formpicemployee.no_pic_in_clipboard_wrn"
 msgid "No an available image in clipboard."
-msgstr ""
+msgstr "No hay disponible una imagen en el portapapeles."
 
 #: formpicemployee.opendlg_error_msg_01
 msgctxt "formpicemployee.opendlg_error_msg_01"
@@ -1542,7 +1542,7 @@ msgstr "VACÍO"
 #: tfrmreports.lblfilters.caption
 msgctxt "tfrmreports.lblfilters.caption"
 msgid "Filtros"
-msgstr ""
+msgstr "Filters"
 
 #: tfrmreports.lblnameemployee.caption
 msgctxt "tfrmreports.lblnameemployee.caption"

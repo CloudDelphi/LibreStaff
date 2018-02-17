@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, DBDateTimePicker, DateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, Buttons, ComCtrls, StdCtrls, DBGrids,
-  CheckLst, ValEdit, Globals, FuncData;
+  Globals, FuncData;
 
 type
 
@@ -72,6 +72,7 @@ type
     TabCriterionPersonalData: TTabSheet;
     TabeCriterionContract: TTabSheet;
     TabFields: TTabSheet;
+    procedure BtnAddFieldClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnQueryClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -80,6 +81,7 @@ type
     Report: TReport;
 		Criteria: array of TQueryCriteria;
     procedure AddCriteria(FieldName: String; CriteriaStr: String; DataFormat: TDataFormat);
+		procedure UpdateLstBoxes;
   public
 
   end;
@@ -92,7 +94,9 @@ implementation
 {$R *.lfm}
 
 uses
-  DataModule, FuncApp;
+  DataModule, FuncApp, FormMain;
+
+{The Report Object Procedures}
 
 constructor TReportField.Create(stName: String; stTitle: String; stShortTitle: String);
 begin
@@ -130,11 +134,47 @@ begin
   Report.ReportFieldsList.Add(TReportField.Create('Surname2_Employee', 'Surname 2 of Employee', 'Surname 2'));
   ReportFieldsStrings:= TStringList.Create;
   for i:=0 to (Report.ReportFieldsList.Count-1) do
-   	begin
+    begin
 		ReportFieldsStrings.Add(TReportField(Report.ReportFieldsList.Items[i]).Title);
-  	end;
-  LstBoxFields.Items.Assign(ReportFieldsStrings);
+    end;
+ 	LstBoxFields.Items.Assign(ReportFieldsStrings);
+  ReportFieldsStrings.Clear;
+	Report.AvailableReportFieldsList.Add(TReportField.Create('DateBirth_Employee', 'Datebirth of Employee', 'Datebirth'));
+  for i:=0 to (Report.AvailableReportFieldsList.Count-1) do
+    begin
+		ReportFieldsStrings.Add(TReportField(Report.AvailableReportFieldsList.Items[i]).Title);
+    end;
+	LstBoxAvailableFields.Items.Assign(ReportFieldsStrings);
   FreeAndInvalidate(ReportFieldsStrings);
+end;
+
+procedure TFrmReports.BtnAddFieldClick(Sender: TObject);
+var
+  Item: Pointer;
+begin
+  if (LstBoxAvailableFields.Items.Count= 0) then
+  	begin
+    FuncApp.PopNotifier(FrmReports, 'Error!', 'No more items to add.', FrmMain.ScreenToClient(Mouse.CursorPos));
+    Exit;
+    end;
+  if (LstBoxAvailableFields.ItemIndex>-1) then
+    begin
+    Item:= TReportField(Report.AvailableReportFieldsList.Items[LstBoxAvailableFields.ItemIndex]);
+		if (LstBoxFields.ItemIndex>-1) then
+      begin
+      Report.ReportFieldsList.Insert(LstBoxFields.ItemIndex, Item);
+      end
+    else
+    	begin
+      Report.ReportFieldsList.Add(Item);
+      end;
+		Report.AvailableReportFieldsList.Delete(LstBoxAvailableFields.ItemIndex);
+    UpdateLstBoxes;
+    end
+  	else
+    	begin
+      FuncApp.PopNotifier(FrmReports, 'Warning!', 'Select an item.', FrmMain.ScreenToClient(Mouse.CursorPos));
+      end;
 end;
 
 procedure TFrmReports.BtnCloseClick(Sender: TObject);
@@ -183,7 +223,7 @@ begin
     begin
 	  DBGridQueryResult.Columns.Items[i].Title.Caption:= TReportField(Report.ReportFieldsList.Items[i]).ShortTitle;
     end;
-  //FreeAndNil(SQLReport): PUT THIS BEFORE COULD CASUE ERRORS
+  //FreeAndNil(SQLReport): PUT THIS COULD CASUE ERRORS
   SQLReport:= nil;
   SQLReport.Free;
 end;
@@ -192,13 +232,18 @@ procedure TFrmReports.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   i: Integer;
 begin
-  //Before delete Report, It's mandatory to Free the ReportFields objects
+  //Before delete Report, It's mandatory to Free the ReportFields objects of the two lists
   for i:= 0 to Report.ReportFieldsList.Count - 1 do
 		begin;
 	  TReportField(Report.ReportFieldsList[i]).Free
 		end;
+  for i:= 0 to Report.AvailableReportFieldsList.Count - 1 do
+		begin;
+	  TReportField(Report.AvailableReportFieldsList[i]).Free
+		end;
   FreeAndNil(Report);
   DataMod.QueQuery.Close;
+  FreeAndNil(PopNotifierObj);
   CloseAction:= caFree;
 end;
 
@@ -211,6 +256,22 @@ begin
 	Criteria[LenghtCriteria-1].FieldName:= FieldName;
 	Criteria[LenghtCriteria-1].Criteria:= CriteriaStr;
 	Criteria[LenghtCriteria-1].DataFormat:= DataFormat;
+end;
+
+procedure TFrmReports.UpdateLstBoxes;
+var
+	ReportFieldsStrings: TStringList;
+  i: Integer;
+begin
+	ReportFieldsStrings:= TStringList.Create;
+  for i:=0 to (Report.ReportFieldsList.Count-1) do
+ 		ReportFieldsStrings.Add(TReportField(Report.ReportFieldsList.Items[i]).Title);
+  LstBoxFields.Items.Assign(ReportFieldsStrings);
+  ReportFieldsStrings.Clear;
+  for i:=0 to (Report.AvailableReportFieldsList.Count-1) do
+ 		ReportFieldsStrings.Add(TReportField(Report.AvailableReportFieldsList.Items[i]).Title);
+	LstBoxAvailableFields.Items.Assign(ReportFieldsStrings);
+	FreeAndInvalidate(ReportFieldsStrings);
 end;
 
 end.

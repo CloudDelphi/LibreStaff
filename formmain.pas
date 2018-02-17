@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
-  StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles, PopupNotifier,
+  StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles,
   gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Types;
 
 type
@@ -85,7 +85,6 @@ type
     LblState: TLabel;
     LblNavRec: TLabel;
     DbMmoRemarkEmployee: TDBMemo;
-    PopNot: TPopupNotifier;
     Sidebar: TPageControl;
     PagMain: TPageControl;
     PagEmployees: TPageControl;
@@ -539,9 +538,9 @@ procedure TFrmMain.CheckTabPermissions;
 begin
   if (AccessControl= TRUE) then
     begin
-    if (User.Permissions.ShowTabAddress= FALSE) then
+	  if (User.Permissions.ShowTabAddress= FALSE) then
       TabAddress.TabVisible:= FALSE;
-  end;
+		end;
 end;
 
 procedure TFrmMain.ImgReportsClick(Sender: TObject);
@@ -770,5 +769,6 @@ begin
   ShowSidebar;
   Sidebar.TabIndex:= 0;
 end;
+
 
 end.
