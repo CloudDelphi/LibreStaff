@@ -497,7 +497,6 @@ begin
 		LoadQueries[7].Query:= DataMod.QueUsers;
   	LoadQueries[7].SQL:= SELECT_ALL_USERS_SQL;
     end;
-  FrmPrgBar.Caption:= 'Loading Tables...';
 	for i:= Low(LoadQueries) to High(LoadQueries) do
   	begin
 		FuncData.ExecSQL(LoadQueries[i].Query, LoadQueries[i].SQL);
@@ -521,9 +520,6 @@ begin
 		DataMod.QueEmployees.RecNo:= BookmarkInt;
 	//Update the Navigator lavel of current record & total records
 	UpdateNavRec;
-  //Close the Progress Bar
-	FrmPrgBar.Close;
- 	Screen.Cursor:=crDefault;
   //Check Tab permissions
   CheckTabPermissions;
 end;
@@ -730,13 +726,9 @@ end;
 procedure TFrmMain.BtnActivateClick(Sender: TObject);
 begin
   if (FuncData.CheckQueryEmpty(DataMod.QueEmployees)= FALSE) then
-    begin
-	 	FrmActivationEmployee.ActivateEmployee;
-    end
+	 	FrmActivationEmployee.ActivateEmployee
   else
-  	begin
     Application.MessageBox(PChar(lg_Employee_Still_Not_Saved), 'Error!', MB_OK);
-    end;
 end;
 
 procedure TFrmMain.ImgExitClick(Sender: TObject);

@@ -131,10 +131,10 @@
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="46"/>
-        <CursorPos X="32" Y="34"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="37" Y="26"/>
         <UsageCount Value="200"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -144,8 +144,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="124"/>
-        <CursorPos X="45" Y="126"/>
+        <TopLine Value="448"/>
+        <CursorPos X="61" Y="468"/>
         <UsageCount Value="200"/>
       </Unit1>
       <Unit2>
@@ -153,8 +153,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="782"/>
-        <CursorPos X="32" Y="565"/>
+        <TopLine Value="130"/>
+        <CursorPos X="32" Y="162"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -165,7 +165,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="63"/>
+        <TopLine Value="10"/>
         <CursorPos Y="10"/>
         <UsageCount Value="200"/>
       </Unit3>
@@ -258,8 +258,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="233"/>
-        <CursorPos X="3" Y="245"/>
+        <TopLine Value="78"/>
+        <CursorPos X="36" Y="91"/>
         <UsageCount Value="200"/>
       </Unit11>
       <Unit12>
@@ -282,7 +282,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPrgBar"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="3" Y="9"/>
+        <CursorPos X="24" Y="19"/>
         <UsageCount Value="200"/>
       </Unit13>
       <Unit14>
@@ -335,8 +335,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="8"/>
-        <CursorPos X="13" Y="51"/>
+        <TopLine Value="22"/>
+        <CursorPos X="23" Y="25"/>
         <UsageCount Value="200"/>
       </Unit18>
       <Unit19>
@@ -347,18 +347,17 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormLogin"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="99"/>
-        <CursorPos X="33" Y="106"/>
+        <TopLine Value="17"/>
+        <CursorPos X="13" Y="23"/>
         <UsageCount Value="200"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="46"/>
-        <CursorPos X="3" Y="51"/>
+        <TopLine Value="22"/>
+        <CursorPos Y="39"/>
         <UsageCount Value="200"/>
       </Unit20>
       <Unit21>
@@ -369,7 +368,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormInputBox"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="59"/>
+        <TopLine Value="37"/>
         <CursorPos X="19" Y="70"/>
         <UsageCount Value="200"/>
       </Unit21>
@@ -380,7 +379,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="50" Y="29"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="200"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -392,7 +391,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos Y="64"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="186"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -404,7 +403,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="24"/>
         <CursorPos Y="54"/>
-        <UsageCount Value="140"/>
+        <UsageCount Value="152"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -416,7 +415,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="43" Y="31"/>
-        <UsageCount Value="164"/>
+        <UsageCount Value="176"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -426,9 +425,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="225"/>
-        <CursorPos Y="235"/>
-        <UsageCount Value="54"/>
+        <TopLine Value="140"/>
+        <CursorPos X="36" Y="131"/>
+        <UsageCount Value="66"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -437,7 +436,7 @@
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="21"/>
       </Unit27>
       <Unit28>
         <Filename Value="richmemo\formeditadduser.pas"/>
@@ -445,20 +444,20 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="15"/>
       </Unit28>
       <Unit29>
         <Filename Value="C:\sprite.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="276"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit29>
       <Unit30>
         <Filename Value="sprite.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="100"/>
         <CursorPos Y="105"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit30>
       <Unit31>
         <Filename Value="datamodule.lfm"/>
@@ -467,7 +466,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="18" Y="3"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit31>
       <Unit32>
@@ -475,54 +474,54 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <CursorPos X="41" Y="13"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit32>
       <Unit33>
         <Filename Value="C:\lazarus\components\zeos\zcore.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="36" Y="11"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit33>
       <Unit34>
         <Filename Value="C:\lazarus\components\zeos\ZClasses.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="42"/>
         <CursorPos X="2" Y="56"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit34>
       <Unit35>
         <Filename Value="C:\lazarus\components\zeos\src\Zeos.inc"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <TopLine Value="64"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit35>
       <Unit36>
         <Filename Value="C:\lazarus\components\zeos\src\component\ZAbstractConnection.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="416"/>
         <CursorPos Y="428"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit36>
       <Unit37>
         <Filename Value="D:\AppData\Local\Temp\ActiveHomeScriptLib.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="237"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="2"/>
       </Unit37>
       <Unit38>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3257"/>
         <CursorPos Y="3271"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="19"/>
       </Unit38>
       <Unit39>
         <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2074"/>
         <CursorPos Y="2086"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit39>
       <Unit40>
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
@@ -530,7 +529,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2023"/>
         <CursorPos Y="2077"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit40>
       <Unit41>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
@@ -538,28 +537,28 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos Y="114"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="15"/>
       </Unit41>
       <Unit42>
         <Filename Value="C:\lazarus\lcl\include\png.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="27"/>
         <CursorPos Y="40"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit42>
       <Unit43>
         <Filename Value="C:\lazarus\lcl\include\clipbrd.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="746"/>
         <CursorPos Y="694"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit43>
       <Unit44>
         <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="463"/>
         <CursorPos Y="476"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit44>
       <Unit45>
         <Filename Value="C:\lazarus\lcl\dbctrls.pp"/>
@@ -567,14 +566,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1503"/>
         <CursorPos Y="1516"/>
-        <UsageCount Value="4"/>
+        <UsageCount Value="3"/>
       </Unit45>
       <Unit46>
         <Filename Value="iniengine.pas"/>
         <UnitName Value="IniEngine"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="15"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit46>
       <Unit47>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32wsbuttons.pp"/>
@@ -582,35 +581,35 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="557"/>
         <CursorPos X="28" Y="494"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit47>
       <Unit48>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32memostrings.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="146"/>
         <CursorPos X="37" Y="155"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="4"/>
       </Unit48>
       <Unit49>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="5329"/>
         <CursorPos Y="5342"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit49>
       <Unit50>
         <Filename Value="C:\lazarus\lcl\include\screen.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="878"/>
         <CursorPos Y="894"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit50>
       <Unit51>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2688"/>
         <CursorPos Y="2709"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit51>
       <Unit52>
         <Filename Value="C:\lazarus\components\richmemo\richmemoutils.pas"/>
@@ -618,7 +617,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="3" Y="88"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="7"/>
       </Unit52>
       <Unit53>
         <Filename Value="C:\lazarus\components\lazreport\source\lr_previewtoolsabstract.pas"/>
@@ -626,7 +625,7 @@
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
         <CursorPos X="14" Y="6"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit53>
       <Unit54>
         <Filename Value="C:\lazarus\components\lazreport\source\lr_about.lfm"/>
@@ -634,7 +633,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit54>
       <Unit55>
@@ -644,7 +643,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LR_PrDlg"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit55>
       <Unit56>
         <Filename Value="C:\lazarus\components\lazreport\source\lr_templ.pas"/>
@@ -653,7 +652,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="LR_Templ"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit56>
       <Unit57>
         <Filename Value="lazreport\source\lr_view.pas"/>
@@ -663,33 +662,33 @@
         <UnitName Value="LR_View"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit57>
       <Unit58>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-db\fpmake.pp"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit58>
       <Unit59>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-process\src\simpleipc.pp"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit59>
       <Unit60>
         <Filename Value="C:\lazarus\packager\registration\lazaruspackageintf.pas"/>
         <UnitName Value="LazarusPackageIntf"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit60>
       <Unit61>
         <Filename Value="C:\lazarus\packager\registration\fcllaz.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit61>
       <Unit62>
         <Filename Value="C:\lazarus\fpc\2.6.4\source\packages\fcl-extra\src\win\ServiceManager.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit62>
       <Unit63>
         <Filename Value="lazreport\source\lr_class.pas"/>
@@ -697,7 +696,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1107"/>
         <CursorPos X="21" Y="1107"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit63>
       <Unit64>
         <Filename Value="C:\lazarus\lcl\grids.pas"/>
@@ -705,7 +704,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11899"/>
         <CursorPos Y="11912"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit64>
       <Unit65>
         <Filename Value="C:\lazarus\lcl\popupnotifier.pas"/>
@@ -713,7 +712,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="314"/>
         <CursorPos Y="332"/>
-        <UsageCount Value="2"/>
+        <UsageCount Value="1"/>
       </Unit65>
       <Unit66>
         <Filename Value="C:\lazarus\lcl\customtimer.pas"/>
@@ -721,33 +720,33 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="165"/>
         <CursorPos Y="176"/>
-        <UsageCount Value="1"/>
+        <UsageCount Value="10"/>
       </Unit66>
       <Unit67>
         <Filename Value="richmemo\richmemopackage.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="10"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
       </Unit67>
       <Unit68>
         <Filename Value="C:\lazarus\lcl\include\customedit.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="566"/>
         <CursorPos Y="578"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="6"/>
       </Unit68>
       <Unit69>
         <Filename Value="dcpcrypt-2.0.4.1\dcpcrypt_laz.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="10"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="5"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit69>
       <Unit70>
         <Filename Value="uniqueinstance\uniqueinstance_package.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="5"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit70>
       <Unit71>
         <Filename Value="richmemo\qt\qtrichmemo.pas"/>
@@ -755,7 +754,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2"/>
         <CursorPos X="20" Y="11"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit71>
       <Unit72>
         <Filename Value="D:\usr\share\lazarus\1.6.4\lcl\interfaces\win32\win32int.pp"/>
@@ -763,28 +762,28 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="17"/>
         <CursorPos X="3" Y="31"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit72>
       <Unit73>
         <Filename Value="D:\usr\share\fpcsrc\3.0.2\rtl\objpas\sysutils\osutilsh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="31"/>
         <CursorPos X="10" Y="44"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit73>
       <Unit74>
         <Filename Value="D:\usr\lib\lazarus\1.8.0\ide\lazarus.pp"/>
         <UnitName Value="Lazarus"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit74>
       <Unit75>
         <Filename Value="richmemo\richmemortf.pas"/>
         <UnitName Value="RichMemoRTF"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="15"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit75>
       <Unit76>
         <Filename Value="richmemo\richmemohelpers.pas"/>
@@ -792,13 +791,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="202"/>
         <CursorPos X="12" Y="215"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit76>
       <Unit77>
         <Filename Value="D:\home\runs\Descargas\servustv_sd.webm.mpd"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit77>
       <Unit78>
@@ -806,14 +805,14 @@
         <UnitName Value="Dialogs"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit78>
       <Unit79>
         <Filename Value="D:\usr\lib\lazarus\1.8.0\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="927"/>
         <CursorPos Y="941"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit79>
       <Unit80>
         <Filename Value="formreports.lfm"/>
@@ -823,7 +822,7 @@
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
         </ExtraEditor1>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit80>
       <Unit81>
@@ -831,7 +830,7 @@
         <UnitName Value="UniqueInstance"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit81>
       <Unit82>
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\lclrescache.pas"/>
@@ -839,14 +838,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="240"/>
         <CursorPos Y="247"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit82>
       <Unit83>
         <Filename Value="..\..\..\opt\lazarus\lcl\interfaces\gtk2\gtk2wscustommemo.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="382"/>
         <CursorPos X="2" Y="392"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit83>
       <Unit84>
         <Filename Value="formmain.lfm"/>
@@ -855,22 +854,22 @@
         <ExtraEditor1>
           <EditorIndex Value="1"/>
         </ExtraEditor1>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit84>
       <Unit85>
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="2851"/>
-        <CursorPos Y="2863"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="3605"/>
+        <CursorPos X="14" Y="3559"/>
+        <UsageCount Value="12"/>
       </Unit85>
       <Unit86>
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4315"/>
         <CursorPos Y="4327"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit86>
       <Unit87>
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\popupnotifier.pas"/>
@@ -878,17 +877,30 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="432"/>
         <CursorPos Y="327"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit87>
       <Unit88>
         <Filename Value="..\..\..\usr\lib\lazarus\1.8.0\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="2282"/>
-        <CursorPos Y="2295"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="142"/>
+        <CursorPos Y="162"/>
+        <UsageCount Value="11"/>
       </Unit88>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="18" Column="20" TopLine="6"/>
+      </Position1>
+      <Position2>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="25" Column="30" TopLine="12"/>
+      </Position2>
+      <Position3>
+        <Filename Value="librestaff.pas"/>
+        <Caret Line="25" Column="34" TopLine="12"/>
+      </Position3>
+    </JumpHistory>
   </ProjectSession>
   <Debugging>
     <Watches Count="3">

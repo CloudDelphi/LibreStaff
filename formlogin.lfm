@@ -8,7 +8,6 @@ object FrmLogin: TFrmLogin
   ClientHeight = 253
   ClientWidth = 328
   OnClose = FormClose
-  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
@@ -64,7 +63,6 @@ object FrmLogin: TFrmLogin
     Width = 110
     Caption = 'Exit'
     ModalResult = 3
-    OnClick = BtnExitClick
     TabOrder = 3
   end
   object LblLibreStaff: TLabel

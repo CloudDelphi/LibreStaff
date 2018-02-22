@@ -1443,6 +1443,10 @@ msgstr ""
 msgid "FrmPrgBar"
 msgstr ""
 
+#: tfrmprgbar.lblprg.caption
+msgid "LblPrg"
+msgstr ""
+
 #: tfrmprofile.btnsaveavatar.caption
 msgctxt "TFRMPROFILE.BTNSAVEAVATAR.CAPTION"
 msgid "Save"

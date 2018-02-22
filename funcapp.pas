@@ -15,7 +15,6 @@ type
 		procedure OnTimer(Sender: TObject);
   public
     constructor Create(AOwner: TComponent);override;
-    destructor Destroy; override;
 	end;
 
  var
@@ -34,16 +33,10 @@ uses
 constructor TAutoclosePopupNotifier.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
- 	Timer:= TTimer.Create(nil);
+ 	Timer:= TTimer.Create(Self);
   Timer.Interval:= AUTOCLOSE_POPUPNOTIFIER_TIME;
   Timer.OnTimer:= @OnTimer;
   Timer.Enabled:= True;
-end;
-
-destructor TAutoclosePopupNotifier.Destroy;
-begin
-  Timer.Free;
-  inherited;
 end;
 
 procedure TAutoclosePopupNotifier.OnTimer(Sender: TObject);

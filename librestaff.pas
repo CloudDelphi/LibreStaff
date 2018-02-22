@@ -8,8 +8,8 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
-  FormLogin, FormPrgBar, FormMain, FuncData, SysUtils, INIfiles,
-  Globals, FormPreferences, Dialogs, StrUtils;
+  FormLogin, FormMain, FuncData, SysUtils, INIfiles,
+  Globals, FormPreferences, FormprgBar, Dialogs, StrUtils;
 
 {$R *.res}
 
@@ -20,12 +20,10 @@ var
 
 procedure CreateMainForm;
 	begin
-  Screen.Cursor:= crHourglass;
-	//The progress bar to show the database load:
-	FrmPrgBar:= TFrmPrgBar.Create(Application);
-	FrmPrgBar.ShowOnTop;
-  Application.CreateForm(TFrmMain, FrmMain);
-	Application.Run;
+ 	Application.CreateForm(TFrmMain, FrmMain);
+  PrgBar.Free;
+  Screen.Cursor:= crDefault;
+ 	Application.Run;
   end;
 
 begin
@@ -104,6 +102,10 @@ begin
     ShowMessage('Error: '+Error_DatabaseName_Blank);
     ConfigureDBEngine;
     end;
+	//The progress bar to show the database creation or load:
+  Screen.Cursor:= crHourglass;
+  PrgBar:= TFrmPrgBar.Create(nil);
+  PrgBar.Show;
   FuncData.ConnectDatabase(DBEngine.Databasename);
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;
@@ -113,9 +115,20 @@ begin
   	LoginOK:= Login.ShowModal;
 	  if (LoginOK= mrOK) then
   		begin
+      FreeAndNil(Login); //Free the login form
       CreateMainForm;
-    	end;
-		Login.Free; //Free the login form
+    	end
+    else
+    	begin
+      PrgBar.Free;
+      FreeAndNil(Login); //Free the login form
+			FreeAndNil(DBEngine); //Free DBEngine
+      FreeAndNil(User);
+      FreeAndNil(DataMod);
+      Application.Terminate;
+      //Application.CreateForm(TDataMod, DataMod);
+      Application.Run; //Aplication should must initiated -without forms- to be capable of a cool destroying
+      end;
     end
   else
   	begin

@@ -128,7 +128,7 @@ begin
 	DataMod.ImgLstBtn.GetBitmap(2, BtnClose.Glyph);
   DataMod.ImgLstBtn.GetBitmap(16, BtnQuery.Glyph);
   DataMod.ImgLstBtn.GetBitmap(24, ImgFilters.Picture.Bitmap);
-  Report:= TReport.Create(Tables[4], TList.Create, TList.Create);
+  Report:= TReport.Create(DBEngine.Tables[4], TList.Create, TList.Create);
   Report.ReportFieldsList.Add(TReportField.Create('Name_Employee', 'Name of Employee', 'Name'));
   Report.ReportFieldsList.Add(TReportField.Create('Surname1_Employee', 'Surname 1 of Employee', 'Surname 1'));
   Report.ReportFieldsList.Add(TReportField.Create('Surname2_Employee', 'Surname 2 of Employee', 'Surname 2'));

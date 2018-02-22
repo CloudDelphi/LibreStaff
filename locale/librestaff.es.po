@@ -1436,6 +1436,10 @@ msgstr "SQLite"
 msgid "FrmPrgBar"
 msgstr "FrmPrgBar"
 
+#: tfrmprgbar.lblprg.caption
+msgid "LblPrg"
+msgstr ""
+
 #: tfrmprofile.btnsaveavatar.caption
 msgctxt "tfrmprofile.btnsaveavatar.caption"
 msgid "Save"

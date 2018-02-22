@@ -88,7 +88,7 @@ begin
     	wtTypeContracts:
         begin
         Caption:= Form_Caption_TypeContracts;
-        TableEdit:= Tables[6];
+        TableEdit:= DBEngine.Tables[6];
         TableEdit.FieldsToEditCount:= 1;
         SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
         TableEdit.FieldsToEdit[0]:= 'Name_TypeContract';
@@ -97,7 +97,7 @@ begin
       wtWorkplaces:
         begin
         Caption:= Form_Caption_Workplaces;
-        TableEdit:= Tables[7];
+        TableEdit:= DBEngine.Tables[7];
         TableEdit.FieldsToEditCount:= 1;
         SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
         TableEdit.FieldsToEdit[0]:= 'Name_Workplace';
@@ -106,7 +106,7 @@ begin
       wtUsers:
         begin
       	Caption:= Form_Caption_Users;
-        TableEdit:= Tables[2];
+        TableEdit:= DBEngine.Tables[2];
         TableEdit.FieldsToEditCount:= 4;
         SetLength(TableEdit.FieldsToEdit, TableEdit.FieldsToEditCount);
         TableEdit.FieldsToEdit[0]:= 'Name_User';

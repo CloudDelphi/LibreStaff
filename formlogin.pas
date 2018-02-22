@@ -23,10 +23,8 @@ type
     LblUser: TLabel;
     LblLibreStaff: TLabel;
     procedure BtnEnterClick(Sender: TObject);
-    procedure BtnExitClick(Sender: TObject);
     procedure EdiPasswordKeyPress(Sender: TObject; var Key: char);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
-    procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -37,7 +35,6 @@ type
 
 var
   FrmLogin: TFrmLogin;
-  PopLogin: TPopupNotifier;
 
 resourcestring
   lg_UserNotExistsTitle= 'Error!';
@@ -48,6 +45,9 @@ resourcestring
 implementation
 
 {$R *.lfm}
+
+uses
+	FuncApp;
 
 { TFrmLogin }
 
@@ -88,7 +88,6 @@ var
 begin
   LoginUser:= EdiUser.Text;
   LoginPassword:= EdiPassword.Text;
-  PopLogin:= TCustomPopupNotifier.Create(2);
   //Search the user name, password and salt
   FuncData.ExecSQL(DataMod.QueVirtual, 'SELECT ID_User, Hash_User, Salt_User FROM Users WHERE Name_User='''+LoginUser+''' LIMIT 1');
   if (DataMod.QueVirtual.IsEmpty= FALSE) then
@@ -118,24 +117,14 @@ begin
       end
     else
     	begin
-      PopLogin.Title:= lg_PasswordDoesNotMatchTitle;
-  	  PopLogin.Text:= lg_PasswordDoesNotMatchText;
-			PopLogin.ShowAtPos(Left+EdiPassword.Left, Top+EdiPassword.Top);
+      FuncApp.PopNotifier(FrmLogin, lg_PasswordDoesNotMatchTitle, lg_PasswordDoesNotMatchText, Point(Left+EdiPassword.Left, Top+EdiPassword.Top));
       end;
     end
   else
     begin
-		PopLogin.Title:= lg_UserNotExistsTitle;
-		PopLogin.Text:= lg_UserNotExistsText;
-		PopLogin.ShowAtPos(Left+EdiUser.Left, Top+EdiUser.Top);
+    FuncApp.PopNotifier(FrmLogin, lg_UserNotExistsTitle, lg_UserNotExistsText, Point(Left+EdiUser.Left, Top+EdiUser.Top));
     end;
   //Get the user
-end;
-
-procedure TFrmLogin.BtnExitClick(Sender: TObject);
-begin
-  //Free DBEngine
-  FreeAndNil(DBEngine);
 end;
 
 procedure TFrmLogin.EdiPasswordKeyPress(Sender: TObject; var Key: char);
@@ -148,12 +137,7 @@ end;
 
 procedure TFrmLogin.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-
-end;
-
-procedure TFrmLogin.FormCloseQuery(Sender: TObject; var CanClose: boolean);
-begin
-
+	FreeAndNil(PopNotifierObj);
 end;
 
 end.

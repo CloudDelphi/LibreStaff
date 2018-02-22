@@ -3,6 +3,7 @@ object FrmReports: TFrmReports
   Height = 635
   Top = 236
   Width = 937
+  ActiveControl = PanTop
   BorderStyle = bsSingle
   Caption = 'Reports'
   ClientHeight = 635

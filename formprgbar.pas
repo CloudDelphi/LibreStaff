@@ -6,14 +6,16 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
-  ExtCtrls;
+  ExtCtrls, StdCtrls;
 
 type
 
   { TFrmPrgBar }
 
   TFrmPrgBar = class(TForm)
-    PrgBar: TProgressBar;
+    LblPrg: TLabel;
+    _PrgBar: TProgressBar;
+    procedure FormCreate(Sender: TObject);
   private
     { private declarations }
   public
@@ -26,6 +28,13 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TFrmPrgBar }
+
+procedure TFrmPrgBar.FormCreate(Sender: TObject);
+begin
+	_PrgBar.Caption:= 'Loading/creating databases...';
+end;
 
 end.
 
