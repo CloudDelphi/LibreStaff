@@ -5,7 +5,7 @@ unit FormReports;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, DBDateTimePicker, DateTimePicker, Forms,
+  Classes, SysUtils, FileUtil, DateTimePicker, Forms,
   Controls, Graphics, Dialogs, ExtCtrls, Buttons, ComCtrls, StdCtrls, DBGrids,
   Globals, FuncData;
 

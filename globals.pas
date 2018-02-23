@@ -5,7 +5,7 @@ unit Globals;
 interface
 
 uses
-  Classes, SysUtils, INIfiles, PopupNotifier, ExtCtrls, Graphics, FormprgBar;
+  Classes, SysUtils, INIfiles, ExtCtrls, Graphics, FormprgBar;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate, dtChar, dtText,
@@ -41,8 +41,11 @@ var
 const
   AUTOCLOSE_POPUPNOTIFIER_TIME= 3000;
   AVATARS_COUNT= 399;
-  DATABASE_NAME= 'librestaff';
+  DATABASE_DEFAULT_VERSION= '0.0.0';
   DATABASE_EXTENSION= '.db';
+  DATABASE_NAME= 'librestaff';
+  DATABASE_VERSION_SEPARATOR= '.';
+	DATABASE_VERSION_SUBSTRINGS_COUNT= 3;
   EDIT_ERROR_COLOR= clRed;
   MYSQL_COLLATION= 'utf8_unicode_ci';
   MYSQL_ENGINE_VERSION= '5.6.27.0';

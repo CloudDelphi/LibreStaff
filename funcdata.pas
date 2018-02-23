@@ -45,10 +45,10 @@ type TTable = record
 	Name: String;
   Table: TSQLQuery;
   Datasource: TDatasource;
-  FieldsCount: Integer;
 	Fields: array of TField;
-  FieldsToEditCount: Integer;
+  FieldsCount: Integer;
   FieldsToEdit: array of String;
+  FieldsToEditCount: Integer;
   KeyField: String;
 end;
 
@@ -58,11 +58,12 @@ type TDBEngine = class
   Connection: TSQLConnection;
   DatabasePath: String;
   DatabaseName: String;
+  DatabaseVersion: String;
+  Tables: array of TTable;
+  TablesCount: Integer;
   HostName: String;
   UserName: String;
   Password: String;
-  Tables: array of TTable;
-  TablesCount: Integer;
   TrueValue: String;
   FalseValue: String;
   AutoIncrementKeyword: String;
@@ -153,7 +154,7 @@ begin
 	DBEngine.Connection.DatabaseName:= Databasename;
   DBEngine.Connection.HostName:= DBEngine.HostName;
   DBEngine.Connection.UserName:= DBEngine.UserName;
-  //Check whether the database already exists
+  //Check whether the database already exists or not
   case DBEngine.DBType of
     dbtSQLite: newDatabase:= not FileExists(Databasename);
   end; //case
@@ -256,7 +257,7 @@ begin
     PrgBar._PrgBar.Position:= 90;
     DBEngine.Connection.ExecuteDirect('INSERT INTO Config ('+
           ' DatabaseVersion, CompanyName, AccessControl)'+
-      	  ' VALUES('+QuotedStr(DATABASEVERSION)+', '+QuotedStr('My Company')+', '+DBEngine.FalseValue+
+      	  ' VALUES('+QuotedStr(DATABASE_DEFAULT_VERSION)+', '+QuotedStr('My Company')+', '+DBEngine.FalseValue+
           ');');
     DBEngine.Connection.ExecuteDirect('INSERT INTO Usergroups ('+
     			' Name_Usergroup)'+
@@ -293,13 +294,13 @@ begin
  	    DBEngine.Tables[0].Fields[0].IsNotNull:= TRUE;
    	DBEngine.Tables[0].Fields[0].IsPrimaryKey:= TRUE;
      DBEngine.Tables[0].Fields[0].Autoincrement:= TRUE;
-   //DatabaseVersion CHAR(20) DEFAULT ""
+   //DatabaseVersion CHAR(20) DEFAULT DATABASE_DEFAULT_VERSION
    DBEngine.Tables[0].Fields[1].Name:= 'DatabaseVersion';
     DBEngine.Tables[0].Fields[1].DataFormat:= dtChar;
  	  	DBEngine.Tables[0].Fields[1].DataLength:= 20;
-   	DBEngine.Tables[0].Fields[1].HasDefaultValue:=	TRUE;
+   	DBEngine.Tables[0].Fields[1].HasDefaultValue:= TRUE;
   		DBEngine.Tables[0].Fields[1].DefaultValueQuoted:= TRUE;
- 		  DBEngine.Tables[0].Fields[1].DefaultValue:= '';
+ 		  DBEngine.Tables[0].Fields[1].DefaultValue:= DATABASE_DEFAULT_VERSION;
    //CompanyName CHAR(255) DEFAULT ""
    DBEngine.Tables[0].Fields[2].Name:= 'CompanyName';
      DBEngine.Tables[0].Fields[2].DataFormat:= dtChar;

@@ -127,12 +127,12 @@
         <Item2 Mode="Linux QT-Debug" Option="309854063960"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="89">
+    <Units Count="93">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <CursorPos X="37" Y="26"/>
+        <CursorPos X="17" Y="9"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -144,8 +144,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="448"/>
-        <CursorPos X="61" Y="468"/>
+        <TopLine Value="81"/>
+        <CursorPos X="6" Y="165"/>
         <UsageCount Value="200"/>
       </Unit1>
       <Unit2>
@@ -153,8 +153,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="130"/>
-        <CursorPos X="32" Y="162"/>
+        <CursorPos X="48" Y="463"/>
         <UsageCount Value="200"/>
       </Unit2>
       <Unit3>
@@ -210,8 +209,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="329"/>
-        <CursorPos X="47" Y="348"/>
+        <TopLine Value="83"/>
+        <CursorPos X="7" Y="89"/>
         <UsageCount Value="200"/>
       </Unit7>
       <Unit8>
@@ -246,8 +245,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="295"/>
-        <CursorPos X="30" Y="311"/>
+        <TopLine Value="256"/>
+        <CursorPos X="49" Y="257"/>
         <UsageCount Value="200"/>
       </Unit10>
       <Unit11>
@@ -258,8 +257,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="78"/>
-        <CursorPos X="36" Y="91"/>
+        <TopLine Value="17"/>
+        <CursorPos X="30" Y="22"/>
         <UsageCount Value="200"/>
       </Unit11>
       <Unit12>
@@ -335,8 +334,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="22"/>
-        <CursorPos X="23" Y="25"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="23"/>
         <UsageCount Value="200"/>
       </Unit18>
       <Unit19>
@@ -347,8 +346,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormLogin"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="17"/>
-        <CursorPos X="13" Y="23"/>
+        <TopLine Value="21"/>
+        <CursorPos X="46" Y="27"/>
         <UsageCount Value="200"/>
       </Unit19>
       <Unit20>
@@ -356,8 +355,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="22"/>
-        <CursorPos Y="39"/>
+        <TopLine Value="40"/>
+        <CursorPos X="22" Y="46"/>
         <UsageCount Value="200"/>
       </Unit20>
       <Unit21>
@@ -377,8 +376,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="Crypt"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="17"/>
-        <CursorPos X="50" Y="29"/>
+        <TopLine Value="21"/>
+        <CursorPos X="22" Y="26"/>
         <UsageCount Value="200"/>
       </Unit22>
       <Unit23>
@@ -389,9 +388,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPermissions"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="48"/>
-        <CursorPos Y="64"/>
-        <UsageCount Value="186"/>
+        <TopLine Value="33"/>
+        <CursorPos X="38" Y="38"/>
+        <UsageCount Value="189"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -403,7 +402,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="24"/>
         <CursorPos Y="54"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="155"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -413,9 +412,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="31"/>
-        <CursorPos X="43" Y="31"/>
-        <UsageCount Value="176"/>
+        <TopLine Value="50"/>
+        <CursorPos X="3" Y="56"/>
+        <UsageCount Value="179"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -425,9 +424,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="140"/>
-        <CursorPos X="36" Y="131"/>
-        <UsageCount Value="66"/>
+        <TopLine Value="7"/>
+        <CursorPos X="32" Y="8"/>
+        <UsageCount Value="69"/>
       </Unit26>
       <Unit27>
         <Filename Value="C:\borrra\unit1.pas"/>
@@ -782,16 +781,17 @@
         <Filename Value="richmemo\richmemortf.pas"/>
         <UnitName Value="RichMemoRTF"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="39" Y="15"/>
-        <UsageCount Value="8"/>
+        <TopLine Value="589"/>
+        <CursorPos X="13" Y="595"/>
+        <UsageCount Value="10"/>
       </Unit75>
       <Unit76>
         <Filename Value="richmemo\richmemohelpers.pas"/>
         <UnitName Value="RichMemoHelpers"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="202"/>
+        <TopLine Value="210"/>
         <CursorPos X="12" Y="215"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="10"/>
       </Unit76>
       <Unit77>
         <Filename Value="D:\home\runs\Descargas\servustv_sd.webm.mpd"/>
@@ -886,20 +886,49 @@
         <CursorPos Y="162"/>
         <UsageCount Value="11"/>
       </Unit88>
+      <Unit89>
+        <Filename Value="richmemo\richmemo.pas"/>
+        <UnitName Value="RichMemo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="898"/>
+        <CursorPos X="31" Y="902"/>
+        <UsageCount Value="10"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="richmemo\gtk2\gtk2richmemo.pas"/>
+        <UnitName Value="Gtk2RichMemo"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="337"/>
+        <CursorPos X="3" Y="343"/>
+        <UsageCount Value="10"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="richmemo\richmemoutils.pas"/>
+        <UnitName Value="RichMemoUtils"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos X="3" Y="75"/>
+        <UsageCount Value="10"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="dcpcrypt-2.0.4.1\dcpcrypt2.pas"/>
+        <UnitName Value="DCPcrypt2"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="23" Y="62"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit92>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
         <Filename Value="librestaff.pas"/>
-        <Caret Line="18" Column="20" TopLine="6"/>
+        <Caret Line="107" Column="28" TopLine="101"/>
       </Position1>
       <Position2>
         <Filename Value="librestaff.pas"/>
-        <Caret Line="25" Column="30" TopLine="12"/>
+        <Caret Line="111" TopLine="101"/>
       </Position2>
-      <Position3>
-        <Filename Value="librestaff.pas"/>
-        <Caret Line="25" Column="34" TopLine="12"/>
-      </Position3>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

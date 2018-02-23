@@ -18,9 +18,9 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
-      <RevisionNr Value="18"/>
+      <RevisionNr Value="19"/>
       <Attributes pvaPreRelease="True"/>
-      <StringTable ProductName="LibreStaff"/>
+      <StringTable ProductName="LibreStaff" ProductVersion="0.0.18.0"/>
     </VersionInfo>
     <MacroValues Count="1">
       <Macro2 Name="LCLWidgetType" Value="win32"/>

@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, sqlite3conn, sqldb, FileUtil, DBDateTimePicker, LR_Class,
   LR_DBSet, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls, DbCtrls,
   StdCtrls, Buttons, DataModule, FormPicEmployee, INIfiles,
-  gettext, LCLType, DBGrids, FormPrgBar, UniqueInstance, Types;
+  gettext, LCLType, DBGrids, UniqueInstance;
 
 type
 	TCboListType= (cblStates);
@@ -163,7 +163,6 @@ var
   AtomicCommmit: Integer;
 
 const
-  DATABASEVERSION='0.0.0';
   SELECT_ALL_EMPLOYEES_SQL= 'SELECT * from Employees;';
   SELECT_ACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE Active_Employee;';
   SELECT_INACTIVE_EMPLOYEES_SQL= 'SELECT * from Employees WHERE NOT(Active_Employee);';
@@ -217,7 +216,7 @@ var
   ID, Code: Integer;
 begin
   FuncData.ExecSQL(DataMod.QueSearch, 'SELECT MAX(CAST(IDN_Employee AS INTEGER)) FROM Employees WHERE (NOT IDN_Employee IS NULL);');
-  if Not(DataMod.QueSearch.Fields[0].AsString= '') then
+  if not(DataMod.QueSearch.Fields[0].AsString= '') then
     begin
     ID_Str:= DataMod.QueSearch.Fields[0].AsString;
     ID_Str:= LeftStr(ID_Str, 9);

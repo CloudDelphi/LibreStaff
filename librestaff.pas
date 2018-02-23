@@ -6,7 +6,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Interfaces, // this includes the LCL widgetset
+  Interfaces, //this includes the LCL widgetset
   Forms, Classes, DataModule, DefaultTranslator, Controls, sqldb,
   FormLogin, FormMain, FuncData, SysUtils, INIfiles,
   Globals, FormPreferences, FormprgBar, Dialogs, StrUtils;
@@ -108,6 +108,7 @@ begin
   PrgBar.Show;
   FuncData.ConnectDatabase(DBEngine.Databasename);
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
+  DBEngine.DatabaseVersion:= DataMod.QueConfig.FieldByName('DatabaseVersion').AsString;
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;
   if (AccessControl= TRUE) then
   	begin

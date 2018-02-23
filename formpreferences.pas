@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ComCtrls,
   StdCtrls, Buttons, ExtCtrls, FrameClose, LCLType, DbCtrls, BufDataset, db,
-  FormDsoEditor, Types;
+  FormDsoEditor;
 
 type
 

@@ -20,14 +20,16 @@ type
  var
 	PopNotifierObj: TAutoclosePopupNotifier;
 
+function CheckIfDatabaseNeedUpdate: Boolean;
 procedure FreeAndInvalidate(var obj);
 function GetAppVersion: String;
 procedure PopNotifier(AOwner:TComponent; Title: string; Text: string; Point: TPoint);
+function SplitDatabaseVersion(DatabaseVersion: string): TStrings;
 
 implementation
 
 uses
-  Globals;
+  FuncData, Globals;
 
 {TAutoclosePopupNotifier}
 constructor TAutoclosePopupNotifier.Create(AOwner: TComponent);
@@ -69,6 +71,30 @@ begin
     end
   except
   end
+end;
+
+function CheckIfDatabaseNeedUpdate: Boolean;
+var
+  SubstringsList_DatabaseVersion, SubstringsList_DatabaseDefaultVersion: TStrings;
+  i: Integer;
+begin
+  SubstringsList_DatabaseVersion:= SplitDatabaseVersion(DBEngine.DatabaseVersion);
+  SubstringsList_DatabaseDefaultVersion:= SplitDatabaseVersion(DATABASE_DEFAULT_VERSION);
+  //Now compare->
+ 	Result:= FALSE; //By default is FALSE
+  for i:=0 to (DATABASE_VERSION_SUBSTRINGS_COUNT-1) do
+		begin
+    if (SubstringsList_DatabaseDefaultVersion[i]>SubstringsList_DatabaseVersion[i]) then
+    	begin
+    	Result:= TRUE;
+	  	Break;
+      end;
+    end;
+end;
+
+function SplitDatabaseVersion(DatabaseVersion: string): TStrings;
+begin
+	ExtractStrings([DATABASE_VERSION_SEPARATOR], [], PChar(DatabaseVersion), Result);
 end;
 
 //Use the next procedure instead of Free and Nil

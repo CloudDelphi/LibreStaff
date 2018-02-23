@@ -134,7 +134,6 @@ var
   i, LastStrIdx: Integer;
   WhereInserted, ConcatenateWhere: Boolean;
   SearchStr, SearchField: String;
-  p: TPoint;
   CompareOperator, Wildcard: String;
   ResultCount: Integer;
   CriteriaSelectedCount: Integer;

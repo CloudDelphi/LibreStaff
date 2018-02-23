@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  DbCtrls, FrameSaveCancel, FormDsoEditor, FuncData, Globals, LCLType,
+  DbCtrls, FrameSaveCancel, FuncData, Globals, LCLType,
   ExtCtrls, Buttons;
 
 type
@@ -53,7 +53,7 @@ implementation
 
 {$R *.lfm}
 uses
-	FormMain, Crypt, DataModule, FormInputBox;
+	Crypt, DataModule, FormInputBox;
 
 var
   Salt: String;

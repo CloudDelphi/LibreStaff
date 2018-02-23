@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, DBGrids,
-  Buttons, FrameAddDelEdiSavCan, db, sqldb, FormMain, Globals, LCLType,
-  ExtCtrls, StdCtrls, FormInputBox, Crypt, FuncData;
+  Buttons, FrameAddDelEdiSavCan, db, sqldb, Globals, LCLType,
+  ExtCtrls, StdCtrls, FormInputBox, FuncData;
 
 type
   { TFrmDsoEditor }
@@ -68,7 +68,7 @@ implementation
 {$R *.lfm}
 
 uses
-  DataModule, FormEditAddUser;
+  FormEditAddUser;
 
 { TFrmDsoEditor }
 
@@ -232,7 +232,7 @@ end;
 
 procedure TFrmDsoEditor.BtnEditClick(Sender: TObject);
 var
-  FieldValue, FirstFieldValue, DefaultValue: String;
+  FieldValue, DefaultValue: String;
   InpBox_Caption, InpBox_Prompt: String;
   ColIdx: Integer;
   Error: Boolean= FALSE;
@@ -240,7 +240,6 @@ var
   ErrorMsg: String;
   MaxLength: Integer;
   WriteFieldsCount: Integer;
-  Salt: String;
 begin
   case TableEdit.ID of
     wtTypeContracts:

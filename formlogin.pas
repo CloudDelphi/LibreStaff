@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  DbCtrls, Buttons, ExtCtrls, PopupNotifier, Globals, FuncData, DataModule,
+  DbCtrls, Buttons, ExtCtrls, Globals, FuncData, DataModule,
   FormMain, Crypt;
 
 type
