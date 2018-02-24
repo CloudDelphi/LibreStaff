@@ -203,24 +203,7 @@ object FrmAbout: TFrmAbout
     end
     object TabLicense: TTabSheet
       Caption = 'License'
-      ClientHeight = 338
-      ClientWidth = 453
       OnShow = TabLicenseShow
-      object RchMmoLicense: TRichMemo
-        Left = 0
-        Height = 336
-        Top = 0
-        Width = 449
-        Align = alClient
-        HideSelection = False
-        Lines.Strings = (
-          ''
-        )
-        Rtf = '{\rtf1\ansi\ansicpg1252\deff0\deflang3082{\fonttbl{\f0\fnil\fcharset0 Segoe UI;}}'#13#10'{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\f0\fs19\par'#13#10'\par'#13#10'}'#13#10#0
-        ScrollBars = ssAutoBoth
-        TabOrder = 0
-        ZoomFactor = 1
-      end
     end
   end
   inline FraClose1: TFraClose

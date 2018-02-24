@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="C:\lazarus\fpc\3.0.4\bin\i386-win32\fpc.exe" Date="1266908409"/>
-  <Params Value=" -MObjFPC -Scgi -O1 -g -gl -l -vewnhibq -vm5060,5057,5024,4055 &quot;-FiD:\Proyectos GIT\LibreStaff\richmemo\cocoa&quot; &quot;-FiD:\Proyectos GIT\LibreStaff\richmemo\qt&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\win32&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\carbon&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\gtk2&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\cocoa&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\qt&quot; &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\ide&quot; -FuC:\lazarus\packager\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\components\lazcontrols\lib\i386-win32\win32 -FuC:\lazarus\components\ideintf\units\i386-win32\win32 &quot;-FuD:\Proyectos GIT\LibreStaff\richmemo\&quot; &quot;-FUD:\Proyectos GIT\LibreStaff\richmemo\lib\i386-win32\&quot; -dLCL -dLCLwin32 richmemopackage.pas"/>
-</CONFIG>

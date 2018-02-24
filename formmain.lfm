@@ -1,7 +1,7 @@
 object FrmMain: TFrmMain
   Left = 568
   Height = 713
-  Top = 207
+  Top = 227
   Width = 1131
   BorderStyle = bsSingle
   Caption = 'LibreStaff'
@@ -10,6 +10,7 @@ object FrmMain: TFrmMain
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
+  Position = poScreenCenter
   LCLVersion = '1.8.0.6'
   WindowState = wsMaximized
   object PanMain: TPanel
@@ -976,7 +977,7 @@ object FrmMain: TFrmMain
         end
         object CboFilter: TComboBox
           Left = 160
-          Height = 39
+          Height = 35
           Top = 40
           Width = 120
           ItemHeight = 0

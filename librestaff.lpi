@@ -23,13 +23,15 @@
       <StringTable ProductName="LibreStaff" ProductVersion="0.0.18.0"/>
     </VersionInfo>
     <MacroValues Count="1">
-      <Macro2 Name="LCLWidgetType" Value="win32"/>
+      <Macro1 Name="LCLWidgetType" Value="win32"/>
     </MacroValues>
     <BuildModes Count="1">
       <Item1 Name="Win 32-Debug" Default="True"/>
-      <SharedMatrixOptions Count="2">
-        <Item1 ID="309854063960" Value="LCLWidgetType:=qt"/>
-        <Item2 ID="922963223504" Modes="Win 32-Debug" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+      <SharedMatrixOptions Count="4">
+        <Item1 ID="922963223504" Modes="Win 32-Debug" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
+        <Item2 ID="069294482818" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
+        <Item3 ID="433386133238" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
+        <Item4 ID="973202071924" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>
@@ -41,34 +43,31 @@
         <CommandLineParams Value="-moreinstances"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="9">
+    <RequiredPackages Count="8">
       <Item1>
         <PackageName Value="LCL"/>
       </Item1>
       <Item2>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="dcpcrypt"/>
       </Item2>
       <Item3>
-        <PackageName Value="dcpcrypt"/>
+        <PackageName Value="uniqueinstance_package"/>
       </Item3>
       <Item4>
-        <PackageName Value="uniqueinstance_package"/>
+        <PackageName Value="lazreport"/>
       </Item4>
       <Item5>
-        <PackageName Value="lazreport"/>
+        <PackageName Value="TurboPowerIPro"/>
       </Item5>
       <Item6>
-        <PackageName Value="TurboPowerIPro"/>
+        <PackageName Value="DateTimeCtrls"/>
       </Item6>
       <Item7>
-        <PackageName Value="DateTimeCtrls"/>
+        <PackageName Value="FCL"/>
       </Item7>
       <Item8>
-        <PackageName Value="FCL"/>
-      </Item8>
-      <Item9>
         <PackageName Value="SQLDBLaz"/>
-      </Item9>
+      </Item8>
     </RequiredPackages>
     <Units Count="27">
       <Unit0>
@@ -307,34 +306,46 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="9">
+    <Exceptions Count="10">
       <Item1>
         <Name Value="EAbort"/>
+        <Enabled Value="False"/>
       </Item1>
       <Item2>
         <Name Value="ECodetoolError"/>
+        <Enabled Value="False"/>
       </Item2>
       <Item3>
         <Name Value="EFOpenError"/>
+        <Enabled Value="False"/>
       </Item3>
       <Item4>
         <Name Value="EZSQLException"/>
+        <Enabled Value="False"/>
       </Item4>
       <Item5>
         <Name Value="EZDatabaseError"/>
+        <Enabled Value="False"/>
       </Item5>
       <Item6>
         <Name Value="EDatabaseError"/>
+        <Enabled Value="False"/>
       </Item6>
       <Item7>
         <Name Value="EUpdateError"/>
+        <Enabled Value="False"/>
       </Item7>
       <Item8>
         <Name Value="RunError(219)"/>
+        <Enabled Value="False"/>
       </Item8>
       <Item9>
         <Name Value="EInvalidCast"/>
+        <Enabled Value="False"/>
       </Item9>
+      <Item10>
+        <Name Value="EPrinter"/>
+      </Item10>
     </Exceptions>
   </Debugging>
 </CONFIG>

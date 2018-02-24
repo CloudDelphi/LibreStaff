@@ -5,7 +5,7 @@ unit FormAbout;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, IpHtml, Ipfilebroker, RichMemo, Forms, Controls,
+  Classes, SysUtils, FileUtil, IpHtml, Ipfilebroker, Forms, Controls,
   Graphics, Dialogs, ComCtrls, StdCtrls, ExtCtrls, FrameClose, Globals;
 
 type
@@ -28,7 +28,6 @@ type
     LblMySQLVersion: TLabel;
     TitleLibreStaff: TLabel;
     PagAbout: TPageControl;
-    RchMmoLicense: TRichMemo;
     TabAbout: TTabSheet;
     TabLicense: TTabSheet;
     procedure BtnCloseClick(Sender: TObject);
@@ -58,7 +57,7 @@ var
 begin
  LicenseFile:= TMemoryStream.Create;
  LicenseFile.LoadFromFile(PathApp+'lic'+PATH_SEPARATOR+'License-GPL-3.rtf');
- RchMmoLicense.LoadRichText(LicenseFile);
+ //RchMmoLicense.LoadRichText(LicenseFile);
  FreeAndNil(LicenseFile);
 end;
 
