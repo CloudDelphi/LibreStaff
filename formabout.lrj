@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":4691652,"name":"tfrmabout.caption","sourcebytes":[65,98,111,117,116],"value":"About"},
+{"hash":4691652,"name":"tfrmabout.tababout.caption","sourcebytes":[65,98,111,117,116],"value":"About"},
+{"hash":145721430,"name":"tfrmabout.titlelibrestaff.caption","sourcebytes":[76,105,98,114,101,83,116,97,102,102],"value":"LibreStaff"},
+{"hash":211419610,"name":"tfrmabout.lblversion.caption","sourcebytes":[86,101,114,115,105,111,110,58],"value":"Version:"},
+{"hash":222799418,"name":"tfrmabout.lblmysqlversion.caption","sourcebytes":[77,121,83,81,76,32,68,76,76,32,86,101,114,115,105,111,110,58],"value":"MySQL DLL Version:"},
+{"hash":6958074,"name":"tfrmabout.lblsqliteversion.caption","sourcebytes":[83,81,76,105,116,101,32,68,76,76,32,86,101,114,115,105,111,110,58],"value":"SQLite DLL Version:"},
+{"hash":49923525,"name":"tfrmabout.tablicense.caption","sourcebytes":[76,105,99,101,110,115,101],"value":"License"}
+]}
