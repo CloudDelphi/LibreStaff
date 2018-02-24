@@ -32,6 +32,7 @@ begin
 	Application.Initialize;
   Application.CreateForm(TDataMod, DataMod);
   PathApp:= ExtractFilePath(Paramstr(0));
+	//WriteLn('GTK2_RC_FILES='+PathApp+'themes\MS-Windows\gtk-2.0\gtkrc librestaff', ParamStr(1));
   {$IFDEF DEBUG}
   	// Assuming your build mode sets -dDEBUG in Project Options/Other when defining -gh
 		// This avoids interference when running a production/default build without -gh

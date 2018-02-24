@@ -1,0 +1,34 @@
+object FrmPrgBar: TFrmPrgBar
+  Left = 770
+  Height = 63
+  Top = 432
+  Width = 368
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 63
+  ClientWidth = 368
+  FormStyle = fsStayOnTop
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  ShowInTaskBar = stNever
+  LCLVersion = '1.8.0.6'
+  object _PrgBar: TProgressBar
+    Left = 0
+    Height = 38
+    Top = 25
+    Width = 368
+    Align = alClient
+    TabOrder = 0
+    BarShowText = True
+  end
+  object LblPrg: TLabel
+    Left = 0
+    Height = 25
+    Top = 0
+    Width = 368
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'LblPrg'
+    ParentColor = False
+  end
+end

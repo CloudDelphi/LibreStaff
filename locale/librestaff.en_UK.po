@@ -924,6 +924,12 @@ msgid "..."
 msgstr ""
 
 #: tfrmmain.btnnew.caption
+msgctxt "tfrmmain.btnnew.caption"
+msgid "New"
+msgstr ""
+
+#: tfrmmain.btnnew1.caption
+msgctxt "tfrmmain.btnnew1.caption"
 msgid "New"
 msgstr ""
 
@@ -931,8 +937,8 @@ msgstr ""
 msgid "Print"
 msgstr ""
 
-#: tfrmmain.btnsave.caption
-msgctxt "tfrmmain.btnsave.caption"
+#: tfrmmain.btnsaveemployee.caption
+msgctxt "tfrmmain.btnsaveemployee.caption"
 msgid "Save"
 msgstr ""
 

@@ -27,12 +27,11 @@
     </MacroValues>
     <BuildModes Count="1">
       <Item1 Name="Win 32-Debug" Default="True"/>
-      <SharedMatrixOptions Count="5">
+      <SharedMatrixOptions Count="4">
         <Item1 ID="922963223504" Modes="Win 32-Debug" Type="IDEMacro" MacroName="LCLWidgetType" Value="win32"/>
-        <Item2 ID="603762296772" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
-        <Item3 ID="069294482818" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
-        <Item4 ID="433386133238" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
-        <Item5 ID="973202071924" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt"/>
+        <Item2 ID="069294482818" Type="IDEMacro" MacroName="LCLWidgetType" Value="gtk2"/>
+        <Item3 ID="433386133238" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt5"/>
+        <Item4 ID="973202071924" Type="IDEMacro" MacroName="LCLWidgetType" Value="qt"/>
       </SharedMatrixOptions>
     </BuildModes>
     <PublishOptions>

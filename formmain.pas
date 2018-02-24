@@ -17,6 +17,8 @@ type
   { TFrmMain }
   TFrmMain = class(TForm)
     BtnDelContractLog: TBitBtn;
+    BtnNew1: TBitBtn;
+    BtnSaveEmployee: TBitBtn;
     BtnPrint: TBitBtn;
     BtnDelTypeContract: TBitBtn;
     BtnDelWorkplace: TBitBtn;
@@ -25,7 +27,6 @@ type
     BtnActivate: TBitBtn;
     BtnSearch: TBitBtn;
     BtnEditStateList: TBitBtn;
-    BtnSave: TBitBtn;
     BtnDelete: TBitBtn;
     BtnNew: TBitBtn;
     CboFilter: TComboBox;
@@ -117,7 +118,7 @@ type
     procedure BtnActivateClick(Sender: TObject);
     procedure BtnNewClick(Sender: TObject);
     procedure BtnPrintClick(Sender: TObject);
-    procedure BtnSaveClick(Sender: TObject);
+    procedure BtnSaveEmployeeClick(Sender: TObject);
     procedure BtnSearchClick(Sender: TObject);
     procedure CboFilterChange(Sender: TObject);
     procedure DBEIDEmployeeExit(Sender: TObject);
@@ -230,12 +231,12 @@ procedure TFrmMain.CheckPermissions;
 begin
 	if (User.Permissions.EditEmployee= TRUE) then
   	begin
-    BtnSave.Enabled:= True;
+    BtnSaveEmployee.Enabled:= True;
     BtnActivate.Enabled:= True;
     end
   else
   	begin
-    BtnSave.Enabled:= False;
+    BtnSaveEmployee.Enabled:= False;
     BtnActivate.Enabled:= False;
     end;
   if (User.Permissions.DeleteEmployee= TRUE) then
@@ -250,7 +251,7 @@ end;
 
 procedure TFrmMain.DisableEmployees;
 begin
-  BtnSave.Enabled:= False;
+  BtnSaveEmployee.Enabled:= False;
   BtnDelete.Enabled:= False;
   BtnSearch.Enabled:= False;
   BtnActivate.Enabled:= False;
@@ -263,7 +264,7 @@ end;
 
 procedure TFrmMain.EnableEmployees;
 begin
-  BtnSave.Enabled:= True;
+  BtnSaveEmployee.Enabled:= True;
   BtnDelete.Enabled:= True;
 	BtnSearch.Enabled:= True;
   BtnActivate.Enabled:= True;
@@ -384,6 +385,8 @@ var
   DateFormat: TDateDisplayOrder;
   DateSeparator: Char;
 begin
+  Top:= 0;
+  Left:= 0;
   GetLanguageIDs(Lang, FallbackLang);
   //Format the CboDat's
 	DefaultFormatSettings.ShortDateFormat:= INIFile.ReadString('Lang', 'ShortDateFormat', 'dd.mm.yyyy');
@@ -422,7 +425,7 @@ begin
   //Get bitmaps for the buttons
   DataMod.ImgLstBtn.GetBitmap(0, BtnNew.Glyph);
 	DataMod.ImgLstBtn.GetBitmap(10, BtnDelete.Glyph);
-	DataMod.ImgLstBtn.GetBitmap(3, BtnSave.Glyph);
+	DataMod.ImgLstBtn.GetBitmap(3, BtnSaveEmployee.Glyph);
   DataMod.ImgLstBtn.GetBitmap(8, BtnSearch.Glyph);
   DataMod.ImgLstBtn.GetBitmap(15, BtnPrint.Glyph);
   DataMod.ImgLstBtn.GetBitmap(10, BtnDelTypeContract.Glyph);
@@ -550,16 +553,6 @@ begin
 	FrmPreferences.ShowModal;
 end;
 
-procedure TFrmMain.BtnSaveClick(Sender: TObject);
-begin
-  FuncData.SaveTable(DataMod.QueEmployees);
-  DataMod.QueEmployees.Edit;
-end;
-procedure TFrmMain.BtnSearchClick(Sender: TObject);
-begin
-	FrmSearch.Search(wtEmployees);
-end;
-
 procedure TFrmMain.CboFilterChange(Sender: TObject);
 var
   SQL: String;
@@ -667,6 +660,17 @@ begin
     ' ON (ID_Workplace=Workplace_ID) WHERE (ID_Employee="'+Employee_ID+'");';
   FuncData.ExecSQL(DataMod.QuePrint, SQL);
   FuncPrint.Print('employee_card.lrf', FrmMain.frReport, True);
+end;
+
+procedure TFrmMain.BtnSaveEmployeeClick(Sender: TObject);
+begin
+	FuncData.SaveTable(DataMod.QueEmployees);
+	DataMod.QueEmployees.Edit;
+end;
+
+procedure TFrmMain.BtnSearchClick(Sender: TObject);
+begin
+	FrmSearch.Search(wtEmployees);
 end;
 
 procedure TFrmMain.BtnDeleteClick(Sender: TObject);

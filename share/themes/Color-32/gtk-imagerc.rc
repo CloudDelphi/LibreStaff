@@ -1,0 +1,288 @@
+# GTK_STOCK: http://www.gtk.org/api/2.6/gtk/gtk-Stock-Items.html
+#
+style "gtk-icons"
+{
+  stock["gtk-about"] =
+  {
+    { "gtk-stock/32/user-bookmarks.png", *, *, "gtk-button" },
+    { "gtk-stock/32/user-bookmarks.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/user-bookmarks.png", *, *, *            }
+  }
+  stock["gtk-add"] =
+  {
+    { "gtk-stock/32/list-add.png", *, *, "gtk-button" },
+    { "gtk-stock/32/list-add.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/list-add.png", *, *, *            }
+  }
+  stock["gtk-clear"] =
+  {
+    { "gtk-stock/32/edit-clear.png", *, *, "gtk-button" },
+    { "gtk-stock/32/edit-clear.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-clear.png", *, *, *            }
+  }
+  stock["gtk-close"] =
+  {
+    { "gtk-stock/32/window-close.png", *, *, "gtk-button" },
+    { "gtk-stock/32/window-close.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/window-close.png", *, *, *            }
+  }
+  stock["gtk-convert"] =
+  {
+    { "gtk-stock/32/gtk-convert.png", *, *, "gtk-button" },
+    { "gtk-stock/32/gtk-convert.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/gtk-convert.png", *, *, *            }
+  }
+  stock["gtk-copy"] =
+  {
+    { "gtk-stock/32/edit-copy.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-copy.png", *, *, *            }
+  }
+  stock["gtk-cut"] =
+  {
+    { "gtk-stock/32/edit-cut.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-cut.png", *, *, *            }
+  }
+  stock["gtk-delete"] =
+  {
+    { "gtk-stock/32/user-trash.png", *, *, "gtk-button" },
+    { "gtk-stock/32/user-trash.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/user-trash.png", *, *, *            }
+  }
+  stock["gtk-directory"] =
+  {
+    { "gtk-stock/32/folder.png", *, *, "gtk-button" },
+    { "gtk-stock/32/folder.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/folder.png", *, *, *            }
+  }
+  stock["gtk-edit"] =
+  {
+    { "gtk-stock/32/text-editor.png", *, *, "gtk-button" },
+    { "gtk-stock/32/text-editor.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/text-editor.png", *, *, *            }
+  }
+  stock["gtk-execute"] =
+  {
+    { "gtk-stock/32/system-run.png", *, *, "gtk-button" },
+    { "gtk-stock/32/system-run.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/system-run.png", *, *, *            }
+  }
+  stock["gtk-help"] =
+  {
+    { "gtk-stock/32/system-help.png", *, *, "gtk-button" },
+    { "gtk-stock/32/system-help.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/system-help.png", *, *, *            }
+  }
+  stock["gtk-info"] =
+  {
+	{ "64/gimp-info.png", *, *, "gtk-dialog" },
+	{ "32/gimp-info.png", *, *, "gtk-button" },
+	{ "32/gimp-info.png", *, *, "gtk-menu" },
+	{ "32/gimp-info.png", *, *, *            }
+  }
+  stock["gtk-go-back"] =
+  {
+    { "gtk-stock/32/go-previous.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-previous.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-previous.png", *, *, *            }
+  }
+  stock["gtk-go-down"] =
+  {
+    { "gtk-stock/32/go-down.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-down.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-down.png", *, *, *            }
+  }
+  stock["gtk-go-forward"] =
+  {
+    { "gtk-stock/32/go-next.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-next.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-next.png", *, *, *            }
+  }
+  stock["gtk-go-up"] =
+  {
+    { "gtk-stock/32/go-up.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-up.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-up.png", *, *, *            }
+  }
+  stock["gtk-goto-bottom"] =
+  {
+    { "gtk-stock/32/go-bottom.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-bottom.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-bottom.png", *, *, *            }
+  }
+  stock["gtk-goto-top"] =
+  {
+    { "gtk-stock/32/go-top.png", *, *, "gtk-button" },
+    { "gtk-stock/32/go-top.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/go-top.png", *, *, *            }
+  }
+  stock["gtk-indent"] =
+  {
+    { "gtk-stock/32/format-indent-more.png", *, *, "gtk-button" },
+    { "gtk-stock/32/format-indent-more.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/format-indent-more.png", *, *, *            }
+  }
+  stock["gtk-justify-center"] =
+  {
+    { "gtk-stock/32/format-justify-center.png", *, *, "gtk-button" },
+    { "gtk-stock/32/format-justify-center.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/format-justify-center.png", *, *, *            }
+  }
+  stock["gtk-justify-fill"] =
+  {
+    { "gtk-stock/32/format-justify-fill.png", *, *, "gtk-button" },
+    { "gtk-stock/32/format-justify-fill.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/format-justify-fill.png", *, *, *            }
+  }
+  stock["gtk-justify-left"] =
+  {
+    { "gtk-stock/32/format-justify-left.png", *, *, "gtk-button" },
+    { "gtk-stock/32/format-justify-left.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/format-justify-left.png", *, *, *            }
+  }
+  stock["gtk-justify-right"] =
+  {
+    { "gtk-stock/32/format-justify-right.png", *, *, "gtk-button" },
+    { "gtk-stock/32/format-justify-right.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/format-justify-right.png", *, *, *            }
+  }
+  stock["gtk-new"] =
+  {
+    { "gtk-stock/32/document-new.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-new.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-new.png", *, *, *            }
+  }
+  stock["gtk-open"] =
+  {
+    { "gtk-stock/32/document-open.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-open.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-open.png", *, *, *            }
+  }
+  stock["gtk-open-recent"] =
+  {
+    { "gtk-stock/32/document-open-recent.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-open-recent.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-open-recent.png", *, *, *            }
+  }
+  stock["gtk-page-setup"] =
+  {
+    { "gtk-stock/32/document-page-setup.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-page-setup.png", *, *, *            }
+  }
+  stock["gtk-paste"] =
+  {
+    { "gtk-stock/32/edit-paste.png", *, *, "gtk-button" },
+    { "gtk-stock/32/edit-paste.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-paste.png", *, *, *            }
+  }
+  stock["gtk-preferences"] =
+  {
+    { "gtk-stock/32/preferences-system.png", *, *, "gtk-button" },
+    { "gtk-stock/32/preferences-system.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/preferences-system.png", *, *, *            }
+  }
+  stock["gtk-properties"] =
+  {
+    { "gtk-stock/32/document-properties.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-properties.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-properties.png", *, *, *            }
+  }
+  stock["gtk-print"] =
+  {
+    { "gtk-stock/32/printer.png", *, *, "gtk-button" },
+    { "gtk-stock/32/printer.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/printer.png", *, *, *            }
+  }
+  stock["gtk-quit"] =
+  {
+    { "gtk-stock/32/system-shutdown.png", *, *, "gtk-button" },
+    { "gtk-stock/32/system-shutdown.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/system-shutdown.png", *, *, *            }
+  }
+  stock["gtk-redo"] =
+  {
+    { "gtk-stock/32/edit-redo.png", *, *, "gtk-button" },
+    { "gtk-stock/32/edit-redo.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-redo.png", *, *, *            }
+  }
+  stock["gtk-refresh"] =
+  {
+    { "gtk-stock/32/view-refresh.png", *, *, "gtk-button" },
+    { "gtk-stock/32/view-refresh.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/view-refresh.png", *, *, *            }
+  }
+  stock["gtk-remove"] =
+  {
+    { "gtk-stock/32/list-remove.png", *, *, "gtk-button" },
+    { "gtk-stock/32/list-remove.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/list-remove.png", *, *, *            }
+  }
+  stock["gtk-revert-to-saved"] =
+  {
+    { "gtk-stock/32/view-restore.png", *, *, "gtk-button" },
+    { "gtk-stock/32/view-restore.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/view-restore.png", *, *, *            }
+  }
+  stock["gtk-save"] =
+  {
+    { "gtk-stock/32/document-save.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-save.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-save.png", *, *, *            },
+    { "gtk-stock/48/document-save.png", *, *, "gtk-dialog"}   # Note bigger icon for use on dialogs
+  }
+  stock["gtk-save-as"] =
+  {
+    { "gtk-stock/32/document-save-as.png", *, *, "gtk-button" },
+    { "gtk-stock/32/document-save-as.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/document-save-as.png", *, *, *            }
+  }
+  stock["gtk-select-all"] =
+  {
+    { "gtk-stock/32/edit-select-all.png", *, *, "gtk-button" },
+    { "gtk-stock/32/edit-select-all.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-select-all.png", *, *, *            }
+  }
+  stock["gtk-select-color"] =
+  {
+    { "gtk-stock/32/gtk-select-color.png", *, *, "gtk-button" },
+    { "gtk-stock/32/gtk-select-color.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/gtk-select-color.png", *, *, *            }
+  }
+  stock["gtk-select-font"] =
+  {
+    { "gtk-stock/32/gtk-select-font.png", *, *, "gtk-button" },
+    { "gtk-stock/32/gtk-select-font.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/gtk-select-font.png", *, *, *            }
+  }
+  stock["gtk-undo"] =
+  {
+    { "gtk-stock/32/edit-undo.png", *, *, "gtk-button" },
+    { "gtk-stock/32/edit-undo.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/edit-undo.png", *, *, *            }
+  }
+  stock["gtk-zoom-100"] =
+  {
+    { "gtk-stock/32/zoom-original.png", *, *, "gtk-button" },
+    { "gtk-stock/32/zoom-original.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/zoom-original.png", *, *, *            }
+  }
+  stock["gtk-zoom-fit"] =
+  {
+    { "gtk-stock/32/zoom-fit-best.png", *, *, "gtk-button" },
+    { "gtk-stock/32/zoom-fit-best.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/zoom-fit-best.png", *, *, *            }
+  }
+  stock["gtk-zoom-in"] =
+  {
+    { "gtk-stock/32/zoom-in.png", *, *, "gtk-button" },
+    { "gtk-stock/32/zoom-in.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/zoom-in.png", *, *, *            }
+  }
+  stock["gtk-zoom-out"] =
+  {
+    { "gtk-stock/32/zoom-out.png", *, *, "gtk-button" },
+    { "gtk-stock/32/zoom-out.png", *, *, "gtk-menu" },
+    { "gtk-stock/32/zoom-out.png", *, *, *            }
+  }
+}
+
+class "GtkWidget" style "gtk-icons"

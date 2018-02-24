@@ -1,0 +1,1175 @@
+# From https://github.com/gnome-design-team/gnome-icons/tree/master/art-libre-symbolic
+# and https://github.com/GNOME/gnome-icon-theme-symbolic/tree/master/gnome/scalable
+# pictures http://noosfero.org/Development/ActionItem3002
+
+# 4-tuple of image filename or icon name, text direction, widget state, and size
+# You can specify custom icons for specific sizes, as follows: The sizes that come with Gtk+ itself are "gtk-menu", "gtk-small-toolbar", "gtk-large-toolbar", "gtk-button", "gtk-dialog". Applications can define other sizes.
+
+# gtk-button used for toolbox icons
+# gtk-menu used for icons on menus
+# These are used for anything that doesn't get explicitly defined below
+# Default GTK sizes
+gtk-icon-sizes = "panel-menu=10,10 : panel=10,10 : gtk-button=32,32 : gtk-large-toolbar=32,32 : gtk-menu=32,32 : gtk-small-toolbar=32,32 : gtk-dnd=32,32 : gtk-dialog=48,48"
+
+style "gimp-icons"
+{
+#  font_name = "sans, 15"
+
+  stock["gimp-anchor"] =
+  {
+    { "32/gimp-anchor.png", *, *, *            }
+  }
+  stock["gimp-cap-butt"] =
+  {
+    { "32/gimp-cap-butt.png", *, *, *            }
+  }
+  stock["gimp-cap-round"] =
+  {
+    { "32/gimp-cap-round.png", *, *, *            }
+  }
+  stock["gimp-cap-square"] =
+  {
+    { "32/gimp-cap-square.png", *, *, *            }
+  }
+  stock["gimp-center"] =
+  {
+    { "32/gimp-center.png", *, *, "gtk-button" },
+    { "32/gimp-center.png", *, *, "gtk-menu" },
+    { "32/gimp-center.png", *, *, *            }
+  }
+  stock["gimp-channel"] =
+  {
+    { "48/gimp-channel.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel.png", *, *, "gtk-button" },
+    { "32/gimp-channel.png", *, *, "gtk-menu" },
+    { "32/gimp-channel.png", *, *, *            }
+  }
+  stock["gimp-channel-alpha"] =
+  {
+    { "48/gimp-channel-alpha.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-alpha.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-alpha.png", *, *, "gtk-button" },
+    { "32/gimp-channel-alpha.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-alpha.png", *, *, *            }
+  }
+  stock["gimp-channel-blue"] =
+  {
+    { "48/gimp-channel-blue.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-blue.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-blue.png", *, *, "gtk-button" },
+    { "32/gimp-channel-blue.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-blue.png", *, *, *            }
+  }
+  stock["gimp-channel-gray"] =
+  {
+    { "48/gimp-channel-gray.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-gray.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-gray.png", *, *, "gtk-button" },
+    { "32/gimp-channel-gray.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-gray.png", *, *, *            }
+  }
+  stock["gimp-channel-green"] =
+  {
+    { "48/gimp-channel-green.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-green.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-green.png", *, *, "gtk-button" },
+    { "32/gimp-channel-green.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-green.png", *, *, *            }
+  }
+  stock["gimp-channel-indexed"] =
+  {
+    { "48/gimp-channel-indexed.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-indexed.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-indexed.png", *, *, "gtk-button" },
+    { "32/gimp-channel-indexed.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-indexed.png", *, *, *            }
+  }
+  stock["gimp-channel-red"] =
+  {
+    { "48/gimp-channel-red.png", *, *, "gtk-dialog" },
+    { "32/gimp-channel-red.png", *, *, "gtk-dnd" },
+    { "32/gimp-channel-red.png", *, *, "gtk-button" },
+    { "32/gimp-channel-red.png", *, *, "gtk-menu" },
+    { "32/gimp-channel-red.png", *, *, *            }
+  }
+  stock["gimp-channels"] =
+  {
+    { "32/gimp-channels.png", *, *, "gtk-button" },
+    { "32/gimp-channels.png", *, *, "gtk-menu" },
+    { "32/gimp-channels.png", *, *, *            }
+  }
+  stock["gimp-char-picker"] =
+  {
+    { "32/gimp-char-picker.png", *, *, "gtk-menu"},
+    { "32/gimp-char-picker.png", *, *, *            }
+  }
+  stock["gimp-close"] =
+  {
+    { "32/gimp-close.png", *, *, *            }
+  }
+  stock["gimp-color-pick-from-screen"] =
+  {
+    { "32/gimp-color-pick-from-screen.png", *, *, "gtk-menu" },
+    { "32/gimp-color-pick-from-screen.png", *, *, *            }
+  }
+  stock["gimp-color-picker-black"] =
+  {
+    { "32/gimp-color-picker-black.png", *, *, *            }
+  }
+  stock["gimp-color-picker-gray"] =
+  {
+    { "32/gimp-color-picker-gray.png", *, *, *            }
+  }
+  stock["gimp-color-picker-white"] =
+  {
+    { "32/gimp-color-picker-white.png", *, *, *            }
+  }
+  stock["gimp-color-triangle"] =
+  {
+    { "32/gimp-color-triangle.png", *, *, *            }
+  }
+  stock["gimp-colormap"] =
+  {
+    { "32/gimp-colormap.png", *, *, "gtk-button" },
+    { "32/gimp-colormap.png", *, *, "gtk-menu" },
+    { "32/gimp-colormap.png", *, *, *            }
+  }
+  stock["gimp-controller"] =
+  {
+    { "32/gimp-controller.png", *, *, "gtk-button" },
+    { "32/gimp-controller.png", *, *, "gtk-menu" },
+    { "32/gimp-controller.png", *, *, *            }
+  }
+  stock["gimp-controller-keyboard"] =
+  {
+    { "32/gimp-controller-keyboard.png", *, *, "gtk-button" },
+    { "32/gimp-controller-keyboard.png", *, *, "gtk-menu" },
+    { "32/gimp-controller-keyboard.png", *, *, *            }
+  }
+  stock["gimp-controller-linux-input"] =
+  {
+    { "32/gimp-controller-linux-input.png", *, *, "gtk-button" },
+    { "32/gimp-controller-linux-input.png", *, *, "gtk-menu" },
+    { "32/gimp-controller-linux-input.png", *, *, *            }
+  }
+  stock["gimp-controller-midi"] =
+  {
+    { "32/gimp-controller-midi.png", *, *, "gtk-button" },
+    { "32/gimp-controller-midi.png", *, *, "gtk-menu" },
+    { "32/gimp-controller-midi.png", *, *, *            }
+  }
+  stock["gimp-controller-wheel"] =
+  {
+    { "32/gimp-controller-wheel.png", *, *, "gtk-button" },
+    { "32/gimp-controller-wheel.png", *, *, "gtk-menu" },
+    { "32/gimp-controller-wheel.png", *, *, *            }
+  }
+  stock["gimp-convert-grayscale"] =
+  {
+	{ "32/gimp-convert-grayscale.png", *, *, "gtk-menu" },
+	{ "32/gimp-convert-grayscale.png", *, *, *            }
+  }
+  stock["gimp-convert-indexed"] =
+  {
+	{ "32/gimp-convert-indexed.png", *, *, "gtk-menu" },
+	{ "32/gimp-convert-indexed.png", *, *, *            }
+  }
+  stock["gimp-convert-rgb"] =
+  {
+	{ "32/gimp-convert-rgb.png", *, *, "gtk-menu" },
+	{ "32/gimp-convert-rgb.png", *, *, *            }
+  }
+  stock["gimp-cursor"] =
+  {
+    { "32/gimp-cursor.png", *, *, "gtk-button" },
+    { "32/gimp-cursor.png", *, *, "gtk-menu" },
+    { "32/gimp-cursor.png", *, *, *            }
+  }
+  stock["gimp-curve-free"] =
+  {
+	{ "32/gimp-curve-free.png", *, *, "gtk-menu" },
+	{ "32/gimp-curve-free.png", *, *, *            }
+  }
+  stock["gimp-curve-smooth"] =
+  {
+	{ "32/gimp-curve-smooth.png", *, *, "gtk-menu" },
+	{ "32/gimp-curve-smooth.png", *, *, *            }
+  }
+  stock["gimp-default-colors"] =
+  {
+    { "32/gimp-default-colors.png", *, *, "gtk-menu" },
+    { "32/gimp-default-colors.png", *, *, *            }
+  }
+  stock["gimp-device-status"] =
+  {
+    { "32/gimp-device-status.png", *, *, "gtk-button" },
+    { "32/gimp-device-status.png", *, *, "gtk-menu" },
+    { "32/gimp-device-status.png", *, *, *            }
+  }
+  stock["gimp-display-filter"] =
+  {
+    { "32/gimp-display-filter.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter.png", *, *, *            }
+  }
+  stock["gimp-display-filter-colorblind"] =
+  {
+    { "32/gimp-display-filter-colorblind.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter-colorblind.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter-colorblind.png", *, *, *            }
+  }
+  stock["gimp-display-filter-contrast"] =
+  {
+    { "32/gimp-display-filter-contrast.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter-contrast.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter-contrast.png", *, *, *            }
+  }
+  stock["gimp-display-filter-gamma"] =
+  {
+    { "32/gimp-display-filter-gamma.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter-gamma.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter-gamma.png", *, *, *            }
+  }
+  stock["gimp-display-filter-lcms"] =
+  {
+    { "32/gimp-display-filter-lcms.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter-lcms.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter-lcms.png", *, *, *            }
+  }
+  stock["gimp-display-filter-proof"] =
+  {
+    { "32/gimp-display-filter-proof.png", *, *, "gtk-button" },
+    { "32/gimp-display-filter-proof.png", *, *, "gtk-menu" },
+    { "32/gimp-display-filter-proof.png", *, *, *            }
+  }
+  stock["gimp-duplicate"] =
+  {
+    { "32/gimp-duplicate.png", *, *, "gtk-menu" },
+    { "32/gimp-duplicate.png", *, *, *            }
+  }
+  stock["gimp-dynamics"] =
+  {
+    { "32/gimp-dynamics.png", *, *, "gtk-menu" },
+    { "32/gimp-dynamics.png", *, *, *            }
+  }
+  stock["gimp-edit"] =
+  {
+    { "32/gimp-edit.png", *, *, "gtk-menu" },
+    { "32/gimp-edit.png", *, *, *            }
+  }
+  stock["gimp-error"] =
+  {
+    { "64/gimp-edit.png", *, *, "gtk-dialog" },
+    { "64/gimp-edit.png", *, *, *            }
+  }
+  stock["gimp-flip-horizontal"] =
+  {
+    { "32/gimp-flip-horizontal.png", *, *, "gtk-menu" },
+    { "32/gimp-flip-horizontal.png", *, *, *            }
+  }
+  stock["gimp-flip-vertical"] =
+  {
+    { "32/gimp-flip-vertical.png", *, *, "gtk-menu" },
+    { "32/gimp-flip-vertical.png", *, *, *            }
+  }
+  stock["gimp-floating-selection"] =
+  {
+	{ "48/gimp-floating-selection.png", *, *, "gtk-dialog" },
+	{ "32/gimp-floating-selection.png", *, *, "gtk-dnd" },
+	{ "32/gimp-floating-selection.png", *, *, "gtk-button" },
+	{ "32/gimp-floating-selection.png", *, *, "gtk-menu" },
+	{ "32/gimp-floating-selection.png", *, *, *            }
+  }
+  stock["gimp-frame"] =
+  {
+    { "64/gimp-frame.png", *, *, "gtk-dialog" },
+    { "64/gimp-frame.png", *, *, *            }
+  }
+  stock["gimp-gegl"] =
+  {
+	{ "32/gimp-gegl.png", *, *, "gtk-button" },
+	{ "32/gimp-gegl.png", *, *, "gtk-menu" },
+	{ "32/gimp-gegl.png", *, *, *            }
+  }
+  stock["gimp-gradient-bilinear"] =
+  {
+	{ "32/gimp-gradient-bilinear.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-bilinear.png", *, *, *            }
+  }
+
+ stock["gimp-gradient-conical-asymmetric"] =
+  {
+	{ "32/gimp-gradient-conical-asymmetric.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-conical-asymmetric.png", *, *, *            }
+  }
+  stock["gimp-gradient-conical-symmetric"] =
+  {
+	{ "32/gimp-gradient-conical-symmetric.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-conical-symmetric.png", *, *, *            }
+  }
+  stock["gimp-gradient-linear"] =
+  {
+	{ "32/gimp-gradient-linear.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-linear.png", *, *, *            }
+  }
+  stock["gimp-gradient-radial"] =
+  {
+	{ "32/gimp-gradient-radial.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-radial.png", *, *, *            }
+  }
+  stock["gimp-gradient-shapeburst-angular"] =
+  {
+	{ "32/gimp-gradient-shapeburst-angular.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-shapeburst-angular.png", *, *, *            }
+  }
+  stock["gimp-gradient-shapeburst-dimpled"] =
+  {
+	{ "32/gimp-gradient-shapeburst-dimpled.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-shapeburst-dimpled.png", *, *, *            }
+  }
+  stock["gimp-gradient-shapeburst-spherical"] =
+  {
+	{ "32/gimp-gradient-shapeburst-spherical.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-shapeburst-spherical.png", *, *, *            }
+  }
+  stock["gimp-gradient-spiral-anticlockwise"] =
+  {
+	{ "32/gimp-gradient-spiral-anticlockwise.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-spiral-anticlockwise.png", *, *, *            }
+  }
+  stock["gimp-gradient-spiral-clockwise"] =
+  {
+	{ "32/gimp-gradient-spiral-clockwise.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-spiral-clockwise.png", *, *, *            }
+  }
+  stock["gimp-gradient-square"] =
+  {
+	{ "32/gimp-gradient-square.png", *, *, "gtk-menu" },
+	{ "32/gimp-gradient-square.png", *, *, *            }
+  }
+  stock["gimp-gravity-east"] =
+  {
+	{ "32/gimp-gravity-east.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-east.png", *, *, *            }
+  }
+  stock["gimp-gravity-north"] =
+  {
+	{ "32/gimp-gravity-north.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-north.png", *, *, *            }
+  }
+  stock["gimp-gravity-north-east"] =
+  {
+	{ "32/gimp-gravity-north-east.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-north-east.png", *, *, *            }
+  }
+  stock["gimp-gravity-west"] =
+  {
+	{ "32/gimp-gravity-north-west.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-north-west.png", *, *, *            }
+  }
+  stock["gimp-gravity-south"] =
+  {
+	{ "32/gimp-gravity-south.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-south.png", *, *, *            }
+  }
+  stock["gimp-gravity-south-east"] =
+  {
+	{ "32/gimp-gravity-south-east.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-south-east.png", *, *, *            }
+  }
+  stock["gimp-gravity-south-west"] =
+  {
+	{ "32/gimp-gravity-south-west.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-south-west.png", *, *, *            }
+  }
+  stock["gimp-gravity-west"] =
+  {
+	{ "32/gimp-gravity-west.png", *, *, "gtk-button" },
+	{ "32/gimp-gravity-west.png", *, *, *            }
+  }
+  stock["gimp-grid"] =
+  {
+	{ "32/gimp-grid.png", *, *, "gtk-menu" },
+	{ "32/gimp-grid.png", *, *, *            }
+  }
+  stock["gimp-hcenter"] =
+  {
+	{ "32/gimp-hcenter.png", *, *, "gtk-button" },
+	{ "32/gimp-hcenter.png", *, *, *            }
+  }
+  stock["gimp-hchain"] =
+  {
+	{ "32/gimp-hchain.png", *, *, "gtk-button" },
+	{ "32/gimp-hchain.png", *, *, *            }
+  }
+  stock["gimp-hchain-broken"] =
+  {
+	{ "32/gimp-hchain-broken.png", *, *, "gtk-button" },
+	{ "32/gimp-hchain-broken.png", *, *, *            }
+  }
+  stock["gimp-hfill"] =
+  {
+	{ "32/gimp-hfill.png", *, *, "gtk-button" },
+	{ "32/gimp-hfill.png", *, *, *            }
+  }
+  stock["gimp-histogram"] =
+  {
+    { "32/gimp-histogram.png", *, *, "gtk-button" },
+    { "32/gimp-histogram.png", *, *, "gtk-menu" },
+    { "32/gimp-histogram.png", *, *, *            }
+  }
+  stock["gimp-histogram-linear"] =
+  {
+	{ "32/gimp-histogram-linear", *, *, "gtk-menu" },
+	{ "32/gimp-histogram-linear", *, *, *            }
+  }
+  stock["gimp-histogram-logarithmic"] =
+  {
+	{ "32/gimp-histogram-logarithmic", *, *, "gtk-menu" },
+	{ "32/gimp-histogram-logarithmic", *, *, *            }
+  }
+ stock["gimp-image"] =
+  {
+	{ "48/gimp-image.png", *, *, "gtk-dialog" },
+	{ "32/gimp-image.png", *, *, "gtk-dnd" },
+	{ "32/gimp-image.png", *, *, "gtk-button" },
+	{ "32/gimp-image.png", *, *, "gtk-menu" },
+	{ "32/gimp-image.png", *, *, *            }
+  }
+  stock["gimp-images"] =
+  {
+    { "32/gimp-images.png", *, *, "gtk-button" },
+    { "32/gimp-images.png", *, *, "gtk-menu" },
+    { "32/gimp-images.png", *, *, *            }
+  }
+  stock["gimp-info"] =
+  {
+	{ "64/gimp-info.png", *, *, "gtk-dialog" },
+	{ "32/gimp-info.png", *, *, "gtk-button" },
+	{ "32/gimp-info.png", *, *, "gtk-menu" },
+	{ "32/gimp-info.png", *, *, *            }
+  }
+  stock["gimp-input-device"] =
+  {
+    { "32/gimp-input-device.png", *, *, "gtk-button" },
+    { "32/gimp-input-device.png", *, *, "gtk-menu" },
+    { "32/gimp-input-device.png", *, *, *            }
+  }
+  stock["gimp-invert"] =
+  {
+	{ "32/gimp-invert.png", *, *, "gtk-menu" },
+	{ "32/gimp-invert.png", *, *, *            }
+  }
+  stock["gimp-join-bevel"] =
+  {
+	{ "32/gimp-join-bevel.png", *, *, "gtk-menu" },
+	{ "32/gimp-join-bevel.png", *, *, *            }
+  }
+  stock["gimp-join-miter"] =
+  {
+	{ "32/gimp-join-miter.png", *, *, "gtk-menu" },
+	{ "32/gimp-join-miter.png", *, *, *            }
+  }
+  stock["gimp-join-round"] =
+  {
+	{ "32/gimp-join-round.png", *, *, "gtk-menu" },
+	{ "32/gimp-join-round.png", *, *, *            }
+  }
+  stock["gimp-landscape"] =
+  {
+	{ "32/gimp-landscape.png", *, *, "gtk-button" },
+	{ "32/gimp-landscape.png", *, *, "gtk-menu" },
+	{ "32/gimp-landscape.png", *, *, *            }
+  }
+  stock["gimp-layer"] =
+  {
+    { "48/gimp-layer.png", *, *, "gtk-dialog" },
+    { "32/gimp-layer.png", *, *, "gtk-dnd" },
+    { "32/gimp-layer.png", *, *, "gtk-button" },
+    { "32/gimp-layer.png", *, *, "gtk-menu" },
+    { "32/gimp-layer.png", *, *, *            }
+  }
+  stock["gimp-layer-mask"] =
+  {
+    { "48/gimp-layer-mask.png", *, *, "gtk-dialog" },
+    { "32/gimp-layer-mask.png", *, *, "gtk-dnd" },
+    { "32/gimp-layer-mask.png", *, *, "gtk-button" },
+    { "32/gimp-layer-mask.png", *, *, "gtk-menu" },
+    { "32/gimp-layer-mask.png", *, *, *            }
+  }
+  stock["gimp-layer-to-imagesize"] =
+  {
+    { "32/gimp-layer-to-imagesize.png", *, *, "gtk-menu" },
+    { "32/gimp-layer-to-imagesize.png", *, *, *            }
+  }
+  stock["gimp-layers"] =
+  {
+    { "32/gimp-layers.png", *, *, "gtk-button" },
+    { "32/gimp-layers.png", *, *, "gtk-menu" },
+    { "32/gimp-layers.png", *, *, *            }
+  }
+  stock["gimp-letter-spacing"] =
+  {
+    { "32/gimp-letter-spacing.png", *, *, *            }
+  }
+  stock["gimp-line-spacing"] =
+  {
+    { "32/gimp-line-spacing.png", *, *, *            }
+  }
+  stock["gimp-linked"] =
+  {
+    { "32/gimp-linked.png", *, *, "gtk-button" },
+    { "32/gimp-linked.png", *, *, "gtk-menu" },
+    { "32/gimp-linked.png", *, *, *            }
+  }
+  stock["gimp-list"] =
+  {
+    { "32/gimp-list.png", *, *, "gtk-menu" },
+    { "32/gimp-list.png", *, *, *            }
+  }
+  stock["gimp-menu-left"] =
+  {
+    { "32/gimp-menu-left.png", *, *, "gtk-menu" }
+  }
+  stock["gimp-menu-right"] =
+  {
+    { "32/gimp-menu-right.png", *, *, "gtk-menu" }
+  }
+  stock["gimp-merge-down"] =
+  {
+    { "32/gimp-merge-down.png", *, *, "gtk-menu" },
+    { "32/gimp-merge-down.png", *, *, *            }
+  }
+  stock["gimp-move-to-screen"] =
+  {
+    { "32/gimp-move-to-screen.png", *, *, "gtk-button" },
+    { "32/gimp-move-to-screen.png", *, *, "gtk-menu" },
+    { "32/gimp-move-to-screen.png", *, *, *            }
+  }
+  stock["gimp-navigation"] =
+  {
+    { "32/gimp-tool-move.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-move.png", *, *, *            }
+  }
+  stock["gimp-paste-as-new"] =
+  {
+    { "32/gimp-paste-as-new.png", *, *, "gtk-menu" },
+    { "32/gimp-paste-as-new.png", *, *, *            }
+  }
+  stock["gimp-paste-into"] =
+  {
+    { "32/gimp-paste-into.png", *, *, "gtk-menu" },
+    { "32/gimp-paste-into.png", *, *, *            }
+  }
+  stock["gimp-path"] =
+  {
+    { "32/gimp-path.png", *, *, "gtk-button" },
+    { "32/gimp-path.png", *, *, "gtk-menu" },
+    { "32/gimp-path.png", *, *, *            }
+  }
+  stock["gimp-path-stroke"] =
+  {
+    { "32/gimp-path-stroke.png", *, *, "gtk-menu" },
+    { "32/gimp-path-stroke.png", *, *, *            }
+  }
+  stock["gimp-paths"] =
+  {
+    { "32/gimp-paths.png", *, *, "gtk-button" },
+    { "32/gimp-paths.png", *, *, "gtk-menu" },
+    { "32/gimp-paths.png", *, *, *            }
+  }
+  stock["gimp-plugin"] =
+  {
+    { "32/gimp-plugin.png", *, *, *            }
+  }
+  stock["gimp-portrait"] =
+  {
+    { "32/gimp-portrait.png", *, *, "gtk-button" },
+    { "32/gimp-portrait.png", *, *, "gtk-menu" },
+    { "32/gimp-portrait.png", *, *, *            }
+  }
+  stock["gimp-print-resolution"] =
+  {
+    { "32/gimp-print-resolution.png", *, *, "gtk-button" },
+    { "32/gimp-print-resolution.png", *, *, "gtk-menu" },
+    { "32/gimp-print-resolution.png", *, *, *            }
+  }
+  stock["gimp-question"] =
+  {
+    { "64/gimp-question.png", *, *, "gtk-dialog" },
+    { "64/gimp-question.png", *, *, *            }
+  }
+  stock["gimp-quick-mask-off"] =
+  {
+    { "32/gimp-quick-mask-off.png", *, *, "gtk-menu" },
+    { "32/gimp-quick-mask-off.png", *, *, *            }
+  }
+  stock["gimp-quick-mask-on"] =
+  {
+    { "32/gimp-quick-mask-on.png", *, *, "gtk-menu" },
+    { "32/gimp-quick-mask-on.png", *, *, *            }
+  }
+  stock["gimp-reset"] =
+  {
+    { "32/gimp-reset.png", *, *, "gtk-menu" },
+    { "32/gimp-reset.png", *, *, *            }
+  }
+  stock["gimp-reshow-filter"] =
+  {
+    { "32/gimp-reshow-filter.png", *, *, "gtk-menu" },
+    { "32/gimp-reshow-filter.png", *, *, *            }
+  }
+  stock["gimp-resize"] =
+  {
+    { "32/gimp-resize.png", *, *, "gtk-menu" },
+    { "32/gimp-resize.png", *, *, *            }
+  }
+  stock["gimp-rotate-180"] =
+  {
+    { "32/gimp-rotate-180.png", *, *, "gtk-menu" },
+    { "32/gimp-rotate-180.png", *, *, *            }
+  }
+  stock["gimp-rotate-270"] =
+  {
+    { "32/gimp-rotate-270.png", *, *, "gtk-menu" },
+    { "32/gimp-rotate-270.png", *, *, *            }
+  }
+  stock["gimp-rotate-90"] =
+  {
+    { "32/gimp-rotate-90.png", *, *, "gtk-menu" },
+    { "32/gimp-rotate-90.png", *, *, *            }
+  }
+  stock["gimp-sample-point"] =
+  {
+    { "32/gimp-sample-point.png", *, *, "gtk-button" },
+    { "32/gimp-sample-point.png", *, *, "gtk-menu" },
+    { "32/gimp-sample-point.png", *, *, *            }
+  }
+  stock["gimp-scale"] =
+  {
+    { "32/gimp-scale.png", *, *, "gtk-menu" },
+    { "32/gimp-scale.png", *, *, *            }
+  }
+  stock["gimp-selection"] =
+  {
+    { "32/gimp-selection.png", *, *, "gtk-menu" },
+    { "32/gimp-selection.png", *, *, *            }
+  }
+  stock["gimp-selection-add"] =
+  {
+    { "32/gimp-selection-add.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-add.png", *, *, *            }
+  }
+  stock["gimp-selection-all"] =
+  {
+    { "32/gimp-selection-all.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-all.png", *, *, *            }
+  }
+  stock["gimp-selection-border"] =
+  {
+    { "32/gimp-selection-border.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-border.png", *, *, *            }
+  }
+  stock["gimp-selection-grow"] =
+  {
+    { "32/gimp-selection-grow.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-grow.png", *, *, *            }
+  }
+  stock["gimp-selection-intersect"] =
+  {
+    { "32/gimp-selection-intersect.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-intersect.png", *, *, *            }
+  }
+  stock["gimp-selection-none"] =
+  {
+    { "32/gimp-selection-none.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-none.png", *, *, *            }
+  }
+  stock["gimp-selection-replace"] =
+  {
+    { "32/gimp-selection-replace.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-replace.png", *, *, *            }
+  }
+  stock["gimp-selection-shrink"] =
+  {
+    { "32/gimp-selection-shrink.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-shrink.png", *, *, *            }
+  }
+  stock["gimp-selection-stroke"] =
+  {
+    { "32/gimp-selection-stroke.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-stroke.png", *, *, *            }
+  }
+  stock["gimp-selection-subtract"] =
+  {
+    { "32/gimp-selection-subtract.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-subtract.png", *, *, *            }
+  }
+  stock["gimp-selection-to-channel"] =
+  {
+    { "32/gimp-selection-to-channel.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-to-channel.png", *, *, *            }
+  }
+  stock["gimp-selection-to-path"] =
+  {
+    { "32/gimp-selection-to-path.png", *, *, "gtk-menu" },
+    { "32/gimp-selection-to-path.png", *, *, *            }
+  }
+  stock["gimp-shape-circle"] =
+  {
+    { "32/gimp-shape-circle.png", *, *, "gtk-menu" },
+    { "32/gimp-shape-circle.png", *, *, *            }
+  }
+  stock["gimp-shape-diamond"] =
+  {
+    { "32/gimp-shape-diamond.png", *, *, "gtk-menu" },
+    { "32/gimp-shape-diamond.png", *, *, *            }
+  }
+  stock["gimp-shape-square"] =
+  {
+    { "32/gimp-shape-square.png", *, *, "gtk-menu" },
+    { "32/gimp-shape-square.png", *, *, *            }
+  }
+  stock["gimp-swap-colors"] =
+  {
+	{ "32/gimp-swap-colors.png", *, *, *            }
+  }
+  stock["gimp-template"] =
+  {
+    { "32/gimp-template.png", *, *, "gtk-button" },
+    { "32/gimp-template.png", *, *, "gtk-menu" },
+    { "32/gimp-template.png", *, *, *            }
+  }
+  stock["gimp-text-dir-ltr"] =
+  {
+    { "32/gimp-text-dir-ltr.png", *, *, "gtk-button" },
+    { "32/gimp-text-dir-ltr.png", *, *, *            }
+  }
+  stock["gimp-text-dir-rtl"] =
+  {
+    { "32/gimp-text-dir-rtl.png", *, *, "gtk-button" },
+    { "32/gimp-text-dir-rtl.png", *, *, *            }
+  }
+  stock["gimp-text-layer"] =
+  {
+    { "48/gimp-text-layer.png", *, *, "gtk-dialog" },
+    { "32/gimp-text-layer.png", *, *, "gtk-dnd" },
+    { "32/gimp-text-layer.png", *, *, "gtk-button" },
+    { "32/gimp-text-layer.png", *, *, "gtk-menu" },
+    { "32/gimp-text-layer.png", *, *, *            }
+  }
+  stock["gimp-texture"] =
+  {
+    { "64/gimp-texture.png", *, *, "gtk-dialog" },
+    { "64/gimp-texture.png", *, *, *            }
+  }
+  stock["gimp-toilet-paper"] =
+  {
+    { "32/gimp-toilet-paper.png", *, *, "gtk-button" },
+    { "32/gimp-toilet-paper.png", *, *, "gtk-menu" },
+    { "32/gimp-toilet-paper.png", *, *, *            }
+  }
+  stock["gimp-tool-airbrush"] =
+  {
+    { "32/gimp-tool-airbrush.png", *, *, "gtk-button" },
+    { "32/gimp-tool-airbrush.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-airbrush.png", *, *, *            }
+  }
+  stock["gimp-tool-align"] =
+  {
+    { "32/gimp-tool-align.png", *, *, "gtk-button" },
+    { "32/gimp-tool-align.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-align.png", *, *, *            }
+  }
+  stock["gimp-tool-blend"] =
+  {
+    { "32/gimp-tool-blend.png", *, *, "gtk-button" },
+    { "32/gimp-tool-blend.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-blend.png", *, *, *            }
+  }
+  stock["gimp-tool-blur"] =
+  {
+    { "32/gimp-tool-blur.png", *, *, "gtk-button" },
+    { "32/gimp-tool-blur.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-blur.png", *, *, *            }
+  }
+  stock["gimp-tool-brightness-contrast"] =
+  {
+    { "32/gimp-tool-brightness-contrast.png", *, *, "gtk-button" },
+    { "32/gimp-tool-brightness-contrast.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-brightness-contrast.png", *, *, *            }
+  }
+  stock["gimp-tool-bucket-fill"] =
+  {
+    { "32/gimp-tool-bucket-fill.png", *, *, "gtk-button" },
+    { "32/gimp-tool-bucket-fill.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-bucket-fill.png", *, *, *            }
+  }
+  stock["gimp-tool-by-color-select"] =
+  {
+    { "32/gimp-tool-by-color-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-by-color-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-by-color-select.png", *, *, *            }
+  }
+  stock["gimp-tool-cage"] =
+  {
+    { "32/gimp-tool-cage.png", *, *, "gtk-button" },
+    { "32/gimp-tool-cage.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-cage.png", *, *, *            }
+  }
+  stock["gimp-tool-clone"] =
+  {
+    { "32/gimp-tool-clone.png", *, *, "gtk-button" },
+    { "32/gimp-tool-clone.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-clone.png", *, *, *            }
+  }
+  stock["gimp-tool-color-balance"] =
+  {
+    { "32/gimp-tool-color-balance.png", *, *, "gtk-button" },
+    { "32/gimp-tool-color-balance.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-color-balance.png", *, *, *            }
+  }
+  stock["gimp-tool-colorize"] =
+  {
+    { "32/gimp-tool-colorize.png", *, *, "gtk-button" },
+    { "32/gimp-tool-colorize.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-colorize.png", *, *, *            }
+  }
+  stock["gimp-tool-color-picker"] =
+  {
+    { "32/gimp-tool-color-picker.png", *, *, "gtk-button" },
+    { "32/gimp-tool-color-picker.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-color-picker.png", *, *, *            }
+  }
+  stock["gimp-tool-crop"] =
+  {
+    { "32/gimp-tool-crop.png", *, *, "gtk-button"},
+    { "32/gimp-tool-crop.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-crop.png", *, *, *            }
+  }
+  stock["gimp-tool-curves"] =
+  {
+    { "32/gimp-tool-curves.png", *, *, "gtk-button" },
+    { "32/gimp-tool-curves.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-curves.png", *, *, *            }
+  }
+  stock["gimp-tool-desaturate"] =
+  {
+	{ "32/gimp-tool-desaturate.png", *, *, "gtk-button" },
+	{ "32/gimp-tool-desaturate.png", *, *, "gtk-menu" },
+	{ "32/gimp-tool-desaturate.png", *, *, *            }
+  }
+  stock["gimp-tool-dodge"] =
+  {
+    { "32/gimp-tool-dodge.png", *, *, "gtk-button" },
+    { "32/gimp-tool-dodge.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-dodge.png", *, *, *            }
+  }
+  stock["gimp-tool-ellipse-select"] =
+  {
+    { "32/gimp-tool-ellipse-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-ellipse-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-ellipse-select.png", *, *, *            }
+  }
+  stock["gimp-tool-eraser"] =
+  {
+    { "32/gimp-tool-eraser.png", *, *, "gtk-button" },
+    { "32/gimp-tool-eraser.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-eraser.png", *, *, *            }
+  }
+  stock["gimp-tool-flip"] =
+  {
+    { "32/gimp-tool-flip.png", *, *, "gtk-button" },
+    { "32/gimp-tool-flip.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-flip.png", *, *, *            }
+  }
+  stock["gimp-tool-foreground-select"] =
+  {
+    { "32/gimp-tool-foreground-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-foreground-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-foreground-select.png", *, *, *            }
+  }
+  stock["gimp-tool-free-select"] =
+  {
+    { "32/gimp-tool-free-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-free-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-free-select.png", *, *, *            }
+  }
+  stock["gimp-tool-fuzzy-select"] =
+  {
+    { "32/gimp-tool-fuzzy-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-fuzzy-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-fuzzy-select.png", *, *, *            }
+  }
+  stock["gimp-tool-handle-transform"] =
+  {
+    { "32/gimp-tool-handle-transform.png", *, *, "gtk-button" },
+    { "32/gimp-tool-handle-transform.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-handle-transform.png", *, *, *            }
+  }
+  stock["gimp-tool-heal"] =
+  {
+    { "32/gimp-tool-heal.png", *, *, "gtk-button" },
+    { "32/gimp-tool-heal.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-heal.png", *, *, *            }
+  }
+  stock["gimp-tool-hue-saturation"] =
+  {
+    { "32/gimp-tool-hue-saturation.png", *, *, "gtk-button" },
+    { "32/gimp-tool-hue-saturation.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-hue-saturation.png", *, *, *            }
+  }
+  stock["gimp-tool-ink"] =
+  {
+    { "32/gimp-tool-ink.png", *, *, "gtk-button" },
+    { "32/gimp-tool-ink.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-ink.png", *, *, *            }
+  }
+  stock["gimp-tool-iscissors"] =
+  {
+    { "32/gimp-tool-iscissors.png", *, *, "gtk-button" },
+    { "32/gimp-tool-iscissors.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-iscissors.png", *, *, *            }
+  }
+  stock["gimp-tool-levels"] =
+  {
+    { "32/gimp-tool-levels.png", *, *, "gtk-button" },
+    { "32/gimp-tool-levels.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-levels.png", *, *, *            }
+  }
+  stock["gimp-tool-measure"] =
+  {
+    { "32/gimp-tool-measure.png", *, *, "gtk-button" },
+    { "32/gimp-tool-measure.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-measure.png", *, *, *            }
+  }
+  stock["gimp-tool-move"] =
+  {
+    { "32/gimp-tool-move.png", *, *, "gtk-button" },
+    { "32/gimp-tool-move.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-move.png", *, *, *            }
+  }
+  stock["gimp-tool-mypaint-brush"] =
+  {
+    { "32/gimp-tool-mypaint-brush.png", *, *, "gtk-button" },
+    { "32/gimp-tool-mypaint-brush.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-mypaint-brush.png", *, *, *            }
+  }
+  stock["gimp-tool-n-point-deformation"] =
+  {
+    { "32/gimp-tool-n-point-deformation.png", *, *, "gtk-button" },
+    { "32/gimp-tool-n-point-deformation.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-n-point-deformation.png", *, *, *            }
+  }
+  stock["gimp-tool-options"] =
+  {
+    { "32/gimp-tool-options.png", *, *, "gtk-button" },
+    { "32/gimp-tool-options.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-options.png", *, *, *            }
+  }
+  stock["gimp-tool-paintbrush"] =
+  {
+    { "32/gimp-tool-paintbrush.png", *, *, "gtk-button" },
+    { "32/gimp-tool-paintbrush.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-paintbrush.png", *, *, *            }
+  }
+  stock["gimp-tool-path"] =
+  {
+    { "32/gimp-tool-path.png", *, *, "gtk-button" },
+    { "32/gimp-tool-path.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-path.png", *, *, *            }
+  }
+  stock["gimp-tool-pencil"] =
+  {
+    { "32/gimp-tool-pencil.png", *, *, "gtk-button" },
+    { "32/gimp-tool-pencil.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-pencil.png", *, *, *            }
+  }
+  stock["gimp-tool-perspective"] =
+  {
+    { "32/gimp-tool-perspective.png", *, *, "gtk-button" },
+    { "32/gimp-tool-perspective.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-perspective.png", *, *, *            }
+  }
+  stock["gimp-tool-perspective-clone"] =
+  {
+    { "32/gimp-tool-perspective-clone.png", *, *, "gtk-button" },
+    { "32/gimp-tool-perspective-clone.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-perspective-clone.png", *, *, *            }
+  }
+  stock["gimp-tool-posterize"] =
+  {
+    { "32/gimp-tool-posterize.png", *, *, "gtk-button" },
+    { "32/gimp-tool-posterize.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-posterize.png", *, *, *            }
+  }
+  stock["gimp-tool-preset"] =
+  {
+    { "32/gimp-tool-preset.png", *, *, "gtk-button" },
+    { "32/gimp-tool-preset.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-preset.png", *, *, *            }
+  }
+  stock["gimp-tool-rect-select"] =
+  {
+    { "32/gimp-tool-rect-select.png", *, *, "gtk-button" },
+    { "32/gimp-tool-rect-select.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-rect-select.png", *, *, *            }
+  }
+  stock["gimp-tool-rotate"] =
+  {
+    { "32/gimp-tool-rotate.png", *, *, "gtk-button" },
+    { "32/gimp-tool-rotate.png", *, *, "gtk-menu" },
+    { "32/stock-tool-rotate.png", *, *, *            }
+  }
+  stock["gimp-tool-scale"] =
+  {
+    { "32/gimp-tool-scale.png", *, *, "gtk-button" },
+    { "32/gimp-tool-scale.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-scale.png", *, *, *            }
+  }
+  stock["gimp-tool-seamless-clone"] =
+  {
+    { "32/gimp-tool-seamless-clone.png", *, *, "gtk-button" },
+    { "32/gimp-tool-seamless-clone.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-seamless-clone.png", *, *, *            }
+  }
+  stock["gimp-tool-shear"] =
+  {
+    { "32/gimp-tool-shear.png", *, *, "gtk-button" },
+    { "32/gimp-tool-shear.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-shear.png", *, *, *            }
+  }
+  stock["gimp-tool-smudge"] =
+  {
+    { "32/gimp-tool-smudge.png", *, *, "gtk-button" },
+    { "32/gimp-tool-smudge.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-smudge.png", *, *, *            }
+  }
+  stock["gimp-tool-text"] =
+  {
+    { "32/gimp-tool-text.png", *, *, "gtk-button" },
+    { "32/gimp-tool-text.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-text.png", *, *, *            }
+  }
+  stock["gimp-tool-threshold"] =
+  {
+    { "32/gimp-tool-threshold", *, *, "gtk-button" },
+    { "32/gimp-tool-threshold.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-threshold.png", *, *, *            }
+  }
+  stock["gimp-tool-unified-transform"] =
+  {
+    { "32/gimp-tool-unified-transform.png", *, *, "gtk-button" },
+    { "32/gimp-tool-unified-transform.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-unified-transform.png", *, *, *            }
+  }
+  stock["gimp-tool-warp"] =
+  {
+    { "32/gimp-tool-warp.png", *, *, "gtk-button" },
+    { "32/gimp-tool-warp.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-warp.png", *, *, *            }
+  }
+  stock["gimp-tool-zoom"] =
+  {
+    { "32/gimp-tool-zoom.png", *, *, "gtk-button" },
+    { "32/gimp-tool-zoom.png", *, *, "gtk-menu" },
+    { "32/gimp-tool-zoom.png", *, *, *            }
+  }
+  stock["gimp-tools"] =
+  {
+    { "32/gimp-tools.png", *, *, "gtk-button" },
+    { "32/gimp-tools.png", *, *, "gtk-menu" },
+    { "32/gimp-tools.png", *, *, *            }
+  }
+  stock["gimp-transparency"] =
+  {
+    { "32/gimp-transparency.png", *, *, "gtk-button" },
+    { "32/gimp-transparency.png", *, *, "gtk-menu" },
+    { "32/gimp-transparency.png", *, *, *            }
+  }
+  stock["gimp-undo-history"] =
+  {
+    { "32/gimp-undo-history.png", *, *, "gtk-button" },
+    { "32/gimp-undo-history.png", *, *, "gtk-menu" },
+    { "32/gimp-undo-history.png", *, *, *            }
+  }
+  stock["gimp-user-manual"] =
+  {
+    { "64/gimp-user-manual.png", *, *, "gtk-dialog" },
+    { "32/gimp-user-manual.png", *, *, "gtk-dnd" },
+    { "32/gimp-user-manual.png", *, *, "gtk-button" },
+    { "32/gimp-user-manual.png", *, *, "gtk-menu" },
+    { "32/gimp-user-manual.png", *, *, *            }
+  }
+  stock["gimp-vcenter"] =
+  {
+	{ "32/gimp-vcenter.png", *, *, "gtk-button" },
+	{ "32/gimp-vcenter.png", *, *, *            }
+  }
+  stock["gimp-vchain"] =
+  {
+	{ "32/gimp-vchain.png", *, *, "gtk-button" },
+	{ "32/gimp-vchain.png", *, *, *            }
+  }
+  stock["gimp-vchain-broken"] =
+  {
+	{ "32/gimp-vchain-broken.png", *, *, "gtk-button" },
+	{ "32/gimp-vchain-broken.png", *, *, *            }
+  }
+  stock["gimp-vfill"] =
+  {
+	{ "32/gimp-vfill.png", *, *, "gtk-button" },
+	{ "32/gimp-vfill.png", *, *, *            }
+  }
+  stock["gimp-video"] =
+  {
+    { "32/gimp-video.png", *, *, "gtk-button" },
+    { "32/gimp-video.png", *, *, "gtk-menu" },
+    { "32/gimp-video.png", *, *, *            }
+  }
+  stock["gimp-visible"] =
+  {
+    { "32/gimp-eye.png", *, *, "gtk-button" },
+    { "32/gimp-eye.png", *, *, "gtk-menu" },
+    { "32/gimp-eye.png", *, *, *            }
+  }
+  stock["gimp-warning"] =
+  {
+    { "64/gimp-warning.png", *, *, "gtk-dialog" },
+    { "32/gimp-warning.png", *, *, "gtk-button" },
+    { "32/gimp-warning.png", *, *, "gtk-menu" },
+    { "32/gimp-warning.png", *, *, *            }
+  }
+  stock["gimp-web"] =
+  {
+    { "32/gimp-web.png", *, *, "gtk-button" },
+    { "32/gimp-web.png", *, *, "gtk-menu" },
+    { "32/gimp-web.png", *, *, *            }
+  }
+  stock["gimp-wilber"] =
+  {
+    { "64/gimp-wilber.png", *, *, "gtk-dialog" },
+    { "32/gimp-wilber.png", *, *, "gtk-dnd" },
+    { "32/gimp-wilber.png", *, *, "gtk-button" },
+    { "32/gimp-wilber.png", *, *, "gtk-menu" },
+    { "32/gimp-wilber.png", *, *, *            }
+  }
+  stock["gimp-wilber-eek"] =
+  {
+    { "64/gimp-wilber-eek.png", *, *, "gtk-dialog" },
+    { "64/gimp-wilber-eek.png", *, *, *            }
+  }
+  stock["gimp-wilber-outline"] =
+  {
+    { "64/gimp-wilber-outline.png", *, *, "gtk-dialog" },
+    { "64/gimp-wilber-outline.png", *, *, *            }
+  }
+  stock["gimp-zoom-follow-window"] =
+  {
+    { "32/gimp-zoom-follow-window.png", *, *, "gtk-menu" },
+    { "32/gimp-zoom-follow-window.png", *, *, *            }
+  }
+}
+
+class "GtkWidget" style "gimp-icons"

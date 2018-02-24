@@ -1,0 +1,53 @@
+gtk_color_scheme = "fg_color:#ffffff\nbg_color:#7f7f7f\nbase_color:#7f7f7f\ntext_color:#ffffff\nselected_bg_color:#303030\nselected_fg_color:#ccccff\ntooltip_bg_color:#7f7f7f\ntooltip_fg_color:#000000\nentry_bgcolor:#606060"
+
+include "gimp-imagerc.rc"
+
+include "gtk-imagerc.rc"
+
+
+style "gimp-default-style"
+{
+  font_name = "sans, 11"
+
+  GtkLabel::use-underline = TRUE
+  
+  # fg - Sets the foreground color of a widget 
+#  fg[NORMAL]        = @fg_color
+#  fg[PRELIGHT]      = shade (1.20, @fg_color)
+#  fg[SELECTED]      = @selected_fg_color
+#  fg[ACTIVE]        = shade (0.9, @fg_color)
+#  fg[INSENSITIVE]   = @bg_color
+
+  # bg - Sets the background color of a widget 
+#  bg[NORMAL]        = @bg_color
+#  bg[PRELIGHT]      = shade (1.20,  @bg_color)
+#  bg[SELECTED]	    = @selected_bg_color
+#  bg[INSENSITIVE]   = @bg_color
+#  bg[ACTIVE]        = shade (0.9, @bg_color)
+	       
+  # text - Sets the foreground color for widgets that have editable text
+#  text[NORMAL]      = @text_color
+#  text[PRELIGHT]    = shade (1.20, @text_color)
+#  text[ACTIVE]      = @selected_fg_color
+#  text[SELECTED]    = @selected_fg_color
+#  text[INSENSITIVE] = shade (0.40, @text_color)
+
+  # base - Sets the background color for widgets that have editable text
+#  base[NORMAL]      = @base_color
+#  base[PRELIGHT]    = shade (1.20,  @bg_color)
+#  base[ACTIVE]      = shade (0.7, @selected_bg_color)
+#  base[SELECTED]    = shade (0.9, @selected_bg_color)
+#  base[INSENSITIVE] = shade (0.40, @base_color) 
+  
+#  engine "pixmap" {} # need this to get the menubar styled
+#  engine "clearlooks" {} # need this to get the menubar styled
+#  engine "murrine" {} # need this to get the menubar styled
+}
+
+style "menubar"
+{
+#  bg[NORMAL]        = shade (0.9,  @bg_color)
+}
+
+class "GtkWidget" style:highest "gimp-default-style"
+widget "*menubar*"	style:highest "menubar"

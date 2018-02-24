@@ -1,0 +1,223 @@
+object FrmPermissions: TFrmPermissions
+  Left = 652
+  Height = 460
+  Top = 324
+  Width = 625
+  BorderStyle = bsDialog
+  Caption = 'Permissions'
+  ClientHeight = 460
+  ClientWidth = 625
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.0.6'
+  inline FraAddDelEdiSavCan1: TFraAddDelEdiSavCan
+    Top = 354
+    Width = 625
+    Align = alBottom
+    ClientWidth = 625
+    inherited PanBottom: TPanel
+      Width = 625
+      Align = alBottom
+      BevelOuter = bvNone
+      BorderStyle = bsSingle
+      ClientHeight = 104
+      ClientWidth = 623
+      inherited BtnSave: TBitBtn
+        OnClick = BtnSaveClick
+      end
+      inherited BtnCancel: TBitBtn
+        OnClick = BtnCancelClick
+      end
+      inherited BtnAdd: TBitBtn
+        Top = 56
+        OnClick = BtnAddClick
+      end
+      inherited BtnDelete: TBitBtn
+        OnClick = BtnDeleteClick
+      end
+      inherited BtnEdit: TBitBtn
+        OnClick = BtnEditClick
+      end
+      inherited PanNavRec: TPanel
+        ClientHeight = 27
+        ClientWidth = 110
+        inherited LblNavRec: TLabel
+          Height = 27
+          Width = 110
+        end
+      end
+    end
+  end
+  object Panleft: TPanel
+    Left = 0
+    Height = 354
+    Top = 0
+    Width = 170
+    Align = alLeft
+    BevelOuter = bvNone
+    Caption = 'PanLeft'
+    ClientHeight = 354
+    ClientWidth = 170
+    TabOrder = 1
+    object LblUserGroups: TLabel
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 170
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'User Groups'
+      Color = cl3DLight
+      ParentColor = False
+      Transparent = False
+    end
+    object GrdUserGroups: TDBGrid
+      Left = 0
+      Height = 329
+      Top = 25
+      Width = 170
+      Align = alClient
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Name_Usergroup'
+          Width = 52
+          FieldName = 'Name_Usergroup'
+        end>
+      DataSource = DataMod.DsoUsergroups
+      FixedCols = 0
+      Options = [dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+      TabOrder = 0
+      OnCellClick = GrdUserGroupsCellClick
+    end
+  end
+  object PanRight: TPanel
+    Left = 170
+    Height = 354
+    Top = 0
+    Width = 455
+    Align = alClient
+    BevelOuter = bvNone
+    Caption = 'PanRight'
+    ClientHeight = 354
+    ClientWidth = 455
+    TabOrder = 2
+    object PagPermissions: TPageControl
+      Left = 0
+      Height = 329
+      Top = 25
+      Width = 455
+      ActivePage = TabEmployees
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 0
+      object TabEmployees: TTabSheet
+        Caption = 'Employees'
+        ClientHeight = 290
+        ClientWidth = 451
+        ImageIndex = 5
+        object DBChkEditEmployee: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 24
+          Width = 173
+          AutoSize = True
+          Caption = 'Edit employee'
+          DataField = 'EditEmployee_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBChkAddEmployee: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 64
+          Width = 173
+          AutoSize = True
+          Caption = 'Add employee'
+          DataField = 'AddEmployee_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 1
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBChkDeleteEmployee: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 104
+          Width = 202
+          AutoSize = True
+          Caption = 'Delete employee'
+          DataField = 'DeleteEmployee_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 2
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+      end
+      object TabTabs: TTabSheet
+        Caption = 'Tabs'
+        ClientHeight = 290
+        ClientWidth = 451
+        ImageIndex = 4
+        object DBChkShowTabAddress: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 24
+          Width = 211
+          AutoSize = True
+          Caption = 'Show tab Address'
+          DataField = 'ShowTabAddress_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+      end
+      object TabAdmin: TTabSheet
+        Caption = 'Admin'
+        ClientHeight = 290
+        ClientWidth = 451
+        object DBChkAdminControlAccess: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 24
+          Width = 253
+          AutoSize = True
+          Caption = 'Admin Control Access'
+          DataField = 'AdminControlAccess_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 0
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBChkAdminControlAccess1: TDBCheckBox
+          Left = 8
+          Height = 29
+          Top = 72
+          Width = 196
+          AutoSize = True
+          Caption = 'Admin Database'
+          DataField = 'AdminDatabase_Permission'
+          DataSource = DataMod.DsoPermissions
+          TabOrder = 1
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+      end
+    end
+    object LblPermissions: TLabel
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 455
+      Align = alTop
+      Alignment = taCenter
+      Caption = 'Permissions'
+      Color = clCream
+      ParentColor = False
+      Transparent = False
+    end
+  end
+end
