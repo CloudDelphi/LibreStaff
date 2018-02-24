@@ -3,10 +3,11 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="10"/>
-    <BuildModes Count="3" Active="Linux GTK2-Debug">
+    <BuildModes Count="3" Active="Win32-Release">
       <Item1 Name="Win32-Release">
-        <MacroValues Count="1">
+        <MacroValues Count="2">
           <Macro1 Name="LCLWidgetType" Value="win32"/>
+          <Macro2 Name="LCLWidgetType" Value="gtk2"/>
         </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
@@ -40,9 +41,6 @@
         </CompilerOptions>
       </Item1>
       <Item2 Name="Linux GTK2">
-        <MacroValues Count="1">
-          <Macro2 Name="LCLWidgetType" Value="gtk2"/>
-        </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
@@ -85,7 +83,7 @@
       </Item2>
       <Item3 Name="Linux GTK2-Debug">
         <MacroValues Count="1">
-          <Macro2 Name="LCLWidgetType" Value="gtk2"/>
+          <Macro3 Name="LCLWidgetType" Value="gtk2"/>
         </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
@@ -133,18 +131,18 @@
       </Item3>
       <SessionEnabledMatrixOptions Count="3">
         <Item1 Mode="Win32-Release" Option="922963223504"/>
-        <Item2 Mode="Linux GTK2" Option="069294482818"/>
+        <Item2 Mode="Win32-Release" Option="603762296772"/>
         <Item3 Mode="Linux GTK2-Debug" Option="069294482818"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="33">
+    <Units Count="34">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="16"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9"/>
         <CursorPos X="23" Y="9"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -153,13 +151,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="112"/>
         <CursorPos X="17" Y="115"/>
         <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -174,7 +169,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="DataModule"/>
+        <IsVisibleTab Value="True"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -207,6 +205,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
+        <EditorIndex Value="-1"/>
         <UsageCount Value="20"/>
       </Unit7>
       <Unit8>
@@ -416,20 +415,15 @@
         <CursorPos X="18" Y="154"/>
         <UsageCount Value="10"/>
       </Unit32>
+      <Unit33>
+        <Filename Value="..\..\..\opt\lazarus\lcl\printers.pas"/>
+        <UnitName Value="Printers"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1111"/>
+        <CursorPos X="41" Y="1113"/>
+        <UsageCount Value="10"/>
+      </Unit33>
     </Units>
-    <JumpHistory Count="3" HistoryIndex="2">
-      <Position1>
-        <Filename Value="librestaff.pas"/>
-        <Caret Line="9" Column="3"/>
-      </Position1>
-      <Position2>
-        <Filename Value="librestaff.pas"/>
-        <Caret Line="9" Column="3"/>
-      </Position2>
-      <Position3>
-        <Filename Value="librestaff.pas"/>
-        <Caret Line="9" Column="3"/>
-      </Position3>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>
