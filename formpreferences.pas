@@ -128,7 +128,8 @@ uses
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
 begin
-	PagPreferences.ActivePageIndex:= Item.Index;
+  if (LstViewPreferences.ItemIndex>=0) then
+  	PagPreferences.ActivePageIndex:= LstViewPreferences.ItemIndex;
 end;
 
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
@@ -266,8 +267,11 @@ begin
   DataMod.ImgLstBtn.GetBitmap(21, BtnEditUsers.Glyph);
   DataMod.ImgLstBtn.GetBitmap(22, BtnPermissions.Glyph);
   DataMod.ImgLstBtn.GetBitmap(3, BtnSaveMySQLOptions.Glyph);
+  {$IFDEF LCLQt}
+  LstViewPreferences.ViewStyle:= vsList;
+  {$endif}
   //Goto the first Tab
-  PagPreferences.TabIndex:= 0;
+  PagPreferences.ActivePageIndex:= 0;
 end;
 
 procedure TFrmPreferences.FormShow(Sender: TObject);

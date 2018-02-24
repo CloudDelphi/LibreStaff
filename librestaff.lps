@@ -3,8 +3,11 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="10"/>
-    <BuildModes Count="3" Active="Win 32-Debug">
+    <BuildModes Count="3" Active="Linux GTK2-Debug">
       <Item1 Name="Win32-Release">
+        <MacroValues Count="1">
+          <Macro1 Name="LCLWidgetType" Value="win32"/>
+        </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
@@ -36,6 +39,9 @@
         </CompilerOptions>
       </Item1>
       <Item2 Name="Linux GTK2">
+        <MacroValues Count="1">
+          <Macro2 Name="LCLWidgetType" Value="gtk2"/>
+        </MacroValues>
         <CompilerOptions>
           <Version Value="11"/>
           <PathDelim Value="\"/>
@@ -124,18 +130,21 @@
           </Other>
         </CompilerOptions>
       </Item3>
-      <SessionEnabledMatrixOptions Count="1">
-        <Item1 Mode="Linux GTK2-Debug" Option="069294482818"/>
+      <SessionEnabledMatrixOptions Count="3">
+        <Item1 Mode="Win32-Release" Option="922963223504"/>
+        <Item2 Mode="Linux GTK2" Option="069294482818"/>
+        <Item3 Mode="Linux GTK2-Debug" Option="069294482818"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="34">
+    <Units Count="35">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="18"/>
-        <CursorPos X="14" Y="22"/>
-        <UsageCount Value="22"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="34"/>
+        <CursorPos Y="50"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="formmain.pas"/>
@@ -144,12 +153,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="665"/>
-        <CursorPos Y="667"/>
-        <UsageCount Value="22"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="382"/>
+        <CursorPos X="14" Y="397"/>
+        <UsageCount Value="23"/>
       </Unit1>
       <Unit2>
         <Filename Value="funcdata.pas"/>
@@ -158,7 +165,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="974"/>
         <CursorPos X="3" Y="981"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit2>
       <Unit3>
         <Filename Value="datamodule.pas"/>
@@ -170,7 +177,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="16"/>
         <CursorPos X="25" Y="5"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit3>
       <Unit4>
         <Filename Value="formpicemployee.pas"/>
@@ -179,7 +186,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPicEmployee"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit4>
       <Unit5>
         <Filename Value="framesavecancel.pas"/>
@@ -188,13 +195,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameSaveCancel"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit5>
       <Unit6>
         <Filename Value="funcdlgs.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncDlgs"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit6>
       <Unit7>
         <Filename Value="formpreferences.pas"/>
@@ -204,7 +211,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="387"/>
+        <CursorPos X="5" Y="271"/>
+        <UsageCount Value="23"/>
       </Unit7>
       <Unit8>
         <Filename Value="frameclose.pas"/>
@@ -213,7 +222,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameClose"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit8>
       <Unit9>
         <Filename Value="formlisteditor.pas"/>
@@ -222,7 +231,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormListEditor"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit9>
       <Unit10>
         <Filename Value="formsearch.pas"/>
@@ -234,7 +243,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="303"/>
         <CursorPos Y="317"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit10>
       <Unit11>
         <Filename Value="formdsoeditor.pas"/>
@@ -243,7 +252,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit11>
       <Unit12>
         <Filename Value="frameadddeledisavcan.pas"/>
@@ -252,7 +261,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FrameAddDelEdiSavCan"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit12>
       <Unit13>
         <Filename Value="formprgbar.pas"/>
@@ -261,7 +270,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPrgBar"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit13>
       <Unit14>
         <Filename Value="formabout.pas"/>
@@ -273,7 +282,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="47"/>
         <CursorPos X="4" Y="60"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit14>
       <Unit15>
         <Filename Value="formactivationemployee.pas"/>
@@ -282,7 +291,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormActivationEmployee"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit15>
       <Unit16>
         <Filename Value="fraacceptcancel.pas"/>
@@ -291,19 +300,19 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <UnitName Value="FraAcceptCancel"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit16>
       <Unit17>
         <Filename Value="funcprint.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncPrint"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit17>
       <Unit18>
         <Filename Value="funcapp.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -315,13 +324,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="36" Y="21"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit19>
       <Unit20>
         <Filename Value="globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Globals"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit20>
       <Unit21>
         <Filename Value="forminputbox.pas"/>
@@ -330,13 +339,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormInputBox"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit21>
       <Unit22>
         <Filename Value="crypt.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Crypt"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit22>
       <Unit23>
         <Filename Value="formpermissions.pas"/>
@@ -345,7 +354,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPermissions"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit23>
       <Unit24>
         <Filename Value="formprofile.pas"/>
@@ -354,7 +363,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormProfile"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit24>
       <Unit25>
         <Filename Value="formeditadduser.pas"/>
@@ -363,7 +372,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormEditAddUser"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit25>
       <Unit26>
         <Filename Value="formreports.pas"/>
@@ -372,7 +381,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
       </Unit26>
       <Unit27>
         <Filename Value="D:\usr\lib\lazarus\1.8.0\ide\lazarus.pp"/>
@@ -424,72 +433,15 @@
         <CursorPos X="41" Y="1113"/>
         <UsageCount Value="10"/>
       </Unit33>
+      <Unit34>
+        <Filename Value="..\..\..\opt\lazarus\lcl\interfaces\win32\win32int.pp"/>
+        <UnitName Value="Win32Int"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="20"/>
+        <CursorPos X="29" Y="29"/>
+        <UsageCount Value="10"/>
+      </Unit34>
     </Units>
-    <JumpHistory Count="16" HistoryIndex="15">
-      <Position1>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="473" Column="22" TopLine="465"/>
-      </Position1>
-      <Position2>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="671" Column="9" TopLine="649"/>
-      </Position2>
-      <Position3>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="20" Column="12" TopLine="8"/>
-      </Position3>
-      <Position4>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="120" Column="22" TopLine="100"/>
-      </Position4>
-      <Position5>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="233" Column="12" TopLine="213"/>
-      </Position5>
-      <Position6>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="238" Column="12" TopLine="218"/>
-      </Position6>
-      <Position7>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="253" Column="10" TopLine="233"/>
-      </Position7>
-      <Position8>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="266" Column="10" TopLine="246"/>
-      </Position8>
-      <Position9>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="557" Column="3" TopLine="555"/>
-      </Position9>
-      <Position10>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="557" Column="3" TopLine="552"/>
-      </Position10>
-      <Position11>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="557" TopLine="555"/>
-      </Position11>
-      <Position12>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="556" TopLine="550"/>
-      </Position12>
-      <Position13>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="122" Column="47" TopLine="111"/>
-      </Position13>
-      <Position14>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="673" Column="5" TopLine="671"/>
-      </Position14>
-      <Position15>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="551" Column="11" TopLine="547"/>
-      </Position15>
-      <Position16>
-        <Filename Value="formmain.pas"/>
-        <Caret Line="673" Column="2" TopLine="665"/>
-      </Position16>
-    </JumpHistory>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>

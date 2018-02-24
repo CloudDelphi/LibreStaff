@@ -1,12 +1,12 @@
 object FrmPreferences: TFrmPreferences
-  Left = 585
+  Left = 518
   Height = 490
-  Top = 295
-  Width = 865
+  Top = 200
+  Width = 942
   BorderIcons = [biSystemMenu]
   Caption = 'Preferences'
   ClientHeight = 490
-  ClientWidth = 865
+  ClientWidth = 942
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -16,12 +16,13 @@ object FrmPreferences: TFrmPreferences
     Left = 0
     Height = 424
     Top = 0
-    Width = 172
+    Width = 220
     Align = alLeft
     BorderSpacing.CellAlignHorizontal = ccaCenter
     BorderSpacing.CellAlignVertical = ccaCenter
     BorderStyle = bsNone
     Columns = <>
+    IconOptions.AutoArrange = True
     IconOptions.WrapText = False
     Items.LazData = {
       9B0000000500000000000000FFFFFFFFFFFFFFFF0000000009000000456D706C
@@ -38,24 +39,24 @@ object FrmPreferences: TFrmPreferences
     OnSelectItem = LstViewPreferencesSelectItem
   end
   object PagPreferences: TPageControl
-    Left = 176
+    Left = 224
     Height = 424
     Top = 0
-    Width = 689
-    ActivePage = TabAccessControl
+    Width = 718
+    ActivePage = TabGeneral
     Align = alClient
     ShowTabs = False
-    TabIndex = 4
+    TabIndex = 0
     TabOrder = 1
     object TabGeneral: TTabSheet
       Caption = 'General'
       ClientHeight = 420
-      ClientWidth = 685
+      ClientWidth = 714
       OnShow = TabGeneralShow
       object GrpIDEmployee: TGroupBox
-        Left = 40
+        Left = 24
         Height = 177
-        Top = 32
+        Top = 24
         Width = 384
         Caption = 'ID Employee'
         ClientHeight = 150
@@ -63,9 +64,9 @@ object FrmPreferences: TFrmPreferences
         TabOrder = 0
         object ChkIDUnique: TCheckBox
           Left = 16
-          Height = 33
+          Height = 29
           Top = 8
-          Width = 97
+          Width = 96
           Caption = 'Unique'
           OnChange = ChkIDUniqueChange
           TabOrder = 0
@@ -83,9 +84,9 @@ object FrmPreferences: TFrmPreferences
         end
         object ChkIDAllowBlank: TCheckBox
           Left = 66
-          Height = 33
+          Height = 29
           Top = 96
-          Width = 136
+          Width = 143
           Caption = 'Allow blank'
           Enabled = False
           OnChange = ChkIDAllowBlankChange
@@ -93,7 +94,7 @@ object FrmPreferences: TFrmPreferences
         end
         object CboAutoType: TComboBox
           Left = 176
-          Height = 36
+          Height = 35
           Top = 52
           Width = 144
           Enabled = False
@@ -113,7 +114,7 @@ object FrmPreferences: TFrmPreferences
     object TabLanguage: TTabSheet
       Caption = 'Language'
       ClientHeight = 420
-      ClientWidth = 685
+      ClientWidth = 714
       OnShow = TabLanguageShow
       object Dates: TGroupBox
         Left = 40
@@ -181,7 +182,7 @@ object FrmPreferences: TFrmPreferences
     object TabDatabase: TTabSheet
       Caption = 'Database'
       ClientHeight = 420
-      ClientWidth = 685
+      ClientWidth = 714
       OnShow = TabDatabaseShow
       object PagDBEngine: TPageControl
         Left = 0
@@ -599,7 +600,7 @@ object FrmPreferences: TFrmPreferences
     object TabPrinting: TTabSheet
       Caption = 'Printing'
       ClientHeight = 420
-      ClientWidth = 685
+      ClientWidth = 714
       OnShow = TabPrintingShow
       object GroupBox1: TGroupBox
         Left = 24
@@ -651,7 +652,7 @@ object FrmPreferences: TFrmPreferences
     object TabAccessControl: TTabSheet
       Caption = 'Access Control'
       ClientHeight = 420
-      ClientWidth = 685
+      ClientWidth = 714
       object GrpIDEmployee1: TGroupBox
         Left = 40
         Height = 176
@@ -694,7 +695,7 @@ object FrmPreferences: TFrmPreferences
     end
   end
   object Splitter1: TSplitter
-    Left = 172
+    Left = 220
     Height = 424
     Top = 0
     Width = 4
@@ -702,19 +703,19 @@ object FrmPreferences: TFrmPreferences
   inline FraClose1: TFraClose
     Height = 66
     Top = 424
-    Width = 865
+    Width = 942
     Align = alBottom
     ClientHeight = 66
-    ClientWidth = 865
+    ClientWidth = 942
     TabOrder = 3
     inherited PanClose: TPanel
       Height = 66
-      Width = 865
+      Width = 942
       Align = alClient
       BevelOuter = bvNone
       BorderStyle = bsSingle
       ClientHeight = 64
-      ClientWidth = 863
+      ClientWidth = 940
       inherited BtnClose: TBitBtn
         Left = 360
         Top = 8

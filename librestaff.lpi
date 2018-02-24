@@ -19,6 +19,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <RevisionNr Value="19"/>
+      <BuildNr Value="1"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable ProductName="LibreStaff" ProductVersion="0.0.18.0"/>
     </VersionInfo>
@@ -345,7 +346,6 @@
       </Item9>
       <Item10>
         <Name Value="EPrinter"/>
-        <Enabled Value="False"/>
       </Item10>
     </Exceptions>
   </Debugging>
