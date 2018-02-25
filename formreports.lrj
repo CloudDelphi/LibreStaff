@@ -19,5 +19,5 @@
 {"hash":93079237,"name":"tfrmreports.btnremovefield.caption","sourcebytes":[82,101,109,111,118,101],"value":"Remove"},
 {"hash":1472,"name":"tfrmreports.btnupfield.caption","sourcebytes":[85,112],"value":"Up"},
 {"hash":308958,"name":"tfrmreports.btndownfield.caption","sourcebytes":[68,111,119,110],"value":"Down"},
-{"hash":218347811,"name":"tfrmreports.lblfilters.caption","sourcebytes":[70,105,108,116,114,111,115],"value":"Filtros"}
+{"hash":218344659,"name":"tfrmreports.lblfilters.caption","sourcebytes":[70,105,108,116,101,114,115],"value":"Filters"}
 ]}

@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2018-02-15 12:53+0100\n"
+"PO-Revision-Date: 2018-02-25 01:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -932,7 +932,6 @@ msgid "New"
 msgstr "Nuevo"
 
 #: tfrmmain.btnnew1.caption
-#, fuzzy
 msgctxt "tfrmmain.btnnew1.caption"
 msgid "New"
 msgstr "Nuevo"
@@ -942,7 +941,6 @@ msgid "Print"
 msgstr "Imprimir"
 
 #: tfrmmain.btnsaveemployee.caption
-#, fuzzy
 msgctxt "tfrmmain.btnsaveemployee.caption"
 msgid "Save"
 msgstr "Guardar"
@@ -1442,7 +1440,7 @@ msgstr "SQLite"
 
 #: tfrmprgbar.lblprg.caption
 msgid "LblPrg"
-msgstr ""
+msgstr "LblPrg"
 
 #: tfrmprofile.btnsaveavatar.caption
 msgctxt "tfrmprofile.btnsaveavatar.caption"
@@ -1549,8 +1547,8 @@ msgstr "VACÍO"
 
 #: tfrmreports.lblfilters.caption
 msgctxt "tfrmreports.lblfilters.caption"
-msgid "Filtros"
-msgstr "Filters"
+msgid "Filters"
+msgstr "Filtros"
 
 #: tfrmreports.lblnameemployee.caption
 msgctxt "tfrmreports.lblnameemployee.caption"
@@ -1658,4 +1656,3 @@ msgstr "Tipo de contratos"
 msgctxt "tfrmtypecontracts.dbgrdtypecontracts.columns[0].title.caption"
 msgid "Name of Type of Contract"
 msgstr "Nombre del tipo de contrato"
-

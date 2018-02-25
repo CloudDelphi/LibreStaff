@@ -269,7 +269,7 @@ object FrmReports: TFrmReports
       Align = alTop
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Filtros'
+      Caption = 'Filters'
       Color = clCream
       Font.Color = clNavy
       ParentColor = False

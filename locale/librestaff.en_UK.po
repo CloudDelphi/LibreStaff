@@ -1544,7 +1544,7 @@ msgstr ""
 
 #: tfrmreports.lblfilters.caption
 msgctxt "tfrmreports.lblfilters.caption"
-msgid "Filtros"
+msgid "Filters"
 msgstr ""
 
 #: tfrmreports.lblnameemployee.caption
