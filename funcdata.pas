@@ -107,16 +107,17 @@ resourcestring
   DelRec_Msg_03= 'There is not anything to eliminate.';
   Error_DatabaseName_Blank= 'Database name is blank!';
 
+
 implementation
 
-uses FormPreferences;
+uses FormPreferences, FormPrgBar;
 
 procedure ConfigureDBEngine;
 begin
   FrmPreferences:= TFrmPreferences.Create(nil);
-  FrmPreferences.LstViewPreferences.Visible:= False;
-  FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstViewPreferences.Width;
-  FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstViewPreferences.Width/2);
+  FrmPreferences.LstTreePreferences.Visible:= False;
+  FrmPreferences.Width:= FrmPreferences.Width-FrmPreferences.LstTreePreferences.Width;
+  FrmPreferences.FraClose1.BtnClose.Left:= FrmPreferences.FraClose1.BtnClose.Left-Round(FrmPreferences.LstTreePreferences.Width/2);
   FrmPreferences.PagPreferences.TabIndex:= 2;
   FrmPreferences.DbLkCboAtomicCommit.Enabled:= False;
   FrmPreferences.ShowModal;
@@ -147,6 +148,7 @@ var
   i, j: Integer;
   SQL: String;
   ErrorMsg: String;
+ 	PrgBar: TFrmPrgBar;
 begin
   AssignDatabase;
   DefineTables;
@@ -158,9 +160,13 @@ begin
   case DBEngine.DBType of
     dbtSQLite: newDatabase:= not FileExists(Databasename);
   end; //case
+  //The progress bar to show the database creation or load:
+  Screen.Cursor:= crHourglass;
+	PrgBar:= TFrmPrgBar.Create(nil);
+	PrgBar.ShowOnTop;
+  PrgBar.LblPrg.Caption:= 'Connecting database...';
+  PrgBar._PrgBar.Position:= 50;
   try
-    PrgBar.LblPrg.Caption:= 'Connecting database...';
-    PrgBar._PrgBar.Position:= 90;
   	DBEngine.Connection.Open;
   except
   	on E: ESQLDatabaseError do
@@ -178,6 +184,7 @@ begin
   end;
 	if newDatabase then begin //Create the database and the tables
   	try
+    //Connect & Load to database
 		//Announce the Database creation
  		//Define Fields
     PrgBar.LblPrg.Caption:= 'Creating databases...';
@@ -282,6 +289,8 @@ begin
     ShowMessage('Unable to create new database');
     end;
   end;
+	FreeAndNil(PrgBar);
+  Screen.Cursor:= crDefault;
 end;
 
 procedure DefineFields;

@@ -1435,10 +1435,6 @@ msgctxt "tfrmpreferences.tabsqliteoptions.caption"
 msgid "SQLite"
 msgstr ""
 
-#: tfrmprgbar.caption
-msgid "FrmPrgBar"
-msgstr ""
-
 #: tfrmprgbar.lblprg.caption
 msgid "LblPrg"
 msgstr ""

@@ -5,7 +5,7 @@ unit Globals;
 interface
 
 uses
-  Classes, SysUtils, INIfiles, ExtCtrls, Graphics, FormprgBar;
+  Classes, SysUtils, INIfiles, ExtCtrls, Graphics;
 
 type
 	TDataFormat= (dtNull, dtString, dtInteger, dtBoolean, dtDate, dtChar, dtText,
@@ -36,7 +36,6 @@ var
   Lang, FallBacklang: String;
   AccessControl, RememberUsername: Boolean;
   User: TUser;
-  PrgBar: TFrmPrgBar;
 
 const
   AUTOCLOSE_POPUPNOTIFIER_TIME= 3000;
@@ -67,8 +66,6 @@ const
   USERNAME_LENGTH= 12;
 
 implementation
-
-
 
 end.
 

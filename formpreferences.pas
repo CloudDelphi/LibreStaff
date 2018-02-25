@@ -55,7 +55,6 @@ type
     LblJournalMode: TLabel;
     LblDateFormat: TLabel;
     LblDateSeparator: TLabel;
-    LstViewPreferences: TListView;
     PagDBEngine: TPageControl;
     PagPreferences: TPageControl;
     Splitter1: TSplitter;
@@ -66,6 +65,7 @@ type
     TabAccessControl: TTabSheet;
     TabMySQLOptions: TTabSheet;
     TabSQLiteOptions: TTabSheet;
+    LstTreePreferences: TTreeView;
     procedure BtnChangeDtbPathClick(Sender: TObject);
     procedure BtnCloseClick(Sender: TObject);
     procedure BtnEditUsersClick(Sender: TObject);
@@ -93,6 +93,7 @@ type
     procedure TabMySQLOptionsShow(Sender: TObject);
     procedure TabPrintingShow(Sender: TObject);
     procedure TabSQLiteOptionsShow(Sender: TObject);
+    procedure LstTreePreferencesSelectionChanged(Sender: TObject);
   private
     { private declarations }
     procedure ChangeDBEngineTab;
@@ -128,8 +129,7 @@ uses
 procedure TFrmPreferences.LstViewPreferencesSelectItem(Sender: TObject;
   Item: TListItem; Selected: Boolean);
 begin
-  if (LstViewPreferences.ItemIndex>=0) then
-  	PagPreferences.ActivePageIndex:= LstViewPreferences.ItemIndex;
+
 end;
 
 procedure TFrmPreferences.BtnCloseClick(Sender: TObject);
@@ -251,7 +251,7 @@ var
   i: Integer;
   Str: String;
 begin
-  for i:= 0 to LstViewPreferences.Items.Count-1 do
+  for i:= 0 to LstTreePreferences.Items.Count-1 do
   	begin
     case i of
     	0: Str:= lg_LstView_Caption_Item_0;
@@ -260,17 +260,15 @@ begin
       3: Str:= lg_LstView_Caption_Item_3;
       4: Str:= lg_LstView_Caption_Item_4;
     end; //case
-  	LstViewPreferences.Items[i].Caption:= Str;
+  	LstTreePreferences.Items[i].Text:= Str;
     end;
   //Load the Glyphs:
   DataMod.ImgLstBtn.GetBitmap(3, BtnSaveCompanyName.Glyph);
   DataMod.ImgLstBtn.GetBitmap(21, BtnEditUsers.Glyph);
   DataMod.ImgLstBtn.GetBitmap(22, BtnPermissions.Glyph);
   DataMod.ImgLstBtn.GetBitmap(3, BtnSaveMySQLOptions.Glyph);
-  {$IFDEF LCLQt}
-  LstViewPreferences.ViewStyle:= vsList;
-  {$endif}
   //Goto the first Tab
+  LstTreePreferences.Select(LstTreePreferences.Items[0]);
   PagPreferences.ActivePageIndex:= 0;
 end;
 
@@ -280,11 +278,11 @@ begin
     begin
 	  if (User.Permissions.AdminControlAccess= FALSE) then
   	  begin
-    	LstViewPreferences.Items.Item[4].Delete;
+    	LstTreePreferences.Items.Item[4].Delete;
 	    end;
 	  if (User.Permissions.AdminDatabase= FALSE) then
   	  begin
-    	LstViewPreferences.Items.Item[2].Delete;
+    	LstTreePreferences.Items.Item[2].Delete;
 	    end;
     end;
 end;
@@ -401,6 +399,12 @@ begin
     DsoLstAtomicCommit.DataSet:= LstAtomicCommit;
     end;
   DbLkCboAtomicCommit.ListSource:= DsoLstAtomicCommit;
+end;
+
+procedure TFrmPreferences.LstTreePreferencesSelectionChanged(Sender: TObject);
+begin
+  if (LstTreePreferences.Selected.Index>=0) then
+  	PagPreferences.ActivePageIndex:= LstTreePreferences.Selected.Index;
 end;
 
 end.

@@ -1,57 +1,31 @@
 object FrmPreferences: TFrmPreferences
-  Left = 518
+  Left = 478
   Height = 490
-  Top = 200
-  Width = 942
+  Top = 287
+  Width = 935
   BorderIcons = [biSystemMenu]
   Caption = 'Preferences'
   ClientHeight = 490
-  ClientWidth = 942
+  ClientWidth = 935
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
   LCLVersion = '1.8.0.6'
-  object LstViewPreferences: TListView
-    Left = 0
-    Height = 424
-    Top = 0
-    Width = 220
-    Align = alLeft
-    BorderSpacing.CellAlignHorizontal = ccaCenter
-    BorderSpacing.CellAlignVertical = ccaCenter
-    BorderStyle = bsNone
-    Columns = <>
-    IconOptions.AutoArrange = True
-    IconOptions.WrapText = False
-    Items.LazData = {
-      9B0000000500000000000000FFFFFFFFFFFFFFFF0000000009000000456D706C
-      6F7965657301000000FFFFFFFFFFFFFFFF00000000080000004C616E67756167
-      6502000000FFFFFFFFFFFFFFFF00000000080000004461746162617365030000
-      00FFFFFFFFFFFFFFFF00000000080000005072696E74696E6704000000FFFFFF
-      FFFFFFFFFF000000000E00000041636365737320436F6E74726F6C
-    }
-    LargeImages = ImgLstPreferences
-    ReadOnly = True
-    ShowColumnHeaders = False
-    TabOrder = 0
-    ViewStyle = vsIcon
-    OnSelectItem = LstViewPreferencesSelectItem
-  end
   object PagPreferences: TPageControl
-    Left = 224
+    Left = 256
     Height = 424
     Top = 0
-    Width = 718
+    Width = 679
     ActivePage = TabGeneral
     Align = alClient
     ShowTabs = False
     TabIndex = 0
-    TabOrder = 1
+    TabOrder = 0
     object TabGeneral: TTabSheet
       Caption = 'General'
       ClientHeight = 420
-      ClientWidth = 714
+      ClientWidth = 675
       OnShow = TabGeneralShow
       object GrpIDEmployee: TGroupBox
         Left = 24
@@ -114,7 +88,7 @@ object FrmPreferences: TFrmPreferences
     object TabLanguage: TTabSheet
       Caption = 'Language'
       ClientHeight = 420
-      ClientWidth = 714
+      ClientWidth = 675
       OnShow = TabLanguageShow
       object Dates: TGroupBox
         Left = 40
@@ -182,7 +156,7 @@ object FrmPreferences: TFrmPreferences
     object TabDatabase: TTabSheet
       Caption = 'Database'
       ClientHeight = 420
-      ClientWidth = 714
+      ClientWidth = 675
       OnShow = TabDatabaseShow
       object PagDBEngine: TPageControl
         Left = 0
@@ -600,7 +574,7 @@ object FrmPreferences: TFrmPreferences
     object TabPrinting: TTabSheet
       Caption = 'Printing'
       ClientHeight = 420
-      ClientWidth = 714
+      ClientWidth = 675
       OnShow = TabPrintingShow
       object GroupBox1: TGroupBox
         Left = 24
@@ -652,7 +626,7 @@ object FrmPreferences: TFrmPreferences
     object TabAccessControl: TTabSheet
       Caption = 'Access Control'
       ClientHeight = 420
-      ClientWidth = 714
+      ClientWidth = 675
       object GrpIDEmployee1: TGroupBox
         Left = 40
         Height = 176
@@ -695,33 +669,61 @@ object FrmPreferences: TFrmPreferences
     end
   end
   object Splitter1: TSplitter
-    Left = 220
+    Left = 251
     Height = 424
     Top = 0
-    Width = 4
+    Width = 5
   end
   inline FraClose1: TFraClose
     Height = 66
     Top = 424
-    Width = 942
+    Width = 935
     Align = alBottom
     ClientHeight = 66
-    ClientWidth = 942
-    TabOrder = 3
+    ClientWidth = 935
+    TabOrder = 2
     inherited PanClose: TPanel
       Height = 66
-      Width = 942
+      Width = 935
       Align = alClient
       BevelOuter = bvNone
       BorderStyle = bsSingle
       ClientHeight = 64
-      ClientWidth = 940
+      ClientWidth = 933
       inherited BtnClose: TBitBtn
         Left = 360
         Top = 8
         OnClick = BtnCloseClick
       end
     end
+  end
+  object LstTreePreferences: TTreeView
+    Left = 0
+    Height = 424
+    Top = 0
+    Width = 251
+    Align = alLeft
+    BackgroundColor = clDefault
+    Color = clDefault
+    HotTrack = True
+    Images = ImgLstPreferences
+    ReadOnly = True
+    SelectionColor = clYellow
+    ShowButtons = False
+    ShowLines = False
+    ShowRoot = False
+    TabOrder = 3
+    OnSelectionChanged = LstTreePreferencesSelectionChanged
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoToolTips, tvoThemedDraw]
+    Items.Data = {
+      F9FFFFFF02000500000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000
+      00000009000000456D706C6F7965657301000000FFFFFFFFFFFFFFFFFFFFFFFF
+      000000000000000000080000004C616E677561676502000000FFFFFFFFFFFFFF
+      FFFFFFFFFF00000000000000000008000000446174616261736503000000FFFF
+      FFFFFFFFFFFFFFFFFFFF000000000000000000080000005072696E74696E6704
+      000000FFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000E00000041636365
+      737320436F6E74726F6C
+    }
   end
   object ImgLstPreferences: TImageList
     Height = 48

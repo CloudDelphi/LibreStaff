@@ -21,8 +21,6 @@ var
 procedure CreateMainForm;
 	begin
  	Application.CreateForm(TFrmMain, FrmMain);
-  PrgBar.Free;
-  Screen.Cursor:= crDefault;
  	Application.Run;
   end;
 
@@ -103,10 +101,6 @@ begin
     ShowMessage('Error: '+Error_DatabaseName_Blank);
     ConfigureDBEngine;
     end;
-	//The progress bar to show the database creation or load:
-  Screen.Cursor:= crHourglass;
-  PrgBar:= TFrmPrgBar.Create(nil);
-  PrgBar.Show;
   FuncData.ConnectDatabase(DBEngine.Databasename);
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
   DBEngine.DatabaseVersion:= DataMod.QueConfig.FieldByName('DatabaseVersion').AsString;
@@ -122,7 +116,6 @@ begin
     	end
     else
     	begin
-      PrgBar.Free;
       FreeAndNil(Login); //Free the login form
 			FreeAndNil(DBEngine); //Free DBEngine
       FreeAndNil(User);
