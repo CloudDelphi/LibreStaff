@@ -135,7 +135,7 @@
         <Item3 Mode="Linux GTK2-Debug" Option="069294482818"/>
       </SessionEnabledMatrixOptions>
     </BuildModes>
-    <Units Count="37">
+    <Units Count="41">
       <Unit0>
         <Filename Value="librestaff.pas"/>
         <IsPartOfProject Value="True"/>
@@ -152,8 +152,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormMain"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="127"/>
-        <CursorPos X="27" Y="127"/>
+        <TopLine Value="122"/>
+        <CursorPos X="46" Y="127"/>
         <UsageCount Value="25"/>
       </Unit1>
       <Unit2>
@@ -161,8 +161,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncData"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="161"/>
-        <CursorPos Y="165"/>
+        <TopLine Value="3"/>
+        <CursorPos X="39" Y="8"/>
         <UsageCount Value="25"/>
       </Unit2>
       <Unit3>
@@ -209,8 +209,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPreferences"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="246"/>
-        <CursorPos X="25" Y="270"/>
+        <TopLine Value="307"/>
+        <CursorPos X="44" Y="312"/>
         <UsageCount Value="25"/>
       </Unit7>
       <Unit8>
@@ -238,10 +238,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormSearch"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="303"/>
-        <CursorPos Y="317"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="37"/>
+        <CursorPos X="43" Y="42"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="formdsoeditor.pas"/>
@@ -250,6 +252,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormDsoEditor"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="17"/>
+        <CursorPos X="30" Y="22"/>
         <UsageCount Value="25"/>
       </Unit11>
       <Unit12>
@@ -313,7 +318,11 @@
         <Filename Value="funcapp.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="FuncApp"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="92"/>
+        <CursorPos X="82" Y="97"/>
         <UsageCount Value="25"/>
+        <Loaded Value="True"/>
       </Unit18>
       <Unit19>
         <Filename Value="formlogin.pas"/>
@@ -358,6 +367,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormPermissions"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="32"/>
+        <CursorPos X="38" Y="38"/>
         <UsageCount Value="25"/>
       </Unit23>
       <Unit24>
@@ -385,11 +397,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="FormReports"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <UsageCount Value="25"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit26>
       <Unit27>
         <Filename Value="D:\usr\lib\lazarus\1.8.0\ide\lazarus.pp"/>
@@ -463,8 +472,38 @@
         <CursorPos Y="165"/>
         <UsageCount Value="10"/>
       </Unit36>
+      <Unit37>
+        <Filename Value="..\..\..\opt\lazarus\lcl\comctrls.pp"/>
+        <UnitName Value="ComCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1667"/>
+        <CursorPos X="28" Y="1686"/>
+        <UsageCount Value="10"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="..\..\..\opt\lazarus\lcl\widgetset\wscomctrls.pp"/>
+        <UnitName Value="WSComCtrls"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="885"/>
+        <UsageCount Value="10"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="..\..\..\opt\lazarus\lcl\intfgraphics.pas"/>
+        <UnitName Value="IntfGraphics"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3501"/>
+        <UsageCount Value="10"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="..\..\..\opt\lazarus\components\lazreport\source\lr_crosstab.pas"/>
+        <UnitName Value="lr_CrossTab"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1082"/>
+        <CursorPos X="63" Y="1094"/>
+        <UsageCount Value="10"/>
+      </Unit40>
     </Units>
-    <JumpHistory Count="5" HistoryIndex="4">
+    <JumpHistory Count="10" HistoryIndex="9">
       <Position1>
         <Filename Value="librestaff.pas"/>
         <Caret Line="105" TopLine="93"/>
@@ -485,6 +524,26 @@
         <Filename Value="librestaff.pas"/>
         <Caret Line="110" TopLine="93"/>
       </Position5>
+      <Position6>
+        <Filename Value="funcapp.pas"/>
+        <Caret Line="97" Column="81" TopLine="91"/>
+      </Position6>
+      <Position7>
+        <Filename Value="funcapp.pas"/>
+        <Caret Line="97" Column="81" TopLine="91"/>
+      </Position7>
+      <Position8>
+        <Filename Value="funcapp.pas"/>
+        <Caret Line="97" Column="81" TopLine="92"/>
+      </Position8>
+      <Position9>
+        <Filename Value="funcapp.pas"/>
+        <Caret Line="97" Column="81" TopLine="92"/>
+      </Position9>
+      <Position10>
+        <Filename Value="formsearch.pas"/>
+        <Caret Line="42" Column="43" TopLine="37"/>
+      </Position10>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

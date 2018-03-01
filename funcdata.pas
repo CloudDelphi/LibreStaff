@@ -5,7 +5,7 @@ unit FuncData;
 interface
 
 uses
-  Forms, Controls, Classes, SysUtils, FormMain, Dialogs, DataModule,
+  Forms, Controls, Classes, SysUtils, Dialogs, DataModule,
   sqldb, LCLType, db, Globals;
 
 type
