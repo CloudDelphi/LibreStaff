@@ -251,6 +251,8 @@ end;
 
 procedure TFrmMain.DisableEmployees;
 begin
+	PanTop.Enabled:= False;
+	PagEmployees.Enabled:= False;
   BtnSaveEmployee.Enabled:= False;
   BtnDelete.Enabled:= False;
   BtnSearch.Enabled:= False;
@@ -264,6 +266,8 @@ end;
 
 procedure TFrmMain.EnableEmployees;
 begin
+	PanTop.Enabled:= True;
+  PagEmployees.Enabled:= True;
   BtnSaveEmployee.Enabled:= True;
   BtnDelete.Enabled:= True;
 	BtnSearch.Enabled:= True;
