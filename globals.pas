@@ -14,6 +14,12 @@ type
 type
 	TAction= (acEdit, acAdd);
 
+//USER OBJECT DEFINITION
+(*
+The User Object has:
+	-Name
+  -A record set of TPermissions
+*)
 type TPermission= record
   //Edit employees
   EditEmployee, AddEmployee, DeleteEmployee: Boolean;
@@ -29,6 +35,7 @@ type TUser= class(TObject)
   public
     Name: String;
   end;
+//END OF USER OBJECT DEFINITION
 
 var
 	PathApp, PathIni, SQLiteLibraryName: String;

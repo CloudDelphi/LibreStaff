@@ -3,12 +3,13 @@ object FrmDsoEditor: TFrmDsoEditor
   Height = 486
   Top = 282
   Width = 624
+  ActiveControl = DBGrd
   BorderIcons = [biSystemMenu]
   Caption = 'Editor'
   ClientHeight = 486
   ClientWidth = 624
   Position = poScreenCenter
-  LCLVersion = '1.6.0.4'
+  LCLVersion = '1.8.2.0'
   object DBGrd: TDBGrid
     Left = 0
     Height = 380
@@ -21,7 +22,7 @@ object FrmDsoEditor: TFrmDsoEditor
     Columns = <    
       item
         Title.Caption = 'Name'
-        Width = 582
+        Width = 593
       end>
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
     TabOrder = 0
@@ -52,8 +53,12 @@ object FrmDsoEditor: TFrmDsoEditor
         OnClick = BtnEditClick
       end
       inherited PanNavRec: TPanel
-        ClientHeight = 25
-        ClientWidth = 108
+        ClientHeight = 27
+        ClientWidth = 110
+        inherited LblNavRec: TLabel
+          Height = 27
+          Width = 110
+        end
       end
     end
   end

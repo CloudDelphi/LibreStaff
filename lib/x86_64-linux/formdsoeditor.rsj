@@ -26,5 +26,7 @@
 {"hash":241516202,"name":"formdsoeditor.edit_iptbox_prompt_passwords","sourcebytes":[78,101,119,32,80,97,115,115,119,111,114,100,58],"value":"New Password:"},
 {"hash":262886881,"name":"formdsoeditor.no_delete_superuser","sourcebytes":[84,104,105,115,32,117,115,101,114,32,99,97,110,110,111,116,32,98,101,32,100,101,108,101,116,101,100,33],"value":"This user cannot be deleted!"},
 {"hash":199566097,"name":"formdsoeditor.no_edit_superuser","sourcebytes":[84,104,101,32,110,97,109,101,32,111,102,32,116,104,105,115,32,117,115,101,114,32,99,97,110,110,111,116,32,98,101,32,101,100,105,116,101,100,33],"value":"The name of this user cannot be edited!"},
-{"hash":47331793,"name":"formdsoeditor.blank_value","sourcebytes":[66,108,97,110,107,32,110,111,116,32,97,108,108,111,119,101,100,33],"value":"Blank not allowed!"}
+{"hash":47331793,"name":"formdsoeditor.blank_value","sourcebytes":[66,108,97,110,107,32,110,111,116,32,97,108,108,111,119,101,100,33],"value":"Blank not allowed!"},
+{"hash":80320065,"name":"formdsoeditor.edit_no_record_title","sourcebytes":[69,114,114,111,114,33],"value":"Error!"},
+{"hash":87356990,"name":"formdsoeditor.edit_no_record","sourcebytes":[84,104,101,114,101,32,105,115,32,110,111,116,104,105,110,103,32,116,111,32,101,100,105,116,46],"value":"There is nothing to edit."}
 ]}

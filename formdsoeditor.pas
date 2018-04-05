@@ -62,6 +62,8 @@ resourcestring
   No_Delete_SUPERUSER= 'This user cannot be deleted!';
   No_Edit_SUPERUSER= 'The name of this user cannot be edited!';
   Blank_Value= 'Blank not allowed!';
+  Edit_No_Record_Title= 'Error!';
+	Edit_No_Record= 'There is nothing to edit.';
 
 implementation
 
@@ -240,7 +242,14 @@ var
   ErrorMsg: String;
   MaxLength: Integer;
   WriteFieldsCount: Integer;
+  Style: Integer;
 begin
+ 	if (TableEdit.Datasource.DataSet.IsEmpty= TRUE) then
+		begin
+		Style:= MB_OK + MB_ICONERROR;
+		Application.MessageBox(PChar(Edit_No_Record), PChar(Edit_No_Record_Title), Style);
+		Exit;
+		end;
   case TableEdit.ID of
     wtTypeContracts:
       begin

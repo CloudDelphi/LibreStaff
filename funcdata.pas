@@ -8,19 +8,31 @@ uses
   Forms, Controls, Classes, SysUtils, Dialogs, DataModule,
   sqldb, LCLType, db, Globals;
 
+
+//DBENGINE OBJECT DEFINITION
+(*
+- The DBEngine Object includes an array of TTables.
+- The Table Object includes an array of TFields.
+*)
+
+//Definitions of types for tables->
 type
 	TIDTable= (wtConfig, wtContractsLog, wtEmployees, wtPicsEmployees, wtTypeContracts,
   wtPermissions, wtWorkplaces, wtUsers, wtUsergroups);
 
+//Definition of the types of databases: MYSQL or SQLite->
 type
   TDBType= (dbtSQLite, dbtMySQL);
 
+//If a field on a table requires some extra SQL actions in case of parent-child tables (Ex.: ON DELETE CASCADE)
+//Here define some types
 type
   TFKReferentialAction= (fkOnDelete, fkOnUpdate);
 
 type
   TFKReferenceOption= (fkRestrict, fkCascade, fkSetNull, fkNoAction);
 
+//The Tables include an array of TFields->
 type TField= record
   Name: String;
   DataFormat: TDataFormat; DataLength: Integer;
@@ -40,7 +52,57 @@ type TField= record
   	FK_ReferenceOption: TFKReferenceOption;
 end;
 
-type TTable = record
+type TFieldClass= class
+  private
+  	//The data fields of this new class TField
+  	_Name: String;
+    _Table: TIDTable;
+  	//Note: TDataFormat class (string, boolean, integer...) is defined in the Globals unit
+  	_FieldDataFormat: TDataFormat;
+  	_DataLength: Integer;
+  	_HasDefaultValue: Boolean;
+  		_DefaultValueQuoted: Boolean;
+  		_DefaultValue: String;
+  	_PutNull: Boolean;
+  		_IsNotNull: Boolean;
+  	_IsPrimaryKey: Boolean;
+  	_Autoincrement: Boolean;
+  	_PutCase: Boolean;
+  		__Case: Boolean;
+  	_IsForeignKey: Boolean;
+  		_FK_ParentTable: String;
+  		_FK_ParentField: String;
+  		_FK_ReferentialAction: TFKReferentialAction;
+  		_FK_ReferenceOption: TFKReferenceOption;
+  //Properties to read these data values
+  public
+  	property Name: String read _Name;
+    property Table: TIDTable read _Table;
+    property FieldDataFormat: TDataFormat read _FieldDataFormat;
+    property DataLength: Integer read _DataLength;
+  	property HasDefaultValue: Boolean read _HasDefaultValue;
+  	property DefaultValueQuoted: Boolean read _DefaultValueQuoted;
+  	property DefaultValue: String read _DefaultValue;
+  	property PutNull: Boolean read _PutNull;
+  	property IsNotNull: Boolean read _IsNotNull;
+  	property IsPrimaryKey: Boolean read _IsPrimaryKey;
+  	property Autoincrement: Boolean read _Autoincrement;
+  	property PutCase: Boolean read _PutCase;
+  	property _Case: Boolean read __Case;
+  	property IsForeignKey: Boolean read _IsForeignKey;
+  	property FK_ParentTable: String read _FK_ParentTable;
+  	property FK_ParentField: String read _FK_ParentField;
+  	property FK_ReferentialAction: TFKReferentialAction read _FK_ReferentialAction;
+  	property FK_ReferenceOption: TFKReferenceOption read _FK_ReferenceOption;
+	  //Constructor
+  	constructor Create(__Name: String; __Table: TIDTable; __FieldDataFormat: TDataFormat; __DataLength: Integer;
+  	__HasDefaultValue: Boolean; __DefaultValueQuoted: Boolean; __DefaultValue: String; __PutNull: Boolean;
+    __IsNotNull: Boolean; __IsPrimaryKey: Boolean; __Autoincrement: Boolean; __PutCase: Boolean;
+    ___Case: Boolean; __IsForeignKey: Boolean; __FK_ParentTable: String; __FK_ParentField: String;
+    __FK_ReferentialAction: TFKReferentialAction; __FK_ReferenceOption: TFKReferenceOption);
+end;
+
+type TTable= record
   ID: TIDTable;
 	Name: String;
   Table: TSQLQuery;
@@ -68,6 +130,7 @@ type TDBEngine = class
   FalseValue: String;
   AutoIncrementKeyword: String;
 end;
+//END OF THE DBENGINE DEFINITION
 
 type TWriteField = record
 	FieldName: String;
@@ -111,6 +174,32 @@ resourcestring
 implementation
 
 uses FormPreferences, FormPrgBar;
+
+constructor TFieldClass.Create(__Name: String; __Table: TIDTable; __FieldDataFormat: TDataFormat; __DataLength: Integer;
+  	__HasDefaultValue: Boolean; __DefaultValueQuoted: Boolean; __DefaultValue: String; __PutNull: Boolean;
+    __IsNotNull: Boolean; __IsPrimaryKey: Boolean; __Autoincrement: Boolean; __PutCase: Boolean;
+    ___Case: Boolean; __IsForeignKey: Boolean; __FK_ParentTable: String; __FK_ParentField: String;
+    __FK_ReferentialAction: TFKReferentialAction; __FK_ReferenceOption: TFKReferenceOption);
+begin
+  self._Name:= __Name;
+  self._Table:= __Table;
+  self._FieldDataFormat:= __FieldDataFormat;
+  self._DataLength:= __DataLength;
+  self._HasDefaultValue:= __HasDefaultValue;
+  self._DefaultValueQuoted:= __DefaultValueQuoted;
+  self._DefaultValue:= __DefaultValue;
+  self._PutNull:= __PutNull;
+  self._IsNotNull:= __IsNotNull;
+  self._IsPrimaryKey:= __IsPrimaryKey;
+  self._Autoincrement:= __Autoincrement;
+	self._PutCase:= __PutCase;
+	self.__Case:= ___Case;
+  self._IsForeignKey:= __IsForeignKey;
+  self._FK_ParentTable:= __FK_ParentTable;
+  self._FK_ParentField:= __FK_ParentField;
+  self._FK_ReferentialAction:= __FK_ReferentialAction;
+	self._FK_ReferenceOption:= __FK_ReferenceOption;
+end;
 
 procedure ConfigureDBEngine;
 begin
@@ -295,6 +384,8 @@ end;
 
 procedure DefineFields;
 begin
+  //Create the list of fields:
+
   //Table 'Config'
   //ID_Config INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
    DBEngine.Tables[0].Fields[0].Name:= 'ID_Config';
@@ -865,7 +956,8 @@ begin
             DataMod.Transaction.CommitRetaining;
           	SQLSentence.Free;
             Table.Refresh;
-            Table.RecNo:= Bookmark-1;
+            if Table.RecordCount>1 then
+              Table.RecNo:= Bookmark-1;
   					Result:= True;
             except
   					Result:= False;

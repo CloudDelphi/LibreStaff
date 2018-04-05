@@ -154,6 +154,16 @@ msgctxt "formdsoeditor.edit_iptbox_prompt_workplaces"
 msgid "Name:"
 msgstr "Nome:"
 
+#: formdsoeditor.edit_no_record
+msgid "There is nothing to edit."
+msgstr ""
+
+#: formdsoeditor.edit_no_record_title
+#, fuzzy
+msgctxt "formdsoeditor.edit_no_record_title"
+msgid "Error!"
+msgstr "Erro!"
+
 #: formdsoeditor.form_caption_typecontracts
 msgctxt "formdsoeditor.form_caption_typecontracts"
 msgid "Type of Contract"
@@ -809,6 +819,12 @@ msgstr "Grupo de usuários"
 msgctxt "tfrmdsoeditor.caption"
 msgid "Editor"
 msgstr "Tipo de contratos"
+
+#: tfrmdsoeditor.dbgrd.columns[0].title.caption
+#, fuzzy
+msgctxt "tfrmdsoeditor.dbgrd.columns[0].title.caption"
+msgid "Name"
+msgstr "Nome"
 
 #: tfrmeditadduser.btnchangepassworduser.caption
 msgctxt "tfrmeditadduser.btnchangepassworduser.caption"

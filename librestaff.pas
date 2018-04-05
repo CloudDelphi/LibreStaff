@@ -48,6 +48,7 @@ begin
 	  {$endif}
   INIFile:= TINIFile.Create(PathIni, True);
   //Connect & Load to database
+  //Firstly I create the DBEngine Object (Defined in the FuncData unit)->
   DBEngine:= TDBEngine.Create;
   //Set some paths
   if not FileExists(PathIni) then //First time or 'config.ini' deleted
@@ -63,9 +64,11 @@ begin
     INIFile.WriteString('SQLite', 'AtomicCommmit', '1');
     FuncData.ConfigureDBEngine;
     end;
+  //What type of database (DBEngine.ID) is defined (saved in config.ini)
   DBEngine.ID:= INIFile.ReadInteger('Database', 'DBEngine', 0);
   case (DBEngine.ID) of
   	0:	begin
+    		//In the following lines the DBEngine Object is defined->
         DBEngine.DBType:= dbtSQLite;
         DBEngine.Connection:= DataMod.SQLiteConnection;
 			  DBEngine.DatabasePath:= ReplaceStr(INIFile.ReadString('Database', 'Path', PathApp+'data'+PATH_SEPARATOR),'''','');
@@ -73,8 +76,10 @@ begin
         DBEngine.HostName:= '';
         DataMod.Transaction.DataBase:= DataMod.SQLiteConnection;
         SQLiteLibraryName:= PathApp+'sqlite3.dll';
+        //Values for Booleans (True/False) to this database type
         DBEngine.TrueValue:= '1';
         DBEngine.FalseValue:= '0';
+        //SQL Keyword for AUTOINCREMENT to this database type
         DBEngine.AutoIncrementKeyword:= 'AUTOINCREMENT';
       	end;
     1:	begin
@@ -99,19 +104,26 @@ begin
   if (DBEngine.DatabaseName='') then
     begin
     ShowMessage('Error: '+Error_DatabaseName_Blank);
-    ConfigureDBEngine;
+    //Call the ConfigureDBEngine procedure to open a form (FrmPreferences:TabDatabase) to configure the database engine
+    FuncData.ConfigureDBEngine;
     end;
+  //Try to connect to database->
   FuncData.ConnectDatabase(DBEngine.Databasename);
+  //Open the Config Table of the database
   FuncData.ExecSQL(DataMod.QueConfig, 'SELECT * from Config LIMIT 1;');
+  //Read the database version->
   DBEngine.DatabaseVersion:= DataMod.QueConfig.FieldByName('DatabaseVersion').AsString;
+  //Read if the Access Control (asking for username & password at start) is activated->
   AccessControl:= DataMod.QueConfig.FieldByName('AccessControl').AsBoolean;
   if (AccessControl= TRUE) then
   	begin
+    //If AccessControl activated, then create the FrmLogin
 	  Login:= TFrmLogin.Create(nil); //Create Login Form not owned by object
   	LoginOK:= Login.ShowModal;
 	  if (LoginOK= mrOK) then
   		begin
       FreeAndNil(Login); //Free the login form
+      //Now the Main Form is created and the application starts->
       CreateMainForm;
     	end
     else
@@ -121,13 +133,12 @@ begin
       FreeAndNil(User);
       FreeAndNil(DataMod);
       Application.Terminate;
-      //Application.CreateForm(TDataMod, DataMod);
       Application.Run; //Aplication should must initiated -without forms- to be capable of a cool destroying
       end;
     end
   else
-  	begin
+  	//If not Access Control activated
+    //Then the Main Form is created and the application starts->
     CreateMainForm;
-    end;
 end.
 

@@ -68,7 +68,8 @@ procedure TFrmLogin.FormShow(Sender: TObject);
 var
   Username: String;
 begin
-	//Remember the username?
+	//Remember the username? (saved in config.ini)
+  //Then put it in the user textbox
   RememberUsername:= StrToBool(INIFile.ReadString('Access Control','RememberUsername','False'));
   if (RememberUsername= TRUE) then
   	begin
@@ -86,6 +87,7 @@ procedure TFrmLogin.BtnEnterClick(Sender: TObject);
 var
   LoginUser, LoginPassword, HashLoginPassword, HashUser, SaltUser, IDUser: String;
 begin
+  //Read the inputs
   LoginUser:= EdiUser.Text;
   LoginPassword:= EdiPassword.Text;
   //Search the user name, password and salt
@@ -93,7 +95,7 @@ begin
   if (DataMod.QueVirtual.IsEmpty= FALSE) then
     begin
     SaltUser:= DataMod.QueVirtual.FieldByName('Salt_User').AsString;
-    HashLoginPassword:= Crypt.HashString(SaltUser+LoginPassword);
+    HashLoginPassword:= Crypt.HashString(SaltUser + LoginPassword);
     HashUser:= DataMod.QueVirtual.FieldByName('Hash_User').AsString;
     if (HashLoginPassword= HashUser) then
       begin
@@ -101,7 +103,7 @@ begin
         begin
 	      INIFile.WriteString('Access Control', 'Username', QuotedStr(LoginUser));
         end;
-      //Create User
+      //Create an instance of the User Object (defined in the Globals Unit)
       User:= TUser.Create;
       User.Name:= LoginUser;
       IDUser:= DataMod.QueVirtual.FieldByName('ID_User').AsString;
@@ -117,14 +119,15 @@ begin
       end
     else
     	begin
+      //Warning if the password is wrong
       FuncApp.PopNotifier(FrmLogin, lg_PasswordDoesNotMatchTitle, lg_PasswordDoesNotMatchText, Point(Left+EdiPassword.Left, Top+EdiPassword.Top));
       end;
     end
   else
     begin
+    //Warning if the username does not exist
     FuncApp.PopNotifier(FrmLogin, lg_UserNotExistsTitle, lg_UserNotExistsText, Point(Left+EdiUser.Left, Top+EdiUser.Top));
     end;
-  //Get the user
 end;
 
 procedure TFrmLogin.EdiPasswordKeyPress(Sender: TObject; var Key: char);

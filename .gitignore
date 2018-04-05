@@ -1,4 +1,6 @@
 /backup/
+config.ini
 heap.trc
 librestaff
 librestaff.dbg
+librestaff.exe

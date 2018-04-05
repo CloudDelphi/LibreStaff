@@ -1,8 +1,8 @@
 object DataMod: TDataMod
   OldCreateOrder = False
   Height = 664
-  HorizontalOffset = 752
-  VerticalOffset = 292
+  HorizontalOffset = 606
+  VerticalOffset = 133
   Width = 1008
   PPI = 96
   object DsoEmployees: TDataSource
